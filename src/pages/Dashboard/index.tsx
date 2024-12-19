@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 const Dashboard = () => {
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
+        <div className="bg-gray-100 p-6">
             <div className="">
                 <h1 className=" text-red-700">
                     Dashboard
