@@ -4,5 +4,14 @@
 
 @layer components {
    
+  .scrollbar-hidden {
+    overflow-y: auto; /* Scroll'u etkinleştir */
+    scrollbar-width: none; /* Firefox için */
+    -ms-overflow-style: none; /* Internet Explorer için */
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari ve Edge için */
+  }
   
   }

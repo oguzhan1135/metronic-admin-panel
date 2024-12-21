@@ -1,11 +1,15 @@
 import { Link } from "react-router";
 const Dashboard = () => {
     return (
-        <div className="bg-gray-100 p-6">
-            <div className="">
-                <h1 className=" text-red-700">
+        <div className="bg-green-700 p-6 pt-24 ml-[280px]">
+            <div className="flex flex-col">
+                <h1 className=" text-red-700 pb-40">
                     Dashboard
                 </h1>
+                <h1 className=" text-red-700 pb-40">
+                    Dashboard
+                </h1>
+                
                 <p className="text-gray-600">
                     Welcome to the Dashboard page.
                 </p>

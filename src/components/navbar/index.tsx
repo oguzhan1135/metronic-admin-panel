@@ -2,7 +2,7 @@
  
 const Navbar = () => {
     return ( 
-        <div>Navbar yapısı</div>
+        <div className="flex w-full h-20 p-5 fixed bg-red-500 ml-[280px]">Navbar yapısı</div>
      );
 }
  
