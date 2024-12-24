@@ -1,9 +1,34 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@layer components {
-   
+@layer components { 
+  
+  /* Sidebar custom class */
+  
+  .subItem {
+    @apply flex items-center gap-4 pl-3 py-2 rounded-lg relative z-10 cursor-pointer hover:bg-gray-100;
+  }
+
+  .selectedItem {
+    @apply bg-gray-100 text-primary text-b-13-14-400  group-hover:text-primary transition-colors;
+  }
+
+  .unSelectedItem {
+    @apply text-gray-800 text-b-13-14-400  group-hover:text-primary transition-colors;
+  }
+
+  .dotActive {
+    @apply w-[6px] h-[6px] rounded-full ml-[-4px] bg-primary;
+  }
+
+  .dotInActive {
+    @apply w-[6px] h-[6px] rounded-full ml-[-4px] bg-transparent;
+  }
+  .itemDotLine{
+    @apply absolute w-[1px] h-full left-[10.5px] z-[-1] bg-gray-200
+  }
+}
   .scrollbar-hidden {
     overflow-y: auto; /* Scroll'u etkinleştir */
     scrollbar-width: none; /* Firefox için */
@@ -12,6 +37,4 @@
   
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome, Safari ve Edge için */
-  }
-  
   }
