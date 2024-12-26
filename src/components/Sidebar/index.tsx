@@ -20,198 +20,465 @@ import { useState } from 'react'
 
 
 interface MenuItem {
+    category: string
     key: string;
     label: string;
     subItems?: MenuItem[];
 }
 const menuData: MenuItem[] = [
     {
+        category: "dashboards",
         key: "dashboards",
         label: "Dashboards",
         subItems: [
             {
-                key: "light", label: "Light Sidebar"
+
+                category: "dashboards", key: "light", label: "Light Sidebar"
             },
             {
-                key: "dark", label: "Dark Sidebar"
+                category: "dashboards", key: "dark", label: "Dark Sidebar"
             }
         ]
     },
     {
+        category: "user",
         key: "public",
         label: "Public Profile",
         subItems: [
             {
+                category: "user",
                 key: "profiles",
                 label: "Profiles",
                 subItems: [
                     {
-                        key: "default", label: "Default"
+                        category: "user", key: "default", label: "Default"
                     },
                     {
-                        key: "creator", label: "Creator"
+                        category: "user", key: "creator", label: "Creator"
                     },
                     {
-                        key: "company", label: "Company"
+                        category: "user", key: "company", label: "Company"
                     },
                     {
-                        key: "nft", label: "NFT"
+                        category: "user", key: "nft", label: "NFT"
                     },
                     {
-                        key: "blogger", label: "Blogger"
+                        category: "user", key: "blogger", label: "Blogger"
                     },
                     {
-                        key: "crm", label: "CRM"
+                        category: "user", key: "crm", label: "CRM"
                     },
                     {
-                        key: "gamer", label: "Gamer"
+                        category: "user", key: "gamer", label: "Gamer"
                     },
                     {
-                        key: "feeds", label: "Feeds"
+                        category: "user", key: "feeds", label: "Feeds"
                     },
                     {
-                        key: "plain", label: "PLain"
+                        category: "user", key: "plain", label: "PLain"
                     },
                     {
-                        key: "modal", label: "Modal"
+                        category: "user", key: "modal", label: "Modal"
                     }
                 ]
 
             },
             {
+                category: "user",
                 key: "projects",
                 label: "Projects",
                 subItems: [
                     {
-                        key: "column-3", label: "3 Columns"
+                        category: "user", key: "column-3", label: "3 Columns"
                     },
                     {
-                        key: "column-2", label: "2 Columns"
+                        category: "user", key: "column-2", label: "2 Columns"
                     }
                 ]
             },
             {
+                category: "user",
                 key: "works",
                 label: "Works"
             },
             {
+                category: "user",
                 key: "teams",
                 label: "Teams"
             },
             {
+                category: "user",
                 key: "network",
                 label: "Network"
             },
             {
+                category: "user",
                 key: "activity",
                 label: "Activity"
             },
             {
+                category: "user",
                 key: "chanpaigns-card",
                 label: "Champaigns - Card"
             },
             {
+                category: "user",
                 key: "chanpaigns-list",
                 label: "Champaigns - List"
             },
             {
+                category: "user",
                 key: "empty",
                 label: "Empty"
             }
         ]
     },
     {
-        key:"my-account",
-        label:"My Account",
-        subItems:[
+        category: "user",
+        key: "my-account",
+        label: "My Account",
+        subItems: [
             {
-                key:"account-home", 
-                label:"Account Home",
-                subItems:[
+                category: "user",
+                key: "account-home",
+                label: "Account Home",
+                subItems: [
                     {
-                        key:"get-started",label:"Get Started"
+                        category: "user", key: "get-started", label: "Get Started"
                     },
                     {
-                        key:"user-profile", label:"User Profile"
+                        category: "user", key: "user-profile", label: "User Profile"
                     },
                     {
-                        key:"company-profile", label:"Company Profile"
+                        category: "user", key: "company-profile", label: "Company Profile"
                     },
                     {
-                        key:"setting-with-sidebar", label:"Setting - With Sidebar"
+                        category: "user", key: "setting-with-sidebar", label: "Setting - With Sidebar"
                     },
                     {
-                        key:"setting-enterprise", label:"Setting - Enterprise"
+                        category: "user", key: "setting-enterprise", label: "Setting - Enterprise"
                     },
                     {
-                        key:"setting-plain", label:"Setting - Plain"
+                        category: "user", key: "setting-plain", label: "Setting - Plain"
                     },
                     {
-                        key:"setting-with-modal", label:"Setting - Modal"
+                        category: "user", key: "setting-with-modal", label: "Setting - Modal"
                     }
                 ]
             },
             {
-                key:"billing",
-                label:"Billing",
-                subItems:[
+                category: "user",
+                key: "billing",
+                label: "Billing",
+                subItems: [
                     {
-                        key:"billing-basic", label:"Billing - Basic"
+                        category: "user", key: "billing-basic", label: "Billing - Basic"
                     },
                     {
-                        key:"billing-enterprise", label:"billing - Enterprise"
+                        category: "user", key: "billing-enterprise", label: "billing - Enterprise"
                     },
                     {
-                        key:"plans", label:"Plans"
+                        category: "user", key: "plans", label: "Plans"
                     },
                     {
-                        key:"billing-history", label:"Billing History"
+                        category: "user", key: "billing-history", label: "Billing History"
                     }
                 ]
             },
             {
-                key:"security",
-                label:"Security",
-                subItems:[
+                category: "user",
+                key: "security",
+                label: "Security",
+                subItems: [
                     {
-                        key:"get-started", label:"Get Started"
+                        category: "user", key: "get-started", label: "Get Started"
                     },
                     {
-                        key:"security-overview", label:"Security Overview"
+                        category: "user", key: "security-overview", label: "Security Overview"
                     },
                     {
-                        key:"allowed-ip-addresses", label:"Allowed IP Addresses"
+                        category: "user", key: "allowed-ip-addresses", label: "Allowed IP Addresses"
                     },
                     {
-                        key:"privacy-setting", label:"Privacy Setting"
+                        category: "user", key: "privacy-setting", label: "Privacy Setting"
                     },
                     {
-                        key:"device-management", label:"Device Management"
+                        category: "user", key: "device-management", label: "Device Management"
                     },
                     {
-                        key:"backup-recovery", label:"Backup & Recovery"
+                        category: "user", key: "backup-recovery", label: "Backup & Recovery"
                     },
                     {
-                        key:"current-sessions", label:"Current Sessions"
+                        category: "user", key: "current-sessions", label: "Current Sessions"
                     },
                     {
-                        key:"security-log", label:"Security Log"
+                        category: "user", key: "security-log", label: "Security Log"
                     }
                 ]
             },
             {
-                key:"members-roles",
-                label:"Members & Roles"
+                category: "user",
+                key: "members-roles",
+                label: "Members & Roles",
+                subItems: [
+                    {
+                        category: "user", key: "teams-starter", label: "Teams Starter"
+                    },
+                    {
+                        category: "user", key: "teams", label: "Teams"
+                    },
+                    {
+                        category: "user", key: "team-info", label: "Team Info"
+                    },
+                    {
+                        category: "user", key: "members-starter", label: "Members Starter"
+                    },
+                    {
+                        category: "user", key: "team-members", label: "Team Members"
+                    },
+                    {
+                        category: "user", key: "import-members", label: "Import Members"
+                    },
+                    {
+                        category: "user", key: "roles", label: "Roles"
+                    },
+                    {
+                        category: "user", key: "permissions-toggler", label: "Permissions - Toggler"
+                    },
+                    {
+                        category: "user", key: "permissions-check", label: "Permissions - Check"
+                    },
+                ]
+            },
+            {
+                category: "user",
+                key: "integrations",
+                label: "Integrations"
+            },
+            {
+                category: "user",
+                key: "notifications",
+                label: "Notifications"
+            },
+            {
+                category: "user",
+                key: "api-keys",
+                label: "API Keys"
+            },
+            {
+                category: "user",
+                key: "appearance",
+                label: "Appearance"
+            },
+            {
+                category: "user",
+                key: "invite-a-friend",
+                label: "Invite a Friend"
+            },
+            {
+                category: "user",
+                key: "activity",
+                label: "Activity"
+            },
+
+        ]
+    },
+    {
+        category: "user",
+        key: "network",
+        label: "Network",
+        subItems: [
+            {
+                category: "user", key: "get-started", label: "Get Started"
+            },
+            {
+                category: "user",
+                key: "user-card",
+                label: "User Card",
+                subItems: [
+                    {
+                        category: "user", key: "mini-cards", label: "Mini Cards"
+                    },
+                    {
+                        category: "user", key: "team-crew", label: "Team Crew"
+                    },
+                    {
+                        category: "user", key: "author", label: "Author"
+                    },
+                    {
+                        category: "user", key: "nft", label: "NFT"
+                    },
+                    {
+                        category: "user", key: "social", label: "Social"
+                    }
+                ]
+
+            },
+            {
+                category: "user",
+                key: "user-table",
+                label: "User Table",
+                subItems: [
+                    {
+                        category: "user", key: "team-crew", label: "Team Crew"
+                    },
+                    {
+                        category: "user", key: "app-roster", label: "App Roster"
+                    },
+                    {
+                        category: "user", key: "market-authors", label: "Market Authors"
+                    },
+                    {
+                        category: "user", key: "saas-user", label: "Saas Users"
+                    },
+                    {
+                        category: "user", key: "store-clients", label: "Store Clients"
+                    },
+                    {
+                        category: "user", key: "visitors", label: "Visitors"
+                    }
+                ]
             }
         ]
-    }
+    },
+    {
+        category: "user",
+        key: "authentication",
+        label: "Authentication",
+        subItems: [
+            {
+                category: "user",
+                key: "classic",
+                label: "Classic",
+                subItems: [
+                    {
+                        category: "user", key: "sign-in", label: "Sign In"
+                    },
+                    {
+                        category: "user", key: "sign-up", label: "Sign Up"
+                    },
+                    {
+                        category: "user", key: "2fa", label: "2FA"
+                    },
+                    {
+                        category: "user", key: "check-email", label: "Check Email"
+                    },
+                    {
+                        category: "user",
+                        key: "reset-password",
+                        label: "Reset Password",
+                        subItems: [
+                            {
+                                category: "user", key: "enter-email", label: "Enter Email"
+                            },
+                            {
+                                category: "user", key: "check-email", label: "Check Email"
+                            },
+                            {
+                                category: "user", key: "change-password", label: "Change Password"
+                            },
+                            {
+                                category: "user", key: "password-changed", label: "Password Changed"
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                category: "user",
+                key: "branded",
+                label: "Branded",
+                subItems: [
+                    {
+                        category: "user", key: "sign-in", label: "Sign In"
+                    },
+                    {
+                        category: "user", key: "sign-up", label: "Sign Up"
+                    },
+                    {
+                        category: "user", key: "2fa", label: "2FA"
+                    },
+                    {
+                        category: "user", key: "check-email", label: "Check Email"
+                    },
+                    {
+                        category: "user",
+                        key: "reset-password",
+                        label: "Reset Password",
+                        subItems: [
+                            {
+                                category: "user", key: "enter-email", label: "Enter Email"
+                            },
+                            {
+                                category: "user", key: "check-email", label: "Check Email"
+                            },
+                            {
+                                category: "user", key: "change-password", label: "Change Password"
+                            },
+                            {
+                                category: "user", key: "password-changed", label: "Password Changed"
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                category: "user", key: "welcome-message", label: "Welcome Message"
+            },
+            {
+                category: "user", key: "account-deactivated", label: "Account"
+            },
+            {
+                category: "user", key: "error-404", label: "Error 404"
+            },
+            {
+                category: "user", key: "error-500", label: "Error 500"
+            }
+
+        ]
+    },
+    {
+        category: "pages",
+        key: "marketplace",
+        label: "Marketplace"
+    },
+    {
+        category: "pages",
+        key: "social",
+        label: "Social"
+    },
+    {
+        category: "pages",
+        key: "company",
+        label: "Company"
+    },
+    {
+        category: "pages",
+        key: "blog",
+        label: "Blog"
+    },
+    {
+        category: "apps",
+        key: "projects",
+        label: "Projects"
+    },
+    {
+        category: "apps",
+        key: "ecommerce",
+        label: "eCommerce"
+    },
+
 
 
 ]
 
 
 const Sidebar = () => {
-    const [menuItem, setMenuItem] = useState(true);
+    const [selectedMenuItem, setSelectedMenuItem] = useState({
+        situation: false,
+        selectedSidebarMenuItemCategory: "dashboards",
+        selectedSidebarMenuItemKey: "light"
+    });
     const [itemActive, setItemActive] = useState({
         subItemKey: "light"
     })
@@ -228,191 +495,81 @@ const Sidebar = () => {
                 <img src={MetronicLogo} alt="Metronic-Logo" />
             </div>
             <div className="flex flex-col scrollbar-hidden ">
-                <div className="flex flex-col pb-2.5">
-                    <div className="flex flex-col gap-0 px-6.5">
-                        {/* Başlık */}
-                        <div
-                            onClick={() => setMenuItem(!menuItem)}
-                            className="flex flex-row justify-between items-center py-3 pb-2 hover: group cursor-pointer"
-                        >
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Dashboard_Icon} alt="dashboard-icon" />
-                                <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
-                                    Dashboards
-                                </span>
-                            </div>
 
-                            {menuItem ? (
-                                <>
-                                    <img src={Minus} alt="minus-icon" />
-                                </>
-                            ) : (
-                                <>
-                                    <img src={Plus} alt="Plus-icon" />
-                                </>
-                            )}
-                        </div>
+                {
+                    menuData.map((menuItem) => (
+                        <div className="flex flex-col pb-2.5">
+                            <div className="flex flex-col gap-0 px-6.5">
+                                {/* Başlık */}
+                                <div
+                                    onClick={() => setSelectedMenuItem({ situation: !selectedMenuItem.situation, selectedSidebarMenuItemCategory: menuItem.category, selectedSidebarMenuItemKey: menuItem.key })}
+                                    className="flex flex-row justify-between items-center py-3 pb-2 hover: group cursor-pointer"
+                                >
+                                    <div className="flex flex-row gap-2.5 items-center">
+                                        <img src={Dashboard_Icon} alt="dashboard-icon" />
+                                        <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
+                                            {menuItem.label}
+                                        </span>
+                                    </div>
 
-
-                        {/* Submenu items */}
-                        <div
-                            className={`overflow-hidden transition-all duration-300 ${menuItem ? 'max-h-[150px] opacity-100' : 'max-h-0 opacity-0'
-                                }`}
-                        >
-                            <div className="flex flex-col gap-0">
-                                <div onClick={() => selectedItemFunction("light")} className={`subItem ${itemActive.subItemKey === "light" ? 'selectedItem' : 'unSelectedItem'}`}>
-                                    <span className={`${itemActive.subItemKey === "light" ? 'dotActive' : 'dotInActive'}`}></span>
-                                    <span className="itemDotLine"></span>
-                                    <span className={`${itemActive.subItemKey === "light" ? 'selectedItem' : 'unSelectedItem'} `}>Light Sidebar</span>
+                                    {selectedMenuItem.situation && selectedMenuItem.selectedSidebarMenuItemCategory === menuItem.category && selectedMenuItem.selectedSidebarMenuItemKey === menuItem.key ? (
+                                        <>
+                                            <img src={Minus} alt="minus-icon" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <img src={Plus} alt="Plus-icon" />
+                                        </>
+                                    )}
                                 </div>
 
-                                <div onClick={() => selectedItemFunction("dark")} className={`subItem ${itemActive.subItemKey === "dark" ? 'selectedItem' : 'unSelectedItem'}`}>
-                                    <span className={`${itemActive.subItemKey === "dark" ? 'dotActive' : 'dotInActive'}`}></span>
-                                    <span className="itemDotLine"></span>
-                                    <span className={`${itemActive.subItemKey === "dark" ? 'selectedItem' : 'unSelectedItem'}`}>Dark Sidebar</span>
-                                </div>
+
+                                {/* Submenu items */}
+                                {
+                                    menuItem.subItems ?
+                                        <>
+                                            {
+                                                menuItem.subItems.map((subMenuItem) => (
+                                                    <div
+                                                        className={`overflow-hidden transition-all duration-300 ${selectedMenuItem.situation && selectedMenuItem.selectedSidebarMenuItemCategory === menuItem.category && selectedMenuItem.selectedSidebarMenuItemKey === menuItem.key ? 'max-h-max opacity-100' : 'max-h-0 opacity-0'
+                                                            }`}
+                                                    >
+                                                        <div className="flex flex-col gap-0">
+                                                            <div onClick={() => selectedItemFunction(subMenuItem.key)} className={`subItem ${itemActive.subItemKey === subMenuItem.key ? 'selectedItem' : 'unSelectedItem'}`}>
+                                                                <span className={`${itemActive.subItemKey === subMenuItem.key ? 'dotActive' : 'dotInActive'}`}></span>
+                                                                <span className="itemDotLine"></span>
+                                                                <span className={`${itemActive.subItemKey === subMenuItem.key ? 'selectedItem' : 'unSelectedItem'} `}>{subMenuItem.label}</span>
+                                                            </div>
+
+                                                            {
+                                                                subMenuItem.subItems ?
+                                                                    <>
+                                                                        {
+                                                                            subMenuItem.subItems.map((smallSubMenuItem) => (
+                                                                                <div onClick={() => selectedItemFunction(subMenuItem.key)} className={` overflow-hidden transition-all duration-300 ${selectedMenuItem.situation && selectedMenuItem.selectedSidebarMenuItemCategory === menuItem.category && selectedMenuItem.selectedSidebarMenuItemKey === menuItem.key ? 'max-h-max opacity-100' : 'max-h-0 opacity-0'
+                                                                                    }  subItem ml-10 ${itemActive.subItemKey === smallSubMenuItem.key ? 'selectedItem' : 'unSelectedItem'}`}>
+                                                                                    <span className={`${itemActive.subItemKey === smallSubMenuItem.key ? 'dotActive' : 'dotInActive'}`}></span>
+                                                                                    <span className="itemDotLine"></span>
+                                                                                    <span className={`${itemActive.subItemKey === smallSubMenuItem.key ? 'selectedItem' : 'unSelectedItem'} `}>{smallSubMenuItem.label}</span>
+                                                                                </div>
+                                                                            ))
+                                                                        }
+                                                                    </> : null
+                                                            }
+
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            }
+
+                                        </> : null
+
+                                }
 
                             </div>
                         </div>
-                    </div>
-                </div>
-                <>{/* User */}
-                    <div className="flex flex-row justify-between items-center pb-2 px-6.5">
-                        <span className='text-b-13-20-500 text-gray-500'>USER</span>
-                        <img src={Minus} alt="minus-icon" />
-                    </div>
-                    <div className="flex flex-col px-6.5">
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Rocket} alt="rocket-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Onboarding</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Profile_Circle} alt="profile-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Public Profile</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Setting} alt="setting-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">My Account</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Community} alt="community-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Community</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Edit_User} alt="edit-user-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">User Management</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Security_User} alt="security-user-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Authentication</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                    </div>
-                </>
-                <>{/* Pages */}
-                    <div className="flex flex-row justify-between items-center pb-2 px-6.5 pt-2.5">
-                        <span className='text-b-13-20-500 text-gray-500'>PAGES</span>
-                        <img src={Minus} alt="minus-icon" />
-                    </div>
-                    <div className="flex flex-col px-6.5">
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Like_Tag} alt="like-tag-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Marketplace</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Social} alt="social-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Social</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Company} alt="company-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Company</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Search} alt="search-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Blog</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                    </div>
-                </>
-                <>{/* Miscellenaus */}
-                    <div className="flex flex-row justify-between items-center pb-2 px-6.5 pt-2.5">
-                        <span className='text-b-13-20-500 text-gray-500'>MISCELLANEOUS</span>
-                        <img src={Minus} alt="minus-icon" />
-                    </div>
-                    <div className="flex flex-col px-6.5">
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Files} alt="files-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Modals</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Note} alt="note-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Wizards</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Search} alt="search-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Search</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                    </div>
-                </>
-                <>{/* Apps */}
-                    <div className="flex flex-row justify-between items-center pb-2 px-6.5 pt-2.5">
-                        <span className='text-b-13-20-500 text-gray-500'>APPS</span>
-                        <img src={Minus} alt="minus-icon" />
-                    </div>
-                    <div className="flex flex-col px-6.5">
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Tablet} alt="tablet-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">Projects</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                        <div className="flex flex-row justify-between items-center py-3 ">
-                            <div className="flex flex-row gap-2.5 items-center">
-                                <img src={Handcart} alt="handcart-icon" />
-                                <span className="text-gray-800 text-b-14-22-500">eCommerce</span>
-                            </div>
-                            <img src={Plus} alt="plus-icon" />
-                        </div>
-                    </div>
-                </>
+                    ))
+                }
             </div>
 
 
