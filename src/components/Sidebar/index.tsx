@@ -16,7 +16,7 @@ import Files from '@assets/icon/some-files.svg'
 import Note from '@assets/icon/note-2.svg'
 import Tablet from '@assets/icon/questionnaire-tablet.svg'
 import Handcart from '@assets/icon/handcart.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 interface MenuItem {
@@ -24,7 +24,7 @@ interface MenuItem {
     key: string;
     label: string;
     subItems?: MenuItem[];
-    icon?:string;
+    icon?: string;
 }
 const menuData: MenuItem[] = [
     {
@@ -40,7 +40,7 @@ const menuData: MenuItem[] = [
                 category: "dashboards", key: "dark", label: "Dark Sidebar"
             }
         ],
-        icon:Dashboard_Icon
+        icon: Dashboard_Icon
     },
     {
         category: "user",
@@ -134,7 +134,7 @@ const menuData: MenuItem[] = [
                 label: "Empty"
             }
         ],
-        icon:Profile_Circle
+        icon: Profile_Circle
     },
     {
         category: "user",
@@ -285,7 +285,7 @@ const menuData: MenuItem[] = [
             },
 
         ],
-        icon:Setting
+        icon: Setting
     },
     {
         category: "user",
@@ -344,7 +344,7 @@ const menuData: MenuItem[] = [
                 ]
             }
         ],
-        icon:Community
+        icon: Community
     },
     {
         category: "user",
@@ -441,44 +441,44 @@ const menuData: MenuItem[] = [
             }
 
         ],
-        icon:Security_User
+        icon: Security_User
     },
     {
         category: "pages",
         key: "marketplace",
         label: "Marketplace",
-        icon:Like_Tag
+        icon: Like_Tag
     },
     {
         category: "pages",
         key: "social",
         label: "Social",
-        icon:Social,
+        icon: Social,
     },
     {
         category: "pages",
         key: "company",
         label: "Company",
-        icon:Company
+        icon: Company
     },
     {
         category: "pages",
         key: "blog",
         label: "Blog",
-        icon:Files
+        icon: Files
     },
     {
         category: "apps",
         key: "projects",
         label: "Projects",
-        icon:Edit_User
+        icon: Edit_User
 
     },
     {
         category: "apps",
         key: "ecommerce",
         label: "eCommerce",
-        icon:Handcart
+        icon: Handcart
     },
 
 
@@ -488,117 +488,145 @@ const menuData: MenuItem[] = [
 
 
 const Sidebar = () => {
-    const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']); 
-    const [activeSubItems, setActiveSubItems] = useState<string[]>([]); 
-  
+    const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
+    const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
+    const [childSub, setChildSub] = useState<string>("");
+
     const toggleMenuItem = (key: string) => {
-      setOpenMenuItems((prevState) =>
-        prevState.includes(key)
-          ? prevState.filter((item) => item !== key) 
-          : [...prevState, key] 
-      );
+        setOpenMenuItems((prevState) =>
+            prevState.includes(key)
+                ? prevState.filter((item) => item !== key)
+                : [...prevState, key]
+        );
     };
-  
+
     const toggleSubItems = (key: string) => {
-      setActiveSubItems((prevState) =>
-        prevState.includes(key)
-          ? prevState.filter((item) => item !== key) 
-          : [...prevState, key]
-      );
+        setActiveSubItems([]);
+        setActiveSubItems((prevState) =>
+            prevState.includes(key)
+                ? prevState.filter((item) => item !== key)
+                : [...prevState, key]
+        );
+        if (key === activeSubItems[0]) {
+            setActiveSubItems([]);
+        }
     };
-  
+    useEffect(() => {
+        console.log(activeSubItems)
+        console.log(childSub)
+    }, [activeSubItems, childSub])
+
+    const childSubItemTrigger = (item: string) => {
+        setChildSub(item)
+    }
+
     return (
-      <div className="flex flex-col w-70 max-h-screen bg-white fixed">
-        <div className="px-6.5 py-[30px]">
-          <img src={MetronicLogo} alt="Metronic-Logo" />
-        </div>
-        <div className="flex flex-col scrollbar-hidden ">
-          <div className="flex flex-col pb-2.5">
-            <div className="flex flex-col gap-0 px-6.5">
-              {menuData.map((menuItem) => (
-                <div key={menuItem.key} className="flex flex-col">
-                  {/* Ana Menü Öğesi */}
-                  <div
-                    onClick={() => toggleMenuItem(menuItem.key)}
-                    className="flex flex-row justify-between items-center py-3 pb-2 hover: group cursor-pointer"
-                  >
-                    <div className="flex flex-row gap-2.5 items-center">
-                      <img src={menuItem.icon} alt="dashboard-icon" />
-                      <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
-                        {menuItem.label}
-                      </span>
-                    </div>
-  
-                    {menuItem.subItems ? (
-                      <>
-                        {openMenuItems.includes(menuItem.key) ? (
-                          <img src={Minus} alt="minus-icon" />
-                        ) : (
-                          <img src={Plus} alt="plus-icon" />
-                        )}
-                      </>
-                    ) : null}
-                  </div>
-  
-                  {/* SubItems */}
-                  {menuItem.subItems && openMenuItems.includes(menuItem.key) && (
-                    <div className={`flex flex-col ml-4 transition-all duration-100`}>
-                      {menuItem.subItems.map((subMenuItem) => (
-                        <div key={subMenuItem.key} className="flex flex-col">
-                          <div
-                            onClick={() => toggleSubItems(subMenuItem.key)}
-                            className={`subItem cursor-pointer ${
-                              activeSubItems.includes(subMenuItem.key)
-                                ? 'selectedItem'
-                                : 'unSelectedItem'
-                            }`}
-                          >
-                            <span
-                              className={`dot ${
-                                activeSubItems.includes(subMenuItem.key)
-                                  ? 'dotActive'
-                                  : 'dotInActive'
-                              }`}
-                            ></span>
-                            <span className="itemDotLine"></span>
-                            <span>{subMenuItem.label}</span>
-                          </div>
-  
-                          {/* Small SubItem */}
-                          {subMenuItem.subItems &&
-                            activeSubItems.includes(subMenuItem.key) && (
-                              <div className="ml-6">
-                                {subMenuItem.subItems.map((childItem) => (
-                                  <div key={childItem.key} className={`subItem cursor-pointer ${
-                                    activeSubItems.includes(subMenuItem.key)
-                                      ? 'selectedItem'
-                                      : 'unSelectedItem'
-                                  }`}>
-                                    <span
-                                      className={`dot ${
-                                        activeSubItems.includes(childItem.key)
-                                          ? 'dotActive'
-                                          : 'dotInActive'
-                                      }`}
-                                    ></span>
-                                    <span className="itemDotLine"></span>
-                                    <span>{childItem.label}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+        <div className="flex flex-col w-70 max-h-screen bg-white fixed">
+            <div className="px-6.5 py-[30px] flex relative ">
+                <div className=" size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-[100] bg-black"></div>
+                <img src={MetronicLogo} alt="Metronic-Logo" />
             </div>
-          </div>
+            <div className="flex flex-col scrollbar-hidden ">
+                <div className="flex flex-col pb-2.5">
+                    <div className="flex flex-col gap-0 px-6.5">
+                        {menuData.map((menuItem) => (
+                            <div key={menuItem.key} className="flex flex-col">
+                                {/* Ana Menü Öğesi */}
+                                <div
+                                    onClick={() => toggleMenuItem(menuItem.key)}
+                                    className="flex flex-row justify-between items-center py-3 pb-2 hover: group cursor-pointer"
+                                >
+                                    <div className="flex flex-row gap-2.5 items-center">
+                                        <img src={menuItem.icon} alt="dashboard-icon" />
+                                        <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
+                                            {menuItem.label}
+                                        </span>
+                                    </div>
+
+                                    {menuItem.subItems ? (
+                                        <>
+                                            {openMenuItems.includes(menuItem.key) ? (
+                                                <img src={Minus} alt="minus-icon" />
+                                            ) : (
+                                                <img src={Plus} alt="plus-icon" />
+                                            )}
+                                        </>
+                                    ) : null}
+                                </div>
+
+                                {/* SubItems */}
+                                {menuItem.subItems && openMenuItems.includes(menuItem.key) && (
+                                    <div className={`flex flex-col ml-0 transition-all duration-100`}>
+                                        {menuItem.subItems.map((subMenuItem) => (
+                                            <div key={subMenuItem.key} className="flex flex-col">
+                                                <div onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
+                                                    <div
+
+                                                        className={`subItem w-full ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                            ? 'selectedItem'
+                                                            : 'unSelectedItem'
+                                                            }`}
+                                                    >
+
+                                                        <span
+                                                            className={`dot ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                                ? 'dotActive'
+                                                                : 'dotInActive'
+                                                                }`}
+                                                        ></span>
+
+                                                        <span className="itemDotLine"></span>
+
+
+                                                        <span className='group-hover:text-primary transition-colors'>{subMenuItem.label}</span>
+                                                    </div>
+                                                    {subMenuItem.subItems ? (
+                                                        <>
+                                                            {activeSubItems.includes(subMenuItem.key) ? (
+                                                                <img src={Minus} alt="minus-icon" />
+                                                            ) : (
+                                                                <img src={Plus} alt="plus-icon" />
+                                                            )}
+                                                        </>
+                                                    ) : null}
+                                                </div>
+
+
+                                                {/* Small SubItem */}
+                                                {subMenuItem.subItems &&
+                                                    activeSubItems.includes(subMenuItem.key) && (
+                                                        <div className="ml-3 relative">
+                                                            {subMenuItem.subItems.map((childItem) => (
+                                                                <div onClick={() => childSubItemTrigger(childItem.key)}
+                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                        ? 'selectedItem'
+                                                                        : 'unSelectedItem'
+                                                                        }`}>
+                                                                    <span
+                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                            ? 'dotActive ml-[7px]'
+                                                                            : 'dotInActive ml-[7px]'
+                                                                            }`}
+                                                                    ></span>
+                                                                    <span className="itemDotLine left-[21.25px]"></span>
+                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
+                                                                </div>
+                                                            ))}
+                                                            <span className="itemDotLine  top-0 left-[-1.5px]"></span>
+                                                        </div>
+                                                    )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     );
-  };
+};
 
 
 export default Sidebar;

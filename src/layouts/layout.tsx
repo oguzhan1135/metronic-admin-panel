@@ -9,9 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-row ">
-      <div className="fixed">
-        
-      </div>
+     
       <Sidebar />
       <div className="flex flex-col w-full">
         <Header />

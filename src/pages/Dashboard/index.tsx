@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 const Dashboard = () => {
     return (
-        <div className="bg-green-700 p-6 pt-24 ml-[280px]">
+        <div className="bg-green-700 p-6 pt-24 ml-[280px] z-40">
             <div className="flex flex-col">
                 <h1 className=" text-red-700 pb-40">
                     Dashboard
