@@ -1,5 +1,4 @@
 import MetronicLogo from '@assets/icon/metronic-logo.svg'
-import Rocket from '@assets/icon/rocket.svg'
 import Plus from '@assets/icon/plus.svg'
 import Minus from '@assets/icon/minus.svg'
 import Profile_Circle from '@assets/icon/profile-circle.svg'
@@ -11,11 +10,10 @@ import Dashboard_Icon from '@assets/icon/dashboard.svg'
 import Like_Tag from '@assets/icon/like-tag.svg'
 import Social from '@assets/icon/social-media.svg'
 import Company from '@assets/icon/company.svg'
-import Search from '@assets/icon/magnifier.svg'
 import Files from '@assets/icon/some-files.svg'
-import Note from '@assets/icon/note-2.svg'
-import Tablet from '@assets/icon/questionnaire-tablet.svg'
 import Handcart from '@assets/icon/handcart.svg'
+import SidebarLeft from '@assets/icon/black-left-line.svg'
+import MLogo from '@assets/icon/M-logo.svg'
 import { useEffect, useState } from 'react'
 
 
@@ -450,7 +448,7 @@ const menuData: MenuItem[] = [
         icon: Like_Tag
     },
     {
-        category: "pages",
+        category: "",
         key: "social",
         label: "Social",
         icon: Social,
@@ -484,10 +482,12 @@ const menuData: MenuItem[] = [
 
 
 ]
+interface SidebarProps {
+    onSidebarToggle: (isOpen: boolean) => void;
+}
 
 
-
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({ onSidebarToggle }) => {
     const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
     const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
     const [childSub, setChildSub] = useState<string>("");
@@ -519,17 +519,67 @@ const Sidebar = () => {
     const childSubItemTrigger = (item: string) => {
         setChildSub(item)
     }
+    const [sidebarWidth, setSidebarWidth] = useState<number>(280)
+    const [sidebarToggle, setSidebarToggle] = useState(false)
+
+    const handleSideBar = () => {
+        if (sidebarWidth === 280) {
+            setSidebarWidth(70)
+        }
+        else if (sidebarWidth === 280) {
+            setSidebarWidth(280)
+        }
+
+        console.log(sidebarWidth)
+    }
+    onSidebarToggle(sidebarToggle)
+    const hoverSidebar = () => {
+        if (sidebarToggle === true) {
+            if (sidebarWidth === 70) {
+                setSidebarWidth(280)
+                setSidebarToggle(!sidebarToggle)
+
+            }
+            else {
+                setSidebarWidth(70)
+            }
+        }
+
+
+    }
+    const hoverDownSidebar = () => {
+        if (sidebarToggle === false) {
+            setSidebarWidth(280)
+
+        } else {
+            setSidebarWidth(70)
+            
+        }
+    }
+
 
     return (
-        <div className="flex flex-col w-70 max-h-screen bg-white fixed">
-            <div className="px-6.5 py-[30px] flex relative ">
-                <div className=" size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-[100] bg-black"></div>
-                <img src={MetronicLogo} alt="Metronic-Logo" />
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex`}>
+            <div className="px-5 py-[30px] flex relative  w-">
+                <div onClick={() => {
+                    handleSideBar()
+                    setSidebarToggle(!sidebarToggle)
+                }} className=" flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-[100] bg-white ">
+                    <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
+
+                </div>
+                {
+                    sidebarWidth == 280 ?
+                        <>
+                            <img src={MetronicLogo} alt="Metronic-Logo" />
+                        </> :
+                        <><img src={MLogo} alt="logo" /></>
+                }
             </div>
             <div className="flex flex-col scrollbar-hidden ">
                 <div className="flex flex-col pb-2.5">
-                    <div className="flex flex-col gap-0 px-6.5">
-                        {menuData.map((menuItem) => (
+                    <div className="flex flex-col gap-0 px-6.5 ">
+                        {menuData.map((menuItem, index) => (
                             <div key={menuItem.key} className="flex flex-col">
                                 {/* Ana Menü Öğesi */}
                                 <div
@@ -538,12 +588,18 @@ const Sidebar = () => {
                                 >
                                     <div className="flex flex-row gap-2.5 items-center">
                                         <img src={menuItem.icon} alt="dashboard-icon" />
-                                        <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
-                                            {menuItem.label}
-                                        </span>
+                                        {
+                                            sidebarWidth == 280 ?
+                                                <>
+                                                    <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
+                                                        {menuItem.label}
+                                                    </span>
+                                                </> : null
+                                        }
+
                                     </div>
 
-                                    {menuItem.subItems ? (
+                                    {menuItem.subItems && sidebarWidth == 280 ? (
                                         <>
                                             {openMenuItems.includes(menuItem.key) ? (
                                                 <img src={Minus} alt="minus-icon" />
@@ -554,9 +610,11 @@ const Sidebar = () => {
                                     ) : null}
                                 </div>
 
+
                                 {/* SubItems */}
-                                {menuItem.subItems && openMenuItems.includes(menuItem.key) && (
-                                    <div className={`flex flex-col ml-0 transition-all duration-100`}>
+                                {menuItem.subItems && (
+                                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openMenuItems.includes(menuItem.key) ? "max-h-[500px]" : "max-h-0"
+                                        }`}>
                                         {menuItem.subItems.map((subMenuItem) => (
                                             <div key={subMenuItem.key} className="flex flex-col">
                                                 <div onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
@@ -594,8 +652,9 @@ const Sidebar = () => {
 
                                                 {/* Small SubItem */}
                                                 {subMenuItem.subItems &&
-                                                    activeSubItems.includes(subMenuItem.key) && (
-                                                        <div className="ml-3 relative">
+                                                    (
+                                                        <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"
+                                                            }`}>
                                                             {subMenuItem.subItems.map((childItem) => (
                                                                 <div onClick={() => childSubItemTrigger(childItem.key)}
                                                                     key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
@@ -612,13 +671,43 @@ const Sidebar = () => {
                                                                     <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
                                                                 </div>
                                                             ))}
-                                                            <span className="itemDotLine  top-0 left-[-1.5px]"></span>
+                                                            <span className="itemDotLine  top-0 left-[0px]"></span>
                                                         </div>
                                                     )}
                                             </div>
                                         ))}
                                     </div>
                                 )}
+
+                                {menuItem.category === "dashboards" ? (
+                                    <>
+                                        {
+                                            sidebarWidth === 280 ?
+                                                <span className="text-gray-500 text-b-13-20-500">USER</span> :
+                                                <span className='text-gray-500 text-b-13-20-500  text-center'>---</span>
+                                        }
+
+                                    </>
+                                ) : menuItem.category === "user" &&
+                                    menuData.findIndex((item) => item.category === "user") === index - 3 ? (
+                                    <>
+                                        {
+                                            sidebarWidth === 280 ?
+                                                <span className="text-gray-500 text-b-13-20-500">PAGES</span> :
+                                                <span className='text-gray-500 text-b-13-20-500  text-center'>---</span>
+                                        }
+
+                                    </>) : menuItem.category === "pages" &&
+                                        menuData.findIndex((item) => item.category === "pages") === index - 3 ? (
+                                    <>
+                                        {
+                                            sidebarWidth === 280 ?
+                                                <span className="text-gray-500 text-b-13-20-500">APPS</span> :
+                                                <span className='text-gray-500 text-b-13-20-500  text-center'>---</span>
+                                        }
+
+                                    </>) : null
+                                }
                             </div>
                         ))}
                     </div>

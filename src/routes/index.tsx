@@ -10,9 +10,8 @@ const Router = () => {
         <>
             <Layout>
                 <Routes>
-                    <Route path='/' element={<Dashboard />}></Route>
+                    <Route path='/' element={<Dashboard isOpen/>}></Route>
                     <Route path='/user' element={<User />}></Route>
-
                 </Routes>
             </Layout>
 
