@@ -1,13 +1,12 @@
 import { Link } from "react-router";
-interface DashboardProps {
-    isOpen: boolean;
-}
-const Dashboard: React.FC<DashboardProps> = ({ isOpen }) => {
+
+const Dashboard = () => {
+
     return (
-        <div className={`bg-gray-300 p-6 pt-24 ml-0 ${isOpen ? 'lg:ml-[280px]' : 'lg:ml-[70px]'}  transition-all w-full duration-500 ease-in-out  z-40`}>
+        <div className={``}>
             <div className="flex flex-col">
                 <h1 className=" text-red-700 pb-40">
-                    Dashboard
+                    Dashboardasds
                 </h1>
                 <h1 className=" text-red-700 pb-40">
                     Dashboard

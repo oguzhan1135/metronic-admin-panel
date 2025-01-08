@@ -15,6 +15,7 @@ import Handcart from '@assets/icon/handcart.svg'
 import SidebarLeft from '@assets/icon/black-left-line.svg'
 import MLogo from '@assets/icon/M-logo.svg'
 import { useEffect, useState } from 'react'
+import { metronicContext } from '../../context/layoutContet'
 
 
 interface MenuItem {
@@ -482,15 +483,13 @@ const menuData: MenuItem[] = [
 
 
 ]
-interface SidebarProps {
-    onSidebarToggle: (isOpen: boolean) => void;
-}
 
 
-const Sidebar: React.FC<SidebarProps> = ({ onSidebarToggle }) => {
+const Sidebar = () => {
     const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
     const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
     const [childSub, setChildSub] = useState<string>("");
+    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth } = metronicContext();
 
     const toggleMenuItem = (key: string) => {
         setOpenMenuItems((prevState) =>
@@ -519,8 +518,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onSidebarToggle }) => {
     const childSubItemTrigger = (item: string) => {
         setChildSub(item)
     }
-    const [sidebarWidth, setSidebarWidth] = useState<number>(280)
-    const [sidebarToggle, setSidebarToggle] = useState(false)
 
     const handleSideBar = () => {
         if (sidebarWidth === 280) {
@@ -532,12 +529,11 @@ const Sidebar: React.FC<SidebarProps> = ({ onSidebarToggle }) => {
 
         console.log(sidebarWidth)
     }
-    onSidebarToggle(sidebarToggle)
     const hoverSidebar = () => {
-        if (sidebarToggle === true) {
+        if (sidebarIsOpen === true) {
             if (sidebarWidth === 70) {
                 setSidebarWidth(280)
-                setSidebarToggle(!sidebarToggle)
+                setSidebarIsOpen(!sidebarIsOpen)
 
             }
             else {
@@ -548,23 +544,24 @@ const Sidebar: React.FC<SidebarProps> = ({ onSidebarToggle }) => {
 
     }
     const hoverDownSidebar = () => {
-        if (sidebarToggle === false) {
+        if (sidebarIsOpen === false) {
             setSidebarWidth(280)
 
         } else {
             setSidebarWidth(70)
-            
+
         }
     }
 
 
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex`}>
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex z-50`}>
             <div className="px-5 py-[30px] flex relative  w-">
                 <div onClick={() => {
                     handleSideBar()
-                    setSidebarToggle(!sidebarToggle)
-                }} className=" flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-[100] bg-white ">
+                    setSidebarIsOpen(!sidebarIsOpen)
+                }} className="flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
+                style={{ zIndex: 100000 }} >
                     <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
 
                 </div>

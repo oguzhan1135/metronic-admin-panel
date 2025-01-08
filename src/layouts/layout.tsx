@@ -1,34 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Sidebar from '../components/Sidebar'; // Sidebar bileşeni
 import Header from '../components/navbar';   // Header bileşeni
+import { metronicContext } from '../context/layoutContet';
 
-interface LayoutProps {
-  children: React.ReactNode;  // Sayfa içeriği buraya gelecek
-  isOpenSidebar: boolean;
-}
-const MainChildren: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children, }: { children: React.ReactNode; }) => {
+
+  const {sidebarIsOpen}= metronicContext()
   return (
-    <main className=''>
-      {children}
-    </main>
-  )
-}
 
-const Layout: React.FC<LayoutProps> = ({ children, isOpenSidebar }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const handleSidebarState = (isOpen: boolean) => {
-    setIsSidebarOpen(isOpen);
-  };
-  return (
     <div className="flex flex-row ">
-
-      <Sidebar onSidebarToggle={handleSidebarState} />
-      <div className="flex flex-col w-full">
-        <Header isOpen={isSidebarOpen} />
-        <MainChildren children={children} isOpenSidebar={isSidebarOpen} />
+      <Sidebar />
+      <div className="flex flex-col gap-40 w-full">
+         <Header />
+        <main className={` bg-transparent p-6 pt-24 ml-0 ${sidebarIsOpen ? 'lg:pl-[94px]' : 'lg:pl-[304px]'}  transition-all w-full duration-500 ease-in-out  z-40`}>
+       
+          {children}
+        </main>
       </div>
     </div>
+
   );
 };
 

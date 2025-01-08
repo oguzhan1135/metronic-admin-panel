@@ -1,10 +1,17 @@
+import { LayoutProvider } from './context/layoutContet'
+import Layout from './layouts/layout'
 import Router from './routes/index'
 
 function App() {
 
   return (
     <>
-      <Router />
+      <LayoutProvider>
+        <Layout>
+           <Router />
+        </Layout>
+      </LayoutProvider>
+
     </>
   )
 }
