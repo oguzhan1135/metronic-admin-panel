@@ -18,11 +18,8 @@ export interface Dropdown {
 
 const Navbar = () => {
     const { sidebarIsOpen } = metronicContext();
-    const [open, setOpen] = useState(false)
     const [selectedDropdown, setSelectedDropdown] = useState<Dropdown>()
-    const handleOpenDrowpdown = () => {
-        setOpen(!open)
-    }
+   
 
     const [dropdowns, setDropdowns] = useState<Dropdown[]>([
 

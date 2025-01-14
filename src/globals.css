@@ -38,3 +38,11 @@
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome, Safari ve Edge için */
   }
+
+  .dropdown-icon{
+    @apply w-[18px] h-[18px] text-gray-500
+  }
+  .text-animation
+  {
+    @apply transition-all ease-in-out duration-200
+  }
