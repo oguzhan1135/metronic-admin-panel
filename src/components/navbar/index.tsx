@@ -7,6 +7,7 @@ import Messages from '../../assets/icon/messages.svg'
 import Apps from '../../assets/icon/apps.svg'
 import ExampleUser from '../../assets/icon/example-user.svg'
 import User from './dropdowns/user'
+import DropDownApps from '../navbar/dropdowns/apps'
 
 export interface Dropdown {
     id: number;
@@ -92,7 +93,9 @@ const Navbar = () => {
                                     selectedDropdown.tag === "user" ?
                                         <>
                                             <User />
-                                        </> : null //to be continued...
+                                        </> : 
+                                        selectedDropdown.tag === "apps"?
+                                        <DropDownApps/>:null
                                 }
                             </> : null
                     }
