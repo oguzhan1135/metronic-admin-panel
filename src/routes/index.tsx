@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router";
-import Dashboard from "../pages/Dashboard";
-import User from "../pages/User";
+import Dashboard from "../pages/dashboards";
+import Default from "../pages/user/publicProfiles/profiles/default"
 import '../globals.css'
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
         <>
                 <Routes>
                     <Route path='/' element={<Dashboard/>}></Route>
-                    <Route path='/user' element={<User />}></Route>
+                    <Route path='/user/publicProfiles/profiles/default' element={<Default />}></Route>
                 </Routes>
         </>
     );

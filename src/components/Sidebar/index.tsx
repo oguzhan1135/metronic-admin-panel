@@ -16,6 +16,7 @@ import SidebarLeft from '@assets/icon/black-left-line.svg'
 import MLogo from '@assets/icon/M-logo.svg'
 import { useEffect, useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
+import { Link } from 'react-router'
 
 
 interface MenuItem {
@@ -561,7 +562,7 @@ const Sidebar = () => {
                     handleSideBar()
                     setSidebarIsOpen(!sidebarIsOpen)
                 }} className="flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
-                style={{ zIndex: 100000 }} >
+                    style={{ zIndex: 100000 }} >
                     <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
 
                 </div>
@@ -614,7 +615,7 @@ const Sidebar = () => {
                                         }`}>
                                         {menuItem.subItems.map((subMenuItem) => (
                                             <div key={subMenuItem.key} className="flex flex-col">
-                                                <div onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
+                                                <Link to={"/"} onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
                                                     <div
 
                                                         className={`subItem w-full ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
@@ -644,7 +645,7 @@ const Sidebar = () => {
                                                             )}
                                                         </>
                                                     ) : null}
-                                                </div>
+                                                </Link>
 
 
                                                 {/* Small SubItem */}
@@ -653,7 +654,9 @@ const Sidebar = () => {
                                                         <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"
                                                             }`}>
                                                             {subMenuItem.subItems.map((childItem) => (
-                                                                <div onClick={() => childSubItemTrigger(childItem.key)}
+
+                                                                <Link
+                                                                    to="/user/publicProfiles/profiles/default" onClick={() => childSubItemTrigger(childItem.key)}
                                                                     key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
                                                                         ? 'selectedItem'
                                                                         : 'unSelectedItem'
@@ -666,7 +669,7 @@ const Sidebar = () => {
                                                                     ></span>
                                                                     <span className="itemDotLine left-[21.25px]"></span>
                                                                     <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
-                                                                </div>
+                                                                </Link>
                                                             ))}
                                                             <span className="itemDotLine  top-0 left-[0px]"></span>
                                                         </div>

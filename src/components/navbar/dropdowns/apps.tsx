@@ -10,34 +10,41 @@ const DropdownApps = () => {
         {
             name: "Jira",
             description: "Project management",
-            status: "false",
+            status: false,
             icon: <img src={Jira} alt="" />
         },
         {
             name: "Inferno",
             description: "Ensures healthcare app",
-            status: "false",
+            status: false,
             icon: <img src={Inferno} alt="" />
         },
         {
             name: "Evernote",
             description: "Notes management app",
-            status: "false",
+            status: false,
             icon: <img src={Evernote} alt="" />
         },
         {
             name: "Gitlab",
             description: "DevOps platform",
-            status: "false",
+            status: false,
             icon: <img src={Gitlab} alt="" />
         },
         {
             name: "Google webdev",
             description: "Building web expierences",
-            status: "false",
+            status: false,
             icon: <img src={Webdev} alt="" />
         }
     ])
+    const toggleApps = (key: string) => {
+        setApps((prevApps) =>
+            prevApps.map((app) =>
+                app.name === key ? { ...app, status: !app.status } : app
+            )
+        );
+    };
     const [appSwitch, setAppSwitch] = useState(false)
     return (
         <div className="absolute  top-12 right-20 w-80">
@@ -61,8 +68,8 @@ const DropdownApps = () => {
                                         </div>
                                     </div>
 
-                                    <Switch status={appSwitch}
-                                        setSwitch={() => setAppSwitch(!appSwitch)}
+                                    <Switch status={item.status}
+                                        setSwitch={() => toggleApps(item.name)}
                                         size="small" />
                                 </div>
                             </div>

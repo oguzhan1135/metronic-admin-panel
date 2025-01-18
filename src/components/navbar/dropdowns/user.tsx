@@ -1,14 +1,10 @@
 import ExampleUser from '../../../assets/icon/example-user.svg'
-import Profile from '../../../assets/icon/user-edit.svg'
 import { FaChevronRight } from "react-icons/fa6";
-import Profile_Circle from '@assets/icon/profile-circle.svg'
-import Setting from '@assets/icon/setting.svg'
 import { TbWorld } from "react-icons/tb";
-import { IoIosNotifications, IoMdNotifications } from "react-icons/io";
+import { IoIosNotifications } from "react-icons/io";
 import Switch from '../../switch';
 import { useState } from 'react';
 import { FaCheckCircle, FaMoneyBill, FaMoon, FaRegUserCircle, FaRocket } from 'react-icons/fa';
-import { GrLanguage } from 'react-icons/gr';
 import { GoCodeReview } from 'react-icons/go';
 import FlagUSA from '../../../assets/icon/united-states.svg'
 import { BsPersonVcard } from 'react-icons/bs';
