@@ -25,6 +25,7 @@ interface MenuItem {
     label: string;
     subItems?: MenuItem[];
     icon?: string;
+    path?: string;
 }
 const menuData: MenuItem[] = [
     {
@@ -34,13 +35,13 @@ const menuData: MenuItem[] = [
         subItems: [
             {
 
-                category: "dashboards", key: "light", label: "Light Sidebar"
+                category: "dashboards", key: "light", label: "Light Sidebar", path: "/"
             },
             {
-                category: "dashboards", key: "dark", label: "Dark Sidebar"
+                category: "dashboards", key: "dark", label: "Dark Sidebar", path: "/"
             }
         ],
-        icon: Dashboard_Icon
+        icon: Dashboard_Icon,
     },
     {
         category: "user",
@@ -53,34 +54,34 @@ const menuData: MenuItem[] = [
                 label: "Profiles",
                 subItems: [
                     {
-                        category: "user", key: "default", label: "Default"
+                        category: "user", key: "default", label: "Default", path: "/user/publicprofiles/profiles/default"
                     },
                     {
-                        category: "user", key: "creator", label: "Creator"
+                        category: "user", key: "creator", label: "Creator", path: "/user/publicprofiles/profiles/creator"
                     },
                     {
-                        category: "user", key: "company", label: "Company"
+                        category: "user", key: "company", label: "Company", path: "/user/publicprofiles/profiles/company"
                     },
                     {
-                        category: "user", key: "nft", label: "NFT"
+                        category: "user", key: "nft", label: "NFT", path: "/user/publicprofiles/profiles/nft"
                     },
                     {
-                        category: "user", key: "blogger", label: "Blogger"
+                        category: "user", key: "blogger", label: "Blogger", path: "/user/publicprofiles/profiles/blogger"
                     },
                     {
-                        category: "user", key: "crm", label: "CRM"
+                        category: "user", key: "crm", label: "CRM", path: "/user/publicprofiles/profiles/crm"
                     },
                     {
-                        category: "user", key: "gamer", label: "Gamer"
+                        category: "user", key: "gamer", label: "Gamer", path: "/user/publicprofiles/profiles/gamer"
                     },
                     {
-                        category: "user", key: "feeds", label: "Feeds"
+                        category: "user", key: "feeds", label: "Feeds", path: "/user/publicprofiles/profiles/feeds"
                     },
                     {
-                        category: "user", key: "plain", label: "PLain"
+                        category: "user", key: "plain", label: "Plain", path: "/user/publicprofiles/profiles/plain"
                     },
                     {
-                        category: "user", key: "modal", label: "Modal"
+                        category: "user", key: "modal", label: "Modal", path: "/user/publicprofiles/profiles/modal"
                     }
                 ]
 
@@ -91,47 +92,54 @@ const menuData: MenuItem[] = [
                 label: "Projects",
                 subItems: [
                     {
-                        category: "user", key: "column-3", label: "3 Columns"
+                        category: "user", key: "column-3", label: "3 Columns",path:"/user/publicProfiles/projects/threeColumns"
                     },
                     {
-                        category: "user", key: "column-2", label: "2 Columns"
+                        category: "user", key: "column-2", label: "2 Columns",path:"/user/publicProfiles/projects/twoColumns"
                     }
                 ]
             },
             {
                 category: "user",
                 key: "works",
-                label: "Works"
+                label: "Works",
+                path: "/user/publicprofiles/works"
             },
             {
                 category: "user",
                 key: "teams",
-                label: "Teams"
+                label: "Teams",
+                path: "/user/publicprofiles/teams"
             },
             {
                 category: "user",
                 key: "network",
-                label: "Network"
+                label: "Network",
+                path: "/user/publicprofiles/network"
             },
             {
                 category: "user",
                 key: "activity",
-                label: "Activity"
+                label: "Activity",
+                path: "/user/publicprofiles/activity"
             },
             {
                 category: "user",
                 key: "chanpaigns-card",
-                label: "Champaigns - Card"
+                label: "Champaigns - Card",
+                path: "/user/publicprofiles/champaigns-card"
             },
             {
                 category: "user",
                 key: "chanpaigns-list",
-                label: "Champaigns - List"
+                label: "Champaigns - List",
+                path: "/user/publicprofiles/champaigns-list"
             },
             {
                 category: "user",
                 key: "empty",
-                label: "Empty"
+                label: "Empty",
+                path: "/user/publicprofiles/empty"
             }
         ],
         icon: Profile_Circle
@@ -615,37 +623,71 @@ const Sidebar = () => {
                                         }`}>
                                         {menuItem.subItems.map((subMenuItem) => (
                                             <div key={subMenuItem.key} className="flex flex-col">
-                                                <Link to={"/"} onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
-                                                    <div
+                                                {
+                                                    subMenuItem.path ?
+                                                        <Link to={subMenuItem.path} onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
+                                                            <div
 
-                                                        className={`subItem w-full ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
-                                                            ? 'selectedItem'
-                                                            : 'unSelectedItem'
-                                                            }`}
-                                                    >
+                                                                className={`subItem w-full ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                                    ? 'selectedItem'
+                                                                    : 'unSelectedItem'
+                                                                    }`}
+                                                            >
 
-                                                        <span
-                                                            className={`dot ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
-                                                                ? 'dotActive'
-                                                                : 'dotInActive'
-                                                                }`}
-                                                        ></span>
+                                                                <span
+                                                                    className={`dot ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                                        ? 'dotActive'
+                                                                        : 'dotInActive'
+                                                                        }`}
+                                                                ></span>
 
-                                                        <span className="itemDotLine"></span>
+                                                                <span className="itemDotLine"></span>
 
 
-                                                        <span className='group-hover:text-primary transition-colors'>{subMenuItem.label}</span>
-                                                    </div>
-                                                    {subMenuItem.subItems ? (
-                                                        <>
-                                                            {activeSubItems.includes(subMenuItem.key) ? (
-                                                                <img src={Minus} alt="minus-icon" />
-                                                            ) : (
-                                                                <img src={Plus} alt="plus-icon" />
-                                                            )}
-                                                        </>
-                                                    ) : null}
-                                                </Link>
+                                                                <span className='group-hover:text-primary transition-colors'>{subMenuItem.label}</span>
+                                                            </div>
+                                                            {subMenuItem.subItems ? (
+                                                                <>
+                                                                    {activeSubItems.includes(subMenuItem.key) ? (
+                                                                        <img src={Minus} alt="minus-icon" />
+                                                                    ) : (
+                                                                        <img src={Plus} alt="plus-icon" />
+                                                                    )}
+                                                                </>
+                                                            ) : null}
+                                                        </Link> :
+                                                        <div onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
+                                                            <div
+
+                                                                className={`subItem w-full ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                                    ? 'selectedItem'
+                                                                    : 'unSelectedItem'
+                                                                    }`}
+                                                            >
+
+                                                                <span
+                                                                    className={`dot ${activeSubItems.includes(subMenuItem.key) && !subMenuItem.subItems
+                                                                        ? 'dotActive'
+                                                                        : 'dotInActive'
+                                                                        }`}
+                                                                ></span>
+
+                                                                <span className="itemDotLine"></span>
+
+
+                                                                <span className='group-hover:text-primary transition-colors'>{subMenuItem.label}</span>
+                                                            </div>
+                                                            {subMenuItem.subItems ? (
+                                                                <>
+                                                                    {activeSubItems.includes(subMenuItem.key) ? (
+                                                                        <img src={Minus} alt="minus-icon" />
+                                                                    ) : (
+                                                                        <img src={Plus} alt="plus-icon" />
+                                                                    )}
+                                                                </>
+                                                            ) : null}
+                                                        </div>
+                                                }
 
 
                                                 {/* Small SubItem */}
@@ -655,21 +697,44 @@ const Sidebar = () => {
                                                             }`}>
                                                             {subMenuItem.subItems.map((childItem) => (
 
-                                                                <Link
-                                                                    to="/user/publicProfiles/profiles/default" onClick={() => childSubItemTrigger(childItem.key)}
-                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                        ? 'selectedItem'
-                                                                        : 'unSelectedItem'
-                                                                        }`}>
-                                                                    <span
-                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                            ? 'dotActive ml-[7px]'
-                                                                            : 'dotInActive ml-[7px]'
-                                                                            }`}
-                                                                    ></span>
-                                                                    <span className="itemDotLine left-[21.25px]"></span>
-                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
-                                                                </Link>
+                                                                <>
+                                                                    {
+                                                                        childItem.path ?
+                                                                            <>
+                                                                                <><Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
+                                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                        ? 'selectedItem'
+                                                                                        : 'unSelectedItem'
+                                                                                        }`}>
+                                                                                    <span
+                                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                            ? 'dotActive ml-[7px]'
+                                                                                            : 'dotInActive ml-[7px]'
+                                                                                            }`}
+                                                                                    ></span>
+                                                                                    <span className="itemDotLine left-[21.25px]"></span>
+                                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
+                                                                                </Link>
+                                                                                </>
+                                                                            </> :
+                                                                            <>
+                                                                                <div onClick={() => childSubItemTrigger(childItem.key)}
+                                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                        ? 'selectedItem'
+                                                                                        : 'unSelectedItem'
+                                                                                        }`}>
+                                                                                    <span
+                                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                            ? 'dotActive ml-[7px]'
+                                                                                            : 'dotInActive ml-[7px]'
+                                                                                            }`}
+                                                                                    ></span>
+                                                                                    <span className="itemDotLine left-[21.25px]"></span>
+                                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
+                                                                                </div>
+                                                                            </>
+                                                                    }
+                                                                </>
                                                             ))}
                                                             <span className="itemDotLine  top-0 left-[0px]"></span>
                                                         </div>

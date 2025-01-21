@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar'; // Sidebar bileşeni
+import Sidebar from '../components/sidebar'; // Sidebar bileşeni
 import Header from '../components/navbar';   // Header bileşeni
 import { metronicContext } from '../context/layoutContet';
 

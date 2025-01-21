@@ -14,7 +14,7 @@ const Navigation = () => {
         }
     }, [location.pathname])
     return (
-        <span className="text-gray-900 text-b-14-14-500">{pagePath}</span>
+        <span className="text-gray-900 text-b-14-14-500">{location.pathname}</span>
     );
 }
 

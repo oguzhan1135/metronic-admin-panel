@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { metronicContext } from "../../context/layoutContet";
 import Navigation from "./navigation";
 import Search from '../../assets/icon/magnifier.svg';
-import Notification from '../../assets/icon/notification-status.svg';
+import NotificationImg from '../../assets/icon/notification-status.svg';
 import Messages from '../../assets/icon/messages.svg';
 import Apps from '../../assets/icon/apps.svg';
 import ExampleUser from '../../assets/icon/example-user.svg';
 import User from './dropdowns/user';
 import DropdownApps from "../navbar/dropdowns/apps";
-
+import Chats from '../navbar/dropdowns/chat'
+import Notification from "./dropdowns/notification";
 export interface Dropdown {
     id: number;
     tag: string;
@@ -25,7 +26,7 @@ const Navbar = () => {
             id: 3,
             tag: "notifications",
             status: false,
-            icon: <img src={Notification} alt="Notification" />,
+            icon: <img src={NotificationImg} alt="NotificationImg" />,
         },
         {
             id: 4,
@@ -127,6 +128,20 @@ const Navbar = () => {
                             } absolute right-0 transition-all duration-300 ease-in-out`}
                     >
                         <DropdownApps />
+                    </div>
+                    <div
+                        className={`${selectedDropdown?.tag === "chat" && selectedDropdown.status ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                            } absolute right-0 transition-all duration-300 ease-in-out`}
+                    >
+                        <Chats />
+
+                    </div>
+                    <div
+                        className={`${selectedDropdown?.tag === "notifications" && selectedDropdown.status ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                            } absolute right-0 transition-all duration-300 ease-in-out`}
+                    >
+                        <Notification />
+
                     </div>
                 </div>
             </div>
