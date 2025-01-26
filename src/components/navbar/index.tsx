@@ -104,7 +104,7 @@ const Navbar = () => {
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />
-                <div className="flex flex-row gap-5 text-red-900 relative dropdown-container">
+                <div className="flex flex-row gap-5 text-red-900 relative dropdown-container bg-white">
                     <img src={Search} alt="search" />
 
                     {dropdowns.map((item) => (

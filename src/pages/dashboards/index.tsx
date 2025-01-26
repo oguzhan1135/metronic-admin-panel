@@ -6,6 +6,9 @@ import Instagram from '../../assets/icon/instagram.svg'
 import Tiktok from '../../assets/icon/tiktok.svg'
 import AvatarGroup from "../../assets/icon/avatar-group.svg"
 import WidgetBackground from '../../assets/icon/widget-background.svg'
+import { HiOutlineDotsVertical } from "react-icons/hi";
+import { CiShop } from "react-icons/ci";
+import { FaArrowUp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Dashboard = () => {
 
@@ -84,10 +87,93 @@ const Dashboard = () => {
 
                     </div>
 
-                    <div className="grid col-span-5 gap-[30px] rounded-md p-3 border border-gray-200">
-                        <span>Highlights</span>
+                    <div className="grid col-span-4  rounded-md  border border-gray-200">
+                        <div className="  border-b border-gray-300 ">
+                            <div className=" flex flex-row px-[30px] py-5 justify-between items-center ">
+                                <span>Highlights</span>
+                                <HiOutlineDotsVertical />
+                            </div>
+                        </div>
+                        <div className="flex flex-col py-5 px-[30px] gap-2">
+                            <span>All time sales</span>
+                            <div className="flex flex-row items-center gap-2.5">
+                                <span className="text-h-30-30-600">$295.7k</span>
+                                <div className="rounded-md px-1.5 py-[5px] flex flex-row items-center justify-center bg-success-light border border-success">
+                                    <span className="text-success">+2.7%</span>
+                                </div>
+
+                            </div>
+                            <div className="flex flex-col gap-5 pt-3 border-b border-gray-300 pb-5">
+                                <div className="grid grid-cols-12 gap-1 ">
+                                    <span className="grid col-span-7 bg-success rounded-md p-2"></span>
+                                    <span className="grid col-span-3 bg-orange-500 rounded-md  p-2"></span>
+                                    <span className="grid col-span-2 bg-purple-600 rounded-md p-2"></span>
+
+                                </div>
+
+                                <div className="flex flex-row items-center gap-4">
+                                    <div className="flex flex-row gap-[7px] items-center">
+                                        <span className="bg-success rounded-full p-2"></span>
+                                        <span className="text-b-14-22-400 text-gray-800">Metronic</span>
+                                    </div>
+                                    <div className="flex flex-row gap-[7px] items-center">
+                                        <span className="bg-orange-500 rounded-full p-2"></span>
+                                        <span className="text-b-14-22-400 text-gray-800">Bundle</span>
+                                    </div>
+                                    <div className="flex flex-row gap-[7px] items-center">
+                                        <span className="bg-purple-600 rounded-full p-2"></span>
+                                        <span className="text-b-14-22-400 text-gray-800">MetronicNest</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-4 items-center pt-">
+                                <div className="flex flex-row justify-between items-center w-full">
+                                    <div className="flex flex-row items-center gap-[6px]">
+                                        <CiShop />
+                                        <span className="text-b-14-14-400 text-gray-900">Online Store</span>
+                                    </div>
+                                    <span className="">$172</span>
+                                    <div className="flex flex-row items-center gap-1">
+                                        <FaArrowUp />
+                                        <span>3.9%</span>
+                                    </div>
+
+                                </div>
+                                <div className="flex flex-row justify-between items-center w-full">
+                                    <div className="flex flex-row items-center gap-[6px]">
+                                        <FaFacebook />
+                                        <span className="text-b-14-14-400 text-gray-900">Facebook</span>
+                                    </div>
+                                    <div className="flex flex-row items-center gap-7">
+                                        <span className="">$172</span>
+                                        <div className="flex flex-row items-center gap-1">
+                                            <FaArrowUp />
+                                            <span>3.9%</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div className="flex flex-row justify-between items-center w-full">
+                                    <div className="flex flex-row items-center gap-[6px]">
+                                        <FaInstagram />
+                                        <span className="text-b-14-14-400 text-gray-900">Instagram</span>
+                                    </div>
+                                    <span className="">$172</span>
+                                    <div className="flex flex-row items-center gap-1">
+                                        <FaArrowUp />
+                                        <span>3.9%</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
                     </div>
-                    <div className="grid col-span-7 p-5  border border-gray-200">Earnings</div>
+                    <div className="grid col-span-8 p-5  border border-gray-200">Earnings</div>
                     <div className="grid col-span-5 gap-[30px] rounded-md p-3 border border-gray-200">
                         <span>Team Meatings</span>
                     </div>
