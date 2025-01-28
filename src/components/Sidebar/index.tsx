@@ -564,13 +564,13 @@ const Sidebar = () => {
 
 
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex z-50`}>
-            <div className="px-5 py-[30px] flex relative  w-">
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex z-50 h-full`}>
+            <div className="px-5 py-[30px] flex relative">
                 <div onClick={() => {
                     handleSideBar()
                     setSidebarIsOpen(!sidebarIsOpen)
                 }} className="flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
-                    style={{ zIndex: 100000 }} >
+                    style={{ zIndex: 0 }} >
                     <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
 
                 </div>
@@ -621,8 +621,8 @@ const Sidebar = () => {
                                 {menuItem.subItems && (
                                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openMenuItems.includes(menuItem.key) ? "max-h-[500px]" : "max-h-0"
                                         }`}>
-                                        {menuItem.subItems.map((subMenuItem) => (
-                                            <div key={subMenuItem.key} className="flex flex-col">
+                                        {menuItem.subItems.map((subMenuItem,key) => (
+                                            <div key={key} className="flex flex-col">
                                                 {
                                                     subMenuItem.path ?
                                                         <Link to={subMenuItem.path} onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
@@ -695,13 +695,13 @@ const Sidebar = () => {
                                                     (
                                                         <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"
                                                             }`}>
-                                                            {subMenuItem.subItems.map((childItem) => (
+                                                            {subMenuItem.subItems.map((childItem,key) => (
 
-                                                                <>
+                                                                <div key={key}>
                                                                     {
                                                                         childItem.path ?
                                                                             <>
-                                                                                <><Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
+                                                                                <><Link  to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
                                                                                     key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
                                                                                         ? 'selectedItem'
                                                                                         : 'unSelectedItem'
@@ -734,7 +734,7 @@ const Sidebar = () => {
                                                                                 </div>
                                                                             </>
                                                                     }
-                                                                </>
+                                                                </div>
                                                             ))}
                                                             <span className="itemDotLine  top-0 left-[0px]"></span>
                                                         </div>

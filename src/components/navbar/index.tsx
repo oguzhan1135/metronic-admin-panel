@@ -100,7 +100,7 @@ const Navbar = () => {
     return (
         <div
             className={`flex w-full h-20 px-10 py-8 fixed ${sidebarIsOpen ? "lg:pl-[110px]" : "lg:pl-[320px]"
-                } transition-all duration-500 ease-in-out z-50`}
+                } transition-all duration-500 ease-in-out z-30 bg-white`}
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />

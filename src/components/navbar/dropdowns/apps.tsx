@@ -57,8 +57,8 @@ const DropdownApps = () => {
                 </div>
                 <div className="flex flex-col">
                     {
-                        apps.map((item) => (
-                            <div className="border-b border-gray-200 px-5 py-[14px]">
+                        apps.map((item,key) => (
+                            <div key={key} className="border-b border-gray-200 px-5 py-[14px]">
                                 <div className="flex flex-row items-center justify-between ">
                                     <div className="flex flex-row gap-2 items-center">
                                         {item.icon}
