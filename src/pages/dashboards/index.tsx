@@ -12,6 +12,7 @@ import { FaArrowUp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa6";
 import Meeting from '../../assets/icon/meeting.svg';
 import { FiUsers } from "react-icons/fi";
+import EarningChart from "../../components/charts/earningChart";
 
 const Dashboard = () => {
 
@@ -66,7 +67,7 @@ const Dashboard = () => {
 
                     </div>
                     {/* Get started area */}
-                    <div className="grid lg:col-span-8 col-span-12 relative  border rounded-md min-h-[350px] ">
+                    <div className="grid lg:col-span-8 col-span-12 relative  border rounded-xl min-h-[350px] ">
                         <div className="flex flex-col  ">
                             <div className="flex flex-row">
                                 <div className="flex flex-col gap-4 p-5">
@@ -86,7 +87,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     {/* Highlights area */}
-                    <div className="grid lg:col-span-4 col-span-12 border rounded-md border-gray-300">
+                    <div className="grid lg:col-span-4 col-span-12 border rounded-xl border-gray-300">
 
                         <div className="flex flex-col w-full">
                             <div className=" flex flex-row px-[30px] py-5 border-b  justify-between items-center ">
@@ -98,16 +99,16 @@ const Dashboard = () => {
                                 <span>All time sales</span>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <span className="text-h-30-30-600">$295.7k</span>
-                                    <div className="rounded-md px-1.5 py-[5px] flex flex-row items-center justify-center bg-success-light border border-success">
+                                    <div className="rounded-xl px-1.5 py-[5px] flex flex-row items-center justify-center bg-success-light border border-success">
                                         <span className="text-success">+2.7%</span>
                                     </div>
 
                                 </div>
                                 <div className="flex flex-col gap-5 pt-3 border-b border-gray-300 pb-5">
                                     <div className="grid grid-cols-12 gap-1 ">
-                                        <span className="grid col-span-7 bg-success rounded-md "></span>
-                                        <span className="grid col-span-3 bg-orange-500 rounded-md"></span>
-                                        <span className="grid col-span-2 bg-purple-600 rounded-md lg:p-2 p-1"></span>
+                                        <span className="grid col-span-7 bg-success rounded-sm "></span>
+                                        <span className="grid col-span-3 bg-orange-500 rounded-sm"></span>
+                                        <span className="grid col-span-2 bg-purple-600 rounded-sm lg:p-2 p-1"></span>
 
                                     </div>
 
@@ -179,11 +180,11 @@ const Dashboard = () => {
                         </div>
                     </div>
                     {/* Get started area */}
-                    <div className="grid lg:col-span-8 col-span-12 bg-red-400 rounded-md p-2">
-                        Eraning Chart Area
+                    <div className="grid lg:col-span-8 col-span-12 rounded-xl border">
+                        <EarningChart />
                     </div>
                     {/* Team Meeting Area */}
-                    <div className="grid lg:col-span-4 col-span-12 border rounded-md border-gray-300 relative min-h-96">
+                    <div className="grid lg:col-span-4 col-span-12 border rounded-xl border-gray-300 relative min-h-96">
                         <div className="flex flex-col gap-[33.5px] p-[30px]">
                             <div className="flex justify-between items-center ">
                                 <div className="flex flex-col flex-start gap-2.5">
@@ -218,7 +219,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     {/* Teams Area */}
-                    <div className="grid lg:col-span-8 col-span-12 bg-red-400 rounded-md p-2">
+                    <div className="grid lg:col-span-8 col-span-12 bg-red-400 rounded-xl p-2">
                         Team table Area
                     </div>
 
