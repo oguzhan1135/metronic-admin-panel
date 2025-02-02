@@ -7,16 +7,17 @@ import Tiktok from '../../assets/icon/tiktok.svg'
 import AvatarGroup from "../../assets/icon/avatar-group.svg"
 import WidgetBackground from '../../assets/icon/widget-background.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
-import { CiLocationOn, CiSearch, CiShop } from "react-icons/ci";
+import { CiLocationOn, CiShop } from "react-icons/ci";
 import { FaArrowUp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa6";
 import Meeting from '../../assets/icon/meeting.svg';
 import { FiUsers } from "react-icons/fi";
 import EarningChart from "../../components/charts/earningChart";
-import { MdUnfoldMore } from "react-icons/md";
-import Raiting from "../../assets/icon/raiting.svg"
+import Teams from "../../components/dashboards/teams";
+
 
 const Dashboard = () => {
+
 
     return (
         <div className={``}>
@@ -221,158 +222,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     {/* Teams Area */}
-                    <div className="grid lg:col-span-8 col-span-12 border rounded-xl">
-                        <div className="flex flex-col overflow-hidden ">
-                            <div className="border-b">
-                                <div className="flex flex-row items-center justify-between py-3 px-5">
-                                    <span className="text-gray-900 text-b-16-16-600">Teams</span>
-                                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-gray-100">
-                                        <CiSearch className="text-gray-600" />
-                                        <input
-                                            type="text"
-                                            className="text-gray-600 text-b-11-12-400 border-0 bg-transparent outline-none"
-                                            placeholder="Search Teams"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col overflow-x-auto">
-                                <table className=" border-collapse  min-w-[700px]">
-                                    <thead>
-                                        <tr className="bg-gray-100">
-                                            <th className=" px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </th>
-                                            <th className="px-5 py-3 text-left">
-                                                <div className="flex flex-row items-center gap-1">
-                                                    <span className="text-b-13-14-400 text-gray-700">Team</span>
-                                                    <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                                </div>
-                                            </th>
-                                            <th className="px-5 py-3">
-                                                <div className="flex flex-row items-center gap-1">
-                                                    <span className="text-b-13-14-400 text-gray-700">Raiting</span>
-                                                    <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                                </div>
-                                            </th>
-                                            <th className="px-5 py-3 text-left">
-                                                <div className="flex flex-row items-center gap-1">
-                                                    <span className="text-b-13-14-400 text-gray-700">Last Modified</span>
-                                                    <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                                </div>
-                                            </th>
-                                            <th className="px-5 py-3">
-                                                <div className="flex flex-row items-center gap-1">
-                                                    <span className="text-b-13-14-400 text-gray-700">Members</span>
-                                                    <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr className="border-t">
-                                            <td className="w-[40px] px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </td>
-                                            <td className="px-5 py-3 flex flex-col gap-1">
-                                                <span className="text-b-14-14-500 text-gray-900">Product Management</span>
-                                                <span className="text-b-12-12-400 text-gray-700">Product development & lifecycle</span>
-                                            </td>
-                                            <td className="px-4 py-2 text-left">
-                                                <img src={Raiting} alt="" />
-                                            </td>
-                                            <td className="px-4 py-2">21 Oct, 2024</td>
-                                            <td className="px-4 py-2">
-                                                <img src={AvatarGroup} className="w-24 h-8" alt="" />
-                                            </td>
-                                        </tr>
-                                        <tr className="border-t">
-                                            <td className="w-[40px] px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </td>
-                                            <td className="px-5 py-3 flex flex-col gap-1">
-                                                <span className="text-b-14-14-500 text-gray-900">Marketing Team</span>
-                                                <span className="text-b-12-12-400 text-gray-700">Campaigns & market analysis</span>
-                                            </td>
-                                            <td className="px-4 py-2 text-left">
-                                                <img src={Raiting} alt="" />
-                                            </td>
-                                            <td className="px-4 py-2">21 Oct, 2024</td>
-                                            <td className="px-4 py-2">
-                                                <img src={AvatarGroup} className="w-24 h-8" alt="" />
-                                            </td>
-                                        </tr>
-                                        <tr className="border-t">
-                                            <td className="w-[40px] px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </td>
-                                            <td className="px-5 py-3 flex flex-col gap-1">
-                                                <span className="text-b-14-14-500 text-gray-900">HR Department</span>
-                                                <span className="text-b-12-12-400 text-gray-700">Talent acquisition, employee welfare</span>
-                                            </td>
-                                            <td className="px-4 py-2 text-left">
-                                                <img src={Raiting} alt="" />
-                                            </td>
-                                            <td className="px-4 py-2">21 Oct, 2024</td>
-                                            <td className="px-4 py-2">
-                                                <img src={AvatarGroup} className="w-24 h-8" alt="" />
-                                            </td>
-                                        </tr>
-                                        <tr className="border-t">
-                                            <td className="w-[40px] px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </td>
-                                            <td className="px-5 py-3 flex flex-col gap-1">
-                                                <span className="text-b-14-14-500 text-gray-900">Sales Division</span>
-                                                <span className="text-b-12-12-400 text-gray-700">Customer relations, sales strategy</span>
-                                            </td>
-                                            <td className="px-4 py-2 text-left">
-                                                <img src={Raiting} alt="" />
-                                            </td>
-                                            <td className="px-4 py-2">21 Oct, 2024</td>
-                                            <td className="px-4 py-2">
-                                                <img src={AvatarGroup} className="w-24 h-8" alt="" />
-                                            </td>
-                                        </tr>
-                                        <tr className="border-t">
-                                            <td className="w-[40px] px-5 py-3">
-                                                <div className="flex justify-center">
-                                                    <input type="checkbox" className="size-[16px]" />
-                                                </div>
-                                            </td>
-                                            <td className="px-5 py-3 flex flex-col gap-1">
-                                                <span className="text-b-14-14-500 text-gray-900">Sales Division</span>
-                                                <span className="text-b-12-12-400 text-gray-700">Customer relations, sales strategy</span>
-                                            </td>
-                                            <td className="px-4 py-2 text-left">
-                                                <img src={Raiting} alt="" />
-                                            </td>
-                                            <td className="px-4 py-2">21 Oct, 2024</td>
-                                            <td className="px-4 py-2">
-                                                <img src={AvatarGroup} className="w-24 h-8" alt="" />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-
-                                </table>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
+                    <Teams />
 
                 </div>
 
