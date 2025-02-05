@@ -5,7 +5,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { MdUnfoldMore } from "react-icons/md";
 import Raiting from "../../assets/icon/raiting.svg"
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Teams = () => {
     const teamsData = [
@@ -16,10 +16,29 @@ const Teams = () => {
         { id: 5, name: "Finance Team", description: "Budgeting & financial planning", date: "21 Oct, 2024" },
         { id: 6, name: "Engineering", description: "Software development & infrastructure", date: "21 Oct, 2024" },
         { id: 7, name: "Quality Assuarance", description: "Product testing", date: "21 Oct, 2024" },
-
     ];
     const [showCount, setShowCount] = useState(5);
+    const [upgradeData, setUpgradeData] = useState(teamsData.slice(0, showCount));
 
+    const previousData = () => {
+        setShowCount(showCount);
+        setUpgradeData(teamsData.slice(0, showCount))
+    };
+
+    const nextData = () => {
+        setUpgradeData(teamsData.slice(showCount, teamsData.length + showCount))
+
+    };
+    useEffect(() => {
+        if (showCount !== 5) {
+            setUpgradeData(teamsData.slice(0, showCount))
+        }
+        else {
+            setUpgradeData(teamsData.slice(0, 5))
+        }
+
+
+    }, [showCount])
 
     return (
         <div className="grid lg:col-span-8 col-span-12 border rounded-xl">
@@ -74,7 +93,7 @@ const Teams = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {teamsData.slice(0, showCount).map((team) => (
+                            {upgradeData.map((team) => (
                                 <tr key={team.id} className="border-t">
                                     <td className="w-[40px] px-5 py-3">
                                         <div className="flex justify-center">
@@ -107,6 +126,7 @@ const Teams = () => {
                     <div className="flex flex-row gap-3 items-center">
                         <span>Show</span>
                         <select
+
                             className="outline-none rounded-md p-2.5"
                             value={showCount}
                             onChange={(e) => setShowCount(Number(e.target.value))}
@@ -120,13 +140,13 @@ const Teams = () => {
 
                     <div className="flex flex-row items-center gap-0.5">
                         <span className="pr-4">1-10 of 52</span>
-                        <FaArrowLeft className="text-gray-400" />
-                        <span className="p-2.5">1</span>
-                        <span className="p-2.5">2</span>
-                        <span className="p-2.5">3</span>
-                        <span className="p-2.5">4</span>
-                        <span className="p-2.5">5</span>
-                        <FaArrowRight />
+                        <FaArrowLeft onClick={() => previousData()} className="text-gray-400 cursor-pointer" />
+                        <span className="p-2.5 cursor-pointer" onClick={() => previousData()}>1</span>
+                        <span className={`p-2.5 cursor-pointer ${showCount < teamsData.length ? '' : 'hidden'}`} onClick={() => nextData()}>2</span>
+                        <div className={`${showCount > teamsData.length ? ' hidden' : 'opacity-100'}`}>
+                            <FaArrowRight className={`${teamsData.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => nextData()} />
+
+                        </div>
                     </div>
                 </div>
             </div>
