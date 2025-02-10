@@ -14,10 +14,12 @@ import Meeting from '../../assets/icon/meeting.svg';
 import { FiUsers } from "react-icons/fi";
 import EarningChart from "../../components/charts/earningChart";
 import Teams from "../../components/dashboards/teams";
+import Switch from "../../components/switch";
+import { useState } from "react";
 
 
 const Dashboard = () => {
-
+    const [earning, setEarning] = useState(false)
 
     return (
         <div className={``}>
@@ -184,7 +186,25 @@ const Dashboard = () => {
                     </div>
                     {/* Get started area */}
                     <div className="grid lg:col-span-8 col-span-12 rounded-xl border">
-                        <EarningChart />
+                        <div className="flex flex-col">
+                            <div className="py-2.5 border-b border-b-gray-300">
+                                <div className="flex flex-row items-center justify-between px-[30px]">
+                                    <span>Earnings</span>
+                                    <div className="flex flex-row items-center gap-2.5">
+                                        <span>Referrals only</span>
+                                        <Switch size="small" status={earning} setSwitch={() => setEarning(!earning)} />
+                                        <select className="p-3 border-0" >
+                                            <option value="oneMonth">1 month</option>
+                                            <option value="threeMonth">3 month</option>
+                                            <option value="sixMonth">6 month</option>
+                                            <option value="twelveMounth">12 month</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <EarningChart />
+                        </div>
+
                     </div>
                     {/* Team Meeting Area */}
                     <div className="grid lg:col-span-4 col-span-12 border rounded-xl border-gray-300 relative min-h-96">
