@@ -51,7 +51,7 @@ const DonutChart = () => {
     });
 
     return (
-        <div className="flex flex-col items-center justify- w-full py-5">
+        <div className="flex flex-col items-center justify-center w-full py-14">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                 <Chart options={chart.options} series={chart.series} type="donut" height={150} />
             </div>

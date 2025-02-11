@@ -18,17 +18,78 @@ import Jira from '../../../../assets/icon/jira-work.svg'
 import Pesto from '../../../../assets/icon/paccion.svg'
 import Perrier from '../../../../assets/icon/perrier.svg'
 import { FaEllipsisVertical } from 'react-icons/fa6';
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
 import DonutChart from '../../../../components/charts/donutChart';
+import UserOne from '../../../../assets/icon/user-group-1.svg'
+import UserTwo from '../../../../assets/icon/user-group-2.svg'
+import UserThree from '../../../../assets/icon/user-group-3.svg'
+import UserFour from '../../../../assets/icon/user-group-4.svg'
+import UserFive from '../../../../assets/icon/user-group-5.svg'
+import { useState } from 'react';
+import Contributors from '../../../../components/publicProfile/contributors';
+import PDF from '../../../../assets/icon/pdf.svg'
+import DOC from '../../../../assets/icon/doc.svg'
+import JS from '../../../../assets/icon/javascript.svg'
+import AI from '../../../../assets/icon/illustrator.svg'
+import Card from '../../../../components/publicProfile/card';
 
 
+
+interface Project {
+    id: number;
+    projectName: string;
+    progressStatus: boolean;
+    progress: number;
+    people: React.ReactElement;
+    dueDate: string;
+}
 
 
 
 const Default = () => {
+
+    const [project, setProject] = useState<Project[]>([
+        {
+            id: 1,
+            projectName: "Acme software development",
+            progressStatus: true,
+            progress: 60,
+            dueDate: "24 Aug, 2024",
+            people: <img src={UserOne} />
+        },
+        {
+            id: 2,
+            projectName: "Strategic Partnership Deal",
+            progressStatus: false,
+            progress: 0,
+            dueDate: "10 Sep, 2024",
+            people: <img src={UserTwo} />
+        },
+        {
+            id: 3,
+            projectName: "Client Onboarding",
+            progressStatus: true,
+            progress: 20,
+            dueDate: "19 Sep, 2024",
+            people: <img src={UserThree} />
+        },
+        {
+            id: 4,
+            projectName: "Widget Supply Agreement",
+            progressStatus: true,
+            progress: 100,
+            dueDate: "1 Feb, 2025",
+            people: <img src={UserFour} />
+        },
+        {
+            id: 5,
+            projectName: "Project X Redesign",
+            progressStatus: true,
+            progress: 80,
+            dueDate: "24 Aug, 2024",
+            people: <img src={UserFive} />
+        }
+    ])
+
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center">
@@ -196,7 +257,42 @@ const Default = () => {
                         </div>
 
                     </div>
-                    <div className="bg-white p-4 rounded-xl shadow-sm border">Skills</div>
+                    <div className="bg-white rounded-xl shadow-sm border">
+                        <div className="flex flex-col gap-5">
+                            <div className="border-b ">
+                                <div className="px-[30px] py-5">
+                                    <span className='text-b-16-16-600 text-gray-900'>Skills</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-row items-center flex-wrap gap-[10px] px-[30px] pb-[30px]">
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Web Design</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Code Review</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Figma</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Product Development</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Webflow</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>AI</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>noCode</span>
+                                </div>
+                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                    <span className='text-b-11-12-500 text-gray-700'>Management</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="md:col-span-2 flex flex-col gap-[30px]">
@@ -215,103 +311,173 @@ const Default = () => {
                         </div>
                     </div>
                     {/* {Media Uploads} */}
-                    <div className="bg-white rounded-xl shadow-sm border">
-                        <div className="flex flex-col pt-5">
-                            <div className="border-b border-b-gray-300 pb-5">
-                                <div className="flex flex-row justify-between items-center px-[30px]">
-                                    <span className='text-b-16-16-600 text-gray-900'>Media Uploads</span>
-                                    <FaEllipsisVertical className='text-gray-600' />
-
-                                </div>
-
-                            </div>
-                            <Chart />
-                        </div>
-
-                    </div>
+                    <Card
+                        title='Media Uploads'
+                        buttonStatus={false}
+                        dotStatus={true}
+                        content={<Chart />}
+                    />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
                         {/* {Contributors} */}
 
-                        <div className="bg-white rounded-xl shadow-sm border">
-                            <div className="flex flex-col">
-                                <div className="border-b border-b-gray-200">
-                                    <div className="flex flex-row items-center justify-between px-[30px] py-5">
-                                        <span className='text-b-16-16-600 text-gray-900'>Contributors</span>
-                                        <FaEllipsisVertical className='text-gray-600' />
-                                    </div>
-
-                                </div>
-                                <div className="flex flex-col gap-5 px-[30px] py-5">
-                                    <div className="flex flex-row items-center justify-between">
-                                        <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={Tyler} alt="" className='' />
-                                            <div className="flex flex-col gap-2">
-                                                <span className='text-b-14-14-500 text-gray-900'>Tyler Hero</span>
-                                                <span className='text-b-12-12-400 text-gray-700'>6 constributors</span>
-                                            </div>
-                                        </div>
-                                        <FaEllipsisVertical className='text-gray-600' />
-                                    </div>
-                                    <div className="flex flex-row items-center justify-between">
-                                        <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={Esther} alt="" className='' />
-                                            <div className="flex flex-col gap-2">
-                                                <span className='text-b-14-14-500 text-gray-900'>Esther Howard</span>
-                                                <span className='text-b-12-12-400 text-gray-700'>29 сontributors</span>
-                                            </div>
-                                        </div>
-                                        <FaEllipsisVertical className='text-gray-600' />
-                                    </div>
-                                    <div className="flex flex-row items-center justify-between">
-                                        <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={Cody} alt="" className='' />
-                                            <div className="flex flex-col gap-2">
-                                                <span className='text-b-14-14-500 text-gray-900'>Cody Fisher</span>
-                                                <span className='text-b-12-12-400 text-gray-700'>34 constributors</span>
-                                            </div>
-                                        </div>
-                                        <FaEllipsisVertical className='text-gray-600' />
-                                    </div>
-                                    <div className="flex flex-row items-center justify-between">
-                                        <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={Arlene} alt="" className='' />
-                                            <div className="flex flex-col gap-2">
-                                                <span className='text-b-14-14-500 text-gray-900'>Arlene McCoy</span>
-                                                <span className='text-b-12-12-400 text-gray-700'>1 constributors</span>
-                                            </div>
-                                        </div>
-                                        <FaEllipsisVertical className='text-gray-600' />
-                                    </div>
-                                </div>
-                                <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center w-full">
-                                    <span className="text-b-13-14-500 text-primary border-b border-dotted border-b-primary cursor-pointer">All Contributors</span>
-                                </div>
-
-                            </div>
-                        </div>
+                        <Card
+                            dotStatus={true}
+                            buttonStatus={true}
+                            title='Contributors'
+                            buttonTitle='All Contributors'
+                            content={<Contributors />}
+                        />
                         {/* {Assistance} */}
+                        <Card
+                            title='Assistance'
+                            buttonStatus={false}
+                            dotStatus={true}
+                            content={<DonutChart />}
+                        />
+                    </div>
+                    {/* {Projects} */}
+                    <Card
+                        buttonStatus={true}
+                        buttonTitle='All Project'
+                        title='Project'
+                        dotStatus={true}
+                        content={
+                            <>
+                                <div className="flex flex-col overflow-hidden ">
 
-                        <div className="bg-white rounded-xl shadow-sm border">
-                            <div className="flex flex-col ">
-                                <div className="border-b border-b-gray-200">
-                                    <div className="flex flex-row items-center justify-between px-[30px] py-5">
-                                        <span className='text-b-16-16-600 text-gray-900'>Assistance</span>
-                                        <FaEllipsisVertical className='text-gray-600' />
+                                    <div className="flex flex-col overflow-x-auto">
+                                        <table className=" border-collapse  min-w-[600px]">
+                                            <thead>
+                                                <tr className="bg-gray-100">
+                                                    <th className="px-[30px] py-[13px] text-left">
+                                                        <span className="text-b-13-14-400 text-gray-700">Project Name</span>
+                                                    </th>
+                                                    <th className="px-[30px] py-[13px] text-center">
+                                                        <span className="text-b-13-14-400 text-gray-700">Progress</span>
+                                                    </th>
+                                                    <th className="px-[30px] py-[13px] text-left">
+                                                        <span className="text-b-13-14-400 text-gray-700">People</span>
+                                                    </th>
+                                                    <th className="px-[30px] py-[13px] text-left">
+                                                        <span className="text-b-13-14-400 text-gray-700">Due Date</span>
+                                                    </th>
+                                                    <th className="px-[30px] py-[13px] text-left">
+
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    project.map((item) => (
+                                                        <tr className="border-t" key={item.id}>
+                                                            <td className='px-[30px] py-[21px] '>
+                                                                <span className='text-b-14-14-500 text-gray-900'>{item.projectName}</span>
+                                                            </td>
+                                                            <td className='px-[30px] py-[21px] '>
+                                                                <div className={`rounded-[4px] ${item.progressStatus ? 'bg-primary-light' : 'bg-gray-300'} h-1 w-[120px] relative`}>
+                                                                    <span
+                                                                        className={`absolute h-1 rounded-[4px] transition-all duration-300 ${item.progress === 100 ? 'bg-success' : 'bg-primary'}`}
+                                                                        style={{ width: item.progressStatus ? `${item.progress}%` : '0%' }}
+                                                                    ></span>                                                            </div>
+                                                            </td>
+                                                            <td className='px-[30px] py-[21px] '>
+                                                                {item.people}
+                                                            </td>
+                                                            <td className='px-[30px] py-[21px] '>
+                                                                <span className='text-b-14-14-400 text-gray-800'>{item.dueDate}</span>
+                                                            </td>
+                                                            <td className='px-[30px] py-[21px] '>
+                                                                <FaEllipsisVertical className='text-gray-600' />
+                                                            </td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </>
+                        }
+                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+
+                        <Card
+                            dotStatus={true}
+                            buttonStatus={true}
+                            title='Contributors'
+                            buttonTitle='All Contributors'
+                            content={<Contributors />}
+                        />
+
+                        {/* {Recent uploads} */}
+                        <Card
+                            dotStatus={true}
+                            buttonStatus={true}
+                            buttonTitle='All Files'
+                            title='Recent Uploads'
+                            content={
+                                <>
+                                    <div className="flex flex-col py-5 gap-5">
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={PDF} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <span className='text-b-14-14-500 text-gray-900'>Project-pitch.pdf</span>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>4.7 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <FaEllipsisVertical className='text-gray-600' />
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={DOC} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <span className='text-b-14-14-500 text-gray-900'>Report-v1.docx</span>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>2.3 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <FaEllipsisVertical className='text-gray-600' />
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={JS} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <span className='text-b-14-14-500 text-gray-900'>Framework-App.js</span>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>0.8 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 17 Oct 2024 6:46 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <FaEllipsisVertical className='text-gray-600' />
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={AI} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <span className='text-b-14-14-500 text-gray-900'>Mobile-logo.ai</span>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>0.2 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 4 Nov 2024 11:30 AM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <FaEllipsisVertical className='text-gray-600' />
+                                        </div>
                                     </div>
 
-                                </div>
-                                <div className="flex items-center justify-center">
-                                    <DonutChart />
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
-                        <div className="bg-white p-4 rounded-xl shadow-sm border">Contributors</div>
-                        <div className="bg-white p-4 rounded-xl shadow-sm border">Projects</div>
+                                </>
+                            }
+                        />
                     </div>
                 </div>
             </div>
