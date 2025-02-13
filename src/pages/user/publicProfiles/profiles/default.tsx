@@ -31,6 +31,7 @@ import DOC from '../../../../assets/icon/doc.svg'
 import JS from '../../../../assets/icon/javascript.svg'
 import AI from '../../../../assets/icon/illustrator.svg'
 import Card from '../../../../components/publicProfile/card';
+import Menu from '../../../../components/publicProfile/hovermenu';
 
 
 
@@ -90,6 +91,7 @@ const Default = () => {
         }
     ])
 
+
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center">
@@ -97,7 +99,7 @@ const Default = () => {
                     <img src={Jennifer} alt="" className='size-[100px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">
-                    <span>Jennifer Klabber</span>
+                    <span className="text-b-18-18-600 text-gray-900">Jennifer Klabber</span>
                     <img src={Verify} alt="" />
                 </div>
                 <div className="flex md:flex-row flex-col items-center gap-5">
@@ -116,37 +118,10 @@ const Default = () => {
                 </div>
             </div>
             {/* {Sub  menu} */}
-            <div className="flex md:flex-row flex-col items-center md:justify-between border-b  justify-center overflow-hidden ">
-                <div className="w-full overflow-x-auto flex justify-center items-center">
-                    <div className="flex flex-row items-center gap-2.5 min-w-[250px]  ">
-                        <div className="flex flex-row items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-500 text-primary'>Profiles</span>
-                            <FaChevronDown className='text-b-14-14-500 text-primary' />
-                        </div>
-                        <div className="flex flex-row items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>Projects</span>
-                            <FaChevronDown className='text-b-14-14-400 text-gray-700' />
-                        </div>
-                        <div className="flex flex-row items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>Work</span>
-                        </div>
-                        <div className="flex items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>Teams</span>
-                        </div>
-                        <div className="flex items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>Network</span>
-                        </div>
-                        <div className="flex items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>Activity</span>
-                        </div>
-                        <div className="flex flex-row items-center gap-1 py-5 px-2.5">
-                            <span className='text-b-14-14-400 text-gray-700'>More</span>
-                            <FaChevronDown className='text-b-14-14-400 text-gray-700' />
-                        </div>
-                    </div>
-                </div>
+            <div className="flex lg:flex-row flex-col items-center justify-between border-b relative ">
+                <Menu />
 
-                <div className="flex flex-row items-center gap-2.5">
+                <div className="flex flex-row items-center gap-2.5 ml-auto lg:ml-0">
                     <div className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-white gap-1">
                         <FaUsers />
                         <span>Connect</span>
@@ -160,26 +135,25 @@ const Default = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] p-4">
-                <div className="md:col-span-1 flex flex-col gap-[30px]">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
+                <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Community Badge} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
-                        <div className="flex-col flex gap-5">
-                            <div className="border-b ">
-                                <div className="px-[30px] py-5">
-                                    <span className='text-b-16-16-600 text-gray-900'>Community Badges</span>
+                    <Card
+                        dotStatus={false}
+                        buttonStatus={false}
+                        title='Community Badges'
+                        content={
+                            <div className="flex-col flex gap-5">
+                                <div className="flex flex-row items-center justify-start px-[30px] py-5">
+                                    <img src={BadgeOne} alt="" />
+                                    <img src={BadgeTwo} alt="" />
+                                    <img src={BadgeThree} alt="" />
+                                    <img src={BadgeFour} alt="" />
+
                                 </div>
                             </div>
-                            <div className="flex flex-row items-center justify-start px-[30px] pb-[30px]">
-                                <img src={BadgeOne} alt="" />
-                                <img src={BadgeTwo} alt="" />
-                                <img src={BadgeThree} alt="" />
-                                <img src={BadgeFour} alt="" />
-
-                            </div>
-                        </div>
-
-                    </div>
+                        }
+                    />
                     {/* {About} */}
                     <div className="bg-white  rounded-xl shadow-sm border">
                         <div className="flex-col flex gap-5">
@@ -257,45 +231,46 @@ const Default = () => {
                         </div>
 
                     </div>
-                    <div className="bg-white rounded-xl shadow-sm border">
-                        <div className="flex flex-col gap-5">
-                            <div className="border-b ">
-                                <div className="px-[30px] py-5">
-                                    <span className='text-b-16-16-600 text-gray-900'>Skills</span>
-                                </div>
-                            </div>
-                            <div className="flex flex-row items-center flex-wrap gap-[10px] px-[30px] pb-[30px]">
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Web Design</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Code Review</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Figma</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Product Development</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Webflow</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>AI</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>noCode</span>
-                                </div>
-                                <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
-                                    <span className='text-b-11-12-500 text-gray-700'>Management</span>
-                                </div>
+                    <Card
+                        dotStatus={false}
+                        buttonStatus={false}
+                        title='Skills'
+                        content={
+                            <div className="flex flex-col gap-5">
+                               
+                                <div className="flex flex-row items-center flex-wrap gap-[10px] px-[30px] py-5">
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Web Design</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Code Review</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Figma</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Product Development</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Webflow</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>AI</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>noCode</span>
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-[4px] p-2 bg-gray-200">
+                                        <span className='text-b-11-12-500 text-gray-700'>Management</span>
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        }
+                    />
                 </div>
 
-                <div className="md:col-span-2 flex flex-col gap-[30px]">
+                <div className="lg:col-span-2 flex flex-col gap-[30px]">
                     {/* {Unlock Creative area} */}
                     <div className="bg-white rounded-xl shadow-sm border">
                         <div className="flex md:flex-row flex-col items-center justify-between gap-10 px-10 py-[50px]">
