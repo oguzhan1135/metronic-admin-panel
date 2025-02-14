@@ -3,23 +3,37 @@ import { FaEllipsisVertical } from "react-icons/fa6";
 interface CardProps {
     dotStatus: boolean;
     buttonStatus: boolean;
-    title: string;
+    title?: string;
     content: React.ReactElement;
-    buttonTitle?: string
+    buttonTitle?: string;
+    dotContentStatus?: boolean;
+    dotContent?: React.ReactElement;
 }
 
 
-const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, buttonTitle }) => {
+const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, buttonTitle, dotContent, dotContentStatus }) => {
     return (
         <div className="bg-white rounded-xl shadow-sm border">
             <div className="flex flex-col">
-                <div className="border-b border-b-gray-300 py-5">
-                    <div className="flex flex-row justify-between items-center px-[30px]">
-                        <span className='text-b-16-16-600 text-gray-900'>{title}</span>
-                        <FaEllipsisVertical className={`text-gray-600 ${dotStatus ? '' : 'hidden'}`} />
-                    </div>
+                {
+                    title ?
+                        <div className="border-b border-b-gray-300 py-5">
+                            <div className="flex flex-row justify-between items-center px-[30px]">
+                                <span className='text-b-16-16-600 text-gray-900'>{title}</span>
+                                {
+                                    dotContentStatus ?
+                                        <>
+                                            {dotContent}
+                                        </>
+                                        :
+                                        <FaEllipsisVertical className={`text-gray-600 ${dotStatus ? '' : 'hidden'}`} />
 
-                </div>
+                                }
+                            </div>
+
+                        </div> : null
+                }
+
                 {content}
                 {
                     buttonStatus ?
