@@ -1,8 +1,6 @@
-import { BsThreeDotsVertical } from "react-icons/bs"
 import { CiMail } from "react-icons/ci"
-import { FaFacebook, FaUsers, FaYoutube } from "react-icons/fa6"
+import { FaFacebook, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
-import { IoChatbubblesOutline } from "react-icons/io5"
 import { SlLocationPin } from "react-icons/sl"
 import Tyler from '../../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../../assets/icon/ester-hoeard.svg'
@@ -27,14 +25,14 @@ import Golden from '../../../../assets/icon/golden.svg'
 import WildBeautiy from '../../../../assets/icon/wild-beautiy.svg'
 import Mystic from '../../../../assets/icon/mystic-shadows.svg'
 import Digital from '../../../../assets/icon/daigital.svg'
-import Nature from '../../../../assets/icon/nature.svg'
 import Future from '../../../../assets/icon/future.svg'
 import Switch from "../../../../components/switch"
 import { useState } from "react"
+import { Link } from "react-router"
 
 const Creator = () => {
     const [refresh, setRefresh] = useState(true)
-
+    const location = window.location.pathname
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center">
@@ -56,27 +54,12 @@ const Creator = () => {
                     </div>
                     <div className="flex flex-row items-center gap-[5px]">
                         <CiMail className='text-gray-600 text-b-14-14-500' />
-                        <span className='text-gray-600 text-b-14-14-500'>info@inferno.com</span>
+                        <Link to={location} className='text-gray-600 text-b-14-14-500 hover:text-primary text-animation'>info@inferno.com</Link>
                     </div>
                 </div>
             </div>
             {/* {Sub  menu} */}
-            <div className="flex lg:flex-row flex-col items-center justify-between border-b relative ">
-                <Menu />
-
-                <div className="flex flex-row items-center gap-2.5 ml-auto lg:ml-0">
-                    <div className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-white gap-1">
-                        <FaUsers />
-                        <span>Connect</span>
-                    </div>
-                    <div className="p-2.5 rounded-md border flex items-center justify-center">
-                        <IoChatbubblesOutline className='text-gray-500' />
-                    </div>
-                    <div className="p-2.5 rounded-md border flex items-center justify-center">
-                        <BsThreeDotsVertical className='text-gray-500' />
-                    </div>
-                </div>
-            </div>
+            <Menu />
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
@@ -104,7 +87,7 @@ const Creator = () => {
                         buttonTitle="Join Our Team"
                         title="Members"
                         content={
-                            <div className="flex flex-row items-center md:flex-nowrap flex-wrap  max-w-[320px] px-[30px] gap-2.5 py-5">
+                            <div className="flex flex-row items-center  flex-wrap  max-w-[320px] px-[30px] gap-2.5 py-5">
                                 <img src={Jennifer} alt="" className="size-9" />
                                 <img src={Tyler} alt="" className="size-9" />
                                 <img src={Arlene} alt="" className="size-9" />
@@ -287,11 +270,11 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={Urban} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Urban Dreams</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Urban Dreams</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <img src={Cody} alt="" className="size-7" />
-                                                <span className="text-b-13-14-400 text-gray-800">Cody Fisher</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Cody Fisher</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -315,11 +298,11 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={Timeless} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Timeless Elegance</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Timeless Elegance</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <img src={Arlene} alt="" className="size-7" />
-                                                <span className="text-b-13-14-400 text-gray-800">Jenny Wilson</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Jenny Wilson</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -343,11 +326,11 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={Whispered} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Whispered Emotions</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Whispered Emotions</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <img src={Tyler} alt="" className="size-7" />
-                                                <span className="text-b-13-14-400 text-gray-800">Wade Warren</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Wade Warren</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -371,11 +354,11 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={Golden} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Golden Serenity</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Golden Serenity</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <img src={Cody} alt="" className="size-7" />
-                                                <span className="text-b-13-14-400 text-gray-800">Albert Flores</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Albert Flores</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -399,11 +382,11 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={WildBeautiy} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Wild Beauty</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Wild Beauty</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <img src={Tyler} alt="" className="size-7 " />
-                                                <span className="text-b-13-14-400 text-gray-800">Devon Lane</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Devon Lane</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -427,14 +410,14 @@ const Creator = () => {
                                 <div className="flex flex-col gap-5">
                                     <img src={Mystic} alt="" />
                                     <div className="px-5 flex flex-col gap-4 pb-5">
-                                        <span className="text-b-18-25-500 text-gray-900">Mystic Shadows</span>
+                                        <Link to={location} className="text-b-18-25-500 text-gray-900 hover:text-primary text-animation">Mystic Shadows</Link>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-[6px]">
                                                 <div className="overflow-hidden size-7 rounded-full">
                                                     <img src={Jennifer} alt="" className="scale-110" />
                                                 </div>
 
-                                                <span className="text-b-13-14-400 text-gray-800">Kathryn Murphy</span>
+                                                <Link to={location} className="text-b-13-14-400 text-gray-800 hover:text-primary text-animation">Kathryn Murphy</Link>
                                             </div>
                                             <div className="flex flex-row items-center gap-3">
                                                 <div className="flex flex-row items-center gap-[5px]">
@@ -460,7 +443,7 @@ const Creator = () => {
                         dotContentStatus={true}
                         title="Upcoming Events"
                         dotContent={
-                            <span className="text-b-13-14-500 text-primary border-b border-dotted border-b-primary cursor-pointer">View All</span>
+                            <Link to={location} className="text-b-13-14-500 text-primary border-b border-dotted border-b-primary cursor-pointer">View All</Link>
                         }
                         content={
 
@@ -477,42 +460,42 @@ const Creator = () => {
                                     </div>
                                     <img src={Digital} alt="" />
                                     <div className="flex flex-col gap-2.5">
-                                        <span className="text-[#FF6F1E] text-b-13-14-400">Webinar Series</span>
-                                        <span className="text-gray-900 text-b-16-16-500">Digital Marketing Mastery Series</span>
+                                        <Link to={location} className="text-[#FF6F1E] text-b-13-14-400 hover:text-primary text-animation">Webinar Series</Link>
+                                        <Link to={location} className="text-gray-900 text-b-16-16-500 hover:text-primary text-animation">Digital Marketing Mastery Series</Link>
                                         <p className="text-b-14-22-400 text-gray-800">Join our comprehensive webinars to master the art of digital marketing strategies.</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-row flex-wrap items-center gap-5">
                                     <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
                                         <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
-                                            <span className="text-[#FF6F1E] text-b-13-14-500">Feb</span>
+                                            <span className="text-[#FF6F1E] text-b-13-14-500">Apr</span>
                                         </div>
                                         <div className="flex items-center justify-center py-[6px]">
-                                            <span className="text-gray-800 text-h-22-38-500 ">16</span>
+                                            <span className="text-gray-800 text-h-22-38-500 ">02</span>
                                         </div>
 
                                     </div>
-                                    <img src={Future} alt="" />
+                                    <img src={Future} alt="" className="scale-" />
                                     <div className="flex flex-col gap-2.5">
-                                        <span className="text-[#FF6F1E] text-b-13-14-400">Photo Workshop</span>
-                                        <span className="text-gray-900 text-b-16-16-500">Photo Workshop</span>
+                                        <Link to={location} className="text-[#FF6F1E] text-b-13-14-400 hover:text-primary text-animation">Photo Workshop</Link>
+                                        <Link to={location} className="text-gray-900 text-b-16-16-500 hover:text-primary text-animation">Nature Photography Immersion</Link>
                                         <p className="text-b-14-22-400 text-gray-800">Enhance your nature photography skills in a hands-on workshop guided by experienced photographers.</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-row flex-wrap items-center gap-5">
                                     <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
                                         <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
-                                            <span className="text-[#FF6F1E] text-b-13-14-500">Feb</span>
+                                            <span className="text-[#FF6F1E] text-b-13-14-500">Aug</span>
                                         </div>
                                         <div className="flex items-center justify-center py-[6px]">
-                                            <span className="text-gray-800 text-h-22-38-500 ">16</span>
+                                            <span className="text-gray-800 text-h-22-38-500 ">29</span>
                                         </div>
 
                                     </div>
                                     <img src={Future} alt="" />
                                     <div className="flex flex-col gap-2.5">
-                                        <span className="text-[#FF6F1E] text-b-13-14-400">Webinar Series</span>
-                                        <span className="text-gray-900 text-b-16-16-500">Digital Marketing Mastery Series</span>
+                                        <Link to={location} className="text-[#FF6F1E] text-b-13-14-400 hover:text-primary text-animation">Tech Conference</Link>
+                                        <Link to={location} className="text-gray-900 text-b-16-16-500 hover:text-primary text-animation">Future Tech Exploration</Link>
                                         <p className="text-b-14-22-400 text-gray-800">Join our comprehensive webinars to master the art of digital marketing strategies.</p>
                                     </div>
                                 </div>

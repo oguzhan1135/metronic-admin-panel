@@ -9,22 +9,37 @@ import WidgetBackground from '../../assets/icon/widget-background.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { CiLocationOn, CiShop } from "react-icons/ci";
 import { FaArrowUp, FaFacebook, FaInstagram } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowDown, } from "react-icons/fa6";
 import Meeting from '../../assets/icon/meeting.svg';
 import { FiUsers } from "react-icons/fi";
 import EarningChart from "../../components/charts/earningChart";
 import Teams from "../../components/dashboards/teams";
 import Switch from "../../components/switch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CardMore from "../../components/more/cardMore";
 
 
 const Dashboard = () => {
     const [earning, setEarning] = useState(false)
+    const [highligts, setHigligts] = useState(false)
+    const location = window.location.pathname
 
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (!target.closest(".dropdown-container")) {
+                setHigligts(false)
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+
+    }, [])
     return (
+        
         <div className={``}>
             <div className="flex flex-col">
-                <div className="flex flex-row items-center justify-between pb-10">
+                <div className="flex flex-row flex-wrap gap-5 items-center justify-between pb-10">
                     <div className="flex flex-col gap-2 ">
                         <h1 className=" text-gray-900 text-b-20-20-500">
                             Dashboard
@@ -78,16 +93,16 @@ const Dashboard = () => {
                                 <div className="flex flex-col gap-4 p-5">
                                     <img src={AvatarGroup} className="w-32 h-10" />
                                     <div className="max-w-[255px]">
-                                        <span className="text-[22px] leading-8 font-semibold text-gray-900">Connect Today & Join
+                                        <span className="text-[22px] leading-8 font-semibold text-gray-900">Connect Today & Join the
                                         </span>
-                                        <span className="text-primary leading-8 font-semibold text-[22px]"> the KeenThemes Network</span>
+                                        <Link to={location} className="text-primary leading-8 font-semibold text-[22px]"> KeenThemes Network</Link>
                                     </div>
                                     <p className="max-w-[360px] text-b-14-22-400 text-gray-700">Enhance your projects with premium themes and templates. Join the KeenThemes community today for top-quality designs and resources.</p>
                                 </div>
                                 <img src={WidgetBackground} alt="" className="absolute right-0 -z-10 size-auto" />
                             </div>
                             <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center absolute bottom-0 w-full">
-                                <span className="text-b-13-14-500 text-primary">Get Started</span>
+                                <Link to={location} className="text-b-13-14-500 text-primary">Get Started</Link>
                             </div>
                         </div>
                     </div>
@@ -95,9 +110,12 @@ const Dashboard = () => {
                     <div className="grid lg:col-span-4 col-span-12 border rounded-xl border-gray-300">
 
                         <div className="flex flex-col w-full">
-                            <div className=" flex flex-row px-[30px] py-5 border-b  justify-between items-center ">
+                            <div className=" flex flex-row pl-[30px] pr-2.5 py-5 border-b  justify-between items-center relative">
                                 <span>Highlights</span>
-                                <HiOutlineDotsVertical />
+                                <div onClick={() => setHigligts(!highligts)} className="p-2 rounded-md curs cursor-pointer hover:bg-gray-200">
+                                    <HiOutlineDotsVertical />
+                                </div>
+                                <CardMore setMore={setHigligts} more={highligts}/>
                             </div>
                             <div className="flex flex-col py-5 px-[30px] gap-2">
 
@@ -238,7 +256,7 @@ const Dashboard = () => {
                         </div>
 
                         <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center absolute bottom-0 w-full">
-                            <span className="text-b-13-14-500 text-primary border-b-2 border-dotted ">Join Meeting</span>
+                            <Link to={window.location.pathname} className="text-b-13-14-500 text-primary border-b-2 border-dotted ">Join Meeting</Link>
                         </div>
                     </div>
                     {/* Teams Area */}

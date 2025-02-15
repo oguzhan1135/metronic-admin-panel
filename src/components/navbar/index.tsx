@@ -104,7 +104,7 @@ const Navbar = () => {
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />
-                <div className="flex flex-row gap-5 text-red-900 relative dropdown-container bg-white">
+                <div className="flex flex-row gap-5 relative dropdown-container bg-white">
                     <img src={Search} alt="search" />
 
                     {dropdowns.map((item) => (
@@ -133,14 +133,15 @@ const Navbar = () => {
                         className={`${selectedDropdown?.tag === "chat" && selectedDropdown.status ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                             } absolute right-0 transition-all duration-300 ease-in-out`}
                     >
-                        <Chats />
+                        <Chats closeDropdowns={closeDropdowns} />
+
 
                     </div>
                     <div
                         className={`${selectedDropdown?.tag === "notifications" && selectedDropdown.status ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                             } absolute right-0 transition-all duration-300 ease-in-out`}
                     >
-                        <Notification />
+                        <Notification closeDropdowns={closeDropdowns} />
 
                     </div>
                 </div>

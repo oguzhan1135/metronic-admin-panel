@@ -36,7 +36,7 @@
   }
   
   .scrollbar-hidden::-webkit-scrollbar {
-    display: none; /* Chrome, Safari ve Edge için */
+    display: none;
   }
 
   .dropdown-icon{
@@ -44,5 +44,5 @@
   }
   .text-animation
   {
-    @apply transition-all ease-in-out duration-200
+    @apply transition-all ease-in-out duration-200 cursor-pointer
   }

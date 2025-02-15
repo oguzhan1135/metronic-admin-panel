@@ -14,7 +14,7 @@ import Files from '@assets/icon/some-files.svg'
 import Handcart from '@assets/icon/handcart.svg'
 import SidebarLeft from '@assets/icon/black-left-line.svg'
 import MLogo from '@assets/icon/M-logo.svg'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
 import { Link } from 'react-router'
 
@@ -54,34 +54,34 @@ const menuData: MenuItem[] = [
                 label: "Profiles",
                 subItems: [
                     {
-                        category: "user", key: "default", label: "Default", path: "/user/publicprofiles/profiles/default"
+                        category: "user", key: "default", label: "Default", path: "/user/publicProfiles/profiles/default"
                     },
                     {
-                        category: "user", key: "creator", label: "Creator", path: "/user/publicprofiles/profiles/creator"
+                        category: "user", key: "creator", label: "Creator", path: "/user/publicProfiles/profiles/creator"
                     },
                     {
-                        category: "user", key: "company", label: "Company", path: "/user/publicprofiles/profiles/company"
+                        category: "user", key: "company", label: "Company", path: "/user/publicProfiles/profiles/company"
                     },
                     {
-                        category: "user", key: "nft", label: "NFT", path: "/user/publicprofiles/profiles/nft"
+                        category: "user", key: "nft", label: "NFT", path: "/user/publicProfiles/profiles/nft"
                     },
                     {
-                        category: "user", key: "blogger", label: "Blogger", path: "/user/publicprofiles/profiles/blogger"
+                        category: "user", key: "blogger", label: "Blogger", path: "/user/publicProfiles/profiles/blogger"
                     },
                     {
-                        category: "user", key: "crm", label: "CRM", path: "/user/publicprofiles/profiles/crm"
+                        category: "user", key: "crm", label: "CRM", path: "/user/publicProfiles/profiles/crm"
                     },
                     {
-                        category: "user", key: "gamer", label: "Gamer", path: "/user/publicprofiles/profiles/gamer"
+                        category: "user", key: "gamer", label: "Gamer", path: "/user/publicProfiles/profiles/gamer"
                     },
                     {
-                        category: "user", key: "feeds", label: "Feeds", path: "/user/publicprofiles/profiles/feeds"
+                        category: "user", key: "feeds", label: "Feeds", path: "/user/publicProfiles/profiles/feeds"
                     },
                     {
-                        category: "user", key: "plain", label: "Plain", path: "/user/publicprofiles/profiles/plain"
+                        category: "user", key: "plain", label: "Plain", path: "/user/publicProfiles/profiles/plain"
                     },
                     {
-                        category: "user", key: "modal", label: "Modal", path: "/user/publicprofiles/profiles/modal"
+                        category: "user", key: "modal", label: "Modal", path: "/user/publicProfiles/profiles/modal"
                     }
                 ]
 
@@ -92,10 +92,10 @@ const menuData: MenuItem[] = [
                 label: "Projects",
                 subItems: [
                     {
-                        category: "user", key: "column-3", label: "3 Columns",path:"/user/publicProfiles/projects/threeColumns"
+                        category: "user", key: "column-3", label: "3 Columns", path: "/user/publicProfiles/projects/threeColumns"
                     },
                     {
-                        category: "user", key: "column-2", label: "2 Columns",path:"/user/publicProfiles/projects/twoColumns"
+                        category: "user", key: "column-2", label: "2 Columns", path: "/user/publicProfiles/projects/twoColumns"
                     }
                 ]
             },
@@ -103,43 +103,43 @@ const menuData: MenuItem[] = [
                 category: "user",
                 key: "works",
                 label: "Works",
-                path: "/user/publicprofiles/works"
+                path: "/user/publicProfiles/works"
             },
             {
                 category: "user",
                 key: "teams",
                 label: "Teams",
-                path: "/user/publicprofiles/teams"
+                path: "/user/publicProfiles/teams"
             },
             {
                 category: "user",
                 key: "network",
                 label: "Network",
-                path: "/user/publicprofiles/network"
+                path: "/user/publicProfiles/network"
             },
             {
                 category: "user",
                 key: "activity",
                 label: "Activity",
-                path: "/user/publicprofiles/activity"
+                path: "/user/publicProfiles/activity"
             },
             {
                 category: "user",
                 key: "chanpaigns-card",
                 label: "Champaigns - Card",
-                path: "/user/publicprofiles/champaigns-card"
+                path: "/user/publicProfiles/champaigns-card"
             },
             {
                 category: "user",
                 key: "chanpaigns-list",
                 label: "Champaigns - List",
-                path: "/user/publicprofiles/champaigns-list"
+                path: "/user/publicProfiles/champaigns-list"
             },
             {
                 category: "user",
                 key: "empty",
                 label: "Empty",
-                path: "/user/publicprofiles/empty"
+                path: "/user/publicProfiles/empty"
             }
         ],
         icon: Profile_Circle
@@ -519,10 +519,6 @@ const Sidebar = () => {
             setActiveSubItems([]);
         }
     };
-    useEffect(() => {
-        console.log(activeSubItems)
-        console.log(childSub)
-    }, [activeSubItems, childSub])
 
     const childSubItemTrigger = (item: string) => {
         setChildSub(item)
@@ -564,12 +560,12 @@ const Sidebar = () => {
 
 
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden lg:flex z-50`}>
-            <div className="px-5 py-[30px] flex relative  w-">
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex z-50`}>
+            <div className="px-5 py-[30px] flex relative ">
                 <div onClick={() => {
                     handleSideBar()
                     setSidebarIsOpen(!sidebarIsOpen)
-                }} className="flex items-center justify-center size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
+                }} className="flex items-center justify-center  size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
                     style={{ zIndex: 100000 }} >
                     <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
 
@@ -586,7 +582,7 @@ const Sidebar = () => {
                 <div className="flex flex-col pb-2.5">
                     <div className="flex flex-col gap-0 px-6.5 ">
                         {menuData.map((menuItem, index) => (
-                            <div key={menuItem.key} className="flex flex-col">
+                            <div key={index} className="flex flex-col">
                                 {/* Ana Menü Öğesi */}
                                 <div
                                     onClick={() => toggleMenuItem(menuItem.key)}
@@ -621,8 +617,8 @@ const Sidebar = () => {
                                 {menuItem.subItems && (
                                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openMenuItems.includes(menuItem.key) ? "max-h-[500px]" : "max-h-0"
                                         }`}>
-                                        {menuItem.subItems.map((subMenuItem) => (
-                                            <div key={subMenuItem.key} className="flex flex-col">
+                                        {menuItem.subItems.map((subMenuItem, key) => (
+                                            <div key={key} className="flex flex-col">
                                                 {
                                                     subMenuItem.path ?
                                                         <Link to={subMenuItem.path} onClick={() => toggleSubItems(subMenuItem.key)} className="flex flex-row justify-between items-center hover: group cursor-pointer">
@@ -695,28 +691,26 @@ const Sidebar = () => {
                                                     (
                                                         <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"
                                                             }`}>
-                                                            {subMenuItem.subItems.map((childItem) => (
+                                                            {subMenuItem.subItems.map((childItem, index) => (
 
-                                                                <>
+                                                                <div key={index}>
                                                                     {
                                                                         childItem.path ?
-                                                                            <>
-                                                                                <><Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
-                                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                        ? 'selectedItem'
-                                                                                        : 'unSelectedItem'
-                                                                                        }`}>
-                                                                                    <span
-                                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                            ? 'dotActive ml-[7px]'
-                                                                                            : 'dotInActive ml-[7px]'
-                                                                                            }`}
-                                                                                    ></span>
-                                                                                    <span className="itemDotLine left-[21.25px]"></span>
-                                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
-                                                                                </Link>
-                                                                                </>
-                                                                            </> :
+                                                                            <Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
+                                                                                 className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                    ? 'selectedItem'
+                                                                                    : 'unSelectedItem'
+                                                                                    }`}>
+                                                                                <span
+                                                                                    className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                        ? 'dotActive ml-[7px]'
+                                                                                        : 'dotInActive ml-[7px]'
+                                                                                        }`}
+                                                                                ></span>
+                                                                                <span className="itemDotLine left-[21.25px]"></span>
+                                                                                <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
+                                                                            </Link>
+                                                                            :
                                                                             <>
                                                                                 <div onClick={() => childSubItemTrigger(childItem.key)}
                                                                                     key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
@@ -734,7 +728,7 @@ const Sidebar = () => {
                                                                                 </div>
                                                                             </>
                                                                     }
-                                                                </>
+                                                                </div>
                                                             ))}
                                                             <span className="itemDotLine  top-0 left-[0px]"></span>
                                                         </div>

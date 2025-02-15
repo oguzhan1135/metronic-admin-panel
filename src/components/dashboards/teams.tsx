@@ -6,6 +6,7 @@ import { MdUnfoldMore } from "react-icons/md";
 import Raiting from "../../assets/icon/raiting.svg"
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Teams = () => {
     const teamsData = [
@@ -29,6 +30,7 @@ const Teams = () => {
         setUpgradeData(teamsData.slice(showCount, teamsData.length + showCount))
 
     };
+    const [selected, setSelected] = useState(1)
     useEffect(() => {
         if (showCount !== 5) {
             setUpgradeData(teamsData.slice(0, showCount))
@@ -47,7 +49,7 @@ const Teams = () => {
                     <div className="flex flex-row items-center justify-between py-3 px-5">
                         <span className="text-gray-900 text-b-16-16-600">Teams</span>
                         <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-gray-100">
-                            <CiSearch className="text-gray-600" />
+                            <CiSearch className="text-gray-600 cursor-pointer" />
                             <input
                                 type="text"
                                 className="text-gray-600 text-b-11-12-400 border-0 bg-transparent outline-none"
@@ -67,25 +69,25 @@ const Teams = () => {
                                     </div>
                                 </th>
                                 <th className="px-5 py-3 text-left">
-                                    <div className="flex flex-row items-center gap-1">
+                                    <div className="flex flex-row items-center gap-1 cursor-pointer w-max">
                                         <span className="text-b-13-14-400 text-gray-700">Team</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
                                 <th className="px-5 py-3">
-                                    <div className="flex flex-row items-center gap-1">
+                                    <div className="flex flex-row items-center gap-1 cursor-pointer">
                                         <span className="text-b-13-14-400 text-gray-700">Raiting</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
                                 <th className="px-5 py-3 text-left">
-                                    <div className="flex flex-row items-center gap-1">
+                                    <div className="flex flex-row items-center gap-1 cursor-pointer">
                                         <span className="text-b-13-14-400 text-gray-700">Last Modified</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
                                 <th className="px-5 py-3">
-                                    <div className="flex flex-row items-center gap-1">
+                                    <div className="flex flex-row items-center gap-1  cursor-pointer">
                                         <span className="text-b-13-14-400 text-gray-700">Members</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
@@ -101,7 +103,7 @@ const Teams = () => {
                                         </div>
                                     </td>
                                     <td className="px-5 py-3 flex flex-col gap-1">
-                                        <span className="text-b-14-14-500 text-gray-900">{team.name}</span>
+                                        <Link to={window.location.pathname} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">{team.name}</Link>
                                         <span className="text-b-12-12-400 text-gray-700">{team.description}</span>
                                     </td>
                                     <td className="px-4 py-2 text-left">
@@ -127,7 +129,7 @@ const Teams = () => {
                         <span>Show</span>
                         <select
 
-                            className="outline-none rounded-md p-2.5"
+                            className="outline-none rounded-md p-2.5 cursor-pointer"
                             value={showCount}
                             onChange={(e) => setShowCount(Number(e.target.value))}
                         >
@@ -140,11 +142,11 @@ const Teams = () => {
 
                     <div className="flex flex-row items-center gap-0.5">
                         <span className="pr-4">1-10 of 52</span>
-                        <FaArrowLeft onClick={() => previousData()} className="text-gray-400 cursor-pointer" />
-                        <span className="p-2.5 cursor-pointer" onClick={() => previousData()}>1</span>
-                        <span className={`p-2.5 cursor-pointer ${showCount < teamsData.length ? '' : 'hidden'}`} onClick={() => nextData()}>2</span>
+                        <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
+                        <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
+                        <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < teamsData.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
                         <div className={`${showCount > teamsData.length ? ' hidden' : 'opacity-100'}`}>
-                            <FaArrowRight className={`${teamsData.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => nextData()} />
+                            <FaArrowRight className={`${teamsData.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
 
                         </div>
                     </div>
