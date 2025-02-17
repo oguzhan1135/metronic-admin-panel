@@ -1,5 +1,5 @@
 import { CiMail } from "react-icons/ci"
-import { FaFacebook, FaYoutube } from "react-icons/fa6"
+import { FaFacebook, FaUsers, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import Tyler from '../../../../assets/icon/tyler-hero.svg'
@@ -18,7 +18,7 @@ import Card from "../../../../components/publicProfile/card"
 import Arrow from '../../../../assets/icon/arrow.svg'
 import CheckCircle from '../../../../assets/icon/check-circle.svg'
 import Urban from '../../../../assets/icon/urban-dreams.svg'
-import { FaComment, FaHeart } from "react-icons/fa"
+import { FaComment, FaHeart, FaShareAlt } from "react-icons/fa"
 import Timeless from '../../../../assets/icon/timeless-elegance.svg'
 import Whispered from '../../../../assets/icon/whispared.svg'
 import Golden from '../../../../assets/icon/golden.svg'
@@ -29,6 +29,10 @@ import Future from '../../../../assets/icon/future.svg'
 import Switch from "../../../../components/switch"
 import { useState } from "react"
 import { Link } from "react-router"
+import { IoExitOutline, IoRocketOutline } from "react-icons/io5"
+import VerifyEmail from '../../../../assets/icon/verify-email.svg'
+import { TiPrinter } from "react-icons/ti"
+import { FiCoffee } from "react-icons/fi"
 
 const Creator = () => {
     const [refresh, setRefresh] = useState(true)
@@ -505,7 +509,8 @@ const Creator = () => {
                     />
                     <Card
                         dotStatus={false}
-                        buttonStatus={false}
+                        buttonStatus={true}
+                        buttonTitle="All-time Activity"
                         dotContentStatus={true}
                         title="Activity"
                         dotContent={
@@ -516,7 +521,118 @@ const Creator = () => {
                         }
                         content={
 
-                            <div className="flex flex-col px-[30px]">
+                            <div className="flex flex-col px-[30px] py-5">
+                                <div className="flex flex-col gap-[30px] relative overflow-hidden">
+                                    <span className="w-[1px] absolute h-full bg-gray-300 left-5 -translate-x-1/2 z-0"></span>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <FaUsers className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px]">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                Posted a new article
+                                                <Link to={location} className="text-primary"> Top 10 Tech Trends</Link>
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">Today, 9:00 AM</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <FaUsers className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px]">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                I had the privilege of interviewing an industry expert for an
+                                                <Link to={location} className="text-primary"> upcoming blog post</Link>
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">2 days ago, 4:07 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <FaShareAlt  className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px]">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                I couldn't resist sharing a sneak peek of our
+                                                <Link to={location} className="text-primary"> upcoming content</Link>
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">5 days ago, 4:07 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <TiPrinter className="text-gray-600" />
+                                            </div>
+                                            <span className="w-[1px] absolute h-full bg-gray-300 left-5 -translate-x-1/2 z-0"></span>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px] w-full">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                Attending the virtual blogging conference was an enriching experience
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">1 week ago, 11:45 AM</span>
+                                            <div className="flex flex-col items-center justify-center">
+                                                <img src={VerifyEmail} alt="" />
+                                                <div className="flex flex-col gap-[6px]">
+                                                    <span className="text-b-15-16-500">Blogging Conference</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-2.5 flex-wrap">
+                                                    <span className="text-b-13-14-400">
+                                                        <Link to={location} className="text-primary"> Axio new release </Link>
+                                                        email campaign
+                                                    </span>
+                                                    <div className="px-[6px] py-[5px] bg-success-light border border-success-clarity rounded-md items-center justify-center flex">
+                                                        <span className="text-b-11-12-500 text-success">Public</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <FiCoffee className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px]">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                Reaching the milestone of
+                                                <Link to={location} className="text-primary"> 10,000 followers </Link>
+                                                on the blog was a dream come true
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">5 days ago, 4:07 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-row items-start gap-2.5 relative">
+                                        <div className="flex flex-col items-center relative">
+                                            <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
+                                                <IoRocketOutline className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[6px]">
+                                            <span className="text-b-14-14-400 text-gray-900">
+                                                We recently
+                                                <Link to={location} className="text-primary"> celebrated </Link>
+                                                the blog's 1-year anniversary
+                                            </span>
+                                            <span className="text-b-12-12-400 text-gray-600">3 weeks ago, 4:07 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         }
                     />

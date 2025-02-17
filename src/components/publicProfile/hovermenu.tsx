@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaChevronRight } from "react-icons/fa"
 import { FaChevronDown, FaUsers } from "react-icons/fa6"
@@ -28,68 +28,95 @@ const Menu = () => {
         document.addEventListener("mousedown", handleClickOutside);
 
     }, [])
+    const menuRef = useRef<HTMLDivElement | null>(null);
+    const subMenuRef = useRef<HTMLDivElement | null>(null);
+
+    const handleMouseEnter = () => {
+        setProfileOpen(true);
+    };
+
+    const handleMouseLeave = (e: React.MouseEvent) => {
+        // Close menu when mouse leaves both the menu and sub-menu
+        if (!menuRef.current?.contains(e.relatedTarget as Node) && !subMenuRef.current?.contains(e.relatedTarget as Node)) {
+            setProfileOpen(false);
+            setSubMenuOpen(false);
+        }
+    };
+
+    const handleSubMenuMouseEnter = () => {
+        setSubMenuOpen(true);
+    };
+
+    const handleSubMenuMouseLeave = (e: React.MouseEvent) => {
+        if (!subMenuRef.current?.contains(e.relatedTarget as Node)) {
+            setSubMenuOpen(false);
+        }
+    };
 
     return (
         <div className="flex lg:flex-row flex-col items-center justify-between border-b relative">
             <div className="w-full overflow-x-auto flex xl:justify-between items-center">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px]">
-                    <div
-                        className=" flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 border-b-primary cursor-pointer"
-                        onMouseEnter={() => setProfileOpen(true)}
-                        onMouseLeave={() => setProfileOpen(false)}
-                    >
-                        <a className="text-b-14-14-500 text-primary">Profiles</a>
-                        <FaChevronDown className="text-b-14-14-500 text-primary" />
+                <div
+            className="flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 border-b-primary cursor-pointer"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            ref={menuRef}
+        >
+            <a className="text-b-14-14-500 text-primary">Profiles</a>
+            <FaChevronDown className="text-b-14-14-500 text-primary" />
 
-                        {/* Profiles sub-menu */}
-                        <div
-                            className={`absolute top-[50px] left-0 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 ${isProfileOpen ? '' : 'hidden'}`}
-                            onMouseEnter={() => setProfileOpen(true)}
-                            onMouseLeave={() => setProfileOpen(false)}
-                        >
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                                Default
-                            </Link>
-                            <Link to={"/user/publicprofiles/profiles/creator"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                                Creator
-                            </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                                Company
-                            </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                                NFT
-                            </Link>
+            {/* Profiles sub-menu */}
+            <div
+                className={`absolute top-[50px] left-0 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProfileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                    Default
+                </Link>
+                <Link to="/user/publicprofiles/profiles/creator" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                    Creator
+                </Link>
+                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                    Company
+                </Link>
+                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                    NFT
+                </Link>
 
-                            <div
-                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer relative"
-                                onMouseEnter={() => setSubMenuOpen(true)}
-                                onMouseLeave={() => setSubMenuOpen(false)}
-                            >
-                                <div className=" flex flex-row items-center justify-between cursor-pointer rounded-md ">
-                                    <span className="text-b-13-14-500 text-gray-800">More</span>
-                                    <FaChevronRight className="text-gray-500" />
-
-                                </div>
-
-                                <div onClick={() => setSubMenuOpen(false)} className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 ${isSubMenuOpen ? '' : 'hidden'}`}
-                                >
-                                    <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                                        Gamer
-                                    </Link>
-                                    <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                                        Feeds
-                                    </Link>
-                                    <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                                        Plain
-                                    </Link>
-                                    <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                                        Modal
-                                    </Link>
-                                </div>
-                            </div>
-
-                        </div>
+                {/* More sub-menu */}
+                <div
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer relative"
+                    onMouseEnter={handleSubMenuMouseEnter}
+                    onMouseLeave={handleSubMenuMouseLeave}
+                    ref={subMenuRef}
+                >
+                    <div className="flex flex-row items-center justify-between cursor-pointer rounded-md">
+                        <span className="text-b-13-14-500 text-gray-800">More</span>
+                        <FaChevronRight className="text-gray-500" />
                     </div>
+
+                    <div
+                        className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                    >
+                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                            Gamer
+                        </Link>
+                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                            Feeds
+                        </Link>
+                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                            Plain
+                        </Link>
+                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                            Modal
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
                     <div
                         className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer"
@@ -101,7 +128,7 @@ const Menu = () => {
 
                         {/* Project menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 ${isProjectOpen ? '' : 'hidden'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProjectOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setProjectOpen(true)}
                             onMouseLeave={() => setProjectOpen(false)}
                         >
@@ -133,7 +160,7 @@ const Menu = () => {
 
                         {/* More menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 ${isMoreOpen ? '' : 'hidden'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isMoreOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setMoreOpen(true)}
                             onMouseLeave={() => setMoreOpen(false)}
                         >
@@ -157,7 +184,7 @@ const Menu = () => {
                     location === "/user/publicProfiles/profiles/creator" ?
                         <>
                             <Link to={location} className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
-                                <HiRectangleGroup/>
+                                <HiRectangleGroup />
                                 Hire US
                             </Link>
                             <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
