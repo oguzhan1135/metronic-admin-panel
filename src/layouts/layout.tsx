@@ -12,6 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { id: 1, pathname: '/' },
     { id: 2, pathname: '/user/publicProfiles/profiles/default' },
     { id: 3, pathname: '/user/publicProfiles/profiles/creator' },
+    { id: 4, pathname: '/user/publicProfiles/profiles/company' },
   ]);
 
   const showSidebar = page.some((item) => item.pathname === location.pathname);

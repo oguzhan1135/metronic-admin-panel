@@ -31,7 +31,7 @@ import Menu from '../../../../components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 
-interface Project {
+export interface Project {
     id: number;
     projectName: string;
     progressStatus: boolean;

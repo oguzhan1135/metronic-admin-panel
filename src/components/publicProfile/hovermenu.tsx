@@ -57,65 +57,65 @@ const Menu = () => {
         <div className="flex lg:flex-row flex-col items-center justify-between border-b relative">
             <div className="w-full overflow-x-auto flex xl:justify-between items-center">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px]">
-                <div
-            className="flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 border-b-primary cursor-pointer"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            ref={menuRef}
-        >
-            <a className="text-b-14-14-500 text-primary">Profiles</a>
-            <FaChevronDown className="text-b-14-14-500 text-primary" />
-
-            {/* Profiles sub-menu */}
-            <div
-                className={`absolute top-[50px] left-0 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProfileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                    Default
-                </Link>
-                <Link to="/user/publicprofiles/profiles/creator" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                    Creator
-                </Link>
-                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                    Company
-                </Link>
-                <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
-                    NFT
-                </Link>
-
-                {/* More sub-menu */}
-                <div
-                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer relative"
-                    onMouseEnter={handleSubMenuMouseEnter}
-                    onMouseLeave={handleSubMenuMouseLeave}
-                    ref={subMenuRef}
-                >
-                    <div className="flex flex-row items-center justify-between cursor-pointer rounded-md">
-                        <span className="text-b-13-14-500 text-gray-800">More</span>
-                        <FaChevronRight className="text-gray-500" />
-                    </div>
-
                     <div
-                        className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                        className="flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 border-b-primary cursor-pointer"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        ref={menuRef}
                     >
-                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                            Gamer
-                        </Link>
-                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                            Feeds
-                        </Link>
-                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                            Plain
-                        </Link>
-                        <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
-                            Modal
-                        </Link>
+                        <a className="text-b-14-14-500 text-primary">Profiles</a>
+                        <FaChevronDown className="text-b-14-14-500 text-primary" />
+
+                        {/* Profiles sub-menu */}
+                        <div
+                            className={`absolute top-[50px] left-0 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProfileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Default
+                            </Link>
+                            <Link to="/user/publicprofiles/profiles/creator" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Creator
+                            </Link>
+                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Company
+                            </Link>
+                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                NFT
+                            </Link>
+
+                            {/* More sub-menu */}
+                            <div
+                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer relative"
+                                onMouseEnter={handleSubMenuMouseEnter}
+                                onMouseLeave={handleSubMenuMouseLeave}
+                                ref={subMenuRef}
+                            >
+                                <div className="flex flex-row items-center justify-between cursor-pointer rounded-md">
+                                    <span className="text-b-13-14-500 text-gray-800">More</span>
+                                    <FaChevronRight className="text-gray-500" />
+                                </div>
+
+                                <div
+                                    className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                                >
+                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                        Gamer
+                                    </Link>
+                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                        Feeds
+                                    </Link>
+                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                        Plain
+                                    </Link>
+                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                        Modal
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
 
                     <div

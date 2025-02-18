@@ -117,31 +117,31 @@ const Creator = () => {
                                 <p>Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">KeenThemes</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">KeenThemes</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">Author Level 100</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">Author Level 100</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">UI/UX Desiger</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">UI/UX Desiger</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">jenny@kteam.com</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">jenny@kteam.com</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <CiMail className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">jenny@kteam.com</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">jenny@kteam.com</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <FaFacebook className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">keenthemes</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">keenthemes</Link>
                                 </div>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <FaYoutube className='text-gray-600 text-b-14-14-500' />
-                                    <span className="text-b-14-14-400 text-gray-900">keenthemes</span>
+                                    <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">keenthemes</Link>
                                 </div>
                             </div>
 
