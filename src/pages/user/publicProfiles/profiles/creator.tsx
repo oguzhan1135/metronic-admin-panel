@@ -29,7 +29,7 @@ import Future from '../../../../assets/icon/future.svg'
 import Switch from "../../../../components/switch"
 import { useState } from "react"
 import { Link } from "react-router"
-import { IoExitOutline, IoRocketOutline } from "react-icons/io5"
+import {  IoRocketOutline } from "react-icons/io5"
 import VerifyEmail from '../../../../assets/icon/verify-email.svg'
 import { TiPrinter } from "react-icons/ti"
 import { FiCoffee } from "react-icons/fi"
