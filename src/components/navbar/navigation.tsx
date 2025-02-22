@@ -8,7 +8,11 @@ const pathMapping: { [key: string]: string } = {
     creator: "Creator",
     default:"Default",
     company:"Company",
-    nft:"NFT"
+    nft:"NFT",
+    blogger:"NFT",
+    crm:"CRM"
+
+
 };
 
 const Navigation = () => {

@@ -15,6 +15,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { id: 4, pathname: '/user/publicProfiles/profiles/company' },
     { id: 5, pathname: '/user/publicProfiles/profiles/nft' },
     { id: 6, pathname: '/user/publicProfiles/profiles/blogger' },
+    { id: 7, pathname: '/user/publicProfiles/profiles/crm' },
+
 
   ]);
 

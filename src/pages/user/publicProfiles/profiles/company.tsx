@@ -10,7 +10,6 @@ import { Link } from "react-router"
 import Duolingo from '../../../../assets/icon/duolingo.svg'
 import { TbBottleFilled, TbWorld } from "react-icons/tb"
 import Map from '../../../../assets/icon/map.svg'
-import { HiOutlineDotsVertical } from "react-icons/hi"
 import DonutChart from "../../../../components/charts/donutChart"
 import Contributors from "../../../../components/publicProfile/contributors"
 import TechHub from '../../../../assets/icon/techHub.svg'
