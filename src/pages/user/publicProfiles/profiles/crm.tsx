@@ -7,15 +7,12 @@ import Verify from '../../../../assets/icon/verify.svg'
 import Card from "../../../../components/publicProfile/card"
 import { FaLaptopCode, FaShareAlt } from "react-icons/fa"
 import { Link } from "react-router"
-import DonutChart from "../../../../components/charts/donutChart"
 import Contributors from "../../../../components/publicProfile/contributors"
 import Jennifer from '../../../../assets/icon/jennifer.svg'
 import { IoCopyOutline, IoKeyOutline, IoReceiptOutline, IoRocketOutline } from "react-icons/io5"
 import DealTable from "../../../../components/publicProfile/dealTable"
 import { FiCoffee } from "react-icons/fi"
-import { TiPrinter } from "react-icons/ti"
 import Switch from "../../../../components/switch"
-import VerifyEmail from '../../../../assets/icon/verify-email.svg'
 import { useState } from "react"
 import AvatarGroup from "../../../../assets/icon/avatar-group.svg"
 import { HiOutlineDotsVertical } from "react-icons/hi"
