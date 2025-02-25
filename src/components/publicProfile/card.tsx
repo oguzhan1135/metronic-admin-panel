@@ -11,9 +11,10 @@ interface CardProps {
     buttonTitle?: string;
     dotContentStatus?: boolean;
     dotContent?: React.ReactElement;
+    titleContent?: React.ReactElement;
 }
 
-const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, buttonTitle, dotContent, dotContentStatus }) => {
+const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, buttonTitle, dotContent, dotContentStatus, titleContent }) => {
     const location = window.location.pathname;
     const [more, setMore] = useState(false);
 
@@ -56,7 +57,29 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                             )}
                         </div>
                     </div>
-                ) : null}
+                ) :
+                    <div className="py-5">
+                        <div className="flex flex-row justify-between items-center px-[30px]">
+                            {titleContent}
+                            {dotContentStatus ? (
+                                dotContent
+                            ) : (
+                                dotStatus && (
+                                    <div className="relative">
+                                        <div
+                                            onClick={() => setMore((prev) => !prev)}
+                                            className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
+                                        >
+                                            <HiOutlineDotsVertical />
+                                        </div>
+
+                                        {more && <CardMore setMore={setMore} more={more} />}
+                                    </div>
+                                )
+                            )}
+                        </div>
+                    </div>
+                }
 
                 {content}
 
