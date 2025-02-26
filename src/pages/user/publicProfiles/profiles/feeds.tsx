@@ -13,10 +13,35 @@ import LeftItem from '../../../../assets/icon/feeds-left-item.svg'
 import RightTopItem from '../../../../assets/icon/feeds-right-top-item.svg'
 import RightBottomItem from '../../../../assets/icon/feeds-right-bottom-item.svg'
 import PostTab from "../../../../components/publicProfile/postTabs"
+import { MdTabUnselected } from "react-icons/md"
+import YouTube from "react-youtube";
+import { FaRegCheckCircle, FaUsers } from "react-icons/fa"
+import Ranee from '../../../../assets/icon/rane-bronson.svg'
+import Jonathan from '../../../../assets/icon/jonathan-taylor.svg'
+import Lilia from '../../../../assets/icon/lilia-mattox.svg'
+import Neil from '../../../../assets/icon/neil-ronerts.svg'
+
 
 
 
 const Feeds = () => {
+    const YouTubePlayer = ({ videoId }: { videoId: string }) => {
+        return (
+            <YouTube
+                videoId={videoId}
+                opts={{
+                    width: "100%",
+                    height: "100%",
+                    playerVars: {
+                        modestbranding: 0,
+                        rel: 0,
+                    },
+                }}
+
+                className="w-full h-full aspect-video"
+            />
+        );
+    }
     const location = window.location.pathname
     return (
         <div className="flex flex-col gap-10">
@@ -199,6 +224,455 @@ const Feeds = () => {
                                     save={900}
                                     selectedTab="comment"
                                     likeContent={
+                                        <div className="flex flex-col">
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Cody} alt="cody" className="size-10" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Adam Wilson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">2 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Ranee} alt="rane" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Renee Branson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">6 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Jonathan} alt="jonathan" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Jonathan Taylor</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">13 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Lilia} alt="lilia" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Lilia Mattox</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">4 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Neil} alt="neil" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Neil Roberts</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">23 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    }
+                                    commentContent={
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Tyler} alt="tyler" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full ">
+                                                    <div className="flex flex-row items-center justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper you need to make sure you have to sit down and write. I’ll show you how to write a great blog post in five simple steps that people will actually want to read. Ready?
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Cody} alt="cody" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full">
+                                                    <div className="flex flex-row items-center  justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper.                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={Tyler} alt="tyler" className="size-[40px]" />
+                                                <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                />
+                            </div>
+                        }
+                        buttonStatus={false}
+                    />
+                    <Card
+                        dotStatus={true}
+                        titleContent={
+                            <div className="flex flex-row items-center gap-3">
+                                <img src={Jennifer} alt="jennifer" className="size-[50px]" />
+                                <div className="flex flex-col gap-2">
+                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Jenny Klabber</Link>
+                                    <span className=" text-b-14-14-400 text-gray-700">2 days ago</span>
+                                </div>
+                            </div>
+                        }
+                        content={
+                            <div className="flex flex-col gap-5 pb-5 px-[30px]">
+                                <p className="text-b-14-22-400 text-gray-800">I can hear your objections already. “But Dan, I have to blog for a cardboard box manufacturing company.” I feel your pain, I really do.</p>
+
+                                <PostTab
+                                    comment={2}
+                                    like={24}
+                                    save={16}
+                                    selectedTab="save"
+                                    likeContent={
+                                        <div className="flex flex-col">
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Cody} alt="cody" className="size-10" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Adam Wilson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">2 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Ranee} alt="rane" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Renee Branson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">6 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Jonathan} alt="jonathan" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Jonathan Taylor</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">13 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Lilia} alt="lilia" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Lilia Mattox</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">4 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Neil} alt="neil" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Neil Roberts</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">23 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    }
+                                    commentContent={
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Tyler} alt="tyler" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full ">
+                                                    <div className="flex flex-row items-center justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper you need to make sure you have to sit down and write. I’ll show you how to write a great blog post in five simple steps that people will actually want to read. Ready?
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Cody} alt="cody" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full">
+                                                    <div className="flex flex-row items-center  justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper.                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={Tyler} alt="tyler" className="size-[40px]" />
+                                                <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                />
+                            </div>
+                        }
+                        buttonStatus={false}
+                    />
+                    <Card
+                        dotStatus={true}
+                        buttonTitle="Show more Likes"
+
+                        titleContent={
+                            <div className="flex flex-row items-center gap-3">
+                                <div className="flex items-center justify-center rounded-full size-[50px] bg-primary-light">
+                                    <MdTabUnselected className="text-primary size-6" />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Finance Deprt - Annual Report</Link>
+                                    <span className=" text-b-14-14-400 text-gray-700">2 days ago</span>
+                                </div>
+                            </div>
+                        }
+                        content={
+                            <div className="flex flex-col gap-5 pb-5 px-[30px]">
+                                <p className="text-b-14-22-400 text-gray-800">You also need to be able to accept that not every post is going to get your motor running. Some posts will feel like a chore, but if you have editorial control over what you write about, then choose topics you’d want to read – even if they relate to niche industries. </p>
+                                <div className="overflow-hidden rounded-xl">
+                                    <YouTubePlayer videoId="2uWJpnuCMKQ" />
+                                </div>
+
+
+                                <PostTab
+                                    comment={2}
+                                    like={24}
+                                    save={16}
+                                    selectedTab="like"
+                                    likeContent={
+                                        <div className="flex flex-col">
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Cody} alt="cody" className="size-10" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Adam Wilson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">2 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Ranee} alt="rane" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Renee Branson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">6 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Jonathan} alt="jonathan" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Jonathan Taylor</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">13 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Lilia} alt="lilia" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Lilia Mattox</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">4 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Neil} alt="neil" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Neil Roberts</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">23 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    }
+                                    commentContent={
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Tyler} alt="tyler" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full ">
+                                                    <div className="flex flex-row items-center justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper you need to make sure you have to sit down and write. I’ll show you how to write a great blog post in five simple steps that people will actually want to read. Ready?
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-start gap-[14px]">
+                                                <img src={Cody} alt="cody" className="size-[50px]" />
+                                                <div className="flex flex-col gap-2.5 w-full">
+                                                    <div className="flex flex-row items-center  justify-between">
+                                                        <div className="flex flex-row items-center gap-2.5 ">
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
+                                                        </div>
+                                                        <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
+
+                                                    </div>
+                                                    <p className="text-14-22-400 text-gray-800">
+                                                        Long before you sit dow to put digital pen to paper.                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={Tyler} alt="tyler" className="size-[40px]" />
+                                                <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                />
+                            </div>
+                        }
+                        buttonStatus={true}
+                    />
+                    <Card
+                        dotStatus={true}
+                        titleContent={
+                            <div className="flex flex-row items-center gap-3">
+                                <img src={Jennifer} alt="jennifer" className="size-[50px]" />
+                                <div className="flex flex-col gap-2">
+                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Jenny Klabber</Link>
+                                    <span className=" text-b-14-14-400 text-gray-700">Week ago</span>
+                                </div>
+                            </div>
+                        }
+                        content={
+                            <div className="flex flex-col gap-5 pb-5 px-[30px]">
+                                <p className="text-b-14-22-400 text-gray-800">This doesn’t mean that all bloggers are insincere fakers. On the contrary, many bloggers’ natural curiosity is what makes them great at what they do. If you blog for a living, you have to be comfortable jumping from one topic to the next, even if you don’t know anything about it.</p>
+
+                                <PostTab
+                                    comment={2}
+                                    like={8}
+                                    save={16}
+                                    selectedTab=""
+                                    likeContent={
                                         <div>
                                             Like içeriği
                                         </div>
@@ -242,7 +716,7 @@ const Feeds = () => {
                                                 <img src={Tyler} alt="tyler" className="size-[40px]" />
                                                 <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
                                                     <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
-                                                    <CiImageOn className="text-gray-500 size-[18px]" />
+                                                    <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
 
                                                 </div>
                                             </div>
@@ -255,9 +729,14 @@ const Feeds = () => {
                         }
                         buttonStatus={false}
                     />
+                    <div className="flex items-center justify-center w-full">
+                        <Link to={location} className=" text-primary text-b-14-14-400 border-b border-dotted border-b-primary ">Show more posts</Link>
+
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
+
 export default Feeds
