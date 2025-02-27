@@ -105,14 +105,14 @@ const Navbar = () => {
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />
                 <div className="flex flex-row gap-5 relative dropdown-container bg-white">
-                    <img src={Search} alt="search" className="md:flex hidden" />
+                    <img src={Search} alt="search" className="md:flex hidden cursor-pointer" />
 
                     {dropdowns.map((item, index) => (
                         <div
                             key={item.id}
                             onClick={() => handleDropdownControl(item.tag)}
-                            className={`flex items-center justify-center ${index !== dropdowns.length -1 ? "hidden md:flex" : "flex"
-                                }`}
+                            className={`flex items-center justify-center ${index !== dropdowns.length - 1 ? "hidden md:flex" : "flex"
+                                } cursor-pointer`}
                         >
                             {item.icon}
                         </div>

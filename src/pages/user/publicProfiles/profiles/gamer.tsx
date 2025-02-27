@@ -48,8 +48,8 @@ const Gamer = () => {
 
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-3 items-center justify-center">
-                <img src={FloydMiles} alt="floyd" className='' />
+            <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
+            <img src={FloydMiles} alt="floyd" className='' />
                 <div className="flex flex-row items-center gap-1 ">
                     <span className="text-b-18-18-600 text-gray-900">Floyd Miles</span>
                     <img src={Verify} alt="" />

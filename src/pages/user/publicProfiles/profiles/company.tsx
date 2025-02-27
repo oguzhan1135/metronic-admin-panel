@@ -22,8 +22,8 @@ const Company = () => {
 
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-3 items-center justify-center">
-                <div className="rounded-full border border-success p-[25px]">
+            <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
+            <div className="rounded-full border border-success p-[25px]">
                     <img src={Duolingo} alt="duolingo" className='size-[50px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">

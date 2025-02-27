@@ -22,8 +22,8 @@ const NFT = () => {
     const location = window.location.pathname
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-3 items-center justify-center">
-                <div className="rounded-full border border-success">
+            <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
+            <div className="rounded-full border border-success">
                     <img src={Jennifer} alt="" className='size-[100px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">

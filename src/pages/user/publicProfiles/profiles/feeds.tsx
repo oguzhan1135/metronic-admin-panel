@@ -45,7 +45,8 @@ const Feeds = () => {
     const location = window.location.pathname
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-3 items-center justify-center">
+            <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
+
                 <div className="rounded-full border border-success">
                     <img src={Jennifer} alt="" className='size-[100px]' />
                 </div>

@@ -96,17 +96,21 @@ const config: Config = {
         'warning-clarity': '#F6B100',
         'warning-light': '#FFF8DD',
 
-        'gray-100':'#F9F9F9',
-        'gray-200':'#F1F1F4',
-        'gray-300':'#DBDFE9',
-        'gray-400':'#C4CADA',
-        'gray-500':'#99A1B7',
-        'gray-600':'#78829D',
-        'gray-700':'#4B5675',
-        'gray-800':'#252F4A',
-        'gray-900':'#071437',
+        'gray-100': '#F9F9F9',
+        'gray-200': '#F1F1F4',
+        'gray-300': '#DBDFE9',
+        'gray-400': '#C4CADA',
+        'gray-500': '#99A1B7',
+        'gray-600': '#78829D',
+        'gray-700': '#4B5675',
+        'gray-800': '#252F4A',
+        'gray-900': '#071437',
 
-      }
+      },
+      backgroundImage: {
+        'map': "url('/src/assets/icon/background-map.svg')",
+        'mask':"url('/src/assets/icon/mask.svg')"
+      },
     },
   },
   plugins: [],
