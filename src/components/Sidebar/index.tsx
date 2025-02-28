@@ -557,10 +557,10 @@ const Sidebar = () => {
 
         }
     }
-
-
+    const { modalOpen } = metronicContext();
+const location= window.location.pathname
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex z-50`}>
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${modalOpen === true && location === "/user/publicProfiles/profiles/modal" ? "-z-10" : "z-50"} `}>
             <div className="px-5 py-[30px] flex relative ">
                 <div onClick={() => {
                     handleSideBar()
@@ -573,7 +573,7 @@ const Sidebar = () => {
                 {
                     sidebarWidth == 280 ?
                         <>
-                            <img src={MetronicLogo} alt="Metronic-Logo" />
+                            <img src={MetronicLogo} alt="Metronic-Logo" className='' />
                         </> :
                         <><img src={MLogo} alt="logo" /></>
                 }
@@ -697,7 +697,7 @@ const Sidebar = () => {
                                                                     {
                                                                         childItem.path ?
                                                                             <Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
-                                                                                 className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
+                                                                                className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
                                                                                     ? 'selectedItem'
                                                                                     : 'unSelectedItem'
                                                                                     }`}>
