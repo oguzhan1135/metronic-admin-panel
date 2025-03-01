@@ -7,11 +7,11 @@ import { IoChatbubblesOutline, IoShareSocial } from "react-icons/io5"
 import { SlDislike } from "react-icons/sl"
 import { TiMessages } from "react-icons/ti"
 import { Link } from "react-router"
-import Switch from "../switch"
+import Switch from "./switch"
 import { HiRectangleGroup } from "react-icons/hi2"
 
 const Menu = () => {
-    const location = window.location.pathname
+    let location = window.location.pathname
     const [isProfileOpen, setProfileOpen] = useState(false);
     const [isProjectOpen, setProjectOpen] = useState(false);
     const [isMoreOpen, setMoreOpen] = useState(false);
@@ -53,18 +53,19 @@ const Menu = () => {
         }
     };
 
+
     return (
         <div className="flex lg:flex-row flex-col items-center justify-between border-b relative">
             <div className="w-full overflow-x-auto flex xl:justify-between items-center">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px]">
                     <div
-                        className="flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 border-b-primary cursor-pointer"
+                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/profiles") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         ref={menuRef}
                     >
-                        <a className="text-b-14-14-500 text-primary">Profiles</a>
-                        <FaChevronDown className="text-b-14-14-500 text-primary" />
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/profiles") ? "text-primary" : "text-gray-700"} `}>Profiles</a>
+                        <FaChevronDown className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/profiles") ? "text-primary" : "text-gray-700"} `} />
 
                         {/* Profiles sub-menu */}
                         <div
@@ -119,12 +120,12 @@ const Menu = () => {
 
 
                     <div
-                        className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer"
+                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/projects") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={() => setProjectOpen(true)}
                         onMouseLeave={() => setProjectOpen(false)}
                     >
-                        <a className="text-b-14-14-500 text-gray-700">Project</a>
-                        <FaChevronDown className="text-b-14-14-500 text-gray-700" />
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/projects") ? "text-primary" : "text-gray-700"} `}>Project</a>
+                        <FaChevronDown className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/projects") ? "text-primary" : "text-gray-700"} `} />
 
                         {/* Project menu */}
                         <div

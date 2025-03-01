@@ -9,7 +9,7 @@ import Perrier from '../../../../assets/icon/perrier.svg'
 import DonutChart from '../../../../components/charts/donutChart';
 import Contributors from '../../../../components/publicProfile/contributors';
 import Card from '../../../../components/publicProfile/card';
-import Menu from '../../../../components/publicProfile/hovermenu';
+import Menu from '../../../../components/hovermenu';
 import { Link } from 'react-router';
 import ProjectTable from '../../../../components/publicProfile/projectTable';
 import Badges from '../../../../components/publicProfile/badges';

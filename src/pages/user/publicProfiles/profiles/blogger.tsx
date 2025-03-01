@@ -8,7 +8,7 @@ import { SlLocationPin } from "react-icons/sl"
 import { TiPrinter } from "react-icons/ti"
 import { Link } from "react-router"
 import Card from "../../../../components/publicProfile/card"
-import Menu from "../../../../components/publicProfile/hovermenu"
+import Menu from "../../../../components/hovermenu"
 import Switch from "../../../../components/switch"
 import Badges from "../../../../components/publicProfile/badges"
 import CheckCircle from '../../../../assets/icon/check-circle.svg'

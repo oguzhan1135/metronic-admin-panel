@@ -5,7 +5,7 @@ import { SlLocationPin } from "react-icons/sl"
 import Tyler from '../../../../assets/icon/tyler-hero.svg'
 import Cody from '../../../../assets/icon/cody-fisher.svg'
 import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Menu from "../../../../components/publicProfile/hovermenu"
+import Menu from "../../../../components/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Card from "../../../../components/publicProfile/card"
 import { Link } from "react-router"

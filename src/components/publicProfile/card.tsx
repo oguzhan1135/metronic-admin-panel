@@ -57,7 +57,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                             )}
                         </div>
                     </div>
-                ) :
+                ) : titleContent ?
                     <div className="py-5">
                         <div className="flex flex-row justify-between items-center px-[30px]">
                             {titleContent}
@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                                 )
                             )}
                         </div>
-                    </div>
+                    </div> : null
                 }
 
                 {content}
