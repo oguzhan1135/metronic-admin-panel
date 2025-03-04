@@ -139,7 +139,7 @@ const ThreeColumns = () => {
             id: 12,
             projectName: "TerraCrest App",
             content: "Video conferencing software",
-            icon: <img src={Telegram} alt="telegram-icon" />,
+            icon: <img src={Perrier} alt="parrier-icon" />,
             startDate: "Mar 06",
             endDate: "Dec 21",
             progress: 100,
@@ -264,75 +264,79 @@ const ThreeColumns = () => {
                 }
             </div>
 
-            <div className="flex flex-col gap-5">
-                {
-                    project.map((item) => (
-                        <>
-                            <Card buttonStatus={false} dotStatus={false}
-                                content={
-                                    <div className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-[30px] p-[30px]">
-                                        <div className="flex flex-row items-center gap-[14px]">
-                                            {item.icon}
-                                            <div className="flex flex-col gap-3">
-                                                <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">{item.projectName}</Link>
-                                                <span className="text-b-14-14-400 text-gray-700">{item.content}</span>
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-row items-center w-full  gap-5 max-w-[500px] flex-wrap md:flex-nowrap">
-                                            {
-                                                item.progress < 100 && item.progress != 0 ?
-                                                    <>
-                                                        <div className="p-2 min-w-[80px] rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
-                                                            <span className="text-primary text-b-11-12-500">In Progress</span>
-                                                        </div>
-
-                                                    </> : item.progress == 0 ?
-                                                        <>
-                                                            <div className="p-2 min-w-[80px] rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
-                                                                <span className="text-primary text-b-11-12-500">Upcoming</span>
-                                                            </div>
-                                                        </> :
-                                                        <div className="p-2 min-w-[80px] rounded-[4px] bg-primary-light border-success border-opacity-10 border flex items-center justify-center">
-                                                            <span className="text-success text-b-11-12-500">Completed</span>
-                                                        </div>
-                                            }
-                                            {
-                                                item.progress < 100 && item.progress != 0 ?
-                                                    <>
-                                                        <div className="bg-primary-light rounded-[4px] h-[6px] w-full min-w-[140px] relative">
-                                                            <span className={`absolute left-0 top-0 block bg-primary h-[6px] rounded-[4px]`} style={{ width: `${item.progress}%` }}></span>
-                                                        </div>
-
-                                                    </> : item.progress == 0 ?
-                                                        <>
-                                                            <div className="bg-gray-300 rounded-[4px] h-[6px] w-full relative">
-                                                            </div>
-                                                        </> :
-                                                        <div className="bg-primary-light rounded-[4px] h-[6px] w-full relative">
-                                                            <span className=" absolute left-0 top-0 block bg-success w-full h-[6px] rounded-[4px]"></span>
-                                                        </div>
-                                            }
-                                            <img src={PlurtkAvatar} alt="avatar-group" className="w-[72px] h-[30px]" />
-
-                                            <div className="relative">
-                                                <div
-                                                    onClick={() => setMore((prev) => !prev)}
-                                                    className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
-                                                >
-                                                    <HiOutlineDotsVertical />
+            {
+                selectedCardView === "list" ?
+                    < div className="flex flex-col gap-5">
+                        {
+                            project.map((item) => (
+                                <>
+                                    <Card buttonStatus={false} dotStatus={false}
+                                        content={
+                                            <div className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-[30px] p-[30px]">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    {item.icon}
+                                                    <div className="flex flex-col gap-3">
+                                                        <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">{item.projectName}</Link>
+                                                        <span className="text-b-14-14-400 text-gray-700">{item.content}</span>
+                                                    </div>
                                                 </div>
+                                                <div className="flex flex-row items-center w-full  gap-5 max-w-[500px] flex-wrap md:flex-nowrap">
+                                                    {
+                                                        item.progress < 100 && item.progress != 0 ?
+                                                            <>
+                                                                <div className="p-2 min-w-[80px] rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
+                                                                    <span className="text-primary text-b-11-12-500">In Progress</span>
+                                                                </div>
 
-                                                {more && <CardMore setMore={setMore} more={more} />}
+                                                            </> : item.progress == 0 ?
+                                                                <>
+                                                                    <div className="p-2 min-w-[80px] rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
+                                                                        <span className="text-primary text-b-11-12-500">Upcoming</span>
+                                                                    </div>
+                                                                </> :
+                                                                <div className="p-2 min-w-[80px] rounded-[4px] bg-primary-light border-success border-opacity-10 border flex items-center justify-center">
+                                                                    <span className="text-success text-b-11-12-500">Completed</span>
+                                                                </div>
+                                                    }
+                                                    {
+                                                        item.progress < 100 && item.progress != 0 ?
+                                                            <>
+                                                                <div className="bg-primary-light rounded-[4px] h-[6px] w-full min-w-[140px] relative">
+                                                                    <span className={`absolute left-0 top-0 block bg-primary h-[6px] rounded-[4px]`} style={{ width: `${item.progress}%` }}></span>
+                                                                </div>
+
+                                                            </> : item.progress == 0 ?
+                                                                <>
+                                                                    <div className="bg-gray-300 rounded-[4px] h-[6px] w-full relative">
+                                                                    </div>
+                                                                </> :
+                                                                <div className="bg-primary-light rounded-[4px] h-[6px] w-full relative">
+                                                                    <span className=" absolute left-0 top-0 block bg-success w-full h-[6px] rounded-[4px]"></span>
+                                                                </div>
+                                                    }
+                                                    <img src={PlurtkAvatar} alt="avatar-group" className="w-[72px] h-[30px]" />
+
+                                                    <div className="relative">
+                                                        <div
+                                                            onClick={() => setMore((prev) => !prev)}
+                                                            className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
+                                                        >
+                                                            <HiOutlineDotsVertical />
+                                                        </div>
+
+                                                        {more && <CardMore setMore={setMore} more={more} />}
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                }
-                            />
-                        </>
+                                        }
+                                    />
+                                </>
 
-                    ))
-                }
-            </div>
+                            ))
+                        }
+                    </div> : null
+
+            }
 
             <div className="flex items-center justify-center">
                 <Link to={location} className="border-b-primary border-b border-dotted text-b-13-14-500 text-primary">Show more projects</Link>

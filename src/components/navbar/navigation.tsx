@@ -6,15 +6,18 @@ const pathMapping: { [key: string]: string } = {
     publicProfiles: "Public Profiles",
     profiles: "Profiles",
     creator: "Creator",
-    default:"Default",
-    company:"Company",
-    nft:"NFT",
-    blogger:"NFT",
-    crm:"CRM",
-    gamer:"Gamer",
-    feeds:"Feeds",
-    plain:"Plain",
-    modal:"Modal"
+    default: "Default",
+    company: "Company",
+    nft: "NFT",
+    blogger: "NFT",
+    crm: "CRM",
+    gamer: "Gamer",
+    feeds: "Feeds",
+    plain: "Plain",
+    modal: "Modal",
+    threeColumns: "3 Column",
+    twoColumns: "2 Column "
+
 
 
 };
