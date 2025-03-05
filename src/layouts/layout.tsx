@@ -22,6 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { id: 11, pathname: '/user/publicProfiles/profiles/modal' },
     { id: 12, pathname: '/user/publicProfiles/projects/threeColumns' },
     { id: 13, pathname: '/user/publicProfiles/projects/twoColumns' },
+    { id: 14, pathname: '/user/publicProfiles/works' },
 
 
 

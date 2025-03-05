@@ -16,7 +16,8 @@ const pathMapping: { [key: string]: string } = {
     plain: "Plain",
     modal: "Modal",
     threeColumns: "3 Column",
-    twoColumns: "2 Column "
+    twoColumns: "2 Column ",
+    works:"Works"
 
 
 

@@ -142,6 +142,9 @@ const Menu = () => {
                             </Link>
                         </div>
                     </div>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/works") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/works") ? "text-primary" : "text-gray-700"} `}>Works</a>
+                    </div>
                     <div className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer">
                         <a className="text-b-14-14-500 text-gray-700">Teams</a>
                     </div>

@@ -154,10 +154,10 @@ const TwoColumns = () => {
                                                         </> : item.progress == 0 ?
                                                             <>
                                                                 <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
-                                                                    <span className="text-primary text-b-11-12-500">Upcoming</span>
+                                                                    <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
                                                                 </div>
                                                             </> :
-                                                            <div className="p-2 rounded-[4px] bg-primary-light border-success border-opacity-10 border flex items-center justify-center">
+                                                            <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
                                                                 <span className="text-success text-b-11-12-500">Completed</span>
                                                             </div>
                                                 }
@@ -165,52 +165,52 @@ const TwoColumns = () => {
                                         }
                                             content={
                                                 <div className="flex flex-col gap-[30px] items-center pt-[30px] z-10 overflow-hidden relative">
-                                                <div className="flex flex-row items-center justify-between">
-                                                    <div className="p-2.5 bg-gray-100 rounded-lg">
-                                                        {item.icon}
-                                                    </div>
-                                                </div>
-                                            
-                                                <div className="flex flex-col gap-2.5 items-center">
-                                                    <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
-                                                        {item.projectName}
-                                                    </Link>
-                                                    <span className="text-b-14-14-400 text-gray-700">{item.content}</span>
-                                                </div>
-                                            
-                                                <img src={PlurtkAvatar} alt="avatar-group" className="w-[72px] h-[30px]" />
-                                            
-                                                <div className="flex flex-row items-center flex-wrap gap-5">
-                                                    <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
-                                                        <span className="text-b-14-14-500 text-gray-900">1-3 months</span>
-                                                        <span className="text-b-11-12-400 text-gray-700">Duration</span>
-                                                    </div>
-                                                    <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
-                                                        <span className="text-b-14-14-500 text-gray-900"></span>
-                                                        <span className="text-b-11-12-400 text-gray-700">Location</span>
-                                                    </div>
-                                                    <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
-                                                        <span className="text-b-14-14-500 text-gray-900">1-3 months</span>
-                                                        <span className="text-b-11-12-400 text-gray-700">Rate</span>
-                                                    </div>
-                                                </div>
-                                            
-                                                {
-                                                    item.progress < 100 && item.progress !== 0 ? (
-                                                        <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
-                                                            <span
-                                                                className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
-                                                                style={{ width: `${item.progress}%` }}
-                                                            ></span>
+                                                    <div className="flex flex-row items-center justify-between">
+                                                        <div className="p-2.5 bg-gray-100 rounded-lg">
+                                                            {item.icon}
                                                         </div>
-                                                    ) : item.progress === 0 ? (
-                                                        <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
-                                                    ) : (
-                                                        <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
-                                                    )
-                                                }
-                                            </div>
-                                            
+                                                    </div>
+
+                                                    <div className="flex flex-col gap-2.5 items-center">
+                                                        <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
+                                                            {item.projectName}
+                                                        </Link>
+                                                        <span className="text-b-14-14-400 text-gray-700">{item.content}</span>
+                                                    </div>
+
+                                                    <img src={PlurtkAvatar} alt="avatar-group" className="w-[72px] h-[30px]" />
+
+                                                    <div className="flex flex-row items-center flex-wrap gap-5">
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
+                                                            <span className="text-b-14-14-500 text-gray-900">1-3 months</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Duration</span>
+                                                        </div>
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
+                                                            <span className="text-b-14-14-500 text-gray-900">{item.location}</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Location</span>
+                                                        </div>
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
+                                                            <span className="text-b-14-14-500 text-gray-900">1-3 months</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Rate</span>
+                                                        </div>
+                                                    </div>
+
+                                                    {
+                                                        item.progress < 100 && item.progress !== 0 ? (
+                                                            <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
+                                                                <span
+                                                                    className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
+                                                                    style={{ width: `${item.progress}%` }}
+                                                                ></span>
+                                                            </div>
+                                                        ) : item.progress === 0 ? (
+                                                            <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
+                                                        ) : (
+                                                            <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
+                                                        )
+                                                    }
+                                                </div>
+
                                             }
                                         />
                                     </> : null
@@ -228,7 +228,7 @@ const TwoColumns = () => {
                                 <>
                                     <Card buttonStatus={false} dotStatus={false}
                                         content={
-                                            <div className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-[30px] p-[30px]">
+                                            <div className="flex flex-col md:flex-row items-start md:items-center w-full justify-start md:justify-between gap-[30px] p-[30px]">
                                                 <div className="flex flex-row items-center gap-[14px]">
                                                     {item.icon}
                                                     <div className="flex flex-col gap-3">
@@ -236,7 +236,22 @@ const TwoColumns = () => {
                                                         <span className="text-b-14-14-400 text-gray-700">{item.content}</span>
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-row items-center w-full  gap-5 max-w-[500px] flex-wrap md:flex-nowrap">
+
+                                                <div className="flex flex-row items-center w-full justify-end  gap-5 max-w-[500px] flex-wrap md:flex-nowrap">
+                                                    <div className="flex flex-row items-center flex-wrap md:flex-nowrap gap-5">
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px] min-w-[100px]">
+                                                            <span className="text-b-14-14-500 text-gray-900">1-3 months</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Duration</span>
+                                                        </div>
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px] ">
+                                                            <span className="text-b-14-14-500 text-gray-900">{item.location}</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Location</span>
+                                                        </div>
+                                                        <div className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px] min-w-[83px]">
+                                                            <span className="text-b-14-14-500 text-gray-900">$65 hour</span>
+                                                            <span className="text-b-11-12-400 text-gray-700">Rate</span>
+                                                        </div>
+                                                    </div>
                                                     {
                                                         item.progress < 100 && item.progress != 0 ?
                                                             <>
@@ -254,22 +269,7 @@ const TwoColumns = () => {
                                                                     <span className="text-success text-b-11-12-500">Completed</span>
                                                                 </div>
                                                     }
-                                                    {
-                                                        item.progress < 100 && item.progress != 0 ?
-                                                            <>
-                                                                <div className="bg-primary-light rounded-[4px] h-[6px] w-full min-w-[140px] relative">
-                                                                    <span className={`absolute left-0 top-0 block bg-primary h-[6px] rounded-[4px]`} style={{ width: `${item.progress}%` }}></span>
-                                                                </div>
 
-                                                            </> : item.progress == 0 ?
-                                                                <>
-                                                                    <div className="bg-gray-300 rounded-[4px] h-[6px] w-full relative">
-                                                                    </div>
-                                                                </> :
-                                                                <div className="bg-primary-light rounded-[4px] h-[6px] w-full relative">
-                                                                    <span className=" absolute left-0 top-0 block bg-success w-full h-[6px] rounded-[4px]"></span>
-                                                                </div>
-                                                    }
                                                     <img src={PlurtkAvatar} alt="avatar-group" className="w-[72px] h-[30px]" />
 
                                                     <div className="relative">
