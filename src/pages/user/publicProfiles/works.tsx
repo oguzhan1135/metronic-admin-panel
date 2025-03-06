@@ -1,7 +1,7 @@
 import Card from "../../../components/publicProfile/card"
 import Verify from '../../../assets/icon/verify.svg'
 import Jennifer from '../../../assets/icon/jennifer.svg'
-import { CiGrid2H, CiGrid41, CiHeart, CiMail } from "react-icons/ci"
+import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
@@ -15,11 +15,13 @@ import Floyd from '../../../assets/icon/floyed.svg'
 import UrbanDreams from '../../../assets/icon/fachrizal-maulana.svg'
 import { FaCommentAlt, FaHeart } from "react-icons/fa"
 import Whispered from '../../../assets/icon/work-whispered.svg'
-import Godlen from '../../../assets/icon/hor.svg'
+import Golden from '../../../assets/icon/hor.svg'
 import Mystic from '../../../assets/icon/work-mystic.svg'
 import Wild from '../../../assets/icon/work-wild.svg'
 import Beuity from '../../../assets/icon/wild-beautiy.svg'
 import Timeless from '../../../assets/icon/work-timeless.svg'
+import Arlene from '../../../assets/icon/arlene-mccoy.svg'
+import OfferWork from '../../../assets/icon/offer-work.svg'
 
 interface Work {
     id: number;
@@ -59,10 +61,10 @@ const Works = () => {
         },
         {
             id: 3,
-            image: UrbanDreams,
+            image: Golden,
             workName: "Golden Serenity",
             authorName: "Albert Flores",
-            authorIcon: <img src={Cody} className="size-7" />,
+            authorIcon: <img src={Floyd} className="size-7" />,
             like: 60,
             comment: 13
         },
@@ -80,7 +82,7 @@ const Works = () => {
             image: Wild,
             workName: "Wild Beauty",
             authorName: "Devon Lane",
-            authorIcon: <img src={Cody} className="size-7" />,
+            authorIcon: <img src={Arlene} className="size-7" />,
             like: 625,
             comment: 109
         },
@@ -98,9 +100,9 @@ const Works = () => {
             image: Beuity,
             workName: "Wild Beauty",
             authorName: "Devon Lane",
-            authorIcon: <img src={Cody} className="size-7" />,
+            authorIcon: <img src={Arlene} className="size-7" />,
             like: 625,
-            comment:109
+            comment: 109
         },
         {
             id: 8,
@@ -208,6 +210,14 @@ const Works = () => {
                         </>
                     ))
                 }
+                <div className="flex border border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10">
+                    <img src={OfferWork} alt="offer-work" />
+                    <div className="flex flex-col gap-2.5 items-center">
+                        <span className="text-h-22-22-600 text-gray-900">Offer a Work</span>
+                        <span className="text-b-14-14-400 text-gray-700">Ignite Professional Adventures</span>
+                    </div>
+                </div>
+
             </div>
 
 

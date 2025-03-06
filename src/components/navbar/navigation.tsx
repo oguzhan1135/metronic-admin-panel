@@ -17,10 +17,8 @@ const pathMapping: { [key: string]: string } = {
     modal: "Modal",
     threeColumns: "3 Column",
     twoColumns: "2 Column ",
-    works:"Works"
-
-
-
+    works:"Works",
+    teams:"Teams"
 };
 
 const Navigation = () => {
