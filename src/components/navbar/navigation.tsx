@@ -18,7 +18,8 @@ const pathMapping: { [key: string]: string } = {
     threeColumns: "3 Column",
     twoColumns: "2 Column ",
     works:"Works",
-    teams:"Teams"
+    teams:"Teams",
+    network:"Network"
 };
 
 const Navigation = () => {

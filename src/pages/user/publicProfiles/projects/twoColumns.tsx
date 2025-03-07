@@ -226,7 +226,7 @@ const TwoColumns = () => {
                         {
                             project.map((item) => (
                                 <>
-                                    <Card buttonStatus={false} dotStatus={false}
+                                    <Card key={item.id} buttonStatus={false} dotStatus={false}
                                         content={
                                             <div className="flex flex-col md:flex-row items-start md:items-center w-full justify-start md:justify-between gap-[30px] p-[30px]">
                                                 <div className="flex flex-row items-center gap-[14px]">

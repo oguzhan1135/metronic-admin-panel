@@ -157,9 +157,7 @@ const Works = () => {
                 {
                     works.map((item) => (
                         <>
-
-
-                            <Card buttonStatus={false} dotStatus={true}
+                            <Card key={item.id} buttonStatus={false} dotStatus={true}
 
                                 content={
                                     <div className={`${selectedCardView === "card" ? "flex flex-col gap-5 pb-5  rounded-xl z-10 overflow-hidden" : "flex flex-col md:flex-row items-start md:items-center w-full justify-start md:justify-between gap-[30px] p-[30px]"}`}>
