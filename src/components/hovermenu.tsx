@@ -145,14 +145,14 @@ const Menu = () => {
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/works") ? "border-b-primary" : "border-none"} cursor-pointer`}>
                         <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/works") ? "text-primary" : "text-gray-700"} `}>Works</a>
                     </div>
-                    <div className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer">
-                        <a className="text-b-14-14-500 text-gray-700">Teams</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/teams") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/teams") ? "text-primary" : "text-gray-700"} `}>Teams</a>
                     </div>
-                    <div className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer">
-                        <a className="text-b-14-14-500 text-gray-700">Network</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/network") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/network") ? "text-primary" : "text-gray-700"} `}>Network</a>
                     </div>
-                    <div className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer">
-                        <a className="text-b-14-14-500 text-gray-700">Activity</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/activity") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/activity") ? "text-primary" : "text-gray-700"} `}>Activity</a>
                     </div>
                     <div
                         className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer"

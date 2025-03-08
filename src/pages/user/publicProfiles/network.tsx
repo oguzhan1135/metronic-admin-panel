@@ -144,7 +144,7 @@ const Network = () => {
             {/* {Sub  menu} */}
             <Menu />
             <div className="flex items-center justify-between">
-                <h1 className="text-b-18-18-600 text-gray-900">12 Projects</h1>
+                <h1 className="text-b-18-18-600 text-gray-900">{network.length} Connections</h1>
                 <div className="rounded-lg border p-1 bg-gray-200 flex flex-row items-center gap-1">
                     <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
                         <CiGrid41 className="text-gray-600 size-[14px]" />

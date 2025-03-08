@@ -25,6 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { id: 14, pathname: '/user/publicProfiles/works' },
     { id: 15, pathname: '/user/publicProfiles/teams' },
     { id: 16, pathname: '/user/publicProfiles/network' },
+    { id: 17, pathname: '/user/publicProfiles/activity' },
 
 
   ]);
@@ -38,7 +39,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex flex-col gap-40 w-full overflow-hidden">
         <Header />
         <main
-          className={`bg-transparent px-10 py-24 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'
+          className={`bg-transparent px-10  py-24 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'
             } transition-all w-full duration-500 ease-in-out z-0`}
         >
           {children}

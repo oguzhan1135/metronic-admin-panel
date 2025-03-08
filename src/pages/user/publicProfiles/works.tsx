@@ -22,6 +22,7 @@ import Beuity from '../../../assets/icon/wild-beautiy.svg'
 import Timeless from '../../../assets/icon/work-timeless.svg'
 import Arlene from '../../../assets/icon/arlene-mccoy.svg'
 import OfferWork from '../../../assets/icon/offer-work.svg'
+import React from "react"
 
 interface Work {
     id: number;
@@ -156,8 +157,8 @@ const Works = () => {
             <div className={`${selectedCardView === "card" ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1" : "flex flex-col gap-5"}`}>
                 {
                     works.map((item) => (
-                        <>
-                            <Card key={item.id} buttonStatus={false} dotStatus={true}
+                        <React.Fragment key={item.id}>
+                            <Card  buttonStatus={false} dotStatus={true}
 
                                 content={
                                     <div className={`${selectedCardView === "card" ? "flex flex-col gap-5 pb-5  rounded-xl z-10 overflow-hidden" : "flex flex-col md:flex-row items-start md:items-center w-full justify-start md:justify-between gap-[30px] p-[30px]"}`}>
@@ -205,7 +206,7 @@ const Works = () => {
                             />
 
 
-                        </>
+                        </React.Fragment>
                     ))
                 }
                 <div className="flex border border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10">
