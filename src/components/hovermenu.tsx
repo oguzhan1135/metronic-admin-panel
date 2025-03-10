@@ -155,12 +155,12 @@ const Menu = () => {
                         <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/activity") ? "text-primary" : "text-gray-700"} `}>Activity</a>
                     </div>
                     <div
-                        className=" flex flex-row items-center gap-1 py-5 px-2.5  cursor-pointer"
+                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/campaigns") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={() => setMoreOpen(true)}
                         onMouseLeave={() => setMoreOpen(false)}
                     >
-                        <a className="text-b-14-14-500 text-gray-700">More</a>
-                        <FaChevronDown className="text-b-14-14-500 text-gray-700" />
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/campaigns") ? "text-primary" : "text-gray-700"} `}>More</a>
+                        <FaChevronDown className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/campaigns") ? "text-primary" : "text-gray-700"} `} />
 
                         {/* More menu */}
                         <div

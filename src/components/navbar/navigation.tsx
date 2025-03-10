@@ -20,7 +20,8 @@ const pathMapping: { [key: string]: string } = {
     works:"Works",
     teams:"Teams",
     network:"Network",
-    activity:"Activity"
+    activity:"Activity",
+    campaigns:"Campaigns"
 };
 
 const Navigation = () => {

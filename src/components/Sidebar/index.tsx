@@ -125,15 +125,9 @@ const menuData: MenuItem[] = [
             },
             {
                 category: "user",
-                key: "chanpaigns-card",
-                label: "Champaigns - Card",
-                path: "/user/publicProfiles/champaigns-card"
-            },
-            {
-                category: "user",
-                key: "chanpaigns-list",
-                label: "Champaigns - List",
-                path: "/user/publicProfiles/champaigns-list"
+                key: "campaigns-card",
+                label: "Campaigns",
+                path: "/user/publicProfiles/campaigns"
             },
             {
                 category: "user",
