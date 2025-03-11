@@ -16,6 +16,8 @@ import Youtube from '../../../assets/icon/youtube.svg'
 import Amazon from '../../../assets/icon/amazon.svg'
 import Engagament from '../../../assets/icon/mailchimp.svg'
 import Linkedin from '../../../assets/icon/linkedin.svg'
+import { HiOutlineDotsVertical } from "react-icons/hi"
+import CardMore from "../../../components/more/cardMore"
 
 type Campaign = {
     id: number;
@@ -46,12 +48,12 @@ type Campaign = {
 
 const Campaigns = () => {
     const location = window.location.pathname
-
+    const [more, setMore] = useState(false)
     const [campaigns, setCampaigns] = useState<Campaign[]>(
         [
             {
                 id: 1,
-                icon: <img src={Twitch} />,
+                icon: <img src={Twitch} className="size-[50px]" />,
                 title: "Urban Dreams",
                 platform: "Twitch",
                 progress: 100,
@@ -90,7 +92,7 @@ const Campaigns = () => {
             },
             {
                 id: 4,
-                icon: <img src={Amazon} />,
+                icon: <img src={Amazon} className="size-[50px]" />,
                 title: "Product Push",
                 platform: "Amazon",
                 progress: 100,
@@ -103,7 +105,7 @@ const Campaigns = () => {
             },
             {
                 id: 5,
-                icon: <img src={Engagament} />,
+                icon: <img src={Engagament} className="size-[50px]" />,
                 title: "Email Engagement",
                 platform: "Mailchimp",
                 progress: 0,
@@ -131,6 +133,14 @@ const Campaigns = () => {
     );
 
     const [selectedCardView, setSelectedCardView] = useState("card");
+    const [moreStates, setMoreStates] = useState<{ [key: number]: boolean }>({});
+
+    const toggleMore = (id: number) => {
+        setMoreStates((prev) => ({
+            ...prev,
+            [id]: !prev[id],
+        }));
+    };
 
     return (
         <div className="flex flex-col gap-10  ">
@@ -160,7 +170,7 @@ const Campaigns = () => {
             {/* {Sub  menu} */}
             <Menu />
             <div className="flex items-center justify-between">
-                <h1 className="text-b-18-18-600 text-gray-900">12 Projects</h1>
+                <h1 className="text-b-18-18-600 text-gray-900">6 Campaigns</h1>
                 <div className="rounded-lg border p-1 bg-gray-200 flex flex-row items-center gap-1">
                     <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
                         <CiGrid41 className="text-gray-600 size-[14px]" />
@@ -171,10 +181,10 @@ const Campaigns = () => {
                 </div>
 
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-[30px] z-1">
+            <div className={`${selectedCardView === "card" ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1" : "flex flex-col gap-5"}`}>
                 {
                     campaigns.map((item) => (
-                        <Card buttonStatus={false} dotStatus={true} titleContent={
+                        <Card buttonStatus={false} dotStatus={true} titleContent={selectedCardView === "card" ?
                             <>
                                 {
                                     item.progress < 100 && item.progress != 0 ?
@@ -193,21 +203,25 @@ const Campaigns = () => {
                                                 <span className="text-success text-b-11-12-500">Completed</span>
                                             </div>
                                 }
-                            </>
-                        }
-                            content={
-                                <div className="flex flex-col gap-[30px] items-center pt-[30px] z-10 overflow-hidden relative">
-                                    {item.icon}
+                            </> : undefined}
 
-                                    <div className="flex flex-col gap-2.5 items-center">
-                                        <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
-                                            {item.title}
-                                        </Link>
-                                        <span className="text-b-14-14-400 text-gray-700">{item.description}</span>
+                            content={
+                                <div className={`flex   items-center  relative ${selectedCardView === "card" ? "flex-col pt-[30px] overflow-hidden " : "flex-row p-[30px] gap-[14px] justify-center sm:justify-between flex-wrap"}`}>
+
+                                    <div className={`flex items-center ${selectedCardView === "card" ? "flex-col gap-[30px] pb-[30px]" : "flex-col sm:flex-row items-center  gap-[14px]"} `}>
+                                        {item.icon}
+
+                                        <div className={`flex  gap-2.5 flex-col ${selectedCardView === "card" ? "items-center" : "items-center sm:items-start"}`}>
+                                            <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
+                                                {item.title}
+                                            </Link>
+                                            <span className="text-b-14-14-400 text-gray-700">{item.description}</span>
+                                        </div>
                                     </div>
 
 
-                                    <div className="flex flex-row items-center flex-wrap gap-5">
+
+                                    <div className={`flex flex-row items-center flex-wrap gap-5 ${selectedCardView === "card" ? "pb-[30px]" : ""}`}>
                                         {Object.entries(item.metrics).map(([key, value]) => (
                                             value && (
                                                 <div key={key} className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
@@ -221,21 +235,61 @@ const Campaigns = () => {
                                         ))}
                                     </div>
 
-
+                                    <>
+                                        {selectedCardView === "card" && (
+                                            <>
+                                                {
+                                                    item.progress < 100 && item.progress !== 0 ? (
+                                                        <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
+                                                            <span
+                                                                className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
+                                                                style={{ width: `${item.progress}%` }}
+                                                            ></span>
+                                                        </div>
+                                                    ) : item.progress === 0 ? (
+                                                        <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
+                                                    ) : (
+                                                        <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
+                                                    )
+                                                }
+                                            </>
+                                        )}
+                                    </>
                                     {
-                                        item.progress < 100 && item.progress !== 0 ? (
-                                            <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
-                                                <span
-                                                    className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
-                                                    style={{ width: `${item.progress}%` }}
-                                                ></span>
-                                            </div>
-                                        ) : item.progress === 0 ? (
-                                            <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
-                                        ) : (
-                                            <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
+                                        selectedCardView === "list" && (
+                                            <>
+                                                {
+                                                    item.progress < 100 && item.progress != 0 ?
+                                                        <>
+                                                            <div className="p-2 rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
+                                                                <span className="text-primary text-b-11-12-500">In Progress</span>
+                                                            </div>
+
+                                                        </> : item.progress == 0 ?
+                                                            <>
+                                                                <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
+                                                                    <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
+                                                                </div>
+                                                            </> :
+                                                            <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
+                                                                <span className="text-success text-b-11-12-500">Completed</span>
+                                                            </div>
+                                                }
+                                            </>
                                         )
                                     }
+
+                                    {selectedCardView === "list" && (
+                                        <div className="relative">
+                                            <div
+                                                onClick={() => toggleMore(item.id)}
+                                                className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
+                                            >
+                                                <HiOutlineDotsVertical />
+                                            </div>
+                                            {moreStates[item.id] && <CardMore setMore={() => toggleMore(item.id)} more={moreStates[item.id]} />}
+                                        </div>
+                                    )}
                                 </div>
 
                             }

@@ -43,7 +43,7 @@ const Router = () => {
                 <Route path='/user/publicProfiles/network' element={<Network />}></Route>
                 <Route path='/user/publicProfiles/activity' element={<Activity />}></Route>
                 <Route path='/user/publicProfiles/campaigns' element={<Campaigns />}></Route>
-                <Route path='/user/publicProfiles/empty ' element={<Empty />}></Route>
+                <Route path='/user/publicProfiles/empty' element={<Empty />}></Route>
                 <Route path='/user/publicProfiles/projects/threeColumns' element={<ThreeColumns />}></Route>
                 <Route path='/user/publicProfiles/projects/twoColumns' element={<TwoColumns />}></Route>
 

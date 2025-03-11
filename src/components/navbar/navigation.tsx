@@ -21,7 +21,9 @@ const pathMapping: { [key: string]: string } = {
     teams:"Teams",
     network:"Network",
     activity:"Activity",
-    campaigns:"Campaigns"
+    campaigns:"Campaigns",
+    empty:"Empty"
+
 };
 
 const Navigation = () => {
