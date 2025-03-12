@@ -18,7 +18,8 @@ import Campaigns from "../pages/user/publicProfiles/campaigns"
 import ThreeColumns from "../pages/user/publicProfiles/projects/threeColumns"
 import TwoColumns from "../pages/user/publicProfiles/projects/twoColumns"
 import Empty from '../pages/user/publicProfiles/empty'
-
+import GetStarted from '../pages/user/myAccount/accountHome/started'
+import UserProfile from '../pages/user/myAccount/accountHome/userProfile'
 
 import '../globals.css'
 
@@ -46,6 +47,8 @@ const Router = () => {
                 <Route path='/user/publicProfiles/empty' element={<Empty />}></Route>
                 <Route path='/user/publicProfiles/projects/threeColumns' element={<ThreeColumns />}></Route>
                 <Route path='/user/publicProfiles/projects/twoColumns' element={<TwoColumns />}></Route>
+                <Route path='/user/myAccount/accountHome/getStarted' element={<GetStarted />}></Route>
+                <Route path='/user/myAccount/accountHome/userProfile' element={<UserProfile />}></Route>
 
 
 

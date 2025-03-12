@@ -5,7 +5,7 @@ import { CiBasketball, CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract030, GiAbstract051, GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/hovermenu"
+import Menu from "../../../components/publicProfile/hovermenu"
 import React, { useState } from "react"
 import { FaCheckCircle, FaGhost, } from "react-icons/fa"
 import AvatarGroup from '../../../assets/icon/avatar-group.svg'

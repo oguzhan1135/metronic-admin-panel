@@ -11,7 +11,7 @@ import BadgeOne from '../../../../assets/icon/badge-1.svg'
 import BadgeTwo from '../../../../assets/icon/badge-2.svg'
 import BadgeThree from '../../../../assets/icon/badge-3.svg'
 import BadgeFour from '../../../../assets/icon/badge-4.svg'
-import Menu from "../../../../components/hovermenu"
+import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Inferno from "../../../../assets/icon/inferno.svg"
 import Card from "../../../../components/publicProfile/card"

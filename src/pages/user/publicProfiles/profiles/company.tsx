@@ -2,7 +2,7 @@ import { CiLocationOn, CiMail } from "react-icons/ci"
 import { FaChartLine, FaFacebook, FaRocket, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Menu from "../../../../components/hovermenu"
+import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Card from "../../../../components/publicProfile/card"
 import { FaMapMarkedAlt } from "react-icons/fa"

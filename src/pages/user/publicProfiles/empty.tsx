@@ -4,7 +4,7 @@ import {  CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/hovermenu"
+import Menu from "../../../components/publicProfile/hovermenu"
 import { useState } from "react"
 import AccountDeactiveted from '../../../assets/icon/account-deactived.svg'
 

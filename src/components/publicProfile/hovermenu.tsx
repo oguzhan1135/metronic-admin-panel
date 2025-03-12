@@ -7,7 +7,7 @@ import { IoChatbubblesOutline, IoShareSocial } from "react-icons/io5"
 import { SlDislike } from "react-icons/sl"
 import { TiMessages } from "react-icons/ti"
 import { Link } from "react-router"
-import Switch from "./switch"
+import Switch from "../switch"
 import { HiRectangleGroup } from "react-icons/hi2"
 
 const Menu = () => {
@@ -73,16 +73,16 @@ const Menu = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to="/user/publicProfiles/profiles/default" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Default
                             </Link>
-                            <Link to="/user/publicprofiles/profiles/creator" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to="/user/publicProfiles/profiles/creator" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Creator
                             </Link>
-                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to="/user/publicProfiles/profiles/company" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Company
                             </Link>
-                            <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to="/user/publicProfiles/profiles/nft" className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 NFT
                             </Link>
 
@@ -101,16 +101,16 @@ const Menu = () => {
                                 <div
                                     className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 >
-                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                    <Link to="/user/publicProfiles/profiles/gamer" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
                                         Gamer
                                     </Link>
-                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                    <Link to="/user/publicProfiles/profiles/feeds" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
                                         Feeds
                                     </Link>
-                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                    <Link to="/user/publicProfiles/profiles/plain" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
                                         Plain
                                     </Link>
-                                    <Link to="/" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
+                                    <Link to="/user/publicProfiles/profiles/modal" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
                                         Modal
                                     </Link>
                                 </div>
@@ -134,28 +134,28 @@ const Menu = () => {
                             onMouseLeave={() => setProjectOpen(false)}
                         >
 
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/projects/threeColumns"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 3 Columns
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/projects/twoColumns"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 2 Columns
                             </Link>
                         </div>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/works") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/works") ? "text-primary" : "text-gray-700"} `}>Works</a>
+                        <Link to={"/user/publicProfiles/works"} className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/works") ? "text-primary" : "text-gray-700"} `}>Works</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/teams") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/teams") ? "text-primary" : "text-gray-700"} `}>Teams</a>
+                        <Link to={"/user/publicProfiles/teams"} className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/teams") ? "text-primary" : "text-gray-700"} `}>Teams</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/network") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/network") ? "text-primary" : "text-gray-700"} `}>Network</a>
+                        <Link to={"/user/publicProfiles/network"} className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/network") ? "text-primary" : "text-gray-700"} `}>Network</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/activity") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/activity") ? "text-primary" : "text-gray-700"} `}>Activity</a>
+                        <Link to={"/user/publicProfiles/activity"} className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/activity") ? "text-primary" : "text-gray-700"} `}>Activity</Link>
                     </div>
                     <div
-                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/campaigns") || location.startsWith("/user/publicProfiles/empty")? "border-b-primary" : "border-none"} cursor-pointer`}
+                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/campaigns") || location.startsWith("/user/publicProfiles/empty") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={() => setMoreOpen(true)}
                         onMouseLeave={() => setMoreOpen(false)}
                     >
@@ -169,11 +169,11 @@ const Menu = () => {
                             onMouseLeave={() => setMoreOpen(false)}
                         >
 
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/campaigns"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Champaigns
                             </Link>
 
-                            <Link to={location} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/campaigns"} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Empty
                             </Link>
                         </div>

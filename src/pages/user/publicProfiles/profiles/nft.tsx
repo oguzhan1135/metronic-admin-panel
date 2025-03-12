@@ -4,7 +4,7 @@ import Verify from '../../../../assets/icon/verify.svg'
 import { SlLocationPin } from 'react-icons/sl';
 import { CiMail } from 'react-icons/ci';
 import Card from '../../../../components/publicProfile/card';
-import Menu from '../../../../components/hovermenu';
+import Menu from '../../../../components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import XMR from '../../../../assets/icon/xmr.svg'
 import Badges from '../../../../components/publicProfile/badges';

@@ -5,7 +5,7 @@ import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../../components/hovermenu"
+import Menu from "../../../../components/publicProfile/hovermenu"
 import Plurk from '../../../../assets/icon/plurk.svg'
 import PlurtkAvatar from '../../../../assets/icon/plurk-avatar-group.svg'
 import Telegram from '../../../../assets/icon/telegram.svg'

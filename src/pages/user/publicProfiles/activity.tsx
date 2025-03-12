@@ -4,7 +4,7 @@ import { CiBasketball, CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlCalender, SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/hovermenu"
+import Menu from "../../../components/publicProfile/hovermenu"
 import { useState } from "react"
 import AvatarGroup from '../../../assets/icon/avatar-group.svg'
 import Cody from '../../../assets/icon/cody-fisher.svg'

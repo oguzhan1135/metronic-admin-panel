@@ -1,6 +1,6 @@
 import {  FaFacebook, FaLaptopCode,  FaTwitch, FaTwitter, FaUsers, FaYoutube } from "react-icons/fa6"
 import { SlLocationPin, SlTarget } from "react-icons/sl"
-import Menu from "../../../../components/hovermenu"
+import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Card from "../../../../components/publicProfile/card"
 import {  FaShareAlt } from "react-icons/fa"

@@ -22,7 +22,8 @@ const pathMapping: { [key: string]: string } = {
     network:"Network",
     activity:"Activity",
     campaigns:"Campaigns",
-    empty:"Empty"
+    empty:"Empty",
+    getStarted:"Get Started"
 
 };
 

@@ -102,7 +102,7 @@ const Dashboard = () => {
                                 <img src={WidgetBackground} alt="" className="absolute right-0 -z-10 size-auto" />
                             </div>
                             <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center absolute bottom-0 w-full">
-                                <Link to={location} className="text-b-13-14-500 text-primary">Get Started</Link>
+                                <Link to={"/user/myAccount/accountHome/getStarted"} className="text-b-13-14-500 text-primary">Get Started</Link>
                             </div>
                         </div>
                     </div>

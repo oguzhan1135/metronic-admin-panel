@@ -149,13 +149,13 @@ const menuData: MenuItem[] = [
                 label: "Account Home",
                 subItems: [
                     {
-                        category: "user", key: "get-started", label: "Get Started"
+                        category: "user", key: "get-started", label: "Get Started",path:"/user/myAccount/accountHome/getStarted"
                     },
                     {
-                        category: "user", key: "user-profile", label: "User Profile"
+                        category: "user", key: "user-profile", label: "User Profile",path:"/user/myAccount/accountHome/userProfile"
                     },
                     {
-                        category: "user", key: "company-profile", label: "Company Profile"
+                        category: "user", key: "company-profile", label: "Company Profile",path:"/user/myAccount/accountHome/companyProfile"
                     },
                     {
                         category: "user", key: "setting-with-sidebar", label: "Setting - With Sidebar"
