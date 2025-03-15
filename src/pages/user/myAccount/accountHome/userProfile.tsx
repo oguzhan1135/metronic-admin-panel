@@ -14,10 +14,22 @@ import Switch from "../../../../components/switch"
 import { MdInfoOutline, MdOutlineEditNote } from "react-icons/md"
 import { FcGoogle } from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
-import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
+import { FaCalendarDay, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import { CiBasketball } from "react-icons/ci"
 import { RiEqualizer2Line } from "react-icons/ri"
-
+import Individually from '../../../../assets/icon/individually.svg'
+import GoogleCalendar from '../../../../assets/icon/google-calendar.svg'
+import Monday from '../../../../assets/icon/monday.svg'
+import { FaCheckCircle, FaPlus, FaRegTrashAlt } from "react-icons/fa"
+import Tyler from '../../../../assets/icon/tyler-hero.svg'
+import Esther from '../../../../assets/icon/ester-hoeard.svg'
+import Cody from '../../../../assets/icon/cody-fisher.svg'
+import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import { HiOutlineDotsVertical } from "react-icons/hi"
+import PDF from '../../../../assets/icon/pdf.svg'
+import DOC from '../../../../assets/icon/doc.svg'
+import JS from '../../../../assets/icon/javascript.svg'
+import AI from '../../../../assets/icon/illustrator.svg'
 const UserProfile = () => {
 
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
@@ -51,7 +63,7 @@ const UserProfile = () => {
             </div>
 
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-[30px]">
-                <div className="xl:col-span-2 flex flex-col gap-[30px]">
+                <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
                     {/* {Personal Info} */}
                     <Card
                         title="Personal Info"
@@ -385,8 +397,294 @@ const UserProfile = () => {
                         }
                     />
                 </div>
-                <div className="lg:col-span-2 flex flex-col gap-[30px]">
+                <div className="lg:col-span-2 col-span-4
+                 flex flex-col gap-[30px]">
                     {/* right area */}
+
+                    {/* Individually area */}
+                    <Card
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={<>
+                            <div className="flex flex-col pt-[30px] gap-5 items-center justify-center bg-mask bg-fixed">
+                                <div className="flex flex-col items-center justify-center gap-2 ">
+                                    <span className="text-b-18-25-600 max-w-[220px] text-center ">Individually Tailored
+                                        Deals for Personal Satisfaction</span>
+                                    <button className="rounded-md bg-black text-white flex items-center justify-center px-3 py-2.5 text-b-12-12-500 mb-[30px]">Start Now</button>
+                                    <img src={Individually} alt="" />
+                                </div>
+                            </div>
+                        </>}
+                    />
+                    {/* Individually area */}
+                    <Card
+                        dotStatus={true}
+                        buttonStatus={false}
+                        dotContentStatus={true}
+                        dotContent={
+                            <>
+                                <button className="flex items-center justify-center flex-row gap-1 p-2.5 rounded-md border">
+                                    <FaCalendarDay className="size-[14px] text-gray-500" />
+                                    <span className="text-gray-700 text-b-12-12-500">Add New</span>
+                                </button>
+                            </>
+                        }
+                        titleContent={
+                            <>
+                                <div className="flex items-center flex-row gap-[6px]">
+                                    <span className="text-gray-900 text-b-16-16-600">Calendar Accounts</span>
+                                    <span className="text-b-13-14-500 text-gray-600">1/5</span>
+                                </div>
+                            </>
+                        }
+                        content={<>
+                            <div className="flex flex-col py-5 pr-5 pl-[30px] gap-5">
+                                <div className="flex flex-row items-center justify-between p-4 border rounded-xl">
+                                    <div className="flex flex-row items-center gap-[14px]">
+                                        <img src={GoogleCalendar} alt="google-calendar" />
+                                        <div className="flex flex-col gap-1">
+                                            <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Google</Link>
+                                            <Link to={location} className="text-b-13-14-400 text-gray-700 hover:text-primary text-animation">jasont@studio.co</Link>
+
+                                        </div>
+                                    </div>
+                                    <div className="p-2 rounded-md hover:bg-gray-100">
+                                        <FaRegTrashAlt />
+                                    </div>
+                                </div>
+                                <div className="flex flex-row items-center justify-between p-4 border rounded-xl">
+                                    <div className="flex flex-row items-center gap-[14px]">
+                                        <img src={Monday} alt="monday" />
+                                        <div className="flex flex-col gap-1">
+                                            <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Monday</Link>
+                                            <Link to={location} className="text-b-13-14-400 text-gray-700 hover:text-primary text-animation">jasontatum@keenthemes.com</Link>
+
+                                        </div>
+                                    </div>
+                                    <div className="p-2 rounded-md hover:bg-gray-100">
+                                        <FaRegTrashAlt />
+                                    </div>
+                                </div>
+                            </div>
+                        </>}
+                    />
+                    {/* Connections */}
+                    <Card
+                        title="Connections"
+                        dotStatus={true}
+                        content={
+                            <>
+                                <div className="flex flex-col ">
+                                    <table>
+                                        <thead className="bg-gray-200 ">
+                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
+                                            <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
+                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
+                                            <th></th>
+                                        </thead>
+                                        <tbody>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Tyler} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Tyler Hero</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>26 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">6</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Esther} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Esther Howard</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>639 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
+                                                <td >
+                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
+                                                        <FaPlus className="text-primary size-3" />
+                                                    </div>
+                                                </td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Cody} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Jacob Jones</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>125 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">19</td>
+                                                <td >
+                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
+                                                        <FaPlus className="text-primary size-3" />
+                                                    </div>
+                                                </td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Tyler} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Cody Fisher</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>81 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Arlene} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Leslie Alexander</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>1203 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">2</td>
+                                                <td >
+                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
+                                                        <FaPlus className="text-primary size-3" />
+                                                    </div>
+                                                </td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Cody} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Guy Hawkins</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>2 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </>
+                        }
+                        buttonStatus={true}
+                        buttonTitle="View 64 more"
+                    />
+                    {/* My Files */}
+                    <Card
+                            dotStatus={true}
+                            buttonStatus={true}
+                            buttonTitle='All Files'
+                            title='Recent Uploads'
+                            content={
+                                <>
+                                    <div className="flex flex-col py-5 gap-5">
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={PDF} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Project-pitch.pdf</Link>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>4.7 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <HiOutlineDotsVertical className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={DOC} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Report-v1.docx</Link>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>2.3 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <HiOutlineDotsVertical className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={JS} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Framework-App.js</Link>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>0.8 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 17 Oct 2024 6:46 PM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <HiOutlineDotsVertical className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between px-[30px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <img src={AI} alt="" />
+                                                <div className="flex flex-col gap-2">
+                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Mobile-logo.ai</Link>
+                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                        <span className='text-b-12-12-400 text-gray-700'>0.2 MB</span>
+                                                        <span className='text-b-12-12-400 text-gray-700'> 4 Nov 2024 11:30 AM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <HiOutlineDotsVertical className="text-gray-600" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </>
+                            }
+                        />
                 </div>
             </div>
         </div >
