@@ -4,7 +4,7 @@ import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import { Link } from "react-router"
 import Jennifer from '../../../../assets/icon/jennifer.svg'
 import AccountDeactiveted from '../../../../assets/icon/account-deactived.svg'

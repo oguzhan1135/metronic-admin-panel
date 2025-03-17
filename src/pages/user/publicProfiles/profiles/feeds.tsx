@@ -7,7 +7,7 @@ import Cody from '../../../../assets/icon/cody-fisher.svg'
 import Jennifer from '../../../../assets/icon/jennifer.svg'
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import { Link } from "react-router"
 import LeftItem from '../../../../assets/icon/feeds-left-item.svg'
 import RightTopItem from '../../../../assets/icon/feeds-right-top-item.svg'

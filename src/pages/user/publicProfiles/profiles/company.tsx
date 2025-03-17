@@ -4,7 +4,7 @@ import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import { FaMapMarkedAlt } from "react-icons/fa"
 import { Link } from "react-router"
 import Duolingo from '../../../../assets/icon/duolingo.svg'

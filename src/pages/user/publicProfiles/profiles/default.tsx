@@ -16,7 +16,7 @@ import PDF from '../../../../assets/icon/pdf.svg'
 import DOC from '../../../../assets/icon/doc.svg'
 import JS from '../../../../assets/icon/javascript.svg'
 import AI from '../../../../assets/icon/illustrator.svg'
-import Card from '../../../../components/publicProfile/card';
+import Card from '../../../../components/card/card';
 import Menu from '../../../../components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import { HiOutlineDotsVertical } from 'react-icons/hi';

@@ -2,7 +2,7 @@ import {  FaFacebook, FaLaptopCode,  FaTwitch, FaTwitter, FaUsers, FaYoutube } f
 import { SlLocationPin, SlTarget } from "react-icons/sl"
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import {  FaShareAlt } from "react-icons/fa"
 import { Link } from "react-router"
 import {  TbWorld } from "react-icons/tb"

@@ -3,7 +3,7 @@ import Jennifer from '../../../../assets/icon/jennifer.svg'
 import Verify from '../../../../assets/icon/verify.svg'
 import { SlLocationPin } from 'react-icons/sl';
 import { CiMail } from 'react-icons/ci';
-import Card from '../../../../components/publicProfile/card';
+import Card from '../../../../components/card/card';
 import Menu from '../../../../components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import XMR from '../../../../assets/icon/xmr.svg'

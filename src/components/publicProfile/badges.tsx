@@ -2,7 +2,7 @@ import BadgeOne from '../../assets/icon/badge-1.svg'
 import BadgeTwo from '../../assets/icon/badge-2.svg'
 import BadgeThree from '../../assets/icon/badge-3.svg'
 import BadgeFour from '../../assets/icon/badge-4.svg'
-import Card from './card'
+import Card from '../card/card'
 
 interface BadgesProps {
     title: string;

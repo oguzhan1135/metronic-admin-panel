@@ -20,6 +20,7 @@ import TwoColumns from "../pages/user/publicProfiles/projects/twoColumns"
 import Empty from '../pages/user/publicProfiles/empty'
 import GetStarted from '../pages/user/myAccount/accountHome/started'
 import UserProfile from '../pages/user/myAccount/accountHome/userProfile'
+import CompanyProfile from '../pages/user/myAccount/accountHome/companyProfile'
 
 import '../globals.css'
 
@@ -49,7 +50,7 @@ const Router = () => {
                 <Route path='/user/publicProfiles/projects/twoColumns' element={<TwoColumns />}></Route>
                 <Route path='/user/myAccount/accountHome/getStarted' element={<GetStarted />}></Route>
                 <Route path='/user/myAccount/accountHome/userProfile' element={<UserProfile />}></Route>
-
+                <Route path='/user/myAccount/accountHome/companyProfile' element={<CompanyProfile />}></Route>
 
 
 

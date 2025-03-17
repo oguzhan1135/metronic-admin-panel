@@ -8,7 +8,7 @@ import Pesto from '../../../../assets/icon/paccion.svg'
 import Perrier from '../../../../assets/icon/perrier.svg'
 import DonutChart from '../../../../components/charts/donutChart';
 import Contributors from '../../../../components/publicProfile/contributors';
-import Card from '../../../../components/publicProfile/card';
+import Card from '../../../../components/card/card';
 import Menu from '../../../../components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import ProjectTable from '../../../../components/publicProfile/projectTable';

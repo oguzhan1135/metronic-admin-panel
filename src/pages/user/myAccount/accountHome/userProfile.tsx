@@ -1,7 +1,7 @@
 
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import ExampleUser from '../../../../assets/icon/example-user.svg'
 import BadgeOne from '../../../../assets/icon/badge-1.svg'
 import BadgeTwo from '../../../../assets/icon/badge-2.svg'

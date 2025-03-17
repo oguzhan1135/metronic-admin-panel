@@ -1,4 +1,4 @@
-import Card from "../../../components/publicProfile/card"
+import Card from "../../../components/card/card"
 import Verify from '../../../assets/icon/verify.svg'
 import { CiBasketball, CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"

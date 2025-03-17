@@ -14,7 +14,7 @@ import BadgeFour from '../../../../assets/icon/badge-4.svg'
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Inferno from "../../../../assets/icon/inferno.svg"
-import Card from "../../../../components/publicProfile/card"
+import Card from "../../../../components/card/card"
 import Arrow from '../../../../assets/icon/arrow.svg'
 import CheckCircle from '../../../../assets/icon/check-circle.svg'
 import Urban from '../../../../assets/icon/urban-dreams.svg'
