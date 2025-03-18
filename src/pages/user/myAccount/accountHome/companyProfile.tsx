@@ -2,35 +2,30 @@
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from "../../../../components/card/card"
-import ExampleUser from '../../../../assets/icon/example-user.svg'
 import { useState } from "react"
-import { IoIosClose, IoLogoTwitch } from "react-icons/io"
+import { IoLogoTwitch } from "react-icons/io"
 import Switch from "../../../../components/switch"
 import { MdOutlineEditNote } from "react-icons/md"
 import { FcGoogle } from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
 import { FaCopy, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
-import { CiBasketball, CiCircleInfo } from "react-icons/ci"
+import { CiBasketball } from "react-icons/ci"
 import Hexlab from '../../../../assets/icon/hexlab.svg'
 import HexlabIcon from '../../../../assets/icon/hexlabIcon.svg'
 import { RiComputerFill } from "react-icons/ri"
 import MembersTable from "../../../../components/myAccount/membersTable"
 import { FaInfoCircle } from "react-icons/fa"
+import USerGuidelines from '../../../../assets/icon/user-guidelines.svg'
+import Comprehensive from '../../../../assets/icon/comprehensive.svg'
+import StayUpdated from '../../../../assets/icon/stay-updated.svg'
 
 const CompanyProfile = () => {
 
-    const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
     const [info, setInfo] = useState(true)
     const [security, setSecurity] = useState(false)
     const [email, setEmail] = useState(true)
     const [vendor, setVendor] = useState(true)
     const [branding, setBranding] = useState(false)
-    const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files[0]) {
-            const imageUrl = URL.createObjectURL(event.target.files[0]);
-            setSelectedImage(imageUrl);
-        }
-    };
     const location = window.location.pathname;
     return (
         <div className="flex flex-col gap-[30px]  ">
@@ -323,7 +318,38 @@ const CompanyProfile = () => {
                 </div>
                 <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
                     {/* right area */}
-
+                    <Card
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={<>
+                            <div className="flex flex-col px-[30px]">
+                                <div className="flex flex-col gap-5 py-[30px] border-b">
+                                    <img src={USerGuidelines} alt="user-guidlines" className="size-[50px]" />
+                                    <div className="flex flex-col gap-2.5">
+                                        <Link to={location} className="text-gray-900 text-b-16-25-500">User Guidelines for a Safe and Respectful Workspace</Link>
+                                        <p className="text-b-13-20-400 text-gray-800">Understand the importance of safety and respect in our work environment through our user guidelines.</p>
+                                        <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-5 py-[30px] border-b">
+                                    <img src={Comprehensive} alt="comprehensive" className="size-[50px]" />
+                                    <div className="flex flex-col gap-2.5">
+                                        <Link to={location} className="text-gray-900 text-b-16-25-500">Comprehensive Guide to Navigating Our Digital Platform</Link>
+                                        <p className="text-b-13-20-400 text-gray-800">A detailed walkthrough to help you understand and use our digital platform for maximum efficiency.</p>
+                                        <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-5 py-[30px] border-b">
+                                    <img src={StayUpdated} alt="stay-updated" className="size-[50px]" />
+                                    <div className="flex flex-col gap-2.5">
+                                        <Link to={location} className="text-gray-900 text-b-16-25-500">Stay Updated with Platform's Latest Features and Improvements</Link>
+                                        <p className="text-b-13-20-400 text-gray-800">Keep abreast of the newest enhancements and features on our platform to enhance your user experience.</p>
+                                        <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </>}
+                    />
 
                 </div>
             </div>

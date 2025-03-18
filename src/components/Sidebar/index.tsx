@@ -149,25 +149,25 @@ const menuData: MenuItem[] = [
                 label: "Account Home",
                 subItems: [
                     {
-                        category: "user", key: "get-started", label: "Get Started",path:"/user/myAccount/accountHome/getStarted"
+                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/accountHome/getStarted"
                     },
                     {
-                        category: "user", key: "user-profile", label: "User Profile",path:"/user/myAccount/accountHome/userProfile"
+                        category: "user", key: "user-profile", label: "User Profile", path: "/user/myAccount/accountHome/userProfile"
                     },
                     {
-                        category: "user", key: "company-profile", label: "Company Profile",path:"/user/myAccount/accountHome/companyProfile"
+                        category: "user", key: "company-profile", label: "Company Profile", path: "/user/myAccount/accountHome/companyProfile"
                     },
                     {
-                        category: "user", key: "setting-with-sidebar", label: "Setting - With Sidebar"
+                        category: "user", key: "setting-with-sidebar", label: "Setting - With Sidebar", path: "/user/myAccount/accountHome/settingSidebar"
                     },
                     {
-                        category: "user", key: "setting-enterprise", label: "Setting - Enterprise"
+                        category: "user", key: "setting-enterprise", label: "Setting - Enterprise", path: "/user/myAccount/accountHome/settingEnterprise"
                     },
                     {
-                        category: "user", key: "setting-plain", label: "Setting - Plain"
+                        category: "user", key: "setting-plain", label: "Setting - Plain", path: "/user/myAccount/accountHome/settingPlain"
                     },
                     {
-                        category: "user", key: "setting-with-modal", label: "Setting - Modal"
+                        category: "user", key: "setting-with-modal", label: "Setting - Modal", path: "/user/myAccount/accountHome/settingModal"
                     }
                 ]
             },
@@ -552,7 +552,7 @@ const Sidebar = () => {
         }
     }
     const { modalOpen } = metronicContext();
-const location= window.location.pathname
+    const location = window.location.pathname
     return (
         <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${modalOpen === true && location === "/user/publicProfiles/profiles/modal" ? "-z-10" : "z-50"} `}>
             <div className="px-5 py-[30px] flex relative ">
