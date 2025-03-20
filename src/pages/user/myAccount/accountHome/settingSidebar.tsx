@@ -6,11 +6,15 @@ import ExampleUser from '../../../../assets/icon/example-user.svg'
 import { useState } from "react"
 import { IoIosClose } from "react-icons/io"
 import Switch from "../../../../components/switch"
-
 import Camera from '../../../../assets/icon/camera.svg'
 import { FcGoogle } from "react-icons/fc"
 import { FaApple, FaFacebook, FaLinkedin, FaTrashCan } from "react-icons/fa6"
 import Microsoft from '../../../../assets/icon/microsoft-icon.svg'
+import Message from '../../../../assets/icon/text-message.svg'
+import Authenticator from '../../../../assets/icon/authenticator.svg'
+import Azure from '../../../../assets/icon/azure.svg'
+import OpenID from '../../../../assets/icon/openID.svg'
+
 const SettingSidebar = () => {
 
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
@@ -27,6 +31,11 @@ const SettingSidebar = () => {
     const [primary, setPrimary] = useState(false)
     const [google, setGoogle] = useState(true)
     const [linkedin, setLinkedin] = useState(false)
+    const [textMessage, setTextMessage] = useState(true)
+    const [authenticator, setAuthenticator] = useState(false)
+    const [visible, setVisible] = useState(true)
+    const [selectionIntegration, setSelectionIntegration] = useState("Google");
+
     return (
         <div className="flex flex-col gap-[30px]  ">
             {/* {Sub  menu} */}
@@ -92,19 +101,19 @@ const SettingSidebar = () => {
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Name</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Company</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Phone Number</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
@@ -144,7 +153,7 @@ const SettingSidebar = () => {
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Email</span>
                                         <div className="flex flex-col gap-[30px]">
                                             <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                                <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
                                             </div>
                                             <div className="flex flex-row items-center gap-5">
                                                 <div className="flex flex-row items-center gap-2.5">
@@ -250,6 +259,120 @@ const SettingSidebar = () => {
                             </>
                         }
                     />
+                    {/* 2FA */}
+                    <Card
+                        title="Two-Factor authentication(2FA)"
+                        dotStatus={true}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col p-[30px] gap-[30px]">
+                                    <div className="flex flex-col gap-5">
+                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Message} alt="" />
+                                                <div className="flex flex-col gap-1">
+                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Text Message (SMS)</Link>
+                                                    <span className="text-gray-700 text-b-13-14-500">Instant codes for secure account verification.</span>
+                                                </div>
+                                            </div>
+                                            <Switch setSwitch={() => setTextMessage(!textMessage)} status={textMessage} size="medium" />
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Authenticator} alt="" />
+                                                <div className="flex flex-col gap-1">
+                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Authenticator App (TOTP)</Link>
+                                                    <span className="text-gray-700 text-b-13-14-500">Elevate protection with an authenticator app for
+                                                        two-factor authentication.</span>
+                                                </div>
+                                            </div>
+                                            <Switch setSwitch={() => setAuthenticator(!authenticator)} status={authenticator} size="medium" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Password</span>
+                                        <div className="flex flex-col  w-full">
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                            </div>
+                                            <span className="text-b-13-20-400 text-gray-800">Enter your password to setup Two-Factor authentication</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex ml-auto">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+                    {/* Single Sign On(SSO) */}
+                    <Card
+                        title="Single Sign On(SSO)"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col gap-[30px] p-[30px]">
+                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                        <span className="text-gray-900 text-b-15-16-600">1. Select SSO integration Type</span>
+                                        <div className="flex flex-row flex-wrap gap-[30px]">
+                                            <div onClick={() => setSelectionIntegration("Azure")} className={`${selectionIntegration === "Azure" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                <img src={Azure} alt="azure" />
+                                                <span className="text-gray-900 text-b-15-16-500">Micrsoft Azure</span>
+                                            </div>
+                                            <div onClick={() => setSelectionIntegration("Google")} className={`${selectionIntegration === "Google" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                <FcGoogle className="size-10" />
+
+                                                <span className="text-gray-900 text-b-15-16-500">Google</span>
+                                            </div>
+                                            <div onClick={() => setSelectionIntegration("openID")} className={`${selectionIntegration === "openID" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                <img src={OpenID} alt="openID" />
+                                                <span className="text-gray-900 text-b-15-16-500">OpenID Connect</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                        <span className="text-gray-900 text-b-15-16-600">2. Configure Google authentication</span>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client ID</span>
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="02874374-367145773" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client Secret</span>
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="23djfn784957f8022we2232307822-cey2442" />
+                                            </div>
+                                        </div>
+                                        <div className="flex ml-auto ">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Save Changes
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                        <span className="text-gray-900 text-b-15-16-600">3. Note down custom URL for Google SSO authentication</span>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Custom Login UTL</span>
+                                            <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
+                                                <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="https://devs.keenthemes.com/rl/AirMikeStudios" />
+                                                <button className="p-4 flex items-center justify-center bg-primary rounded-r-md">
+                                                    <span className=" text-white text-b-13-14-500">Copy</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className="text-b-14-22-400 text-gray-800">Single Sign-On (SSO) authentication streamlines access across multiple platforms. Users log in once, gaining seamless entry
+                                        to various systems without repetitive credentials. </p>
+                                </div>
+                            </>
+                        }
+                    />
 
                     {/* Password */}
                     <Card
@@ -260,32 +383,109 @@ const SettingSidebar = () => {
                         content={
 
                             <div className="flex flex-col px-[30px] pt-5">
-                                
+
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Current Password</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">New Password</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Confirm new password</span>
                                     <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
+                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
                                     </div>
                                 </div>
-                               
+
                                 <div className="flex ml-auto py-[30px]">
                                     <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                       Reset Password
+                                        Reset Password
                                     </button>
                                 </div>
                             </div>
+                        }
+                    />
+                    {/* Preferences */}
+                    <Card
+                        title="Preferences"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col p-[30px]">
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="American English" selected>American English</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+                                        </select>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="American English" selected>American English</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+                                        </select>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="United States Dollar (USD)" selected>United States Dollar (USD)</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Open tasks as...</span>
+                                        <div className="flex flex-row gap-5">
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" name="modal" id="modal" className="size-[22px]" checked />
+                                                <span className="text-b-14-14-500 text-gray-800">Modal</span>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" name="modal" id="modal" className="size-[22px]" />
+                                                <span className="text-b-14-14-500 text-gray-800">Fullscreen</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Attributes</span>
+                                        <div className="flex flex-col gap-5  w-full">
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                <span className="text-b-14-14-500 text-gray-800">Show linked list names</span>
+                                            </div>
+                                            <span className="text-b-12-12-400 trext-gray-700">See the name next to each icon</span>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                <span className="text-b-14-14-500 text-gray-800">Show linked task names</span>
+                                            </div>
+                                            <span className="text-b-12-12-400 trext-gray-700">Show task names next to ids for linked project tasks.</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Email visibility</span>
+                                        <Switch status={visible} setSwitch={() => setVisible(!visible)} size="medium" />
+                                    </div>
+                                    <div className="flex ml-auto pt-[30px]">
+                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                        Reset Password
+                                    </button>
+                                </div>
+                                </div>
+                            </>
                         }
                     />
                 </div>
