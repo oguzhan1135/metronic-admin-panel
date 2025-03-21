@@ -8,12 +8,24 @@ import { IoIosClose } from "react-icons/io"
 import Switch from "../../../../components/switch"
 import Camera from '../../../../assets/icon/camera.svg'
 import { FcGoogle } from "react-icons/fc"
-import { FaApple, FaFacebook, FaLinkedin, FaTrashCan } from "react-icons/fa6"
+import { FaApple, FaCopy, FaFacebook, FaLinkedin, FaTrashCan } from "react-icons/fa6"
 import Microsoft from '../../../../assets/icon/microsoft-icon.svg'
 import Message from '../../../../assets/icon/text-message.svg'
 import Authenticator from '../../../../assets/icon/authenticator.svg'
 import Azure from '../../../../assets/icon/azure.svg'
 import OpenID from '../../../../assets/icon/openID.svg'
+import DarkBg from '../../../../assets/icon/dark-bg.svg'
+import LightTheme from '../../../../assets/icon/light-theme.svg'
+import Systemtheme from '../../../../assets/icon/system-theme.svg'
+import Slack from '../../../../assets/icon/slack.svg'
+import Mail from '../../../../assets/icon/mail.svg'
+import UserAccess from '../../../../assets/icon/user-access.svg'
+import GoogleDev from '../../../../assets/icon/google-webdev.svg'
+import Inferno from '../../../../assets/icon/inferno.svg'
+import Equacoin from '../../../../assets/icon/equacoin.svg'
+import Evernote from '../../../../assets/icon/evernote.svg'
+import Jira from '../../../../assets/icon/jira-work.svg'
+import { CiSettings } from "react-icons/ci"
 
 const SettingSidebar = () => {
 
@@ -35,6 +47,18 @@ const SettingSidebar = () => {
     const [authenticator, setAuthenticator] = useState(false)
     const [visible, setVisible] = useState(true)
     const [selectionIntegration, setSelectionIntegration] = useState("Google");
+    const [selectionTheme, setSelectionTheme] = useState("Light");
+    const [tranparentSidebar, setTransparentSidebar] = useState(true)
+    const [slack, setSlack] = useState(true)
+    const [mail, setMail] = useState(true)
+    const [googleWeb, setGoogleWeb] = useState(true)
+    const [equaCoin, setEquaCoin] = useState(false)
+    const [evernote, setEvernote] = useState(true)
+    const [inferno, setInferno] = useState(true)
+    const [jira, setJira] = useState(false)
+
+
+
 
     return (
         <div className="flex flex-col gap-[30px]  ">
@@ -480,10 +504,356 @@ const SettingSidebar = () => {
                                         <Switch status={visible} setSwitch={() => setVisible(!visible)} size="medium" />
                                     </div>
                                     <div className="flex ml-auto pt-[30px]">
-                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                        Reset Password
-                                    </button>
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Reset Password
+                                        </button>
+                                    </div>
                                 </div>
+                            </>
+                        }
+                    />
+                    {/* Appreance */}
+                    <Card
+                        title="Appearance"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col p-[30px] gap-[30px]">
+                                    <div className="flex flex-col gap-5">
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-b-15-16-500 trext-gray-900">Them Mode</span>
+                                            <span className="text-gray-700 text-b-13-20-400">Select or customize your ui theme</span>
+                                        </div>
+                                        <div className="flex flex-row flex-wrap gap-[30px] border-b pb-[30px]">
+                                            <div className="flex flex-col gap-2.5">
+                                                <div onClick={() => setSelectionTheme("Dark")} className={`overflow-hidden rounded-xl ${selectionTheme === "Dark" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <img src={DarkBg} alt="dark-bg" className="scale-[1.05]" />
+                                                </div>
+                                                <span className="text-gray-900 text-b-14-14-500">Dark</span>
+                                            </div>
+
+                                            <div className="flex flex-col gap-2.5">
+                                                <div onClick={() => setSelectionTheme("Light")} className={`overflow-hidden rounded-xl ${selectionTheme === "Light" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <img src={LightTheme} alt="light-theme" className="scale-[1.05]" />
+                                                </div>
+                                                <span className="text-gray-900 text-b-14-14-500">Light</span>
+                                            </div>
+                                            <div className="flex flex-col gap-2.5">
+                                                <div onClick={() => setSelectionTheme("System")} className={`overflow-hidden rounded-xl ${selectionTheme === "System" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <img src={Systemtheme} alt="system-theme" className="scale-[1.05]" />
+                                                </div>
+                                                <span className="text-gray-900 text-b-14-14-500">System</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Transparent sidebar</span>
+                                            <div className="flex flex-col md:flex-row gap-5  w-full">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <span className="text-b-14-14-500 text-gray-700">Active</span>
+                                                    <Switch status={tranparentSidebar} setSwitch={() => setTransparentSidebar(!tranparentSidebar)} size="medium" />
+                                                </div>
+                                                <p className="text-b-13-20-400 text-gray-800">Toggle the transparent sidebar for a sleek interface. Switch it on for transparency or off for a solid background.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex ml-auto ">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+
+                    {/* Notifications */}
+                    <Card
+                        title="Notifications"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col p-[30px] gap-[30px]">
+                                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                                        <div className="p-4 rounded-xl border w-full">
+                                            <div className="flex flex-row justify-between items-center">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Slack} alt="slack" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <span className="text-b-14-14-500 text-gray-900">Slack</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">Stay Updated on Slack..</span>
+                                                    </div>
+                                                </div>
+                                                <Switch status={slack} setSwitch={() => setSlack(!slack)} size="medium" />
+                                            </div>
+                                        </div>
+                                        <div className="p-4 rounded-xl border w-full">
+                                            <div className="flex flex-row justify-between items-center">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Mail} alt="slack" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <span className="text-b-14-14-500 text-gray-900">Email</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">Tailor Your Email Preferences.</span>
+                                                    </div>
+                                                </div>
+                                                <Switch status={mail} setSwitch={() => setMail(!mail)} size="medium" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-5">
+                                        <span className="text-b-15-16-500 text-gray-900">Desktop notifications</span>
+                                        <div className="flex flex-col gap-[14px]">
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" />
+                                                <span>All new messages (Recommended)</span>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" />
+                                                <span>Direct @mentions</span>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" checked />
+                                                <span>Disabled</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-5">
+                                        <span className="text-b-15-16-500 text-gray-900">Email notifications</span>
+                                        <div className="flex flex-col gap-[14px]">
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" />
+                                                <span>All new messages and statuses</span>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" checked />
+                                                <span>Unread messages and statuses () Recommended</span>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="radio" className="size-[18px]" />
+                                                <span>Disabled</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-5">
+                                        <span className="text-b-15-16-500 text-gray-900">Subscriptions</span>
+                                        <div className="flex flex-row items-center gap-[6px]">
+                                            <input type="checkbox" className="size-[18px]" checked />
+                                            <span>All new messages and statuses</span>
+                                        </div>
+
+                                    </div>
+                                    <div className="flex ml-auto ">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+
+                    {/* Address */}
+                    <Card
+                        title="Address"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col gap-[30px] p-[30px]">
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Address</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Avinguda Imaginària, 789" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="Public" selected>Spain</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+
+                                        </select>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">State</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="State" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="Public" selected>Barcelona</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+
+                                        </select>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Postcode</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="08012" />
+                                        </div>
+                                    </div>
+                                    <div className="flex ml-auto ">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+                    {/* Manage API */}
+                    <Card
+                        title="Manage API"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col p-[30px] gap-[30px]">
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">API Key</span>
+                                        <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
+                                            <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="abc123xyz456sample789key000" />
+                                            <button className="p-2 hover:bg-gray-200 rounded-md mr-2.5 flex items-center justify-center">
+                                                <FaCopy className="size-4 text-gray-600" />
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="p-5 rounded-xl flex flex-rowe items-center justify-between border flex-wrap md:flex-nowrap bg-mask bg-left">
+                                        <div className="flex flex-row items-center gap-4">
+                                            <img src={UserAccess} alt="user-access" />
+                                            <div className="flex flex-col gap-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <span className="text-gray-900 text-b-16-16-500">User Access</span>
+                                                    <div className="px-[6px] py-[5px] flex items-center justify-center border bg-gray-100 rounded-md">
+                                                        <span className="text-b-11-12-500 text-gray-600">16 days left</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col gap-1">
+                                                    <span className="text-gray-800 text-b-13-20-400">This API key can only access <Link to={location} className="text-primary">@keenthemes</Link></span>
+                                                    <span className="text-gray-800 text-b-13-20-400"> Secure access with a unique API key for enhanced functionality.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <button className="py-2.5 px-3 flex items-center justify-center rounded-md bg-black">
+                                                <span className="text-b-12-12-500 text-white">Renew Plan</span>
+                                            </button>
+                                            <button className="py-2.5 px-3 flex items-center justify-center rounded-md ">
+                                                <span className="text-b-12-12-500 text-gray-700">Docs</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p className="text-b-13-20-400 text-gray-800">Unlock the full potential of your application with our API, a secure gateway facilitating seamless integration, empowering developers to create innovative and dynamic experiences effortlessly.</p>
+                                </div>
+                            </>
+                        }
+                    />
+                    {/* Integrations */}
+                    <Card
+                        title="Integrations"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col gap-[30px] p-[30px]">
+                                    <div className="flex flex-col gap-5">
+                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={GoogleDev} alt="google-dev" className="size-8" />
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex flex-row gap-1 items-center">
+                                                        <span className="text-b-14-14-500">Google web.dev</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">webdev@webdevmail.com</span>
+                                                    </div>
+                                                    <span className="text-b-13-14-400 text-gray-700">Integrate for enhanced collaboration in web development.</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-5">
+                                                <Switch status={googleWeb} setSwitch={() => setGoogleWeb(!googleWeb)} size="medium" />
+                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                    <CiSettings className="size-[18px] text-gray-600" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Equacoin} alt="equa-coin" className="size-8" />
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex flex-row gap-1 items-center">
+                                                        <span className="text-b-14-14-500">Equacoin</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">equacoin@cryptoemail.com</span>
+                                                    </div>
+                                                    <span className="text-b-13-14-400 text-gray-700">Streamline cryptocurrency transactions securely and efficiently.</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-5">
+                                                <Switch status={equaCoin} setSwitch={() => setEquaCoin(!equaCoin)} size="medium" />
+                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                    <CiSettings className="size-[18px] text-gray-600" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Evernote} alt="evernote" className="size-8" />
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex flex-row gap-1 items-center">
+                                                        <span className="text-b-14-14-500">Evernote</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">evernote@noteexample.com</span>
+                                                    </div>
+                                                    <span className="text-b-13-14-400 text-gray-700">Enhance workflow, capture ideas seamlessly.</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-5">
+                                                <Switch status={evernote} setSwitch={() => setEvernote(!evernote)} size="medium" />
+                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                    <CiSettings className="size-[18px] text-gray-600" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Inferno} alt="inferno" className="size-8" />
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex flex-row gap-1 items-center">
+                                                        <span className="text-b-14-14-500">Inferno</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">inferno@dataexample.com</span>
+                                                    </div>
+                                                    <span className="text-b-13-14-400 text-gray-700">Robust email integration for data management.</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-5">
+                                                <Switch status={inferno} setSwitch={() => setInferno(!inferno)} size="medium" />
+                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                    <CiSettings className="size-[18px] text-gray-600" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                            <div className="flex flex-row items-center gap-[14px]">
+                                                <img src={Jira} alt="jira" className="size-8" />
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex flex-row gap-1 items-center">
+                                                        <span className="text-b-14-14-500">Jira</span>
+                                                        <span className="text-b-13-14-400 text-gray-700">jira@projectmail.com</span>
+                                                    </div>
+                                                    <span className="text-b-13-14-400 text-gray-700">Streamline project management, enhance collaboration.</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-5">
+                                                <Switch status={jira} setSwitch={() => setJira(!jira)} size="medium" />
+                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                    <CiSettings className="size-[18px] text-gray-600" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </>
                         }
