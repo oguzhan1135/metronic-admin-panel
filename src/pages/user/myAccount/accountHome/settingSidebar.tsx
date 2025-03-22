@@ -81,7 +81,56 @@ const SettingSidebar = () => {
             </div>
 
             <div className="flex flex-row items-start gap-[30px]">
-                <div className=" md:flex flex-col  hidden bg-green-500">Left Sidebar</div>
+                <div className=" md:flex flex-col  hidden ">
+                    <div className="py-3 px-2.5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Basic Settings</span>
+                    </div>
+                    <div className="py-3 px-2.5 cursor-pointer">
+                        <span className="text-b-13-14-500 text-gray-900">Authentication</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Email</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Password</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Social Sign in</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Single Sign On(SSO)</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Two-Factor auth(2FA)</span>
+                    </div>
+                    <div className="py-3 px-2.5 cursor-pointer">
+                        <span className="text-b-13-14-500 text-gray-900">Advanced Settings</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Preferences</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Appearance</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Notifications</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Address</span>
+                    </div>
+                    <div className="py-3 px-2.5 cursor-pointer">
+                        <span className="text-b-13-14-500 text-gray-900">External Services</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Manage API</span>
+                    </div>
+                    <div className="py-3 px-5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Integrations</span>
+                    </div>
+                    <div className="py-3 px-2.5 cursor-pointer">
+                        <span className="text-b-13-14-400 text-gray-800">Delete Account</span>
+                    </div>
+                </div>
 
                 {/* right area */}
                 <div className=" flex flex-col w-full flex-1 gap-[30px]">
@@ -853,6 +902,33 @@ const SettingSidebar = () => {
                                                 </button>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+                    {/* Delete Account */}
+                    <Card
+                        title="Delete Account"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col gap-[30px] p-[30px]">
+                                    <div className="flex flex-col gap-5">
+                                        <p className="text-b-13-20-400 text-gray-800">We regret to see you leave. Confirm account deletion below. Your data will be permanently removed. Thank you for being part of our community. Please check our Setup Guidelines if you still wish continue.</p>
+                                        <div className="flex flex-row items-center gap-[6px]">
+                                            <input type="checkbox" name="confirm" id="confirm" className="size-[18px]" />
+                                            <span className="text-b-13-14-500 text-gray-800">Confirm deleting account</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-row items-center gap-2.5 ml-auto">
+                                        <button className="px-4 py-[13px] border rounded-md flex items-center justify-center">
+                                            <span className="text-b-13-14-500 text-gray-700">Deactivate Instead</span>
+                                        </button>
+                                        <button className="px-4 py-[13px] border rounded-md flex items-center justify-center bg-danger">
+                                            <span className="text-b-13-14-500 text-white">Deactivate Instead</span>
+                                        </button>
                                     </div>
                                 </div>
                             </>

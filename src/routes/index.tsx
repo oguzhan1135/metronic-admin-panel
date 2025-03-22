@@ -22,6 +22,7 @@ import GetStarted from '../pages/user/myAccount/accountHome/started'
 import UserProfile from '../pages/user/myAccount/accountHome/userProfile'
 import CompanyProfile from '../pages/user/myAccount/accountHome/companyProfile'
 import SettingSidebar from "../pages/user/myAccount/accountHome/settingSidebar";
+import SettingEnterprise from "../pages/user/myAccount/accountHome/settingEnterprise";
 
 import '../globals.css'
 
@@ -53,6 +54,7 @@ const Router = () => {
                 <Route path='/user/myAccount/accountHome/userProfile' element={<UserProfile />}></Route>
                 <Route path='/user/myAccount/accountHome/companyProfile' element={<CompanyProfile />}></Route>
                 <Route path='/user/myAccount/accountHome/settingSidebar' element={<SettingSidebar />}></Route>
+                <Route path='/user/myAccount/accountHome/settingEnterprise' element={<SettingEnterprise />}></Route>
 
 
 
