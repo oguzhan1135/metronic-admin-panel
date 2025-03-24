@@ -3,7 +3,7 @@ import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from "../../../../components/card/card"
 import ExampleUser from '../../../../assets/icon/example-user.svg'
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { IoIosClose } from "react-icons/io"
 import Switch from "../../../../components/switch"
 import Camera from '../../../../assets/icon/camera.svg'
@@ -57,11 +57,52 @@ const SettingSidebar = () => {
     const [inferno, setInferno] = useState(true)
     const [jira, setJira] = useState(false)
 
+    const [activeSection, setActiveSection] = useState("");
 
+    useEffect(() => {
+        const sections = document.querySelectorAll(".section");
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.6 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            sections.forEach((section) => observer.unobserve(section));
+        };
+    }, []);
+
+    const [activeSelection, setActiveSelection] = useState<string | null>(null);
+
+    const menuItems = [
+        { id: "basic-setting", label: "Basic Setting", hasDot: true },
+        { id: "authentication", label: "Authentication" },
+        { id: "email", label: "Email", hasDot: true },
+        { id: "Password", label: "Password", hasDot: true },
+        { id: "social-sign-in", label: "Social Sign in", hasDot: true },
+        { id: "single-sign-on", label: "Single Sign On(SSO)", hasDot: true },
+        { id: "two-factor", label: "Two-Factor auth(2FA)", hasDot: true },
+        { id: "advanced-settings", label: "Advanced Settings" },
+        { id: "preferences", label: "Preferences", hasDot: true },
+        { id: "appearance", label: "Appearance", hasDot: true },
+        { id: "notifications", label: "Notifications", hasDot: true },
+        { id: "address", label: "Address", hasDot: true },
+        { id: "external-services", label: "External Services" },
+        { id: "manage-api", label: "Manage API", hasDot: true },
+        { id: "integrations", label: "Integrations", hasDot: true },
+        { id: "delete-account", label: "Delete Account", hasDot: true },
+    ];
 
     return (
-        <div className="flex flex-col gap-[30px]  ">
+        <div className="flex flex-col gap-[30px]  max-h-screen  ">
             {/* {Sub  menu} */}
             <Menu />
             <div className="flex flex-row items-center justify-between">
@@ -81,345 +122,520 @@ const SettingSidebar = () => {
             </div>
 
             <div className="flex flex-row items-start gap-[30px]">
-                <div className=" md:flex flex-col  hidden ">
-                    <div className="py-3 px-2.5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Basic Settings</span>
-                    </div>
-                    <div className="py-3 px-2.5 cursor-pointer">
-                        <span className="text-b-13-14-500 text-gray-900">Authentication</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Email</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Password</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Social Sign in</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Single Sign On(SSO)</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Two-Factor auth(2FA)</span>
-                    </div>
-                    <div className="py-3 px-2.5 cursor-pointer">
-                        <span className="text-b-13-14-500 text-gray-900">Advanced Settings</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Preferences</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Appearance</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Notifications</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Address</span>
-                    </div>
-                    <div className="py-3 px-2.5 cursor-pointer">
-                        <span className="text-b-13-14-500 text-gray-900">External Services</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Manage API</span>
-                    </div>
-                    <div className="py-3 px-5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Integrations</span>
-                    </div>
-                    <div className="py-3 px-2.5 cursor-pointer">
-                        <span className="text-b-13-14-400 text-gray-800">Delete Account</span>
-                    </div>
+                <div className="md:flex flex-col hidden min-w-[230px]">
+                    {menuItems.map((item) => (
+                        <a
+                            key={item.id}
+                            href={`#${item.id}`}
+                            className={`subItem hover:bg-gray-100 ${activeSelection === item.id ? "selectedItem" : ""} pl-5`}
+                            onClick={() => setActiveSelection(item.id)} // preventDefault kaldırıldı
+                        >
+                            {item.hasDot && (
+                                <span className={`dot ${activeSelection === item.id ? "dotActive" : "dotInActive"}`}></span>
+                            )}
+                            <span className={`text-b-13-14-400 text-gray-800 ${item.hasDot ? "pl-3" : " pl-4 text-gray-900 text-b-13-14-500"}`}>
+                                {item.label}
+                            </span>
+                            <span className="itemDotLine left-[18.3px] bg-gray-300"></span>
+                        </a>
+
+                    ))}
                 </div>
 
                 {/* right area */}
-                <div className=" flex flex-col w-full flex-1 gap-[30px]">
+                <div className=" flex flex-col w-full flex-1 gap-[30px] max-h-screen overflow-y-scroll scroll-smooth scrollbar-hidden">
                     {/* Basic Setting */}
-                    <Card
-                        title="Basic Setting"
-                        buttonStatus={false}
-                        dotContentStatus={false}
-                        dotStatus={false}
-                        content={
+                    <section id="basic-setting" className="section">
+                        <Card
+                            title="Basic Setting"
+                            buttonStatus={false}
+                            dotContentStatus={false}
+                            dotStatus={false}
+                            content={
 
-                            <div className="flex flex-col px-[30px] pt-5">
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5 justify-between">
-                                    <div className="flex flex-row items-center ">
-                                        <span className="text-b-14-14-400 text-gray-600 min-w-[220px]">Profile</span>
-                                        <span className="text-b-13-14-400 text-gray-700">150x150px JPEG, PNG Image</span>
-                                    </div>
-                                    <div className="relative p-1">
-                                        <input
-                                            type="file"
-                                            accept="image/*"
-                                            className="hidden"
-                                            id="fileInput"
-                                            onChange={handleImageChange}
-                                        />
-                                        <div
-                                            onClick={() => document.getElementById("fileInput")?.click()}
-                                            className="size-[60px] rounded-full border-2 border-success overflow-hidden relative cursor-pointer"
-                                        >
-                                            <img
-                                                src={selectedImage}
-                                                className="w-full h-full object-cover"
-                                                alt="user"
-                                            />
-                                            <img src={Camera} alt="camera" className="absolute bottom-0" />
-                                        </div>
-                                        <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
-
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Name</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Company</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Phone Number</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Visibility</span>
-                                    <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                        <option value="Public" selected>Public</option>
-                                        <option value="Option-2">Option-2</option>
-                                        <option value="Option-3">Option-3</option>
-
-                                    </select>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Avaibality</span>
-                                    <div className="flex flex-row items-center gap-2.5">
-                                        <span>Available to hire</span>
-                                        <Switch size="medium" status={avaibality} setSwitch={() => setAvaibality(!avaibality)} />
-                                    </div>
-                                </div>
-
-                                <div className="flex ml-auto py-[30px]">
-                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                        Save Changes
-                                    </button>
-                                </div>
-                            </div>
-                        }
-                    />
-                    {/* Email */}
-                    <Card
-                        title="Email"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
                                 <div className="flex flex-col px-[30px] pt-5">
-                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Email</span>
-                                        <div className="flex flex-col gap-[30px]">
-                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5 justify-between">
+                                        <div className="flex flex-row items-center ">
+                                            <span className="text-b-14-14-400 text-gray-600 min-w-[220px]">Profile</span>
+                                            <span className="text-b-13-14-400 text-gray-700">150x150px JPEG, PNG Image</span>
+                                        </div>
+                                        <div className="relative p-1">
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                className="hidden"
+                                                id="fileInput"
+                                                onChange={handleImageChange}
+                                            />
+                                            <div
+                                                onClick={() => document.getElementById("fileInput")?.click()}
+                                                className="size-[60px] rounded-full border-2 border-success overflow-hidden relative cursor-pointer"
+                                            >
+                                                <img
+                                                    src={selectedImage}
+                                                    className="w-full h-full object-cover"
+                                                    alt="user"
+                                                />
+                                                <img src={Camera} alt="camera" className="absolute bottom-0" />
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <span>Active</span>
-                                                    <Switch
-                                                        status={active}
-                                                        setSwitch={() => setActive(!active)}
-                                                        size="medium"
-                                                    />
+                                            <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Name</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Company</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Phone Number</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Visibility</span>
+                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                            <option value="Public" selected>Public</option>
+                                            <option value="Option-2">Option-2</option>
+                                            <option value="Option-3">Option-3</option>
+
+                                        </select>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Avaibality</span>
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <span>Available to hire</span>
+                                            <Switch size="medium" status={avaibality} setSwitch={() => setAvaibality(!avaibality)} />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex ml-auto py-[30px]">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            }
+                        />
+                    </section>
+
+                    {/* Email */}
+                    <section id="email" className="section">
+                        <Card
+                            title="Email"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col px-[30px] pt-5">
+                                        <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Email</span>
+                                            <div className="flex flex-col gap-[30px]">
+                                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                    <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
                                                 </div>
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <span>Primary</span>
-                                                    <Switch
-                                                        status={primary}
-                                                        setSwitch={() => setPrimary(!primary)}
-                                                        size="medium"
-                                                    />
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <span>Active</span>
+                                                        <Switch
+                                                            status={active}
+                                                            setSwitch={() => setActive(!active)}
+                                                            size="medium"
+                                                        />
+                                                    </div>
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <span>Primary</span>
+                                                        <Switch
+                                                            status={primary}
+                                                            setSwitch={() => setPrimary(!primary)}
+                                                            size="medium"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <p className="text-b-13-20-400 text-gray-800">Input your email, designate as primary for priority updates. Toggle to seamlessly customize your communication preferences</p>
+                                                <div className="flex ml-auto pb-2.5">
+                                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                        Save Changes
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <p className="text-b-13-20-400 text-gray-800">Input your email, designate as primary for priority updates. Toggle to seamlessly customize your communication preferences</p>
-                                            <div className="flex ml-auto pb-2.5">
+                                        </div>
+
+
+                                    </div>
+
+                                </>
+                            }
+                        />
+                    </section>
+
+
+                    {/* Social sign in */}
+                    <section id="social-sign-in" className="section">
+                        <Card
+                            title="Social Sign in"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px] gap-[30px]">
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <FcGoogle className="size-6" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Google</Link>
+                                                        <span className="text-gray-700 text-b-13-14-400">jasontatum@ktstudio.io</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={google} setSwitch={() => setGoogle(!google)} size="medium" />
+                                                    <button className="p-[6px] hover:bg-gray-100 rounded-md">
+                                                        <FaTrashCan className="size-4 text-gray-600" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <FaLinkedin className="size-6 text-[#3C5A9A]" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Linkedin</Link>
+                                                        <span className="text-gray-700 text-b-13-14-400">jasontatum@ktstudio.io</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={linkedin} setSwitch={() => setLinkedin(!linkedin)} size="medium" />
+                                                    <button className="p-[6px] hover:bg-gray-100 rounded-md">
+                                                        <FaTrashCan className="size-4 text-gray-600" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-col gap-1">
+                                                <span className="text-b-15-16-500 text-gray-900">More Social Sign in options</span>
+                                                <span className="text-b-13-20-400 text-gray-800">Effortless access awaits! Connect seamlessly with your preferred social account.</span>
+                                            </div>
+                                            <div className="flex flex-row flez-wrap items-center gap-2.5">
+                                                <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
+                                                    <FaApple className="size-[18px]" />
+                                                    <span className="text-b-13-14-500 text-gray-700">Sign in with Apple</span>
+                                                </Link>
+                                                <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
+                                                    <img src={Microsoft} alt="microsoft" />
+                                                    <span className="text-b-13-14-500 text-gray-700">Sign in with Microsoft</span>
+                                                </Link>
+                                                <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
+                                                    <FaFacebook className="size-[18px] text-[#3C5A9A]" />
+                                                    <span className="text-b-13-14-500 text-gray-700">Sign in with Facebook</span>
+                                                </Link>
+
+                                            </div>
+                                        </div>
+                                        <div className="flex ml-auto">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Save Changes
+                                            </button>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        />
+                    </section>
+
+                    {/* 2FA */}
+                    <section id="two-factor" className="section">
+                        <Card
+                            title="Two-Factor authentication(2FA)"
+                            dotStatus={true}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px] gap-[30px]">
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Message} alt="" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Text Message (SMS)</Link>
+                                                        <span className="text-gray-700 text-b-13-14-500">Instant codes for secure account verification.</span>
+                                                    </div>
+                                                </div>
+                                                <Switch setSwitch={() => setTextMessage(!textMessage)} status={textMessage} size="medium" />
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between rounded-xl border p-4">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Authenticator} alt="" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Authenticator App (TOTP)</Link>
+                                                        <span className="text-gray-700 text-b-13-14-500">Elevate protection with an authenticator app for
+                                                            two-factor authentication.</span>
+                                                    </div>
+                                                </div>
+                                                <Switch setSwitch={() => setAuthenticator(!authenticator)} status={authenticator} size="medium" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Password</span>
+                                            <div className="flex flex-col  w-full">
+                                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                    <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
+                                                </div>
+                                                <span className="text-b-13-20-400 text-gray-800">Enter your password to setup Two-Factor authentication</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex ml-auto">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Save Changes
+                                            </button>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        />
+                    </section>
+
+                    {/* Single Sign On(SSO) */}
+                    <section id="single-sign-on" className="section">
+                        <Card
+                            title="Single Sign On(SSO)"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col gap-[30px] p-[30px]">
+                                        <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                            <span className="text-gray-900 text-b-15-16-600">1. Select SSO integration Type</span>
+                                            <div className="flex flex-row flex-wrap gap-[30px]">
+                                                <div onClick={() => setSelectionIntegration("Azure")} className={`${selectionIntegration === "Azure" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                    <img src={Azure} alt="azure" />
+                                                    <span className="text-gray-900 text-b-15-16-500">Micrsoft Azure</span>
+                                                </div>
+                                                <div onClick={() => setSelectionIntegration("Google")} className={`${selectionIntegration === "Google" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                    <FcGoogle className="size-10" />
+
+                                                    <span className="text-gray-900 text-b-15-16-500">Google</span>
+                                                </div>
+                                                <div onClick={() => setSelectionIntegration("openID")} className={`${selectionIntegration === "openID" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
+                                                    <img src={OpenID} alt="openID" />
+                                                    <span className="text-gray-900 text-b-15-16-500">OpenID Connect</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                            <span className="text-gray-900 text-b-15-16-600">2. Configure Google authentication</span>
+                                            <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                                <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client ID</span>
+                                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                    <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="02874374-367145773" />
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                                <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client Secret</span>
+                                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                    <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="23djfn784957f8022we2232307822-cey2442" />
+                                                </div>
+                                            </div>
+                                            <div className="flex ml-auto ">
                                                 <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
                                                     Save Changes
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                </div>
-
-                            </>
-                        }
-                    />
-
-                    {/* Social sign in */}
-                    <Card
-                        title="Social Sign in"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px] gap-[30px]">
-                                    <div className="flex flex-col gap-5">
-                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <FcGoogle className="size-6" />
-                                                <div className="flex flex-col gap-1">
-                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Google</Link>
-                                                    <span className="text-gray-700 text-b-13-14-400">jasontatum@ktstudio.io</span>
+                                        <div className="flex flex-col gap-[30px] border-b pb-[30px]">
+                                            <span className="text-gray-900 text-b-15-16-600">3. Note down custom URL for Google SSO authentication</span>
+                                            <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                                <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Custom Login UTL</span>
+                                                <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
+                                                    <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="https://devs.keenthemes.com/rl/AirMikeStudios" />
+                                                    <button className="p-4 flex items-center justify-center bg-primary rounded-r-md">
+                                                        <span className=" text-white text-b-13-14-500">Copy</span>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={google} setSwitch={() => setGoogle(!google)} size="medium" />
-                                                <button className="p-[6px] hover:bg-gray-100 rounded-md">
-                                                    <FaTrashCan className="size-4 text-gray-600" />
-                                                </button>
-                                            </div>
                                         </div>
-                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <FaLinkedin className="size-6 text-[#3C5A9A]" />
-                                                <div className="flex flex-col gap-1">
-                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Linkedin</Link>
-                                                    <span className="text-gray-700 text-b-13-14-400">jasontatum@ktstudio.io</span>
-                                                </div>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={linkedin} setSwitch={() => setLinkedin(!linkedin)} size="medium" />
-                                                <button className="p-[6px] hover:bg-gray-100 rounded-md">
-                                                    <FaTrashCan className="size-4 text-gray-600" />
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <p className="text-b-14-22-400 text-gray-800">Single Sign-On (SSO) authentication streamlines access across multiple platforms. Users log in once, gaining seamless entry
+                                            to various systems without repetitive credentials. </p>
                                     </div>
-                                    <div className="flex flex-col gap-5">
-                                        <div className="flex flex-col gap-1">
-                                            <span className="text-b-15-16-500 text-gray-900">More Social Sign in options</span>
-                                            <span className="text-b-13-20-400 text-gray-800">Effortless access awaits! Connect seamlessly with your preferred social account.</span>
-                                        </div>
-                                        <div className="flex flex-row flez-wrap items-center gap-2.5">
-                                            <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
-                                                <FaApple className="size-[18px]" />
-                                                <span className="text-b-13-14-500 text-gray-700">Sign in with Apple</span>
-                                            </Link>
-                                            <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
-                                                <img src={Microsoft} alt="microsoft" />
-                                                <span className="text-b-13-14-500 text-gray-700">Sign in with Microsoft</span>
-                                            </Link>
-                                            <Link to={location} className="flex flez-row items-center gap-[5px] border rounded-md p-3">
-                                                <FaFacebook className="size-[18px] text-[#3C5A9A]" />
-                                                <span className="text-b-13-14-500 text-gray-700">Sign in with Facebook</span>
-                                            </Link>
+                                </>
+                            }
+                        />
+                    </section>
 
+
+                    {/* Password */}
+                    <section id="password" className="section">
+                        <Card
+                            title="Password"
+                            buttonStatus={false}
+                            dotContentStatus={false}
+                            dotStatus={false}
+                            content={
+
+                                <div className="flex flex-col px-[30px] pt-5">
+
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Current Password</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
                                         </div>
                                     </div>
-                                    <div className="flex ml-auto">
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">New Password</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Confirm new password</span>
+                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex ml-auto py-[30px]">
                                         <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Save Changes
+                                            Reset Password
                                         </button>
                                     </div>
                                 </div>
-                            </>
-                        }
-                    />
-                    {/* 2FA */}
-                    <Card
-                        title="Two-Factor authentication(2FA)"
-                        dotStatus={true}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px] gap-[30px]">
-                                    <div className="flex flex-col gap-5">
-                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Message} alt="" />
-                                                <div className="flex flex-col gap-1">
-                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Text Message (SMS)</Link>
-                                                    <span className="text-gray-700 text-b-13-14-500">Instant codes for secure account verification.</span>
-                                                </div>
-                                            </div>
-                                            <Switch setSwitch={() => setTextMessage(!textMessage)} status={textMessage} size="medium" />
-                                        </div>
-                                        <div className="flex flex-row items-center justify-between rounded-xl border p-4">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Authenticator} alt="" />
-                                                <div className="flex flex-col gap-1">
-                                                    <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Authenticator App (TOTP)</Link>
-                                                    <span className="text-gray-700 text-b-13-14-500">Elevate protection with an authenticator app for
-                                                        two-factor authentication.</span>
-                                                </div>
-                                            </div>
-                                            <Switch setSwitch={() => setAuthenticator(!authenticator)} status={authenticator} size="medium" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Password</span>
-                                        <div className="flex flex-col  w-full">
-                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
-                                            </div>
-                                            <span className="text-b-13-20-400 text-gray-800">Enter your password to setup Two-Factor authentication</span>
-                                        </div>
-                                    </div>
+                            }
+                        />
+                    </section>
 
-                                    <div className="flex ml-auto">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Save Changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
-                    {/* Single Sign On(SSO) */}
-                    <Card
-                        title="Single Sign On(SSO)"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col gap-[30px] p-[30px]">
-                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
-                                        <span className="text-gray-900 text-b-15-16-600">1. Select SSO integration Type</span>
-                                        <div className="flex flex-row flex-wrap gap-[30px]">
-                                            <div onClick={() => setSelectionIntegration("Azure")} className={`${selectionIntegration === "Azure" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
-                                                <img src={Azure} alt="azure" />
-                                                <span className="text-gray-900 text-b-15-16-500">Micrsoft Azure</span>
-                                            </div>
-                                            <div onClick={() => setSelectionIntegration("Google")} className={`${selectionIntegration === "Google" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
-                                                <FcGoogle className="size-10" />
-
-                                                <span className="text-gray-900 text-b-15-16-500">Google</span>
-                                            </div>
-                                            <div onClick={() => setSelectionIntegration("openID")} className={`${selectionIntegration === "openID" ? "bg-primary-light border-primary border-opacity-50" : ""} cursor-pointer rounded-xl border border-dotted flex items-center justify-center flex-col gap-3 min-w-[260px] min-h-[160px] bg-mask bg-cover`}>
-                                                <img src={OpenID} alt="openID" />
-                                                <span className="text-gray-900 text-b-15-16-500">OpenID Connect</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
-                                        <span className="text-gray-900 text-b-15-16-600">2. Configure Google authentication</span>
+                    {/* Preferences */}
+                    <section id="preferences" className="section">
+                        <Card
+                            title="Preferences"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px]">
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client ID</span>
-                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="02874374-367145773" />
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
+                                            <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                                <option value="American English" selected>American English</option>
+                                                <option value="Option-2">Option-2</option>
+                                                <option value="Option-3">Option-3</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
+                                            <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                                <option value="American English" selected>American English</option>
+                                                <option value="Option-2">Option-2</option>
+                                                <option value="Option-3">Option-3</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
+                                            <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                                <option value="United States Dollar (USD)" selected>United States Dollar (USD)</option>
+                                                <option value="Option-2">Option-2</option>
+                                                <option value="Option-3">Option-3</option>
+                                            </select>
+                                        </div>
+
+
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Open tasks as...</span>
+                                            <div className="flex flex-row gap-5">
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" name="modal" id="modal" className="size-[22px]" checked />
+                                                    <span className="text-b-14-14-500 text-gray-800">Modal</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" name="modal" id="modal" className="size-[22px]" />
+                                                    <span className="text-b-14-14-500 text-gray-800">Fullscreen</span>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Attributes</span>
+                                            <div className="flex flex-col gap-5  w-full">
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                    <span className="text-b-14-14-500 text-gray-800">Show linked list names</span>
+                                                </div>
+                                                <span className="text-b-12-12-400 trext-gray-700">See the name next to each icon</span>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                    <span className="text-b-14-14-500 text-gray-800">Show linked task names</span>
+                                                </div>
+                                                <span className="text-b-12-12-400 trext-gray-700">Show task names next to ids for linked project tasks.</span>
                                             </div>
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client Secret</span>
-                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="23djfn784957f8022we2232307822-cey2442" />
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Email visibility</span>
+                                            <Switch status={visible} setSwitch={() => setVisible(!visible)} size="medium" />
+                                        </div>
+                                        <div className="flex ml-auto pt-[30px]">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Reset Password
+                                            </button>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        />
+                    </section>
+
+                    {/* Appreance */}
+                    <section id="appearance" className="section">
+                        <Card
+                            title="Appearance"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px] gap-[30px]">
+                                        <div className="flex flex-col gap-5">
+                                            <div className="flex flex-col gap-1">
+                                                <span className="text-b-15-16-500 trext-gray-900">Them Mode</span>
+                                                <span className="text-gray-700 text-b-13-20-400">Select or customize your ui theme</span>
+                                            </div>
+                                            <div className="flex flex-row flex-wrap gap-[30px] border-b pb-[30px]">
+                                                <div className="flex flex-col gap-2.5">
+                                                    <div onClick={() => setSelectionTheme("Dark")} className={`overflow-hidden rounded-xl ${selectionTheme === "Dark" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                        <img src={DarkBg} alt="dark-bg" className="scale-[1.05]" />
+                                                    </div>
+                                                    <span className="text-gray-900 text-b-14-14-500">Dark</span>
+                                                </div>
+
+                                                <div className="flex flex-col gap-2.5">
+                                                    <div onClick={() => setSelectionTheme("Light")} className={`overflow-hidden rounded-xl ${selectionTheme === "Light" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                        <img src={LightTheme} alt="light-theme" className="scale-[1.05]" />
+                                                    </div>
+                                                    <span className="text-gray-900 text-b-14-14-500">Light</span>
+                                                </div>
+                                                <div className="flex flex-col gap-2.5">
+                                                    <div onClick={() => setSelectionTheme("System")} className={`overflow-hidden rounded-xl ${selectionTheme === "System" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                        <img src={Systemtheme} alt="system-theme" className="scale-[1.05]" />
+                                                    </div>
+                                                    <span className="text-gray-900 text-b-14-14-500">System</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                                <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Transparent sidebar</span>
+                                                <div className="flex flex-col md:flex-row gap-5  w-full">
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <span className="text-b-14-14-500 text-gray-700">Active</span>
+                                                        <Switch status={tranparentSidebar} setSwitch={() => setTransparentSidebar(!tranparentSidebar)} size="medium" />
+                                                    </div>
+                                                    <p className="text-b-13-20-400 text-gray-800">Toggle the transparent sidebar for a sleek interface. Switch it on for transparency or off for a solid background.</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="flex ml-auto ">
@@ -428,512 +644,345 @@ const SettingSidebar = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col gap-[30px] border-b pb-[30px]">
-                                        <span className="text-gray-900 text-b-15-16-600">3. Note down custom URL for Google SSO authentication</span>
-                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Custom Login UTL</span>
-                                            <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
-                                                <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="https://devs.keenthemes.com/rl/AirMikeStudios" />
-                                                <button className="p-4 flex items-center justify-center bg-primary rounded-r-md">
-                                                    <span className=" text-white text-b-13-14-500">Copy</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p className="text-b-14-22-400 text-gray-800">Single Sign-On (SSO) authentication streamlines access across multiple platforms. Users log in once, gaining seamless entry
-                                        to various systems without repetitive credentials. </p>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
 
-                    {/* Password */}
-                    <Card
-                        title="Password"
-                        buttonStatus={false}
-                        dotContentStatus={false}
-                        dotStatus={false}
-                        content={
-
-                            <div className="flex flex-col px-[30px] pt-5">
-
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Current Password</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">New Password</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                    <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Confirm new password</span>
-                                    <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                        <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
-                                    </div>
-                                </div>
-
-                                <div className="flex ml-auto py-[30px]">
-                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                        Reset Password
-                                    </button>
-                                </div>
-                            </div>
-                        }
-                    />
-                    {/* Preferences */}
-                    <Card
-                        title="Preferences"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px]">
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                            <option value="American English" selected>American English</option>
-                                            <option value="Option-2">Option-2</option>
-                                            <option value="Option-3">Option-3</option>
-                                        </select>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                            <option value="American English" selected>American English</option>
-                                            <option value="Option-2">Option-2</option>
-                                            <option value="Option-3">Option-3</option>
-                                        </select>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                            <option value="United States Dollar (USD)" selected>United States Dollar (USD)</option>
-                                            <option value="Option-2">Option-2</option>
-                                            <option value="Option-3">Option-3</option>
-                                        </select>
-                                    </div>
-
-
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Open tasks as...</span>
-                                        <div className="flex flex-row gap-5">
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" name="modal" id="modal" className="size-[22px]" checked />
-                                                <span className="text-b-14-14-500 text-gray-800">Modal</span>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" name="modal" id="modal" className="size-[22px]" />
-                                                <span className="text-b-14-14-500 text-gray-800">Fullscreen</span>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Attributes</span>
-                                        <div className="flex flex-col gap-5  w-full">
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="checkbox" name="list" id="list" className="size-[22px]" />
-                                                <span className="text-b-14-14-500 text-gray-800">Show linked list names</span>
-                                            </div>
-                                            <span className="text-b-12-12-400 trext-gray-700">See the name next to each icon</span>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="checkbox" name="list" id="list" className="size-[22px]" />
-                                                <span className="text-b-14-14-500 text-gray-800">Show linked task names</span>
-                                            </div>
-                                            <span className="text-b-12-12-400 trext-gray-700">Show task names next to ids for linked project tasks.</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Email visibility</span>
-                                        <Switch status={visible} setSwitch={() => setVisible(!visible)} size="medium" />
-                                    </div>
-                                    <div className="flex ml-auto pt-[30px]">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Reset Password
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
-                    {/* Appreance */}
-                    <Card
-                        title="Appearance"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px] gap-[30px]">
-                                    <div className="flex flex-col gap-5">
-                                        <div className="flex flex-col gap-1">
-                                            <span className="text-b-15-16-500 trext-gray-900">Them Mode</span>
-                                            <span className="text-gray-700 text-b-13-20-400">Select or customize your ui theme</span>
-                                        </div>
-                                        <div className="flex flex-row flex-wrap gap-[30px] border-b pb-[30px]">
-                                            <div className="flex flex-col gap-2.5">
-                                                <div onClick={() => setSelectionTheme("Dark")} className={`overflow-hidden rounded-xl ${selectionTheme === "Dark" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
-                                                    <img src={DarkBg} alt="dark-bg" className="scale-[1.05]" />
-                                                </div>
-                                                <span className="text-gray-900 text-b-14-14-500">Dark</span>
-                                            </div>
-
-                                            <div className="flex flex-col gap-2.5">
-                                                <div onClick={() => setSelectionTheme("Light")} className={`overflow-hidden rounded-xl ${selectionTheme === "Light" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
-                                                    <img src={LightTheme} alt="light-theme" className="scale-[1.05]" />
-                                                </div>
-                                                <span className="text-gray-900 text-b-14-14-500">Light</span>
-                                            </div>
-                                            <div className="flex flex-col gap-2.5">
-                                                <div onClick={() => setSelectionTheme("System")} className={`overflow-hidden rounded-xl ${selectionTheme === "System" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
-                                                    <img src={Systemtheme} alt="system-theme" className="scale-[1.05]" />
-                                                </div>
-                                                <span className="text-gray-900 text-b-14-14-500">System</span>
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
-                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Transparent sidebar</span>
-                                            <div className="flex flex-col md:flex-row gap-5  w-full">
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <span className="text-b-14-14-500 text-gray-700">Active</span>
-                                                    <Switch status={tranparentSidebar} setSwitch={() => setTransparentSidebar(!tranparentSidebar)} size="medium" />
-                                                </div>
-                                                <p className="text-b-13-20-400 text-gray-800">Toggle the transparent sidebar for a sleek interface. Switch it on for transparency or off for a solid background.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex ml-auto ">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Save Changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
 
                     {/* Notifications */}
-                    <Card
-                        title="Notifications"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px] gap-[30px]">
-                                    <div className="flex flex-col md:flex-row md:items-center gap-5">
-                                        <div className="p-4 rounded-xl border w-full">
-                                            <div className="flex flex-row justify-between items-center">
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <img src={Slack} alt="slack" />
-                                                    <div className="flex flex-col gap-1">
-                                                        <span className="text-b-14-14-500 text-gray-900">Slack</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">Stay Updated on Slack..</span>
+                    <section id="notifications" className="section">
+                        <Card
+                            title="Notifications"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px] gap-[30px]">
+                                        <div className="flex flex-col md:flex-row md:items-center gap-5">
+                                            <div className="p-4 rounded-xl border w-full">
+                                                <div className="flex flex-row justify-between items-center">
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <img src={Slack} alt="slack" />
+                                                        <div className="flex flex-col gap-1">
+                                                            <span className="text-b-14-14-500 text-gray-900">Slack</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">Stay Updated on Slack..</span>
+                                                        </div>
                                                     </div>
+                                                    <Switch status={slack} setSwitch={() => setSlack(!slack)} size="medium" />
                                                 </div>
-                                                <Switch status={slack} setSwitch={() => setSlack(!slack)} size="medium" />
                                             </div>
-                                        </div>
-                                        <div className="p-4 rounded-xl border w-full">
-                                            <div className="flex flex-row justify-between items-center">
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <img src={Mail} alt="slack" />
-                                                    <div className="flex flex-col gap-1">
-                                                        <span className="text-b-14-14-500 text-gray-900">Email</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">Tailor Your Email Preferences.</span>
+                                            <div className="p-4 rounded-xl border w-full">
+                                                <div className="flex flex-row justify-between items-center">
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <img src={Mail} alt="slack" />
+                                                        <div className="flex flex-col gap-1">
+                                                            <span className="text-b-14-14-500 text-gray-900">Email</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">Tailor Your Email Preferences.</span>
+                                                        </div>
                                                     </div>
+                                                    <Switch status={mail} setSwitch={() => setMail(!mail)} size="medium" />
                                                 </div>
-                                                <Switch status={mail} setSwitch={() => setMail(!mail)} size="medium" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="flex flex-col gap-5">
-                                        <span className="text-b-15-16-500 text-gray-900">Desktop notifications</span>
-                                        <div className="flex flex-col gap-[14px]">
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" />
-                                                <span>All new messages (Recommended)</span>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" />
-                                                <span>Direct @mentions</span>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" checked />
-                                                <span>Disabled</span>
+                                        <div className="flex flex-col gap-5">
+                                            <span className="text-b-15-16-500 text-gray-900">Desktop notifications</span>
+                                            <div className="flex flex-col gap-[14px]">
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" />
+                                                    <span>All new messages (Recommended)</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" />
+                                                    <span>Direct @mentions</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" checked />
+                                                    <span>Disabled</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="flex flex-col gap-5">
-                                        <span className="text-b-15-16-500 text-gray-900">Email notifications</span>
-                                        <div className="flex flex-col gap-[14px]">
+                                        <div className="flex flex-col gap-5">
+                                            <span className="text-b-15-16-500 text-gray-900">Email notifications</span>
+                                            <div className="flex flex-col gap-[14px]">
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" />
+                                                    <span>All new messages and statuses</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" checked />
+                                                    <span>Unread messages and statuses () Recommended</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-[6px]">
+                                                    <input type="radio" className="size-[18px]" />
+                                                    <span>Disabled</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-5">
+                                            <span className="text-b-15-16-500 text-gray-900">Subscriptions</span>
                                             <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" />
+                                                <input type="checkbox" className="size-[18px]" checked />
                                                 <span>All new messages and statuses</span>
                                             </div>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" checked />
-                                                <span>Unread messages and statuses () Recommended</span>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="radio" className="size-[18px]" />
-                                                <span>Disabled</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col gap-5">
-                                        <span className="text-b-15-16-500 text-gray-900">Subscriptions</span>
-                                        <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" className="size-[18px]" checked />
-                                            <span>All new messages and statuses</span>
-                                        </div>
 
+                                        </div>
+                                        <div className="flex ml-auto ">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Save Changes
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className="flex ml-auto ">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Save Changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
+
 
                     {/* Address */}
-                    <Card
-                        title="Address"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col gap-[30px] p-[30px]">
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Address</span>
-                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Avinguda Imaginària, 789" />
+                    <section id="address" className="section">
+                        <Card
+                            title="Address"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col gap-[30px] p-[30px]">
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Address</span>
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Avinguda Imaginària, 789" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                            <option value="Public" selected>Spain</option>
-                                            <option value="Option-2">Option-2</option>
-                                            <option value="Option-3">Option-3</option>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
+                                            <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                                <option value="Public" selected>Spain</option>
+                                                <option value="Option-2">Option-2</option>
+                                                <option value="Option-3">Option-3</option>
 
-                                        </select>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">State</span>
-                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="State" />
+                                            </select>
                                         </div>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                            <option value="Public" selected>Barcelona</option>
-                                            <option value="Option-2">Option-2</option>
-                                            <option value="Option-3">Option-3</option>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">State</span>
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="State" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
+                                            <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
+                                                <option value="Public" selected>Barcelona</option>
+                                                <option value="Option-2">Option-2</option>
+                                                <option value="Option-3">Option-3</option>
 
-                                        </select>
-                                    </div>
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Postcode</span>
-                                        <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
-                                            <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="08012" />
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Postcode</span>
+                                            <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="08012" />
+                                            </div>
+                                        </div>
+                                        <div className="flex ml-auto ">
+                                            <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                                Save Changes
+                                            </button>
                                         </div>
                                     </div>
-                                    <div className="flex ml-auto ">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
-                                            Save Changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
+
                     {/* Manage API */}
-                    <Card
-                        title="Manage API"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col p-[30px] gap-[30px]">
-                                    <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
-                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">API Key</span>
-                                        <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
-                                            <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="abc123xyz456sample789key000" />
-                                            <button className="p-2 hover:bg-gray-200 rounded-md mr-2.5 flex items-center justify-center">
-                                                <FaCopy className="size-4 text-gray-600" />
+                    <section id="manage-api" className="section">
+                        <Card
+                            title="Manage API"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col p-[30px] gap-[30px]">
+                                        <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
+                                            <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">API Key</span>
+                                            <div className="bg-[#FCFCFC] rounded-md  border w-full flex flex-row items-center">
+                                                <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="abc123xyz456sample789key000" />
+                                                <button className="p-2 hover:bg-gray-200 rounded-md mr-2.5 flex items-center justify-center">
+                                                    <FaCopy className="size-4 text-gray-600" />
 
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="p-5 rounded-xl flex flex-rowe items-center justify-between border flex-wrap md:flex-nowrap bg-mask bg-left">
-                                        <div className="flex flex-row items-center gap-4">
-                                            <img src={UserAccess} alt="user-access" />
-                                            <div className="flex flex-col gap-2.5">
-                                                <div className="flex flex-row items-center gap-2.5">
-                                                    <span className="text-gray-900 text-b-16-16-500">User Access</span>
-                                                    <div className="px-[6px] py-[5px] flex items-center justify-center border bg-gray-100 rounded-md">
-                                                        <span className="text-b-11-12-500 text-gray-600">16 days left</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex flex-col gap-1">
-                                                    <span className="text-gray-800 text-b-13-20-400">This API key can only access <Link to={location} className="text-primary">@keenthemes</Link></span>
-                                                    <span className="text-gray-800 text-b-13-20-400"> Secure access with a unique API key for enhanced functionality.</span>
-                                                </div>
+                                                </button>
                                             </div>
                                         </div>
-                                        <div className="flex flex-row items-center gap-2.5">
-                                            <button className="py-2.5 px-3 flex items-center justify-center rounded-md bg-black">
-                                                <span className="text-b-12-12-500 text-white">Renew Plan</span>
-                                            </button>
-                                            <button className="py-2.5 px-3 flex items-center justify-center rounded-md ">
-                                                <span className="text-b-12-12-500 text-gray-700">Docs</span>
-                                            </button>
+                                        <div className="p-5 rounded-xl flex flex-rowe items-center justify-between border flex-wrap md:flex-nowrap bg-mask bg-left">
+                                            <div className="flex flex-row items-center gap-4">
+                                                <img src={UserAccess} alt="user-access" />
+                                                <div className="flex flex-col gap-2.5">
+                                                    <div className="flex flex-row items-center gap-2.5">
+                                                        <span className="text-gray-900 text-b-16-16-500">User Access</span>
+                                                        <div className="px-[6px] py-[5px] flex items-center justify-center border bg-gray-100 rounded-md">
+                                                            <span className="text-b-11-12-500 text-gray-600">16 days left</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-col gap-1">
+                                                        <span className="text-gray-800 text-b-13-20-400">This API key can only access <Link to={location} className="text-primary">@keenthemes</Link></span>
+                                                        <span className="text-gray-800 text-b-13-20-400"> Secure access with a unique API key for enhanced functionality.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <button className="py-2.5 px-3 flex items-center justify-center rounded-md bg-black">
+                                                    <span className="text-b-12-12-500 text-white">Renew Plan</span>
+                                                </button>
+                                                <button className="py-2.5 px-3 flex items-center justify-center rounded-md ">
+                                                    <span className="text-b-12-12-500 text-gray-700">Docs</span>
+                                                </button>
+                                            </div>
                                         </div>
+                                        <p className="text-b-13-20-400 text-gray-800">Unlock the full potential of your application with our API, a secure gateway facilitating seamless integration, empowering developers to create innovative and dynamic experiences effortlessly.</p>
                                     </div>
-                                    <p className="text-b-13-20-400 text-gray-800">Unlock the full potential of your application with our API, a secure gateway facilitating seamless integration, empowering developers to create innovative and dynamic experiences effortlessly.</p>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
+
                     {/* Integrations */}
-                    <Card
-                        title="Integrations"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col gap-[30px] p-[30px]">
-                                    <div className="flex flex-col gap-5">
-                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={GoogleDev} alt="google-dev" className="size-8" />
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex flex-row gap-1 items-center">
-                                                        <span className="text-b-14-14-500">Google web.dev</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">webdev@webdevmail.com</span>
+                    <section id="integrations" className="section">
+                        <Card
+                            title="Integrations"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col gap-[30px] p-[30px]">
+                                        <div className="flex flex-col gap-5">
+                                            <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={GoogleDev} alt="google-dev" className="size-8" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className="flex flex-row gap-1 items-center">
+                                                            <span className="text-b-14-14-500">Google web.dev</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">webdev@webdevmail.com</span>
+                                                        </div>
+                                                        <span className="text-b-13-14-400 text-gray-700">Integrate for enhanced collaboration in web development.</span>
                                                     </div>
-                                                    <span className="text-b-13-14-400 text-gray-700">Integrate for enhanced collaboration in web development.</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={googleWeb} setSwitch={() => setGoogleWeb(!googleWeb)} size="medium" />
+                                                    <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                        <CiSettings className="size-[18px] text-gray-600" />
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={googleWeb} setSwitch={() => setGoogleWeb(!googleWeb)} size="medium" />
-                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
-                                                    <CiSettings className="size-[18px] text-gray-600" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Equacoin} alt="equa-coin" className="size-8" />
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex flex-row gap-1 items-center">
-                                                        <span className="text-b-14-14-500">Equacoin</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">equacoin@cryptoemail.com</span>
+                                            <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Equacoin} alt="equa-coin" className="size-8" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className="flex flex-row gap-1 items-center">
+                                                            <span className="text-b-14-14-500">Equacoin</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">equacoin@cryptoemail.com</span>
+                                                        </div>
+                                                        <span className="text-b-13-14-400 text-gray-700">Streamline cryptocurrency transactions securely and efficiently.</span>
                                                     </div>
-                                                    <span className="text-b-13-14-400 text-gray-700">Streamline cryptocurrency transactions securely and efficiently.</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={equaCoin} setSwitch={() => setEquaCoin(!equaCoin)} size="medium" />
+                                                    <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                        <CiSettings className="size-[18px] text-gray-600" />
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={equaCoin} setSwitch={() => setEquaCoin(!equaCoin)} size="medium" />
-                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
-                                                    <CiSettings className="size-[18px] text-gray-600" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Evernote} alt="evernote" className="size-8" />
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex flex-row gap-1 items-center">
-                                                        <span className="text-b-14-14-500">Evernote</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">evernote@noteexample.com</span>
+                                            <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Evernote} alt="evernote" className="size-8" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className="flex flex-row gap-1 items-center">
+                                                            <span className="text-b-14-14-500">Evernote</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">evernote@noteexample.com</span>
+                                                        </div>
+                                                        <span className="text-b-13-14-400 text-gray-700">Enhance workflow, capture ideas seamlessly.</span>
                                                     </div>
-                                                    <span className="text-b-13-14-400 text-gray-700">Enhance workflow, capture ideas seamlessly.</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={evernote} setSwitch={() => setEvernote(!evernote)} size="medium" />
+                                                    <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                        <CiSettings className="size-[18px] text-gray-600" />
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={evernote} setSwitch={() => setEvernote(!evernote)} size="medium" />
-                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
-                                                    <CiSettings className="size-[18px] text-gray-600" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Inferno} alt="inferno" className="size-8" />
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex flex-row gap-1 items-center">
-                                                        <span className="text-b-14-14-500">Inferno</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">inferno@dataexample.com</span>
+                                            <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Inferno} alt="inferno" className="size-8" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className="flex flex-row gap-1 items-center">
+                                                            <span className="text-b-14-14-500">Inferno</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">inferno@dataexample.com</span>
+                                                        </div>
+                                                        <span className="text-b-13-14-400 text-gray-700">Robust email integration for data management.</span>
                                                     </div>
-                                                    <span className="text-b-13-14-400 text-gray-700">Robust email integration for data management.</span>
+                                                </div>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={inferno} setSwitch={() => setInferno(!inferno)} size="medium" />
+                                                    <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                        <CiSettings className="size-[18px] text-gray-600" />
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={inferno} setSwitch={() => setInferno(!inferno)} size="medium" />
-                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
-                                                    <CiSettings className="size-[18px] text-gray-600" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
-                                            <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Jira} alt="jira" className="size-8" />
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex flex-row gap-1 items-center">
-                                                        <span className="text-b-14-14-500">Jira</span>
-                                                        <span className="text-b-13-14-400 text-gray-700">jira@projectmail.com</span>
+                                            <div className="p-4 rounded-xl flex flex-row justify-between items-center border">
+                                                <div className="flex flex-row items-center gap-[14px]">
+                                                    <img src={Jira} alt="jira" className="size-8" />
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className="flex flex-row gap-1 items-center">
+                                                            <span className="text-b-14-14-500">Jira</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">jira@projectmail.com</span>
+                                                        </div>
+                                                        <span className="text-b-13-14-400 text-gray-700">Streamline project management, enhance collaboration.</span>
                                                     </div>
-                                                    <span className="text-b-13-14-400 text-gray-700">Streamline project management, enhance collaboration.</span>
                                                 </div>
-                                            </div>
-                                            <div className="flex flex-row items-center gap-5">
-                                                <Switch status={jira} setSwitch={() => setJira(!jira)} size="medium" />
-                                                <button className="p-2.5 hover:bg-gray-100 rouded-md">
-                                                    <CiSettings className="size-[18px] text-gray-600" />
-                                                </button>
+                                                <div className="flex flex-row items-center gap-5">
+                                                    <Switch status={jira} setSwitch={() => setJira(!jira)} size="medium" />
+                                                    <button className="p-2.5 hover:bg-gray-100 rouded-md">
+                                                        <CiSettings className="size-[18px] text-gray-600" />
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
+
                     {/* Delete Account */}
-                    <Card
-                        title="Delete Account"
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col gap-[30px] p-[30px]">
-                                    <div className="flex flex-col gap-5">
-                                        <p className="text-b-13-20-400 text-gray-800">We regret to see you leave. Confirm account deletion below. Your data will be permanently removed. Thank you for being part of our community. Please check our Setup Guidelines if you still wish continue.</p>
-                                        <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="confirm" id="confirm" className="size-[18px]" />
-                                            <span className="text-b-13-14-500 text-gray-800">Confirm deleting account</span>
+                    <section id="delete-account" className="section">
+                        <Card
+                            title="Delete Account"
+                            dotStatus={false}
+                            buttonStatus={false}
+                            content={
+                                <>
+                                    <div className="flex flex-col gap-[30px] p-[30px]">
+                                        <div className="flex flex-col gap-5">
+                                            <p className="text-b-13-20-400 text-gray-800">We regret to see you leave. Confirm account deletion below. Your data will be permanently removed. Thank you for being part of our community. Please check our Setup Guidelines if you still wish continue.</p>
+                                            <div className="flex flex-row items-center gap-[6px]">
+                                                <input type="checkbox" name="confirm" id="confirm" className="size-[18px]" />
+                                                <span className="text-b-13-14-500 text-gray-800">Confirm deleting account</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-center gap-2.5 ml-auto">
+                                            <button className="px-4 py-[13px] border rounded-md flex items-center justify-center">
+                                                <span className="text-b-13-14-500 text-gray-700">Deactivate Instead</span>
+                                            </button>
+                                            <button className="px-4 py-[13px] border rounded-md flex items-center justify-center bg-danger">
+                                                <span className="text-b-13-14-500 text-white">Deactivate Instead</span>
+                                            </button>
                                         </div>
                                     </div>
-                                    <div className="flex flex-row items-center gap-2.5 ml-auto">
-                                        <button className="px-4 py-[13px] border rounded-md flex items-center justify-center">
-                                            <span className="text-b-13-14-500 text-gray-700">Deactivate Instead</span>
-                                        </button>
-                                        <button className="px-4 py-[13px] border rounded-md flex items-center justify-center bg-danger">
-                                            <span className="text-b-13-14-500 text-white">Deactivate Instead</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                    />
+                                </>
+                            }
+                        />
+                    </section>
+
                 </div>
 
             </div>
