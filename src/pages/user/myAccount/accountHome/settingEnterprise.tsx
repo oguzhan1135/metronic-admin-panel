@@ -3,7 +3,7 @@ import Menu from "../../../../components/myAccount/hoverMenu"
 import Information from '../../../../assets/icon/information-icon.svg'
 import { BsApple } from "react-icons/bs"
 import { CiBasketball } from "react-icons/ci"
-import { FaCalendarDay, FaCopy, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
+import { FaCalendarDay, FaCopy, FaEllipsisVertical, FaFacebook, FaLinkedin, FaPlus, FaXTwitter } from "react-icons/fa6"
 import { FcGoogle } from "react-icons/fc"
 import { IoIosClose, IoIosLogOut, IoLogoTwitch } from "react-icons/io"
 import { MdOutlineEditNote } from "react-icons/md"
@@ -14,14 +14,18 @@ import ExampleUser from '../../../../assets/icon/example-user.svg'
 import Camera from '../../../../assets/icon/camera.svg'
 import Message from '../../../../assets/icon/text-message.svg'
 import Authenticator from '../../../../assets/icon/authenticator.svg'
-import { FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
+import { FaCheckCircle, FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
 import GoogleCalendar from '../../../../assets/icon/google-calendar.svg'
 import Monday from '../../../../assets/icon/monday.svg'
 import Chrome from '../../../../assets/icon/chrome.svg'
 import Spain from '../../../../assets/icon/spain.svg'
 import France from '../../../../assets/icon/france.svg'
 import Premium from '../../../../assets/icon/premium-plan.svg'
-
+import { HiOutlineDotsVertical } from "react-icons/hi"
+import Tyler from '../../../../assets/icon/tyler-hero.svg'
+import Esther from '../../../../assets/icon/ester-hoeard.svg'
+import Cody from '../../../../assets/icon/cody-fisher.svg'
+import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
 const SettingEnterprise = () => {
     const [account, setAccount] = useState(true)
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
@@ -456,11 +460,185 @@ const SettingEnterprise = () => {
                                                 <span className="text-b-12-12-500 text-gray-700">Add a Goal</span>
                                             </button>
                                         </div>
-                                        <input type="range" value={15}/>
+                                        <input type="range" value={15} />
                                     </div>
                                 </div>
                             </>
                         }
+                    />
+                    {/* Payment History */}
+                    <Card
+                        title="Payment History"
+                        dotStatus={true}
+                        buttonStatus={true}
+                        buttonTitle="View all payments"
+                        content={
+                            <>
+                                <table className=" table-fixed w-full">
+                                    <thead className="bg-gray-200">
+                                        <th className="text-left px-[30px] py-[13px] text-b-13-14-400 text-gray-700">Date</th>
+                                        <th className="text-right text-b-13-14-400 text-gray-700">Type</th>
+                                        <th className="text-b-13-14-400 text-gray-700">Amount</th>
+                                        <th></th>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="border-b">
+                                            <td className="text-left px-[30px] py-[13px] ">24 Aug,2024</td>
+                                            <td className="text-right">Subscription Fee</td>
+                                            <td className="text-center">$24.00</td>
+                                            <td className="flex item-center justify-end px-[30px] py-[13px]">
+                                                <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
+                                                    <FaEllipsisVertical className="size-[18px] text-gray-600" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="text-left px-[30px] py-[13px] ">15 Sep, 2024</td>
+                                            <td className="text-right">Product Purchase</td>
+                                            <td className="text-center">$50.99</td>
+                                            <td className="flex item-center justify-end px-[30px] py-[13px]">
+                                                <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
+                                                    <FaEllipsisVertical className="size-[18px] text-gray-600" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="text-left px-[30px] py-[13px] ">05 Dec, 2024</td>
+                                            <td className="text-right">Transaction Fee</td>
+                                            <td className="text-center">$2.50</td>
+                                            <td className="flex item-center justify-end px-[30px] py-[13px]">
+                                                <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
+                                                    <FaEllipsisVertical className="size-[18px] text-gray-600" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="text-left px-[30px] py-[13px] ">30 May, 2025</td>
+                                            <td className="text-right">Annual Maintenance</td>
+                                            <td className="text-center">$40.20</td>
+                                            <td className="flex item-center justify-end px-[30px] py-[13px]">
+                                                <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
+                                                    <FaEllipsisVertical className="size-[18px] text-gray-600" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </>
+                        }
+                    />
+                    <Card
+                        title="Connections"
+                        dotStatus={true}
+                        content={
+                            <>
+                                <div className="flex flex-col ">
+                                    <table>
+                                        <thead className="bg-gray-200 ">
+                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
+                                            <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
+                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
+                                            <th></th>
+                                        </thead>
+                                        <tbody>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Tyler} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Tyler Hero</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>26 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">6</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Esther} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Esther Howard</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>639 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Cody} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Jacob Jones</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>125 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">19</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Tyler} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Cody Fisher</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>81 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr className="border-b">
+                                                <td className="py-4 pl-[30px] pr-5">
+                                                    <div className="flex flex-row gap-2.5 items-center">
+                                                        <img src={Arlene} alt="" className='' />
+                                                        <div className="flex flex-col gap-2">
+                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Leslie Alexander</Link>
+                                                            <span className='text-b-12-12-400 text-gray-700'>1203 connections</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">2</td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
+                                                <td className="">
+                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
+                                                        <HiOutlineDotsVertical className="text-gray-600" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </>
+                        }
+                        buttonStatus={true}
+                        buttonTitle="View 64 more"
                     />
 
                 </div>

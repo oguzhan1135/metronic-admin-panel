@@ -128,7 +128,7 @@ const SettingSidebar = () => {
                             key={item.id}
                             href={`#${item.id}`}
                             className={`subItem hover:bg-gray-100 ${activeSelection === item.id ? "selectedItem" : ""} pl-5`}
-                            onClick={() => setActiveSelection(item.id)} // preventDefault kaldırıldı
+                            onClick={() => setActiveSelection(item.id)}
                         >
                             {item.hasDot && (
                                 <span className={`dot ${activeSelection === item.id ? "dotActive" : "dotInActive"}`}></span>
