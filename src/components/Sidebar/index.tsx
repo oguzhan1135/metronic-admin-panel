@@ -551,10 +551,12 @@ const Sidebar = () => {
 
         }
     }
-    const { modalOpen } = metronicContext();
+    const { modalOpen, settingModalOpen } = metronicContext();
     const location = window.location.pathname
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${modalOpen === true && location === "/user/publicProfiles/profiles/modal" ? "-z-10" : "z-50"} `}>
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && location === "/user/publicProfiles/profiles/modal") || (settingModalOpen === true && location === "/user/myAccount/accountHome/settingModal") ? "-z-10" : "z-50"}
+
+ `}>
             <div className="px-5 py-[30px] flex relative ">
                 <div onClick={() => {
                     handleSideBar()

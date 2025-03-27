@@ -9,6 +9,8 @@ interface LayoutProps {
     setSidebarIsOpen: React.Dispatch<React.SetStateAction<boolean>>
     modalOpen: boolean;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+    settingModalOpen: boolean;
+    setSettingModalOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 const LayoutContext = createContext<LayoutProps | undefined>(undefined);
 
@@ -19,11 +21,12 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const [sidebarWidth, setSidebarWidth] = useState(280);
     const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(true);
+    const [settingModalOpen, setSettingModalOpen] = useState(true);
 
 
     return (
         <LayoutContext.Provider value={{
-            sidebarWidth, setSidebarWidth, sidebarIsOpen, setSidebarIsOpen,modalOpen,setModalOpen
+            sidebarWidth, setSidebarWidth, sidebarIsOpen, setSidebarIsOpen, modalOpen, setModalOpen, settingModalOpen, setSettingModalOpen
         }}>
             {children}
         </LayoutContext.Provider>

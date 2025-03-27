@@ -24,6 +24,7 @@ import CompanyProfile from '../pages/user/myAccount/accountHome/companyProfile'
 import SettingSidebar from "../pages/user/myAccount/accountHome/settingSidebar";
 import SettingEnterprise from "../pages/user/myAccount/accountHome/settingEnterprise";
 import SettingPlain from "../pages/user/myAccount/accountHome/settingPlain";
+import SettingModal from "../pages/user/myAccount/accountHome/settingModal";
 
 import '../globals.css'
 
@@ -57,6 +58,7 @@ const Router = () => {
                 <Route path='/user/myAccount/accountHome/settingSidebar' element={<SettingSidebar />}></Route>
                 <Route path='/user/myAccount/accountHome/settingEnterprise' element={<SettingEnterprise />}></Route>
                 <Route path='/user/myAccount/accountHome/settingPlain' element={<SettingPlain />}></Route>
+                <Route path='/user/myAccount/accountHome/settingModal' element={<SettingModal />}></Route>
 
 
 
