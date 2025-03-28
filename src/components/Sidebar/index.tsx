@@ -177,16 +177,16 @@ const menuData: MenuItem[] = [
                 label: "Billing",
                 subItems: [
                     {
-                        category: "user", key: "billing-basic", label: "Billing - Basic"
+                        category: "user", key: "billing-basic", label: "Billing - Basic", path: "/user/myAccount/billing/billingBasic"
                     },
                     {
-                        category: "user", key: "billing-enterprise", label: "billing - Enterprise"
+                        category: "user", key: "billing-enterprise", label: "billing - Enterprise", path: "/user/myAccount/billing/billingEnterprise"
                     },
                     {
-                        category: "user", key: "plans", label: "Plans"
+                        category: "user", key: "plans", label: "Plans", path: "/user/myAccount/billing/billingPlans"
                     },
                     {
-                        category: "user", key: "billing-history", label: "Billing History"
+                        category: "user", key: "billing-history", label: "Billing History", path: "/user/myAccount/billing/billingHistory"
                     }
                 ]
             },

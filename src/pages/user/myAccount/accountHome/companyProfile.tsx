@@ -37,7 +37,6 @@ const CompanyProfile = () => {
                     <span className='text-b-14-14-400 text-gray-700'>Showcase of Corporate Identity & Values</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-
                     <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
@@ -47,8 +46,8 @@ const CompanyProfile = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-[30px]">
-                <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
+            <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
+                <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
                     {/* {General Info} */}
                     <Card
                         title="Personal Info"
@@ -316,13 +315,13 @@ const CompanyProfile = () => {
                     />
 
                 </div>
-                <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
+                <div className="lg:col-span-2 col-span-5 flex flex-col gap-[30px]">
                     {/* right area */}
                     <Card
                         dotStatus={false}
                         buttonStatus={false}
                         content={<>
-                            <div className="flex flex-col px-[30px]">
+                            <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <img src={USerGuidelines} alt="user-guidlines" className="size-[50px]" />
                                     <div className="flex flex-col gap-2.5">
