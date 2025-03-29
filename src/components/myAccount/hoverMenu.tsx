@@ -36,7 +36,7 @@ const Menu = () => {
                         onMouseEnter={() => setAccountHomeOpen(true)}
                         onMouseLeave={() => setAccountHomeOpen(false)}
                     >
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/") ? "text-primary" : "text-gray-700"} `}>Account Home</a>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome") ? "text-primary" : "text-gray-700"} `}>Account Home</a>
                         <FaChevronDown className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome") ? "text-primary" : "text-gray-700"} `} />
 
                         {/* Account Home menu */}
@@ -147,9 +147,7 @@ const Menu = () => {
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
                         <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</a>
                     </div>
-                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/activity") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/publicProfiles/activity") ? "text-primary" : "text-gray-700"} `}>Activity</a>
-                    </div>
+                  
                     <div
                         className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/campaigns") || location.startsWith("/user/publicProfiles/empty") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={() => setMoreOpen(true)}

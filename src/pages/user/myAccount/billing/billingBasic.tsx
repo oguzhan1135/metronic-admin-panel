@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import Card from "../../../../components/card/card"
-import Menu from "../../../../components/publicProfile/hovermenu"
+import Menu from "../../../../components/myAccount/hoverMenu"
 import USerGuidelines from '../../../../assets/icon/user-guidelines.svg'
 import Comprehensive from '../../../../assets/icon/comprehensive.svg'
 import StayUpdated from '../../../../assets/icon/stay-updated.svg'

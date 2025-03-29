@@ -26,6 +26,7 @@ import SettingEnterprise from "../pages/user/myAccount/accountHome/settingEnterp
 import SettingPlain from "../pages/user/myAccount/accountHome/settingPlain";
 import SettingModal from "../pages/user/myAccount/accountHome/settingModal";
 import BillingBasic from "../pages/user/myAccount/billing/billingBasic";
+import BillingEnterprise from "../pages/user/myAccount/billing/billingEnterprise";
 
 import '../globals.css'
 
@@ -61,6 +62,7 @@ const Router = () => {
                 <Route path='/user/myAccount/accountHome/settingPlain' element={<SettingPlain />}></Route>
                 <Route path='/user/myAccount/accountHome/settingModal' element={<SettingModal />}></Route>
                 <Route path='/user/myAccount/billing/billingBasic' element={<BillingBasic />}></Route>
+                <Route path='/user/myAccount/billing/billingEnterprise' element={<BillingEnterprise />}></Route>
 
 
 
