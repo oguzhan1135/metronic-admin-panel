@@ -1,12 +1,9 @@
 import { Link } from "react-router"
 import Card from "../../../../components/card/card"
 import Menu from "../../../../components/myAccount/hoverMenu"
-import USerGuidelines from '../../../../assets/icon/user-guidelines.svg'
-import Comprehensive from '../../../../assets/icon/comprehensive.svg'
-import StayUpdated from '../../../../assets/icon/stay-updated.svg'
 import { MdAddCircleOutline } from "react-icons/md"
 import Visa from '../../../../assets/icon/visa.svg'
-import { FaEdit, FaRegTrashAlt } from "react-icons/fa"
+import { FaCheckCircle, FaEdit, FaRegTrashAlt } from "react-icons/fa"
 import Ideal from '../../../../assets/icon/ideal.svg'
 import Paypal from '../../../../assets/icon/paypal.svg'
 import BillingTable from "../../../../components/myAccount/billingTable"
@@ -14,7 +11,8 @@ import PrimaryPoliygon from '../../../../assets/icon/primary-polygon.svg'
 import Kanba from '../../../../assets/icon/kanba.svg'
 import AvatarGroup from '../../../../assets/icon/avatar-group.svg'
 import { FaDownload } from "react-icons/fa6"
-import visa from '../../../../assets/icon/visa.svg'
+import Welcome from '../../../../assets/icon/unlockCreative.svg'
+import Calendar from '../../../../assets/icon/calendar.svg'
 
 const BillingEnterprise = () => {
     return (
@@ -52,90 +50,90 @@ const BillingEnterprise = () => {
                     </button>
                 </div>
             </div>
-             {/* Cloud One Enterprise */}
-             <Card
-                        dotStatus={false}
-                        buttonStatus={false}
-                        content={
-                            <>
-                                <div className="flex flex-col gap-[30px] p-[30px]">
-                                    <div className="flex flex-col  md:flex-row items-start gap-[30px]">
-                                        <div className="flex flex-col items-center justify-center gap-4 p-5">
-                                            <img src={Kanba} alt="kanba" />
-                                            <span className="text-b-14-14-600 text-gray-900 min-w-[70px]">Cloud One</span>
+            {/* Cloud One Enterprise */}
+            <Card
+                dotStatus={false}
+                buttonStatus={false}
+                content={
+                    <>
+                        <div className="flex flex-col gap-[30px] p-[30px]">
+                            <div className="flex flex-col  md:flex-row items-start gap-[30px]">
+                                <div className="flex flex-col items-center justify-center gap-4 p-5">
+                                    <img src={Kanba} alt="kanba" />
+                                    <span className="text-b-14-14-600 text-gray-900 min-w-[70px]">Cloud One</span>
+                                </div>
+                                <div className="flex flex-col gap-[30px] w-full">
+                                    <div className="flex flex-row items-center flex-wrap justify-between gap-5">
+                                        <div className="flex flex-col gap-[6px]">
+                                            <div className="flex flex-row items-center gap-2.5">
+                                                <h1 className="text-h-24-24-600 text-gray-900">Cloud One Enterprise</h1>
+                                                <div className="flex items-center justify-center rounded-[4px] border border-success border-opacity-20 bg-success-light px-[6px] py-[5px]">
+                                                    <span className="text-b-11-12-500 text-success">Monthly</span>
+                                                </div>
+                                            </div>
+                                            <span className="text-b-13-20-400 text-gray-700">Essential Features for Startups and Individuals</span>
                                         </div>
-                                        <div className="flex flex-col gap-[30px] w-full">
-                                            <div className="flex flex-row items-center flex-wrap justify-between gap-5">
-                                                <div className="flex flex-col gap-[6px]">
-                                                    <div className="flex flex-row items-center gap-2.5">
-                                                        <h1 className="text-h-24-24-600 text-gray-900">Cloud One Enterprise</h1>
-                                                        <div className="flex items-center justify-center rounded-[4px] border border-success border-opacity-20 bg-success-light px-[6px] py-[5px]">
-                                                            <span className="text-b-11-12-500 text-success">Monthly</span>
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-b-13-20-400 text-gray-700">Essential Features for Startups and Individuals</span>
-                                                </div>
-                                                <div className="flex flex-row items-center flex-wrap gap-2.5">
-                                                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
-                                                        Cancel Plan
-                                                    </button>
-                                                    <button className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
-                                                        Upgrade Plan
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div className="flex flex-row flex-wrap items-center gap-5">
-                                                <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
-                                                    <span className="text-gray-900 text-b-15-16-500">Trial</span>
-                                                    <span className="text-gray-700 text-b-13-14-400">Status</span>
-                                                </div>
-                                                <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
-                                                    <span className="text-gray-900 text-b-15-16-500">10,000</span>
-                                                    <span className="text-gray-700 text-b-13-14-400">Query runs</span>
-                                                </div>
-                                                <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
-                                                    <span className="text-gray-900 text-b-15-16-500">Unlimited</span>
-                                                    <span className="text-gray-700 text-b-13-14-400">API calls</span>
-                                                </div>
-                                                <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
-                                                    <span className="text-gray-900 text-b-15-16-500">$99.00</span>
-                                                    <span className="text-gray-700 text-b-13-14-400">Price</span>
-                                                </div>
-                                                <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
-                                                    <span className="text-gray-900 text-b-15-16-500">17 Aug, 2024</span>
-                                                    <span className="text-gray-700 text-b-13-14-400">Next bill date</span>
+                                        <div className="flex flex-row items-center flex-wrap gap-2.5">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                Cancel Plan
+                                            </button>
+                                            <button className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
+                                                Upgrade Plan
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-row flex-wrap items-center gap-5">
+                                        <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
+                                            <span className="text-gray-900 text-b-15-16-500">Trial</span>
+                                            <span className="text-gray-700 text-b-13-14-400">Status</span>
+                                        </div>
+                                        <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
+                                            <span className="text-gray-900 text-b-15-16-500">10,000</span>
+                                            <span className="text-gray-700 text-b-13-14-400">Query runs</span>
+                                        </div>
+                                        <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
+                                            <span className="text-gray-900 text-b-15-16-500">Unlimited</span>
+                                            <span className="text-gray-700 text-b-13-14-400">API calls</span>
+                                        </div>
+                                        <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
+                                            <span className="text-gray-900 text-b-15-16-500">$99.00</span>
+                                            <span className="text-gray-700 text-b-13-14-400">Price</span>
+                                        </div>
+                                        <div className="border-2 border-dotted py-2.5 px-[13px] flex flex-col gap-[6px] rounded-md items-start">
+                                            <span className="text-gray-900 text-b-15-16-500">17 Aug, 2024</span>
+                                            <span className="text-gray-700 text-b-13-14-400">Next bill date</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-[14px]">
+                                        <div className="flex flex-col md:flex-row gap-5 items-center">
+                                            <div className="flex flex-col gap-[14px] w-full">
+                                                <span className="text-b-13-14-400 text-gray-700">Query runs: <span className="text-b-13-14-500 text-gray-900">2239 of 10,000 used</span></span>
+                                                <div className="bg-primary-light rounded-[4px] h-[6px] w-full relative">
+                                                    <span className="absolute left-0 top-0 block bg-primary h-[6px] rounded-[4px] w-1/3"></span>
                                                 </div>
                                             </div>
+
                                             <div className="flex flex-col gap-[14px]">
-                                                <div className="flex flex-col md:flex-row gap-5 items-center">
-                                                    <div className="flex flex-col gap-[14px] w-full">
-                                                        <span className="text-b-13-14-400 text-gray-700">Query runs: <span className="text-b-13-14-500 text-gray-900">2239 of 10,000 used</span></span>
-                                                        <div className="bg-primary-light rounded-[4px] h-[6px] w-full relative">
-                                                            <span className="absolute left-0 top-0 block bg-primary h-[6px] rounded-[4px] w-1/3"></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="flex flex-col gap-[14px]">
-                                                        <span className="text-b-13-14-400 text-gray-700 min-w-[130px]">Seats: <span className="text-b-13-14-500 text-gray-900 ">29 of 120 used </span></span>
-                                                        <img src={AvatarGroup} alt="avatar-group" />
-                                                    </div>
-                                                </div>
-
+                                                <span className="text-b-13-14-400 text-gray-700 min-w-[130px]">Seats: <span className="text-b-13-14-500 text-gray-900 ">29 of 120 used </span></span>
+                                                <img src={AvatarGroup} alt="avatar-group" />
                                             </div>
                                         </div>
-
 
                                     </div>
-
-
                                 </div>
-                            </>
-                        }
-                    />
+
+
+                            </div>
+
+
+                        </div>
+                    </>
+                }
+            />
 
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-[30px]">
                 <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
-                   
+
                     {/* Latest Payment */}
                     <Card
                         title="Latest Patment"
@@ -178,10 +176,6 @@ const BillingEnterprise = () => {
                             </>
                         }
                     />
-
-
-                    {/*  */}
-
 
                     {/* Payment Method */}
                     <Card
@@ -274,14 +268,73 @@ const BillingEnterprise = () => {
                             </>
                         }
                     />
-                    {/* Billing Details */}
-                    <BillingTable />
 
+                    {/* Questions? */}
+                    <Card
+                        buttonStatus={true}
+                        buttonTitle="Go to Help Center"
+                        dotStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col md:flex-row gap-10 px-10 items-center py-[30px]">
+                                    <div className="flex flex-col gap-3">
+                                        <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
+                                        <p className=" text-b-14-22-400 text-gray-800">Visit our Help Center for detailed assistance on billing, payments, and subscriptions. </p>
+                                    </div>
+                                    <img src={Welcome} alt="welcome" />
+                                </div>
+                            </>
+                        }
+                    />
 
                 </div>
                 <div className="lg:col-span-2 col-span-4 flex flex-col gap-[30px]">
                     {/* right area */}
-                  
+
+                    {/* Next Payment */}
+                    <Card
+                        title="Next Payment"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col gap-[30px] p-[30px]">
+                                    <div className="p-4 border rounded-xl flex flex-row items-center justify-between">
+                                        <div className="flex flex-row items-center gap-[14px]">
+                                            <img src={Calendar} alt="calendar" />
+                                            <div className="flex flex-col gap-1">
+                                                <span className="text-gray-900 text-b-14-14-500">on 17 Aug, 2024</span>
+                                                <span className="text-b-13-14-400 text-gray-700 ">Due date</span>
+                                            </div>
+                                        </div>
+                                        <FaCheckCircle className="text-success size-8" />
+
+                                    </div>
+                                </div>
+                            </>
+                        }
+                    />
+                    {/* Billing Table */}
+                    <BillingTable />
+
+                    {/* Contact Support */}
+                    <Card
+                        buttonStatus={true}
+                        buttonTitle="Contact Support"
+                        dotStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col md:flex-row gap-10 px-10 items-center py-[30px]">
+                                    <div className="flex flex-col gap-3">
+                                        <span className="text-b-20-30-500 text-gray-900 ">Contact Support</span>
+                                        <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
+                                    </div>
+                                    <img src={Welcome} alt="welcome" />
+                                </div>
+                            </>
+                        }
+                    />
+
 
                 </div>
             </div>
