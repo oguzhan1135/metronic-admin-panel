@@ -28,6 +28,7 @@ import SettingModal from "../pages/user/myAccount/accountHome/settingModal";
 import BillingBasic from "../pages/user/myAccount/billing/billingBasic";
 import BillingEnterprise from "../pages/user/myAccount/billing/billingEnterprise";
 import BillingPlan from "../pages/user/myAccount/billing/billingPlan";
+import BillingHistory from "../pages/user/myAccount/billing/billingHistory";
 
 import '../globals.css'
 
@@ -65,6 +66,7 @@ const Router = () => {
                 <Route path='/user/myAccount/billing/billingBasic' element={<BillingBasic />}></Route>
                 <Route path='/user/myAccount/billing/billingEnterprise' element={<BillingEnterprise />}></Route>
                 <Route path='/user/myAccount/billing/billingPlans' element={<BillingPlan />}></Route>
+                <Route path='/user/myAccount/billing/billingHistory' element={<BillingHistory />}></Route>
 
 
 
