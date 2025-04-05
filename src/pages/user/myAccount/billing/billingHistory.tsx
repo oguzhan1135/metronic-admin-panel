@@ -1,7 +1,7 @@
 import Card from "../../../../components/card/card"
 import Menu from "../../../../components/myAccount/hoverMenu"
-import {FaDownload} from "react-icons/fa"
-import { useState } from "react"
+import { FaArrowLeft, FaArrowRight, FaDownload } from "react-icons/fa"
+import { useEffect, useState } from "react"
 import { Link } from "react-router"
 
 interface Project {
@@ -85,6 +85,32 @@ const BillingHistory = () => {
         },
     ])
 
+    const [showCount, setShowCount] = useState(5);
+    const [upgradeData, setUpgradeData] = useState(billing.slice(0, showCount));
+
+    const previousData = () => {
+        setShowCount(showCount);
+        setUpgradeData(billing.slice(0, showCount))
+    };
+
+    const nextData = () => {
+        setUpgradeData(billing.slice(showCount, billing.length + showCount))
+
+    };
+    const [selected, setSelected] = useState(1)
+    useEffect(() => {
+        if (showCount !== 5) {
+            setUpgradeData(billing.slice(0, showCount))
+        }
+        else {
+            setUpgradeData(billing.slice(0, 5))
+        }
+
+
+    }, [showCount])
+
+
+
     return (
         <div className="flex flex-col gap-[30px]  ">
             {/* {Sub  menu} */}
@@ -94,8 +120,8 @@ const BillingHistory = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Billing History</h1>
                     <span className='text-b-14-14-400 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
-                    Download All
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                    Billing
                 </button>
 
             </div>
@@ -148,7 +174,7 @@ const BillingHistory = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            billing.map((item) => (
+                                            upgradeData.map((item) => (
                                                 <tr className="border-t" key={item.id}>
                                                     <td className="px-[21px] py-[11px]">
                                                         <input type="checkbox" name={item.invoice} id={item.invoice} />
@@ -201,7 +227,33 @@ const BillingHistory = () => {
                                     </tbody>
                                 </table>
                             </div>
-                            {/*  bottom Area */}
+                            <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
+                                <div className="flex flex-row gap-3 items-center">
+                                    <span>Show</span>
+                                    <select
+
+                                        className="outline-none rounded-md p-2.5 cursor-pointer"
+                                        value={showCount}
+                                        onChange={(e) => setShowCount(Number(e.target.value))}
+                                    >
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                    <span>per page</span>
+                                </div>
+
+                                <div className="flex flex-row items-center gap-0.5">
+                                    <span className="pr-4">1-10 of 52</span>
+                                    <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
+                                    <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
+                                    <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < billing.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
+                                    <div className={`${showCount > billing.length ? ' hidden' : 'opacity-100'}`}>
+                                        <FaArrowRight className={`${billing.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </>
                 }

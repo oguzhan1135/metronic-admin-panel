@@ -196,28 +196,28 @@ const menuData: MenuItem[] = [
                 label: "Security",
                 subItems: [
                     {
-                        category: "user", key: "get-started", label: "Get Started"
+                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/security/getStarted"
                     },
                     {
-                        category: "user", key: "security-overview", label: "Security Overview"
+                        category: "user", key: "security-overview", label: "Security Overview", path: "/user/myAccount/security/overview"
                     },
                     {
-                        category: "user", key: "allowed-ip-addresses", label: "Allowed IP Addresses"
+                        category: "user", key: "allowed-ip-addresses", label: "Allowed IP Addresses", path: "/user/myAccount/security/allowedIpAddresses"
                     },
                     {
-                        category: "user", key: "privacy-setting", label: "Privacy Setting"
+                        category: "user", key: "privacy-setting", label: "Privacy Setting", path: "/user/myAccount/security/privacySetting"
                     },
                     {
-                        category: "user", key: "device-management", label: "Device Management"
+                        category: "user", key: "device-management", label: "Device Management", path: "/user/myAccount/security/deviceManagament"
                     },
                     {
-                        category: "user", key: "backup-recovery", label: "Backup & Recovery"
+                        category: "user", key: "backup-recovery", label: "Backup & Recovery", path: "/user/myAccount/security/backupRecovery"
                     },
                     {
-                        category: "user", key: "current-sessions", label: "Current Sessions"
+                        category: "user", key: "current-sessions", label: "Current Sessions", path: "/user/myAccount/security/currentSessions"
                     },
                     {
-                        category: "user", key: "security-log", label: "Security Log"
+                        category: "user", key: "security-log", label: "Security Log", path: "/user/myAccount/security/log"
                     }
                 ]
             },
