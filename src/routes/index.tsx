@@ -31,6 +31,7 @@ import BillingPlan from "../pages/user/myAccount/billing/billingPlan";
 import BillingHistory from "../pages/user/myAccount/billing/billingHistory";
 import GetStartedSecurity from "../pages/user/myAccount/security/started";
 import Overview from "../pages/user/myAccount/security/overview";
+import AllowIpAddresses from "../pages/user/myAccount/security/allowIpAdrdresses";
 
 import '../globals.css'
 
@@ -71,6 +72,7 @@ const Router = () => {
                 <Route path='/user/myAccount/billing/billingHistory' element={<BillingHistory />}></Route>
                 <Route path='/user/myAccount/security/getStarted' element={<GetStartedSecurity />}></Route>
                 <Route path='/user/myAccount/security/overview' element={<Overview />}></Route>
+                <Route path='/user/myAccount/security/allowedIpAddresses' element={<AllowIpAddresses />}></Route>
 
 
 
