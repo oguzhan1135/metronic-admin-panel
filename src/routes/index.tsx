@@ -33,6 +33,7 @@ import GetStartedSecurity from "../pages/user/myAccount/security/started";
 import Overview from "../pages/user/myAccount/security/overview";
 import AllowIpAddresses from "../pages/user/myAccount/security/allowIpAdrdresses";
 import PrivacySetting from "../pages/user/myAccount/security/privacySetting";
+import DeviceManagament from "../pages/user/myAccount/security/deviceManagement";
 
 import '../globals.css'
 
@@ -75,6 +76,7 @@ const Router = () => {
                 <Route path='/user/myAccount/security/overview' element={<Overview />}></Route>
                 <Route path='/user/myAccount/security/allowedIpAddresses' element={<AllowIpAddresses />}></Route>
                 <Route path='/user/myAccount/security/privacySetting' element={<PrivacySetting />}></Route>
+                <Route path='/user/myAccount/security/deviceManagament' element={<DeviceManagament />}></Route>
 
 
 

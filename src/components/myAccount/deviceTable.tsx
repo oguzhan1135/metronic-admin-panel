@@ -1,122 +1,137 @@
 import Card from "../card/card"
 import { useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight} from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../switch";
-import { MdOutlineUnfoldMore } from "react-icons/md";
+import { MdOutlineDesktopMac, MdOutlineUnfoldMore } from "react-icons/md";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
+import { IoIosLaptop, IoIosTabletLandscape } from "react-icons/io";
+import { CiMobile3 } from "react-icons/ci";
 
-interface Address {
-    id: number;
-    status: string;
-    address: string;
+interface Device {
+    name: string;
+    browser: string;
+    ip: string;
+    location: string;
+    added: string;
     lastSession: string;
-    label: string;
-    method: string;
+    category: "Laptop" | "Phone" | "Tablet" | "Mac";
 }
 
-const IpAddresesTable = () => {
-    const [ipAddress, setIPaddress] = useState<Address[]>([
+const DeviceTable = () => {
+
+    const [devices, setDevices] = useState<Device[]>([
         {
-            id: 1,
-            status: "active",
-            address: "192.168.1.1",
-            lastSession: "6 Aug, 2024",
-            label: "HR Dept",
-            method: "Basic auth",
+            name: "Mac",
+            browser: "Chrome MacOS",
+            ip: "117.61.104.86",
+            location: "United States",
+            added: "17 hours ago",
+            lastSession: "16 Aug, 2024",
+            category: "Laptop",
         },
         {
-            id: 2,
-            status: "",
-            address: "2001:db8:0:1234:0:567:8:5",
-            lastSession: "22 Jul 2024",
-            label: "Guy Hawkins",
-            method: "Web",
+            name: "iPhone 12",
+            browser: "Safari iOS",
+            ip: "234.0.155.191",
+            location: "Canada",
+            added: "2 days ago",
+            lastSession: "15 Aug, 2024",
+            category: "Phone",
         },
         {
-            id: 3,
-            status: "inactive",
-            address: "2001:db8:0:1234:0:567:8:4",
-            lastSession: "18 Jul, 2024",
-            label: "Sales Dept",
-            method: "SSH",
+            name: "Samsung Galaxy S20",
+            browser: "Chrome Android",
+            ip: "70.218.212.162",
+            location: "United Kingdom",
+            added: "1 day ago",
+            lastSession: "14 Aug, 2024",
+            category: "Phone",
         },
         {
-            id: 4,
-            status: "active",
-            address: "192.168.1.2",
-            lastSession: "15 Jul, 2024",
-            label: "Sales Dept",
-            method: "Kerberos",
+            name: "iPad Pro",
+            browser: "Safari iOS",
+            ip: "140.92.152.213",
+            location: "Australia",
+            added: "3 days ago",
+            lastSession: "13 Aug, 2024",
+            category: "Tablet",
         },
         {
-            id: 5,
-            status: "warning",
-            address: "2001:db8:0:1234:0:567:8:3",
-            lastSession: "6 Aug, 2024",
-            label: "HR Dept",
-            method: "Basic auth",
+            name: "Microsoft Surface 3",
+            browser: "Edge on Windows",
+            ip: "214.219.147.46",
+            location: "Germany",
+            added: "4 hours ago",
+            lastSession: "12 Aug, 2024",
+            category: "Tablet",
         },
         {
-            id: 6,
-            status: "warning",
-            address: "10.0.0.2",
-            lastSession: "28 Jul, 2024",
-            label: "Finance Dept",
-            method: "API Key",
-        },
-        {
-            id: 7,
-            status: "active",
-            address: "192.168.1.4",
-            lastSession: "16 Jul, 2024",
-            label: "Design Dept",
-            method: "FIDO U2F",
-        },
-        {
-            id: 8,
-            status: "active",
-            address: "2001:db8:0:1234:0:567:8:6",
+            name: "Dell XPS",
+            browser: "Chrome Windows",
+            ip: "246.44.68.100",
+            location: "France",
+            added: "5 days ago",
             lastSession: "11 Aug, 2024",
-            label: "Compliance Dept",
-            method: "OpenID",
+            category: "Laptop",
         },
         {
-            id: 9,
-            status: "active",
-            address: "2001:db8:0:1234:0:567:8:9",
-            lastSession: "19 Jul, 2024",
-            label: "Alice Smith",
-            method: "Biometric",
+            name: "Google Pixel 5",
+            browser: "Chrome Android",
+            ip: "233.182.185.28",
+            location: "Japan",
+            added: "6 days ago",
+            lastSession: "10 Aug, 2024",
+            category: "Phone",
         },
         {
-            id: 10,
-            status: "inactive",
-            address: "192.168.1.1",
-            lastSession: "6 Aug, 2024",
-            label: "HR Dept",
-            method: "Basic auth",
+            name: "Huawei P30",
+            browser: "Chrome Android",
+            ip: "76.216.214.248",
+            location: "South Korea",
+            added: "1 week ago",
+            lastSession: "09 Aug, 2024",
+            category: "Phone",
         },
-    ])
+        {
+            name: "MacBook Air",
+            browser: "Safari MacOS",
+            ip: "102.150.137.255",
+            location: "Italy",
+            added: "8 days ago",
+            lastSession: "08 Aug, 2024",
+            category: "Laptop",
+        },
+        {
+            name: "Lenova ThinkPad",
+            browser: "Firefox Windows",
+            ip: "75.243.106.80",
+            location: "Spain",
+            added: "9 days ago",
+            lastSession: "17 Aug, 2024",
+            category: "Laptop",
+        },
+    ]);
+
     const [address, setAddress] = useState(true)
     const [showCount, setShowCount] = useState(5);
-    const [upgradeData, setUpgradeData] = useState(ipAddress.slice(0, showCount));
+    const [upgradeData, setUpgradeData] = useState(devices.slice(0, showCount));
 
     const previousData = () => {
         setShowCount(showCount);
-        setUpgradeData(ipAddress.slice(0, showCount))
+        setUpgradeData(devices.slice(0, showCount))
     };
 
     const nextData = () => {
-        setUpgradeData(ipAddress.slice(showCount, ipAddress.length + showCount))
+        setUpgradeData(devices.slice(showCount, devices.length + showCount))
 
     };
     const [selected, setSelected] = useState(1)
     useEffect(() => {
         if (showCount !== 5) {
-            setUpgradeData(ipAddress.slice(0, showCount))
+            setUpgradeData(devices.slice(0, showCount))
         }
         else {
-            setUpgradeData(ipAddress.slice(0, 5))
+            setUpgradeData(devices.slice(0, 5))
         }
 
 
@@ -155,7 +170,7 @@ const IpAddresesTable = () => {
                                         </th>
                                         <th className="px-5 py-[13px] border border-gray-200 ">
                                             <div className="flex flex-row items-center gap-2">
-                                                <span className="text-b-13-14-400 text-gray-700">Status</span>
+                                                <span className="text-b-13-14-400 text-gray-700">Device</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
@@ -169,14 +184,14 @@ const IpAddresesTable = () => {
                                         </th>
                                         <th className="px-5 py-[13px] border border-gray-200">
                                             <div className=" flex flex-row items-center gap-2">
-                                                <span className="text-b-13-14-400 text-gray-700">Last session</span>
+                                                <span className="text-b-13-14-400 text-gray-700">Location</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
                                         <th className="px-5 py-[13px] border border-gray-200">
                                             <div className=" flex flex-row items-center gap-2">
-                                                <span className="text-b-13-14-400 text-gray-700">Label</span>
+                                                <span className="text-b-13-14-400 text-gray-700">Added</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
@@ -184,7 +199,7 @@ const IpAddresesTable = () => {
 
                                         <th className="px-5 py-[13px] border border-gray-200">
                                             <div className=" flex flex-row items-center gap-2">
-                                                <span className="text-b-13-14-400 text-gray-700">Method</span>
+                                                <span className="text-b-13-14-400 text-gray-700">Last Session</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
@@ -202,38 +217,41 @@ const IpAddresesTable = () => {
                                 <tbody>
                                     {
                                         upgradeData.map((item) => (
-                                            <tr className="border border-gray-200-t" key={item.id}>
-                                                <td className='px-[21px]  py-[26px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.address} id={item.address} />
+                                            <tr className="border border-gray-200-t" key={item.ip}>
+                                                <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
+                                                    <input type="checkbox" className="size-[18px]" name={item.name} id={item.name} />
                                                 </td>
-
-                                                <td className="px-5 py-[26px] text-center align-middle">
-                                                    <span className="flex justify-center items-center">
+                                                <td className='px-5 py-[15px]  text-left border border-gray-200'>
+                                                    <div className="flex flex-row items-center gap-2.5">
                                                         {
-                                                            item.status === "active" ? (
-                                                                <span className="w-2 h-2 bg-success rounded-full"></span>
-                                                            ) : item.status === "warning" ? (
-                                                                <span className="w-2 h-2 bg-warning rounded-full"></span>
-                                                            ) : (
-                                                                <span className="w-2 h-2 bg-danger rounded-full"></span>
-                                                            )
+                                                            item.category === "Laptop" ?
+                                                                <IoIosLaptop className="size-6 text-gray-500" /> :
+                                                                item.category === "Mac" ?
+                                                                    <MdOutlineDesktopMac className="size-6 text-gray-500" /> :
+                                                                    item.category === "Phone" ?
+                                                                        <CiMobile3 className="size-6 text-gray-500" /> :
+                                                                        <IoIosTabletLandscape className="size-6 text-gray-500" />
                                                         }
-                                                    </span>
+                                                        <div className="flex flex-col gap-2">
+                                                            <span className="text-gray-900 text-b-14-14-500">{item.name}</span>
+                                                            <span className="text-b-13-14-400 text-gray-700">{item.browser}</span>
+                                                        </div>
+                                                    </div>
                                                 </td>
-
-
-                                                <td className='px-5 py-[26px]  text-left border border-gray-200'>
-                                                    <span className='text-b-14-14-400 text-gray-800'>{item.address}</span>
+                                                <td className='px-5 py-[15px]  text-left border border-gray-200'>
+                                                    <span className='text-b-14-14-400 text-gray-800'>{item.ip}</span>
                                                 </td>
-                                                <td className='px-5 py-[26px]  text-left border border-gray-200'>
+                                                <td className='px-5 py-[15px]  text-left border border-gray-200'>
+                                                    <span className='text-b-14-14-400 text-gray-800'>{item.location}</span>
+                                                </td>
+                                                <td className='px-5 py-[15px]  text-left border border-gray-200'>
+                                                    <span className='text-b-14-14-400 text-gray-800'>{item.added}</span>
+                                                </td>
+                                                <td className='px-5 py-[15px]  text-left border border-gray-200'>
                                                     <span className='text-b-14-14-400 text-gray-800'>{item.lastSession}</span>
                                                 </td>
-                                                <td className='px-5 py-[26px]  text-left border border-gray-200'>
-                                                    <span className='text-b-14-14-400 text-gray-800'>{item.label}</span>
-                                                </td>
-                                                <td className='px-5 py-[26px]  text-left border border-gray-200'>
-                                                    <span className='text-b-14-14-400 text-gray-800'>{item.method}</span>
-                                                </td>
+
+
                                                 <td className='px-[30px] py-[21px] text-right border border-gray-200'>
                                                     <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
                                                         <FaEdit className="text-gray-600 size-[18px]" />
@@ -270,9 +288,9 @@ const IpAddresesTable = () => {
                                 <span className="pr-4">1-10 of 52</span>
                                 <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
                                 <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < ipAddress.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                                <div className={`${showCount > ipAddress.length ? ' hidden' : 'opacity-100'}`}>
-                                    <FaArrowRight className={`${ipAddress.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
+                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < devices.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
+                                <div className={`${showCount > devices.length ? ' hidden' : 'opacity-100'}`}>
+                                    <FaArrowRight className={`${devices.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
 
                                 </div>
                             </div>
@@ -284,4 +302,4 @@ const IpAddresesTable = () => {
     )
 }
 
-export default IpAddresesTable
+export default DeviceTable
