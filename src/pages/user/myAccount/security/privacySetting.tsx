@@ -4,30 +4,18 @@
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from '../../../../components/card/card'
-import { CiCircleCheck } from "react-icons/ci"
-import PasswordChange from '../../../../assets/icon/password-change.svg'
-import { FaChalkboardUser, FaFacebook, FaUsers } from "react-icons/fa6"
+import { FaChalkboardUser,FaUsers } from "react-icons/fa6"
 import { GiAbstract092 } from "react-icons/gi"
 import { useState } from "react"
 import Switch from "../../../../components/switch"
-import { IoLocationOutline, IoSettingsOutline, IoShieldCheckmark, IoTrashOutline } from "react-icons/io5"
+import { IoLocationOutline, IoSettingsOutline,IoTrashOutline } from "react-icons/io5"
 import { FaRegCheckCircle, FaToggleOn } from "react-icons/fa"
-import { BsApple } from "react-icons/bs"
-import { FcAndroidOs, FcGoogle } from "react-icons/fc"
-import { MdOutlineEditNote } from "react-icons/md"
-import { IoIosLogOut } from "react-icons/io"
 import Tyler from '../../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../../assets/icon/cody-fisher.svg'
 import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
-import { HiOutlineDotsVertical } from "react-icons/hi"
-import Chrome from '../../../../assets/icon/chrome.svg'
-import Spain from '../../../../assets/icon/spain.svg'
-import France from '../../../../assets/icon/france.svg'
-import { GoShieldSlash } from "react-icons/go"
-import { CgPassword } from "react-icons/cg"
-import { TbShieldSearch } from "react-icons/tb"
 import FAQ from "../../../../components/myAccount/faq"
+
 const PrivacySetting = () => {
     const location = window.location.pathname
     const [members, setMembers] = useState(false)
