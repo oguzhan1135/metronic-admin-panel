@@ -6,7 +6,7 @@ import Visa from '../../../../assets/icon/visa.svg'
 import { FaCheckCircle, FaEdit, FaRegTrashAlt } from "react-icons/fa"
 import Ideal from '../../../../assets/icon/ideal.svg'
 import Paypal from '../../../../assets/icon/paypal.svg'
-import BillingTable from "../../../../components/myAccount/billingTable"
+import BillingTable from "../../../../components/myAccount/tables/billingTable"
 import PrimaryPoliygon from '../../../../assets/icon/primary-polygon.svg'
 import Kanba from '../../../../assets/icon/kanba.svg'
 import AvatarGroup from '../../../../assets/icon/avatar-group.svg'

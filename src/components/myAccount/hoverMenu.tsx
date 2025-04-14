@@ -108,7 +108,7 @@ const Menu = () => {
 
                         {/* security menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isSecurityOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isSecurityOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setSecurityOpen(true)}
                             onMouseLeave={() => setSecurityOpen(false)}
                         >

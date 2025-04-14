@@ -13,7 +13,7 @@ import { CiBasketball } from "react-icons/ci"
 import Hexlab from '../../../../assets/icon/hexlab.svg'
 import HexlabIcon from '../../../../assets/icon/hexlabIcon.svg'
 import { RiComputerFill } from "react-icons/ri"
-import MembersTable from "../../../../components/myAccount/membersTable"
+import MembersTable from "../../../../components/myAccount/tables/membersTable"
 import { FaInfoCircle } from "react-icons/fa"
 import USerGuidelines from '../../../../assets/icon/user-guidelines.svg'
 import Comprehensive from '../../../../assets/icon/comprehensive.svg'

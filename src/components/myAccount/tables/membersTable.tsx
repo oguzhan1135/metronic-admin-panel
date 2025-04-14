@@ -1,12 +1,11 @@
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { Link } from "react-router"
-import Card from "../card/card"
-import Tyler from '../../assets/icon/tyler-hero.svg'
-import Esther from '../../assets/icon/ester-hoeard.svg'
-import Cody from '../../assets/icon/cody-fisher.svg'
-import Jacob from '../../assets/icon/jonathan-taylor.svg'
-import Arlene from '../../assets/icon/arlene-mccoy.svg'
-import { useState } from 'react';
+import Card from "../../card/card"
+import Tyler from '../../../assets/icon/tyler-hero.svg'
+import Esther from '../../../assets/icon/ester-hoeard.svg'
+import Cody from '../../../assets/icon/cody-fisher.svg'
+import Jacob from '../../../assets/icon/jonathan-taylor.svg'
+import Arlene from '../../../assets/icon/arlene-mccoy.svg'
 
 interface Member {
     id: number;

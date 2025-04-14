@@ -35,6 +35,7 @@ import AllowIpAddresses from "../pages/user/myAccount/security/allowIpAdrdresses
 import PrivacySetting from "../pages/user/myAccount/security/privacySetting";
 import DeviceManagament from "../pages/user/myAccount/security/deviceManagement";
 import BackupRecovery from "../pages/user/myAccount/security/backupRecovery";
+import CurrentSessions from "../pages/user/myAccount/security/currentSessions";
 
 import '../globals.css'
 
@@ -79,6 +80,7 @@ const Router = () => {
                 <Route path='/user/myAccount/security/privacySetting' element={<PrivacySetting />}></Route>
                 <Route path='/user/myAccount/security/deviceManagament' element={<DeviceManagament />}></Route>
                 <Route path='/user/myAccount/security/backupRecovery' element={<BackupRecovery />}></Route>
+                <Route path='/user/myAccount/security/currentSessions' element={<CurrentSessions />}></Route>
 
 
 

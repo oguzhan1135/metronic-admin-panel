@@ -1,5 +1,5 @@
 import Menu from "../../../../components/myAccount/hoverMenu"
-import IpAddresesTable from "../../../../components/myAccount/ıpAddressTable"
+import IpAddresesTable from "../../../../components/myAccount/tables/ıpAddressTable"
 import FAQ from "../../../../components/myAccount/faq"
 import Questions from "../../../../components/myAccount/questions"
 

@@ -4,15 +4,17 @@
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from '../../../../components/card/card'
-import { IoSettingsOutline } from "react-icons/io5"
-import { FaToggleOn } from "react-icons/fa"
+import { FaBook } from "react-icons/fa"
 import FAQ from "../../../../components/myAccount/faq"
-import BackupTable from "../../../../components/myAccount/bacupsTable"
+import BackupTable from "../../../../components/myAccount/tables/bacupsTable"
+import { useState } from "react"
+import Switch from "../../../../components/switch"
+import { GoDatabase } from "react-icons/go"
 
 
 const BackupRecovery = () => {
     const location = window.location.pathname
-
+    const [automoticBackup, setAutomaticBackup] = useState(true)
 
     return (
         <div className="flex flex-col gap-[30px]  ">
@@ -39,6 +41,49 @@ const BackupRecovery = () => {
                 <div className="lg:col-span-2 col-span-5 flex flex-col gap-[30px]">
                     {/* right area */}
 
+                    {/* Backup Setting */}
+
+                    <Card
+                        title="Backup Setting"
+                        dotStatus={false}
+                        buttonStatus={false}
+                        content={
+                            <>
+                                <div className="flex flex-col">
+                                    <div className="px-[30px] py-5 flex flex-row items-center justify-between border-b">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-b-14-14-500 text-gray-900">Automatic Backup</span>
+                                            <span className="text-b-13-14-400 text-gray-700">Scheduled Data Protection</span>
+                                        </div>
+                                        <Switch status={automoticBackup} size="medium" setSwitch={() => setAutomaticBackup(!automoticBackup)} />
+                                    </div>
+                                    <div className="px-[30px] py-5 flex flex-row items-center justify-between border-b">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-b-14-14-500 text-gray-900">Backup Frequency</span>
+                                            <span className="text-b-13-14-400 text-gray-700">Select Preferred Backup</span>
+                                        </div>
+                                        <select name="frequency" id="frequency" className="border px-2.5 py-[9px] rounded-md  text-b-11-12-400 outline-none">
+                                            <option value="Weekly" selected className="text-gray-800 text-b-14-12-400">Weekly</option>
+                                            <option value="Daily" className="text-gray-800 text-b-14-12-400">Daily</option>
+                                            <option value="Monthly" className="text-gray-800 text-b-14-12-400">Monthly</option>
+
+                                        </select>
+                                    </div>
+                                    <div className="px-[30px] py-5 flex flex-row items-center justify-between border-b">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-b-14-14-500 text-gray-900">Manual Backup</span>
+                                            <span className="text-b-13-14-400 text-gray-700">Backup When Needed</span>
+                                        </div>
+                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                            Start
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+
+                    />
+
                     <Card
                         dotStatus={false}
                         buttonStatus={false}
@@ -57,7 +102,7 @@ const BackupRecovery = () => {
                                             </path>
                                         </svg>
                                         <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
-                                            <FaToggleOn className="text-[#FF6F1E] size-[22px]" />
+                                            <FaBook className="text-[#FF6F1E] size-[22px]" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
@@ -80,7 +125,7 @@ const BackupRecovery = () => {
                                             </path>
                                         </svg>
                                         <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
-                                            <IoSettingsOutline className="text-[#FF6F1E] size-[22px]" />
+                                            <GoDatabase className="text-[#FF6F1E] size-[22px]" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
