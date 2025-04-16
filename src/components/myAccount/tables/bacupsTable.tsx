@@ -85,6 +85,30 @@ const BackupTable = () => {
 
 
     }, [showCount])
+
+    type SortDirection = 'asc' | 'desc';
+    type SortKey = 'when' | 'details';
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('when');
+
+    const handleSort = (key: SortKey) => {
+        const isSameKey = sortKey === key;
+        const newDirection: SortDirection = isSameKey && sortDirection === 'asc' ? 'desc' : 'asc';
+
+        const sortedSessions = [...backup].sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
+
+            return newDirection === 'asc'
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+
+        });
+
+        setSortKey(key);
+        setSortDirection(newDirection);
+        setUpgradeData(sortedSessions);
+    };
     return (
         <Card
             buttonStatus={false}
@@ -114,21 +138,21 @@ const BackupTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input type="checkbox" className="size-[18px]" name="all" id="all" />
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200 ">
+                                        <th onClick={() => handleSort("when")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">When</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("when")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Details</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                       
+
                                         <th className="px-5 py-[13px] border border-gray-200">
 
                                         </th>

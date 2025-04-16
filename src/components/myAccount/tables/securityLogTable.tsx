@@ -20,9 +20,6 @@ interface Security {
     sourceIP: string;
     destinationIP: string;
     severity: string;
-
-
-
 }
 
 const SecurityLogTable = () => {
@@ -120,7 +117,6 @@ const SecurityLogTable = () => {
         }
     ]);
 
-
     const [pushAlert, setPushAlert] = useState(true)
     const [showCount, setShowCount] = useState(5);
     const [upgradeData, setUpgradeData] = useState(logs.slice(0, showCount));
@@ -145,8 +141,9 @@ const SecurityLogTable = () => {
 
 
     }, [showCount])
+
     type SortDirection = 'asc' | 'desc';
-    type SortKey = 'timestampt' | 'eventType' | 'actionTaken';
+    type SortKey = 'timestampt' | 'eventType' | 'actionTaken' | 'sourceIP' | 'destinationIP' | 'severity';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('timestampt');
 
@@ -172,8 +169,11 @@ const SecurityLogTable = () => {
         setSortKey(key);
         setSortDirection(newDirection);
         setLogs(sortedLogs);
-        setUpgradeData(sortedLogs)
+        setUpgradeData(sortedLogs);
     };
+
+    
+    const [selectAll, setSelectAll] = useState(false);
 
     return (
         <Card
@@ -202,39 +202,44 @@ const SecurityLogTable = () => {
                                 <thead>
                                     <tr className="bg-gray-100">
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
-                                            <input type="checkbox" className="size-[18px]" name="all" id="all" />
+                                            <input
+                                                type="checkbox"
+                                                className="size-[18px]"
+                                                checked={selectAll}
+                                                onChange={() => setSelectAll(prev => !prev)}
+                                            />
                                         </th>
-                                        <th onClick={() => handleSort('timestampt')} className="px-5 py-[13px] border border-gray-200 ">
+                                        <th onClick={() => handleSort('timestampt')} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Timestamp</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th onClick={() => handleSort('eventType')} className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort('eventType')} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Event Type</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th onClick={() => handleSort('actionTaken')} className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort('actionTaken')} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Action Taken</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort('sourceIP')} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Source IP</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort('destinationIP')} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Destination IP</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort('severity')} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Severity</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
@@ -252,7 +257,7 @@ const SecurityLogTable = () => {
                                         upgradeData.map((item) => (
                                             <tr className="border border-gray-200-t" key={item.id}>
                                                 <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.timestampt} id={item.timestampt} />
+                                                    <input type="checkbox" className="size-[18px]" name={item.timestampt} id={item.timestampt} checked={selectAll}  />
                                                 </td>
 
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>

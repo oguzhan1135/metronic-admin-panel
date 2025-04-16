@@ -1,9 +1,9 @@
 import Card from "../../card/card"
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineUnfoldMore } from "react-icons/md";
-import { AiOutlineChrome} from "react-icons/ai";
+import { AiOutlineChrome } from "react-icons/ai";
 import Tyler from '../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../assets/icon/cody-fisher.svg'
@@ -119,32 +119,74 @@ const SessionsTable = () => {
         }
     ]);
 
-
-    const [cloud, setCloud] = useState(true)
+    const [cloud, setCloud] = useState(true);
     const [showCount, setShowCount] = useState(5);
-    const [upgradeData, setUpgradeData] = useState(sessions.slice(0, showCount));
+    const [selected, setSelected] = useState(1);
+    const [selectedBrowser, setSelectedBrowser] = useState('All Browsers');
+    const [selectedLocations, setSelectedLocations] = useState('All Locations');
+    const [upgradeData, setUpgradeData] = useState<Session[]>([]);
 
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(sessions.slice(0, showCount))
-    };
+    const location = window.location.pathname;
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const startIndex = (currentPage - 1) * showCount;
+    const endIndex = startIndex + showCount;
+
+
+    const filterAndPaginate = useCallback(() => {
+        let filtered = sessions;
+
+        // Browser select filter
+        if (selectedBrowser !== 'All Browsers') {
+            filtered = filtered.filter(item => item.browser.split(' ')[0] === selectedBrowser);
+        }
+
+        // Location select filter
+        if (selectedLocations !== 'All Locations') {
+            filtered = filtered.filter(item => item.location === selectedLocations);
+        }
+
+        setUpgradeData(filtered.slice(startIndex, endIndex));
+    }, [selectedBrowser, selectedLocations, showCount, currentPage, sessions]);
+
+    useEffect(() => {
+        filterAndPaginate();
+    }, [filterAndPaginate]);
 
     const nextData = () => {
-        setUpgradeData(sessions.slice(showCount, sessions.length + showCount))
-
+        setCurrentPage(prev => prev + 1);
     };
-    const [selected, setSelected] = useState(1)
-    useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(sessions.slice(0, showCount))
+
+    const previousData = () => {
+        if (currentPage > 1) {
+            setCurrentPage(prev => prev - 1);
         }
-        else {
-            setUpgradeData(sessions.slice(0, 5))
-        }
+    };
+
+    type SortDirection = 'asc' | 'desc';
+    type SortKey = 'personName' | 'browser'| 'ipAddress' | 'location' ;
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('personName');
+
+    const handleSort = (key: SortKey) => {
+        const isSameKey = sortKey === key;
+        const newDirection: SortDirection = isSameKey && sortDirection === 'asc' ? 'desc' : 'asc';
+
+        const sortedSessions = [...sessions].sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
 
 
-    }, [showCount])
-    const location = window.location.pathname
+            return newDirection === 'asc'
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+
+        });
+
+        setSortKey(key);
+        setSortDirection(newDirection);
+        setUpgradeData(sortedSessions);
+    };
 
     return (
         <Card
@@ -159,18 +201,35 @@ const SessionsTable = () => {
                             <span className="text-b-13-14-500 text-gray-700">Cloud Sync</span>
                             <Switch status={cloud} setSwitch={() => setCloud(!cloud)} size="medium" />
                         </div>
-                        <select name="browsers" id="browsers" className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none ">
-                            <option value="All Browsers" selected>All Browsers</option>
+                        <select
+                            name="browsers"
+                            id="browsers"
+                            value={selectedBrowser}
+                            onChange={(e) => setSelectedBrowser(e.target.value)}
+                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none "
+                        >
+                            <option value="All Browsers">All Browsers</option>
                             <option value="Chrome">Chrome</option>
                             <option value="Firefox">Firefox</option>
                             <option value="Edge">Edge</option>
                             <option value="Safari">Safari</option>
                             <option value="Brave">Brave</option>
                         </select>
-                        <select name="location" id="location" className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none ">
+
+                        <select
+                            name="locations"
+                            id="locations"
+                            value={selectedLocations}
+                            onChange={(e) => setSelectedLocations(e.target.value)}
+                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none ">
                             <option value="All Locations" selected>All Locations</option>
-                            <option value="London">London</option>
-                            <option value="USA">USA</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="India">India</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Germany">Germany</option>
+                            <option value="france">france</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Turkey">Turkey</option>
                             <option value="Japan">Japan</option>
                             <option value="Malaysia">Malaysia</option>
                         </select>
@@ -189,26 +248,26 @@ const SessionsTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input type="checkbox" className="size-[18px]" name="all" id="all" />
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200 ">
+                                        <th onClick={() => handleSort("personName")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Person</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("browser")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Browser</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("ipAddress")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">IP Address</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("location")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Location</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
