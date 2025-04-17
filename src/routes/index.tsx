@@ -37,6 +37,8 @@ import DeviceManagament from "../pages/user/myAccount/security/deviceManagement"
 import BackupRecovery from "../pages/user/myAccount/security/backupRecovery";
 import CurrentSessions from "../pages/user/myAccount/security/currentSessions";
 import SecurityLog from "../pages/user/myAccount/security/securityLog";
+import TeamStarter from "../pages/user/myAccount/membersRoles/teamStarter";
+import TeamsMembers from "../pages/user/myAccount/membersRoles/teams";
 
 import '../globals.css'
 
@@ -83,6 +85,8 @@ const Router = () => {
                 <Route path='/user/myAccount/security/backupRecovery' element={<BackupRecovery />}></Route>
                 <Route path='/user/myAccount/security/currentSessions' element={<CurrentSessions />}></Route>
                 <Route path='/user/myAccount/security/log' element={<SecurityLog />}></Route>
+                <Route path='/user/myAccount/members/teamStarter' element={<TeamStarter />}></Route>
+                <Route path='/user/myAccount/members/teams' element={<TeamsMembers />}></Route>
 
 
 

@@ -227,10 +227,10 @@ const menuData: MenuItem[] = [
                 label: "Members & Roles",
                 subItems: [
                     {
-                        category: "user", key: "teams-starter", label: "Teams Starter"
+                        category: "user", key: "teams-starter", label: "Teams Starter", path: "/user/myAccount/members/teamStarter"
                     },
                     {
-                        category: "user", key: "teams", label: "Teams"
+                        category: "user", key: "teams", label: "Teams", path: "/user/myAccount/members/teams"
                     },
                     {
                         category: "user", key: "team-info", label: "Team Info"

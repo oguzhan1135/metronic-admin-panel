@@ -1,6 +1,6 @@
 import Card from "../../card/card"
 import { useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight} from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
@@ -121,6 +121,35 @@ const IpAddresesTable = () => {
 
 
     }, [showCount])
+
+    type SortDirection = 'asc' | 'desc';
+    type SortKey = 'status' | 'address' | 'lastSession' | 'label' | 'method';
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('status');
+
+    const handleSort = (key: SortKey) => {
+        const isSameKey = sortKey === key;
+        const newDirection: SortDirection = isSameKey && sortDirection === 'asc' ? 'desc' : 'asc';
+
+        const sortedSessions = [...ipAddress].sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
+            if (key === 'lastSession') {
+                return newDirection === 'asc'
+                    ? new Date(valA).getTime() - new Date(valB).getTime()
+                    : new Date(valB).getTime() - new Date(valA).getTime();
+            }
+            return newDirection === 'asc'
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+
+        });
+
+        setSortKey(key);
+        setSortDirection(newDirection);
+        setUpgradeData(sortedSessions);
+    };
+
     return (
         <Card
             buttonStatus={true}
@@ -153,28 +182,28 @@ const IpAddresesTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input type="checkbox" className="size-[18px]" name="all" id="all" />
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200 ">
+                                        <th onClick={() => handleSort("status")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Status</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("address")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">IP Address</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("lastSession")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Last session</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("label")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Label</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
@@ -182,7 +211,7 @@ const IpAddresesTable = () => {
 
                                         </th>
 
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("method")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Method</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />

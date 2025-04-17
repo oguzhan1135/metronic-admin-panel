@@ -136,6 +136,30 @@ const DeviceTable = () => {
 
 
     }, [showCount])
+
+    type SortDirection = 'asc' | 'desc';
+    type SortKey = 'name' | 'ip' | 'location' | 'added' | 'lastSession';
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('name');
+
+    const handleSort = (key: SortKey) => {
+        const isSameKey = sortKey === key;
+        const newDirection: SortDirection = isSameKey && sortDirection === 'asc' ? 'desc' : 'asc';
+
+        const sortedSessions = [...devices].sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
+
+            return newDirection === 'asc'
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+
+        });
+
+        setSortKey(key);
+        setSortDirection(newDirection);
+        setUpgradeData(sortedSessions);
+    };
     return (
         <Card
             buttonStatus={true}
@@ -168,28 +192,28 @@ const DeviceTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input type="checkbox" className="size-[18px]" name="all" id="all" />
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200 ">
+                                        <th onClick={() => handleSort("name")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Device</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("ip")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">IP Address</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("location")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Location</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
 
                                         </th>
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("added")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Added</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
@@ -197,7 +221,7 @@ const DeviceTable = () => {
 
                                         </th>
 
-                                        <th className="px-5 py-[13px] border border-gray-200">
+                                        <th onClick={() => handleSort("lastSession")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Last Session</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
