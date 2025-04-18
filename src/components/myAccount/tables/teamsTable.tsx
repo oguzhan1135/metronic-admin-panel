@@ -9,7 +9,7 @@ import Switch from "../../switch";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 
 const TeamsTable = () => {
-    const teamsData = [
+    const [teamsData, setTeamsData] = useState([
         { id: 1, name: "Product Management", description: "Product development & lifecycle", date: "21 Oct, 2024" },
         { id: 2, name: "Marketing Team", description: "Campaigns & market analysis", date: "12 Feb, 2024" },
         { id: 3, name: "HR Department", description: "Talent acquisition, employee welfare", date: "21 Oct, 2024" },
@@ -17,7 +17,7 @@ const TeamsTable = () => {
         { id: 5, name: "Finance Team", description: "Budgeting & financial planning", date: "20 Jul, 2024" },
         { id: 6, name: "Engineering", description: "Software development & infrastructure", date: "21 Oct, 2024" },
         { id: 7, name: "Quality Assuarance", description: "Product testing", date: "21 Oct, 2024" },
-    ];
+    ])
     const [showCount, setShowCount] = useState(5);
     const [upgradeData, setUpgradeData] = useState(teamsData.slice(0, showCount));
 

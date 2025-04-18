@@ -12,6 +12,7 @@ const Menu = () => {
     const [isAccountHomeOpen, setAccountHomeOpen] = useState(false);
     const [isBillingOpen, setBillingOpen] = useState(false);
     const [isSecurityOpen, setSecurityOpen] = useState(false);
+    const [isMembersOpen, setMembersOpen] = useState(false);
 
     const [isMoreOpen, setMoreOpen] = useState(false);
     const [dotMore, setDotMore] = useState(false)
@@ -138,6 +139,51 @@ const Menu = () => {
                             </Link>
                         </div>
                     </div>
+                    <div
+                        className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/members") ? "border-b-primary" : "border-none"} cursor-pointer`}
+                        onMouseEnter={() => setMembersOpen(true)}
+                        onMouseLeave={() => setMembersOpen(false)}
+                    >
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/members") ? "text-primary" : "text-gray-700"} `}>Members & Roles</a>
+                        <FaChevronDown className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/members") ? "text-primary" : "text-gray-700"} `} />
+
+                        {/* Account Home menu */}
+                        <div
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isMembersOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            onMouseEnter={() => setMembersOpen(true)}
+                            onMouseLeave={() => setMembersOpen(false)}
+                        >
+
+
+                            <Link to={"/user/myAccount/members/teamStarter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Team Starter
+                            </Link>
+                            <Link to={"/user/myAccount/members/teams"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Teams
+                            </Link>
+                            <Link to={"/user/myAccount/members/teamInfo"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Team Info
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Members Starter
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Team Members
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Import Members
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Roles
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Permissions - Toggler
+                            </Link>
+                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                                Permissions - Check
+                            </Link>
+                        </div>
+                    </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/apiKeys") ? "border-b-primary" : "border-none"} cursor-pointer`}>
                         <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</a>
                     </div>
@@ -147,7 +193,7 @@ const Menu = () => {
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
                         <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</a>
                     </div>
-                  
+
                     <div
                         className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/campaigns") || location.startsWith("/user/publicProfiles/empty") ? "border-b-primary" : "border-none"} cursor-pointer`}
                         onMouseEnter={() => setMoreOpen(true)}

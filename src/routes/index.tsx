@@ -39,6 +39,7 @@ import CurrentSessions from "../pages/user/myAccount/security/currentSessions";
 import SecurityLog from "../pages/user/myAccount/security/securityLog";
 import TeamStarter from "../pages/user/myAccount/membersRoles/teamStarter";
 import TeamsMembers from "../pages/user/myAccount/membersRoles/teams";
+import TeamInfo from "../pages/user/myAccount/membersRoles/teamInfo";
 
 import '../globals.css'
 
@@ -87,6 +88,7 @@ const Router = () => {
                 <Route path='/user/myAccount/security/log' element={<SecurityLog />}></Route>
                 <Route path='/user/myAccount/members/teamStarter' element={<TeamStarter />}></Route>
                 <Route path='/user/myAccount/members/teams' element={<TeamsMembers />}></Route>
+                <Route path='/user/myAccount/members/teamInfo' element={<TeamInfo />}></Route>
 
 
 
