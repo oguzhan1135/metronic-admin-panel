@@ -14,9 +14,14 @@ const TeamMembers = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Team Members(14)</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
-                    Plans
-                </button>
+                <div className="flex flex-row items-center gap-2.5">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                        Import Members
+                    </button>
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                        Add Member
+                    </button>
+                </div>
             </div>
 
             <MemberRole />

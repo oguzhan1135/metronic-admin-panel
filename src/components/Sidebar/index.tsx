@@ -242,7 +242,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "team-members", label: "Team Members", path: "/user/myAccount/members/teamMembers"
                     },
                     {
-                        category: "user", key: "import-members", label: "Import Members"
+                        category: "user", key: "import-members", label: "Import Members", path: "/user/myAccount/members/importantMember"
                     },
                     {
                         category: "user", key: "roles", label: "Roles"
