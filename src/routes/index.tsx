@@ -43,7 +43,7 @@ import TeamInfo from "../pages/user/myAccount/membersRoles/teamInfo";
 import MemberStarter from "../pages/user/myAccount/membersRoles/memberStarter";
 import TeamMembers from "../pages/user/myAccount/membersRoles/teamMembers";
 import ImportantMember from "../pages/user/myAccount/membersRoles/importantmember";
-
+import Roles from "../pages/user/myAccount/membersRoles/roles";
 import '../globals.css'
 
 const Router = () => {
@@ -95,7 +95,7 @@ const Router = () => {
                 <Route path='/user/myAccount/members/memberStarter' element={<MemberStarter />}></Route>
                 <Route path='/user/myAccount/members/teamMembers' element={<TeamMembers />}></Route>
                 <Route path='/user/myAccount/members/importantMember' element={<ImportantMember />}></Route>
-
+                <Route path='/user/myAccount/members/roles' element={<Roles />}></Route>
 
             </Routes>
         </>

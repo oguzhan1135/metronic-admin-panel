@@ -245,7 +245,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "import-members", label: "Import Members", path: "/user/myAccount/members/importantMember"
                     },
                     {
-                        category: "user", key: "roles", label: "Roles"
+                        category: "user", key: "roles", label: "Roles", path: "/user/myAccount/members/roles"
                     },
                     {
                         category: "user", key: "permissions-toggler", label: "Permissions - Toggler"

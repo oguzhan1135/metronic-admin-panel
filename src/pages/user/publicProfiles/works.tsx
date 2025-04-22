@@ -204,22 +204,17 @@ const Works = () => {
                                     </div>
                                 }
                             />
-
-
                         </React.Fragment>
                     ))
                 }
-                <div className="flex border border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10">
+                <div className="flex border-[3px] border-opacity-20 border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10 rounded-xl">
                     <img src={OfferWork} alt="offer-work" />
                     <div className="flex flex-col gap-2.5 items-center">
                         <span className="text-h-22-22-600 text-gray-900">Offer a Work</span>
                         <span className="text-b-14-14-400 text-gray-700">Ignite Professional Adventures</span>
                     </div>
                 </div>
-
             </div>
-
-
             <div className="flex items-center justify-center">
                 <Link to={location} className="border-b-primary border-b border-dotted text-b-13-14-500 text-primary">Show more works</Link>
             </div>
