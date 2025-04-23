@@ -220,6 +220,9 @@ const TeamMembersTable = () => {
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
+                                <th className="px-5 py-3 border border-gray-200 text-center">
+
+                                </th>
 
                             </tr>
                         </thead>
@@ -286,14 +289,17 @@ const TeamMembersTable = () => {
                                     </td>
 
                                     <td className="px-4 py-2 border border-gray-200">
-                                       <span className="text-b-14-14-400 text-gray-800">{team.recentActivity}</span>
+                                        <span className="text-b-14-14-400 text-gray-800">{team.recentActivity}</span>
                                     </td>
-                                    <td className='px-4 py-2 text-right border border-gray-200'>
-                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                            <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
+                                    <td className="px-4 py-2 text-center border border-gray-200">
+                                        <div className="grid place-items-center">
+                                            <button className="p-2 rounded-md cursor-pointer hover:bg-gray-200">
+                                                <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
+                                            </button>
                                         </div>
                                     </td>
-                                   
+
+
                                 </tr>
                             ))}
 

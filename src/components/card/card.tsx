@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 interface CardProps {
     dotStatus: boolean;
     buttonStatus: boolean;
-    title?: string;
+    title?: string | React.ReactElement;
     content: React.ReactElement;
     buttonTitle?: string;
     dotContentStatus?: boolean;

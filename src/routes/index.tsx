@@ -44,6 +44,9 @@ import MemberStarter from "../pages/user/myAccount/membersRoles/memberStarter";
 import TeamMembers from "../pages/user/myAccount/membersRoles/teamMembers";
 import ImportantMember from "../pages/user/myAccount/membersRoles/importantmember";
 import Roles from "../pages/user/myAccount/membersRoles/roles";
+import PermissionsCheck from "../pages/user/myAccount/membersRoles/permissonsCheck";
+import PermissionsToggle from "../pages/user/myAccount/membersRoles/permissionsToggle";
+
 import '../globals.css'
 
 const Router = () => {
@@ -96,6 +99,8 @@ const Router = () => {
                 <Route path='/user/myAccount/members/teamMembers' element={<TeamMembers />}></Route>
                 <Route path='/user/myAccount/members/importantMember' element={<ImportantMember />}></Route>
                 <Route path='/user/myAccount/members/roles' element={<Roles />}></Route>
+                <Route path='/user/myAccount/members/permissionsToggle' element={<PermissionsToggle />}></Route>
+                <Route path='/user/myAccount/members/permissionsCheck' element={<PermissionsCheck />}></Route>
 
             </Routes>
         </>

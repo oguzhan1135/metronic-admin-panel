@@ -201,9 +201,9 @@ const TeamsTable = () => {
                                         </div>
                                     </td>
                                     <td className='px-4 py-2 text-right border border-gray-200'>
-                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                        <button className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
                                             <FaRegTrashAlt className="text-gray-600 size-[18px]" />
-                                        </div>
+                                        </button>
                                     </td>
                                 </tr>
                             ))}

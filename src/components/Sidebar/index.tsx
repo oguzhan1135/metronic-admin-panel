@@ -248,10 +248,10 @@ const menuData: MenuItem[] = [
                         category: "user", key: "roles", label: "Roles", path: "/user/myAccount/members/roles"
                     },
                     {
-                        category: "user", key: "permissions-toggler", label: "Permissions - Toggler"
+                        category: "user", key: "permissions-toggler", label: "Permissions - Toggler", path: "/user/myAccount/members/permissionsToggle"
                     },
                     {
-                        category: "user", key: "permissions-check", label: "Permissions - Check"
+                        category: "user", key: "permissions-check", label: "Permissions - Check", path: "/user/myAccount/members/permissionsCheck"
                     },
                 ]
             },
