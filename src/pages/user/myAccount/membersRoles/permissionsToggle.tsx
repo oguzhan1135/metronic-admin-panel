@@ -56,10 +56,10 @@ const PermissionsToggle = () => {
                         <>
                             <div className="flex flex-col">
                                 <div className="grid grid-cols-1 md:grid-cols-2  gap-[30px] ">
-                                    <div className="col-span-1  py-[30px] pl-[30px]">
+                                    <div className="col-span-1  py-[30px] md:pl-[30px] px-[30px] md:px-0">
                                         <div className="flex flex-col gap-5">
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -75,15 +75,15 @@ const PermissionsToggle = () => {
                                                             <TbCategory className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Workspace Settings</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Users may view and update the settings of the workspace.</span>
                                                     </div>
                                                 </div>
                                                 <Switch setSwitch={() => setWorkSpaceSetting(!workSpaceSetting)} size="medium" status={workSpaceSetting} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -99,15 +99,15 @@ const PermissionsToggle = () => {
                                                             <LuSquareMousePointer className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Integration Setup</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Manage user integrations and associated tags.</span>
                                                     </div>
                                                 </div>
                                                 <Switch setSwitch={() => setIntegrationSetup(!integrationSetup)} size="medium" status={integrationSetup} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -123,15 +123,15 @@ const PermissionsToggle = () => {
                                                             <FaRegMap className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Map Creation</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Initiate new mapping projects within workspace.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={mapCreation} setSwitch={() => setMapCreation(!mapCreation)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -147,15 +147,15 @@ const PermissionsToggle = () => {
                                                             <FaRegUserCircle className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">User Roles</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Update roles and permissions for map users.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={userRoles} setSwitch={() => setUserRoles(!userRoles)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -171,7 +171,7 @@ const PermissionsToggle = () => {
                                                             <IoKeyOutline className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Insights Access</span>
                                                         <span className="text-b-13-14-400 text-gray-700">View workspace analytics and performance data.</span>
                                                     </div>
@@ -180,10 +180,10 @@ const PermissionsToggle = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-span-1  py-[30px] pr-[30px]">
+                                    <div className="col-span-1  py-[30px] md:pr-[30px] px-[30px] md:px-0">
                                         <div className="flex flex-col gap-5">
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -199,15 +199,15 @@ const PermissionsToggle = () => {
                                                             <BsCreditCard2Back className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Billing Management</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Users are authorized to review, update subscriptions.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={billingManagament} setSwitch={() => setBillingManagament(!billingManagament)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -223,15 +223,15 @@ const PermissionsToggle = () => {
                                                             <FaToggleOff className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Permissions Control</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Grant or revoke user access and tags.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={permissionsControl} setSwitch={() => setPermissionsControl(!permissionsControl)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -247,15 +247,15 @@ const PermissionsToggle = () => {
                                                             <CiExport className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Data Export</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Allow extraction of workspace data for analysis.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={dataExport} setSwitch={() => setDataExport(!dataExport)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -271,15 +271,15 @@ const PermissionsToggle = () => {
                                                             <IoShieldCheckmarkOutline className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Security Settings</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Adjust workspace security protocols and measures.</span>
                                                     </div>
                                                 </div>
                                                 <Switch size="medium" status={securitySetting} setSwitch={() => setSecuritySetting(!securitySetting)} />
                                             </div>
-                                            <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border rounded-xl">
-                                                <div className="flex flex-row items-center gap-[14px]">
+                                            <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
+                                                <div className="flex md:flex-row items-center flex-col gap-[14px]">
                                                     <div className="relative size-[50px] shrink-0">
                                                         <svg className="w-full h-full stroke-gray-300 fill-gray-100" fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
@@ -295,7 +295,7 @@ const PermissionsToggle = () => {
                                                             <CiShop className="text-gray-500 size-[22px]" />
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-[6px]">
+                                                    <div className="flex flex-col md:items-start items-center gap-[6px]">
                                                         <span className="text-b-14-14-500 text-gray-900">Merchant List</span>
                                                         <span className="text-b-13-14-400 text-gray-700">Update and manage merchant associations.</span>
                                                     </div>

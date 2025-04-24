@@ -29,7 +29,7 @@ const Menu = () => {
     }, [])
 
     return (
-        <div className="flex lg:flex-row flex-col items-center justify-between border-b relative">
+        <div className="flex lg:flex-row flex-col items-center justify-between border-b relative mb-2.5">
             <div className="w-full overflow-x-auto flex xl:justify-between items-center">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px] ">
                     <div
@@ -184,14 +184,14 @@ const Menu = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/apiKeys") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/integrations") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/integrations") ? "text-primary" : "text-gray-700"} `}>Integrations</a>
                     </div>
-                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/integrations") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/integrations") ? "text-primary" : "text-gray-700"} `}>Integrations</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/apiKeys") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</a>
                     </div>
-                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/accountHome/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</a>
+                    <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
+                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</a>
                     </div>
 
                     <div

@@ -258,12 +258,15 @@ const menuData: MenuItem[] = [
             {
                 category: "user",
                 key: "integrations",
-                label: "Integrations"
+                label: "Integrations",
+                path: "/user/myAccount/integrations"
             },
             {
                 category: "user",
                 key: "notifications",
-                label: "Notifications"
+                label: "Notifications",
+                path: "/user/myAccount/notifications"
+
             },
             {
                 category: "user",

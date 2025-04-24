@@ -46,6 +46,8 @@ import ImportantMember from "../pages/user/myAccount/membersRoles/importantmembe
 import Roles from "../pages/user/myAccount/membersRoles/roles";
 import PermissionsCheck from "../pages/user/myAccount/membersRoles/permissonsCheck";
 import PermissionsToggle from "../pages/user/myAccount/membersRoles/permissionsToggle";
+import Integrations from "../pages/user/myAccount/integrations";
+import Notifications from "../pages/user/myAccount/notifications";
 
 import '../globals.css'
 
@@ -101,6 +103,9 @@ const Router = () => {
                 <Route path='/user/myAccount/members/roles' element={<Roles />}></Route>
                 <Route path='/user/myAccount/members/permissionsToggle' element={<PermissionsToggle />}></Route>
                 <Route path='/user/myAccount/members/permissionsCheck' element={<PermissionsCheck />}></Route>
+                <Route path='/user/myAccount/integrations' element={<Integrations />}></Route>
+                <Route path='/user/myAccount/notifications' element={<Notifications />}></Route>
+
 
             </Routes>
         </>
