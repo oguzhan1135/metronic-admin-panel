@@ -49,6 +49,7 @@ import PermissionsToggle from "../pages/user/myAccount/membersRoles/permissionsT
 import Integrations from "../pages/user/myAccount/integrations";
 import Notifications from "../pages/user/myAccount/notifications";
 import ApiKeys from "../pages/user/myAccount/apiKeys";
+import Appearance from "../pages/user/myAccount/appearance";
 
 import '../globals.css'
 
@@ -107,6 +108,7 @@ const Router = () => {
                 <Route path='/user/myAccount/integrations' element={<Integrations />}></Route>
                 <Route path='/user/myAccount/notifications' element={<Notifications />}></Route>
                 <Route path='/user/myAccount/apiKeys' element={<ApiKeys />}></Route>
+                <Route path='/user/myAccount/appearance' element={<Appearance />}></Route>
 
 
             </Routes>
