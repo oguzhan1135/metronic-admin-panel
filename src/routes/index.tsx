@@ -48,6 +48,7 @@ import PermissionsCheck from "../pages/user/myAccount/membersRoles/permissonsChe
 import PermissionsToggle from "../pages/user/myAccount/membersRoles/permissionsToggle";
 import Integrations from "../pages/user/myAccount/integrations";
 import Notifications from "../pages/user/myAccount/notifications";
+import ApiKeys from "../pages/user/myAccount/apiKeys";
 
 import '../globals.css'
 
@@ -105,6 +106,7 @@ const Router = () => {
                 <Route path='/user/myAccount/members/permissionsCheck' element={<PermissionsCheck />}></Route>
                 <Route path='/user/myAccount/integrations' element={<Integrations />}></Route>
                 <Route path='/user/myAccount/notifications' element={<Notifications />}></Route>
+                <Route path='/user/myAccount/apiKeys' element={<ApiKeys />}></Route>
 
 
             </Routes>

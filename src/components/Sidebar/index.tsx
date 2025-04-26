@@ -271,12 +271,14 @@ const menuData: MenuItem[] = [
             {
                 category: "user",
                 key: "api-keys",
-                label: "API Keys"
+                label: "API Keys",
+                path: "/user/myAccount/apikeys"
             },
             {
                 category: "user",
                 key: "appearance",
-                label: "Appearance"
+                label: "Appearance",
+                path: "/user/myAccount/appearance"
             },
             {
                 category: "user",
