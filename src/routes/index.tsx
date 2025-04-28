@@ -50,6 +50,8 @@ import Integrations from "../pages/user/myAccount/integrations";
 import Notifications from "../pages/user/myAccount/notifications";
 import ApiKeys from "../pages/user/myAccount/apiKeys";
 import Appearance from "../pages/user/myAccount/appearance";
+import InviteFriend from "../pages/user/myAccount/inviteFriend";
+import MyAccountActivity from "../pages/user/myAccount/activity";
 
 import '../globals.css'
 
@@ -109,7 +111,8 @@ const Router = () => {
                 <Route path='/user/myAccount/notifications' element={<Notifications />}></Route>
                 <Route path='/user/myAccount/apiKeys' element={<ApiKeys />}></Route>
                 <Route path='/user/myAccount/appearance' element={<Appearance />}></Route>
-
+                <Route path='/user/myAccount/inviteFriend' element={<InviteFriend />}></Route>
+                <Route path='/user/myAccount/activity' element={<MyAccountActivity />}></Route>
 
             </Routes>
         </>

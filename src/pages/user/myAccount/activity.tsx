@@ -1,13 +1,10 @@
 import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
-import { CiBasketball, CiMail } from "react-icons/ci"
-import { GiAbstract080 } from "react-icons/gi"
-import { SlCalender, SlLocationPin } from "react-icons/sl"
+import { CiBasketball } from "react-icons/ci"
+import { SlCalender, } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "../../../components/myAccount/hoverMenu"
 import { useState } from "react"
 import AvatarGroup from '../../../assets/icon/avatar-group.svg'
-import Jennifer from '../../../assets/icon/jennifer.svg'
 import { FaShareAlt } from "react-icons/fa"
 import { FaLaptopCode, FaUsers } from "react-icons/fa6"
 import { FiCoffee } from "react-icons/fi"
@@ -18,6 +15,7 @@ import Multitasking from '../../../assets/icon/multitasking.svg'
 import Raiting from '../../../assets/icon/raiting.svg'
 import { LuLogOut } from "react-icons/lu"
 import { ImHappy } from "react-icons/im"
+import Questions from "../../../components/myAccount/questions"
 
 const Activity = () => {
     const location = window.location.pathname
@@ -25,36 +23,22 @@ const Activity = () => {
     const [selectedYear, setSelectedYear] = useState(2024)
 
     return (
-        <div className="flex flex-col gap-10 ">
-            <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
-                <div className="rounded-full border-success border-2">
-                    <img src={Jennifer} alt="" className='size-[100px]' />
-                </div>
-                <div className="flex flex-row items-center gap-1 ">
-                    <span className="text-b-18-18-600 text-gray-900">Jennifer Klabber</span>
-                    <img src={Verify} alt="" />
-                </div>
-                <div className="flex md:flex-row flex-col items-center gap-5">
-                    <div className="flex flex-row items-center gap-[5px]">
-                        <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
-                        <span className='text-gray-600 text-b-14-14-500'>KeenThemes</span>
-                    </div>
-                    <div className="flex flex-row items-center gap-[5px]">
-                        <SlLocationPin className='text-gray-600 text-b-14-14-500' />
-                        <span className='text-gray-600 text-b-14-14-500'>SF, Bay Area</span>
-                    </div>
-                    <div className="flex flex-row items-center gap-[5px]">
-                        <CiMail className='text-gray-600 text-b-14-14-500' />
-                        <Link to={location} className='text-gray-600 text-b-14-14-500 hover:text-primary text-animation'>jenny@kteam.com</Link>
-                    </div>
-                </div>
-            </div>
+        <div className="flex flex-col gap-[30px]  ">
             {/* {Sub  menu} */}
             <Menu />
-            <div className="flex flex-col ">
+            <div className="flex flex-row items-center justify-between">
+                <div className="flex flex-col gap-[14px] ">
+                    <h1 className='text-gray-900 text-h-24-24-600'>Invite a Friend</h1>
+                    <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
+                </div>
+                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    Privacy Settings
+                </button>
+            </div>
+            <div className="flex flex-col gap-[30px] ">
 
-                <div className="flex w-full">
-                    <div className="flex-1">
+                <div className="flex w-full md:flex-row flex-col">
+                    <div className="flex-1 flex flex-col gap-[30px]">
                         <Card
                             dotStatus={false}
                             buttonStatus={true}
@@ -357,9 +341,10 @@ const Activity = () => {
                                 </div>
                             }
                         />
+                        {/* Questions alanı */}
+                        <Questions />
                     </div>
 
-                    {/* Sağ taraf: Sadece kendi alanı kadar yer kaplayacak */}
                     <div className="flex flex-col gap-2.5 flex-shrink">
                         <button onClick={() => setSelectedYear(2024)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2024 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2024 ? "text-primary" : "text-gray-700"}`}>2024</span>
@@ -392,18 +377,7 @@ const Activity = () => {
                 </div>
 
 
-
-                <div className="flex flex-row  gap-[30px]">
-
-
-                </div>
-
             </div>
-
-
-
-
-
         </div >
     )
 }

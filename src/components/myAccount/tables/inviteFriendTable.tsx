@@ -29,10 +29,9 @@ interface Member {
     location: string;
     status: string;
     recentActivity: string;
-    roles: string[];
 }
 
-const MemberRoleTable = () => {
+const InviteFriendTable = () => {
     const [members, setMembers] = useState<Member[]>([
         {
             id: 1,
@@ -42,7 +41,6 @@ const MemberRoleTable = () => {
             location: "Estonia",
             status: "active",
             recentActivity: "Current session",
-            roles: ["Admin", "Support", "Editor"]
         },
         {
             id: 2,
@@ -51,9 +49,7 @@ const MemberRoleTable = () => {
             image: <img src={Esther} />,
             location: "Malaysia",
             status: "pending",
-            recentActivity: "Week ago",
-            roles: ["Chat", "Tester"]
-
+            recentActivity: "-",
         },
         {
             id: 3,
@@ -63,8 +59,6 @@ const MemberRoleTable = () => {
             location: "Ukraine",
             status: "active",
             recentActivity: "Today, 9:53 am",
-            roles: ["Visitor", "Developer"]
-
         },
         {
             id: 4,
@@ -73,9 +67,7 @@ const MemberRoleTable = () => {
             image: <img src={Cody} />,
             location: "Ukraine",
             status: "deleted",
-            recentActivity: "Current session",
-            roles: ["Designer", "Analyst"]
-
+            recentActivity: "-",
         },
         {
             id: 5,
@@ -85,8 +77,6 @@ const MemberRoleTable = () => {
             location: "India",
             status: "actives",
             recentActivity: "Month ago",
-            roles: ["Admin", "Chat", "Scrum Master"]
-
         },
 
 
@@ -117,7 +107,7 @@ const MemberRoleTable = () => {
 
 
     type SortDirection = 'asc' | 'desc';
-    type SortKey = 'name' | 'location' | 'roles' | 'status' | 'recentActivity';
+    type SortKey = 'name' | 'location' | 'status' | 'recentActivity';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('name');
 
@@ -155,7 +145,6 @@ const MemberRoleTable = () => {
         if (searchTerm.trim() !== "") {
             filtered = filtered.filter(team =>
                 team.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                team.roles.find((item) => item.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 team.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 team.status.toLowerCase().includes(searchTerm.toLowerCase())
             );
@@ -179,14 +168,14 @@ const MemberRoleTable = () => {
             <div className="flex flex-col overflow-hidden ">
                 <div className="border-b">
                     <div className="flex flex-row items-center justify-between py-3 px-5">
-                        <span className="text-gray-900 text-b-16-16-600">Team Members</span>
+                        <span className="text-gray-900 text-b-16-16-600">Invites</span>
                         <div className="flex flex-row items-center gap-[30px]">
                             <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-gray-100">
                                 <CiSearch className="text-gray-600 cursor-pointer" />
                                 <input
                                     type="text"
                                     className="text-gray-600 text-b-11-12-400 border-0 bg-transparent outline-none"
-                                    placeholder="Search Teams"
+                                    placeholder="Search Members"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
@@ -212,12 +201,6 @@ const MemberRoleTable = () => {
                                 <th onClick={() => handleSort("name")} className="px-5 py-3 border border-gray-200 text-left">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer w-max">
                                         <span className="text-b-13-14-400 text-gray-700">Member</span>
-                                        <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                    </div>
-                                </th>
-                                <th onClick={() => handleSort("roles")} className="px-5 py-3 border border-gray-200 text-left">
-                                    <div className="flex flex-row items-center gap-1 cursor-pointer w-max">
-                                        <span className="text-b-13-14-400 text-gray-700">Roles</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
@@ -263,20 +246,6 @@ const MemberRoleTable = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-3  border border-gray-200">
-                                        <div className="flex flex-row gap-[6px]">
-                                            {
-                                                member.roles.map((item) => (
-                                                    <div className="flex items-center justify-center bg-gray-200 border rounded-[4px] px-[6px] py-[5px]">
-                                                        <span className="text-gray-600 text-b-11-12-500 ">{item}</span>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-
-                                    </td>
-
-
 
                                     <td className="px-5 py-[26px] text-left border border-gray-200">
                                         <div className="flex flex-row items-center gap-[6px]">
@@ -374,4 +343,4 @@ const MemberRoleTable = () => {
         </div>
     )
 }
-export default MemberRoleTable
+export default InviteFriendTable

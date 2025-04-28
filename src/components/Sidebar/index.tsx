@@ -283,12 +283,15 @@ const menuData: MenuItem[] = [
             {
                 category: "user",
                 key: "invite-a-friend",
-                label: "Invite a Friend"
+                label: "Invite a Friend",
+                path: "/user/myAccount/inviteFriend"
+
             },
             {
                 category: "user",
                 key: "activity",
-                label: "Activity"
+                label: "Activity",
+                path: "/user/myAccount/activity"
             },
 
         ],
