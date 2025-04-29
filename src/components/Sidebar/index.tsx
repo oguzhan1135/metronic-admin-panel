@@ -303,7 +303,7 @@ const menuData: MenuItem[] = [
         label: "Network",
         subItems: [
             {
-                category: "user", key: "get-started", label: "Get Started"
+                category: "user", key: "get-started", label: "Get Started", path: "/user/network/started"
             },
             {
                 category: "user",
@@ -311,7 +311,7 @@ const menuData: MenuItem[] = [
                 label: "User Card",
                 subItems: [
                     {
-                        category: "user", key: "mini-cards", label: "Mini Cards"
+                        category: "user", key: "mini-cards", label: "Mini Cards", path: "/user/network/userCard/miniCards"
                     },
                     {
                         category: "user", key: "team-crew", label: "Team Crew"
