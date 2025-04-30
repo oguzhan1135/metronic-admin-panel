@@ -314,7 +314,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "mini-cards", label: "Mini Cards", path: "/user/network/userCard/miniCards"
                     },
                     {
-                        category: "user", key: "team-crew", label: "Team Crew"
+                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userCard/teamCrew"
                     },
                     {
                         category: "user", key: "author", label: "Author"
