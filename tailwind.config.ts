@@ -109,7 +109,8 @@ const config: Config = {
       },
       backgroundImage: {
         'map': "url('/src/assets/icon/background-map.svg')",
-        'mask':"url('/src/assets/icon/mask.svg')"
+        'mask':"url('/src/assets/icon/mask.svg')",
+        'author':"url('/src/assets/icon/author-bg')" 
       },
     },
   },

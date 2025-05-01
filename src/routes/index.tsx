@@ -55,6 +55,7 @@ import MyAccountActivity from "../pages/user/myAccount/activity";
 import NetworkStarted from "../pages/user/network/started";
 import MiniCards from "../pages/user/network/userCards/miniCards";
 import TeamCrew from "../pages/user/network/userCards/teamCrew";
+import Author from "../pages/user/network/userCards/author";
 
 import '../globals.css'
 
@@ -119,6 +120,7 @@ const Router = () => {
                 <Route path='/user/network/started' element={<NetworkStarted />}></Route>
                 <Route path='/user/network/userCard/miniCards' element={<MiniCards />}></Route>
                 <Route path='/user/network/userCard/teamCrew' element={<TeamCrew />}></Route>
+                <Route path='/user/network/userCard/author' element={<Author />}></Route>
 
             </Routes>
         </>

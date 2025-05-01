@@ -317,7 +317,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userCard/teamCrew"
                     },
                     {
-                        category: "user", key: "author", label: "Author"
+                        category: "user", key: "author", label: "Author", path: "/user/network/userCard/author"
                     },
                     {
                         category: "user", key: "nft", label: "NFT"
