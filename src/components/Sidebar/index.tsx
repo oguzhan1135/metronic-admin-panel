@@ -323,7 +323,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "nft", label: "NFT"
                     },
                     {
-                        category: "user", key: "social", label: "Social"
+                        category: "user", key: "social", label: "Social", path: "/user/network/userCard/social"
                     }
                 ]
 

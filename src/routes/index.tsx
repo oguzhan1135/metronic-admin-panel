@@ -56,6 +56,7 @@ import NetworkStarted from "../pages/user/network/started";
 import MiniCards from "../pages/user/network/userCards/miniCards";
 import TeamCrew from "../pages/user/network/userCards/teamCrew";
 import Author from "../pages/user/network/userCards/author";
+import Social from "../pages/user/network/userCards/social";
 
 import '../globals.css'
 
@@ -121,6 +122,7 @@ const Router = () => {
                 <Route path='/user/network/userCard/miniCards' element={<MiniCards />}></Route>
                 <Route path='/user/network/userCard/teamCrew' element={<TeamCrew />}></Route>
                 <Route path='/user/network/userCard/author' element={<Author />}></Route>
+                <Route path='/user/network/userCard/social' element={<Social />}></Route>
 
             </Routes>
         </>

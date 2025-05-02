@@ -109,11 +109,14 @@ const config: Config = {
       },
       backgroundImage: {
         'map': "url('/src/assets/icon/background-map.svg')",
-        'mask':"url('/src/assets/icon/mask.svg')",
-        'author':"url('/src/assets/icon/author-bg')" 
-      },
-    },
+        'mask': "url('/src/assets/icon/mask.svg')",
+        'author-bg-1': "url('/src/assets/icon/author-bg-1.svg')",
+        'author-bg-2': "url('/src/assets/icon/author-bg-2.svg')",
+        'author-bg-3': "url('/src/assets/icon/author-bg-3.svg')",
+        'author-bg-4': "url('/src/assets/icon/author-bg-4.svg')",
+   },
   },
+},
   plugins: [],
 };
 
