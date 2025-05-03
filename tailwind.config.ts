@@ -114,9 +114,11 @@ const config: Config = {
         'author-bg-2': "url('/src/assets/icon/author-bg-2.svg')",
         'author-bg-3': "url('/src/assets/icon/author-bg-3.svg')",
         'author-bg-4': "url('/src/assets/icon/author-bg-4.svg')",
-   },
+        'layered-bg': "url('/src/assets/icon/layared-bg.svg')",
+
+      },
+    },
   },
-},
   plugins: [],
 };
 
