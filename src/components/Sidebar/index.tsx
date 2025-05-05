@@ -334,10 +334,10 @@ const menuData: MenuItem[] = [
                 label: "User Table",
                 subItems: [
                     {
-                        category: "user", key: "team-crew", label: "Team Crew"
+                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userTable/teamCrew"
                     },
                     {
-                        category: "user", key: "app-roster", label: "App Roster"
+                        category: "user", key: "app-roster", label: "App Roster", path: "/user/network/userTable/appRoster"
                     },
                     {
                         category: "user", key: "market-authors", label: "Market Authors"

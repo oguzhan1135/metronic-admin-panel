@@ -58,6 +58,8 @@ import TeamCrew from "../pages/user/network/userCards/teamCrew";
 import Author from "../pages/user/network/userCards/author";
 import Social from "../pages/user/network/userCards/social";
 import NFTNetwork from "../pages/user/network/userCards/nft";
+import TeamCrewUserBase from "../pages/user/network/userTable/teamCrew";
+import AppRoster from "../pages/user/network/userTable/appRoster";
 
 import '../globals.css'
 
@@ -125,6 +127,8 @@ const Router = () => {
                 <Route path='/user/network/userCard/author' element={<Author />}></Route>
                 <Route path='/user/network/userCard/social' element={<Social />}></Route>
                 <Route path='/user/network/userCard/nft' element={<NFTNetwork />}></Route>
+                <Route path='/user/network/userTable/teamCrew' element={<TeamCrewUserBase />}></Route>
+                <Route path='/user/network/userTable/appRoster' element={<AppRoster />}></Route>
 
             </Routes>
         </>
