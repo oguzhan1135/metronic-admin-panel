@@ -9,177 +9,135 @@ import Esther from '../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../assets/icon/cody-fisher.svg'
 import Jacob from '../../../assets/icon/jonathan-taylor.svg'
 import Arlene from '../../../assets/icon/arlene-mccoy.svg'
-import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuSettings2 } from "react-icons/lu";
-import Slack from '../../../assets/icon/slack.svg'
-import Twitch from '../../../assets/icon/twitch-purple.svg'
-import Invision from '../../../assets/icon/invision.svg'
-import GoogleAnalytic from '../../../assets/icon/google-analytics.svg'
-import GoogleCalendar from '../../../assets/icon/google-calendar.svg'
-import TikTok from '../../../assets/icon/tiktok.svg'
-import Monetha from '../../../assets/icon/monetha.svg'
-import Twitter from '../../../assets/icon/twitter.svg'
-import Instagram from '../../../assets/icon/instagram.svg'
-import Jira from '../../../assets/icon/jira.svg'
-import GoogleDev from '../../../assets/icon/google-webdev.svg'
-import Azure from '../.././../assets/icon/azure.svg'
-import { FaFacebookSquare } from "react-icons/fa";
-import Youtube from '../../../assets/icon/youtube.svg'
-import SoloLearn from '../../../assets/icon/soloLearn.svg'
-import Linkedin from '../../.././assets/icon/linkedin.svg'
-import Office from '../../../assets/icon/office.svg'
 
 interface Member {
     id: number;
     name: string;
-    telephoneNumber: string;
-    branch: string;
-    connectedApps: React.ReactElement[];
-    tags: string[];
+    mail: string;
+    products: string[];
     enforce2FA: boolean;
     icon: React.ReactElement;
+    licanceType: string;
+    licanceDate: string;
+    lastPayment: string;
 }
 
-
-const AppRosterTable = () => {
+const SaasUSersTable = () => {
 
     const originalCards = [
         {
             id: 1,
             name: "Tyler Hero",
-            telephoneNumber: "(212) 867-5309",
+            mail: "tyler.hero@gmail.com",
             icon: <img src={Tyler} className="size-9" />,
-            branch: "Miami, FL",
-            tags: ["NFT", "Design"],
-            connectedApps: [
-                <img src={Slack} className="size-[18px]" />,
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Invision} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            products: ["NFT", "Artwork", "Widget"],
+            licanceType: "Premium",
+            licanceDate: "4 months",
+            enforce2FA: true,
+            lastPayment: "6 Aug, 2024"
         },
         {
             id: 2,
-            name: "Jane Smith",
-            telephoneNumber: "(305) 421-7890",
+            name: "Esther Howard",
+            mail: "esther.howard@gmail.com",
             icon: <img src={Esther} className="size-9" />,
-            branch: "Dallas, TX",
-            tags: ["Lead", "Investor"],
-            connectedApps: [
-                <img src={GoogleAnalytic} className="size-[18px]" />,
-                <img src={GoogleCalendar} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            products: ["Design", "Template"],
+            licanceType: "Trial",
+            licanceDate: "16 days",
+            enforce2FA: false,
+            lastPayment: "21 Apr, 2024"
         },
         {
             id: 3,
-            name: "Emma Johnson",
-            telephoneNumber: "(702) 314-1592",
-            icon: <img src={Arlene} className="size-9" />,
-            branch: "Atlanta, GA",
-            tags: ["Support", "Consultant"],
-            connectedApps: [
-                <img src={TikTok} className="size-[18px]" />,
-                <img src={Monetha} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Jacob Jones",
+            mail: "jacob.jones@gmail.com",
+            icon: <img src={Jacob} className="size-9" />,
+            products: ["App", "Plugin"],
+            licanceType: "Premium",
+            licanceDate: "2 months",
+            enforce2FA: true,
+            lastPayment: "14 Mar, 2024"
         },
         {
             id: 4,
-            name: "Michael Brown",
-            telephoneNumber: "(415) 926-6487",
+            name: "Cody Fisher",
+            mail: "cody.fisher@gmail.com",
             icon: <img src={Cody} className="size-9" />,
-            branch: "Denver, CO",
-            tags: ["Developer", "Advisor"],
-            connectedApps: [
-                <img src={Instagram} className="size-[18px]" />,
-                <img src={Twitter} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            products: ["Template", "NFT"],
+            licanceType: "Standard",
+            licanceDate: "",
+            enforce2FA: false,
+            lastPayment: "20 Apr, 2024"
         },
         {
             id: 5,
-            name: "Chloe Davis",
-            telephoneNumber: "(512) 582-4316",
+            name: "Leslie Alexander",
+            mail: "leslie.alexander@gmail.com",
             icon: <img src={Esther} className="size-9" />,
-            branch: "Seattle, WA",
-            tags: ["Strategist", "Partner"],
-            connectedApps: [
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Slack} className="size-[18px]" />,
-                <img src={Invision} className="size-[18px]" />,
-                <img src={TikTok} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            products: ["Artwork", "App"],
+            licanceType: "Premium",
+            licanceDate: "6 months",
+            enforce2FA: false,
+            lastPayment: "29 Jan, 2024"
         },
         {
             id: 6,
-            name: "William Wilson",
-            telephoneNumber: "(312) 753-9801",
+            name: "Robert Fox",
+            mail: "robert.fox@gmail.com",
             icon: <img src={Jacob} className="size-9" />,
-            branch: "Boston, MA",
-            tags: ["Manager", "Executor"],
-            connectedApps: [
-                <img src={Jira} className="size-[18px]" />,
-                <img src={Slack} className="size-[18px]" />,
-                <img src={GoogleDev} className="size-[18px]" />,
-
-            ],
-            enforce2FA: true
+            products: ["Design", "Widget"],
+            licanceType: "Trial",
+            licanceDate: "5 days",
+            enforce2FA: false,
+            lastPayment: "17 Mar, 2024"
         },
         {
             id: 7,
-            name: "Olivia Martin",
-            telephoneNumber: "(213) 674-2983",
-            icon: <img src={Arlene} className="size-9" />,
-            branch: "Phoenix, AZ",
-            tags: ["Creator", "Analyst"],
-            connectedApps: [
-                <img src={Azure} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            name: "Guy Hawkins",
+            mail: "guy.hawkins@gmail.com",
+            icon: <img src={Tyler} className="size-9" />,
+            products: ["Plugin", "Artwork"],
+            licanceType: "Standard",
+            licanceDate: "",
+            enforce2FA: false,
+            lastPayment: "20 Jul, 2024"
         },
         {
             id: 8,
-            name: "Ethan Garcia",
-            telephoneNumber: "(617) 935-2641",
-            icon: <img src={Tyler} className="size-9" />,
-            branch: "Detroit, MI",
-            tags: ["Vendor", "Support"],
-            connectedApps: [
-                <FaFacebookSquare className="size-[18px]" />,
-                <img src={Youtube} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Theresa Webb",
+            mail: "theresa.webb@gmail.com",
+            icon: <img src={Arlene} className="size-9" />,
+            products: ["NFT", "Template"],
+            licanceType: "Trial",
+            licanceDate: "2 days",
+            enforce2FA: true,
+            lastPayment: "06 May, 2024"
         },
         {
             id: 9,
-            name: "Ava Rodriguez",
-            telephoneNumber: "(404) 762-1453",
-            icon: <img src={Esther} className="size-9" />,
-            branch: "Nashville, TN",
-            tags: ["Coordinator", "Marketer"],
-            connectedApps: [
-                <img src={SoloLearn} className="size-[18px]" />,
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Linkedin} className="size-[18px]" />,
-                <img src={Office} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Marvin McKinney",
+            mail: "marvin.mckinney@gmail.com",
+            icon: <img src={Cody} className="size-9" />,
+            products: ["Widget", "App"],
+            licanceType: "Premium",
+            licanceDate: "1 month",
+            enforce2FA: false,
+            lastPayment: "16 Apr, 2024"
         },
         {
             id: 10,
-            name: "Matthew Martinez",
-            telephoneNumber: "(503) 894-3752",
-            icon: <img src={Cody} className="size-9" />,
-            branch: "Portland, OR",
-            tags: ["Engineer", "Executive"],
-            connectedApps: [
-                <img src={Slack} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            name: "Ronald Richards",
+            mail: "ronald.richards@gmail.com",
+            icon: <img src={Jacob} className="size-9" />,
+            products: ["Artwork", "Design", "Plugin"],
+            licanceType: "Premium",
+            licanceDate: "3 months",
+            enforce2FA: true,
+            lastPayment: "15 Jun, 2024"
         }
     ];
+
 
     const [cards, setCards] = useState<Member[]>(originalCards);
 
@@ -227,7 +185,7 @@ const AppRosterTable = () => {
 
 
     type SortDirection = 'asc' | 'desc';
-    type SortKey = 'name' | 'telephoneNumber' | 'branch' | 'connectedApps' | 'tags' | 'enforce2FA';
+    type SortKey = 'name' | 'products' | 'licanceType' | 'lastPayment' | 'enforce2FA';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('name');
 
@@ -318,49 +276,47 @@ const AppRosterTable = () => {
                                 </th>
                                 <th onClick={() => handleSort("name")} className="px-5 py-3 border border-gray-200 text-left">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer w-max">
-                                        <span className="text-b-13-14-400 text-gray-700">Users</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Subscriber</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("telephoneNumber")} className="px-5 py-3 border border-gray-200">
+                                <th onClick={() => handleSort("products")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Phone</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Products</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("branch")} className="px-5 py-3 border border-gray-200 text-left">
+                                <th onClick={() => handleSort("licanceType")} className="px-5 py-3 border border-gray-200 text-left">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Branch</span>
+                                        <span className="text-b-13-14-400 text-gray-700">License</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("connectedApps")} className="px-5 py-3 border border-gray-200">
+                                <th onClick={() => handleSort("lastPayment")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1  cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Connected Apps</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Last Payment</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("tags")} className="px-5 py-3 border border-gray-200">
-                                    <div className="flex flex-row items-center gap-1  cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Tags</span>
-                                        <MdUnfoldMore className="size-[16px] text-gray-700" />
-                                    </div>
-                                </th>
+
                                 <th onClick={() => handleSort("enforce2FA")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1  cursor-pointer">
                                         <span className="text-b-13-14-400 text-gray-700">Enforce 2FA</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th className="px-5 py-3 border border-gray-200 text-center">
-
+                                <th className="px-5 py-3 border border-gray-200">
+                                    <div className="flex flex-row items-center gap-1  cursor-pointer">
+                                        <span className="text-b-13-14-400 text-gray-700">Invoice</span>
+                                        <MdUnfoldMore className="size-[16px] text-gray-700" />
+                                    </div>
                                 </th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            {upgradeData.map((team) => (
-                                <tr key={team.id} className="">
+                            {upgradeData.map((user) => (
+                                <tr key={user.id} className="">
                                     <td className="w-[40px] px-5 py-3 border border-gray-200">
                                         <div className="flex justify-center">
                                             <input type="checkbox" className="size-[16px]" />
@@ -368,29 +324,18 @@ const AppRosterTable = () => {
                                     </td>
                                     <td className="px-5 py-3 flex flex-col gap-2 border border-gray-200">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            {team.icon}
-                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>{team.name}</Link>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-2 border border-gray-200">
-                                        <span className="text-b-14-14-400 text-gray-800">{team.telephoneNumber}</span>
-                                    </td>
-                                    <td className="px-4 py-2 border border-gray-200">
-                                        <span className="text-b-14-14-400 text-gray-800">{team.branch}</span>
-                                    </td>
-                                    <td className="px-4 py-2 border border-gray-200">
-                                        <div className="flex flex-row gap-2.5">
-                                            {
-                                                team.connectedApps.map((item) => (
-                                                    item
-                                                ))
-                                            }
+                                            {user.icon}
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>{user.name}</Link>
+                                                <span className="text-b-13-14-400 text-gray-700">{user.mail}</span>
+                                            </div>
+
                                         </div>
                                     </td>
                                     <td className="px-4 py-2 border border-gray-200">
                                         <div className="flex flex-row gap-2.5">
                                             {
-                                                team.tags.map((item) => (
+                                                user.products.map((item) => (
                                                     <div className="flex items-center justify-center py-[5px] px-[6px] bg-gray-200 rounded-[4px]">
                                                         <span className="text-b-11-12-500 text-gray-700">{item}</span>
                                                     </div>
@@ -399,14 +344,22 @@ const AppRosterTable = () => {
                                         </div>
                                     </td>
                                     <td className="px-4 py-2 border border-gray-200">
-                                        <Switch setSwitch={() => handleSwitchToggle(team.id)} status={team.enforce2FA} size="medium" />
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-b-14-22-500 text-gray-800">{user.licanceType}</span>
+                                            <span className={`${user.licanceDate === "" ? "hidden" : "text-b-12-12-400 text-gray-600"}`}>{user.licanceDate} {user.licanceDate === "" ? null : "left"}</span>
+                                        </div>
+                                    </td>
+                                    <td className="px-4 py-2 border border-gray-200">
+                                        <span className="text-b-14-22-500 text-gray-800">{user.lastPayment}</span>
+                                    </td>
+
+                                    <td className="px-4 py-2 border border-gray-200">
+                                        <Switch setSwitch={() => handleSwitchToggle(user.id)} status={user.enforce2FA} size="medium" />
                                     </td>
 
                                     <td className="px-4 py-2 text-center border border-gray-200">
                                         <div className="grid place-items-center">
-                                            <button className="p-2 rounded-md cursor-pointer hover:bg-gray-200">
-                                                <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
-                                            </button>
+                                            <Link to={location} className="text-primary border-b border-dotted border-b-primary">Download</Link>
                                         </div>
                                     </td>
                                 </tr>
@@ -447,4 +400,4 @@ const AppRosterTable = () => {
         </div>
     )
 }
-export default AppRosterTable
+export default SaasUSersTable

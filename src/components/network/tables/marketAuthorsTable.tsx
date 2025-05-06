@@ -3,7 +3,6 @@ import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Switch from "../../switch";
 import Tyler from '../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../assets/icon/cody-fisher.svg'
@@ -11,179 +10,173 @@ import Jacob from '../../../assets/icon/jonathan-taylor.svg'
 import Arlene from '../../../assets/icon/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuSettings2 } from "react-icons/lu";
-import Slack from '../../../assets/icon/slack.svg'
-import Twitch from '../../../assets/icon/twitch-purple.svg'
-import Invision from '../../../assets/icon/invision.svg'
-import GoogleAnalytic from '../../../assets/icon/google-analytics.svg'
-import GoogleCalendar from '../../../assets/icon/google-calendar.svg'
-import TikTok from '../../../assets/icon/tiktok.svg'
 import Monetha from '../../../assets/icon/monetha.svg'
-import Twitter from '../../../assets/icon/twitter.svg'
-import Instagram from '../../../assets/icon/instagram.svg'
-import Jira from '../../../assets/icon/jira.svg'
-import GoogleDev from '../../../assets/icon/google-webdev.svg'
-import Azure from '../.././../assets/icon/azure.svg'
-import { FaFacebookSquare } from "react-icons/fa";
-import Youtube from '../../../assets/icon/youtube.svg'
-import SoloLearn from '../../../assets/icon/soloLearn.svg'
-import Linkedin from '../../.././assets/icon/linkedin.svg'
-import Office from '../../../assets/icon/office.svg'
+import Weave from '../../../assets/icon/weave.svg'
+import { FaStar, FaStarHalfAlt, FaRegStar, FaFacebookSquare } from "react-icons/fa";
+import Foursquare from '../../../assets/icon/foursquare.svg'
+import Flood from '../../../assets/icon/flood.svg'
+import Gitlab from '../../../assets/icon/gitlab.svg'
+import BtcChina from '../../../assets/icon/btcchina.svg'
+import Bridgefy from '../../../assets/icon/bridgefy.svg'
+import Voise from '../../../assets/icon/voise.svg'
+import Vision from '../../../assets/icon/xing.svg'
+import TheOcean from '../../../assets/icon/the-ocean.svg'
+import { IoBasketballOutline, IoLogoTiktok } from "react-icons/io5";
 
 interface Member {
     id: number;
     name: string;
-    telephoneNumber: string;
-    branch: string;
-    connectedApps: React.ReactElement[];
-    tags: string[];
-    enforce2FA: boolean;
+    role: string;
     icon: React.ReactElement;
+    raiting: number;
+    earnings: number;
+    team: string;
+    product: number;
+    teamIcon: React.ReactElement;
 }
 
-
-const AppRosterTable = () => {
+const MarketAuthorsTable = () => {
 
     const originalCards = [
         {
             id: 1,
             name: "Tyler Hero",
-            telephoneNumber: "(212) 867-5309",
+            role: "IT Consultant",
             icon: <img src={Tyler} className="size-9" />,
-            branch: "Miami, FL",
-            tags: ["NFT", "Design"],
-            connectedApps: [
-                <img src={Slack} className="size-[18px]" />,
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Invision} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            raiting: 3.5,
+            earnings: 27456.09,
+            team: "Tech Titans",
+            product: 905,
+            teamIcon: <img src={Weave} className="size-5" />
         },
         {
             id: 2,
-            name: "Jane Smith",
-            telephoneNumber: "(305) 421-7890",
+            name: "Esther Howard",
+            role: "Graphic Designer",
             icon: <img src={Esther} className="size-9" />,
-            branch: "Dallas, TX",
-            tags: ["Lead", "Investor"],
-            connectedApps: [
-                <img src={GoogleAnalytic} className="size-[18px]" />,
-                <img src={GoogleCalendar} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            raiting: 5,
+            earnings: 45800.09,
+            team: "Creative Minds",
+            product: 325,
+            teamIcon: <img src={Monetha} className="size-5" />
         },
         {
             id: 3,
-            name: "Emma Johnson",
-            telephoneNumber: "(702) 314-1592",
-            icon: <img src={Arlene} className="size-9" />,
-            branch: "Atlanta, GA",
-            tags: ["Support", "Consultant"],
-            connectedApps: [
-                <img src={TikTok} className="size-[18px]" />,
-                <img src={Monetha} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Jacob Jones",
+            role: "Financial Analyst",
+            icon: <img src={Jacob} className="size-9" />,
+            raiting: 5,
+            earnings: 63250.30,
+            team: "Code Crafters",
+            product: 212,
+            teamIcon: <img src={Foursquare} className="size-5" />
         },
         {
             id: 4,
-            name: "Michael Brown",
-            telephoneNumber: "(415) 926-6487",
+            name: "Cody Fisher",
+            role: "Software Engineer",
             icon: <img src={Cody} className="size-9" />,
-            branch: "Denver, CO",
-            tags: ["Developer", "Advisor"],
-            connectedApps: [
-                <img src={Instagram} className="size-[18px]" />,
-                <img src={Twitter} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            raiting: 4,
+            earnings: 80100.45,
+            team: "Market Movers",
+            product: 1500,
+            teamIcon: <img src={Flood} className="size-5" />
+
         },
         {
             id: 5,
-            name: "Chloe Davis",
-            telephoneNumber: "(512) 582-4316",
-            icon: <img src={Esther} className="size-9" />,
-            branch: "Seattle, WA",
-            tags: ["Strategist", "Partner"],
-            connectedApps: [
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Slack} className="size-[18px]" />,
-                <img src={Invision} className="size-[18px]" />,
-                <img src={TikTok} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Leslie Alexander",
+            role: "Marketing Manager",
+            icon: <img src={Arlene} className="size-9" />,
+            raiting: 2.5,
+            earnings: 56500.60,
+            team: "Brand Builders",
+            product: 785,
+            teamIcon: <img src={Gitlab} className="size-5" />
+
         },
         {
             id: 6,
-            name: "William Wilson",
-            telephoneNumber: "(312) 753-9801",
-            icon: <img src={Jacob} className="size-9" />,
-            branch: "Boston, MA",
-            tags: ["Manager", "Executor"],
-            connectedApps: [
-                <img src={Jira} className="size-[18px]" />,
-                <img src={Slack} className="size-[18px]" />,
-                <img src={GoogleDev} className="size-[18px]" />,
+            name: "Robert Fox",
+            role: "Data Scientist",
+            icon: <img src={Tyler} className="size-9" />,
+            raiting: 5,
+            earnings: 70342.25,
+            team: "Data Pioneers",
+            product: 468,
+            teamIcon: <img src={BtcChina} className="size-5" />
 
-            ],
-            enforce2FA: true
         },
         {
             id: 7,
-            name: "Olivia Martin",
-            telephoneNumber: "(213) 674-2983",
-            icon: <img src={Arlene} className="size-9" />,
-            branch: "Phoenix, AZ",
-            tags: ["Creator", "Analyst"],
-            connectedApps: [
-                <img src={Azure} className="size-[18px]" />,
-            ],
-            enforce2FA: false
+            name: "Guy Hawkins",
+            role: "HR Specialist",
+            icon: <img src={Jacob} className="size-9" />,
+            raiting: 4.5,
+            earnings: 40210.15,
+            team: "Talent Scouts",
+            product: 198,
+            teamIcon: <img src={Bridgefy} className="size-5" />
         },
         {
             id: 8,
-            name: "Ethan Garcia",
-            telephoneNumber: "(617) 935-2641",
-            icon: <img src={Tyler} className="size-9" />,
-            branch: "Detroit, MI",
-            tags: ["Vendor", "Support"],
-            connectedApps: [
-                <FaFacebookSquare className="size-[18px]" />,
-                <img src={Youtube} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Theresa Webb",
+            role: "Sales Executive",
+            icon: <img src={Esther} className="size-9" />,
+            raiting: 1.5,
+            earnings: 52315.70,
+            team: "Revenue Raisers",
+            product: 1100,
+            teamIcon: <img src={TheOcean} className="size-5" />
         },
         {
             id: 9,
-            name: "Ava Rodriguez",
-            telephoneNumber: "(404) 762-1453",
-            icon: <img src={Esther} className="size-9" />,
-            branch: "Nashville, TN",
-            tags: ["Coordinator", "Marketer"],
-            connectedApps: [
-                <img src={SoloLearn} className="size-[18px]" />,
-                <img src={Twitch} className="size-[18px]" />,
-                <img src={Linkedin} className="size-[18px]" />,
-                <img src={Office} className="size-[18px]" />,
-            ],
-            enforce2FA: true
+            name: "Marvin McKinney",
+            role: "Project Manager",
+            icon: <img src={Cody} className="size-9" />,
+            raiting: 5,
+            earnings: 68450.55,
+            team: "Vision Guides",
+            product: 308,
+            teamIcon: <img src={Vision} className="size-5" />
         },
         {
             id: 10,
-            name: "Matthew Martinez",
-            telephoneNumber: "(503) 894-3752",
-            icon: <img src={Cody} className="size-9" />,
-            branch: "Portland, OR",
-            tags: ["Engineer", "Executive"],
-            connectedApps: [
-                <img src={Slack} className="size-[18px]" />,
-            ],
-            enforce2FA: false
-        }
+            name: "Ronald Richards",
+            role: "Web Developer",
+            icon: <img src={Jacob} className="size-9" />,
+            raiting: 1.5,
+            earnings: 52315.70,
+            team: "Web Wizards",
+            product: 675,
+            teamIcon: <img src={Voise} className="size-5" />
+        },
     ];
 
+
+    type RatingStarsProps = {
+        rating: number;
+    };
+
+    const RatingStars = ({ rating }: RatingStarsProps) => {
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating - fullStars >= 0.5;
+        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+        return (
+            <div className="flex items-center gap-0.5 text-warning">
+                {[...Array(fullStars)].map((_, i) => (
+                    <FaStar key={`full-${i}`} />
+                ))}
+                {hasHalfStar && <FaStarHalfAlt key="half" />}
+                {[...Array(emptyStars)].map((_, i) => (
+                    <FaRegStar key={`empty-${i}`} className="text-gray-400" />
+                ))}
+            </div>
+        );
+    };
+
     const [cards, setCards] = useState<Member[]>(originalCards);
-
-
     const [showCount, setShowCount] = useState(5);
     const [upgradeData, setUpgradeData] = useState(cards.slice(0, showCount));
 
@@ -205,29 +198,10 @@ const AppRosterTable = () => {
             setUpgradeData(cards.slice(0, 5))
         }
 
-
     }, [showCount])
-    const handleSwitchToggle = (id: number) => {
-        setCards(prev =>
-            prev.map(member =>
-                member.id === id
-                    ? { ...member, enforce2FA: !member.enforce2FA }
-                    : member
-            )
-        );
-
-        setUpgradeData(prev =>
-            prev.map(member =>
-                member.id === id
-                    ? { ...member, enforce2FA: !member.enforce2FA }
-                    : member
-            )
-        );
-    };
-
 
     type SortDirection = 'asc' | 'desc';
-    type SortKey = 'name' | 'telephoneNumber' | 'branch' | 'connectedApps' | 'tags' | 'enforce2FA';
+    type SortKey = 'name' | 'earnings' | 'team' | 'product' | 'raiting';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('name');
 
@@ -247,6 +221,11 @@ const AppRosterTable = () => {
         filtered.sort((a, b) => {
             let valA = a[key];
             let valB = b[key];
+            if (sortKey === "earnings" || sortKey === "raiting" || sortKey === "product") {
+                return newDirection === 'asc'
+                    ? (valA as number) - (valB as number)
+                    : (valB as number) - (valA as number);
+            }
 
             return newDirection === 'asc'
                 ? String(valA).localeCompare(String(valB))
@@ -318,37 +297,37 @@ const AppRosterTable = () => {
                                 </th>
                                 <th onClick={() => handleSort("name")} className="px-5 py-3 border border-gray-200 text-left">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer w-max">
-                                        <span className="text-b-13-14-400 text-gray-700">Users</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Author</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("telephoneNumber")} className="px-5 py-3 border border-gray-200">
+                                <th onClick={() => handleSort("earnings")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Phone</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Earnings</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("branch")} className="px-5 py-3 border border-gray-200 text-left">
+                                <th onClick={() => handleSort("team")} className="px-5 py-3 border border-gray-200 text-left">
                                     <div className="flex flex-row items-center gap-1 cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Branch</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Team</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("connectedApps")} className="px-5 py-3 border border-gray-200">
+                                <th onClick={() => handleSort("product")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1  cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Connected Apps</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Product</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("tags")} className="px-5 py-3 border border-gray-200">
+                                <th onClick={() => handleSort("raiting")} className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1  cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Tags</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Raiting</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
-                                <th onClick={() => handleSort("enforce2FA")} className="px-5 py-3 border border-gray-200">
+                                <th className="px-5 py-3 border border-gray-200">
                                     <div className="flex flex-row items-center gap-1  cursor-pointer">
-                                        <span className="text-b-13-14-400 text-gray-700">Enforce 2FA</span>
+                                        <span className="text-b-13-14-400 text-gray-700">Social Profiles</span>
                                         <MdUnfoldMore className="size-[16px] text-gray-700" />
                                     </div>
                                 </th>
@@ -359,8 +338,8 @@ const AppRosterTable = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {upgradeData.map((team) => (
-                                <tr key={team.id} className="">
+                            {upgradeData.map((author) => (
+                                <tr key={author.id} className="">
                                     <td className="w-[40px] px-5 py-3 border border-gray-200">
                                         <div className="flex justify-center">
                                             <input type="checkbox" className="size-[16px]" />
@@ -368,38 +347,38 @@ const AppRosterTable = () => {
                                     </td>
                                     <td className="px-5 py-3 flex flex-col gap-2 border border-gray-200">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            {team.icon}
-                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>{team.name}</Link>
+                                            {author.icon}
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>{author.name}</Link>
+                                                <span className="text-b-13-14-400 text-gray-700">{author.role}</span>
+                                            </div>
+
                                         </div>
                                     </td>
                                     <td className="px-4 py-2 border border-gray-200">
-                                        <span className="text-b-14-14-400 text-gray-800">{team.telephoneNumber}</span>
+                                        <span className="text-b-14-14-400 text-gray-800">${author.earnings.toLocaleString()}</span>
                                     </td>
+
+
                                     <td className="px-4 py-2 border border-gray-200">
-                                        <span className="text-b-14-14-400 text-gray-800">{team.branch}</span>
-                                    </td>
-                                    <td className="px-4 py-2 border border-gray-200">
-                                        <div className="flex flex-row gap-2.5">
-                                            {
-                                                team.connectedApps.map((item) => (
-                                                    item
-                                                ))
-                                            }
+                                        <div className="flex flex-row gap-[6px]">
+                                            {author.teamIcon}
+                                            {author.team}
                                         </div>
                                     </td>
                                     <td className="px-4 py-2 border border-gray-200">
-                                        <div className="flex flex-row gap-2.5">
-                                            {
-                                                team.tags.map((item) => (
-                                                    <div className="flex items-center justify-center py-[5px] px-[6px] bg-gray-200 rounded-[4px]">
-                                                        <span className="text-b-11-12-500 text-gray-700">{item}</span>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
+                                        <span className="text-b-14-14-400 text-gray-800">{author.product}</span>
+                                    </td>
+
+                                    <td className="px-4 py-2 border border-gray-200">
+                                        <RatingStars rating={author.raiting} />
                                     </td>
                                     <td className="px-4 py-2 border border-gray-200">
-                                        <Switch setSwitch={() => handleSwitchToggle(team.id)} status={team.enforce2FA} size="medium" />
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <FaFacebookSquare className="text-gray-500 size-[18px] cursor-pointer" />
+                                            <IoBasketballOutline className="text-gray-500 size-[18px] cursor-pointer" />
+                                            <IoLogoTiktok className="text-gray-500 size-[18px] cursor-pointer" />
+                                        </div>
                                     </td>
 
                                     <td className="px-4 py-2 text-center border border-gray-200">
@@ -437,14 +416,11 @@ const AppRosterTable = () => {
                         <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < cards.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
                         <div className={`${showCount > cards.length ? ' hidden' : 'opacity-100'}`}>
                             <FaArrowRight className={`${cards.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     )
 }
-export default AppRosterTable
+export default MarketAuthorsTable

@@ -1,14 +1,13 @@
 import FAQ from "../../../../components/myAccount/faq"
 import Questions from "../../../../components/myAccount/questions"
-import AppRosterTable from "../../../../components/network/tables/appRosterTable"
-
-const AppRoster = () => {
+import SaasUsersTable from "../../../../components/network/tables/saasUsersTable"
+const SaasUsers = () => {
 
     return (
-        <div className="flex flex-col gap-[30px]  ">
+        <div className="flex flex-col gap-[30px]">
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-col gap-[14px] ">
-                    <h1 className='text-gray-900 text-h-24-24-600'>App Roster</h1>
+                    <h1 className='text-gray-900 text-h-24-24-600'>Market Authors</h1>
                     <span className="text-b-14-14-400 text-gray-700">Central Hub for Personal Customization</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
@@ -22,7 +21,7 @@ const AppRoster = () => {
             </div>
 
             {/* Team Crew Table */}
-            <AppRosterTable />
+            <SaasUsersTable />
 
             {/* FAQ */}
 
@@ -35,4 +34,4 @@ const AppRoster = () => {
         </div >
     )
 }
-export default AppRoster
+export default SaasUsers

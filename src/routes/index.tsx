@@ -60,6 +60,8 @@ import Social from "../pages/user/network/userCards/social";
 import NFTNetwork from "../pages/user/network/userCards/nft";
 import TeamCrewUserBase from "../pages/user/network/userTable/teamCrew";
 import AppRoster from "../pages/user/network/userTable/appRoster";
+import MarketAuthors from "../pages/user/network/userTable/marketAuthors";
+import SaasUsers from "../pages/user/network/userTable/saasUser";
 
 import '../globals.css'
 
@@ -129,6 +131,8 @@ const Router = () => {
                 <Route path='/user/network/userCard/nft' element={<NFTNetwork />}></Route>
                 <Route path='/user/network/userTable/teamCrew' element={<TeamCrewUserBase />}></Route>
                 <Route path='/user/network/userTable/appRoster' element={<AppRoster />}></Route>
+                <Route path='/user/network/userTable/marketAuthors' element={<MarketAuthors />}></Route>
+                <Route path='/user/network/userTable/saasUsers' element={<SaasUsers />}></Route>
 
             </Routes>
         </>
