@@ -345,151 +345,151 @@ const menuData: MenuItem[] = [
                     {
                         category: "user", key: "saas-user", label: "Saas Users", path: "/user/network/userTable/saasUsers"
                     },
-            {
-                category: "user", key: "store-clients", label: "Store Clients"
-            },
-            {
-                category: "user", key: "visitors", label: "Visitors"
+                    {
+                        category: "user", key: "store-clients", label: "Store Clients", path: "/user/network/userTable/storeClients"
+                    },
+                    {
+                        category: "user", key: "visitors", label: "Visitors", path: "/user/network/userTable/visitors"
+                    }
+                ]
             }
-        ]
-    }
-],
-    icon: Community
+        ],
+        icon: Community
     },
-{
-    category: "user",
+    {
+        category: "user",
         key: "authentication",
-            label: "Authentication",
+        label: "Authentication",
+        subItems: [
+            {
+                category: "user",
+                key: "classic",
+                label: "Classic",
                 subItems: [
                     {
+                        category: "user", key: "sign-in", label: "Sign In"
+                    },
+                    {
+                        category: "user", key: "sign-up", label: "Sign Up"
+                    },
+                    {
+                        category: "user", key: "2fa", label: "2FA"
+                    },
+                    {
+                        category: "user", key: "check-email", label: "Check Email"
+                    },
+                    {
                         category: "user",
-                        key: "classic",
-                        label: "Classic",
+                        key: "reset-password",
+                        label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "sign-in", label: "Sign In"
-                            },
-                            {
-                                category: "user", key: "sign-up", label: "Sign Up"
-                            },
-                            {
-                                category: "user", key: "2fa", label: "2FA"
+                                category: "user", key: "enter-email", label: "Enter Email"
                             },
                             {
                                 category: "user", key: "check-email", label: "Check Email"
                             },
                             {
-                                category: "user",
-                                key: "reset-password",
-                                label: "Reset Password",
-                                subItems: [
-                                    {
-                                        category: "user", key: "enter-email", label: "Enter Email"
-                                    },
-                                    {
-                                        category: "user", key: "check-email", label: "Check Email"
-                                    },
-                                    {
-                                        category: "user", key: "change-password", label: "Change Password"
-                                    },
-                                    {
-                                        category: "user", key: "password-changed", label: "Password Changed"
-                                    }
-                                ]
+                                category: "user", key: "change-password", label: "Change Password"
                             },
+                            {
+                                category: "user", key: "password-changed", label: "Password Changed"
+                            }
                         ]
+                    },
+                ]
+            },
+            {
+                category: "user",
+                key: "branded",
+                label: "Branded",
+                subItems: [
+                    {
+                        category: "user", key: "sign-in", label: "Sign In"
+                    },
+                    {
+                        category: "user", key: "sign-up", label: "Sign Up"
+                    },
+                    {
+                        category: "user", key: "2fa", label: "2FA"
+                    },
+                    {
+                        category: "user", key: "check-email", label: "Check Email"
                     },
                     {
                         category: "user",
-                        key: "branded",
-                        label: "Branded",
+                        key: "reset-password",
+                        label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "sign-in", label: "Sign In"
-                            },
-                            {
-                                category: "user", key: "sign-up", label: "Sign Up"
-                            },
-                            {
-                                category: "user", key: "2fa", label: "2FA"
+                                category: "user", key: "enter-email", label: "Enter Email"
                             },
                             {
                                 category: "user", key: "check-email", label: "Check Email"
                             },
                             {
-                                category: "user",
-                                key: "reset-password",
-                                label: "Reset Password",
-                                subItems: [
-                                    {
-                                        category: "user", key: "enter-email", label: "Enter Email"
-                                    },
-                                    {
-                                        category: "user", key: "check-email", label: "Check Email"
-                                    },
-                                    {
-                                        category: "user", key: "change-password", label: "Change Password"
-                                    },
-                                    {
-                                        category: "user", key: "password-changed", label: "Password Changed"
-                                    }
-                                ]
+                                category: "user", key: "change-password", label: "Change Password"
                             },
+                            {
+                                category: "user", key: "password-changed", label: "Password Changed"
+                            }
                         ]
                     },
-                    {
-                        category: "user", key: "welcome-message", label: "Welcome Message"
-                    },
-                    {
-                        category: "user", key: "account-deactivated", label: "Account"
-                    },
-                    {
-                        category: "user", key: "error-404", label: "Error 404"
-                    },
-                    {
-                        category: "user", key: "error-500", label: "Error 500"
-                    }
+                ]
+            },
+            {
+                category: "user", key: "welcome-message", label: "Welcome Message"
+            },
+            {
+                category: "user", key: "account-deactivated", label: "Account"
+            },
+            {
+                category: "user", key: "error-404", label: "Error 404"
+            },
+            {
+                category: "user", key: "error-500", label: "Error 500"
+            }
 
-                ],
-                    icon: Security_User
-},
-{
-    category: "pages",
-        key: "marketplace",
-            label: "Marketplace",
-                icon: Like_Tag
-},
-{
-    category: "",
-        key: "social",
-            label: "Social",
-                icon: Social,
+        ],
+        icon: Security_User
     },
-{
-    category: "pages",
+    {
+        category: "pages",
+        key: "marketplace",
+        label: "Marketplace",
+        icon: Like_Tag
+    },
+    {
+        category: "",
+        key: "social",
+        label: "Social",
+        icon: Social,
+    },
+    {
+        category: "pages",
         key: "company",
-            label: "Company",
-                icon: Company
-},
-{
-    category: "pages",
+        label: "Company",
+        icon: Company
+    },
+    {
+        category: "pages",
         key: "blog",
-            label: "Blog",
-                icon: Files
-},
-{
-    category: "apps",
+        label: "Blog",
+        icon: Files
+    },
+    {
+        category: "apps",
         key: "projects",
-            label: "Projects",
-                icon: Edit_User
+        label: "Projects",
+        icon: Edit_User
 
-},
-{
-    category: "apps",
+    },
+    {
+        category: "apps",
         key: "ecommerce",
-            label: "eCommerce",
-                icon: Handcart
-},
+        label: "eCommerce",
+        icon: Handcart
+    },
 
 
 

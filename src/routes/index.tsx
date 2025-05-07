@@ -62,6 +62,8 @@ import TeamCrewUserBase from "../pages/user/network/userTable/teamCrew";
 import AppRoster from "../pages/user/network/userTable/appRoster";
 import MarketAuthors from "../pages/user/network/userTable/marketAuthors";
 import SaasUsers from "../pages/user/network/userTable/saasUser";
+import StoreClients from "../pages/user/network/userTable/storeClients";
+import Visitors from "../pages/user/network/userTable/visitors";
 
 import '../globals.css'
 
@@ -133,6 +135,8 @@ const Router = () => {
                 <Route path='/user/network/userTable/appRoster' element={<AppRoster />}></Route>
                 <Route path='/user/network/userTable/marketAuthors' element={<MarketAuthors />}></Route>
                 <Route path='/user/network/userTable/saasUsers' element={<SaasUsers />}></Route>
+                <Route path='/user/network/userTable/storeClients' element={<StoreClients />}></Route>
+                <Route path='/user/network/userTable/visitors' element={<Visitors />}></Route>
 
             </Routes>
         </>

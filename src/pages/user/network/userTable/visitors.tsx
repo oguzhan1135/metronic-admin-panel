@@ -1,13 +1,13 @@
 import FAQ from "../../../../components/myAccount/faq"
 import Questions from "../../../../components/myAccount/questions"
-import SaasUsersTable from "../../../../components/network/tables/saasUsersTable"
-const SaasUsers = () => {
+import VisitorsTable from "../../../../components/network/tables/visitorsTable"
+const Visitors = () => {
 
     return (
         <div className="flex flex-col gap-[30px]">
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-col gap-[14px] ">
-                    <h1 className='text-gray-900 text-h-24-24-600'>Market Authors</h1>
+                    <h1 className='text-gray-900 text-h-24-24-600'>Visitors</h1>
                     <div className="flex flex-col md:flex-row md:items-center items-start gap-[14px]">
                         <div className="flex flex-row items-center gap-1">
                             <span className="text-b-15-24-400 text-gray-700">All Members:</span>
@@ -30,7 +30,7 @@ const SaasUsers = () => {
             </div>
 
             {/* Team Crew Table */}
-            <SaasUsersTable />
+            <VisitorsTable />
 
             {/* FAQ */}
 
@@ -43,4 +43,4 @@ const SaasUsers = () => {
         </div >
     )
 }
-export default SaasUsers
+export default Visitors
