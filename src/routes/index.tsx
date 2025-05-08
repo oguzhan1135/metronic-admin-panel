@@ -64,6 +64,9 @@ import MarketAuthors from "../pages/user/network/userTable/marketAuthors";
 import SaasUsers from "../pages/user/network/userTable/saasUser";
 import StoreClients from "../pages/user/network/userTable/storeClients";
 import Visitors from "../pages/user/network/userTable/visitors";
+import SignIn from "../pages/user/authentication/classic/signIn";
+import SignUp from "../pages/user/authentication/classic/signUp";
+import TwoFA from "../pages/user/authentication/classic/twoFA";
 
 import '../globals.css'
 
@@ -137,6 +140,9 @@ const Router = () => {
                 <Route path='/user/network/userTable/saasUsers' element={<SaasUsers />}></Route>
                 <Route path='/user/network/userTable/storeClients' element={<StoreClients />}></Route>
                 <Route path='/user/network/userTable/visitors' element={<Visitors />}></Route>
+                <Route path='/user/authentication/classic/signIn' element={<SignIn />}></Route>
+                <Route path='/user/authentication/classic/signUp' element={<SignUp />}></Route>
+                <Route path='/user/authentication/classic/twoFA' element={<TwoFA />}></Route>
 
             </Routes>
         </>

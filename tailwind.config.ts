@@ -95,6 +95,7 @@ const config: Config = {
         'warning-active': '#DFA000',
         'warning-clarity': '#F6B100',
         'warning-light': '#FFF8DD',
+        'ligh-active': '#FCFCFC',
 
         'gray-100': '#F9F9F9',
         'gray-200': '#F1F1F4',
@@ -115,7 +116,7 @@ const config: Config = {
         'author-bg-3': "url('/src/assets/icon/author-bg-3.svg')",
         'author-bg-4': "url('/src/assets/icon/author-bg-4.svg')",
         'layered-bg': "url('/src/assets/icon/layared-bg.svg')",
-
+        'authantication-bg': "url('/src/assets/icon/authentication-bg.svg')"
       },
     },
   },

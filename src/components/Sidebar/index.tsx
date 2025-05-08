@@ -367,13 +367,13 @@ const menuData: MenuItem[] = [
                 label: "Classic",
                 subItems: [
                     {
-                        category: "user", key: "sign-in", label: "Sign In"
+                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/classic/signIn"
                     },
                     {
-                        category: "user", key: "sign-up", label: "Sign Up"
+                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/classic/signUp"
                     },
                     {
-                        category: "user", key: "2fa", label: "2FA"
+                        category: "user", key: "2fa", label: "2FA", path: "/user/authentication/classic/twoFA"
                     },
                     {
                         category: "user", key: "check-email", label: "Check Email"
