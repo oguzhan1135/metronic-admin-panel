@@ -376,7 +376,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "2fa", label: "2FA", path: "/user/authentication/classic/twoFA"
                     },
                     {
-                        category: "user", key: "check-email", label: "Check Email"
+                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/checkMail"
                     },
                     {
                         category: "user",
@@ -384,16 +384,16 @@ const menuData: MenuItem[] = [
                         label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "enter-email", label: "Enter Email"
+                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/classic/resetPassword/enterEmail"
                             },
                             {
-                                category: "user", key: "check-email", label: "Check Email"
+                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/resetPassword/checkEmail"
                             },
                             {
-                                category: "user", key: "change-password", label: "Change Password"
+                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/classic/resetPassword/changeEmail"
                             },
                             {
-                                category: "user", key: "password-changed", label: "Password Changed"
+                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/classic/resetPassword/passwordChange"
                             }
                         ]
                     },

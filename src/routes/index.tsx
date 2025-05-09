@@ -67,6 +67,11 @@ import Visitors from "../pages/user/network/userTable/visitors";
 import SignIn from "../pages/user/authentication/classic/signIn";
 import SignUp from "../pages/user/authentication/classic/signUp";
 import TwoFA from "../pages/user/authentication/classic/twoFA";
+import CheckMail from "../pages/user/authentication/classic/checkMail";
+import EnterEmail from "../pages/user/authentication/classic/resetPassword/enterEmail";
+import CheckEmail from "../pages/user/authentication/classic/resetPassword/checkEmail";
+import ResetPassword from "../pages/user/authentication/classic/resetPassword/resetPassword";
+import PasswordChanged from "../pages/user/authentication/classic/resetPassword/passwordChanges";
 
 import '../globals.css'
 
@@ -143,6 +148,12 @@ const Router = () => {
                 <Route path='/user/authentication/classic/signIn' element={<SignIn />}></Route>
                 <Route path='/user/authentication/classic/signUp' element={<SignUp />}></Route>
                 <Route path='/user/authentication/classic/twoFA' element={<TwoFA />}></Route>
+                <Route path='/user/authentication/classic/checkMail' element={<CheckMail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/enterEmail' element={<EnterEmail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/checkEmail' element={<CheckEmail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/resetPassword' element={<ResetPassword />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/passwordChanged' element={<ResetPassword />}></Route>
+
 
             </Routes>
         </>
