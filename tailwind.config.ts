@@ -116,7 +116,9 @@ const config: Config = {
         'author-bg-3': "url('/src/assets/icon/author-bg-3.svg')",
         'author-bg-4': "url('/src/assets/icon/author-bg-4.svg')",
         'layered-bg': "url('/src/assets/icon/layared-bg.svg')",
-        'authantication-bg': "url('/src/assets/icon/authentication-bg.svg')"
+        'authantication-bg': "url('/src/assets/icon/authentication-bg.svg')",
+        'branded-bg': "url('/src/assets/icon/branded-bg.svg')"
+
       },
     },
   },

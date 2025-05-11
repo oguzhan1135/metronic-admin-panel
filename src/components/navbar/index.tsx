@@ -97,7 +97,6 @@ const Navbar = () => {
         };
     }, []);
     const location = window.location.pathname
-    console.log(location)
     return (
         <div
             className={`flex w-full h-20 px-10 py-8 fixed ${sidebarIsOpen ? "lg:pl-[110px]" : "lg:pl-[320px]"

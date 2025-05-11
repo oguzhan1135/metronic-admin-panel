@@ -72,6 +72,7 @@ import EnterEmail from "../pages/user/authentication/classic/resetPassword/enter
 import CheckEmail from "../pages/user/authentication/classic/resetPassword/checkEmail";
 import ResetPassword from "../pages/user/authentication/classic/resetPassword/resetPassword";
 import PasswordChanged from "../pages/user/authentication/classic/resetPassword/passwordChanges";
+import BrandedSignIn from "../pages/user/authentication/classic/branded/signIn";
 
 import '../globals.css'
 
@@ -152,8 +153,8 @@ const Router = () => {
                 <Route path='/user/authentication/classic/resetPassword/enterEmail' element={<EnterEmail />}></Route>
                 <Route path='/user/authentication/classic/resetPassword/checkEmail' element={<CheckEmail />}></Route>
                 <Route path='/user/authentication/classic/resetPassword/resetPassword' element={<ResetPassword />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/passwordChanged' element={<ResetPassword />}></Route>
-
+                <Route path='/user/authentication/classic/resetPassword/passwordChange' element={<PasswordChanged />}></Route>
+                <Route path='/user/authentication/classic/branded/signIn' element={<BrandedSignIn />}></Route>
 
             </Routes>
         </>

@@ -14,7 +14,7 @@ import Files from '@assets/icon/some-files.svg'
 import Handcart from '@assets/icon/handcart.svg'
 import SidebarLeft from '@assets/icon/black-left-line.svg'
 import MLogo from '@assets/icon/M-logo.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
 import { Link } from 'react-router'
 
@@ -405,7 +405,7 @@ const menuData: MenuItem[] = [
                 label: "Branded",
                 subItems: [
                     {
-                        category: "user", key: "sign-in", label: "Sign In"
+                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/classic/branded/signIn"
                     },
                     {
                         category: "user", key: "sign-up", label: "Sign Up"
@@ -500,6 +500,7 @@ const Sidebar = () => {
     const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
     const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
     const [childSub, setChildSub] = useState<string>("");
+    const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([]);
     const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth } = metronicContext();
 
     const toggleMenuItem = (key: string) => {
@@ -510,6 +511,11 @@ const Sidebar = () => {
         );
     };
 
+    const toggleGrandChildItems = (key: string) => {
+        setActiveGrandChildItems(prev =>
+            prev.includes(key) ? prev.filter(item => item !== key) : [...prev, key]
+        );
+    };
     const toggleSubItems = (key: string) => {
         setActiveSubItems([]);
         setActiveSubItems((prevState) =>
@@ -533,8 +539,6 @@ const Sidebar = () => {
         else if (sidebarWidth === 280) {
             setSidebarWidth(280)
         }
-
-        console.log(sidebarWidth)
     }
     const hoverSidebar = () => {
         if (sidebarIsOpen === true) {
@@ -691,52 +695,84 @@ const Sidebar = () => {
 
 
                                                 {/* Small SubItem */}
-                                                {subMenuItem.subItems &&
-                                                    (
-                                                        <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"
-                                                            }`}>
-                                                            {subMenuItem.subItems.map((childItem, index) => (
+                                                {subMenuItem.subItems && (
+                                                    <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeSubItems.includes(subMenuItem.key) ? "max-h-[500px]" : "max-h-0"}`}>
+                                                        {subMenuItem.subItems.map((childItem, index) => (
+                                                            <div key={index}>
 
-                                                                <div key={index}>
-                                                                    {
-                                                                        childItem.path ?
-                                                                            <Link to={childItem.path} onClick={() => childSubItemTrigger(childItem.key)}
-                                                                                className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                    ? 'selectedItem'
-                                                                                    : 'unSelectedItem'
-                                                                                    }`}>
-                                                                                <span
-                                                                                    className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                        ? 'dotActive ml-[7px]'
-                                                                                        : 'dotInActive ml-[7px]'
-                                                                                        }`}
-                                                                                ></span>
-                                                                                <span className="itemDotLine left-[21.25px]"></span>
-                                                                                <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
-                                                                            </Link>
-                                                                            :
-                                                                            <>
-                                                                                <div onClick={() => childSubItemTrigger(childItem.key)}
-                                                                                    key={childItem.key} className={`subItem gap-2 hover: group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                        ? 'selectedItem'
-                                                                                        : 'unSelectedItem'
-                                                                                        }`}>
-                                                                                    <span
-                                                                                        className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key
-                                                                                            ? 'dotActive ml-[7px]'
-                                                                                            : 'dotInActive ml-[7px]'
-                                                                                            }`}
-                                                                                    ></span>
-                                                                                    <span className="itemDotLine left-[21.25px]"></span>
-                                                                                    <span className='group-hover:text-primary transition-colors'>{childItem.label}</span>
-                                                                                </div>
-                                                                            </>
-                                                                    }
-                                                                </div>
-                                                            ))}
-                                                            <span className="itemDotLine  top-0 left-[0px]"></span>
-                                                        </div>
-                                                    )}
+                                                                {/* Child Items */}
+                                                                {childItem.path ? (
+                                                                    <Link
+                                                                        to={childItem.path}
+                                                                        onClick={() => childSubItemTrigger(childItem.key)}
+                                                                        className={`subItem gap-2 hover:group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key ? 'selectedItem' : 'unSelectedItem'}`}
+                                                                    >
+                                                                        <span className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key ? 'dotActive ml-[7px]' : 'dotInActive ml-[7px]'}`}></span>
+                                                                        <span className="itemDotLine left-[21.25px]"></span>
+                                                                        <span className="group-hover:text-primary transition-colors">{childItem.label}</span>
+                                                                    </Link>
+                                                                ) : (
+                                                                    <div
+                                                                        onClick={() => {
+                                                                            childSubItemTrigger(childItem.key)
+                                                                            toggleGrandChildItems(childItem.key)
+                                                                        }}
+                                                                        className={`subItem flex flex-row items-center justify-between gap-2 hover:group cursor-pointer ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key ? 'selectedItem' : 'unSelectedItem'}`}
+                                                                    >
+                                                                        <div className="flex flex-row items-center gap-2">
+                                                                            <span className={`dot ${activeSubItems.includes(subMenuItem.key) && childSub === childItem.key ? 'dotActive ml-[7px]' : 'dotInActive ml-[7px]'}`}></span>
+                                                                            <span className="itemDotLine left-[21.25px]"></span>
+                                                                            <span className="group-hover:text-primary transition-colors">{childItem.label}</span>
+                                                                        </div>
+                                                                        {childItem.subItems && (
+                                                                            <img src={activeGrandChildItems.includes(childItem.key) ? Minus : Plus} alt="toggle-icon" />
+                                                                        )}
+                                                                    </div>
+                                                                )}
+
+                                                                {/* GrandChild Items */}
+                                                                {childItem.subItems && (
+                                                                    <div className={`overflow-hidden ml-[10.5px] relative transition-all duration-500 ease-in-out ${activeGrandChildItems.includes(childItem.key) ? "max-h-[500px]" : "max-h-0"}`}>
+                                                                        {childItem.subItems.map((grandChild) => (
+                                                                            <div key={grandChild.key}>
+                                                                                {
+                                                                                    grandChild.path ? (
+                                                                                        <Link
+                                                                                            key={grandChild.key}
+                                                                                            to={grandChild.path}
+                                                                                            className="flex flex-row justify-between items-center hover:group cursor-pointer"
+                                                                                        >
+                                                                                            <div className={`subItem w-full ${activeSubItems.includes(grandChild.key) ? 'selectedItem' : 'unSelectedItem'}`}>
+                                                                                                <span className={`dot ${activeSubItems.includes(grandChild.key) ? 'dotActive' : 'dotInActive'}`}></span>
+                                                                                                <span className="itemDotLine"></span>
+                                                                                                <span className="group-hover:text-primary transition-colors">{grandChild.label}</span>
+                                                                                            </div>
+                                                                                        </Link>
+                                                                                    ) : (
+                                                                                        <div
+                                                                                            key={grandChild.key}
+                                                                                            className="flex flex-row justify-between items-center cursor-not-allowed opacity-50"
+                                                                                        >
+                                                                                            <div className={`subItem w-full unSelectedItem`}>
+                                                                                                <span className="dot dotInActive"></span>
+                                                                                                <span className="itemDotLine"></span>
+                                                                                                <span>{grandChild.label}</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    )
+                                                                                }
+                                                                            </div>
+
+
+                                                                        ))}
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        ))}
+                                                        <span className="itemDotLine top-0 left-[0px]"></span>
+                                                    </div>
+                                                )}
+
                                             </div>
                                         ))}
                                     </div>
