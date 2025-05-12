@@ -1,17 +1,12 @@
 import { Link } from "react-router"
-import Card from "../../../../../components/card/card"
 import { FcGoogle } from "react-icons/fc"
 import { ImAppleinc } from "react-icons/im"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
-import MetronicIcon from "../../../../../assets/icon/M-logo.svg"
-import ConnectionsCard from '../../../../../assets/icon/connections.svg'
-import GitlabCard from '../../../../../assets/icon/gitlabCard.svg'
-import AppearanceCard from '../../../../../assets/icon/appearanceCard.svg'
-import IntegrationsCard from '../../../../../assets/icon/integrationsCard.svg'
-import BrandingCard from '../../../../../assets/icon/brandingCard.svg'
+import Branded from "../../../../../components/authentication/branded"
+import Card from "../../../../../components/card/card"
 
-const BrandedSignIn = () => {
+const BrandedEnterEmail = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -24,7 +19,7 @@ const BrandedSignIn = () => {
                         <form action="#" className="flex flex-col gap-[30px] p-10">
                             <div className="flex flex-col gap-2.5 items-center">
                                 <h3 className="text-b-18-18-500 text-gray-900">Sign in</h3>
-                                <span className="text-b-13-14-400 text-gray-700">Need a account? <Link to={"/user/authentication/classic/signUp"} className="text-primary text-b-13-14-400">Sign up</Link></span>
+                                <span className="text-b-13-14-400 text-gray-700">Need a account? <Link to={"/user/authentication/branded/signUp"} className="text-primary text-b-13-14-400">Sign up</Link></span>
                             </div>
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-row items-center gap-2.5">
@@ -46,18 +41,18 @@ const BrandedSignIn = () => {
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900">Email</span>
                                     <div className="border py-[13px] px-3 rounded-md bg-ligh-active">
-                                        <input type="text" className="outline-none border-none w-full text-b-13-14-400 text-gray-800" placeholder="email@email.com" />
+                                        <input type="text" className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent" placeholder="email@email.com" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <div className="flex flex-row justify-between items-center">
                                         <span className="text-b-13-14-400 text-gray-900">Password</span>
-                                        <Link to={"/user/authentication/classsic/resetPassword"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
+                                        <Link to={"/user/authentication/branded/resetPassword/enterEmail"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
                                     </div>
                                     <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
                                         <input
                                             type={isOpen ? "text" : "password"}
-                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800"
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Enter a password"
                                         />
                                         {isOpen ? (
@@ -85,37 +80,8 @@ const BrandedSignIn = () => {
                     </>
                 }
             />
-            <Card
-                dotStatus={false}
-                buttonStatus={false}
-                content={
-                    <>
-                        <div className="flex flex-col gap-[30px] pt-[30px] overflow-hidden bg-branded-bg bg-contain">
-                            <div className="flex flex-col gap-5 px-[30px]">
-                                <Link to={"/"}>
-                                    <img src={MetronicIcon} alt="m" className="size-10" />
-                                </Link>
-
-                                <h3 className="text-h-24-24-600 text-gray-900">Secure Access Portal</h3>
-                                <p className="text-gray-700">A robust authentication gateway ensuring secure <b className="text-gray-900">efficient user access</b> to the Metronic Dashboard interface.</p>
-                            </div>
-                            <div className="flex flex-col gap-[30px]">
-                                <div className="md:flex hidden flex-row items-end ">
-                                    <img src={ConnectionsCard} alt="" />
-                                    <img src={GitlabCard} alt="" />
-                                    <img src={AppearanceCard} alt="" />
-                                </div>
-                                <div className="md:flex hidden flex-row items-end ">
-                                    <img src={BrandingCard} alt="" />
-                                    <img src={IntegrationsCard} alt="" />
-                                </div>
-                            </div>
-
-                        </div>
-                    </>
-                }
-            />
+            <Branded />
         </div>
     )
 }
-export default BrandedSignIn
+export default BrandedEnterEmail

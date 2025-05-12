@@ -72,7 +72,19 @@ import EnterEmail from "../pages/user/authentication/classic/resetPassword/enter
 import CheckEmail from "../pages/user/authentication/classic/resetPassword/checkEmail";
 import ResetPassword from "../pages/user/authentication/classic/resetPassword/resetPassword";
 import PasswordChanged from "../pages/user/authentication/classic/resetPassword/passwordChanges";
-import BrandedSignIn from "../pages/user/authentication/classic/branded/signIn";
+import BrandedSignIn from "../pages/user/authentication/branded/signIn";
+import BrandedSignUp from "../pages/user/authentication/branded/signUp";
+import BrandedTwoFA from "../pages/user/authentication/branded/twoFA";
+import BrandedCheckEmail from "../pages/user/authentication/branded/checkEmail";
+import BrandedEnterEmail from "../pages/user/authentication/branded/resetPassword/enterEmail";
+import BrandedCheckEmailReset from "../pages/user/authentication/branded/resetPassword/checkEmail";
+import BrandedResetPassword from "../pages/user/authentication/branded/resetPassword/resetPassword";
+import BrandedChangedPassword from "../pages/user/authentication/branded/resetPassword/changedPassword";
+import Error404 from "../pages/user/authentication/error404";
+import Error500 from "../pages/user/authentication/error500";
+import WelcomeModal from "../pages/user/authentication/welcome";
+import AccountDeactivatedModal from "../pages/user/authentication/accountDeactivated";
+
 
 import '../globals.css'
 
@@ -152,9 +164,20 @@ const Router = () => {
                 <Route path='/user/authentication/classic/checkMail' element={<CheckMail />}></Route>
                 <Route path='/user/authentication/classic/resetPassword/enterEmail' element={<EnterEmail />}></Route>
                 <Route path='/user/authentication/classic/resetPassword/checkEmail' element={<CheckEmail />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/resetPassword' element={<ResetPassword />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/passwordChange' element={<PasswordChanged />}></Route>
-                <Route path='/user/authentication/classic/branded/signIn' element={<BrandedSignIn />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/passwordChange' element={<ResetPassword />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/passwordChanged' element={<PasswordChanged />}></Route>
+                <Route path='/user/authentication/branded/signIn' element={<BrandedSignIn />}></Route>
+                <Route path='/user/authentication/branded/signUp' element={<BrandedSignUp />}></Route>
+                <Route path='/user/authentication/branded/twoFA' element={<BrandedTwoFA />}></Route>
+                <Route path='/user/authentication/branded/checkEmail' element={<BrandedCheckEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/enterEmail' element={<BrandedEnterEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/checkEmail' element={<BrandedCheckEmailReset />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/changePassword' element={<BrandedResetPassword />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/changedPassword' element={<BrandedChangedPassword />}></Route>
+                <Route path='/user/authentication/error404' element={<Error404 />}></Route>
+                <Route path='/user/authentication/error500' element={<Error500 />}></Route>
+                <Route path='/user/authentication/welcomeMessage' element={<WelcomeModal />}></Route>
+                <Route path='/user/authentication/accountDeactivatedModal' element={<AccountDeactivatedModal />}></Route>
 
             </Routes>
         </>

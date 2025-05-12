@@ -4,12 +4,13 @@ import { FcGoogle } from "react-icons/fc"
 import { ImAppleinc } from "react-icons/im"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
+import Branded from "../../../../components/authentication/branded"
 
-const SıgnIn = () => {
+const BrandedSignIn = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -18,7 +19,7 @@ const SıgnIn = () => {
                         <form action="#" className="flex flex-col gap-[30px] p-10">
                             <div className="flex flex-col gap-2.5 items-center">
                                 <h3 className="text-b-18-18-500 text-gray-900">Sign in</h3>
-                                <span className="text-b-13-14-400 text-gray-700">Need a account? <Link to={"/user/authentication/classic/signUp"} className="text-primary text-b-13-14-400">Sign up</Link></span>
+                                <span className="text-b-13-14-400 text-gray-700">Need a account? <Link to={"/user/authentication/branded/signUp"} className="text-primary text-b-13-14-400">Sign up</Link></span>
                             </div>
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-row items-center gap-2.5">
@@ -46,7 +47,7 @@ const SıgnIn = () => {
                                 <div className="flex flex-col gap-2">
                                     <div className="flex flex-row justify-between items-center">
                                         <span className="text-b-13-14-400 text-gray-900">Password</span>
-                                        <Link to={"/user/authentication/classsic/resetPassword"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
+                                        <Link to={"/user/authentication/branded/resetPassword/enterEmail"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
                                     </div>
                                     <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
                                         <input
@@ -79,7 +80,8 @@ const SıgnIn = () => {
                     </>
                 }
             />
+            <Branded />
         </div>
     )
 }
-export default SıgnIn
+export default BrandedSignIn

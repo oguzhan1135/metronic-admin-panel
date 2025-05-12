@@ -97,10 +97,17 @@ const Navbar = () => {
         };
     }, []);
     const location = window.location.pathname
+
+    const modalPages = [
+        "/user/publicProfiles/profiles/modal",
+        "/user/myAccount/settingModal",
+        "/user/authentication/welcomeMessage",
+        "/user/authentication/accountDeactivatedModal",
+    ]
     return (
         <div
             className={`flex w-full h-20 px-10 py-8 fixed ${sidebarIsOpen ? "lg:pl-[110px]" : "lg:pl-[320px]"
-                } transition-all duration-500 ease-in-out ${location==="/user/publicProfiles/profiles/modal"?" -z-10":"z-10"}  bg-white`}
+                } transition-all duration-500 ease-in-out ${modalPages.includes(location) ? " -z-10" : "z-10"}  bg-white`}
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />

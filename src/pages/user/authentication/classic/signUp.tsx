@@ -42,18 +42,15 @@ const SignUp = () => {
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900">Email</span>
                                     <div className="border py-[13px] px-3 rounded-md bg-ligh-active">
-                                        <input type="text" className="outline-none border-none w-full text-b-13-14-400 text-gray-800" placeholder="email@email.com" />
+                                        <input type="text" className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent" placeholder="email@email.com" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <div className="flex flex-row justify-between items-center">
-                                        <span className="text-b-13-14-400 text-gray-900">Password</span>
-                                        <Link to={"/user/authentication/classsic/resetPassword"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
-                                    </div>
+                                    <span className="text-b-13-14-400 text-gray-900">Password</span>
                                     <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
                                         <input
                                             type={isOpenPassword ? "text" : "password"}
-                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800"
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Enter a password"
                                         />
                                         {isOpenPassword ? (
@@ -70,14 +67,11 @@ const SignUp = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <div className="flex flex-row justify-between items-center">
-                                        <span className="text-b-13-14-400 text-gray-900">Confirm Password</span>
-                                        <Link to={"/user/authentication/classsic/resetPassword"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
-                                    </div>
+                                    <span className="text-b-13-14-400 text-gray-900">Confirm Password</span>
                                     <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
                                         <input
                                             type={isOpenConfirmPassword ? "text" : "password"}
-                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800"
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Re-enter Password"
                                         />
                                         {isOpenConfirmPassword ? (

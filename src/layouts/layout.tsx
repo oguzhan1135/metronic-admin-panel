@@ -7,8 +7,12 @@ import { useLocation } from 'react-router-dom';
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { sidebarIsOpen } = metronicContext();
   const location = useLocation();
+  const pathname = location.pathname;
+  const isErrorPage = pathname === "/user/authentication/error404";
+  const isWelcomeMessagePage = pathname === "/user/authentication/welcomeMessage";
+  const isAccountDeactivatedModalPage = pathname === "/user/authentication/accountDeactivatedModal";
 
-  const isAuthPage = location.pathname.startsWith("/user/authentication");
+  const isAuthPage = pathname.startsWith("/user/authentication") && !isErrorPage && !isWelcomeMessagePage && !isAccountDeactivatedModalPage;
 
   return (
     <div className="flex flex-row">

@@ -165,7 +165,7 @@ const Modal = () => {
             </div>
             <ModalContent>
                 <div className="flex flex-col px-10 py-[30px] gap-[30px]">
-                    <div className="flex flex-row items-center justify-between md:flex  hidden">
+                    <div className="md:flex flex-row items-center justify-between hidden">
                         <div className="flex flex-col gap-[14px] ">
                             <h1 className='text-gray-900 text-h-24-24-600'>Settings - With Sidebar</h1>
                             <span className='text-b-14-14-400 text-gray-700'>Intuitive Access to In-Depth Customization</span>

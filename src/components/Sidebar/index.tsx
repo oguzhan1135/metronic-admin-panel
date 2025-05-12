@@ -14,7 +14,7 @@ import Files from '@assets/icon/some-files.svg'
 import Handcart from '@assets/icon/handcart.svg'
 import SidebarLeft from '@assets/icon/black-left-line.svg'
 import MLogo from '@assets/icon/M-logo.svg'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
 import { Link } from 'react-router'
 
@@ -390,10 +390,10 @@ const menuData: MenuItem[] = [
                                 category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/resetPassword/checkEmail"
                             },
                             {
-                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/classic/resetPassword/changeEmail"
+                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/classic/resetPassword/passwordChange"
                             },
                             {
-                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/classic/resetPassword/passwordChange"
+                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/classic/resetPassword/passwordChanged"
                             }
                         ]
                     },
@@ -405,16 +405,16 @@ const menuData: MenuItem[] = [
                 label: "Branded",
                 subItems: [
                     {
-                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/classic/branded/signIn"
+                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/branded/signIn"
                     },
                     {
-                        category: "user", key: "sign-up", label: "Sign Up"
+                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/branded/signUp"
                     },
                     {
-                        category: "user", key: "2fa", label: "2FA"
+                        category: "user", key: "2fa", label: "2FA", path: "/user/authentication/branded/twoFA"
                     },
                     {
-                        category: "user", key: "check-email", label: "Check Email"
+                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/checkEmail"
                     },
                     {
                         category: "user",
@@ -422,32 +422,32 @@ const menuData: MenuItem[] = [
                         label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "enter-email", label: "Enter Email"
+                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/branded/resetPassword/enterEmail"
                             },
                             {
-                                category: "user", key: "check-email", label: "Check Email"
+                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/resetPassword/checkEmail"
                             },
                             {
-                                category: "user", key: "change-password", label: "Change Password"
+                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/branded/resetPassword/changePassword"
                             },
                             {
-                                category: "user", key: "password-changed", label: "Password Changed"
+                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/branded/resetPassword/changedPassword"
                             }
                         ]
                     },
                 ]
             },
             {
-                category: "user", key: "welcome-message", label: "Welcome Message"
+                category: "user", key: "welcome-message", label: "Welcome Message", path: "/user/authentication/welcomeMessage"
             },
             {
-                category: "user", key: "account-deactivated", label: "Account"
+                category: "user", key: "account-deactivated", label: "Account", path: "/user/authentication/accountDeactivatedModal"
             },
             {
-                category: "user", key: "error-404", label: "Error 404"
+                category: "user", key: "error-404", label: "Error 404", path: "/user/authentication/error404"
             },
             {
-                category: "user", key: "error-500", label: "Error 500"
+                category: "user", key: "error-500", label: "Error 500", path: "/user/authentication/error500"
             }
 
         ],
@@ -563,10 +563,17 @@ const Sidebar = () => {
 
         }
     }
+
+    const modalPages = [
+        "/user/publicProfiles/profiles/modal",
+        "/user/myAccount/settingModal",
+        "/user/authentication/welcomeMessage",
+        "/user/authentication/accountDeactivatedModal",
+    ]
     const { modalOpen, settingModalOpen } = metronicContext();
     const location = window.location.pathname
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && location === "/user/publicProfiles/profiles/modal") || (settingModalOpen === true && location === "/user/myAccount/accountHome/settingModal") ? "-z-10" : "z-50"}
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && modalPages.includes(location)) || (settingModalOpen === true && modalPages.includes(location)) ? "-z-10" : "z-50"}
 
  `}>
             <div className="px-5 py-[30px] flex relative ">

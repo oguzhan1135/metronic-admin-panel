@@ -4,12 +4,14 @@ import { FcGoogle } from "react-icons/fc"
 import { ImAppleinc } from "react-icons/im"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
+import Branded from "../../../../components/authentication/branded"
 
-const SıgnIn = () => {
+const BrandedSignUp = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenPassword, setIsOpenPassword] = useState(false);
+    const [isOpenConfirmPassword, setIsOpenConfirmPassword] = useState(false);
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -17,8 +19,8 @@ const SıgnIn = () => {
                     <>
                         <form action="#" className="flex flex-col gap-[30px] p-10">
                             <div className="flex flex-col gap-2.5 items-center">
-                                <h3 className="text-b-18-18-500 text-gray-900">Sign in</h3>
-                                <span className="text-b-13-14-400 text-gray-700">Need a account? <Link to={"/user/authentication/classic/signUp"} className="text-primary text-b-13-14-400">Sign up</Link></span>
+                                <h3 className="text-b-18-18-500 text-gray-900">Sign up</h3>
+                                <span className="text-b-13-14-400 text-gray-700">Already have an Account? <Link to={"/user/authentication/branded/signIn"} className="text-primary text-b-13-14-400">Sign in</Link></span>
                             </div>
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-row items-center gap-2.5">
@@ -44,42 +46,61 @@ const SıgnIn = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <div className="flex flex-row justify-between items-center">
-                                        <span className="text-b-13-14-400 text-gray-900">Password</span>
-                                        <Link to={"/user/authentication/classsic/resetPassword"} className="text-primary text-b-13-14-400">Forgot Password?</Link>
-                                    </div>
+                                    <span className="text-b-13-14-400 text-gray-900">Password</span>
                                     <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
                                         <input
-                                            type={isOpen ? "text" : "password"}
+                                            type={isOpenPassword ? "text" : "password"}
                                             className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Enter a password"
                                         />
-                                        {isOpen ? (
+                                        {isOpenPassword ? (
                                             <IoEyeOutline
                                                 className="size-4 text-gray-500 cursor-pointer"
-                                                onClick={() => setIsOpen(false)}
+                                                onClick={() => setIsOpenPassword(false)}
                                             />
                                         ) : (
                                             <IoEyeOffOutline
                                                 className="size-4 text-gray-500 cursor-pointer"
-                                                onClick={() => setIsOpen(true)}
+                                                onClick={() => setIsOpenPassword(true)}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-b-13-14-400 text-gray-900">Confirm Password</span>
+                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
+                                        <input
+                                            type={isOpenConfirmPassword ? "text" : "password"}
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
+                                            placeholder="Re-enter Password"
+                                        />
+                                        {isOpenConfirmPassword ? (
+                                            <IoEyeOutline
+                                                className="size-4 text-gray-500 cursor-pointer"
+                                                onClick={() => setIsOpenConfirmPassword(false)}
+                                            />
+                                        ) : (
+                                            <IoEyeOffOutline
+                                                className="size-4 text-gray-500 cursor-pointer"
+                                                onClick={() => setIsOpenConfirmPassword(true)}
                                             />
                                         )}
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center gap-[6px]">
                                     <input type="checkbox" name="remember" id="remember" className="size-[18px]" />
-                                    <span className="text-b-13-14-500 text-gray-800">Remember me</span>
+                                    <span className="text-b-13-14-500 text-gray-800">I accept  <Link to={location} className="text-primary text-b-13-14-500">Terms & Conditions</Link></span>
                                 </div>
                                 <button className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
-                                    Sign In
+                                    Sign Up
                                 </button>
                             </div>
                         </form>
                     </>
                 }
             />
+            <Branded />
         </div>
     )
 }
-export default SıgnIn
+export default BrandedSignUp
