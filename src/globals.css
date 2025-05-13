@@ -47,3 +47,82 @@
     @apply transition-all ease-in-out duration-200 cursor-pointer
   }
   scroll-behavior: smooth;
+
+  :root {
+  --color-primary: #1B84FF;
+  --color-primary-active: #056EE9;
+  --color-primary-clarity: #1B84FF;
+  --color-primary-light: #EFF6FF;
+
+  --color-success: #17C653;
+  --color-success-active: #17C653;
+  --color-success-clarity: #17C653;
+  --color-success-light: #EAFFF1;
+
+  --color-danger: #F8285A;
+  --color-danger-active: #D81A48;
+  --color-danger-clarity: #F8285A;
+  --color-danger-light: #FFEEF3;
+
+  --color-info: #7239EA;
+  --color-info-active: #5014D0;
+  --color-info-clarity: #7239EA;
+  --color-info-light: #F8F5FF;
+
+  --color-warning: #F6B100;
+  --color-warning-active: #DFA000;
+  --color-warning-clarity: #F6B100;
+  --color-warning-light: #FFF8DD;
+
+  --color-light-active: #FCFCFC;
+
+  --color-gray-100: #F9F9F9;
+  --color-gray-200: #F1F1F4;
+  --color-gray-300: #DBDFE9;
+  --color-gray-400: #C4CADA;
+  --color-gray-500: #99A1B7;
+  --color-gray-600: #78829D;
+  --color-gray-700: #4B5675;
+  --color-gray-800: #252F4A;
+  --color-gray-900: #071437;
+}
+
+.dark {
+  --color-primary: #006AE6;
+  --color-primary-active: #107EFF;
+  --color-primary-clarity: #006AE6;
+  --color-primary-light: #172331;
+
+  --color-success: #00A261;
+  --color-success-active: #01BF73;
+  --color-success-clarity: #00A261;
+  --color-success-light: #1F2623;
+
+  --color-danger: #E42855;
+  --color-danger-active: #FF3767;
+  --color-danger-clarity: #E42855;
+  --color-danger-light: #302024;
+
+  --color-info: #883FFF;
+  --color-info-active: #9E63FF;
+  --color-info-clarity: #883FFF;
+  --color-info-light: #272134;
+
+  --color-warning: #C59A00;
+  --color-warning-active: #C59A00;
+  --color-warning-clarity: #C59A00;
+  --color-warning-light: #242320;
+
+  --color-light-active: #0F0F0F;
+
+  --color-gray-100: #1B1C22;
+  --color-gray-200: #26272F;
+  --color-gray-300: #363843;
+  --color-gray-400: #464852;
+  --color-gray-500: #636674;
+  --color-gray-600: #808290;
+  --color-gray-700: #9A9CAE;
+  --color-gray-800: #B5B7C8;
+  --color-gray-900: #F5F5F5;
+}
+

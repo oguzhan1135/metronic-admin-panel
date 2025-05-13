@@ -2,9 +2,10 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./index.html",               // Ana HTML dosyasını tara
-    "./src/**/*.{js,ts,jsx,tsx}", // src klasöründeki tüm dosyaları tara
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       spacing: {
@@ -75,38 +76,42 @@ const config: Config = {
         'b-9-10-600': ['9px', { lineHeight: '10px', letterSpacing: '-3', fontWeight: '600' }],
       },
       colors: {
-        'primary': '#1B84FF',
-        'primary-active': '#056EE9',
-        'primary-clarity': '#1B84FF',
-        'primary-light': '#EFF6FF',
-        'success': '#17C653',
-        'success-active': '#17C653',
-        'success-clarity': '#17C653',
-        'success-light': '#EAFFF1',
-        'danger': '#F8285A',
-        'danger-active': '#D81A48',
-        'danger-clarity': '#F8285A',
-        'danger-light': '#FFEEF3',
-        'info': '#7239EA',
-        'info-active': '#5014D0',
-        'info-clarity': '#7239EA',
-        'info-light': '#F8F5FF',
-        'warning': '#F6B100',
-        'warning-active': '#DFA000',
-        'warning-clarity': '#F6B100',
-        'warning-light': '#FFF8DD',
-        'ligh-active': '#FCFCFC',
+        primary: 'var(--color-primary)',
+        'primary-active': 'var(--color-primary-active)',
+        'primary-clarity': 'var(--color-primary-clarity)',
+        'primary-light': 'var(--color-primary-light)',
 
-        'gray-100': '#F9F9F9',
-        'gray-200': '#F1F1F4',
-        'gray-300': '#DBDFE9',
-        'gray-400': '#C4CADA',
-        'gray-500': '#99A1B7',
-        'gray-600': '#78829D',
-        'gray-700': '#4B5675',
-        'gray-800': '#252F4A',
-        'gray-900': '#071437',
+        success: 'var(--color-success)',
+        'success-active': 'var(--color-success-active)',
+        'success-clarity': 'var(--color-success-clarity)',
+        'success-light': 'var(--color-success-light)',
 
+        danger: 'var(--color-danger)',
+        'danger-active': 'var(--color-danger-active)',
+        'danger-clarity': 'var(--color-danger-clarity)',
+        'danger-light': 'var(--color-danger-light)',
+
+        info: 'var(--color-info)',
+        'info-active': 'var(--color-info-active)',
+        'info-clarity': 'var(--color-info-clarity)',
+        'info-light': 'var(--color-info-light)',
+
+        warning: 'var(--color-warning)',
+        'warning-active': 'var(--color-warning-active)',
+        'warning-clarity': 'var(--color-warning-clarity)',
+        'warning-light': 'var(--color-warning-light)',
+
+        'light-active': 'var(--color-light-active)',
+
+        'gray-100': 'var(--color-gray-100)',
+        'gray-200': 'var(--color-gray-200)',
+        'gray-300': 'var(--color-gray-300)',
+        'gray-400': 'var(--color-gray-400)',
+        'gray-500': 'var(--color-gray-500)',
+        'gray-600': 'var(--color-gray-600)',
+        'gray-700': 'var(--color-gray-700)',
+        'gray-800': 'var(--color-gray-800)',
+        'gray-900': 'var(--color-gray-900)',
       },
       backgroundImage: {
         'map': "url('/src/assets/icon/background-map.svg')",
@@ -120,6 +125,7 @@ const config: Config = {
         'branded-bg': "url('/src/assets/icon/branded-bg.svg')"
 
       },
+
     },
   },
   plugins: [],

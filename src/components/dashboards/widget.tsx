@@ -7,7 +7,7 @@ interface WidgetProps {
 
 const Widget: React.FC<WidgetProps> = ({ image, name, count }) => {
     return (
-        <div className="p-5 rounded-xl  flex flex-col gap-[30px] h-max border border-gray-300 w-full ">
+        <div className="p-5 rounded-xl  flex flex-col gap-[30px] h-max border w-full ">
             <img className="w-7 h-7" src={image} alt="" />
             <div className="flex flex-col gap-2 h-max ">
                 <div className=" text-h-30-30-600 text-gray-900">

@@ -36,7 +36,7 @@ const Dashboard = () => {
 
     }, [])
     return (
-        
+
         <div className={``}>
             <div className="flex flex-col">
                 <div className="flex flex-row flex-wrap gap-5 items-center justify-between pb-10">
@@ -44,7 +44,7 @@ const Dashboard = () => {
                         <h1 className=" text-gray-900 text-b-20-20-500">
                             Dashboard
                         </h1>
-                        <span className="text-b-14-14-400 text-gray-700">Central Hub for Personal Customization</span>
+                        <span className="dark text-b-14-14-400 text-gray-700">Central Hub for Personal Customization</span>
                     </div>
 
                     <Link to={"/user/publicProfiles/profiles/default"} className="px-3 py-2.5 rounded-md border border-gray-300 flex justify-center hover: group">
@@ -115,7 +115,7 @@ const Dashboard = () => {
                                 <div onClick={() => setHigligts(!highligts)} className="p-2 rounded-md curs cursor-pointer hover:bg-gray-200">
                                     <HiOutlineDotsVertical />
                                 </div>
-                                <CardMore setMore={setHigligts} more={highligts}/>
+                                <CardMore setMore={setHigligts} more={highligts} />
                             </div>
                             <div className="flex flex-col py-5 px-[30px] gap-2">
 

@@ -23,7 +23,9 @@ import FlagGerman from '../../../assets/icon/germany.svg'
 
 
 const User = () => {
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem('theme') === 'dark';
+    });
     const [notification, setNotification] = useState(false)
     const [myAccountSubmenu, setMyAccountSubMenu] = useState(false)
     const [language, setLanguage] = useState([
@@ -54,6 +56,18 @@ const User = () => {
         flag: <img className='size-[18px]' src={FlagUSA} />
     })
     const [languageSubMenu, setLanguageSubMenu] = useState(false)
+
+    const toggleDarkMode = () => {
+        const newTheme = darkMode ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+
+        if (newTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    };
+
 
     return (
         <div className="absolute top-12 right-0 w-64">
@@ -211,7 +225,7 @@ const User = () => {
                         <FaMoon className='dropdown-icon' />
                         <span className='text-gray-800 text-b-13-14-400'>Dark Mode</span>
                     </div>
-                    <Switch status={darkMode} setSwitch={() => setDarkMode(!darkMode)} size='small' />
+                    <Switch status={darkMode} setSwitch={() => {setDarkMode(!darkMode); toggleDarkMode()}} size='small' />
 
 
                 </div>
