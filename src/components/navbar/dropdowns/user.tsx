@@ -71,7 +71,7 @@ const User = () => {
 
     return (
         <div className="absolute top-12 right-0 w-64">
-            <div className="flex bg-white rounded-xl border-gray-300 border  flex-col">
+            <div className="flex bg-white dark:bg-coal-300 rounded-xl border-gray-300 border  flex-col">
                 <div className="border-b-2 ">
                     <div className="flex justify-between items-center p-5">
 
@@ -121,7 +121,7 @@ const User = () => {
                         </div>
 
                         {myAccountSubmenu && (
-                            <div className="absolute w-56 flex right-[254px] -top-14 rounded-xl bg-white border">
+                            <div className="absolute w-56 flex right-[254px] -top-14 rounded-xl bg-white dark:bg-coal-300 border">
                                 <div className="flex flex-col w-full">
                                     <div className="flex flex-col p-3 border-b w-full">
                                         <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
@@ -193,7 +193,7 @@ const User = () => {
                         </div>
                         {
                             languageSubMenu && (
-                                <div className="absolute w-44 flex  right-[254px] -top-0 rounded-xl bg-white border flex-col py-2">
+                                <div className="absolute w-44 flex  right-[254px] -top-0 rounded-xl bg-white dark:bg-coal-300 border flex-col py-2">
                                     {
                                         language.map((item) => (
                                             <div className="px-2 w-full" onClick={() => setSelectedLanguage({ language: item.language, flag: item.flag })}>
@@ -225,7 +225,7 @@ const User = () => {
                         <FaMoon className='dropdown-icon' />
                         <span className='text-gray-800 text-b-13-14-400'>Dark Mode</span>
                     </div>
-                    <Switch status={darkMode} setSwitch={() => {setDarkMode(!darkMode); toggleDarkMode()}} size='small' />
+                    <Switch status={darkMode} setSwitch={() => { setDarkMode(!darkMode); toggleDarkMode() }} size='small' />
 
 
                 </div>

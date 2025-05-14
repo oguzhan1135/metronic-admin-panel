@@ -45,10 +45,9 @@ const DropdownApps = () => {
             )
         );
     };
-    const [appSwitch, setAppSwitch] = useState(false)
     return (
         <div className="absolute  top-12 right-20 w-80">
-            <div className="flex bg-white rounded-xl border-gray-300 border  flex-col">
+            <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-300 border  flex-col">
                 <div className=" px-5 py-3 border-b">
                     <div className="flex flex-row items-center justify-between">
                         <span className="text-gray-700 text-b-11-12-400">Apps</span>

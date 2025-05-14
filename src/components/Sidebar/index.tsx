@@ -1,4 +1,5 @@
 import MetronicLogo from '@assets/icon/metronic-logo.svg'
+import MetronicDarkLogo from '@assets/icon/metronic-dark-logo.svg'
 import Plus from '@assets/icon/plus.svg'
 import Minus from '@assets/icon/minus.svg'
 import Profile_Circle from '@assets/icon/profile-circle.svg'
@@ -573,14 +574,14 @@ const Sidebar = () => {
     const { modalOpen, settingModalOpen } = metronicContext();
     const location = window.location.pathname
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed  border-r-grey-500 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && modalPages.includes(location)) || (settingModalOpen === true && modalPages.includes(location)) ? "-z-10" : "z-50"}
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && modalPages.includes(location)) || (settingModalOpen === true && modalPages.includes(location)) ? "-z-10" : "z-50"}
 
  `}>
             <div className="px-5 py-[30px] flex relative ">
                 <div onClick={() => {
                     handleSideBar()
                     setSidebarIsOpen(!sidebarIsOpen)
-                }} className="flex items-center justify-center  size-[30px] rounded-lg border border-gray-200 dark:border-gray-300 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white"
+                }} className="flex items-center justify-center cursor-pointer  size-[30px] rounded-lg border border-gray-200 dark:border-gray-100 bg-light text-gray-500 hover:text-gray-700 toggle absolute start-full top-2/4 -translate-x-2/4 -translate-y-2/4 rtl:translate-x-2/4 z-50 bg-white dark:bg-coal-500"
                     style={{ zIndex: 100000 }} >
                     <img src={SidebarLeft} className='size-5' alt="sidebaf-left-icon" />
 
@@ -588,7 +589,12 @@ const Sidebar = () => {
                 {
                     sidebarWidth == 280 ?
                         <>
-                            <img src={MetronicLogo} alt="Metronic-Logo" className='' />
+                            {
+                                localStorage.getItem("theme") === "dark" ?
+                                    <img src={MetronicDarkLogo} alt="Metronic-Logo" className='' /> :
+                                    <img src={MetronicLogo} alt="Metronic-Logo" className='' />
+                            }
+
                         </> :
                         <><img src={MLogo} alt="logo" /></>
                 }

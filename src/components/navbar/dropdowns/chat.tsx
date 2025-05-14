@@ -13,7 +13,7 @@ import Adam from '../../../assets/icon/tyler-hero.svg'
 import { useState } from "react"
 
 interface ChatProps {
-    closeDropdowns: () => void; 
+    closeDropdowns: () => void;
 }
 const Chat = ({ closeDropdowns }: ChatProps) => {
 
@@ -21,18 +21,18 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
     const [decline, setDecline] = useState(true)
     return (
         <div className="absolute  top-12 right-32 w-[420px]">
-            <div className="flex bg-white rounded-xl border-gray-300 border  flex-col">
-                <div className=" pl-5 pr-2.5 py-3 border-b">
+            <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-200 border  flex-col">
+                <div className=" pl-5 pr-2.5 py-3 border-b border-b-gray-200">
                     <div className="flex flex-row items-center justify-between">
                         <span className="text-gray-900 text-b-14-14-600">Chat</span>
-                        <div onClick={()=> closeDropdowns()} className="p-2 hover:bg-gray-200 flex items-center justify-center rounded-md cursor-pointer duration-200">
-                            <IoMdClose  className=" text-gray-600 size-5" />
+                        <div onClick={() => closeDropdowns()} className="p-2 hover:bg-gray-200 flex items-center justify-center rounded-md cursor-pointer duration-200">
+                            <IoMdClose className=" text-gray-600 size-5" />
                         </div>
 
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex flex-row items-center justify-between pl-5 pr-2.5 py-2.5 border-b">
+                    <div className="flex flex-row items-center justify-between pl-5 pr-2.5 py-2.5 border-b border-b-gray-200">
                         <div className=" flex flex-row items-center gap-2.5">
                             <img src={Gitlab} alt="" className="size-11" />
                             <div className="flex flex-col gap-[7px]">
@@ -175,12 +175,12 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
                             </div>
                         }
                         <div className="px-5 pt-5">
-                            <div className="px-2.5 border py-2.5 rounded-md">
+                            <div className="px-2.5 border border-gray-200 py-2.5 rounded-md">
                                 <div className="flex flex-row items-center gap-2.5">
                                     <img src={Cody} alt="" />
                                     <input
                                         type="text"
-                                        className="outline-none text-b-11-12-400 text-gray-600 flex w-full"
+                                        className="outline-none text-b-11-12-400 text-gray-600 flex w-full bg-transparent"
                                         placeholder="Write a message"
                                     />
                                     <IoMdExit className="text-gray-600 -rotate-90 size-[30px]" />

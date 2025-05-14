@@ -29,10 +29,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         ) : (
           <>
             <Sidebar />
-            <div className="flex flex-col gap-40 w-full overflow-hidden bg-white dark:bg-black transition-all duration-500">
+            <div className="flex flex-col gap-40 w-full overflow-hidden bg-white dark:bg-coal-500 transition-all duration-500">
               <Header />
               <main
-                className={`bg-transparent px-10 py-24 bg-white dark:bg-black transition-all duration-500 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'} transition-all w-full duration-500 ease-in-out z-0`}
+                className={`bg-transparent px-10 py-24 bg-white dark:bg-coal-500 transition-all duration-500 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'} transition-all w-full duration-500 ease-in-out z-0`}
               >
                 {children}
               </main>

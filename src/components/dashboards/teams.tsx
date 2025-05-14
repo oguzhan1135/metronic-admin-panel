@@ -113,7 +113,7 @@ const Teams = () => {
             <div className="flex flex-col overflow-hidden ">
                 <div className="border-b">
                     <div className="flex flex-row items-center justify-between py-3 px-5">
-                        <span className="text-gray-900 text-b-16-16-600">Teams</span>
+                        <h3 className="text-gray-900 text-b-16-16-600">Teams</h3>
                         <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-gray-100">
                             <CiSearch className="text-gray-600 cursor-pointer" />
                             <input
@@ -131,9 +131,9 @@ const Teams = () => {
                     <table className=" border-collapse  min-w-[700px]">
                         <thead>
                             <tr className="bg-gray-100">
-                                <th className=" px-5 py-3 border border-gray-200">
+                                <th className=" px-5 py-3 border border-gray-200 dark:bg-coal-500 text-red-600">
                                     <div className="flex justify-center">
-                                        <input type="checkbox" className="size-[16px]" />
+                                        <input type="checkbox" className="size-[16px] text-red-500" />
                                     </div>
                                 </th>
                                 <th onClick={() => handleSort("name")} className="px-5 py-3 border border-gray-200 text-left">
@@ -177,7 +177,7 @@ const Teams = () => {
                                     <td className="px-4 py-2 text-left border border-gray-200">
                                         <img src={Raiting} alt="" />
                                     </td>
-                                    <td className="px-4 py-2 border border-gray-200">{team.date}</td>
+                                    <td className="px-4 py-2 border border-gray-200 text-gray-800 text-b-14-14-400">{team.date}</td>
 
                                     <td className="px-4 py-2 border border-gray-200">
                                         <img src={AvatarGroup} className="w-24 h-8" alt="" />
@@ -197,7 +197,7 @@ const Teams = () => {
                         <span>Show</span>
                         <select
 
-                            className="outline-none rounded-md p-2.5 cursor-pointer"
+                            className="outline-none rounded-md p-2.5 cursor-pointer dark:bg-[#1F212A] text-b-11-12-400 text-gray-800"
                             value={showCount}
                             onChange={(e) => setShowCount(Number(e.target.value))}
                         >

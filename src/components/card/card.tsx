@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
         <div className="bg-white rounded-xl shadow-sm border">
             <div className="flex flex-col">
                 {title ? (
-                    <div className="border-b border-b-gray-300 py-5">
+                    <div className="border-b border-b-gray-300 dark:border-gray-100 py-5">
                         <div className="flex md:flex-row md:justify-between md:items-center flex-col items-start gap-2.5 px-[30px]">
                             <h3 className="text-b-16-16-600 text-gray-900">{title}</h3>
                             {dotContentStatus ? (

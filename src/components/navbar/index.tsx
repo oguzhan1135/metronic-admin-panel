@@ -107,11 +107,11 @@ const Navbar = () => {
     return (
         <div
             className={`flex w-full h-20 px-10 py-8 fixed ${sidebarIsOpen ? "lg:pl-[110px]" : "lg:pl-[320px]"
-                } transition-all duration-500 ease-in-out ${modalPages.includes(location) ? " -z-10" : "z-10"}  bg-white`}
+                } transition-all duration-500 ease-in-out ${modalPages.includes(location) ? " -z-10" : "z-10"}  bg-white dark:bg-coal-500`}
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <Navigation />
-                <div className="flex flex-row gap-5 relative dropdown-container bg-white">
+                <div className="flex flex-row gap-5 relative dropdown-container bg-white dark:bg-coal-500">
                     <img src={Search} alt="search" className="md:flex hidden cursor-pointer" />
 
                     {dropdowns.map((item, index) => (

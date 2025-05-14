@@ -28,27 +28,7 @@
   .itemDotLine{
     @apply absolute w-[1px] h-full left-[10.5px] z-[-1] bg-gray-200
   }
-}
-  .scrollbar-hidden {
-    overflow-y: auto; /* Scroll'u etkinleştir */
-    scrollbar-width: none; /* Firefox için */
-    -ms-overflow-style: none; /* Internet Explorer için */
-  }
-  
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none;
-  }
-
-  .dropdown-icon{
-    @apply w-[18px] h-[18px] text-gray-500
-  }
-  .text-animation
-  {
-    @apply transition-all ease-in-out duration-200 cursor-pointer
-  }
-  scroll-behavior: smooth;
-
-  :root {
+    :root {
   --color-primary: #1B84FF;
   --color-primary-active: #056EE9;
   --color-primary-clarity: #1B84FF;
@@ -86,7 +66,9 @@
   --color-gray-800: #252F4A;
   --color-gray-900: #071437;
 }
-
+  .dark * {
+    @apply border-gray-100;
+  }
 .dark {
   --color-primary: #006AE6;
   --color-primary-active: #107EFF;
@@ -125,4 +107,25 @@
   --color-gray-800: #B5B7C8;
   --color-gray-900: #F5F5F5;
 }
+}
+  .scrollbar-hidden {
+    overflow-y: auto; /* Scroll'u etkinleştir */
+    scrollbar-width: none; /* Firefox için */
+    -ms-overflow-style: none; /* Internet Explorer için */
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dropdown-icon{
+    @apply w-[18px] h-[18px] text-gray-500
+  }
+  .text-animation
+  {
+    @apply transition-all ease-in-out duration-200 cursor-pointer
+  }
+  scroll-behavior: smooth;
+
+
 

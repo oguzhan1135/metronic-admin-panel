@@ -75,6 +75,9 @@ const config: Config = {
         'b-9-10-500': ['9px', { lineHeight: '10px', letterSpacing: '-3', fontWeight: '500' }],
         'b-9-10-600': ['9px', { lineHeight: '10px', letterSpacing: '-3', fontWeight: '600' }],
       },
+      borderColor: {
+        DEFAULT: 'var(--color-gray-300)',
+      },
       colors: {
         primary: 'var(--color-primary)',
         'primary-active': 'var(--color-primary-active)',
@@ -102,6 +105,14 @@ const config: Config = {
         'warning-light': 'var(--color-warning-light)',
 
         'light-active': 'var(--color-light-active)',
+
+        'coal-100': "#15171C",
+        'coal-200': "#13141A",
+        'coal-300': "#111217",
+        'coal-400': "#0F1014",
+        'coal-500': "#0D0E12",
+        'coal-600': "#0B0C10",
+        'coal-clarity': "#18191F",
 
         'gray-100': 'var(--color-gray-100)',
         'gray-200': 'var(--color-gray-200)',
