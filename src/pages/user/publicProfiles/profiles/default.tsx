@@ -22,6 +22,7 @@ import { Link } from 'react-router';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import ProjectTable from '../../../../components/publicProfile/projectTable';
 import Badges from '../../../../components/publicProfile/badges';
+import UnlockCreativeDark from '../../../../assets/icon/unlock-creative-dark.svg'
 
 
 const Default = () => {
@@ -31,7 +32,7 @@ const Default = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
-            <div className="rounded-full border border-success">
+                <div className="rounded-full border border-success">
                     <img src={Jennifer} alt="" className='size-[100px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">
@@ -61,82 +62,76 @@ const Default = () => {
                     {/* {Community Badge} */}
                     <Badges title='Community Badges' />
                     {/* {About} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
-                        <div className="flex-col flex gap-5">
-                            <div className="border-b ">
-                                <div className="px-[30px] py-5">
-                                    <span className='text-b-16-16-600 text-gray-900'>About</span>
+                    <Card
+                        dotStatus={false}
+                        buttonStatus={false}
+                        title={"About"}
+                        content={<>
+                            <div className="flex-col flex gap-5 pt-[30px]">
+                                <div className="flex flex-row gap-4 pl-[30px] pb-[30px] pr-[50px]">
+                                    <div className="flex flex-col  gap-5">
+                                        <span className='text-gray-600 text-b-14-14-400'>Age:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>City:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>State:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>Country:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>Postcode:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>Phone:</span>
+                                        <span className='text-gray-600 text-b-14-14-400'>Email:</span>
+                                    </div>
+                                    <div className="flex flex-col  gap-5">
+                                        <span className='text-b-14-14-400 text-gray-900'>32</span>
+                                        <span className='text-b-14-14-400 text-gray-900'>Amsterdam</span>
+                                        <span className='text-b-14-14-400 text-gray-900'>North Holland</span>
+                                        <span className='text-b-14-14-400 text-gray-900'>Netherlands</span>
+                                        <span className='text-b-14-14-400 text-gray-900'>1092 NL</span>
+                                        <span className='text-b-14-14-400 text-gray-900'>+31 6 1234 56 78</span>
+                                        <Link to={location} className='text-b-14-14-400 text-gray-900 hover:text-primary text-animation'>jenny@ktstudio.com</Link>
+                                    </div>
                                 </div>
+
                             </div>
-                            <div className="flex flex-row gap-4 pl-[30px] pb-[30px] pr-[50px]">
-                                <div className="flex flex-col  gap-5">
-                                    <span className='text-gray-600 text-b-14-14-400'>Age:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>City:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>State:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>Country:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>Postcode:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>Phone:</span>
-                                    <span className='text-gray-600 text-b-14-14-400'>Email:</span>
-
-                                </div>
-                                <div className="flex flex-col  gap-5">
-                                    <span className='text-b-14-14-400 text-gray-900'>32</span>
-                                    <span className='text-b-14-14-400 text-gray-900'>Amsterdam</span>
-                                    <span className='text-b-14-14-400 text-gray-900'>North Holland</span>
-                                    <span className='text-b-14-14-400 text-gray-900'>Netherlands</span>
-                                    <span className='text-b-14-14-400 text-gray-900'>1092 NL</span>
-                                    <span className='text-b-14-14-400 text-gray-900'>+31 6 1234 56 78</span>
-                                    <Link to={location} className='text-b-14-14-400 text-gray-900 hover:text-primary text-animation'>jenny@ktstudio.com</Link>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
+                        </>}
+                    />
                     {/* {Work experience} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
-                        <div className="flex-col flex gap-5">
-                            <div className="border-b ">
-                                <div className="px-[30px] py-5">
-                                    <span className='text-b-16-16-600 text-gray-900'>Work Experience</span>
-                                </div>
-                            </div>
-                            <div className="flex flex-col gap-5 px-[30px]">
-                                <div className="flex flex-row items-start gap-[14px]">
-                                    <img src={Jira} alt="" />
-                                    <div className="flex flex-col gap-[7px]">
-                                        <Link to={location} className='text-b-14-14-500 text-primary'>Esprito Studios</Link>
-                                        <span className='text-b-14-14-500 text-gray-900'>Senior Project Manager</span>
-                                        <span className='text-b-12-12-400 text-gray-700'>2019 - Present</span>
+                    <Card
+                        title={"Work Experience"}
+                        dotStatus={false}
+                        buttonStatus={true}
+                        buttonTitle='Open to Work'
+                        content={
+                            <>
+                                <div className="flex-col flex gap-5">
+                                    <div className="flex flex-col gap-5 p-[30px]">
+                                        <div className="flex flex-row items-start gap-[14px]">
+                                            <img src={Jira} alt="" />
+                                            <div className="flex flex-col gap-[7px]">
+                                                <Link to={location} className='text-b-14-14-500 text-primary'>Esprito Studios</Link>
+                                                <span className='text-b-14-14-500 text-gray-900'>Senior Project Manager</span>
+                                                <span className='text-b-12-12-400 text-gray-700'>2019 - Present</span>
+                                            </div>
+                                        </div>
+                                        <span className='text-b-14-14-500 text-gray-600'>Previous Jobs</span>
+                                        <div className="flex flex-row items-start gap-[14px]">
+                                            <img src={Pesto} alt="" />
+                                            <div className="flex flex-col gap-[7px]">
+                                                <Link to={location} className='text-b-14-14-500 text-primary'>Previous Jobs</Link>
+                                                <span className='text-b-14-14-500 text-gray-900'>CRM Product Lead </span>
+                                                <span className='text-b-12-12-400 text-gray-700'>2012 - 2019</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-row items-start gap-[14px]">
+                                            <img src={Perrier} alt="" />
+                                            <div className="flex flex-col gap-[7px]">
+                                                <Link to={location} className='text-b-14-14-500 text-primary'>Perrier Technologies</Link>
+                                                <span className='text-b-14-14-500 text-gray-900'>UX Research</span>
+                                                <span className='text-b-12-12-400 text-gray-700'>2010 - 2012</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <span className='text-b-14-14-500 text-gray-600'>Previous Jobs</span>
-                                <div className="flex flex-row items-start gap-[14px]">
-                                    <img src={Pesto} alt="" />
-                                    <div className="flex flex-col gap-[7px]">
-                                        <Link to={location} className='text-b-14-14-500 text-primary'>Previous Jobs</Link>
-                                        <span className='text-b-14-14-500 text-gray-900'>CRM Product Lead </span>
-                                        <span className='text-b-12-12-400 text-gray-700'>2012 - 2019</span>
-                                    </div>
-                                </div>
-                                <div className="flex flex-row items-start gap-[14px]">
-                                    <img src={Perrier} alt="" />
-                                    <div className="flex flex-col gap-[7px]">
-                                        <Link to={location} className='text-b-14-14-500 text-primary'>Perrier Technologies</Link>
-                                        <span className='text-b-14-14-500 text-gray-900'>UX Research</span>
-                                        <span className='text-b-12-12-400 text-gray-700'>2010 - 2012</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center w-full">
-                                <Link to={"/user/publicProfiles/works"} className="text-b-13-14-500 text-primary border-b border-dotted border-b-primary cursor-pointer">Open to work</Link>
-                            </div>
-
-                        </div>
-
-                    </div>
+                            </>
+                        }
+                    />
                     <Card
                         dotStatus={false}
                         buttonStatus={false}
@@ -191,8 +186,8 @@ const Default = () => {
                                         Explore exciting collaboration opportunities with our blog. We're open to partnerships, guest posts, and more. Join us to share your insights and grow your audience.
                                     </p>
                                 </div>
-                                <img src={UnlockCreative} alt="" />
-
+                                <img src={UnlockCreative} alt="unlock-creative-light" className='dark:hidden' />
+                                <img src={UnlockCreativeDark} alt="unlock-creative-dark" className='dark:flex hidden' />
                             </div>
                         }
                     />

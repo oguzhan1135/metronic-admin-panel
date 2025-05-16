@@ -56,7 +56,7 @@ const Menu = () => {
 
     return (
         <div className="flex lg:flex-row flex-col items-center justify-between border-b relative">
-            <div className="w-full overflow-x-auto flex xl:justify-between items-center">
+            <div className="w-full overflow-x-auto flex xl:justify-between items-center custom-scroll">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px]">
                     <div
                         className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/publicProfiles/profiles") ? "border-b-primary" : "border-none"} cursor-pointer`}
@@ -69,7 +69,7 @@ const Menu = () => {
 
                         {/* Profiles sub-menu */}
                         <div
-                            className={`absolute top-[50px] left-0 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProfileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-0 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProfileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
@@ -99,7 +99,7 @@ const Menu = () => {
                                 </div>
 
                                 <div
-                                    className={`absolute left-[144px] top-0 bg-white shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                                    className={`absolute left-[144px] top-0 bg-white dark:bg-coal-300 shadow-md rounded-lg w-40 mt-0 ml-2 z-50 transition-all duration-300 ease-in-out ${isSubMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 >
                                     <Link to="/user/publicProfiles/profiles/gamer" className="px-4 py-2 hover:bg-gray-100 cursor-pointer block text-b-13-14-500 text-gray-800">
                                         Gamer
@@ -129,7 +129,7 @@ const Menu = () => {
 
                         {/* Project menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProjectOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isProjectOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setProjectOpen(true)}
                             onMouseLeave={() => setProjectOpen(false)}
                         >
@@ -164,7 +164,7 @@ const Menu = () => {
 
                         {/* More menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isMoreOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isMoreOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setMoreOpen(true)}
                             onMouseLeave={() => setMoreOpen(false)}
                         >
@@ -189,7 +189,7 @@ const Menu = () => {
                                 <HiRectangleGroup />
                                 Hire US
                             </Link>
-                            <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                            <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                 <FaUsers />
                                 Connect
                             </a>
@@ -207,7 +207,7 @@ const Menu = () => {
                 <div onClick={() => setDotMore(!dotMore)} className="p-2 rounded-md border flex items-center justify-center cursor-pointer">
                     <BsThreeDotsVertical className="text-gray-500" />
                 </div>
-                <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white rounded-lg w-48 `}>
+                <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white dark:bg-coal-300 rounded-lg w-48 `}>
                     <div className="border-b-2 py-2.5 z-50">
                         <Link onClick={() => setDotMore(false)} to={location} className="px-2 block">
                             <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 rounded-md hover: group">

@@ -15,7 +15,7 @@ const CardMore: React.FC<MoreProps> = ({ setMore, more }) => {
     return (
         <>
 
-            <div className={`absolute shadow-md top-full right-0 ${more ? '' : 'hidden'} dropdown-container z-50 bg-white rounded-lg w-48`}>
+            <div className={`absolute shadow-md top-full right-0 ${more ? '' : 'hidden'} dropdown-container z-50 bg-white dark:bg-coal-300 rounded-lg w-48`}>
                 <div onClick={() => setMore(false)} className="border-b-2 py-0 z-50">
                     <Link to={location} className="relative px-2 block">
                         <div className="flex flex-row items-center px-3 py-3 cursor-pointer hover:bg-gray-100 rounded-md justify-between hover: group">

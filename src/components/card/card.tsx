@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
     }, []);
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border">
+        <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
             <div className="flex flex-col">
                 {title ? (
                     <div className="border-b border-b-gray-300 dark:border-gray-100 py-5">
@@ -48,7 +48,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                                             onClick={() => setMore((prev) => !prev)}
                                             className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
                                         >
-                                            <HiOutlineDotsVertical />
+                                            <HiOutlineDotsVertical className="size-[18px] text-gray-800"/>
                                         </div>
 
                                         {more && <CardMore setMore={setMore} more={more} />}
@@ -70,7 +70,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                                             onClick={() => setMore((prev) => !prev)}
                                             className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
                                         >
-                                            <HiOutlineDotsVertical />
+                                            <HiOutlineDotsVertical className="size-[18px] text-gray-800" />
                                         </div>
 
                                         {more && <CardMore setMore={setMore} more={more} />}
@@ -84,7 +84,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                 {content}
 
                 {buttonStatus ? (
-                    <div className="bg-white rounded-b-md border-l border border-gray-200 p-4 flex justify-center items-center w-full">
+                    <div className="bg-white dark:bg-coal-300 rounded-b-md border-l border p-4 flex justify-center items-center w-full">
                         <Link
                             to={location}
                             className="text-b-13-14-500 text-primary border-b border-dotted border-b-primary cursor-pointer"

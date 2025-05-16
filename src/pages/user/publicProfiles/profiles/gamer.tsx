@@ -1,11 +1,11 @@
-import {  FaFacebook, FaLaptopCode,  FaTwitch, FaTwitter, FaUsers, FaYoutube } from "react-icons/fa6"
+import { FaFacebook, FaLaptopCode, FaTwitch, FaTwitter, FaUsers, FaYoutube } from "react-icons/fa6"
 import { SlLocationPin, SlTarget } from "react-icons/sl"
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Card from "../../../../components/card/card"
-import {  FaShareAlt } from "react-icons/fa"
+import { FaShareAlt } from "react-icons/fa"
 import { Link } from "react-router"
-import {  TbWorld } from "react-icons/tb"
+import { TbWorld } from "react-icons/tb"
 import FloydMiles from '../../../../assets/icon/floyed.svg'
 import OnlineGame from '../../../../assets/icon/online-game.svg'
 import GamerCoin from '../../../../assets/icon/gamer-coin.svg'
@@ -41,6 +41,8 @@ import { IoRocketOutline } from "react-icons/io5"
 import Switch from "../../../../components/switch"
 import { useState } from "react"
 import UnderMaintence from '../../../../assets/icon/under-maintenance.svg'
+import UnderMaintenceDark from '.././../../../assets/icon/under-maintenance-dark.svg'
+
 
 const Gamer = () => {
     const location = window.location.pathname
@@ -49,7 +51,7 @@ const Gamer = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
-            <img src={FloydMiles} alt="floyd" className='' />
+                <img src={FloydMiles} alt="floyd" className='' />
                 <div className="flex flex-row items-center gap-1 ">
                     <span className="text-b-18-18-600 text-gray-900">Floyd Miles</span>
                     <img src={Verify} alt="" />
@@ -75,7 +77,7 @@ const Gamer = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 {/* Data */}
                 <div className="xl:col-span-3 ">
-                    <div className="bg-white rounded-xl shadow-sm border">
+                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px]">
                             <div className="flex sm:flex-row flex-col items-center gap-5 w-full">
                                 <div className="flex flex-row items-start gap-[14px] justify-center w-full relative after:content-[''] after:flex after:bg-gray-300 after:w-full after:h-[1px] sm:after:w-[1px] after:right-0  sm:after:h-full sm:after:absolute sm:after:right-0 last:after:hidden">
@@ -230,7 +232,7 @@ const Gamer = () => {
                         }
                         content={
                             <div className="flex flex-col gap-5 pl-[30px] py-5">
-                                <div className="w-full overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                <div className="w-full overflow-x-auto custom-scroll">
                                     <div className="flex flex-row  items-center gap-5 ">
                                         <Card
                                             dotStatus={false}
@@ -479,7 +481,7 @@ const Gamer = () => {
                         }
                         content={
                             <div className="flex flex-col gap-5 pl-[30px] py-5">
-                                <div className="w-full overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                <div className="w-full overflow-x-auto custom-scroll">
                                     <div className="flex flex-row  items-center gap-5 ">
                                         <Card
                                             dotStatus={false}
@@ -488,7 +490,7 @@ const Gamer = () => {
                                                 <div className="flex flex-col gap-5 w-max pb-5">
                                                     <img src={CallofDuty} alt="call-of-duty" className="rounded-t-xl w-full" />
                                                     <div className="px-[14px] flex flex-row items-center gap-2.5">
-                                                        <img src={CallofDutty} alt="call-of-duty" className="rounded-full"/>
+                                                        <img src={CallofDutty} alt="call-of-duty" className="rounded-full" />
                                                         <div className="flex flex-col gap-2">
                                                             <Link to={location} className="text-b-15-16-600 text-gray-900 hover:text-primary text-animation">Call of Duty</Link>
                                                             <span className="text-b-10-10-400 text-gray-600">Playing since 6 Aug, 2018</span>
@@ -601,14 +603,14 @@ const Gamer = () => {
                                                 </div>
                                             }
                                         />
-                                         <Card
+                                        <Card
                                             dotStatus={false}
                                             buttonStatus={false}
                                             content={
                                                 <div className="flex flex-col gap-5 w-max pb-5">
                                                     <img src={CallofDuty} alt="call-of-duty" className="rounded-t-xl w-full" />
                                                     <div className="px-[14px] flex flex-row items-center gap-2.5">
-                                                        <img src={CallofDutty} alt="call-of-duty" className="rounded-full"/>
+                                                        <img src={CallofDutty} alt="call-of-duty" className="rounded-full" />
                                                         <div className="flex flex-col gap-2">
                                                             <Link to={location} className="text-b-15-16-600 text-gray-900 hover:text-primary text-animation">Call of Duty</Link>
                                                             <span className="text-b-10-10-400 text-gray-600">Playing since 6 Aug, 2018</span>
@@ -797,7 +799,9 @@ const Gamer = () => {
                                             </span>
                                             <span className="text-b-12-12-400 text-gray-600">1 week ago, 11:45 AM</span>
                                             <div className="flex flex-col items-center justify-center gap-[6px] p-4 border rounded-lg">
-                                                <img src={UnderMaintence} alt="maintance" />
+                                                <img src={UnderMaintence} alt="maintance-light" className="dark:hidden" />
+                                                <img src={UnderMaintenceDark} alt="maintance-dark" className="dark:flex hidden" />
+
                                                 <span className="text-b-15-16-500 text-gray-900">First Camping Created</span>
                                                 <div className="flex flex-row items-center gap-2.5">
                                                     <span className="text-gray-700 text-b-13-14-400"><Link to={location} className="text-primary text-b-13-14-400">Axio new release </Link> email campaign</span>

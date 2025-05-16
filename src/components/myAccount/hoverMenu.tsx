@@ -42,31 +42,31 @@ const Menu = () => {
 
                         {/* Account Home menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isAccountHomeOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isAccountHomeOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setAccountHomeOpen(true)}
                             onMouseLeave={() => setAccountHomeOpen(false)}
                         >
 
 
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/getStarted"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Get Started
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/userProfile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 User Profile
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/companyProfile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Company Profile
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/settingSidebar"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - With Sidebar
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/settingEnterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Enterprise
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/settingPlain"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Plain
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/settingModal"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Modal
                             </Link>
                         </div>
@@ -81,20 +81,20 @@ const Menu = () => {
 
                         {/* Billing menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isBillingOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isBillingOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setBillingOpen(true)}
                             onMouseLeave={() => setBillingOpen(false)}
                         >
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billingBasic"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Biiling - Basic
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billingEnterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Billing - Enterprise
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billingPlans"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Plans
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billingHistory"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Billing History
                             </Link>
                         </div>
@@ -109,32 +109,32 @@ const Menu = () => {
 
                         {/* security menu */}
                         <div
-                            className={`absolute top-[50px] px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isSecurityOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isSecurityOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setSecurityOpen(true)}
                             onMouseLeave={() => setSecurityOpen(false)}
                         >
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/getStarted"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Get Started
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/overview"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Security Overview
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/allowedIpAddresses"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Allowed IP Addresses
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/privacySetting"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Privacy Setting
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/deviceManagament"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Devive Management
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/backupRecovery"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Baackup & Recovery
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/currentSessions"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Current Sessions
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/log"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Security Logs
                             </Link>
                         </div>
@@ -149,7 +149,7 @@ const Menu = () => {
 
                         {/* Account Home menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isMembersOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-44 mt-1 z-50 transition-all duration-300 ease-in-out ${isMembersOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setMembersOpen(true)}
                             onMouseLeave={() => setMembersOpen(false)}
                         >
@@ -164,34 +164,34 @@ const Menu = () => {
                             <Link to={"/user/myAccount/members/teamInfo"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Team Info
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/memberStarter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Members Starter
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/teamMembers"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Team Members
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/importantMember"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Import Members
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/roles"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Roles
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/permissionsToggle"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Permissions - Toggler
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/permissionsCheck"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Permissions - Check
                             </Link>
                         </div>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/integrations") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/integrations") ? "text-primary" : "text-gray-700"} `}>Integrations</a>
+                        <Link to={"/user/myAccount/integrations"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/integrations") ? "text-primary" : "text-gray-700"} `}>Integrations</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/apiKeys") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</a>
+                        <Link to={"/user/myAccount/apiKeys"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <a className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</a>
+                        <Link to={"/user/myAccount/notifications"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</Link>
                     </div>
 
                     <div
@@ -204,19 +204,19 @@ const Menu = () => {
 
                         {/* More menu */}
                         <div
-                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isMoreOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[50px] left-240 px-1 py-2 bg-white dark:bg-coal-300 shadow-md rounded-lg w-40 mt-1 z-50 transition-all duration-300 ease-in-out ${isMoreOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             onMouseEnter={() => setMoreOpen(true)}
                             onMouseLeave={() => setMoreOpen(false)}
                         >
 
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/appearance"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Appearance
                             </Link>
 
-                            <Link to={location} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/inviteFriend"} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Invite a Friend
                             </Link>
-                            <Link to={location} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/activity"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Activity
                             </Link>
                         </div>
@@ -225,7 +225,7 @@ const Menu = () => {
             </div>
 
             <div className="flex flex-row items-center gap-2.5 ml-auto lg:ml-0 relative">
-                <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white rounded-lg w-48 `}>
+                <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white dark:bg-coal-300 rounded-lg w-48 `}>
                     <div className="border-b-2 py-2.5 z-50">
                         <Link onClick={() => setDotMore(false)} to={location} className="px-2 block">
                             <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 rounded-md hover: group">

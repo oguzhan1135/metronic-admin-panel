@@ -140,7 +140,7 @@ const CRM = () => {
                                     The granted credentials serve a twofold function, enabling <Link to={location} className="text-primary">API authentication</Link> and governing JavaScript customization
                                 </p>
                                 <div className="flex flex-row items-center px-2.5 py-[3px] border rounded-md gap-2.5">
-                                    <input type="text" className="outline-none text-b-11-12-400 text-gray-800 flex-grow" placeholder="exp. hwewe4654fdd5sdfh" />
+                                    <input type="text" className="outline-none text-b-11-12-400 text-gray-800 flex-grow bg-transparent" placeholder="exp. hwewe4654fdd5sdfh" />
                                     <div className="p-2 hover:bg-gray-200 rounded-lg cursor-pointer">
                                         <IoCopyOutline className="text-gray-600 size-[14px]" />
 

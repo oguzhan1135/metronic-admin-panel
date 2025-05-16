@@ -8,13 +8,14 @@ import Card from "../../../../components/card/card"
 import { Link } from "react-router"
 import Jennifer from '../../../../assets/icon/jennifer.svg'
 import AccountDeactiveted from '../../../../assets/icon/account-deactived.svg'
+import AccountDeactivatedDark from '../../../../assets/icon/account-deactivated-dark.svg'
 const Plain = () => {
 
 
     const location = window.location.pathname
 
     return (
-        <div className="flex flex-col gap-10 z- ">
+        <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
                 <div className="rounded-full border border-success">
                     <img src={Jennifer} alt="" className='size-[100px]' />
@@ -43,7 +44,7 @@ const Plain = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4 z-1">
                 {/* Data */}
                 <div className="xl:col-span-3 grid gap-[30px] ">
-                    <div className="bg-white rounded-xl shadow-sm border">
+                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex sm:flex-row flex-col items-center gap-5 w-full">
                                 <div className="flex flex-col gap-2.5 items-center flex-grow w-full relative after:content-[''] after:block after:bg-gray-300 after:w-full after:h-[1px] sm:after:w-[1px] sm:after:h-full sm:after:absolute sm:after:right-0 last:after:hidden">
@@ -74,10 +75,11 @@ const Plain = () => {
                         dotStatus={false}
                         buttonStatus={false}
                         content={
-                            <div className="flex flex-col items-center gap-2.5 pb-10">
-                                <img src={AccountDeactiveted} alt="account-deactiveted" />
+                            <div className="flex flex-col items-center gap-2.5 py-10">
+                                <img src={AccountDeactiveted} alt="account-deactiveted" className="dark:hidden" />
+                                <img src={AccountDeactivatedDark} alt="account-deactiveted-dark" className="dark:flex hidden" />
                                 <span className="text-b-18-18-500 text-gray-900">Upload Item to Get Started</span>
-                                <span>Begin by crafting your inaugural list in minutes. <Link to={location} className="text-primary">Get Started!</Link></span>
+                                <span className="text-gray-600 text-b-14-14-500">Begin by crafting your inaugural list in minutes. <Link to={location} className="text-primary">Get Started!</Link></span>
                             </div>
                         }
                     />

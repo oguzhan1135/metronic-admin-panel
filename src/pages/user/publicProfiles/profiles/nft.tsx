@@ -23,7 +23,7 @@ const NFT = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
-            <div className="rounded-full border border-success">
+                <div className="rounded-full border border-success">
                     <img src={Jennifer} alt="" className='size-[100px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">
@@ -140,7 +140,7 @@ const NFT = () => {
                         }
                         content={
                             <div className="flex flex-col gap-5 pl-[30px] py-5">
-                                <div className="w-full overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                <div className="w-full overflow-x-auto custom-scroll">
                                     <div className="flex flex-row  items-center gap-5 ">
                                         <Card
                                             dotStatus={false}
@@ -237,7 +237,7 @@ const NFT = () => {
                                                 </div>
                                             }
                                         />
-                                         <Card
+                                        <Card
                                             dotStatus={false}
                                             buttonStatus={false}
                                             content={
@@ -324,7 +324,7 @@ const NFT = () => {
                         }
                         content={
                             <div className="flex flex-col gap-5 pl-[30px] py-5">
-                                <div className="w-full overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                <div className="w-full overflow-x-auto custom-scroll">
                                     <div className="flex flex-row  items-center gap-5 ">
                                         <Card
                                             dotStatus={false}
@@ -421,7 +421,7 @@ const NFT = () => {
                                                 </div>
                                             }
                                         />
-                                         <Card
+                                        <Card
                                             dotStatus={false}
                                             buttonStatus={false}
                                             content={
@@ -507,7 +507,7 @@ const NFT = () => {
                         }
                         content={
                             <div className="flex flex-col gap-5 pl-[30px] py-5">
-                                <div className="w-full overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                <div className="w-full overflow-x-auto custom-scroll">
                                     <div className="flex flex-row  items-center gap-5 ">
                                         <Card
                                             dotStatus={false}
@@ -604,7 +604,7 @@ const NFT = () => {
                                                 </div>
                                             }
                                         />
-                                         <Card
+                                        <Card
                                             dotStatus={false}
                                             buttonStatus={false}
                                             content={

@@ -80,7 +80,7 @@ const GetStarted = () => {
             <Menu />
             <div className="flex flex-col gap-[14px]">
                 <h1 className='text-gray-900 text-h-24-24-600'>Account</h1>
-                <span className='text-b-14-14-500'>Jayson Tatum <a className='text-b-14-14-400 hover:text-primary text-animation'>jaytatum@ktstudio.com</a> <Link to={location} className='text-primary text-b-13-14-500 border-b border-b-primary border-dotted'>Personal Info</Link> </span>
+                <span className='text-b-14-14-500 text-gray-700'>Jayson Tatum <a className='text-b-14-14-400 hover:text-primary text-animation'>jaytatum@ktstudio.com</a> <Link to={location} className='text-primary text-b-13-14-500 border-b border-b-primary border-dotted'>Personal Info</Link> </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">

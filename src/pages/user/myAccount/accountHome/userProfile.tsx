@@ -7,6 +7,10 @@ import BadgeOne from '../../../../assets/icon/badge-1.svg'
 import BadgeTwo from '../../../../assets/icon/badge-2.svg'
 import BadgeThree from '../../../../assets/icon/badge-3.svg'
 import BadgeFour from '../../../../assets/icon/badge-4.svg'
+import BadgeOneDark from '../../../../assets/icon/badge-1-dark.svg'
+import BadgeTwoDark from '../../../../assets/icon/badge-2-dark.svg'
+import BadgeThreeDark from '../../../../assets/icon/badge-3-dark.svg'
+import BadgeFourDark from '../../../../assets/icon/badge-4-dark.svg'
 import Camera from '../../../../assets/icon/camera.svg'
 import { useState } from "react"
 import { IoIosClose, IoLogoTwitch } from "react-icons/io"
@@ -30,6 +34,8 @@ import PDF from '../../../../assets/icon/pdf.svg'
 import DOC from '../../../../assets/icon/doc.svg'
 import JS from '../../../../assets/icon/javascript.svg'
 import AI from '../../../../assets/icon/illustrator.svg'
+import CompanyProfileDark from '../../../../assets/icon/company-profile-dark.svg'
+
 const UserProfile = () => {
 
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
@@ -53,7 +59,7 @@ const UserProfile = () => {
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
 
-                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
                     <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -96,7 +102,7 @@ const UserProfile = () => {
                                             />
                                             <img src={Camera} alt="camera" className="absolute bottom-0" />
                                         </div>
-                                        <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                        <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                     </div>
                                 </div>
@@ -203,7 +209,7 @@ const UserProfile = () => {
                                                 <FaFacebook className="text-[#3C5A9A]" />
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
-                                                <BsApple />
+                                                <BsApple className="dark:text-white" />
                                             </div>
                                         </div>
                                     </div>
@@ -230,7 +236,7 @@ const UserProfile = () => {
                                                 <IoLogoTwitch className="text-[#65459B]" />
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
-                                                <FaXTwitter />
+                                                <FaXTwitter className="dark:text-white" />
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
                                                 <CiBasketball className="text-[#B2215A] bg-[#E74D89] rounded-full" />
@@ -356,7 +362,8 @@ const UserProfile = () => {
                                 <div className="rounded-xl border px-[14px] py-2.5 group">
                                     <div className="flex flex-row items-center justify-between">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={BadgeOne} alt="badge" />
+                                            <img src={BadgeOne} alt="badge" className="dark:hidden" />
+                                            <img src={BadgeOneDark} alt="badge-dark" className="dark:flex hidden" />
                                             <span className="text-b-14-14-500 text-gray-900">Expert Contributor Badge</span>
                                         </div>
                                         <RiEqualizer2Line className="size-6 group-hover:text-primary text-animation text-gray-400" />
@@ -366,7 +373,8 @@ const UserProfile = () => {
                                 <div className="rounded-xl border px-[14px] py-2.5 group">
                                     <div className="flex flex-row items-center justify-between">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={BadgeTwo} alt="badge" />
+                                            <img src={BadgeTwo} alt="badge" className="dark:hidden" />
+                                            <img src={BadgeTwoDark} alt="badge-dark" className="dark:flex hidden" />
                                             <span className="text-b-14-14-500 text-gray-900">Innovation Trailblazer</span>
                                         </div>
                                         <RiEqualizer2Line className="size-6 group-hover:text-primary text-animation text-gray-400" />
@@ -376,7 +384,8 @@ const UserProfile = () => {
                                 <div className="rounded-xl border px-[14px] py-2.5 group">
                                     <div className="flex flex-row items-center justify-between">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={BadgeThree} alt="badge" />
+                                            <img src={BadgeThree} alt="badge" className="dark:hidden" />
+                                            <img src={BadgeThreeDark} alt="badge-dark" className="dark:flex hidden" />
                                             <span className="text-b-14-14-500 text-gray-900">Impact Recognition</span>
                                         </div>
                                         <RiEqualizer2Line className="size-6 group-hover:text-primary text-animation text-gray-400" />
@@ -386,7 +395,8 @@ const UserProfile = () => {
                                 <div className="rounded-xl border px-[14px] py-2.5 group">
                                     <div className="flex flex-row items-center justify-between">
                                         <div className="flex flex-row gap-2.5 items-center">
-                                            <img src={BadgeFour} alt="badge" />
+                                            <img src={BadgeFour} alt="badge" className="dark:hidden" />
+                                            <img src={BadgeFourDark} alt="badge-dark" className="dark:flex hidden" />
                                             <span className="text-b-14-14-500 text-gray-900">Performance Honor</span>
                                         </div>
                                         <RiEqualizer2Line className="size-6 group-hover:text-primary text-animation text-gray-400" />
@@ -408,10 +418,11 @@ const UserProfile = () => {
                         content={<>
                             <div className="flex flex-col pt-[30px] gap-5 items-center justify-center bg-mask bg-fixed">
                                 <div className="flex flex-col items-center justify-center gap-2 ">
-                                    <span className="text-b-18-25-600 max-w-[220px] text-center ">Individually Tailored
-                                        Deals for Personal Satisfaction</span>
-                                    <button className="rounded-md bg-black text-white flex items-center justify-center px-3 py-2.5 text-b-12-12-500 mb-[30px]">Start Now</button>
-                                    <img src={Individually} alt="" />
+                                    <h3 className="text-b-18-25-600 max-w-[220px] text-center text-gray-900">Individually Tailored
+                                        Deals for Personal Satisfaction</h3>
+                                    <button className="rounded-md bg-black dark:bg-coal-300 text-white flex items-center justify-center px-3 py-2.5 text-b-12-12-500 mb-[30px]">Start Now</button>
+                                    <img src={Individually} alt="company-profile" className="dark:hidden" />
+                                    <img src={CompanyProfileDark} alt="conmpany-profile-dark" className="dark:flex hidden" />
                                 </div>
                             </div>
                         </>}
@@ -449,7 +460,7 @@ const UserProfile = () => {
                                         </div>
                                     </div>
                                     <div className="p-2 rounded-md hover:bg-gray-100">
-                                        <FaRegTrashAlt />
+                                        <FaRegTrashAlt className="size-4 text-gray-600" />
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center justify-between p-4 border rounded-xl">
@@ -462,7 +473,7 @@ const UserProfile = () => {
                                         </div>
                                     </div>
                                     <div className="p-2 rounded-md hover:bg-gray-100">
-                                        <FaRegTrashAlt />
+                                        <FaRegTrashAlt className="size-4 text-gray-600" />
                                     </div>
                                 </div>
                             </div>
@@ -613,78 +624,78 @@ const UserProfile = () => {
                     />
                     {/* My Files */}
                     <Card
-                            dotStatus={true}
-                            buttonStatus={true}
-                            buttonTitle='All Files'
-                            title='Recent Uploads'
-                            content={
-                                <>
-                                    <div className="flex flex-col py-5 gap-5">
-                                        <div className="flex flex-row items-center justify-between px-[30px]">
-                                            <div className="flex flex-row items-center gap-2.5">
-                                                <img src={PDF} alt="" />
-                                                <div className="flex flex-col gap-2">
-                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Project-pitch.pdf</Link>
-                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
-                                                        <span className='text-b-12-12-400 text-gray-700'>4.7 MB</span>
-                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
-                                                    </div>
+                        dotStatus={true}
+                        buttonStatus={true}
+                        buttonTitle='All Files'
+                        title='Recent Uploads'
+                        content={
+                            <>
+                                <div className="flex flex-col py-5 gap-5">
+                                    <div className="flex flex-row items-center justify-between px-[30px]">
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <img src={PDF} alt="" />
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Project-pitch.pdf</Link>
+                                                <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                    <span className='text-b-12-12-400 text-gray-700'>4.7 MB</span>
+                                                    <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
                                                 </div>
-                                            </div>
-                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                <HiOutlineDotsVertical className="text-gray-600" />
                                             </div>
                                         </div>
-                                        <div className="flex flex-row items-center justify-between px-[30px]">
-                                            <div className="flex flex-row items-center gap-2.5">
-                                                <img src={DOC} alt="" />
-                                                <div className="flex flex-col gap-2">
-                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Report-v1.docx</Link>
-                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
-                                                        <span className='text-b-12-12-400 text-gray-700'>2.3 MB</span>
-                                                        <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                <HiOutlineDotsVertical className="text-gray-600" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-row items-center justify-between px-[30px]">
-                                            <div className="flex flex-row items-center gap-2.5">
-                                                <img src={JS} alt="" />
-                                                <div className="flex flex-col gap-2">
-                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Framework-App.js</Link>
-                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
-                                                        <span className='text-b-12-12-400 text-gray-700'>0.8 MB</span>
-                                                        <span className='text-b-12-12-400 text-gray-700'> 17 Oct 2024 6:46 PM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                <HiOutlineDotsVertical className="text-gray-600" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-row items-center justify-between px-[30px]">
-                                            <div className="flex flex-row items-center gap-2.5">
-                                                <img src={AI} alt="" />
-                                                <div className="flex flex-col gap-2">
-                                                    <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Mobile-logo.ai</Link>
-                                                    <div className="flex flex-row items-center gap-1 flex-wrap">
-                                                        <span className='text-b-12-12-400 text-gray-700'>0.2 MB</span>
-                                                        <span className='text-b-12-12-400 text-gray-700'> 4 Nov 2024 11:30 AM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                <HiOutlineDotsVertical className="text-gray-600" />
-                                            </div>
+                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                            <HiOutlineDotsVertical className="text-gray-600" />
                                         </div>
                                     </div>
+                                    <div className="flex flex-row items-center justify-between px-[30px]">
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <img src={DOC} alt="" />
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Report-v1.docx</Link>
+                                                <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                    <span className='text-b-12-12-400 text-gray-700'>2.3 MB</span>
+                                                    <span className='text-b-12-12-400 text-gray-700'> 26 Sep 2024 3:20 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                            <HiOutlineDotsVertical className="text-gray-600" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-row items-center justify-between px-[30px]">
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <img src={JS} alt="" />
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Framework-App.js</Link>
+                                                <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                    <span className='text-b-12-12-400 text-gray-700'>0.8 MB</span>
+                                                    <span className='text-b-12-12-400 text-gray-700'> 17 Oct 2024 6:46 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                            <HiOutlineDotsVertical className="text-gray-600" />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-row items-center justify-between px-[30px]">
+                                        <div className="flex flex-row items-center gap-2.5">
+                                            <img src={AI} alt="" />
+                                            <div className="flex flex-col gap-2">
+                                                <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Mobile-logo.ai</Link>
+                                                <div className="flex flex-row items-center gap-1 flex-wrap">
+                                                    <span className='text-b-12-12-400 text-gray-700'>0.2 MB</span>
+                                                    <span className='text-b-12-12-400 text-gray-700'> 4 Nov 2024 11:30 AM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                            <HiOutlineDotsVertical className="text-gray-600" />
+                                        </div>
+                                    </div>
+                                </div>
 
-                                </>
-                            }
-                        />
+                            </>
+                        }
+                    />
                 </div>
             </div>
         </div >

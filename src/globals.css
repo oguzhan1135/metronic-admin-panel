@@ -110,8 +110,10 @@
 }
   .scrollbar-hidden {
     overflow-y: auto; /* Scroll'u etkinleştir */
-    scrollbar-width: none; /* Firefox için */
-    -ms-overflow-style: none; /* Internet Explorer için */
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+    background-color:transparent;
+    display:
   }
   
   .scrollbar-hidden::-webkit-scrollbar {
@@ -124,6 +126,9 @@
   .text-animation
   {
     @apply transition-all ease-in-out duration-200 cursor-pointer
+  }
+  .custom-scroll{
+    @apply scrollbar-thumb-gray-500 scrollbar-thin dark:scrollbar-track-coal-300
   }
   scroll-behavior: smooth;
 

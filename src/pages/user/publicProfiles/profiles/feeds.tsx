@@ -75,7 +75,7 @@ const Feeds = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Data} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
+                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex sm:flex-row flex-col items-center gap-5 w-full">
                                 <div className="flex flex-col gap-1 items-center justify-center relative after:content-[''] w-full after:flex after:bg-gray-300 after:w-full after:h-[1px] sm:after:w-[1px] after:right-0  sm:after:h-full sm:after:absolute sm:after:right-0 last:after:hidden">
@@ -99,7 +99,7 @@ const Feeds = () => {
                         title="Profile"
                         content={
                             <div className="flex flex-col px-[30px] gap-5  py-5">
-                                <p>Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
+                                <p className="text-gray-800 text-b-14-22-400">Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
                                     <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">KeenThemes</Link>
@@ -192,7 +192,7 @@ const Feeds = () => {
                             <div className="flex flex-row items-center gap-3">
                                 <img src={Jennifer} alt="jennifer" className="size-[50px]" />
                                 <div className="flex flex-col gap-2">
-                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Jenny Klabber</Link>
+                                    <Link to={location} className=" text-b-15-16-600 text-gray-900 hover:text-primary text-animation">Jenny Klabber</Link>
                                     <span className=" text-b-14-14-400 text-gray-700">Yesterday at  5:06 PM</span>
                                 </div>
                             </div>
@@ -249,7 +249,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -277,7 +277,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -291,7 +291,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -306,7 +306,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full ">
                                                     <div className="flex flex-row items-center justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -323,7 +323,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full">
                                                     <div className="flex flex-row items-center  justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -337,7 +337,7 @@ const Feeds = () => {
                                             <div className="flex flex-row items-center gap-2.5">
                                                 <img src={Tyler} alt="tyler" className="size-[40px]" />
                                                 <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
-                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent" placeholder="your comment.." />
                                                     <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
 
                                                 </div>
@@ -357,7 +357,7 @@ const Feeds = () => {
                             <div className="flex flex-row items-center gap-3">
                                 <img src={Jennifer} alt="jennifer" className="size-[50px]" />
                                 <div className="flex flex-col gap-2">
-                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Jenny Klabber</Link>
+                                    <Link to={location} className=" text-b-15-16-600 text-gray-900 hover:text-primary text-animation">Jenny Klabber</Link>
                                     <span className=" text-b-14-14-400 text-gray-700">2 days ago</span>
                                 </div>
                             </div>
@@ -396,7 +396,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -424,7 +424,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -438,7 +438,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -453,7 +453,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full ">
                                                     <div className="flex flex-row items-center justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -470,7 +470,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full">
                                                     <div className="flex flex-row items-center  justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -484,7 +484,7 @@ const Feeds = () => {
                                             <div className="flex flex-row items-center gap-2.5">
                                                 <img src={Tyler} alt="tyler" className="size-[40px]" />
                                                 <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
-                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent" placeholder="your comment.." />
                                                     <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
 
                                                 </div>
@@ -508,7 +508,7 @@ const Feeds = () => {
                                     <MdTabUnselected className="text-primary size-6" />
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Finance Deprt - Annual Report</Link>
+                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation text-gray-900">Finance Deprt - Annual Report</Link>
                                     <span className=" text-b-14-14-400 text-gray-700">2 days ago</span>
                                 </div>
                             </div>
@@ -551,7 +551,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -579,7 +579,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -593,7 +593,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -608,7 +608,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full ">
                                                     <div className="flex flex-row items-center justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -625,7 +625,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full">
                                                     <div className="flex flex-row items-center  justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation text-gray-900">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -639,7 +639,7 @@ const Feeds = () => {
                                             <div className="flex flex-row items-center gap-2.5">
                                                 <img src={Tyler} alt="tyler" className="size-[40px]" />
                                                 <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
-                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent" placeholder="your comment.." />
                                                     <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
 
                                                 </div>
@@ -659,7 +659,7 @@ const Feeds = () => {
                             <div className="flex flex-row items-center gap-3">
                                 <img src={Jennifer} alt="jennifer" className="size-[50px]" />
                                 <div className="flex flex-col gap-2">
-                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation">Jenny Klabber</Link>
+                                    <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation text-gray-900">Jenny Klabber</Link>
                                     <span className=" text-b-14-14-400 text-gray-700">Week ago</span>
                                 </div>
                             </div>
@@ -674,8 +674,78 @@ const Feeds = () => {
                                     save={16}
                                     selectedTab=""
                                     likeContent={
-                                        <div>
-                                            Like içeriği
+                                        <div className="flex flex-col">
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Cody} alt="cody" className="size-10" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Adam Wilson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">2 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Ranee} alt="rane" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Renee Branson</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">6 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Jonathan} alt="jonathan" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Jonathan Taylor</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">13 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                    <FaUsers />
+                                                    Connect
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Lilia} alt="lilia" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Lilia Mattox</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">4 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-row items-center justify-between px-3 py-2.5">
+                                                <div className="flex flex-row items-center gap-2.5">
+                                                    <img src={Neil} alt="neil" />
+                                                    <div className="flex flex-col gap-[6px]">
+                                                        <Link to={location} className="text-gray-900 text-b-15-16-600">Neil Roberts</Link>
+                                                        <span className="text-b-13-14-400 text-gray-700">23 mutual subscribers</span>
+                                                    </div>
+
+                                                </div>
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                    <FaRegCheckCircle className="text-gray-500 size-[14px]" />
+                                                    Connected
+                                                </a>
+                                            </div>
+
                                         </div>
                                     }
                                     commentContent={
@@ -685,7 +755,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full ">
                                                     <div className="flex flex-row items-center justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 text-gray-900 hover:text-primary text-animation">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -702,7 +772,7 @@ const Feeds = () => {
                                                 <div className="flex flex-col gap-2.5 w-full">
                                                     <div className="flex flex-row items-center  justify-between">
                                                         <div className="flex flex-row items-center gap-2.5 ">
-                                                            <Link to={location} className="text-b-15-16-500 hover:text-primary text-animation">Mr. Anderson </Link>
+                                                            <Link to={location} className="text-b-15-16-500 text-gray-900 hover:text-primary text-animation">Mr. Anderson </Link>
                                                             <span className="text-b-14-14-400 text-gray-700">1 Day ago</span>
                                                         </div>
                                                         <Link to={location} className="text-primary border-b border-dotted text-b-13-14-500 border-b-primary">Reply</Link>
@@ -716,7 +786,7 @@ const Feeds = () => {
                                             <div className="flex flex-row items-center gap-2.5">
                                                 <img src={Tyler} alt="tyler" className="size-[40px]" />
                                                 <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
-                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800" placeholder="your comment.." />
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent" placeholder="your comment.." />
                                                     <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
 
                                                 </div>

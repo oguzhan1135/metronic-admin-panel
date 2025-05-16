@@ -7,10 +7,6 @@ import Esther from '../../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../../assets/icon/cody-fisher.svg'
 import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
 import Jennifer from '../../../../assets/icon/jennifer.svg'
-import BadgeOne from '../../../../assets/icon/badge-1.svg'
-import BadgeTwo from '../../../../assets/icon/badge-2.svg'
-import BadgeThree from '../../../../assets/icon/badge-3.svg'
-import BadgeFour from '../../../../assets/icon/badge-4.svg'
 import Menu from "../../../../components/publicProfile/hovermenu"
 import Verify from '../../../../assets/icon/verify.svg'
 import Inferno from "../../../../assets/icon/inferno.svg"
@@ -29,10 +25,13 @@ import Future from '../../../../assets/icon/future.svg'
 import Switch from "../../../../components/switch"
 import { useState } from "react"
 import { Link } from "react-router"
-import {  IoRocketOutline } from "react-icons/io5"
+import { IoRocketOutline } from "react-icons/io5"
 import VerifyEmail from '../../../../assets/icon/verify-email.svg'
 import { TiPrinter } from "react-icons/ti"
 import { FiCoffee } from "react-icons/fi"
+import ArrowDark from '../../../../assets/icon/arrow-dark.svg'
+import VerifyEmailDark from '../../../../assets/icon/verify-email-dark.svg'
+import Badges from "../../../../components/publicProfile/badges"
 
 const Creator = () => {
     const [refresh, setRefresh] = useState(true)
@@ -40,7 +39,7 @@ const Creator = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
-            <div className="rounded-full border border-success">
+                <div className="rounded-full border border-success p-[25px] dark:p-0 dark:border-0">
                     <img src={Inferno} alt="" className='size-[100px]' />
                 </div>
                 <div className="flex flex-row items-center gap-1 ">
@@ -68,7 +67,7 @@ const Creator = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Data} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
+                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex flex-row items-center gap-5">
                                 <div className="flex  flex-col gap-2.5 items-center pr-5 border-r">
@@ -100,8 +99,6 @@ const Creator = () => {
                                 <img src={Tyler} alt="" className="size-9" />
                                 <img src={Esther} alt="" className="size-9" />
                                 <img src={Cody} alt="" className="size-9" />
-
-
                             </div>
 
                         }
@@ -144,29 +141,11 @@ const Creator = () => {
                                     <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">keenthemes</Link>
                                 </div>
                             </div>
-
                         }
                     />
                     {/* {Community Badges} */}
 
-                    <Card
-                        dotStatus={false}
-                        buttonStatus={false}
-                        title='Community Badges'
-                        content={
-                            <div className="flex-col flex gap-5">
-
-                                <div className="flex flex-row items-center justify-start px-[30px] py-5">
-                                    <img src={BadgeOne} alt="" />
-                                    <img src={BadgeTwo} alt="" />
-                                    <img src={BadgeThree} alt="" />
-                                    <img src={BadgeFour} alt="" />
-
-                                </div>
-                            </div>
-                        }
-                    />
-
+                    <Badges title="Community Badges"/>
 
                     {/* {Skills} */}
 
@@ -254,10 +233,9 @@ const Creator = () => {
 
                                         </div>
                                     </div>
-
-
                                 </div>
-                                <img src={Arrow} alt="" />
+                                <img src={Arrow} alt="arrow-light" className="dark:hidden" />
+                                <img src={ArrowDark} alt="arrow-dark" className="dark:flex hidden" />
 
                             </div>
                         }
@@ -453,8 +431,8 @@ const Creator = () => {
 
                             <div className="flex flex-col p-[30px] gap-[15px]">
                                 <div className="flex flex-row flex-wrap items-center gap-5">
-                                    <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
-                                        <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
+                                    <div className="flex flex-col  rounded-lg border-[#D74E00] border-opacity-20 border-[2px] ">
+                                        <div className="py-2 px-3 bg-[#fff5ef] dark:bg-[#D74E00] dark:bg-opacity-20 rounded-t-lg flex items-center justify-center border-b-2 border-[#D74E00] border-opacity-20">
                                             <span className="text-[#FF6F1E] text-b-13-14-500">Feb</span>
                                         </div>
                                         <div className="flex items-center justify-center py-[6px]">
@@ -464,14 +442,14 @@ const Creator = () => {
                                     </div>
                                     <img src={Digital} alt="" />
                                     <div className="flex flex-col gap-2.5">
-                                        <Link to={location} className="text-[#FF6F1E] text-b-13-14-400 hover:text-primary text-animation">Webinar Series</Link>
+                                        <Link to={location} className="text-[#FF6F1E]  text-b-13-14-400 hover:text-primary text-animation">Webinar Series</Link>
                                         <Link to={location} className="text-gray-900 text-b-16-16-500 hover:text-primary text-animation">Digital Marketing Mastery Series</Link>
                                         <p className="text-b-14-22-400 text-gray-800">Join our comprehensive webinars to master the art of digital marketing strategies.</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-row flex-wrap items-center gap-5">
-                                    <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
-                                        <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
+                                    <div className="flex flex-col  rounded-lg border-[#D74E00] border-opacity-20  border-[2px] ">
+                                        <div className="py-2 px-3 bg-[#fff5ef] dark:bg-[#D74E00] dark:bg-opacity-20 rounded-t-lg flex items-center justify-center border-b-2 border-[#D74E00] border-opacity-20">
                                             <span className="text-[#FF6F1E] text-b-13-14-500">Apr</span>
                                         </div>
                                         <div className="flex items-center justify-center py-[6px]">
@@ -487,8 +465,8 @@ const Creator = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row flex-wrap items-center gap-5">
-                                    <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
-                                        <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
+                                    <div className="flex flex-col  rounded-lg border-[#D74E00] border-opacity-20 border-[2px] ">
+                                        <div className="py-2 px-3 bg-[#fff5ef] dark:bg-[#D74E00] dark:bg-opacity-20 rounded-t-lg flex items-center justify-center border-b-2 border-[#D74E00] border-opacity-20">
                                             <span className="text-[#FF6F1E] text-b-13-14-500">Aug</span>
                                         </div>
                                         <div className="flex items-center justify-center py-[6px]">
@@ -558,7 +536,7 @@ const Creator = () => {
                                     <div className="flex flex-row items-start gap-2.5 relative">
                                         <div className="flex flex-col items-center relative">
                                             <div className="p-2.5 bg-gray-100 rounded-full border flex items-center justify-center z-10">
-                                                <FaShareAlt  className="text-gray-600" />
+                                                <FaShareAlt className="text-gray-600" />
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-[6px]">
@@ -583,12 +561,14 @@ const Creator = () => {
                                             </span>
                                             <span className="text-b-12-12-400 text-gray-600">1 week ago, 11:45 AM</span>
                                             <div className="flex flex-col items-center justify-center">
-                                                <img src={VerifyEmail} alt="" />
+                                                <img src={VerifyEmail} alt="verify-light" className="dark:hidden" />
+                                                <img src={VerifyEmailDark} alt="verify-dark" className="dark:flex hidden" />
+
                                                 <div className="flex flex-col gap-[6px]">
                                                     <span className="text-b-15-16-500">Blogging Conference</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-2.5 flex-wrap">
-                                                    <span className="text-b-13-14-400">
+                                                    <span className="text-b-13-14-400 text-gray-600">
                                                         <Link to={location} className="text-primary"> Axio new release </Link>
                                                         email campaign
                                                     </span>

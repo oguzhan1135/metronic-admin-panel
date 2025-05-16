@@ -18,6 +18,7 @@ interface Project {
 }
 
 const ProjectTable = () => {
+
     const [project, setProject] = useState<Project[]>([
         {
             id: 1,
@@ -61,6 +62,32 @@ const ProjectTable = () => {
         }
     ])
 
+    type SortDirection = 'asc' | 'desc';
+    type SortKey = 'projectName' | 'progress' | 'dueDate';
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('projectName');
+
+
+    const handleSort = (key: SortKey) => {
+        const isSameKey = sortKey === key;
+        const newDirection: SortDirection = isSameKey && sortDirection === 'asc' ? 'desc' : 'asc';
+
+        let filtered = [...project];
+
+        filtered.sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
+
+            return newDirection === 'asc'
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+        });
+
+        setSortKey(key);
+        setSortDirection(newDirection);
+        setProject(filtered)
+    };
+
     return (
         <Card
             buttonStatus={true}
@@ -75,16 +102,16 @@ const ProjectTable = () => {
                             <table className=" border-collapse  min-w-[600px]">
                                 <thead>
                                     <tr className="bg-gray-100">
-                                        <th className="px-[30px] py-[13px] text-left">
+                                        <th onClick={() => handleSort("projectName")} className="px-[30px] py-[13px] text-left cursor-pointer">
                                             <span className="text-b-13-14-400 text-gray-700">Project Name</span>
                                         </th>
-                                        <th className="px-[30px] py-[13px] text-center">
+                                        <th onClick={() => handleSort("progress")} className="px-[30px] py-[13px] text-center cursor-pointer">
                                             <span className="text-b-13-14-400 text-gray-700">Progress</span>
                                         </th>
                                         <th className="px-[30px] py-[13px] text-left">
                                             <span className="text-b-13-14-400 text-gray-700">People</span>
                                         </th>
-                                        <th className="px-[30px] py-[13px] text-left">
+                                        <th onClick={() => handleSort("dueDate")} className="px-[30px] py-[13px] text-left cursor-pointer">
                                             <span className="text-b-13-14-400 text-gray-700">Due Date</span>
                                         </th>
                                         <th className="px-[30px] py-[13px] text-left">
@@ -114,8 +141,8 @@ const ProjectTable = () => {
                                                     <span className='text-b-14-14-400 text-gray-800'>{item.dueDate}</span>
                                                 </td>
                                                 <td className='px-[30px] py-[21px] '>
-                                                    <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <HiOutlineDotsVertical />
+                                                    <div className="p-[7px] rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                        <HiOutlineDotsVertical className="size-[18px] text-gray-600" />
                                                     </div>
                                                 </td>
                                             </tr>

@@ -144,11 +144,11 @@ const Works = () => {
             <Menu />
             <div className="flex items-center justify-between">
                 <h1 className="text-b-18-18-600 text-gray-900">12 Projects</h1>
-                <div className="rounded-lg border p-1 bg-gray-200 flex flex-row items-center gap-1">
-                    <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                 <div className="rounded-lg border p-1 bg-gray-200 flex flex-row items-center gap-1">
+                    <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white dark:bg-coal-300" : "border-transparent"} cursor-pointer hover:bg-gray-300 text-animation`}>
                         <CiGrid41 className="text-gray-600 size-[14px]" />
                     </div>
-                    <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                    <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white dark:bg-coal-300" : "border-transparent"} cursor-pointer hover:bg-gray-300 text-animation`}>
                         <CiGrid2H className="text-gray-600 size-[14px]" />
                     </div>
                 </div>

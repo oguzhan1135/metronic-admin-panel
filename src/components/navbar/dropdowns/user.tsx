@@ -3,7 +3,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { IoIosNotifications } from "react-icons/io";
 import Switch from '../../switch';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCheckCircle, FaMoneyBill, FaMoon, FaRegUserCircle, FaRocket } from 'react-icons/fa';
 import { GoCodeReview } from 'react-icons/go';
 import FlagUSA from '../../../assets/icon/united-states.svg'
@@ -58,7 +58,9 @@ const User = () => {
     const [languageSubMenu, setLanguageSubMenu] = useState(false)
 
     const toggleDarkMode = () => {
-        const newTheme = darkMode ? 'dark' : 'light';
+        const currentTheme = document.documentElement.classList.contains('dark');
+        const newTheme = currentTheme ? 'light' : 'dark';
+
         localStorage.setItem('theme', newTheme);
 
         if (newTheme === 'dark') {
@@ -68,6 +70,14 @@ const User = () => {
         }
     };
 
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, []);
 
     return (
         <div className="absolute top-12 right-0 w-64">
@@ -84,7 +94,7 @@ const User = () => {
                                 <span className='text-gray-700 text-b-11-12-400'>c.fisher@gmail.com</span>
                             </div>
                         </div>
-                        <div className="w-7 h-5 bg-primary-clarity bg-opacity-20 flex items-center justify-center rounded">
+                        <div className="w-7 h-5 bg-primary-light bg-opacity-20 flex items-center justify-center rounded">
                             <span className='text-b-10-10-500 text-primary'>Pro</span>
                         </div>
                     </div>

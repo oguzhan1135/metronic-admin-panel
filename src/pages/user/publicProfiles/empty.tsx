@@ -1,21 +1,17 @@
 import Card from "../../../components/card/card"
 import Verify from '../../../assets/icon/verify.svg'
-import {  CiMail } from "react-icons/ci"
+import { CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
 import Menu from "../../../components/publicProfile/hovermenu"
-import { useState } from "react"
 import AccountDeactiveted from '../../../assets/icon/account-deactived.svg'
+import AccountDeactivatedDark from '../../../assets/icon/account-deactivated-dark.svg'
 
 import Jennifer from '../../../assets/icon/jennifer.svg'
 
 const Empty = () => {
     const location = window.location.pathname
-
-
-    const [selectedCardView, setSelectedCardView] = useState("card");
-
     return (
         <div className="flex flex-col gap-10  ">
             <div className="flex flex-col gap-3 items-center justify-center bg-mask bg-cover">
@@ -47,10 +43,11 @@ const Empty = () => {
                 dotStatus={false}
                 buttonStatus={false}
                 content={
-                    <div className="flex flex-col items-center gap-2.5 pb-10">
-                        <img src={AccountDeactiveted} alt="account-deactiveted" />
+                    <div className="flex flex-col items-center gap-2.5 py-10 pt-20">
+                        <img src={AccountDeactiveted} alt="account-deactiveted" className="dark:hidden" />
+                        <img src={AccountDeactivatedDark} alt="account-deactiveted-dark" className="dark:flex hidden" />
                         <span className="text-b-18-18-500 text-gray-900">Upload Item to Get Started</span>
-                        <span>Begin by crafting your inaugural list in minutes. <Link to={location} className="text-primary">Get Started!</Link></span>
+                        <span className="text-gray-600 text-b-14-14-500">Begin by crafting your inaugural list in minutes. <Link to={location} className="text-primary">Get Started!</Link></span>
                     </div>
                 }
             />

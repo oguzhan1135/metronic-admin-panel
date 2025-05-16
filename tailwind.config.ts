@@ -126,6 +126,7 @@ const config: Config = {
       },
       backgroundImage: {
         'map': "url('/src/assets/icon/background-map.svg')",
+        'map-dark': "url('/src/assets/icon/map-dark.svg')",
         'mask': "url('/src/assets/icon/mask.svg')",
         'author-bg-1': "url('/src/assets/icon/author-bg-1.svg')",
         'author-bg-2': "url('/src/assets/icon/author-bg-2.svg')",
@@ -139,7 +140,9 @@ const config: Config = {
 
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };
 
 export default config;

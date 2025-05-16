@@ -3,6 +3,7 @@ import { MdOutlineMessage, MdSaveAlt } from "react-icons/md";
 import Background from '../../assets/icon/save-background.svg'
 import { CiImageOn } from "react-icons/ci";
 import Tyler from '../../assets/icon/tyler-hero.svg'
+import BackgroundDark from '../../assets/icon/save-background-dark.svg'
 interface PostTabProps {
     commentContent: React.ReactElement;
     likeContent: React.ReactElement;
@@ -48,7 +49,8 @@ const PostTab: React.FC<PostTabProps> = ({ commentContent, likeContent, selected
                             {likeContent}
                         </> : selected === "save" ?
                             <div className="flex flex-col items-center w-full gap-[7px]">
-                                <img src={Background} alt="background" />
+                                <img src={Background} alt="background" className="dark:hidden" />
+                                <img src={BackgroundDark} alt="background-dark" className="dark:flex hidden" />
                                 <span className="text-b-20-20-500 text-gray-900 pt-[23px]">Access Restricted for this Option</span>
                                 <p className="text-b-14-22-400 text-gray-600 text-center pb-[23px]">The user may not have the necessary privileges or permissions to access this option in this page</p>
                                 <div className="w-max flex items-center justify-center border rounded-md px-4 py-3 cursor-pointer">

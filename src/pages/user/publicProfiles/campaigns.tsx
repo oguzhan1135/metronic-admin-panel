@@ -8,8 +8,6 @@ import Menu from "../../../components/publicProfile/hovermenu"
 import { useState } from "react"
 import React from "react"
 import Jennifer from '../../../assets/icon/jennifer.svg'
-import { FaCheckCircle } from "react-icons/fa"
-import { FaUsers } from "react-icons/fa6"
 import Twitch from '../../../assets/icon/twitch-purple.svg'
 import Instagram from '../../../assets/icon/instagram.svg'
 import Youtube from '../../../assets/icon/youtube.svg'
@@ -48,7 +46,6 @@ type Campaign = {
 
 const Campaigns = () => {
     const location = window.location.pathname
-    const [more, setMore] = useState(false)
     const [campaigns, setCampaigns] = useState<Campaign[]>(
         [
             {
@@ -131,7 +128,6 @@ const Campaigns = () => {
             }
         ]
     );
-
     const [selectedCardView, setSelectedCardView] = useState("card");
     const [moreStates, setMoreStates] = useState<{ [key: number]: boolean }>({});
 
@@ -172,10 +168,10 @@ const Campaigns = () => {
             <div className="flex items-center justify-between">
                 <h1 className="text-b-18-18-600 text-gray-900">6 Campaigns</h1>
                 <div className="rounded-lg border p-1 bg-gray-200 flex flex-row items-center gap-1">
-                    <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                    <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white dark:bg-coal-300" : "border-transparent"} cursor-pointer hover:bg-gray-300 text-animation`}>
                         <CiGrid41 className="text-gray-600 size-[14px]" />
                     </div>
-                    <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                    <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white dark:bg-coal-300" : "border-transparent"} cursor-pointer hover:bg-gray-300 text-animation`}>
                         <CiGrid2H className="text-gray-600 size-[14px]" />
                     </div>
                 </div>

@@ -19,6 +19,8 @@ import ModernSoftware from '../../../../assets/icon/modernSoftware.svg'
 import Balancing from '../../../../assets/icon/blancingWork.svg'
 import VerifyEmail from '../../../../assets/icon/verify-email.svg'
 import { useState } from "react"
+import VerifyEmailDark from '../../../../assets/icon/verify-email-dark.svg'
+import ArrowDark from '../../../../assets/icon/arrow-dark.svg'
 
 const Blogger = () => {
     const location = window.location.pathname
@@ -55,7 +57,7 @@ const Blogger = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Data} */}
-                    <div className="bg-white  rounded-xl shadow-sm border">
+                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex flex-row items-center gap-5">
                                 <div className="flex  flex-col gap-2.5 items-center pr-5 border-r">
@@ -219,7 +221,8 @@ const Blogger = () => {
 
 
                                 </div>
-                                <img src={Arrow} alt="" />
+                                <img src={Arrow} alt="arrow-light" className="dark:hidden" />
+                                <img src={ArrowDark} alt="arrow-dark" className="dark:flex hidden" />
 
                             </div>
                         }
@@ -493,12 +496,15 @@ const Blogger = () => {
                                             </span>
                                             <span className="text-b-12-12-400 text-gray-600">1 week ago, 11:45 AM</span>
                                             <div className="flex flex-col items-center justify-center">
-                                                <img src={VerifyEmail} alt="" />
+
+                                                <img src={VerifyEmail} alt="verify-light" className="dark:hidden" />
+                                                <img src={VerifyEmailDark} alt="verify-dark" className="dark:flex hidden" />
+
                                                 <div className="flex flex-col gap-[6px]">
                                                     <span className="text-b-15-16-500">Blogging Conference</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-2.5 flex-wrap">
-                                                    <span className="text-b-13-14-400">
+                                                    <span className="text-b-13-14-400 text-gray-600">
                                                         <Link to={location} className="text-primary"> Axio new release </Link>
                                                         email campaign
                                                     </span>
