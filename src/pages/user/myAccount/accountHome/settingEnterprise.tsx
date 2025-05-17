@@ -1,20 +1,17 @@
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
-import Information from '../../../../assets/icon/information-icon.svg'
 import { BsApple } from "react-icons/bs"
 import { CiBasketball } from "react-icons/ci"
 import { FaCalendarDay, FaCopy, FaEllipsisVertical, FaFacebook, FaLinkedin, FaPlus, FaXTwitter } from "react-icons/fa6"
 import { FcGoogle } from "react-icons/fc"
 import { IoIosClose, IoIosLogOut, IoLogoTwitch } from "react-icons/io"
-import { MdOutlineEditNote } from "react-icons/md"
+import { MdOutlineEditNote, MdOutlineMessage } from "react-icons/md"
 import Card from "../../../../components/card/card"
 import Switch from "../../../../components/switch"
 import { useState } from "react"
 import ExampleUser from '../../../../assets/icon/example-user.svg'
 import Camera from '../../../../assets/icon/camera.svg'
-import Message from '../../../../assets/icon/text-message.svg'
-import Authenticator from '../../../../assets/icon/authenticator.svg'
-import { FaCheckCircle, FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
+import { FaCheckCircle, FaInfo, FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
 import GoogleCalendar from '../../../../assets/icon/google-calendar.svg'
 import Monday from '../../../../assets/icon/monday.svg'
 import Chrome from '../../../../assets/icon/chrome.svg'
@@ -26,6 +23,7 @@ import Tyler from '../../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../../assets/icon/ester-hoeard.svg'
 import Cody from '../../../../assets/icon/cody-fisher.svg'
 import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import { IoShieldCheckmark } from "react-icons/io5"
 const SettingEnterprise = () => {
     const [account, setAccount] = useState(true)
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
@@ -49,7 +47,7 @@ const SettingEnterprise = () => {
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
 
-                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
                     <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -60,7 +58,21 @@ const SettingEnterprise = () => {
 
             <div className="p-5 rounded-xl flex flex-rowe items-center justify-between border flex-wrap md:flex-nowrap bg-mask bg-left">
                 <div className="flex flex-row items-center gap-4">
-                    <img src={Information} alt="information" />
+                    <div className="relative size-[50px] shrink-0">
+                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
+                                                                  18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
+                                                                  39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
+                            </path>
+                            <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506 
+                                                                  18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937 
+                                                                  39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z" stroke="">
+                            </path>
+                        </svg>
+                        <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
+                            <FaInfo className="text-[#FF6F1E] size-[22px]" />
+                        </div>
+                    </div>
                     <div className="flex flex-col gap-2.5">
                         <div className="flex flex-row items-center gap-2.5">
                             <span className="text-gray-900 text-b-16-16-500">Upgrade your business info</span>
@@ -122,7 +134,7 @@ const SettingEnterprise = () => {
                                             />
                                             <img src={Camera} alt="camera" className="absolute bottom-0" />
                                         </div>
-                                        <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                        <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                     </div>
                                 </div>
@@ -244,7 +256,21 @@ const SettingEnterprise = () => {
                                     <div className="flex flex-col gap-5">
                                         <div className="flex flex-row items-center justify-between rounded-xl border p-4">
                                             <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Message} alt="" />
+                                                <div className="relative size-[50px] shrink-0">
+                                                    <svg className="w-full h-full stroke-gray-300 opacity-80 dark:opacity-50 fill-gray-100 " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
+                                                                18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
+                                                                39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
+                                                        </path>
+                                                        <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506 
+                                                                18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937 
+                                                                39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z" stroke="">
+                                                        </path>
+                                                    </svg>
+                                                    <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
+                                                        <MdOutlineMessage className="text-gray-600 size-[22px]" />
+                                                    </div>
+                                                </div>
                                                 <div className="flex flex-col gap-1">
                                                     <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Text Message (SMS)</Link>
                                                     <span className="text-gray-700 text-b-13-14-500">Instant codes for secure account verification.</span>
@@ -254,7 +280,21 @@ const SettingEnterprise = () => {
                                         </div>
                                         <div className="flex flex-row items-center justify-between rounded-xl border p-4">
                                             <div className="flex flex-row items-center gap-[14px]">
-                                                <img src={Authenticator} alt="" />
+                                                <div className="relative size-[50px] shrink-0">
+                                                    <svg className="w-full h-full stroke-gray-300 opacity-80 dark:opacity-50 fill-gray-100 " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
+                                                                18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
+                                                                39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
+                                                        </path>
+                                                        <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506 
+                                                                18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937 
+                                                                39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z" stroke="">
+                                                        </path>
+                                                    </svg>
+                                                    <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
+                                                        <IoShieldCheckmark className="text-gray-600 size-[22px]" />
+                                                    </div>
+                                                </div>
                                                 <div className="flex flex-col gap-1">
                                                     <Link to={location} className="text-b-14-14-500 text-gray-900 hover:text-primary text-animation">Authenticator App (TOTP)</Link>
                                                     <span className="text-gray-700 text-b-13-14-500">Elevate protection with an authenticator app for
@@ -263,6 +303,21 @@ const SettingEnterprise = () => {
                                             </div>
                                             <Switch setSwitch={() => setAuthenticator(!authenticator)} status={authenticator} size="medium" />
                                         </div>
+                                    </div>
+                                    <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
+                                        <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Password</span>
+                                        <div className="flex flex-col  w-full">
+                                            <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Enter pasword" />
+                                            </div>
+                                            <span className="text-b-13-20-400 text-gray-800">Enter your password to setup Two-Factor authentication</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex ml-auto">
+                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                            Save Changes
+                                        </button>
                                     </div>
                                 </div>
                             </>
@@ -301,7 +356,7 @@ const SettingEnterprise = () => {
                                         </div>
                                     </div>
                                     <div className="p-2 rounded-md hover:bg-gray-100">
-                                        <FaRegTrashAlt />
+                                        <FaRegTrashAlt  className="text-gray-600"/>
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center justify-between p-4 border rounded-xl">
@@ -314,7 +369,7 @@ const SettingEnterprise = () => {
                                         </div>
                                     </div>
                                     <div className="p-2 rounded-md hover:bg-gray-100">
-                                        <FaRegTrashAlt />
+                                        <FaRegTrashAlt className="text-gray-600"/>
                                     </div>
                                 </div>
                             </div>
@@ -453,14 +508,14 @@ const SettingEnterprise = () => {
                                     <div className="border rounded-xl flex flex-col gap-[30px]  p-4">
                                         <div className="flex flex-row justify-between flex-wrap">
                                             <div className="flex flex-row items-center gap-[14px]">
-                                                <span className="text-h-26-26-600">$0</span>
+                                                <span className="text-h-26-26-600 text-gray-900">$0</span>
                                                 <span className="text-b-13-20-400 text-gray-700">Pursuing opportunities, earning zero. Growth beyond monetary measures.</span>
                                             </div>
                                             <button className="border rounded-md px-3 py-2.5 flex items-center justify-center w-max">
                                                 <span className="text-b-12-12-500 text-gray-700">Add a Goal</span>
                                             </button>
                                         </div>
-                                        <input type="range" value={15} />
+                                        <input type="range" defaultValue={15} />
                                     </div>
                                 </div>
                             </>
@@ -476,16 +531,19 @@ const SettingEnterprise = () => {
                             <>
                                 <table className=" table-fixed w-full">
                                     <thead className="bg-gray-200">
-                                        <th className="text-left px-[30px] py-[13px] text-b-13-14-400 text-gray-700">Date</th>
-                                        <th className="text-right text-b-13-14-400 text-gray-700">Type</th>
-                                        <th className="text-b-13-14-400 text-gray-700">Amount</th>
-                                        <th></th>
+                                        <tr>
+                                            <th className="text-left px-[30px] py-[13px] text-b-13-14-400 text-gray-700">Date</th>
+                                            <th className="text-right text-b-13-14-400 text-gray-700">Type</th>
+                                            <th className="text-b-13-14-400 text-gray-700">Amount</th>
+                                            <th></th>
+                                        </tr>
+
                                     </thead>
                                     <tbody>
                                         <tr className="border-b">
-                                            <td className="text-left px-[30px] py-[13px] ">24 Aug,2024</td>
-                                            <td className="text-right">Subscription Fee</td>
-                                            <td className="text-center">$24.00</td>
+                                            <td className=" text-gray-800 text-left px-[30px] py-[13px] ">24 Aug,2024</td>
+                                            <td className=" text-gray-800 text-right">Subscription Fee</td>
+                                            <td className=" text-gray-800 text-center">$24.00</td>
                                             <td className="flex item-center justify-end px-[30px] py-[13px]">
                                                 <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
                                                     <FaEllipsisVertical className="size-[18px] text-gray-600" />
@@ -493,9 +551,9 @@ const SettingEnterprise = () => {
                                             </td>
                                         </tr>
                                         <tr className="border-b">
-                                            <td className="text-left px-[30px] py-[13px] ">15 Sep, 2024</td>
-                                            <td className="text-right">Product Purchase</td>
-                                            <td className="text-center">$50.99</td>
+                                            <td className=" text-gray-800 text-left px-[30px] py-[13px] ">15 Sep, 2024</td>
+                                            <td className=" text-gray-800 text-right">Product Purchase</td>
+                                            <td className=" text-gray-800 text-center">$50.99</td>
                                             <td className="flex item-center justify-end px-[30px] py-[13px]">
                                                 <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
                                                     <FaEllipsisVertical className="size-[18px] text-gray-600" />
@@ -503,9 +561,9 @@ const SettingEnterprise = () => {
                                             </td>
                                         </tr>
                                         <tr className="border-b">
-                                            <td className="text-left px-[30px] py-[13px] ">05 Dec, 2024</td>
-                                            <td className="text-right">Transaction Fee</td>
-                                            <td className="text-center">$2.50</td>
+                                            <td className=" text-gray-800 text-left px-[30px] py-[13px] ">05 Dec, 2024</td>
+                                            <td className=" text-gray-800 text-right">Transaction Fee</td>
+                                            <td className=" text-gray-800 text-center">$2.50</td>
                                             <td className="flex item-center justify-end px-[30px] py-[13px]">
                                                 <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
                                                     <FaEllipsisVertical className="size-[18px] text-gray-600" />
@@ -513,9 +571,9 @@ const SettingEnterprise = () => {
                                             </td>
                                         </tr>
                                         <tr className="border-b">
-                                            <td className="text-left px-[30px] py-[13px] ">30 May, 2025</td>
-                                            <td className="text-right">Annual Maintenance</td>
-                                            <td className="text-center">$40.20</td>
+                                            <td className=" text-gray-800 text-left px-[30px] py-[13px] ">30 May, 2025</td>
+                                            <td className=" text-gray-800 text-right">Annual Maintenance</td>
+                                            <td className=" text-gray-800 text-center">$40.20</td>
                                             <td className="flex item-center justify-end px-[30px] py-[13px]">
                                                 <div className="p-[7px] rounded-md hover:bg-gray-200 cursor-pointer w-max flex items-center justify-center">
                                                     <FaEllipsisVertical className="size-[18px] text-gray-600" />
@@ -534,11 +592,14 @@ const SettingEnterprise = () => {
                             <>
                                 <div className="flex flex-col ">
                                     <table>
-                                        <thead className="bg-gray-200 ">
-                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
-                                            <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
-                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
-                                            <th></th>
+
+                                        <thead className="bg-gray-200">
+                                            <tr>
+                                                <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
+                                                <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
+                                                <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
+                                                <th></th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             <tr className="border-b">
@@ -631,7 +692,7 @@ const SettingEnterprise = () => {
                                                     </button>
                                                 </td>
                                             </tr>
-                                           
+
                                         </tbody>
                                     </table>
                                 </div>

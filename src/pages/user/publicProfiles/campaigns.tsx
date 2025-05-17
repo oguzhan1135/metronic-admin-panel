@@ -180,116 +180,119 @@ const Campaigns = () => {
             <div className={`${selectedCardView === "card" ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1" : "flex flex-col gap-5"}`}>
                 {
                     campaigns.map((item) => (
-                        <Card buttonStatus={false} dotStatus={true} titleContent={selectedCardView === "card" ?
-                            <>
-                                {
-                                    item.progress < 100 && item.progress != 0 ?
-                                        <>
-                                            <div className="p-2 rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
-                                                <span className="text-primary text-b-11-12-500">In Progress</span>
-                                            </div>
-
-                                        </> : item.progress == 0 ?
-                                            <>
-                                                <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
-                                                    <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
-                                                </div>
-                                            </> :
-                                            <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
-                                                <span className="text-success text-b-11-12-500">Completed</span>
-                                            </div>
-                                }
-                            </> : undefined}
-
-                            content={
-                                <div className={`flex   items-center  relative ${selectedCardView === "card" ? "flex-col pt-[30px] overflow-hidden " : "flex-row p-[30px] gap-[14px] justify-center sm:justify-between flex-wrap"}`}>
-
-                                    <div className={`flex items-center ${selectedCardView === "card" ? "flex-col gap-[30px] pb-[30px]" : "flex-col sm:flex-row items-center  gap-[14px]"} `}>
-                                        {item.icon}
-
-                                        <div className={`flex  gap-2.5 flex-col ${selectedCardView === "card" ? "items-center" : "items-center sm:items-start"}`}>
-                                            <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
-                                                {item.title}
-                                            </Link>
-                                            <span className="text-b-14-14-400 text-gray-700">{item.description}</span>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div className={`flex flex-row items-center flex-wrap gap-5 ${selectedCardView === "card" ? "pb-[30px]" : ""}`}>
-                                        {Object.entries(item.metrics).map(([key, value]) => (
-                                            value && (
-                                                <div key={key} className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
-                                                    <span className="text-b-14-14-500 text-gray-900">{value}</span>
-                                                    <span className="text-b-11-12-400 text-gray-700">
-                                                        {key.replace(/([A-Z])/g, ' $1').trim().replace(/^./, str => str.toUpperCase())}
-                                                    </span>
-
-                                                </div>
-                                            )
-                                        ))}
-                                    </div>
-
-                                    <>
-                                        {selectedCardView === "card" && (
-                                            <>
-                                                {
-                                                    item.progress < 100 && item.progress !== 0 ? (
-                                                        <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
-                                                            <span
-                                                                className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
-                                                                style={{ width: `${item.progress}%` }}
-                                                            ></span>
-                                                        </div>
-                                                    ) : item.progress === 0 ? (
-                                                        <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
-                                                    ) : (
-                                                        <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
-                                                    )
-                                                }
-                                            </>
-                                        )}
-                                    </>
+                        <React.Fragment key={item.id}>
+                            <Card buttonStatus={false} dotStatus={true} titleContent={selectedCardView === "card" ?
+                                <>
                                     {
-                                        selectedCardView === "list" && (
+                                        item.progress < 100 && item.progress != 0 ?
                                             <>
-                                                {
-                                                    item.progress < 100 && item.progress != 0 ?
-                                                        <>
-                                                            <div className="p-2 rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
-                                                                <span className="text-primary text-b-11-12-500">In Progress</span>
-                                                            </div>
+                                                <div className="p-2 rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
+                                                    <span className="text-primary text-b-11-12-500">In Progress</span>
+                                                </div>
 
-                                                        </> : item.progress == 0 ?
-                                                            <>
-                                                                <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
-                                                                    <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
-                                                                </div>
-                                                            </> :
-                                                            <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
-                                                                <span className="text-success text-b-11-12-500">Completed</span>
-                                                            </div>
-                                                }
-                                            </>
-                                        )
+                                            </> : item.progress == 0 ?
+                                                <>
+                                                    <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
+                                                        <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
+                                                    </div>
+                                                </> :
+                                                <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
+                                                    <span className="text-success text-b-11-12-500">Completed</span>
+                                                </div>
                                     }
+                                </> : undefined}
 
-                                    {selectedCardView === "list" && (
-                                        <div className="relative">
-                                            <div
-                                                onClick={() => toggleMore(item.id)}
-                                                className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
-                                            >
-                                                <HiOutlineDotsVertical />
+                                content={
+                                    <div className={`flex   items-center  relative ${selectedCardView === "card" ? "flex-col pt-[30px] overflow-hidden " : "flex-row p-[30px] gap-[14px] justify-center sm:justify-between flex-wrap"}`}>
+
+                                        <div className={`flex items-center ${selectedCardView === "card" ? "flex-col gap-[30px] pb-[30px]" : "flex-col sm:flex-row items-center  gap-[14px]"} `}>
+                                            {item.icon}
+
+                                            <div className={`flex  gap-2.5 flex-col ${selectedCardView === "card" ? "items-center" : "items-center sm:items-start"}`}>
+                                                <Link to={location} className="text-b-18-18-500 text-gray-900 hover:text-primary text-animation">
+                                                    {item.title}
+                                                </Link>
+                                                <span className="text-b-14-14-400 text-gray-700">{item.description}</span>
                                             </div>
-                                            {moreStates[item.id] && <CardMore setMore={() => toggleMore(item.id)} more={moreStates[item.id]} />}
                                         </div>
-                                    )}
-                                </div>
 
-                            }
-                        />
+
+
+                                        <div className={`flex flex-row items-center flex-wrap gap-5 ${selectedCardView === "card" ? "pb-[30px]" : ""}`}>
+                                            {Object.entries(item.metrics).map(([key, value]) => (
+                                                value && (
+                                                    <div key={key} className="border border-dotted rounded-md p-2.5 flex flex-col items-start justify-center gap-[7px]">
+                                                        <span className="text-b-14-14-500 text-gray-900">{value}</span>
+                                                        <span className="text-b-11-12-400 text-gray-700">
+                                                            {key.replace(/([A-Z])/g, ' $1').trim().replace(/^./, str => str.toUpperCase())}
+                                                        </span>
+
+                                                    </div>
+                                                )
+                                            ))}
+                                        </div>
+
+                                        <>
+                                            {selectedCardView === "card" && (
+                                                <>
+                                                    {
+                                                        item.progress < 100 && item.progress !== 0 ? (
+                                                            <div className="relative w-full h-[6px] bg-primary-light rounded-full -mt-[3px]">
+                                                                <span
+                                                                    className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-300"
+                                                                    style={{ width: `${item.progress}%` }}
+                                                                ></span>
+                                                            </div>
+                                                        ) : item.progress === 0 ? (
+                                                            <div className="w-full h-[6px] bg-gray-300 rounded-full -mt-[3px]"></div>
+                                                        ) : (
+                                                            <div className="w-full h-[6px] bg-success rounded-full -mt-[3px]"></div>
+                                                        )
+                                                    }
+                                                </>
+                                            )}
+                                        </>
+                                        {
+                                            selectedCardView === "list" && (
+                                                <>
+                                                    {
+                                                        item.progress < 100 && item.progress != 0 ?
+                                                            <>
+                                                                <div className="p-2 rounded-[4px] bg-primary-light border-primary border-opacity-10 border flex items-center justify-center">
+                                                                    <span className="text-primary text-b-11-12-500">In Progress</span>
+                                                                </div>
+
+                                                            </> : item.progress == 0 ?
+                                                                <>
+                                                                    <div className="p-2 rounded-[4px] bg-gray-100  border-opacity-10 border flex items-center justify-center">
+                                                                        <span className="text-gray-700 text-b-11-12-500">Upcoming</span>
+                                                                    </div>
+                                                                </> :
+                                                                <div className="p-2 rounded-[4px] bg-success-light border-success border-opacity-10 border flex items-center justify-center">
+                                                                    <span className="text-success text-b-11-12-500">Completed</span>
+                                                                </div>
+                                                    }
+                                                </>
+                                            )
+                                        }
+
+                                        {selectedCardView === "list" && (
+                                            <div className="relative">
+                                                <div
+                                                    onClick={() => toggleMore(item.id)}
+                                                    className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
+                                                >
+                                                    <HiOutlineDotsVertical />
+                                                </div>
+                                                {moreStates[item.id] && <CardMore setMore={() => toggleMore(item.id)} more={moreStates[item.id]} />}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                }
+                            />
+                        </React.Fragment>
+
                     ))
                 }
             </div>

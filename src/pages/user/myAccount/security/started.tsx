@@ -8,6 +8,7 @@ import { MdDevices, MdOutlineSubtitles } from 'react-icons/md'
 import { IoCloudOutline, IoKeyOutline, IoSettingsOutline } from "react-icons/io5"
 import { TiWorldOutline } from "react-icons/ti"
 import { FiShieldOff } from "react-icons/fi"
+import React from "react"
 
 
 const GetStarted = () => {
@@ -18,19 +19,16 @@ const GetStarted = () => {
             description: "A Broad Perspective on Our Comprehensive Security Features and Policies.",
             icon: <MdOutlineSubtitles className='text-primary size-6' />
 
-
         },
         {
             title: "Allowed IP Addresses",
             description: "Specify and Restrict Access Through Authorized IP Address Filtering.",
             icon: <TiWorldOutline className='text-primary size-6' />
-
         },
         {
             title: "Privacy Settings",
             description: "Customize Your Privacy with User-Controlled Settings and Preferences.",
             icon: <IoSettingsOutline className='text-primary size-6' />
-
         },
         {
             title: "Trusted Devices",
@@ -66,18 +64,20 @@ const GetStarted = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
                 {
-                    accountCards.map((item) => (
-                        <Card
-                            dotStatus={true}
-                            titleContent={item.icon}
-                            content={
-                                <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
-                                    <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
-                                    <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
-                                </div>
-                            }
-                            buttonStatus={false}
-                        />
+                    accountCards.map((item, index) => (
+                        <React.Fragment key={index}>
+                            <Card
+                                dotStatus={true}
+                                titleContent={item.icon}
+                                content={
+                                    <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
+                                        <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
+                                        <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
+                                    </div>
+                                }
+                                buttonStatus={false}
+                            />
+                        </React.Fragment>
                     ))
                 }
 

@@ -9,6 +9,7 @@ import { BiSolidUserDetail } from 'react-icons/bi'
 import { FaChartLine, FaDropbox, FaKey, FaSwatchbook, FaUsers } from 'react-icons/fa'
 import { LuSquareMousePointer } from 'react-icons/lu'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
+import React from "react"
 
 
 const GetStarted = () => {
@@ -85,18 +86,20 @@ const GetStarted = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
                 {
-                    accountCards.map((item) => (
-                        <Card
-                            dotStatus={true}
-                            titleContent={item.icon}
-                            content={
-                                <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
-                                    <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
-                                    <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
-                                </div>
-                            }
-                            buttonStatus={false}
-                        />
+                    accountCards.map((item, index) => (
+                        <React.Fragment key={index}>
+                            <Card
+                                dotStatus={true}
+                                titleContent={item.icon}
+                                content={
+                                    <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
+                                        <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
+                                        <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
+                                    </div>
+                                }
+                                buttonStatus={false}
+                            />
+                        </React.Fragment>
                     ))
                 }
 

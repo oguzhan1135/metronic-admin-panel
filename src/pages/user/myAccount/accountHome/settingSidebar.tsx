@@ -31,6 +31,7 @@ const SettingSidebar = () => {
 
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
     const [avaibality, setAvaibality] = useState(true)
+    const [newMessage, setNewMessage] = useState(true)
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
@@ -47,7 +48,7 @@ const SettingSidebar = () => {
     const [authenticator, setAuthenticator] = useState(false)
     const [visible, setVisible] = useState(true)
     const [selectionIntegration, setSelectionIntegration] = useState("Google");
-    const [selectionTheme, setSelectionTheme] = useState("Light");
+    const [selectionTheme, setSelectionTheme] = useState(localStorage.getItem("theme"));
     const [tranparentSidebar, setTransparentSidebar] = useState(true)
     const [slack, setSlack] = useState(true)
     const [mail, setMail] = useState(true)
@@ -83,13 +84,13 @@ const SettingSidebar = () => {
     useEffect(() => {
         const html = document.documentElement;
 
-        if (selectionTheme === "Dark") {
+        if (selectionTheme === "dark") {
             localStorage.setItem("theme", "dark");
             html.classList.add("dark");
-        } else if (selectionTheme === "Light") {
+        } else if (selectionTheme === "light") {
             localStorage.setItem("theme", "light");
             html.classList.remove("dark");
-        } else if (selectionTheme === "System") {
+        } else if (selectionTheme === "system") {
             localStorage.removeItem("theme")
             const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
             if (isSystemDark) {
@@ -223,11 +224,12 @@ const SettingSidebar = () => {
                                     </div>
                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800">Visibility</span>
-                                        <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full outline-none text-gray-800">
-                                            <option value="Public" selected>Public</option>
+                                        <select defaultValue="Public" className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full outline-none text-gray-800">
+                                            <option value="Public">Public</option>
                                             <option value="Option-2">Option-2</option>
                                             <option value="Option-3">Option-3</option>
                                         </select>
+
                                     </div>
                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Avaibality</span>
@@ -296,7 +298,6 @@ const SettingSidebar = () => {
                             }
                         />
                     </section>
-
 
                     {/* Social sign in */}
                     <section id="social-sign-in" className="section">
@@ -519,7 +520,6 @@ const SettingSidebar = () => {
                         />
                     </section>
 
-
                     {/* Password */}
                     <section id="password" className="section">
                         <Card
@@ -571,24 +571,24 @@ const SettingSidebar = () => {
                                     <div className="flex flex-col p-[30px]">
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
-                                            <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
-                                                <option value="American English" selected>American English</option>
+                                            <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                <option value="American English">American English</option>
                                                 <option value="Option-2">Option-2</option>
                                                 <option value="Option-3">Option-3</option>
                                             </select>
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
-                                            <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
-                                                <option value="American English" selected>American English</option>
+                                            <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                <option value="American English">American English</option>
                                                 <option value="Option-2">Option-2</option>
                                                 <option value="Option-3">Option-3</option>
                                             </select>
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
-                                            <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
-                                                <option value="United States Dollar (USD)" selected>United States Dollar (USD)</option>
+                                            <select defaultValue={"United States Dollar (USD)"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                <option value="United States Dollar (USD)">United States Dollar (USD)</option>
                                                 <option value="Option-2">Option-2</option>
                                                 <option value="Option-3">Option-3</option>
                                             </select>
@@ -599,7 +599,7 @@ const SettingSidebar = () => {
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Open tasks as...</span>
                                             <div className="flex flex-row gap-5">
                                                 <div className="flex flex-row items-center gap-[6px]">
-                                                    <input type="radio" name="modal" id="modal" className="size-[22px]" checked />
+                                                    <input type="radio" name="modal" id="modal" className="size-[22px]" defaultChecked />
                                                     <span className="text-b-14-14-500 text-gray-800">Modal</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-[6px]">
@@ -617,12 +617,12 @@ const SettingSidebar = () => {
                                                     <input type="checkbox" name="list" id="list" className="size-[22px]" />
                                                     <span className="text-b-14-14-500 text-gray-800">Show linked list names</span>
                                                 </div>
-                                                <span className="text-b-12-12-400 trext-gray-700">See the name next to each icon</span>
+                                                <span className="text-b-12-12-400 text-gray-700">See the name next to each icon</span>
                                                 <div className="flex flex-row items-center gap-[6px]">
                                                     <input type="checkbox" name="list" id="list" className="size-[22px]" />
                                                     <span className="text-b-14-14-500 text-gray-800">Show linked task names</span>
                                                 </div>
-                                                <span className="text-b-12-12-400 trext-gray-700">Show task names next to ids for linked project tasks.</span>
+                                                <span className="text-b-12-12-400 text-gray-700">Show task names next to ids for linked project tasks.</span>
                                             </div>
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
@@ -651,25 +651,25 @@ const SettingSidebar = () => {
                                     <div className="flex flex-col p-[30px] gap-[30px]">
                                         <div className="flex flex-col gap-5">
                                             <div className="flex flex-col gap-1">
-                                                <span className="text-b-15-16-500 trext-gray-900">Them Mode</span>
+                                                <span className="text-b-15-16-500 text-gray-900">Them Mode</span>
                                                 <span className="text-gray-700 text-b-13-20-400">Select or customize your ui theme</span>
                                             </div>
                                             <div className="flex flex-row flex-wrap gap-[30px] border-b pb-[30px]">
                                                 <div className="flex flex-col gap-2.5">
-                                                    <div onClick={() => setSelectionTheme("Dark")} className={`overflow-hidden rounded-xl ${selectionTheme === "Dark" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <div onClick={() => setSelectionTheme("dark")} className={`overflow-hidden rounded-xl ${selectionTheme === "Dark" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
                                                         <img src={DarkBg} alt="dark-bg" className="scale-[1.05]" />
                                                     </div>
                                                     <span className="text-gray-900 text-b-14-14-500">Dark</span>
                                                 </div>
 
                                                 <div className="flex flex-col gap-2.5">
-                                                    <div onClick={() => setSelectionTheme("Light")} className={`overflow-hidden rounded-xl ${selectionTheme === "Light" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <div onClick={() => setSelectionTheme("light")} className={`overflow-hidden rounded-xl ${selectionTheme === "Light" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
                                                         <img src={LightTheme} alt="light-theme" className="scale-[1.05]" />
                                                     </div>
                                                     <span className="text-gray-900 text-b-14-14-500">Light</span>
                                                 </div>
                                                 <div className="flex flex-col gap-2.5">
-                                                    <div onClick={() => setSelectionTheme("System")} className={`overflow-hidden rounded-xl ${selectionTheme === "System" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
+                                                    <div onClick={() => setSelectionTheme("system")} className={`overflow-hidden rounded-xl ${selectionTheme === "System" ? "border-4 border-success" : "border-4"} cursor-pointer`}>
                                                         <img src={Systemtheme} alt="system-theme" className="scale-[1.05]" />
                                                     </div>
                                                     <span className="text-gray-900 text-b-14-14-500">System</span>
@@ -745,7 +745,7 @@ const SettingSidebar = () => {
                                                     <span className="text-b-13-14-500 text-gray-800">Direct @mentions</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-[6px]">
-                                                    <input type="radio" className="size-[18px]" checked />
+                                                    <input type="radio" className="size-[18px]" defaultChecked />
                                                     <span className="text-b-13-14-500 text-gray-800">Disabled</span>
                                                 </div>
                                             </div>
@@ -758,7 +758,7 @@ const SettingSidebar = () => {
                                                     <span className="text-b-13-14-500 text-gray-800">All new messages and statuses</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-[6px]">
-                                                    <input type="radio" className="size-[18px]" checked />
+                                                    <input type="radio" className="size-[18px]" defaultChecked />
                                                     <span className="text-b-13-14-500 text-gray-800">Unread messages and statuses () Recommended</span>
                                                 </div>
                                                 <div className="flex flex-row items-center gap-[6px]">
@@ -770,9 +770,10 @@ const SettingSidebar = () => {
                                         <div className="flex flex-col gap-5">
                                             <span className="text-b-15-16-500 text-gray-900">Subscriptions</span>
                                             <div className="flex flex-row items-center gap-[6px]">
-                                                <input type="checkbox" className="size-[18px]" checked />
+                                                <input type="checkbox" className="size-[18px]" checked={newMessage} onChange={() => setNewMessage(!newMessage)} />
                                                 <span className="text-b-13-14-500 text-gray-800">All new messages and statuses</span>
                                             </div>
+
 
                                         </div>
                                         <div className="flex ml-auto ">
@@ -785,7 +786,6 @@ const SettingSidebar = () => {
                             }
                         />
                     </section>
-
 
                     {/* Address */}
                     <section id="address" className="section">
@@ -804,8 +804,8 @@ const SettingSidebar = () => {
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
-                                            <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
-                                                <option value="Public" selected>Spain</option>
+                                            <select defaultValue={"Spain"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                <option value="Public">Spain</option>
                                                 <option value="Option-2">Option-2</option>
                                                 <option value="Option-3">Option-3</option>
 
@@ -819,8 +819,8 @@ const SettingSidebar = () => {
                                         </div>
                                         <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                             <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
-                                            <select name="" id="" className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
-                                                <option value="Public" selected>Barcelona</option>
+                                            <select defaultValue={"Barcelona"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                <option value="Public">Barcelona</option>
                                                 <option value="Option-2">Option-2</option>
                                                 <option value="Option-3">Option-3</option>
 

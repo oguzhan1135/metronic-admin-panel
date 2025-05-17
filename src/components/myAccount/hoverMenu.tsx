@@ -30,7 +30,7 @@ const Menu = () => {
 
     return (
         <div className="flex lg:flex-row flex-col items-center justify-between border-b relative mb-2.5">
-            <div className="w-full overflow-x-auto flex xl:justify-between items-center">
+            <div className="w-full overflow-x-auto flex xl:justify-between items-center custom-scroll">
                 <div className="flex flex-row items-center gap-2.5 min-w-[250px] ">
                     <div
                         className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/accountHome") ? "border-b-primary" : "border-none"} cursor-pointer`}

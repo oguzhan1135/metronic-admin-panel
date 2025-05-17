@@ -1,5 +1,6 @@
 import Card from "../card/card"
 import Welcome from '../../assets/icon/unlockCreative.svg'
+import WelcomeDark from '../../assets/icon/verify-email-dark.svg'
 
 
 const Questions = () => {
@@ -20,7 +21,8 @@ const Questions = () => {
                                     <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
                                     <p className=" text-b-14-22-400 text-gray-800">Visit our Help Center for detailed assistance on billing, payments, and subscriptions. </p>
                                 </div>
-                                <img src={Welcome} alt="welcome" />
+                                <img src={Welcome} alt="welcome" className="dark:hidden" />
+                                <img src={WelcomeDark} alt="welcome" className="dark:flex hidden" />
                             </div>
                         </>
                     }
@@ -41,7 +43,8 @@ const Questions = () => {
                                     <span className="text-b-20-30-500 text-gray-900 ">Contact Support</span>
                                     <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
                                 </div>
-                                <img src={Welcome} alt="welcome" />
+                                <img src={Welcome} alt="welcome" className="dark:hidden" />
+                                <img src={WelcomeDark} alt="welcome" className="dark:flex hidden" />
                             </div>
                         </>
                     }

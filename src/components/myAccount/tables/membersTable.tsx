@@ -104,7 +104,7 @@ const MembersTable = () => {
                                 <tbody>
                                     {
                                         members.map((item) => (
-                                            <tr className=" border-b">
+                                            <tr key={item.id} className=" border-b">
                                                 <td className="py-[15px] px-[30px]">
                                                     <div className="flex flex-row gap-2.5 items-center">
                                                         {item.image}

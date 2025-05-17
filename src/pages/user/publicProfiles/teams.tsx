@@ -185,8 +185,8 @@ const Teams = () => {
                                                 <span className="text-b-11-12-400 text-gray-600 text-center">SKILLS</span>
                                                 <div className="flex flex-row items-center gap-[6px]">
                                                     {
-                                                        item.skills.map((childItem) => (
-                                                            <div className="bg-gray-200 rounded-[4px] flex items-center justify-center py-[5px] px-[6px]">
+                                                        item.skills.map((childItem,index) => (
+                                                            <div key={index} className="bg-gray-200 rounded-[4px] flex items-center justify-center py-[5px] px-[6px]">
                                                                 <span className="text-b-11-12-500 text-gray-700">{childItem}</span>
                                                             </div>
                                                         ))

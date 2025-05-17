@@ -85,33 +85,33 @@ const SettingPlain = () => {
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="md:min-w-[220px] text-b-13-14-400 text-gray-800 ">Name</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="md:min-w-[220px] text-b-13-14-400 text-gray-800 ">Phone Number</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="md:min-w-[220px] text-b-13-14-400 text-gray-800 ">Email</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="jason@studio.io" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="md:min-w-[220px] text-b-13-14-400 text-gray-800 ">Address</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Avinguda Imaginària, 789" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
-                                <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                    <option value="Public" selected>Spain</option>
+                                <select name="" id="" defaultValue={"Spain"} className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full outline-none text-gray-800 ">
+                                    <option value="Public">Spain</option>
                                     <option value="Option-2">Option-2</option>
                                     <option value="Option-3">Option-3</option>
 
@@ -119,14 +119,14 @@ const SettingPlain = () => {
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">State</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="State" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
-                                <select name="" id="" className="bg-[#FCFCFC] rounded-md p-3 border w-full outline-none ">
-                                    <option value="Public" selected>Barcelona</option>
+                                <select name="" id="" defaultValue={"Barcelona"} className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full outline-none text-gray-800">
+                                    <option value="Public">Barcelona</option>
                                     <option value="Option-2">Option-2</option>
                                     <option value="Option-3">Option-3</option>
 
@@ -134,7 +134,7 @@ const SettingPlain = () => {
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Postcode</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="08012" />
                                 </div>
                             </div>
@@ -159,19 +159,19 @@ const SettingPlain = () => {
 
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Current Password</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">New Password</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Confirm new password</span>
-                                <div className="bg-[#FCFCFC] rounded-md p-3 border w-full md:min-w-[330px]">
+                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full md:min-w-[330px]">
                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
                                 </div>
                             </div>

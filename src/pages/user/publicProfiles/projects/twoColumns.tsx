@@ -16,6 +16,7 @@ import Patientory from '../../../../assets/icon/patientory.svg'
 import { useState } from "react"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import CardMore from "../../../../components/more/cardMore"
+import React from "react"
 interface Project {
     id: number;
     icon: React.ReactElement;
@@ -138,7 +139,7 @@ const TwoColumns = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-[30px] z-1">
                 {
                     project.map((item) => (
-                        <>
+                        <React.Fragment key={item.id}>
                             {
                                 selectedCardView === "card" ?
                                     <>
@@ -216,7 +217,7 @@ const TwoColumns = () => {
                                     </> : null
 
                             }
-                        </>
+                        </React.Fragment>
                     ))
                 }
             </div>

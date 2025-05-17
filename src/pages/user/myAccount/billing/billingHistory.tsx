@@ -120,7 +120,7 @@ const BillingHistory = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Billing History</h1>
                     <span className='text-b-14-14-400 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                     Billing
                 </button>
 
@@ -132,7 +132,7 @@ const BillingHistory = () => {
                 dotContentStatus={true}
                 dotContent={
                     <>
-                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                             <div className="flex flex-row items-center gap-1">
                                 <FaDownload className="text-gray-600 size-[14px]" />
                                 Download All
@@ -144,7 +144,7 @@ const BillingHistory = () => {
                     <>
                         <div className="flex flex-col overflow-hidden ">
 
-                            <div className="flex flex-col overflow-x-auto">
+                            <div className="flex flex-col overflow-x-auto custom-scroll">
                                 <table className=" border-collapse  min-w-[1000px]">
                                     <thead>
                                         <tr className="bg-gray-100">
@@ -229,10 +229,9 @@ const BillingHistory = () => {
                             </div>
                             <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
                                 <div className="flex flex-row gap-3 items-center">
-                                    <span>Show</span>
+                                    <span className="text-b-13-14-500 text-gray-600">Show</span>
                                     <select
-
-                                        className="outline-none rounded-md p-2.5 cursor-pointer"
+                                        className="outline-none rounded-md p-2.5 cursor-pointer bg-[#1F212A] text-gray-800"
                                         value={showCount}
                                         onChange={(e) => setShowCount(Number(e.target.value))}
                                     >
@@ -240,7 +239,7 @@ const BillingHistory = () => {
                                         <option value="10">10</option>
                                         <option value="20">20</option>
                                     </select>
-                                    <span>per page</span>
+                                    <span className="text-b-13-14-500 text-gray-600">per page</span>
                                 </div>
 
                                 <div className="flex flex-row items-center gap-0.5">

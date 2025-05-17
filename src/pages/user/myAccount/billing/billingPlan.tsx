@@ -19,14 +19,14 @@ const BillingPlan = () => {
                         <h1 className='text-gray-900 text-h-24-24-600'>Plans</h1>
                         <span className='text-b-14-14-400 text-gray-700'>Central Hub for Personal Customization</span>
                     </div>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         View BIlling
                     </button>
                 </div>
 
                 {/* Plans */}
                 <div className="flex flex-col overflow-hidden">
-                    <div className="flex flex-col overflow-x-auto">
+                    <div className="flex flex-col overflow-x-auto custom-scroll">
                         <table className=" border-collapse  min-w-[700px]">
                             <thead>
                                 <tr>
@@ -46,9 +46,9 @@ const BillingPlan = () => {
                                                 <p className="text-b-13-20-400 text-gray-700 min-w-[190px]">Essential features for startups & individuals</p>
                                             </div>
                                             <div className="flex flex-row items-end gap-[6px]">
-                                                <span className="text-h-24-24-600">Free</span>
+                                                <span className="text-h-24-24-600 text-gray-900">Free</span>
                                             </div>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer justify-center">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer justify-center">
                                                 Switch to Team
                                             </button>
                                         </div>
@@ -105,7 +105,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900 ">User Accounts</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">Up to 5</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -124,7 +124,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Data Storage</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">10 GB</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -142,7 +142,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">API Calls</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">1,000/month</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -159,7 +159,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Support</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">Email</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -177,7 +177,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Data Backup</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">Weekly</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -195,7 +195,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Analytics Tools</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">Basic</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -213,7 +213,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Integration Options</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">Limited</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -231,7 +231,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Uptime Guarantee</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left">99%</span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -248,7 +248,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Custom Reports</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left"></span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -265,7 +265,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Mobile Access</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left"></span>
                                     </td>
                                     <td className="py-[17px] px-5 border">
@@ -282,7 +282,7 @@ const BillingPlan = () => {
                                     <td className="py-[17px] px-5 border">
                                         <span className="text-b-13-14-500 text-gray-900">Custom Branding</span>
                                     </td>
-                                    <td className="bg-[#FCFCFC] py-[17px] px-5 border">
+                                    <td className="bg-[#FCFCFC] dark:bg-coal-200 py-[17px] px-5 border">
                                         <span className="text-b-13-14-400 text-gray-800 text-left"></span>
                                     </td>
                                     <td className="py-[17px] px-5 border">

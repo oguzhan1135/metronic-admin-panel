@@ -22,6 +22,7 @@ import Perrier from '../../../../assets/icon/perrier.svg'
 import { useState } from "react"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import CardMore from "../../../../components/more/cardMore"
+import React from "react"
 interface Project {
     id: number;
     icon: React.ReactElement;
@@ -190,7 +191,7 @@ const ThreeColumns = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
                 {
                     project.map((item) => (
-                        <>
+                        <React.Fragment key={item.id}>
                             {
                                 selectedCardView === "card" ?
                                     <>
@@ -259,7 +260,7 @@ const ThreeColumns = () => {
                                     </> : null
 
                             }
-                        </>
+                        </React.Fragment>
                     ))
                 }
             </div>

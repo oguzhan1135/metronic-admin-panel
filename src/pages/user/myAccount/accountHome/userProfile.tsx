@@ -480,18 +480,21 @@ const UserProfile = () => {
                         </>}
                     />
                     {/* Connections */}
-                    <Card
+                     <Card
                         title="Connections"
                         dotStatus={true}
                         content={
                             <>
                                 <div className="flex flex-col ">
                                     <table>
-                                        <thead className="bg-gray-200 ">
-                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
-                                            <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
-                                            <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
-                                            <th></th>
+
+                                        <thead className="bg-gray-200">
+                                            <tr>
+                                                <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
+                                                <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>
+                                                <th className="text-left text-b-13-14-400 text-gray-700 py-[13px]">Status</th>
+                                                <th></th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             <tr className="border-b">
@@ -523,11 +526,7 @@ const UserProfile = () => {
                                                     </div>
                                                 </td>
                                                 <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
-                                                <td >
-                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
-                                                        <FaPlus className="text-primary size-3" />
-                                                    </div>
-                                                </td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
                                                 <td className="">
                                                     <button className="p-2 hover:bg-gray-200 w-max rounded-md">
                                                         <HiOutlineDotsVertical className="text-gray-600" />
@@ -545,11 +544,7 @@ const UserProfile = () => {
                                                     </div>
                                                 </td>
                                                 <td className="text-right pr-10 text-b-13-14-400 text-gray-700">19</td>
-                                                <td >
-                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
-                                                        <FaPlus className="text-primary size-3" />
-                                                    </div>
-                                                </td>
+                                                <td ><FaCheckCircle className="text-primary size-7" /></td>
                                                 <td className="">
                                                     <button className="p-2 hover:bg-gray-200 w-max rounded-md">
                                                         <HiOutlineDotsVertical className="text-gray-600" />
@@ -585,28 +580,6 @@ const UserProfile = () => {
                                                     </div>
                                                 </td>
                                                 <td className="text-right pr-10 text-b-13-14-400 text-gray-700">2</td>
-                                                <td >
-                                                    <div className="rounded-full size-7 flex items-center justify-center border border-primary-clarity border-opacity-50 bg-primary-light">
-                                                        <FaPlus className="text-primary size-3" />
-                                                    </div>
-                                                </td>
-                                                <td className="">
-                                                    <button className="p-2 hover:bg-gray-200 w-max rounded-md">
-                                                        <HiOutlineDotsVertical className="text-gray-600" />
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr className="border-b">
-                                                <td className="py-4 pl-[30px] pr-5">
-                                                    <div className="flex flex-row gap-2.5 items-center">
-                                                        <img src={Cody} alt="" className='' />
-                                                        <div className="flex flex-col gap-2">
-                                                            <Link to={location} className='text-b-14-14-500 text-gray-900 hover:text-primary text-animation'>Guy Hawkins</Link>
-                                                            <span className='text-b-12-12-400 text-gray-700'>2 connections</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="text-right pr-10 text-b-13-14-400 text-gray-700">none</td>
                                                 <td ><FaCheckCircle className="text-primary size-7" /></td>
                                                 <td className="">
                                                     <button className="p-2 hover:bg-gray-200 w-max rounded-md">
@@ -614,6 +587,7 @@ const UserProfile = () => {
                                                     </button>
                                                 </td>
                                             </tr>
+
                                         </tbody>
                                     </table>
                                 </div>

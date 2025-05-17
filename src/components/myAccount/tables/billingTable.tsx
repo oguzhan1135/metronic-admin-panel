@@ -59,7 +59,7 @@ const BillingTable = () => {
             dotContentStatus={true}
             dotContent={
                 <>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                         <div className="flex flex-row items-center gap-1">
                             <FaDownload className="text-gray-600 size-[14px]" />
                             Download All

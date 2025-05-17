@@ -46,7 +46,7 @@ const Overview = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Security Overview</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization </span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
                 </button>
             </div>
@@ -222,7 +222,7 @@ const Overview = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Enable users to create and display a profile publicly.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             Setup
                                         </button>
                                     </div>
@@ -309,7 +309,7 @@ const Overview = () => {
                                             <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
                                                 Disable all
                                             </button>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                 Enable all
                                             </button>
                                         </div>
@@ -431,7 +431,7 @@ const Overview = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Instantly sign out all users from all devices.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             Logout everyone
                                         </button>
                                     </div>
