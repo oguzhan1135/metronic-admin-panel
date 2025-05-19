@@ -8,7 +8,7 @@ const BrandedCheckEmail = () => {
 
 
     return (
-        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen">
+        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen dark:bg-authentication-dark">
             <Card
                 dotStatus={false}
                 buttonStatus={false}

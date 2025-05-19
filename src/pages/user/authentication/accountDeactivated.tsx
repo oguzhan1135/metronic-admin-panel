@@ -14,24 +14,24 @@ interface ModalProps {
 }
 
 const ModalContent: React.FC<ModalProps> = ({ children }) => {
-    const { settingModalOpen, setSettingModalOpen } = metronicContext()
+    const { modalOpen, setModalOpen } = metronicContext()
 
-    if (!settingModalOpen) return null;
+    if (!modalOpen) return null;
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 "
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
             style={{ zIndex: 10000000000000 }}
-            onClick={() => setSettingModalOpen(false)}
+            onClick={() => setModalOpen(false)}
         >
             <div
-                className="relative bg-white rounded-lg shadow-lg w-[90%] max-w-[500px] max-h-[800px] overflow-hidden flex items-center justify-center"
+                className="relative bg-light rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
                     className="absolute top-4 right-4 text-gray-600 z-20"
-                    onClick={() => setSettingModalOpen(false)}
-                    style={{ zIndex: 9999 }}
+                    onClick={() => setModalOpen(false)}
+                    style={{ zIndex: 9999 }}  // 
                 >
                     ✖
                 </button>

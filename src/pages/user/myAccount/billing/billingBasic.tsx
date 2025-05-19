@@ -19,7 +19,7 @@ const BillingBasic = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Billing - Basic</h1>
                     <span className='text-b-14-14-400 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
                 </button>
             </div>
@@ -43,7 +43,7 @@ const BillingBasic = () => {
                                             <span className="text-b-13-20-400 text-gray-700">Essential Features for Startups and Individuals</span>
                                         </div>
                                         <div className="flex flex-row items-center flex-wrap gap-2.5">
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                 Cancel Plan
                                             </button>
                                             <button className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -84,7 +84,7 @@ const BillingBasic = () => {
                         buttonStatus={false}
                         dotContent={
                             <>
-                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-gray-300">
                                     <div className="flex flex-row items-center gap-1">
                                         <MdAddCircleOutline className="text-gra-600 size-[14px]" />
                                         Add New
@@ -169,7 +169,6 @@ const BillingBasic = () => {
                     />
                     {/* Billing Details */}
                     <BillingTable />
-
 
                 </div>
                 <div className="lg:col-span-2 col-span-5 flex flex-col gap-[30px]">

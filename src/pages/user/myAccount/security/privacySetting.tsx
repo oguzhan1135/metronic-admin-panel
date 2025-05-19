@@ -4,11 +4,11 @@
 import { Link } from "react-router"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from '../../../../components/card/card'
-import { FaChalkboardUser,FaUsers } from "react-icons/fa6"
+import { FaChalkboardUser, FaUsers } from "react-icons/fa6"
 import { GiAbstract092 } from "react-icons/gi"
 import { useState } from "react"
 import Switch from "../../../../components/switch"
-import { IoLocationOutline, IoSettingsOutline,IoTrashOutline } from "react-icons/io5"
+import { IoLocationOutline, IoSettingsOutline, IoTrashOutline } from "react-icons/io5"
 import { FaRegCheckCircle, FaToggleOn } from "react-icons/fa"
 import Tyler from '../../../../assets/icon/tyler-hero.svg'
 import Esther from '../../../../assets/icon/ester-hoeard.svg'
@@ -35,7 +35,7 @@ const PrivacySetting = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Security PrivacySetting</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization </span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
                 </button>
             </div>
@@ -161,7 +161,7 @@ const PrivacySetting = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Enable users to create and display a profile publicly.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                             Setup
                                         </button>
                                     </div>
@@ -248,7 +248,7 @@ const PrivacySetting = () => {
                                             <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
                                                 Disable all
                                             </button>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                 Enable all
                                             </button>
                                         </div>
@@ -310,7 +310,7 @@ const PrivacySetting = () => {
                                                     <span className="text-gray-900 text-b-14-14-500">Download your data</span>
                                                     <span className="text-b-13-14-400 text-gray-700">Add an extra layer of security.</span>
                                                 </div>
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                     Start
                                                 </button>
                                             </div>
@@ -319,7 +319,7 @@ const PrivacySetting = () => {
                                                     <span className="text-gray-900 text-b-14-14-500">Delete all of your data</span>
                                                     <span className="text-b-13-14-400 text-gray-700">Instantly sign out all services.</span>
                                                 </div>
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                     Delete
                                                 </button>
                                             </div>
@@ -356,7 +356,7 @@ const PrivacySetting = () => {
                                 <div className="flex flex-col gap-5 px-[30px] py-5">
                                     <p className="text-b-14-22-400 text-gray-800">Users on the block list are unable to send chat requests or messages to you.</p>
                                     <div className="flex flex-row items-center ">
-                                        <input type="text" className=" rounded-l-md outline-none text-13-14-400 w-full border-t border-l border-b px-3 py-[10px] text-gray-800" placeholder="Block new user" />
+                                        <input type="text" className=" rounded-l-md outline-none text-13-14-400 w-full border-t border-l border-b px-3 py-[10px] text-gray-800 bg-transparent" placeholder="Block new user" />
                                         <button className="bg-primary rounded-tr-md rounded-br-md py-[13px] px-[14px] text-white text-b-13-14-500">Add</button>
                                     </div>
                                     <div className="flex flex-col gap-5">
@@ -421,7 +421,7 @@ const PrivacySetting = () => {
                             <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-[#ffdac5]  fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -432,7 +432,7 @@ const PrivacySetting = () => {
                                             </path>
                                         </svg>
                                         <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
-                                            <FaToggleOn  className="text-[#FF6F1E] size-[22px]" />
+                                            <FaToggleOn className="text-[#FF6F1E] size-[22px]" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
@@ -444,8 +444,8 @@ const PrivacySetting = () => {
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
 
                                     <div className="relative size-[50px] shrink-0">
-                                    <svg className="w-full h-full stroke-[#ffdac5]  fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
                                             </path>
@@ -455,7 +455,7 @@ const PrivacySetting = () => {
                                             </path>
                                         </svg>
                                         <div className="absolute leading-none start-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 rtl:translate-x-2/4">
-                                            <IoSettingsOutline  className="text-[#FF6F1E] size-[22px]" />
+                                            <IoSettingsOutline className="text-[#FF6F1E] size-[22px]" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
@@ -464,7 +464,7 @@ const PrivacySetting = () => {
                                         <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </>}
                     />

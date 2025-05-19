@@ -9,7 +9,7 @@ const ResetPassword = () => {
     const [isOpenConfirmPassword, setIsOpenConfirmPassword] = useState(false);
 
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg dark:bg-authentication-dark bg-cover">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -25,10 +25,10 @@ const ResetPassword = () => {
 
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900 min-w-[290px]">New Password</span>
-                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
+                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active">
                                         <input
                                             type={isOpenPassword ? "text" : "password"}
-                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800"
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Enter a password"
                                         />
                                         {isOpenPassword ? (
@@ -46,10 +46,10 @@ const ResetPassword = () => {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900">Confirm New Password</span>
-                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-ligh-active">
+                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active">
                                         <input
                                             type={isOpenConfirmPassword ? "text" : "password"}
-                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800"
+                                            className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
                                             placeholder="Re-enter Password"
                                         />
                                         {isOpenConfirmPassword ? (

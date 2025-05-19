@@ -1,13 +1,14 @@
 import Card from "../../card/card"
 import { useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineDesktopMac, MdOutlineUnfoldMore } from "react-icons/md";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import { IoIosLaptop, IoIosTabletLandscape } from "react-icons/io";
 import { CiMobile3 } from "react-icons/ci";
+import Pagination from "./pagination";
 
 interface Device {
+    id: number;
     name: string;
     browser: string;
     ip: string;
@@ -21,6 +22,7 @@ const DeviceTable = () => {
 
     const [devices, setDevices] = useState<Device[]>([
         {
+            id: 1,
             name: "Mac",
             browser: "Chrome MacOS",
             ip: "117.61.104.86",
@@ -30,6 +32,7 @@ const DeviceTable = () => {
             category: "Laptop",
         },
         {
+            id: 2,
             name: "iPhone 12",
             browser: "Safari iOS",
             ip: "234.0.155.191",
@@ -39,6 +42,7 @@ const DeviceTable = () => {
             category: "Phone",
         },
         {
+            id: 3,
             name: "Samsung Galaxy S20",
             browser: "Chrome Android",
             ip: "70.218.212.162",
@@ -48,6 +52,7 @@ const DeviceTable = () => {
             category: "Phone",
         },
         {
+            id: 4,
             name: "iPad Pro",
             browser: "Safari iOS",
             ip: "140.92.152.213",
@@ -57,6 +62,7 @@ const DeviceTable = () => {
             category: "Tablet",
         },
         {
+            id: 5,
             name: "Microsoft Surface 3",
             browser: "Edge on Windows",
             ip: "214.219.147.46",
@@ -66,6 +72,7 @@ const DeviceTable = () => {
             category: "Tablet",
         },
         {
+            id: 6,
             name: "Dell XPS",
             browser: "Chrome Windows",
             ip: "246.44.68.100",
@@ -75,6 +82,7 @@ const DeviceTable = () => {
             category: "Laptop",
         },
         {
+            id: 7,
             name: "Google Pixel 5",
             browser: "Chrome Android",
             ip: "233.182.185.28",
@@ -84,6 +92,7 @@ const DeviceTable = () => {
             category: "Phone",
         },
         {
+            id: 8,
             name: "Huawei P30",
             browser: "Chrome Android",
             ip: "76.216.214.248",
@@ -93,6 +102,7 @@ const DeviceTable = () => {
             category: "Phone",
         },
         {
+            id: 9,
             name: "MacBook Air",
             browser: "Safari MacOS",
             ip: "102.150.137.255",
@@ -102,6 +112,7 @@ const DeviceTable = () => {
             category: "Laptop",
         },
         {
+            id: 10,
             name: "Lenova ThinkPad",
             browser: "Firefox Windows",
             ip: "75.243.106.80",
@@ -113,29 +124,43 @@ const DeviceTable = () => {
     ]);
 
     const [address, setAddress] = useState(true)
-    const [showCount, setShowCount] = useState(5);
-    const [upgradeData, setUpgradeData] = useState(devices.slice(0, showCount));
 
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(devices.slice(0, showCount))
+    const showCount: number = 5
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
+
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = devices.every(item => updated[item.id]);
+        setSelectAll(allChecked);
     };
 
-    const nextData = () => {
-        setUpgradeData(devices.slice(showCount, devices.length + showCount))
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
 
+        const newCheckedItems: { [key: number]: boolean } = {};
+        devices.forEach((item) => {
+            newCheckedItems[item.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
     };
-    const [selected, setSelected] = useState(1)
+
     useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(devices.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(devices.slice(0, 5))
-        }
-
-
-    }, [showCount])
+        const initialChecked: { [key: number]: boolean } = {};
+        devices.forEach(item => {
+            initialChecked[item.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [devices]);
+    const [upgradeData, setUpgradeData] = useState(devices.slice(0, showCount));
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'name' | 'ip' | 'location' | 'added' | 'lastSession';
@@ -185,12 +210,24 @@ const DeviceTable = () => {
                 <>
                     <div className="flex flex-col overflow-hidden ">
 
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border border-gray-200-collapse  min-w-[700px]">
                                 <thead>
                                     <tr className="bg-gray-100">
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
-                                            <input type="checkbox" className="size-[18px]" name="all" id="all" />
+                                            <input
+                                                type="checkbox"
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                checked={selectAll}
+                                                onChange={handleSelectAll}
+                                            />
                                         </th>
                                         <th onClick={() => handleSort("name")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
@@ -243,7 +280,19 @@ const DeviceTable = () => {
                                         upgradeData.map((item) => (
                                             <tr className="border border-gray-200-t" key={item.ip}>
                                                 <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.name} id={item.name} />
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={!!checkedItems[item.id]}
+                                                        onChange={() => handleCheckboxChange(item.id)}
+                                                        className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                    />
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
                                                     <div className="flex flex-row items-center gap-2.5">
@@ -292,33 +341,7 @@ const DeviceTable = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                            <div className="flex flex-row gap-3 items-center">
-                                <span>Show</span>
-                                <select
-
-                                    className="outline-none rounded-md p-2.5 cursor-pointer"
-                                    value={showCount}
-                                    onChange={(e) => setShowCount(Number(e.target.value))}
-                                >
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                </select>
-                                <span>per page</span>
-                            </div>
-
-                            <div className="flex flex-row items-center gap-0.5">
-                                <span className="pr-4">1-10 of 52</span>
-                                <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                                <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < devices.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                                <div className={`${showCount > devices.length ? ' hidden' : 'opacity-100'}`}>
-                                    <FaArrowRight className={`${devices.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                                </div>
-                            </div>
-                        </div>
+                        <Pagination setUpgradeData={setUpgradeData} data={devices} />
                     </div>
                 </>
             }

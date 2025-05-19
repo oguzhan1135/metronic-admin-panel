@@ -137,7 +137,7 @@ const Social = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Upload CSV
                     </button>
                     <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
@@ -150,7 +150,7 @@ const Social = () => {
                 <span className="text-b-15-16-500 text-gray-900">Showing {cards.length} Users</span>
                 <div className="flex flex-wrap items-center gap-5 ">
                     <div className="flex flex-row items-center gap-2.5">
-                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none" onChange={(e) => setStatus(e.target.value)}>
+                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none bg-light-active" onChange={(e) => setStatus(e.target.value)}>
                             <option value="All">All</option>
                             <option value="Online">Online</option>
                             <option value="Offline">Offline</option>
@@ -160,7 +160,7 @@ const Social = () => {
                             Filters
                         </button>
                     </div>
-                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-[#FCFCFC]">
+                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active">
                         <CiSearch className="text-gray-600 cursor-pointer" />
                         <input
                             type="text"
@@ -171,10 +171,10 @@ const Social = () => {
                         />
                     </div>
                     <div className="rounded-lg border p-[3px] bg-gray-200 flex flex-row items-center gap-1">
-                        <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                        <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-light" : "border-transparent"} cursor-pointer hover:bg-light text-animation`}>
                             <CiGrid41 className="text-gray-600 size-[14px]" />
                         </div>
-                        <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                        <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-light" : "border-transparent"} cursor-pointer hover:bg-light text-animation`}>
                             <CiGrid2H className="text-gray-600 size-[14px]" />
                         </div>
                     </div>
@@ -200,7 +200,7 @@ const Social = () => {
                                                         <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${card.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-white`}></div>
                                                     </div>
                                                     :
-                                                    <div className={`flex min-h-20 min-w-20 bg-${card.color} bg-opacity-10 rounded-full  border border-${card.color} items-center justify-center relative`}>
+                                                    <div className={`flex min-h-20 min-w-20 bg-${card.color}-light bg-opacity-10 rounded-full  border border-${card.color} items-center justify-center relative`}>
                                                         <span className={`text-h-26-26-600 text-${card.color}`}>{card.personName[0]}</span>
                                                         <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${card.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-white`}></div>
 
@@ -230,7 +230,7 @@ const Social = () => {
                                                 </Link>
                                             </div>
                                             <div className={`flex items-center justify-center ${selectedCardView == "list" ? '' : ' border-t w-full py-[14px]'}`}>
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                     <MdOutlineMessage className="size-[14px] text-gray-500" />
                                                     Message
                                                 </button>

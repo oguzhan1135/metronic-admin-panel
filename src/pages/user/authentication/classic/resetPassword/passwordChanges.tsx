@@ -1,17 +1,20 @@
 import Card from "../../../../../components/card/card"
 import Concord from '../../../../../assets/icon/concord.svg'
+import ConcordDark from '../../../../../assets/icon/concord-dark.svg'
 
 const PasswordChanged = () => {
 
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg dark:bg-authentication-dark bg-cover">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
                 content={
                     <>
-                        <form action="#" className="flex flex-col gap-[30px] p-10 items-center">
-                            <img src={Concord} />
+                        <form action="#" className="flex flex-col gap-[30px] p-10 items-center dark:bg-coal-500">
+                            <img src={Concord} alt="concord" className="dark:hidden" />
+                            <img src={ConcordDark} alt="concord-dark" className="dark:flex hidden" />
+
                             <div className="flex flex-col gap-5 items-center">
                                 <h3 className="text-b-18-18-500 text-gray-900">Your password is changed</h3>
                                 <p className="text-center text-b-13-20-400 text-gray-700 max-w-[360px]">Your password has been successfully updated.

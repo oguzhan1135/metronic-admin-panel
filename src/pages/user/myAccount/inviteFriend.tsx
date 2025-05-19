@@ -2,6 +2,7 @@ import { Link } from "react-router"
 import Menu from "../../../components/myAccount/hoverMenu"
 import Card from '../../../components/card/card'
 import Service from '../../../assets/icon/service.svg'
+import ServiceDark from '../../../assets/icon/service-dark.svg'
 import { FaCopy, FaRegAddressBook } from "react-icons/fa6"
 import InviteFriendTable from "../../../components/myAccount/tables/inviteFriendTable"
 import { FaUsers } from "react-icons/fa"
@@ -21,7 +22,7 @@ const InviteFriend = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Invite a Friend</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
                 </button>
             </div>
@@ -39,20 +40,20 @@ const InviteFriend = () => {
                                     <div className="flex flex-col gap-5  px-[30px]">
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Email</span>
-                                            <div className="flex items-center gap-2 border rounded-md px-3 py-2 w-full">
-                                                <input type="text" className="outline-none bg-transparent w-full text-b-13-14-400 text-gray-800" placeholder="https://www.ktstudio.com/RSVP?c=12345XYZt" />
+                                            <div className="flex items-center gap-2 border rounded-md px-3 py-2 w-full bg-light-active">
+                                                <input type="text" className="outline-none bg-transparent w-full text-b-13-14-400 text-gray-800 " placeholder="https://www.ktstudio.com/RSVP?c=12345XYZt" />
                                             </div>
                                         </div>
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Role</span>
-                                            <select name="role" id="role" className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full">
-                                                <option value="Member" selected>Member</option>
+                                            <select name="role" id="role" defaultValue={"Member"} className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full  bg-light-active">
+                                                <option value="Member">Member</option>
                                                 <option value="Editor">Editor</option>
                                                 <option value="Designer">Designer</option>
                                                 <option value="Admin">Admin</option>
                                             </select>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px]">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <IoMdAdd className="text-gray-500 size-[14px]" />
                                             Add more
                                         </button>
@@ -88,7 +89,7 @@ const InviteFriend = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px]">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px]">
                                             <RiResetLeftFill className="text-gray-500 size-[14px]" />
                                             Reset Link
                                         </button>
@@ -116,7 +117,8 @@ const InviteFriend = () => {
                                         <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
                                         <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
                                     </div>
-                                    <img src={Service} alt="service" />
+                                    <img src={Service} alt="service" className="dark:hidden" />
+                                    <img src={ServiceDark} alt="service-dark" className="dark:flex hidden" />
                                 </div>
                             </>
                         }
@@ -132,7 +134,7 @@ const InviteFriend = () => {
                             <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -155,7 +157,7 @@ const InviteFriend = () => {
 
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -178,7 +180,7 @@ const InviteFriend = () => {
                                 </div>
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">

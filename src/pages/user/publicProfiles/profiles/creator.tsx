@@ -67,7 +67,7 @@ const Creator = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Data} */}
-                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
+                    <div className="bg-light rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex flex-row items-center gap-5">
                                 <div className="flex  flex-col gap-2.5 items-center pr-5 border-r">

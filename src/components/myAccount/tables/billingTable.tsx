@@ -59,8 +59,8 @@ const BillingTable = () => {
             dotContentStatus={true}
             dotContent={
                 <>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
-                        <div className="flex flex-row items-center gap-1">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-gray-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                        <div className="flex flex-row items-center gap-1 ">
                             <FaDownload className="text-gray-600 size-[14px]" />
                             Download All
                         </div>
@@ -71,10 +71,10 @@ const BillingTable = () => {
                 <>
                     <div className="flex flex-col overflow-hidden ">
 
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border-collapse  min-w-[600px]">
                                 <thead>
-                                    <tr className="bg-gray-100">
+                                    <tr className="bg-gray-100 dark:bg-coal-200">
                                         <th className="px-[30px] py-[13px] text-left">
                                             <span className="text-b-13-14-400 text-gray-700">Invoice</span>
                                         </th>
@@ -88,7 +88,7 @@ const BillingTable = () => {
                                             <span className="text-b-13-14-400 text-gray-700">Amount</span>
                                         </th>
                                         <th className="px-[30px] py-[13px] text-right">
-
+                                                
                                         </th>
 
                                     </tr>

@@ -123,6 +123,7 @@ const config: Config = {
         'gray-700': 'var(--color-gray-700)',
         'gray-800': 'var(--color-gray-800)',
         'gray-900': 'var(--color-gray-900)',
+        'light': 'var(--color-light)'
       },
       backgroundImage: {
         'map': "url('/src/assets/icon/background-map.svg')",
@@ -134,8 +135,12 @@ const config: Config = {
         'author-bg-4': "url('/src/assets/icon/author-bg-4.svg')",
         'layered-bg': "url('/src/assets/icon/layared-bg.svg')",
         'authantication-bg': "url('/src/assets/icon/authentication-bg.svg')",
-        'branded-bg': "url('/src/assets/icon/branded-bg.svg')"
-
+        'branded-bg': "url('/src/assets/icon/branded-bg.svg')",
+        'author-dark': "url('/src/assets/icon/author-dark.svg')",
+        'nft-dark': "url('/src/assets/icon/nft-dark.svg')",
+        'authentication-dark': "url('/src/assets/icon/authentication-dark.svg')",
+        'branded-dark': "url('/src/assets/icon/branded-dark.svg')",
+        'check-icon': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7' /%3E%3C/svg%3E\")"
       },
 
     },

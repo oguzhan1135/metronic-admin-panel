@@ -201,10 +201,10 @@ const Menu = () => {
 
                 }
 
-                <div className="p-2 rounded-md border flex items-center justify-center cursor-pointer">
+                <div className="p-2 rounded-md border flex items-center justify-center cursor-pointer hover:bg-gray-300">
                     <IoChatbubblesOutline className="text-gray-500" />
                 </div>
-                <div onClick={() => setDotMore(!dotMore)} className="p-2 rounded-md border flex items-center justify-center cursor-pointer">
+                <div onClick={() => setDotMore(!dotMore)} className="p-2 rounded-md border flex items-center justify-center cursor-pointer hover:bg-gray-300">
                     <BsThreeDotsVertical className="text-gray-500" />
                 </div>
                 <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white dark:bg-coal-300 rounded-lg w-48 `}>

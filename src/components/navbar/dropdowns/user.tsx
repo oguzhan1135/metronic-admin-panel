@@ -17,11 +17,6 @@ import FlagSpanish from '../../../assets/icon/spain.svg'
 import FlagJapan from '../../../assets/icon/japan.svg'
 import FlagGerman from '../../../assets/icon/germany.svg'
 
-
-
-
-
-
 const User = () => {
     const [darkMode, setDarkMode] = useState(() => {
         return localStorage.getItem('theme') === 'dark';
@@ -205,8 +200,8 @@ const User = () => {
                             languageSubMenu && (
                                 <div className="absolute w-44 flex  right-[254px] -top-0 rounded-xl bg-white dark:bg-coal-300 border flex-col py-2">
                                     {
-                                        language.map((item) => (
-                                            <div className="px-2 w-full" onClick={() => setSelectedLanguage({ language: item.language, flag: item.flag })}>
+                                        language.map((item, index) => (
+                                            <div key={index} className="px-2 w-full" onClick={() => setSelectedLanguage({ language: item.language, flag: item.flag })}>
                                                 <div className="rounded-md px-3 py-2 flex flex-row justify-between hover:bg-gray-100 cursor-pointer items-center">
                                                     <div className="flex flex-row items-center gap-2.5">
                                                         {item.flag}

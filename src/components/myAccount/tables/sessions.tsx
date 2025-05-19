@@ -1,6 +1,5 @@
 import Card from "../../card/card"
 import { useCallback, useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { AiOutlineChrome } from "react-icons/ai";
@@ -21,6 +20,7 @@ import India from '../../../assets/icon/india.svg'
 import Estonia from '../../../assets/icon/estonia.svg'
 import Malaysia from '../../../assets/icon/malaysia.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import Pagination from "./pagination";
 
 
 
@@ -120,15 +120,47 @@ const SessionsTable = () => {
     ]);
 
     const [cloud, setCloud] = useState(true);
-    const [showCount, setShowCount] = useState(5);
-    const [selected, setSelected] = useState(1);
     const [selectedBrowser, setSelectedBrowser] = useState('All Browsers');
     const [selectedLocations, setSelectedLocations] = useState('All Locations');
     const [upgradeData, setUpgradeData] = useState<Session[]>([]);
 
     const location = window.location.pathname;
     const [currentPage, setCurrentPage] = useState(1);
+    const showCount: number = 5
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
 
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = sessions.every(item => updated[item.id]);
+        setSelectAll(allChecked);
+    };
+
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
+
+        const newCheckedItems: { [key: number]: boolean } = {};
+        sessions.forEach((item) => {
+            newCheckedItems[item.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
+    };
+
+    useEffect(() => {
+        const initialChecked: { [key: number]: boolean } = {};
+        sessions.forEach(item => {
+            initialChecked[item.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [sessions]);
     const startIndex = (currentPage - 1) * showCount;
     const endIndex = startIndex + showCount;
 
@@ -153,18 +185,9 @@ const SessionsTable = () => {
         filterAndPaginate();
     }, [filterAndPaginate]);
 
-    const nextData = () => {
-        setCurrentPage(prev => prev + 1);
-    };
-
-    const previousData = () => {
-        if (currentPage > 1) {
-            setCurrentPage(prev => prev - 1);
-        }
-    };
 
     type SortDirection = 'asc' | 'desc';
-    type SortKey = 'personName' | 'browser'| 'ipAddress' | 'location' ;
+    type SortKey = 'personName' | 'browser' | 'ipAddress' | 'location';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('personName');
 
@@ -176,11 +199,9 @@ const SessionsTable = () => {
             let valA = a[key];
             let valB = b[key];
 
-
             return newDirection === 'asc'
                 ? String(valA).localeCompare(String(valB))
                 : String(valB).localeCompare(String(valA));
-
         });
 
         setSortKey(key);
@@ -198,7 +219,7 @@ const SessionsTable = () => {
                 <>
                     <div className="flex flex-row items-center gap-[30px] flex-wrap">
                         <div className="flex flex-row items-center gap-2.5">
-                            <span className="text-b-13-14-500 text-gray-700">Cloud Sync</span>
+                            <span className="text-b-13-14-500 text-gray-700">Only Active Users</span>
                             <Switch status={cloud} setSwitch={() => setCloud(!cloud)} size="medium" />
                         </div>
                         <select
@@ -206,7 +227,7 @@ const SessionsTable = () => {
                             id="browsers"
                             value={selectedBrowser}
                             onChange={(e) => setSelectedBrowser(e.target.value)}
-                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none "
+                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none bg-light-active"
                         >
                             <option value="All Browsers">All Browsers</option>
                             <option value="Chrome">Chrome</option>
@@ -221,8 +242,8 @@ const SessionsTable = () => {
                             id="locations"
                             value={selectedLocations}
                             onChange={(e) => setSelectedLocations(e.target.value)}
-                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none ">
-                            <option value="All Locations" selected>All Locations</option>
+                            className="border rounded-md text-b-11-12-400 text-gray-800 px-2.5 py-[9px] outline-none bg-light-active">
+                            <option value="All Locations">All Locations</option>
                             <option value="Estonia">Estonia</option>
                             <option value="India">India</option>
                             <option value="Spain">Spain</option>
@@ -241,13 +262,24 @@ const SessionsTable = () => {
                 <>
                     <div className="flex flex-col overflow-hidden ">
 
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border border-gray-200-collapse  min-w-[800px]">
                                 <thead>
                                     <tr className="bg-gray-100">
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
-                                            <input type="checkbox" className="size-[18px]" name="all" id="all" />
-                                        </th>
+                                            <input
+                                                type="checkbox"
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                checked={selectAll}
+                                                onChange={handleSelectAll}
+                                            />                                        </th>
                                         <th onClick={() => handleSort("personName")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Person</span>
@@ -285,12 +317,24 @@ const SessionsTable = () => {
                                         upgradeData.map((item) => (
                                             <tr className="border border-gray-200-t" key={item.id}>
                                                 <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.ipAddress} id={item.ipAddress} />
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={!!checkedItems[item.id]}
+                                                        onChange={() => handleCheckboxChange(item.id)}
+                                                        className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                    />
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
                                                     <div className="flex flex-row items-center gap-2.5">
                                                         {item.personImage}
-                                                        <Link to={location} className="text-b-14-14-500 hover:text-primary text-animation">{item.personName}</Link>
+                                                        <Link to={location} className="text-b-14-14-500 hover:text-primary text-animation text-gray-800">{item.personName}</Link>
                                                     </div>
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
@@ -329,9 +373,12 @@ const SessionsTable = () => {
                                                     </div>
                                                 </td>
                                                 <td className='px-5 py-[15px]  border border-gray-200'>
-                                                    <button className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
-                                                    </button>
+                                                    <div className="flex items-center justify-center">
+                                                        <button className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                            <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
+                                                        </button>
+                                                    </div>
+
                                                 </td>
                                             </tr>
                                         ))
@@ -339,33 +386,7 @@ const SessionsTable = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                            <div className="flex flex-row gap-3 items-center">
-                                <span>Show</span>
-                                <select
-
-                                    className="outline-none rounded-md p-2.5 cursor-pointer"
-                                    value={showCount}
-                                    onChange={(e) => setShowCount(Number(e.target.value))}
-                                >
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                </select>
-                                <span>per page</span>
-                            </div>
-
-                            <div className="flex flex-row items-center gap-0.5">
-                                <span className="pr-4">1-10 of 52</span>
-                                <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                                <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < sessions.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                                <div className={`${showCount > sessions.length ? ' hidden' : 'opacity-100'}`}>
-                                    <FaArrowRight className={`${sessions.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                                </div>
-                            </div>
-                        </div>
+                        <Pagination setUpgradeData={setUpgradeData} data={sessions} />
                     </div>
                 </>
             }

@@ -19,7 +19,7 @@ const TeamMembers = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Import Members
                     </button>
                     <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
@@ -27,7 +27,7 @@ const TeamMembers = () => {
                     </button>
                 </div>
             </div>
-
+            {/* Member role table */}
             <MemberRole />
 
             {/* Invite people and link area */}
@@ -53,14 +53,14 @@ const TeamMembers = () => {
                                         </div>
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Role</span>
-                                            <select name="role" id="role" className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full">
-                                                <option value="Member" selected>Member</option>
+                                            <select name="role" id="role" defaultValue={"Member"} className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full bg-light border-gray-300">
+                                                <option value="Member">Member</option>
                                                 <option value="Editor">Editor</option>
                                                 <option value="Designer">Designer</option>
                                                 <option value="Admin">Admin</option>
                                             </select>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px]">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <IoMdAdd className="text-gray-500 size-[14px]" />
                                             Add more
                                         </button>
@@ -93,7 +93,7 @@ const TeamMembers = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px]">
+                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <RiResetLeftFill className="text-gray-500 size-[14px]" />
                                             Reset Link
                                         </button>

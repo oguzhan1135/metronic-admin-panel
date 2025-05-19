@@ -194,7 +194,7 @@ const Works = () => {
                                                     onClick={() => setMore((prev) => !prev)}
                                                     className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
                                                 >
-                                                    <HiOutlineDotsVertical />
+                                                    <HiOutlineDotsVertical className="dark:text-white" />
                                                 </div>
 
                                                 {more && <CardMore setMore={setMore} more={more} />}

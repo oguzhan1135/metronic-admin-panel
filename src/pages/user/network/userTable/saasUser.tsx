@@ -7,7 +7,7 @@ const SaasUsers = () => {
         <div className="flex flex-col gap-[30px]">
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-col gap-[14px] ">
-                    <h1 className='text-gray-900 text-h-24-24-600'>Market Authors</h1>
+                    <h1 className='text-gray-900 text-h-24-24-600'>SaaS Users</h1>
                     <div className="flex flex-col md:flex-row md:items-center items-start gap-[14px]">
                         <div className="flex flex-row items-center gap-1">
                             <span className="text-b-15-24-400 text-gray-700">All Members:</span>
@@ -20,7 +20,7 @@ const SaasUsers = () => {
                     </div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Import CSV
                     </button>
                     <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
@@ -29,7 +29,7 @@ const SaasUsers = () => {
                 </div>
             </div>
 
-            {/* Team Crew Table */}
+            {/* Saas Table */}
             <SaasUsersTable />
 
             {/* FAQ */}

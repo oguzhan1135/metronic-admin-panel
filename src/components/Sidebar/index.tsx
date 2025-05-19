@@ -181,7 +181,7 @@ const menuData: MenuItem[] = [
                         category: "user", key: "billing-basic", label: "Billing - Basic", path: "/user/myAccount/billing/billingBasic"
                     },
                     {
-                        category: "user", key: "billing-enterprise", label: "billing - Enterprise", path: "/user/myAccount/billing/billingEnterprise"
+                        category: "user", key: "billing-enterprise", label: "Billing - Enterprise", path: "/user/myAccount/billing/billingEnterprise"
                     },
                     {
                         category: "user", key: "plans", label: "Plans", path: "/user/myAccount/billing/billingPlans"
@@ -273,7 +273,7 @@ const menuData: MenuItem[] = [
                 category: "user",
                 key: "api-keys",
                 label: "API Keys",
-                path: "/user/myAccount/apikeys"
+                path: "/user/myAccount/apiKeys"
             },
             {
                 category: "user",
@@ -565,16 +565,10 @@ const Sidebar = () => {
         }
     }
 
-    const modalPages = [
-        "/user/publicProfiles/profiles/modal",
-        "/user/myAccount/settingModal",
-        "/user/authentication/welcomeMessage",
-        "/user/authentication/accountDeactivatedModal",
-    ]
-    const { modalOpen, settingModalOpen } = metronicContext();
-    const location = window.location.pathname
+
+    const { modalOpen} = metronicContext();
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${(modalOpen === true && modalPages.includes(location)) || (settingModalOpen === true && modalPages.includes(location)) ? "-z-10" : "z-50"}
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${modalOpen ? "-z-10" : "z-50"}
 
  `}>
             <div className="px-5 py-[30px] flex relative ">

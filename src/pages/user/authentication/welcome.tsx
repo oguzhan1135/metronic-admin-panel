@@ -8,30 +8,31 @@ import { LuSquareMousePointer } from 'react-icons/lu';
 import { MdOutlineSecurity, MdOutlinePayment, MdNotificationsActive } from 'react-icons/md';
 import Menu from '../../../components/myAccount/hoverMenu';
 import Card from '../../../components/card/card';
+import React from "react";
 
 interface ModalProps {
     children: React.ReactNode;
 }
 
 const ModalContent: React.FC<ModalProps> = ({ children }) => {
-    const { settingModalOpen, setSettingModalOpen } = metronicContext()
+    const { modalOpen, setModalOpen } = metronicContext()
 
-    if (!settingModalOpen) return null;
+    if (!modalOpen) return null;
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 "
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
             style={{ zIndex: 10000000000000 }}
-            onClick={() => setSettingModalOpen(false)}
+            onClick={() => setModalOpen(false)}
         >
             <div
-                className="relative bg-white rounded-lg shadow-lg w-[90%] max-w-[500px] max-h-[800px] overflow-hidden flex items-center justify-center"
+                className="relative bg-light rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
                     className="absolute top-4 right-4 text-gray-600 z-20"
-                    onClick={() => setSettingModalOpen(false)}
-                    style={{ zIndex: 9999 }}
+                    onClick={() => setModalOpen(false)}
+                    style={{ zIndex: 9999 }}  // 
                 >
                     ✖
                 </button>
@@ -48,20 +49,16 @@ const WelcomeModal = () => {
             title: "Personal info",
             description: "We're open to partnerships, guest posts, promo banners and more.",
             icon: <BiSolidUserDetail className='text-primary size-6' />
-
-
         },
         {
             title: "Login & Security",
             description: "Safeguarding your information with strong authentication measures.",
             icon: <MdOutlineSecurity className='text-primary size-6' />
-
         },
         {
             title: "Billing & Payments",
             description: "Simplify payments today with secure, user-friendly transaction processes.",
             icon: <MdOutlinePayment className='text-primary size-6' />
-
         },
         {
             title: "Notifications",
@@ -111,23 +108,25 @@ const WelcomeModal = () => {
                 <Menu />
                 <div className="flex flex-col gap-[14px]">
                     <h1 className='text-gray-900 text-h-24-24-600'>Account</h1>
-                    <span className='text-b-14-14-500'>Jayson Tatum <a className='text-b-14-14-400 hover:text-primary text-animation'>jaytatum@ktstudio.com</a> <Link to={location} className='text-primary text-b-13-14-500 border-b border-b-primary border-dotted'>Personal Info</Link> </span>
+                    <span className='text-b-14-14-500 text-gray-700'>Jayson Tatum <a className='text-b-14-14-400 hover:text-primary text-animation'>jaytatum@ktstudio.com</a> <Link to={location} className='text-primary text-b-13-14-500 border-b border-b-primary border-dotted'>Personal Info</Link> </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
                     {
-                        accountCards.map((item) => (
-                            <Card
-                                dotStatus={true}
-                                titleContent={item.icon}
-                                content={
-                                    <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
-                                        <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
-                                        <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
-                                    </div>
-                                }
-                                buttonStatus={false}
-                            />
+                        accountCards.map((item, index) => (
+                            <React.Fragment key={index}>
+                                <Card
+                                    dotStatus={true}
+                                    titleContent={item.icon}
+                                    content={
+                                        <div className="flex flex-col gap-2.5 px-[30px] pb-[30px] pt-5">
+                                            <Link to={location} className='text-b-16-16-500 text-gray-900 hover:text-primary text-animation'>{item.title}</Link>
+                                            <p className='text-b-13-14-400 text-gray-700'>{item.description}</p>
+                                        </div>
+                                    }
+                                    buttonStatus={false}
+                                />
+                            </React.Fragment>
                         ))
                     }
 

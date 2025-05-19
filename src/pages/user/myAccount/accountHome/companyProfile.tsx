@@ -35,7 +35,7 @@ const CompanyProfile = () => {
                     <span className='text-b-14-14-400 text-gray-700'>Showcase of Corporate Identity & Values</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
                     <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -303,7 +303,7 @@ const CompanyProfile = () => {
                             <>
                                 <div className="flex flex-col gap-4 p-[30px]">
                                     <span className="text-b-13-20-400 text-gray-800">Define aspirations, outline the path. Set a goal to transform dreams into measurable achievements.</span>
-                                    <button className="flex flex-row gap-1 items-center border p-2.5 rounded-md w-max">
+                                    <button className="flex flex-row gap-1 items-center border p-2.5 rounded-md w-max dark:bg-gray-300">
                                         <FcGoogle className="size-[14px]" />
                                         <span className="text-b-12-12-500 text-gray-700">Continue with Google</span>
                                     </button>

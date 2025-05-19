@@ -1,5 +1,5 @@
-import React, { createContext, useContext, ReactNode, useState, } from 'react';
-
+import React, { createContext, useContext, ReactNode, useState, useEffect, } from 'react';
+import { useLocation } from "react-router-dom";
 
 
 interface LayoutProps {
@@ -14,15 +14,27 @@ interface LayoutProps {
 }
 const LayoutContext = createContext<LayoutProps | undefined>(undefined);
 
-
+const modalPages = [
+    "/user/publicProfiles/profiles/modal",
+    "/user/myAccount/accountHome/settingModal",
+    "/user/authentication/welcomeMessage",
+    "/user/authentication/accountDeactivatedModal",
+]
 export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
 
     const [sidebarWidth, setSidebarWidth] = useState(280);
     const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
-    const [modalOpen, setModalOpen] = useState(true);
     const [settingModalOpen, setSettingModalOpen] = useState(true);
-
+    const location = useLocation();
+    const [modalOpen, setModalOpen] = useState(false);
+    useEffect(() => {
+        if (modalPages.includes(location.pathname)) {
+            setModalOpen(true)
+        } else {
+            setModalOpen(false)
+        }
+    }, [location.pathname])
 
     return (
         <LayoutContext.Provider value={{

@@ -19,7 +19,7 @@ const BillingPlan = () => {
                         <h1 className='text-gray-900 text-h-24-24-600'>Plans</h1>
                         <span className='text-b-14-14-400 text-gray-700'>Central Hub for Personal Customization</span>
                     </div>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         View BIlling
                     </button>
                 </div>
@@ -36,10 +36,10 @@ const BillingPlan = () => {
                                             <span className="text-b-13-14-500 text-gray-800">Annual Billing</span>
                                         </div>
                                     </th>
-                                    <th className="px-[30px] py-[13px] text-left border bg-gray-100 min-w-[220px]">
-                                        {/* <div className=" absolute bg-success-light border border-success rounded-md border-opacity-20 px-[6px] py-[5px] flex top-[70px] left-48 ">
+                                    <th className="px-[30px] py-[13px] text-left border bg-gray-100 min-w-[220px] relative">
+                                        <div className=" absolute bg-success-light border border-success rounded-md border-opacity-20 px-[6px] py-[5px] flex top-[0px] left-1/2 transform -translate-x-1/2 ">
                                             <span className="text-b-11-12-500 text-success">Current Plan</span>
-                                        </div> */}
+                                        </div>
                                         <div className="flex flex-col  gap-5">
                                             <div className="flex flex-col gap-2.5">
                                                 <span className="text-b-18-18-500 text-gray-900">Basic</span>
@@ -48,7 +48,7 @@ const BillingPlan = () => {
                                             <div className="flex flex-row items-end gap-[6px]">
                                                 <span className="text-h-24-24-600 text-gray-900">Free</span>
                                             </div>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer justify-center">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer justify-center">
                                                 Switch to Team
                                             </button>
                                         </div>
@@ -60,7 +60,7 @@ const BillingPlan = () => {
                                                 <p className="text-b-13-20-400 text-gray-700 min-w-[190px]">Advanced tools for growing businesses</p>
                                             </div>
                                             <div className="flex flex-row items-end gap-[6px]">
-                                                <span className="text-h-24-24-600">$99</span>
+                                                <span className="text-h-24-24-600 text-gray-900">$99</span>
                                                 <span className="text-b-11-12-400 text-gray-700">per month</span>
                                             </div>
                                             <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer justify-center" >
@@ -75,7 +75,7 @@ const BillingPlan = () => {
                                                 <p className="text-b-13-20-400 text-gray-700 min-w-[190px]">Comprehensive suite for large-scale operations</p>
                                             </div>
                                             <div className="flex flex-row items-end gap-[6px]">
-                                                <span className="text-h-24-24-600">$199</span>
+                                                <span className="text-h-24-24-600 text-gray-900">$199</span>
                                                 <span className="text-b-11-12-400 text-gray-700">per month</span>
                                             </div>
                                             <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer justify-center" >
@@ -83,14 +83,14 @@ const BillingPlan = () => {
                                             </button>
                                         </div>
                                     </th>
-                                    <th className="px-[30px] py-[13px] text-left border" style={{borderRadius:"20px"}}>
+                                    <th className="px-[30px] py-[13px] text-left border" style={{ borderRadius: "20px" }}>
                                         <div className="flex flex-col  gap-5">
                                             <div className="flex flex-col gap-2.5">
                                                 <span className="text-b-18-18-500 text-gray-900">Enterprise</span>
                                                 <p className="text-b-13-20-400 text-gray-700 min-w-[190px]">Tailored solutions for enterprise needs</p>
                                             </div>
                                             <div className="flex flex-row items-end gap-[6px]">
-                                                <span className="text-h-24-24-600">$1,299</span>
+                                                <span className="text-h-24-24-600 text-gray-900">$1,299</span>
                                                 <span className="text-b-11-12-400 text-gray-700">per month</span>
                                             </div>
                                             <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer justify-center" >
@@ -307,9 +307,9 @@ const BillingPlan = () => {
 
 
             {/* FAQ */}
-            <FAQ/>                                    
+            <FAQ />
 
-           <Questions/>
+            <Questions />
         </div >
     )
 }

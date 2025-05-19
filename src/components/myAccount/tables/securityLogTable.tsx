@@ -1,6 +1,6 @@
 import Card from "../../card/card"
 import { useEffect, useState } from 'react';
-import { FaArrowDownUpLock, FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { FaArrowDownUpLock } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineUnfoldMore, MdWifi } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
@@ -11,6 +11,7 @@ import { TfiWorld } from "react-icons/tfi";
 import { FiSettings } from "react-icons/fi";
 import { BsShieldFillX } from "react-icons/bs";
 import { LuNotepadText } from "react-icons/lu";
+import Pagination from "./pagination";
 
 interface Security {
     id: number;
@@ -118,29 +119,42 @@ const SecurityLogTable = () => {
     ]);
 
     const [pushAlert, setPushAlert] = useState(true)
-    const [showCount, setShowCount] = useState(5);
-    const [upgradeData, setUpgradeData] = useState(logs.slice(0, showCount));
+    const showCount: number = 5
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
 
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(logs.slice(0, showCount))
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = logs.every(item => updated[item.id]);
+        setSelectAll(allChecked);
     };
 
-    const nextData = () => {
-        setUpgradeData(logs.slice(showCount, logs.length + showCount))
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
 
+        const newCheckedItems: { [key: number]: boolean } = {};
+        logs.forEach((item) => {
+            newCheckedItems[item.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
     };
-    const [selected, setSelected] = useState(1)
+
     useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(logs.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(logs.slice(0, 5))
-        }
-
-
-    }, [showCount])
+        const initialChecked: { [key: number]: boolean } = {};
+        logs.forEach(item => {
+            initialChecked[item.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [logs]);
+    const [upgradeData, setUpgradeData] = useState(logs.slice(0, showCount));
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'timestampt' | 'eventType' | 'actionTaken' | 'sourceIP' | 'destinationIP' | 'severity';
@@ -172,9 +186,6 @@ const SecurityLogTable = () => {
         setUpgradeData(sortedLogs);
     };
 
-    
-    const [selectAll, setSelectAll] = useState(false);
-
     return (
         <Card
             buttonStatus={false}
@@ -197,16 +208,23 @@ const SecurityLogTable = () => {
                 <>
                     <div className="flex flex-col overflow-hidden ">
 
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border border-gray-200-collapse  min-w-[1200px]">
                                 <thead>
                                     <tr className="bg-gray-100">
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input
                                                 type="checkbox"
-                                                className="size-[18px]"
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
                                                 checked={selectAll}
-                                                onChange={() => setSelectAll(prev => !prev)}
+                                                onChange={handleSelectAll}
                                             />
                                         </th>
                                         <th onClick={() => handleSort('timestampt')} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
@@ -257,7 +275,19 @@ const SecurityLogTable = () => {
                                         upgradeData.map((item) => (
                                             <tr className="border border-gray-200-t" key={item.id}>
                                                 <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.timestampt} id={item.timestampt} checked={selectAll}  />
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={!!checkedItems[item.id]}
+                                                        onChange={() => handleCheckboxChange(item.id)}
+                                                        className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                    />
                                                 </td>
 
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
@@ -301,19 +331,19 @@ const SecurityLogTable = () => {
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
                                                     {
                                                         item.severity === "high" ?
-                                                            <div className="border border-warning border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-warning bg-opacity-10 rounded-[4px]">
+                                                            <div className="border border-warning border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-warning-light rounded-[4px]">
                                                                 <span className="text-warning text-b-11-12-500">High</span>
                                                             </div>
                                                             : item.severity === "medium" ?
-                                                                <div className="border border-primary border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-primary bg-opacity-10 rounded-[4px]">
+                                                                <div className="border border-primary border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-light bg-opacity-10 rounded-[4px]">
                                                                     <span className="text-primary text-b-11-12-500">Medium</span>
                                                                 </div>
                                                                 : item.severity === "low" ?
-                                                                    <div className="border border-success border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-success bg-opacity-10 rounded-[4px]">
+                                                                    <div className="border border-success border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-success-light bg-opacity-10 rounded-[4px]">
                                                                         <span className="text-success text-b-11-12-500">Low</span>
                                                                     </div>
                                                                     :
-                                                                    <div className="border border-danger border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-danger bg-opacity-10 rounded-[4px]">
+                                                                    <div className="border border-danger border-opacity-20 px-[6px] py-[5px] flex items-center justify-center w-max bg-danger-light bg-opacity-10 rounded-[4px]">
                                                                         <span className="text-danger text-b-11-12-500">Critical</span>
                                                                     </div>
                                                     }
@@ -331,32 +361,7 @@ const SecurityLogTable = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                            <div className="flex flex-row gap-3 items-center">
-                                <span>Show</span>
-                                <select
-                                    className="outline-none rounded-md p-2.5 cursor-pointer"
-                                    value={showCount}
-                                    onChange={(e) => setShowCount(Number(e.target.value))}
-                                >
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                </select>
-                                <span>per page</span>
-                            </div>
-
-                            <div className="flex flex-row items-center gap-0.5">
-                                <span className="pr-4">1-10 of 52</span>
-                                <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                                <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < logs.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                                <div className={`${showCount > logs.length ? ' hidden' : 'opacity-100'}`}>
-                                    <FaArrowRight className={`${logs.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                                </div>
-                            </div>
-                        </div>
+                        <Pagination setUpgradeData={setUpgradeData} data={logs} />
                     </div>
                 </>
             }

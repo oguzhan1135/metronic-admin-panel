@@ -40,7 +40,7 @@ const PermissionsToggle = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Permissions -Toggle</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     View Roles
                 </button>
             </div>
@@ -49,7 +49,7 @@ const PermissionsToggle = () => {
                 {/* Switch area */}
 
                 <Card
-                    title={<h3 className="text-b-16-16-600 text-gray-900">Role Permissions for <Link to={location} className="text-primary text-b-16-16-600">Project Manager</Link> </h3>}
+                    title={<span className="text-b-16-16-600 text-gray-900">Role Permissions for <Link to={location} className="text-primary text-b-16-16-600">Project Manager</Link> </span>}
                     dotStatus={false}
                     buttonStatus={false}
                     content={
@@ -307,7 +307,7 @@ const PermissionsToggle = () => {
 
                                 </div>
                                 <div className="border-b border-t py-[14px] flex items-center justify-center">
-                                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                         New Permission
                                     </button>
                                 </div>

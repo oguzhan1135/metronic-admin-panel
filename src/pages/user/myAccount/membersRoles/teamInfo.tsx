@@ -18,6 +18,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi"
 import { FcGoogle } from "react-icons/fc"
 import { CgProfile } from "react-icons/cg"
 import { GrTask } from "react-icons/gr"
+import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
 
 const TeamInfo = () => {
     const location = window.location.pathname
@@ -39,7 +40,7 @@ const TeamInfo = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Team Info</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Efficient team organization with real-time updates</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Roles
                 </button>
             </div>
@@ -88,7 +89,7 @@ const TeamInfo = () => {
                                                 />
                                                 <img src={Camera} alt="camera" className="absolute bottom-0" />
                                             </div>
-                                            <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                            <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                         </div>
                                     </div>
@@ -127,22 +128,22 @@ const TeamInfo = () => {
                                         <div className="flex flex-row items-center ">
                                             <span className="text-b-14-14-400 text-gray-600 min-w-[100px]">Skills</span>
                                             <div className="flex flex-row items-center gap-2.5 flex-wrap">
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">Managament</span>
                                                 </div>
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">Web Design</span>
                                                 </div>
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">Code Review</span>
                                                 </div>
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">noCode</span>
                                                 </div>
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">Webflow</span>
                                                 </div>
-                                                <div className="p-2 rounded-[4px] bg-gray-200 border-gray-600 border-opacity-10 border flex items-center justify-center">
+                                                <div className="p-2 rounded-[4px] bg-gray-200 border-opacity-10 border flex items-center justify-center">
                                                     <span className="text-gray-700 text-b-11-12-500">AI</span>
                                                 </div>
                                             </div>
@@ -182,7 +183,7 @@ const TeamInfo = () => {
                                     </div>
 
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
                                             Add Seats
                                         </button>
                                     </div>
@@ -209,7 +210,7 @@ const TeamInfo = () => {
                                             </div>
                                         </div>
                                         <div className="flex flex-row items-center gap-[5px]">
-                                            <FaXTwitter className="size-5" />
+                                            <FaXTwitter className="size-5 dark:text-white" />
                                             <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
                                                 <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
                                             </div>
@@ -217,10 +218,10 @@ const TeamInfo = () => {
                                     </div>
                                     <div className="px-[30px] py-5 border-b flex items-center justify-between">
                                         <div className="flex flex-row items-center gap-2.5">
-                                            <img src={Tyler} alt="tyler" />
+                                            <img src={Arlene} alt="arlene" />
                                             <div className="flex flex-col gap-2">
-                                                <Link to={location} className="text animation text-gray-900 text-b-14-14-500 hover:text-primary">Tyler Hero</Link>
-                                                <span className="text-b-12-12-400 text-gray-700">26 tasks</span>
+                                                <Link to={location} className="text animation text-gray-900 text-b-14-14-500 hover:text-primary">Leslie Alexander</Link>
+                                                <span className="text-b-12-12-400 text-gray-700">203 tasks</span>
                                             </div>
                                         </div>
                                         <div className="flex flex-row items-center gap-[5px]">
@@ -232,7 +233,7 @@ const TeamInfo = () => {
                                     </div>
 
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
                                             Connect Profile
                                         </button>
                                     </div>
@@ -248,7 +249,7 @@ const TeamInfo = () => {
                             <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
 			18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
 			39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -271,7 +272,7 @@ const TeamInfo = () => {
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
 
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
 			18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
 			39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -293,7 +294,7 @@ const TeamInfo = () => {
                                 </div>
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
 			18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
 			39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">

@@ -1,4 +1,3 @@
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
@@ -20,6 +19,7 @@ import India from '../../../assets/icon/india.svg'
 import Estonia from '../../../assets/icon/estonia.svg'
 import Malaysia from '../../../assets/icon/malaysia.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import Pagination from "./pagination";
 
 interface Member {
     id: number;
@@ -81,30 +81,42 @@ const InviteFriendTable = () => {
 
 
     ])
-    const [showCount, setShowCount] = useState(5);
-    const [upgradeData, setUpgradeData] = useState(members.slice(0, showCount));
+    const showCount: number = 5
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
 
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(members.slice(0, showCount))
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = members.every(item => updated[item.id]);
+        setSelectAll(allChecked);
     };
 
-    const nextData = () => {
-        setUpgradeData(members.slice(showCount, members.length + showCount))
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
 
+        const newCheckedItems: { [key: number]: boolean } = {};
+        members.forEach((item) => {
+            newCheckedItems[item.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
     };
-    const [selected, setSelected] = useState(1)
+
     useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(members.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(members.slice(0, 5))
-        }
-
-
-    }, [showCount])
-
+        const initialChecked: { [key: number]: boolean } = {};
+        members.forEach(item => {
+            initialChecked[item.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [members]);
+    const [upgradeData, setUpgradeData] = useState(members.slice(0, showCount));
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'name' | 'location' | 'status' | 'recentActivity';
@@ -189,13 +201,25 @@ const InviteFriendTable = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col overflow-x-auto">
+                <div className="flex flex-col overflow-x-auto custom-scroll">
                     <table className=" border-collapse  min-w-[1000px]">
                         <thead>
                             <tr className="bg-gray-100">
                                 <th className=" px-5 py-3 border border-gray-200">
                                     <div className="flex justify-center">
-                                        <input type="checkbox" className="size-[16px]" />
+                                        <input
+                                            type="checkbox"
+                                            className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                            checked={selectAll}
+                                            onChange={handleSelectAll}
+                                        />
                                     </div>
                                 </th>
                                 <th onClick={() => handleSort("name")} className="px-5 py-3 border border-gray-200 text-left">
@@ -234,7 +258,19 @@ const InviteFriendTable = () => {
                                 <tr key={member.id} className="">
                                     <td className="w-[40px] px-5 py-3 border border-gray-200">
                                         <div className="flex justify-center">
-                                            <input type="checkbox" className="size-[16px]" />
+                                            <input
+                                                type="checkbox"
+                                                checked={!!checkedItems[member.id]}
+                                                onChange={() => handleCheckboxChange(member.id)}
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                            />
                                         </div>
                                     </td>
                                     <td className="px-5 py-[15px] flex flex-col gap-2 border border-gray-200">
@@ -294,10 +330,10 @@ const InviteFriendTable = () => {
                                         <span className="text-b-14-14-400 text-gray-800">{member.recentActivity}</span>
                                     </td>
 
-                                    <td className='px-4 py-2 text-right border border-gray-200'>
-                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                    <td className='px-4 py-2 text-center border border-gray-200'>
+                                        <button className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
                                             <HiOutlineDotsVertical className="text-gray-600 size-[18px]" />
-                                        </div>
+                                        </button>
                                     </td>
 
                                 </tr>
@@ -310,33 +346,7 @@ const InviteFriendTable = () => {
                     </table>
 
                 </div>
-                <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                    <div className="flex flex-row gap-3 items-center">
-                        <span className="text-gray-600 text-b-13-14-500">Show</span>
-                        <select
-
-                            className="outline-none rounded-md px-2.5 py-[9px] cursor-pointer border text-b-11-12-400 text-gray-800"
-                            value={showCount}
-                            onChange={(e) => setShowCount(Number(e.target.value))}
-                        >
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                        <span className="text-gray-600 text-b-13-14-500">per page</span>
-                    </div>
-
-                    <div className="flex flex-row items-center gap-0.5">
-                        <span className="text-gray-600 text-b-13-14-500 pr-4">1-10 of 52</span>
-                        <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                        <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                        <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < members.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                        <div className={`${showCount > members.length ? ' hidden' : 'opacity-100'}`}>
-                            <FaArrowRight className={`${members.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                        </div>
-                    </div>
-                </div>
+                <Pagination setUpgradeData={setUpgradeData} data={members} />
             </div>
 
 

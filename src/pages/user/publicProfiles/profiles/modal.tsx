@@ -31,7 +31,7 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
             onClick={() => setModalOpen(false)}
         >
             <div
-                className="relative bg-white dark:bg-coal-300 rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
+                className="relative bg-light rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button

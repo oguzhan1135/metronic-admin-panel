@@ -20,7 +20,7 @@ const StoreClients = () => {
                     </div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Import CSV
                     </button>
                     <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
@@ -29,7 +29,7 @@ const StoreClients = () => {
                 </div>
             </div>
 
-            {/* Team Crew Table */}
+            {/* Store Table */}
             <StoreClientsTable />
 
             {/* FAQ */}

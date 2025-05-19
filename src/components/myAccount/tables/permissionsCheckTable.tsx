@@ -102,10 +102,10 @@ const PermissionCheckTable = () => {
     return (
 
         <Card
-            title={<h3 className="text-b-16-16-600 text-gray-900">Role Permissions for <Link to={location} className="text-primary text-b-16-16-600">Project Manager</Link> </h3>}
+            title={<span className="text-b-16-16-600 text-gray-900">Role Permissions for <Link to={location} className="text-primary text-b-16-16-600">Project Manager</Link> </span>}
             dotContent={
                 <>
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         New Permission
                     </button>
                 </>
@@ -116,7 +116,7 @@ const PermissionCheckTable = () => {
             content={
                 <>
                     <div className="flex flex-col overflow-hidden ">
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border-collapse  min-w-[1000px]">
                                 <thead>
                                     <tr className="bg-gray-100 ">
@@ -130,23 +130,41 @@ const PermissionCheckTable = () => {
                                 <tbody>
                                     {
                                         permissions.map((permission) => (
-                                            <tr className="border-b">
+                                            <tr key={permission.id} className="border-b">
                                                 <td className="py-[26px] px-[30px] text-b-14-14-500 text-gray-900">{permission.name}</td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px]" checked={permission.view} onChange={() => handlePermissionChange(permission.id, 'view')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px]" checked={permission.modify} onChange={() => handlePermissionChange(permission.id, 'modify')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px]" checked={permission.publish} onChange={() => handlePermissionChange(permission.id, 'publish')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px]" checked={permission.configure} onChange={() => handlePermissionChange(permission.id, 'configure')} /></td>
+                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.view} onChange={() => handlePermissionChange(permission.id, 'view')} /></td>
+                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.modify} onChange={() => handlePermissionChange(permission.id, 'modify')} /></td>
+                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.publish} onChange={() => handlePermissionChange(permission.id, 'publish')} /></td>
+                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.configure} onChange={() => handlePermissionChange(permission.id, 'configure')} /></td>
                                             </tr>
                                         ))
                                     }
-
                                 </tbody>
-
                             </table>
 
                         </div>
                         <div className="p-[30px] flex flex-row items-center justify-end gap-2.5">
-                            <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                            <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                 Restore Defaults
                             </button>
                             <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">

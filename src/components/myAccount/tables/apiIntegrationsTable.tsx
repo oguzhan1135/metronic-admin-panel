@@ -1,8 +1,8 @@
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { MdUnfoldMore } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Switch from "../../switch";
 import { FaEdit, FaRegCopy } from "react-icons/fa";
+import Pagination from "./pagination";
 
 interface Integration {
     id: number;
@@ -89,36 +89,48 @@ const ApiIntebrationTable = () => {
 
 
     ])
-    const [showCount, setShowCount] = useState(5);
+    const showCount: number = 5;
     const [upgradeData, setUpgradeData] = useState(integrations.slice(0, showCount));
-
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(integrations.slice(0, showCount))
-    };
-
-    const nextData = () => {
-        setUpgradeData(integrations.slice(showCount, integrations.length + showCount))
-
-    };
-    const [selected, setSelected] = useState(1)
-    useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(integrations.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(integrations.slice(0, 5))
-        }
-
-
-    }, [showCount])
-
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'integrationName' | 'apiKeys' | 'status' | 'dailyCalls';
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
     const [sortKey, setSortKey] = useState<SortKey>('integrationName');
 
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
+
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = integrations.every(item => updated[item.id]);
+        setSelectAll(allChecked);
+    };
+
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
+
+        const newCheckedItems: { [key: number]: boolean } = {};
+        integrations.forEach((item) => {
+            newCheckedItems[item.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
+    };
+
+    useEffect(() => {
+        const initialChecked: { [key: number]: boolean } = {};
+        integrations.forEach(item => {
+            initialChecked[item.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [integrations]);
 
     const handleSort = (key: SortKey) => {
         const isSameKey = sortKey === key;
@@ -146,8 +158,6 @@ const ApiIntebrationTable = () => {
         setUpgradeData(filtered.slice(0, showCount));
     };
 
-
-
     const [apiPause, setApiPause] = useState(false);
     return (
         <div className="grid lg:col-span-8 col-span-12 border rounded-xl">
@@ -168,13 +178,25 @@ const ApiIntebrationTable = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col overflow-x-auto">
-                    <table className=" border-collapse  min-w-[800px]">
+                <div className="flex flex-col overflow-x-auto custom-scroll">
+                    <table className=" border-collapse min-w-[800px]">
                         <thead>
                             <tr className="bg-gray-100">
                                 <th className=" px-5 py-3 border border-gray-200">
                                     <div className="flex justify-center">
-                                        <input type="checkbox" className="size-[16px]" />
+                                        <input
+                                            type="checkbox"
+                                            className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                            checked={selectAll}
+                                            onChange={handleSelectAll}
+                                        />
                                     </div>
                                 </th>
                                 <th onClick={() => handleSort("integrationName")} className="px-5 py-3 border border-gray-200 text-left">
@@ -213,7 +235,19 @@ const ApiIntebrationTable = () => {
                                 <tr key={item.id} className="">
                                     <td className="w-[40px] px-5 py-3 border border-gray-200">
                                         <div className="flex justify-center">
-                                            <input type="checkbox" className="size-[16px]" />
+                                            <input
+                                                type="checkbox"
+                                                checked={!!checkedItems[item.id]}
+                                                onChange={() => handleCheckboxChange(item.id)}
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                            />
                                         </div>
                                     </td>
                                     <td className="px-5 py-[15px] border border-gray-200">
@@ -270,33 +304,7 @@ const ApiIntebrationTable = () => {
                     </table>
 
                 </div>
-                <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                    <div className="flex flex-row gap-3 items-center">
-                        <span className="text-gray-600 text-b-13-14-500">Show</span>
-                        <select
-
-                            className="outline-none rounded-md px-2.5 py-[9px] cursor-pointer border text-b-11-12-400 text-gray-800"
-                            value={showCount}
-                            onChange={(e) => setShowCount(Number(e.target.value))}
-                        >
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                        <span className="text-gray-600 text-b-13-14-500">per page</span>
-                    </div>
-
-                    <div className="flex flex-row items-center gap-0.5">
-                        <span className="text-gray-600 text-b-13-14-500 pr-4">1-10 of 52</span>
-                        <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                        <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                        <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < integrations.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                        <div className={`${showCount > integrations.length ? ' hidden' : 'opacity-100'}`}>
-                            <FaArrowRight className={`${integrations.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                        </div>
-                    </div>
-                </div>
+                <Pagination setUpgradeData={setUpgradeData} data={integrations} />
             </div>
 
 

@@ -5,7 +5,7 @@ import CheckMailImage from '../../../../assets/icon/check-mail-image.svg'
 const CheckMail = () => {
 
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg dark:bg-authentication-dark bg-cover">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -23,7 +23,7 @@ const CheckMail = () => {
                                 <a href="/" className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
                                     Back to Home
                                 </a>
-                                <span className="text-b-13-14-400 text-gray-700">Didn’t receive an email? <Link to={"/user/authentication/classic/signIn"} className="text-primary text-b-13-14-400">Resend</Link></span>
+                                <span className="text-b-13-14-400 text-gray-700">Didn’t receive an email?asdasds <Link to={"/user/authentication/classic/signIn"} className="text-primary text-b-13-14-400">Resend</Link></span>
                             </div>
                         </form>
                     </>

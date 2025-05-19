@@ -282,7 +282,7 @@ const Campaigns = () => {
                                                     onClick={() => toggleMore(item.id)}
                                                     className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
                                                 >
-                                                    <HiOutlineDotsVertical />
+                                                    <HiOutlineDotsVertical className="dark:text-white" />
                                                 </div>
                                                 {moreStates[item.id] && <CardMore setMore={() => toggleMore(item.id)} more={moreStates[item.id]} />}
                                             </div>

@@ -17,7 +17,6 @@ import Switch from "../../components/switch";
 import { useState } from "react";
 import Card from "../../components/card/card";
 
-
 const Dashboard = () => {
     const [earning, setEarning] = useState(false)
     const location = window.location.pathname
@@ -34,7 +33,7 @@ const Dashboard = () => {
                         <span className="dark text-b-14-14-400 text-gray-700">Central Hub for Personal Customization</span>
                     </div>
 
-                    <Link to={"/user/publicProfiles/profiles/default"} className="px-3 py-2.5 rounded-md border border-gray-300 flex justify-center hover: group">
+                    <Link to={"/user/publicProfiles/profiles/default"} className="px-3 py-2.5 rounded-md border border-gray-300 flex justify-center hover: group hover:bg-gray-300">
                         <span className="text-b-12-12-500 text-gray-700 group-hover:text-gray-900">View Profile</span>
                     </Link>
 
@@ -82,7 +81,7 @@ const Dashboard = () => {
                             content={
                                 <>
                                     <div className="flex flex-col relative z-10  ">
-                                        <div className="flex flex-row min-h-[350px]">
+                                        <div className="flex flex-row min-h-[280px]">
                                             <div className="flex flex-col gap-4 p-5">
                                                 <img src={AvatarGroup} className="w-32 h-10" />
                                                 <div className="max-w-[255px]">

@@ -75,7 +75,7 @@ const Feeds = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4">
                 <div className="xl:col-span-1 flex flex-col gap-[30px]">
                     {/* {Data} */}
-                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
+                    <div className="bg-light rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex sm:flex-row flex-col items-center gap-5 w-full">
                                 <div className="flex flex-col gap-1 items-center justify-center relative after:content-[''] w-full after:flex after:bg-gray-300 after:w-full after:h-[1px] sm:after:w-[1px] after:right-0  sm:after:h-full sm:after:absolute sm:after:right-0 last:after:hidden">
@@ -249,7 +249,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -277,7 +277,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -291,7 +291,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -396,7 +396,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -424,7 +424,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -438,7 +438,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -551,7 +551,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -579,7 +579,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -593,7 +593,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -656,7 +656,7 @@ const Feeds = () => {
                     <Card
                         dotStatus={true}
                         titleContent={
-                            <div className="flex flex-row items-center gap-3">
+                            <div className="flex flex-row items-center gap-3 pb-5">
                                 <img src={Jennifer} alt="jennifer" className="size-[50px]" />
                                 <div className="flex flex-col gap-2">
                                     <Link to={location} className=" text-b-15-16-600 hover:text-primary text-animation text-gray-900">Jenny Klabber</Link>
@@ -698,7 +698,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -726,7 +726,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -740,7 +740,7 @@ const Feeds = () => {
                                                     </div>
 
                                                 </div>
-                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                                <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                                     <FaRegCheckCircle className="text-gray-500 size-[14px]" />
                                                     Connected
                                                 </a>
@@ -779,21 +779,20 @@ const Feeds = () => {
 
                                                     </div>
                                                     <p className="text-14-22-400 text-gray-800">
-                                                        Long before you sit dow to put digital pen to paper.                                                    </p>
+                                                        Long before you sit dow to put digital pen to paper.
+                                                    </p>
                                                 </div>
 
                                             </div>
-                                            <div className="flex flex-row items-center gap-2.5">
-                                                <img src={Tyler} alt="tyler" className="size-[40px]" />
-                                                <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md">
-                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent" placeholder="your comment.." />
+                                            <div className="flex flex-row items-center gap-2.5 bg-transparent">
+                                                <img src={Tyler} alt="tyler" className="size-[40px] bg-transparent" />
+                                                <div className="flex flex-row items-center justify-between border w-full px-[14px] py-4 rounded-md bg-transparent">
+                                                    <input type="text" className="outline-none  flex text-b-14-22-400 text-gray-800 bg-transparent w-full" placeholder="your comment.." />
                                                     <CiImageOn className="text-gray-500 size-[18px] hover:text-gray-800 cursor-pointer" />
-
+                                                    asdsad
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     }
                                 />
                             </div>

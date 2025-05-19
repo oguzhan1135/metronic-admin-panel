@@ -15,6 +15,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { LuSquareMousePointer } from "react-icons/lu";
 import Switch from "../../../components/switch";
 import MultiTasking from '../../../assets/icon/multitasking.svg'
+import MultiTaskingDark from '../../../assets/icon/multitasking-dark.svg'
 import FAQ from "../../../components/myAccount/faq";
 import Questions from "../../../components/myAccount/questions";
 
@@ -97,7 +98,7 @@ const Integrations = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Integrations</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Enhance Workflows with Advanced Integrations.</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Add New Integration
                 </button>
             </div>
@@ -119,11 +120,11 @@ const Integrations = () => {
                                                 </button>
                                             </div>
                                             <div className="flex flex-col gap-2.5 pb-2.5  px-[30px]">
-                                                <Link to={location} className="text-b-16-16-500 text-gray-900 hover:text-primary text-animation">{integration.integrationName}</Link>
+                                                <Link to={location} className="text-b-16-16-500 text-gray-900 hover:text-primary text-animation w-max">{integration.integrationName}</Link>
                                                 <p className="text-b-13-20-400 text-gray-700">{integration.description}</p>
                                             </div>
                                             <div className="px-[30px] py-[14px] flex flex-row items-center justify-between border-t">
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                     <LuSquareMousePointer className="text-gray-500 size-[14px]" />
                                                     Connect
                                                 </button>
@@ -161,7 +162,8 @@ const Integrations = () => {
                 content={
                     <>
                         <div className="flex flex-col items-center justify-center gap-2.5 p-[30px]">
-                            <img src={MultiTasking} alt="" />
+                            <img src={MultiTasking} alt="multi-tasking" className="dark:hidden" />
+                            <img src={MultiTaskingDark} alt="multi-tasking-dark" className="dark:flex hidden" />
                             <div className="flex flex-col gap-3 items-center justify-center pb-10">
                                 <h2 className="text-h-24-24-600 text-gray-900">Add New Integration</h2>
                                 <p className="text-center text-b-14-22-400 text-gray-800">

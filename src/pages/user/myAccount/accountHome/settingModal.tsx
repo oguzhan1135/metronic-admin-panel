@@ -36,23 +36,23 @@ interface ModalProps {
 }
 
 const ModalContent: React.FC<ModalProps> = ({ children }) => {
-    const { settingModalOpen, setSettingModalOpen } = metronicContext()
+    const { modalOpen, setModalOpen } = metronicContext()
 
-    if (!settingModalOpen) return null;
+    if (!modalOpen) return null;
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90  "
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
             style={{ zIndex: 10000000000000 }}
-            onClick={() => setSettingModalOpen(false)}
+            onClick={() => setModalOpen(false)}
         >
             <div
-                className="relative bg-white dark:bg-coal-300 rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
+                className="relative bg-light rounded-lg shadow-lg w-[90%] max-w-[1200px] max-h-[800px] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
                     className="absolute top-4 right-4 text-gray-600 z-20"
-                    onClick={() => setSettingModalOpen(false)}
+                    onClick={() => setModalOpen(false)}
                     style={{ zIndex: 9999 }}  // 
                 >
                     ✖
@@ -135,7 +135,7 @@ const Modal = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-10 ">
-                <div className="flex py-10 flex-col gap-3 items-center justify-center relative bg-map bg-cover z-10">
+                <div className="flex py-10 flex-col gap-3 items-center justify-center relative bg-map dark:bg-map-dark bg-cover z-10">
                     <div className="rounded-full border border-success">
                         <img src={Jennifer} alt="" className="size-[100px]" />
                     </div>
@@ -173,7 +173,7 @@ const Modal = () => {
                         </div>
                         <div className="flex flex-row items-center gap-2.5">
 
-                            <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                            <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                 Public Profile
                             </a>
                             <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -238,7 +238,7 @@ const Modal = () => {
                                                         />
                                                         <img src={Camera} alt="camera" className="absolute bottom-0" />
                                                     </div>
-                                                    <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                                    <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                                 </div>
                                             </div>
@@ -262,7 +262,7 @@ const Modal = () => {
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800">Visibility</span>
-                                                <select defaultValue="Public" className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full outline-none text-gray-800">
+                                                <select defaultValue="Public" className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 rounded-md p-3 border w-full outline-none text-gray-800">
                                                     <option value="Public">Public</option>
                                                     <option value="Option-2">Option-2</option>
                                                     <option value="Option-3">Option-3</option>
@@ -609,7 +609,7 @@ const Modal = () => {
                                             <div className="flex flex-col p-[30px]">
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
-                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="American English">American English</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -617,7 +617,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
-                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="American English">American English</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -625,7 +625,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
-                                                    <select defaultValue={"United States Dollar (USD)"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"United States Dollar (USD)"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="United States Dollar (USD)">United States Dollar (USD)</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -842,7 +842,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
-                                                    <select defaultValue={"Spain"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"Spain"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="Public">Spain</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -857,7 +857,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
-                                                    <select defaultValue={"Barcelona"} className="bg-[#FCFCFC] dark:bg-coal-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"Barcelona"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="Public">Barcelona</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>

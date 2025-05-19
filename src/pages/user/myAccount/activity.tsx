@@ -12,6 +12,7 @@ import { IoRocketOutline } from "react-icons/io5"
 import Switch from "../../../components/switch"
 import Digital from '../../../assets/icon/daigital.svg'
 import Multitasking from '../../../assets/icon/multitasking.svg'
+import MultitaskingDark from '../../../assets/icon/multitasking-dark.svg'
 import Raiting from '../../../assets/icon/raiting.svg'
 import { LuLogOut } from "react-icons/lu"
 import { ImHappy } from "react-icons/im"
@@ -31,13 +32,13 @@ const Activity = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Invite a Friend</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
                 </button>
             </div>
             <div className="flex flex-col gap-[30px] ">
 
-                <div className="flex w-full md:flex-row flex-col">
+                <div className="flex w-full md:flex-row flex-col gap-[30px]">
                     <div className="flex-1 flex flex-col gap-[30px]">
                         <Card
                             dotStatus={false}
@@ -103,8 +104,8 @@ const Activity = () => {
 
                                             </div>
                                             <div className="flex flex-row  items-center gap-5 pl-12">
-                                                <div className="flex flex-col  rounded-lg border-[#ffdac5] border-[2px] ">
-                                                    <div className="py-2 px-3 bg-[#fff5ef] rounded-t-lg flex items-center justify-center border-b-2 border-[#ffdac5]">
+                                                <div className="flex flex-col  rounded-lg border-[#D74E00] border-opacity-20  border-[2px] ">
+                                                    <div className="py-2 px-3 bg-[#fff5ef] dark:bg-[#D74E00] dark:bg-opacity-20 rounded-t-lg flex items-center justify-center border-b-2 border-[#D74E00] border-opacity-20">
                                                         <span className="text-[#FF6F1E] text-b-13-14-500">Apr</span>
                                                     </div>
                                                     <div className="flex items-center justify-center py-[6px]">
@@ -235,7 +236,8 @@ const Activity = () => {
                                                 </span>
                                                 <span className="text-b-12-12-400 text-gray-600">1 week ago, 11:45 AM</span>
                                                 <div className="flex flex-col items-center justify-center gap-[6px] p-4 border rounded-lg">,
-                                                    <img src={Multitasking} className="max-w-52 maw-h-52" alt="" />
+                                                    <img src={Multitasking} className="max-w-52 maw-h-52 dark:hidden" alt="multitasking" />
+                                                    <img src={MultitaskingDark} className="max-w-52 maw-h-52 dark:flex hidden" alt="multitasking-dark" />
                                                     <span className="text-b-15-16-500 text-gray-900">Blogging Conference</span>
                                                     <div className="flex flex-row items-center gap-2.5">
                                                         <span className="text-gray-700 text-b-13-14-400"><Link to={location} className="text-primary text-b-13-14-400">Axio new release </Link> email campaign</span>
@@ -346,31 +348,31 @@ const Activity = () => {
                     </div>
 
                     <div className="flex flex-col gap-2.5 flex-shrink">
-                        <button onClick={() => setSelectedYear(2024)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2024 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2024)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2024 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2024 ? "text-primary" : "text-gray-700"}`}>2024</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2023)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2023 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2023)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2023 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2023 ? "text-primary" : "text-gray-700"}`}>2023</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2022)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2022 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2022)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2022 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2022 ? "text-primary" : "text-gray-700"}`}>2022</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2021)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2021 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2021)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2021 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2021 ? "text-primary" : "text-gray-700"}`}>2021</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2020)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2020 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2020)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2020 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2020 ? "text-primary" : "text-gray-700"}`}>2020</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2019)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2019 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2019)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2019 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2019 ? "text-primary" : "text-gray-700"}`}>2019</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2018)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2018 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2018)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2018 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2018 ? "text-primary" : "text-gray-700"}`}>2018</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2017)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2017 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2017)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2017 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2017 ? "text-primary" : "text-gray-700"}`}>2017</span>
                         </button>
-                        <button onClick={() => setSelectedYear(2016)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] text-animation group ${selectedYear === 2016 ? "bg-[#F9F9F9]" : "bg-transparent"}`}>
+                        <button onClick={() => setSelectedYear(2016)} className={`flex items-center justify-center rounded-lg py-2.5 px-[18px] hover:bg-[#F9F9F9] dark:bg-coal-300 text-animation group ${selectedYear === 2016 ? "bg-[#F9F9F9] dark:bg-coal-300" : "bg-transparent"}`}>
                             <span className={`text-b-13-14-500 group-hover:text-primary ${selectedYear === 2016 ? "text-primary" : "text-gray-700"}`}>2016</span>
                         </button>
                     </div>

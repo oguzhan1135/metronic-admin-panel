@@ -36,7 +36,7 @@ const BrandedTwoFA = () => {
         return () => clearInterval(timer);
     }, [seconds]);
     return (
-        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen">
+        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen dark:bg-authentication-dark">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -55,7 +55,7 @@ const BrandedTwoFA = () => {
                                         <input
                                             key={i}
                                             maxLength={1}
-                                            className="size-10 text-center border border-gray-300 rounded text-xl outline-[#D0E3F9] outline-1"
+                                            className="size-10 text-center border border-gray-300 rounded text-xl outline-[#006AE6]  outline-1 bg-light  text-b-16-16-500 text-gray-700"
                                             onChange={(e) => handleChange(e, i)}
                                             onKeyDown={(e) => handleKeyDown(e, i)}
                                             ref={(el) => (inputRefs.current[i] = el)}

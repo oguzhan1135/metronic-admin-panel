@@ -7,6 +7,7 @@ import Service from '../../../../assets/icon/service.svg'
 import { FaUsers } from "react-icons/fa"
 import { IoMdExit } from "react-icons/io"
 import { LuSquareMousePointer } from "react-icons/lu"
+import ServiceDark from '../../../../assets/icon/service-dark.svg'
 
 const ImportantMember = () => {
     const location = window.location.pathname
@@ -27,7 +28,7 @@ const ImportantMember = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Import Members</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Go to Teams
                 </button>
             </div>
@@ -76,7 +77,7 @@ const ImportantMember = () => {
                                             <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                                 Select CSV File
                                             </button>
-                                            <button className="px-3 py-2.5 flex flex-row items-center  bg-white text-b-12-12-500 text-gray-800 gap-1 cursor-pointer">
+                                            <button className="px-3 py-2.5 flex flex-row items-center text-b-12-12-500 text-gray-800 gap-1 cursor-pointer rounded-md">
                                                 Choose File
                                             </button>
                                         </div>
@@ -84,7 +85,7 @@ const ImportantMember = () => {
                                     </div>
                                     <div className="flex flex-col gap-4">
                                         <span className="text-b-13-14-500 text-gray-900">Custom welcome message</span>
-                                        <textarea name="welcome" id="welcome" rows={5} placeholder="Your welcome message here" className="text-b-13-14-400 text-gray-800 border p-3 rounded-md outline-none"></textarea>
+                                        <textarea name="welcome" id="welcome" rows={5} placeholder="Your welcome message here" className="text-b-13-14-400 text-gray-800 border p-3 rounded-md outline-none bg-light"></textarea>
                                         <div className="flex flex-row items-center gap-[6px]">
                                             <input type="checkbox" name="create" id="create" checked={sendWelcome} onChange={() => setSendWelcome(!sendWelcome)} className="size-[18px]" />
                                             <span className="text-b-13-14-500 text-gray-800">Send welcome email to news users</span>
@@ -113,7 +114,8 @@ const ImportantMember = () => {
                                         <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
                                         <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
                                     </div>
-                                    <img src={Service} alt="service" />
+                                    <img src={Service} alt="service" className="dark:hidden" />
+                                    <img src={ServiceDark} alt="service-dark" className="dark:flex hidden" />
                                 </div>
                             </>
                         }

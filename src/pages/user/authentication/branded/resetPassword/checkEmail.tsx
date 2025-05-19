@@ -4,11 +4,11 @@ import Branded from "../../../../../components/authentication/branded"
 import CheckMailImage from '../../../../../assets/icon/check-mail-image.svg'
 
 
-const BrandedCheckEmail = () => {
+const BrandedResetCheckEmail = () => {
 
 
     return (
-        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen">
+        <div className="flex items-center md:flex-row flex-col-reverse justify-center  md:gap-[190px] gap-[30px] md:px-[30px] w-full md:min-h-screen dark:bg-authentication-dark">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
@@ -23,8 +23,8 @@ const BrandedCheckEmail = () => {
                             </div>
 
                             <div className="flex flex-col gap-5 items-center w-full">
-                                <a href="/" className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
-                                    Back to Home
+                                <a href="/user/authentication/branded/resetPassword/passwordChange" className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
+                                    Skip for now
                                 </a>
                                 <span className="text-b-13-14-400 text-gray-700">Didn’t receive an email? <Link to={"/user/authentication/branded/signIn"} className="text-primary text-b-13-14-400">Resend</Link></span>
                             </div>
@@ -36,4 +36,4 @@ const BrandedCheckEmail = () => {
         </div>
     )
 }
-export default BrandedCheckEmail
+export default BrandedResetCheckEmail

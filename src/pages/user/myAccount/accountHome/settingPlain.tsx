@@ -29,7 +29,7 @@ const SettingPlain = () => {
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
 
-                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
                     <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -79,7 +79,7 @@ const SettingPlain = () => {
                                         />
                                         <img src={Camera} alt="camera" className="absolute bottom-0" />
                                     </div>
-                                    <div className=" absolute rounded-full border-2 bg-white top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                    <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                 </div>
                             </div>

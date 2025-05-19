@@ -203,7 +203,7 @@ const Author = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Upload CSV
                     </button>
                     <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
@@ -216,7 +216,7 @@ const Author = () => {
                 <span className="text-b-15-16-500 text-gray-900">Showing {cards.length} Users</span>
                 <div className="flex flex-wrap items-center gap-5 ">
                     <div className="flex flex-row items-center gap-2.5">
-                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none" onChange={(e) => setStatus(e.target.value)}>
+                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none bg-light-active" onChange={(e) => setStatus(e.target.value)}>
                             <option value="All">All</option>
                             <option value="Online">Online</option>
                             <option value="Offline">Offline</option>
@@ -226,7 +226,7 @@ const Author = () => {
                             Filters
                         </button>
                     </div>
-                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-[#FCFCFC]">
+                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active">
                         <CiSearch className="text-gray-600 cursor-pointer" />
                         <input
                             type="text"
@@ -237,10 +237,10 @@ const Author = () => {
                         />
                     </div>
                     <div className="rounded-lg border p-[3px] bg-gray-200 flex flex-row items-center gap-1">
-                        <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                        <div onClick={() => setSelectedCardView("card")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "card" ? " border-gray-200 bg-light" : "border-transparent"} cursor-pointer hover:bg-light text-animation`}>
                             <CiGrid41 className="text-gray-600 size-[14px]" />
                         </div>
-                        <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-white" : "border-transparent"} cursor-pointer hover:bg-white text-animation`}>
+                        <div onClick={() => setSelectedCardView("list")} className={`p-[9px] flex items-center justify-centerr rounded-lg border ${selectedCardView === "list" ? "border-gray-200 bg-light" : "border-transparent"} cursor-pointer hover:bg-light text-animation`}>
                             <CiGrid2H className="text-gray-600 size-[14px]" />
                         </div>
                     </div>
@@ -252,7 +252,7 @@ const Author = () => {
 
                         {
                             cards.map((author) => (
-                                <div className="">
+                                <div className="" key={author.id}>
                                     <Card
                                         dotStatus={false}
                                         buttonStatus={true}
@@ -260,7 +260,7 @@ const Author = () => {
                                         content={
                                             <>
                                                 <div className="flex flex-col  relative ">
-                                                    <div className={`${author.bg} bg-cover h-full min-h-[200px] w-full  rounded-t-xl`}>
+                                                    <div className={`${author.bg} dark:bg-author-dark bg-cover h-full min-h-[200px] w-full  rounded-t-xl`}>
 
                                                     </div>
                                                     <div className=" absolute top-[130px] left-[30px]   ">
@@ -268,7 +268,7 @@ const Author = () => {
                                                             <div className="flex flex-row items-end gap-2.5">
                                                                 <div className="relative">
                                                                     {author.icon}
-                                                                    <div className={`absolute bottom-[4px] right-2 w-3 h-3 rounded-full ${author.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-white`}></div>
+                                                                    <div className={`absolute bottom-[4px] right-2 w-3 h-3 rounded-full ${author.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-light-active`}></div>
                                                                 </div>
                                                                 <div className="flex flex-col gap-[7px]">
                                                                     <div className="flex flex-row items-center gap-1 ">
@@ -278,38 +278,39 @@ const Author = () => {
                                                                     <span className="text-b-12-12-400 text-gray-700">Houston, Texas</span>
                                                                 </div>
                                                             </div>
-                                                            <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                            <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                                 <IoSettingsOutline className="text-gray-500 size-[14px]" />
                                                                 Work with me
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div className="flex flex-col gap-5 pl-[30px] pt-20 pb-[30px]">
-                                                        <div className="w-full  overflow-x-auto " style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}>
+                                                        <div className="w-full  overflow-x-auto custom-scroll">
                                                             <div className="flex flex-row  items-center gap-5 ">
-
                                                                 {
-                                                                    author.works.map((item) => (
-                                                                        <Card
-                                                                            dotStatus={false}
-                                                                            buttonStatus={false}
-                                                                            content={
-                                                                                <div className="flex flex-col gap-5 w-max pb-5">
-                                                                                    <img src={item.icon} alt={item.title} className="rounded-t-xl w-full" />
-                                                                                    <div className="px-[14px] flex flex-row items-center gap-2.5">
+                                                                    author.works.map((item, index) => (
+                                                                        <React.Fragment key={index}>
+                                                                            <Card
+                                                                                dotStatus={false}
+                                                                                buttonStatus={false}
+                                                                                content={
+                                                                                    <div className="flex flex-col gap-5 w-max pb-5">
+                                                                                        <img src={item.icon} alt={item.title} className="rounded-t-xl w-full" />
+                                                                                        <div className="px-[14px] flex flex-row items-center gap-2.5">
 
-                                                                                        <div className="flex flex-col gap-2">
-                                                                                            <Link to={location} className="text-b-15-16-600 text-gray-900 hover:text-primary text-animation">{item.title}</Link>
-                                                                                            <div className="flex flex-row items-center gap-[6px]">
-                                                                                                <span className="text-b-13-14-400 text-gray-700">Token ID:</span>
-                                                                                                <span className="text-b-13-14-500 text-gray-800">{item.tokenID}</span>
+                                                                                            <div className="flex flex-col gap-2">
+                                                                                                <Link to={location} className="text-b-15-16-600 text-gray-900 hover:text-primary text-animation">{item.title}</Link>
+                                                                                                <div className="flex flex-row items-center gap-[6px]">
+                                                                                                    <span className="text-b-13-14-400 text-gray-700">Token ID:</span>
+                                                                                                    <span className="text-b-13-14-500 text-gray-800">{item.tokenID}</span>
+                                                                                                </div>
                                                                                             </div>
-                                                                                        </div>
 
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            }
-                                                                        />
+                                                                                }
+                                                                            />
+                                                                        </React.Fragment>
 
                                                                     ))
                                                                 }
@@ -329,7 +330,7 @@ const Author = () => {
                     <div className="flex flex-col gap-[30px]">
                         {
                             cards.map((author) => (
-                                <div className="flex flex-col md:flex-row gap-5 justify-between a items-center border p-[30px] rounded-xl">
+                                <div key={author.id} className="flex flex-col md:flex-row gap-5 justify-between a items-center border p-[30px] rounded-xl">
                                     <div className="flex flex-row items-center gap-2.5">
                                         <div className="relative">
                                             {author.icon}
@@ -376,7 +377,7 @@ const Author = () => {
                                             </div>
                                         </div>
                                         <Link to={location} className="text-primary text-13-14-500 border-b border-b-primary border-dotted">View Profile</Link>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             <IoSettingsOutline className="text-gray-500 size-[14px]" />
                                             Work with me
                                         </button>

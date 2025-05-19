@@ -170,15 +170,15 @@ const Network = () => {
 
                                                     <div className="relative">
                                                         {item.icon}
-                                                        <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${item.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-white`}></div>
+                                                        <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${item.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-light`}></div>
                                                     </div>
 
 
 
                                                     :
-                                                    <div className={`flex min-h-20 min-w-20 bg-${item.color} bg-opacity-10 rounded-full  border border-${item.color} items-center justify-center relative`}>
+                                                    <div className={`flex min-h-20 min-w-20 bg-${item.color}-light bg-opacity-10 rounded-full  border border-${item.color} items-center justify-center relative`}>
                                                         <span className={`text-h-26-26-600 text-${item.color}`}>{item.personName[0]}</span>
-                                                        <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${item.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-white`}></div>
+                                                        <div className={`absolute bottom-1 right-2 w-3 h-3 rounded-full ${item.online ? 'bg-success' : 'bg-gray-400'} border-[2px] border-light`}></div>
 
                                                     </div>
                                             }
@@ -222,12 +222,12 @@ const Network = () => {
                                                 </div>
                                             </div>
                                             <div className={`${selectedCardView === "card" ? "border-t w-screen pt-[14px] flex items-center justify-center" : ""}`}>
-                                                <button className={`flex items-center justify-center flex-row p-2.5 rounded-md gap-1 ${item.connected ? "bg-primary text-white" : "border"} w-max `}>
+                                                <button className={`flex items-center justify-center flex-row p-2.5 rounded-md gap-1 ${item.connected ? "bg-primary text-light" : "border"} w-max `}>
                                                     {
                                                         item.connected ?
                                                             <>
-                                                                <FaUsers className="size-[14px]" />
-                                                                <span className="text-b-12-12-500">Connect</span>
+                                                                <FaUsers className="size-[14px] text-gray-900" />
+                                                                <span className="text-b-12-12-500 text-gray-900">Connect</span>
                                                             </>
                                                             :
                                                             <>

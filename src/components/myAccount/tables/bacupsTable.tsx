@@ -1,10 +1,10 @@
 import Card from "../../card/card"
 import { useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Switch from "../../switch";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { LuFiles } from "react-icons/lu";
 import { AiOutlinePicture } from "react-icons/ai";
+import Pagination from "./pagination";
 
 interface Backup {
     id: number;
@@ -60,31 +60,44 @@ const BackupTable = () => {
         }
 
     ]);
-
     const [cloud, setCloud] = useState(true)
-    const [showCount, setShowCount] = useState(5);
+    const showCount: number = 5
+    const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
+    const [selectAll, setSelectAll] = useState(false);
+    const handleCheckboxChange = (id: number) => {
+        const updated = {
+            ...checkedItems,
+            [id]: !checkedItems[id],
+        };
+        setCheckedItems(updated);
+
+        const allChecked = backup.every(backup => updated[backup.id]);
+        setSelectAll(allChecked);
+    };
+
+    const handleSelectAll = () => {
+        const newSelectAll = !selectAll;
+        setSelectAll(newSelectAll);
+
+        const newCheckedItems: { [key: number]: boolean } = {};
+        backup.forEach((backup) => {
+            newCheckedItems[backup.id] = newSelectAll;
+        });
+
+        setCheckedItems(newCheckedItems);
+    };
+
+    useEffect(() => {
+        const initialChecked: { [key: number]: boolean } = {};
+        backup.forEach(backup => {
+            initialChecked[backup.id] = false;
+        });
+        setCheckedItems(initialChecked);
+        setSelectAll(false);
+    }, [backup]);
+
     const [upgradeData, setUpgradeData] = useState(backup.slice(0, showCount));
 
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(backup.slice(0, showCount))
-    };
-
-    const nextData = () => {
-        setUpgradeData(backup.slice(showCount, backup.length + showCount))
-
-    };
-    const [selected, setSelected] = useState(1)
-    useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(backup.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(backup.slice(0, 5))
-        }
-
-
-    }, [showCount])
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'when' | 'details';
@@ -131,26 +144,36 @@ const BackupTable = () => {
                 <>
                     <div className="flex flex-col overflow-hidden ">
 
-                        <div className="flex flex-col overflow-x-auto">
+                        <div className="flex flex-col overflow-x-auto custom-scroll">
                             <table className=" border border-gray-200-collapse  min-w-[700px]">
                                 <thead>
                                     <tr className="bg-gray-100">
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
-                                            <input type="checkbox" className="size-[18px]" name="all" id="all" />
+                                            <input
+                                                type="checkbox"
+                                                className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                checked={selectAll}
+                                                onChange={handleSelectAll}
+                                            />
                                         </th>
                                         <th onClick={() => handleSort("when")} className="px-5 py-[13px] border border-gray-200 cursor-pointer ">
                                             <div className="flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">When</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
-
                                         </th>
                                         <th onClick={() => handleSort("when")} className="px-5 py-[13px] border border-gray-200 cursor-pointer">
                                             <div className=" flex flex-row items-center gap-2">
                                                 <span className="text-b-13-14-400 text-gray-700">Details</span>
                                                 <MdOutlineUnfoldMore className="size-[14px] text-gray-600" />
                                             </div>
-
                                         </th>
 
                                         <th className="px-5 py-[13px] border border-gray-200">
@@ -167,7 +190,20 @@ const BackupTable = () => {
                                         upgradeData.map((item) => (
                                             <tr className="border border-gray-200-t" key={item.id}>
                                                 <td className='px-[21px]  py-[15px] text-center border border-gray-200'>
-                                                    <input type="checkbox" className="size-[18px]" name={item.when} id={item.details} />
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={!!checkedItems[item.id]}
+                                                        onChange={() => handleCheckboxChange(item.id)}
+                                                        className={`
+                                                                size-[18px] rounded-[4px] border border-gray-500 
+                                                                bg-white dark:bg-black 
+                                                                appearance-none cursor-pointer transition-all 
+                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
+                                                                checked:bg-check-icon
+                                                                bg-no-repeat bg-center bg-[length:12px_12px]
+                                                                    `}
+                                                    />
+
                                                 </td>
 
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
@@ -195,7 +231,7 @@ const BackupTable = () => {
                                                     <span className='text-b-12-12-500 text-gray-700'>Preview</span>
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
-                                                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md  text-b-12-12-500 text-gray-700 border border-gray-200 gap-1 cursor-pointer">
+                                                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md  text-b-12-12-500 text-gray-700 border border-gray-200 gap-1 cursor-pointer dark:bg-gray-300">
                                                         Restore
                                                     </button>
                                                 </td>
@@ -206,33 +242,7 @@ const BackupTable = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                            <div className="flex flex-row gap-3 items-center">
-                                <span>Show</span>
-                                <select
-
-                                    className="outline-none rounded-md p-2.5 cursor-pointer"
-                                    value={showCount}
-                                    onChange={(e) => setShowCount(Number(e.target.value))}
-                                >
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                </select>
-                                <span>per page</span>
-                            </div>
-
-                            <div className="flex flex-row items-center gap-0.5">
-                                <span className="pr-4">1-10 of 52</span>
-                                <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                                <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                                <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < backup.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                                <div className={`${showCount > backup.length ? ' hidden' : 'opacity-100'}`}>
-                                    <FaArrowRight className={`${backup.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-
-                                </div>
-                            </div>
-                        </div>
+                        <Pagination setUpgradeData={setUpgradeData} data={backup} />
                     </div>
                 </>
             }

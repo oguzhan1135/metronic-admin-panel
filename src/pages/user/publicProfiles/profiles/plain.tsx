@@ -44,7 +44,7 @@ const Plain = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-[30px] p-4 z-1">
                 {/* Data */}
                 <div className="xl:col-span-3 grid gap-[30px] ">
-                    <div className="bg-white dark:bg-coal-300 rounded-xl shadow-sm border">
+                    <div className="bg-light rounded-xl shadow-sm border">
                         <div className="flex items-center justify-center py-[30px] ">
                             <div className="flex sm:flex-row flex-col items-center gap-5 w-full">
                                 <div className="flex flex-col gap-2.5 items-center flex-grow w-full relative after:content-[''] after:block after:bg-gray-300 after:w-full after:h-[1px] sm:after:w-[1px] sm:after:h-full sm:after:absolute sm:after:right-0 last:after:hidden">

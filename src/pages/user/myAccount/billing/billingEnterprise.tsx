@@ -12,8 +12,8 @@ import Kanba from '../../../../assets/icon/kanba.svg'
 import AvatarGroup from '../../../../assets/icon/avatar-group.svg'
 import { FaDownload } from "react-icons/fa6"
 import Welcome from '../../../../assets/icon/unlockCreative.svg'
-import Calendar from '../../../../assets/icon/calendar.svg'
 import { CiCalendarDate } from "react-icons/ci"
+import WelcomeDark from '../../../../assets/icon/unlock-creative-dark.svg'
 
 const BillingEnterprise = () => {
     return (
@@ -25,7 +25,7 @@ const BillingEnterprise = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Billing - Enterprise</h1>
                     <span className='text-b-14-14-400 text-gray-700'>Advanced Billing Solutions for Large Businesses</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
                 </button>
             </div>
@@ -75,7 +75,7 @@ const BillingEnterprise = () => {
                                             <span className="text-b-13-20-400 text-gray-700">Essential Features for Startups and Individuals</span>
                                         </div>
                                         <div className="flex flex-row items-center flex-wrap gap-2.5">
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                 Cancel Plan
                                             </button>
                                             <button className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -142,7 +142,7 @@ const BillingEnterprise = () => {
                         dotStatus={false}
                         dotContent={
                             <>
-                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                                     <div className="flex flex-row items-center gap-1">
                                         <FaDownload className="text-gray-600 size-[14px]" />
                                         Download PDF
@@ -186,7 +186,7 @@ const BillingEnterprise = () => {
                         buttonStatus={false}
                         dotContent={
                             <>
-                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-gray-300">
                                     <div className="flex flex-row items-center gap-1">
                                         <MdAddCircleOutline className="text-gra-600 size-[14px]" />
                                         Add New
@@ -282,7 +282,8 @@ const BillingEnterprise = () => {
                                         <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
                                         <p className=" text-b-14-22-400 text-gray-800">Visit our Help Center for detailed assistance on billing, payments, and subscriptions. </p>
                                     </div>
-                                    <img src={Welcome} alt="welcome" />
+                                    <img src={Welcome} alt="welcome" className="dark:hidden"/>
+                                    <img src={WelcomeDark} alt="welcome-dark" className="dark:flex hidden" />
                                 </div>
                             </>
                         }
@@ -344,7 +345,8 @@ const BillingEnterprise = () => {
                                         <span className="text-b-20-30-500 text-gray-900 ">Contact Support</span>
                                         <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
                                     </div>
-                                    <img src={Welcome} alt="welcome" />
+                                    <img src={Welcome} alt="welcome" className="dark:hidden" />
+                                    <img src={WelcomeDark} alt="welcome-dark" className="dark:flex hidden" />
                                 </div>
                             </>
                         }

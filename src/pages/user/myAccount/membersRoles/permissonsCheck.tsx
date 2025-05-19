@@ -3,6 +3,7 @@ import Menu from "../../../../components/myAccount/hoverMenu"
 import Card from '../../../../components/card/card'
 import FAQ from "../../../../components/myAccount/faq"
 import Service from '../../../../assets/icon/service.svg'
+import ServiceDark from '../../../../assets/icon/service-dark.svg'
 import { FaUsers } from "react-icons/fa"
 import PermissionTable from "../../../../components/myAccount/tables/permissionToggleTable"
 import PermissionCheckTable from "../../../../components/myAccount/tables/permissionsCheckTable"
@@ -21,7 +22,7 @@ const PermissionsCheck = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Permissions - Check</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     View Roles
                 </button>
             </div>
@@ -50,7 +51,8 @@ const PermissionsCheck = () => {
                                         <span className="text-b-20-30-500 text-gray-900 ">Questions?</span>
                                         <p className=" text-b-14-22-400 text-gray-800">Need assistance? Contact our support team for prompt, personalized help your queries & concerns.</p>
                                     </div>
-                                    <img src={Service} alt="service" />
+                                    <img src={Service} alt="service" className="dark:hidden" />
+                                    <img src={ServiceDark} alt="service-dark" className="dark:flex hidden" />
                                 </div>
                             </>
                         }
@@ -67,7 +69,7 @@ const PermissionsCheck = () => {
                             <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -90,7 +92,7 @@ const PermissionsCheck = () => {
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
 
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -112,7 +114,7 @@ const PermissionsCheck = () => {
                                 </div>
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">

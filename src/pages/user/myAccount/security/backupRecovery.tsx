@@ -62,8 +62,8 @@ const BackupRecovery = () => {
                                             <span className="text-b-14-14-500 text-gray-900">Backup Frequency</span>
                                             <span className="text-b-13-14-400 text-gray-700">Select Preferred Backup</span>
                                         </div>
-                                        <select name="frequency" id="frequency" className="border px-2.5 py-[9px] rounded-md  text-b-11-12-400 outline-none">
-                                            <option value="Weekly" selected className="text-gray-800 text-b-14-12-400">Weekly</option>
+                                        <select name="frequency" id="frequency" defaultValue={"Weekly"} className="border px-2.5 py-[9px] rounded-md  text-b-11-12-400 outline-none dark:bg-[#1F212A] text-gray-800 border-gray-300">
+                                            <option value="Weekly" className="text-gray-800 text-b-14-12-400">Weekly</option>
                                             <option value="Daily" className="text-gray-800 text-b-14-12-400">Daily</option>
                                             <option value="Monthly" className="text-gray-800 text-b-14-12-400">Monthly</option>
 
@@ -74,7 +74,7 @@ const BackupRecovery = () => {
                                             <span className="text-b-14-14-500 text-gray-900">Manual Backup</span>
                                             <span className="text-b-13-14-400 text-gray-700">Backup When Needed</span>
                                         </div>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-gray-300 ">
                                             Start
                                         </button>
                                     </div>
@@ -91,7 +91,7 @@ const BackupRecovery = () => {
                             <div className="flex flex-col px-[30px] ">
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-[#ffdac5]  fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
@@ -114,7 +114,7 @@ const BackupRecovery = () => {
                                 <div className="flex flex-col gap-5 py-[30px] border-b">
 
                                     <div className="relative size-[50px] shrink-0">
-                                        <svg className="w-full h-full stroke-[#ffdac5]  fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506 
             18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937 
             39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">

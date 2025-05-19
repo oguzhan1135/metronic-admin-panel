@@ -59,7 +59,7 @@ const UserProfile = () => {
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
 
-                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Public Profile
                     </a>
                     <Link to={location} className="px-2.5 py-2.5 flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1 cursor-pointer">
@@ -102,7 +102,7 @@ const UserProfile = () => {
                                             />
                                             <img src={Camera} alt="camera" className="absolute bottom-0" />
                                         </div>
-                                        <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
+                                        <div className=" absolute rounded-full border-2 bg-white dark:bg-coal-300 top-1 right-1 flex justify-center items-center  cursor-pointer "> <IoIosClose className="text-gray-500 size-[14px]" /></div>
 
                                     </div>
                                 </div>
@@ -434,7 +434,7 @@ const UserProfile = () => {
                         dotContentStatus={true}
                         dotContent={
                             <>
-                                <button className="flex items-center justify-center flex-row gap-1 p-2.5 rounded-md border">
+                                <button className="flex items-center justify-center flex-row gap-1 p-2.5 rounded-md border dark:bg-gray-300">
                                     <FaCalendarDay className="size-[14px] text-gray-500" />
                                     <span className="text-gray-700 text-b-12-12-500">Add New</span>
                                 </button>
@@ -480,7 +480,7 @@ const UserProfile = () => {
                         </>}
                     />
                     {/* Connections */}
-                     <Card
+                    <Card
                         title="Connections"
                         dotStatus={true}
                         content={
@@ -488,7 +488,7 @@ const UserProfile = () => {
                                 <div className="flex flex-col ">
                                     <table>
 
-                                        <thead className="bg-gray-200">
+                                        <thead className="bg-gray-200 dark:bg-coal-200">
                                             <tr>
                                                 <th className="text-left text-b-13-14-400 text-gray-700 py-[13px] pl-[30px]">Name</th>
                                                 <th className="text-right text-b-13-14-400 text-gray-700 py-[13px] pr-10">Join Links</th>

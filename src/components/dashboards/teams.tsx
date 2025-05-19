@@ -1,12 +1,13 @@
 
 
 import AvatarGroup from "../../assets/icon/avatar-group.svg"
-import { FaArrowLeft, FaArrowRight, FaRegStar, FaStar } from "react-icons/fa6";
+import { FaRegStar, FaStar } from "react-icons/fa6";
 import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaStarHalfAlt } from "react-icons/fa";
+import Pagination from "../myAccount/tables/pagination";
 
 const Teams = () => {
     const [teamsData, setTeamsData] = useState([
@@ -18,31 +19,8 @@ const Teams = () => {
         { id: 6, name: "Engineering", description: "Software development & infrastructure", date: "21 Oct, 2024", raiting: 4.5 },
         { id: 7, name: "Quality Assuarance", description: "Product testing", date: "21 Oct, 2024", raiting: 2 },
     ])
-    const [showCount, setShowCount] = useState(5);
+    const showCount: number = 5
     const [upgradeData, setUpgradeData] = useState(teamsData.slice(0, showCount));
-
-    const previousData = () => {
-        setShowCount(showCount);
-        setUpgradeData(teamsData.slice(0, showCount))
-    };
-
-    const nextData = () => {
-        setUpgradeData(teamsData.slice(showCount, teamsData.length + showCount))
-
-    };
-    const [selected, setSelected] = useState(1)
-    useEffect(() => {
-        if (showCount !== 5) {
-            setUpgradeData(teamsData.slice(0, showCount))
-        }
-        else {
-            setUpgradeData(teamsData.slice(0, 5))
-        }
-
-
-    }, [showCount])
-
-
 
     type SortDirection = 'asc' | 'desc';
     type SortKey = 'name' | 'date';
@@ -254,32 +232,7 @@ const Teams = () => {
                     </table>
 
                 </div>
-                <div className="flex flex-row justify-between items-center p-5 flex-wrap ">
-                    <div className="flex flex-row gap-3 items-center">
-                        <span className="text-b-13-14-400 text-gray-700">Show</span>
-                        <select
-
-                            className="outline-none rounded-md p-2.5 cursor-pointer dark:bg-[#1F212A] text-b-11-12-400 text-gray-800"
-                            value={showCount}
-                            onChange={(e) => setShowCount(Number(e.target.value))}
-                        >
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                        <span className="text-b-13-14-400 text-gray-700">per page</span>
-                    </div>
-
-                    <div className="flex flex-row items-center gap-0.5">
-                        <span className="pr-4">1-10 of 52</span>
-                        <FaArrowLeft onClick={() => { previousData(); setSelected(1) }} className="text-gray-400 cursor-pointer" />
-                        <button className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400 text-gray-800 ${selected === 1 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'} `} onClick={() => { previousData(); setSelected(1) }}>1</button>
-                        <span className={`px-2.5 py-2 cursor-pointer hover:bg-gray-200 duration-300 rounded-lg text-b-14-14-400  ${selected === 2 ? 'bg-gray-200 text-gray-800' : 'bg-transparent text-gray-700'}  ${showCount < teamsData.length ? '' : 'hidden'}`} onClick={() => { nextData(); setSelected(2) }}>2</span>
-                        <div className={`${showCount > teamsData.length ? ' hidden' : 'opacity-100'}`}>
-                            <FaArrowRight className={`${teamsData.length > showCount ? 'text-gray-900 cursor-pointer' : 'text-gray-400'}`} onClick={() => { nextData(); setSelected(2) }} />
-                        </div>
-                    </div>
-                </div>
+                <Pagination setUpgradeData={setUpgradeData} data={teamsData} />
             </div>
 
 

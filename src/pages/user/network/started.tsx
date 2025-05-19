@@ -1,6 +1,3 @@
-
-
-
 import { Link } from "react-router"
 import Card from '../../../components/card/card'
 import { useState } from "react";

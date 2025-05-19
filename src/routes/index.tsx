@@ -77,7 +77,7 @@ import BrandedSignUp from "../pages/user/authentication/branded/signUp";
 import BrandedTwoFA from "../pages/user/authentication/branded/twoFA";
 import BrandedCheckEmail from "../pages/user/authentication/branded/checkEmail";
 import BrandedEnterEmail from "../pages/user/authentication/branded/resetPassword/enterEmail";
-import BrandedCheckEmailReset from "../pages/user/authentication/branded/resetPassword/checkEmail";
+import BrandedResetCheckEmail from "../pages/user/authentication/branded/resetPassword/checkEmail";
 import BrandedResetPassword from "../pages/user/authentication/branded/resetPassword/resetPassword";
 import BrandedChangedPassword from "../pages/user/authentication/branded/resetPassword/changedPassword";
 import Error404 from "../pages/user/authentication/error404";
@@ -171,9 +171,9 @@ const Router = () => {
                 <Route path='/user/authentication/branded/twoFA' element={<BrandedTwoFA />}></Route>
                 <Route path='/user/authentication/branded/checkEmail' element={<BrandedCheckEmail />}></Route>
                 <Route path='/user/authentication/branded/resetPassword/enterEmail' element={<BrandedEnterEmail />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/checkEmail' element={<BrandedCheckEmailReset />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/changePassword' element={<BrandedResetPassword />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/changedPassword' element={<BrandedChangedPassword />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/checkEmail' element={<BrandedResetCheckEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/passwordChange' element={<BrandedResetPassword />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/passwordChanged' element={<BrandedChangedPassword />}></Route>
                 <Route path='/user/authentication/error404' element={<Error404 />}></Route>
                 <Route path='/user/authentication/error500' element={<Error500 />}></Route>
                 <Route path='/user/authentication/welcomeMessage' element={<WelcomeModal />}></Route>

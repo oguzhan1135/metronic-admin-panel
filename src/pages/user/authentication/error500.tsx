@@ -1,11 +1,15 @@
 import { Link } from 'react-router'
 import ErrorImage from '../../../assets/icon/error-500.svg'
+import ErrorDarkImage from '../../../assets/icon/error-500-dark.svg'
+
 const Error500 = () => {
     return (
-        <div className="flex items-center justify-center flex-col gap-10 min-h-screen w-full">
-            <img src={ErrorImage} alt="error" />
+        <div className="flex items-center justify-center flex-col gap-10 min-h-screen dark:bg-black w-full">
+
+            <img src={ErrorImage} alt="error" className='dark:hidden' />
+            <img src={ErrorDarkImage} alt="error" className='dark:flex hidden' />
             <div className="flex flex-col gap-4 items-center">
-                <div className="flex items-center justify-center border rounded-[4px] bg-primary-light border-primary border-opacity-20 p-2">
+                <div className="flex items-center justify-center border rounded-[4px] bg-primary-light dark:bg-light border-primary border-opacity-20 p-2">
                     <span className='text-b-11-12-500 text-primary'>500 Error</span>
                 </div>
                 <h3 className='text-h-26-26-600 text-gray-900'>Internal Server Error</h3>

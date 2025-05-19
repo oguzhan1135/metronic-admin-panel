@@ -3,6 +3,7 @@ import FAQ from "../../../../components/myAccount/faq"
 import Menu from "../../../../components/myAccount/hoverMenu"
 import Questions from "../../../../components/myAccount/questions"
 import Concord from '../../../../assets/icon/concord.svg'
+import ConcordDark from '../../../../assets/icon/concord-dark.svg'
 
 const TeamStarter = () => {
 
@@ -15,7 +16,7 @@ const TeamStarter = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Teams(0)</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Efficient team organization with real-time updates</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Plans
                 </button>
             </div>
@@ -26,7 +27,8 @@ const TeamStarter = () => {
                 content={
                     <>
                         <div className="flex flex-col items-center justify-center gap-3 pb-[50px]">
-                            <img src={Concord} alt="concord" />
+                            <img src={Concord} alt="concord" className="dark:hidden" />
+                            <img src={ConcordDark} alt="concord-dark" className="dark:flex hidden" />
                             <h2 className="text-h-26-26-600 text-gray-900">Swift Setup for New Teams</h2>
                             <div className="flex flex-col gap-[30px] items-center justify-center">
                                 <p className="text-b-14-22-400 text-gray-800 text-center max-w-[600px]">Enhance team formation and management with easy-to-use tools for communication,

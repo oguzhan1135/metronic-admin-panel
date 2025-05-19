@@ -55,6 +55,7 @@
   --color-warning-light: #FFF8DD;
 
   --color-light-active: #FCFCFC;
+  --color-light:#FFFFFF;
 
   --color-gray-100: #F9F9F9;
   --color-gray-200: #F1F1F4;
@@ -96,7 +97,7 @@
   --color-warning-light: #242320;
 
   --color-light-active: #0F0F0F;
-
+  --color-light: #1F212A;
   --color-gray-100: #1B1C22;
   --color-gray-200: #26272F;
   --color-gray-300: #363843;

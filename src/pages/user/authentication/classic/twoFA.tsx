@@ -34,13 +34,13 @@ const TwoFA = () => {
         return () => clearInterval(timer);
     }, [seconds]);
     return (
-        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg bg-cover">
+        <div className="flex items-center justify-center w-full min-h-screen bg-authantication-bg dark:bg-authentication-dark bg-cover">
             <Card
                 dotStatus={false}
                 buttonStatus={false}
                 content={
                     <>
-                        <form action="#" className="flex flex-col gap-[30px] p-10 items-center">
+                        <form action="#" className="flex flex-col gap-[30px] p-10 items-center dark:bg-coal-500">
                             <img src={Smartphone} />
                             <h3 className="text-b-18-18-500 text-gray-900">Verify your phone</h3>
                             <div className="flex flex-col gap-2.5 items-center">
@@ -53,7 +53,7 @@ const TwoFA = () => {
                                         <input
                                             key={i}
                                             maxLength={1}
-                                            className="size-10 text-center border border-gray-300 rounded text-xl outline-[#D0E3F9] outline-1"
+                                            className="size-10 text-center border border-gray-300 rounded text-xl outline-[#006AE6]  outline-1 bg-light  text-b-16-16-500 text-gray-700"
                                             onChange={(e) => handleChange(e, i)}
                                             onKeyDown={(e) => handleKeyDown(e, i)}
                                             ref={(el) => (inputRefs.current[i] = el)}
@@ -64,9 +64,9 @@ const TwoFA = () => {
                                 </div>
                                 <span className="text-b-13-14-400 text-gray-700">Didn't receive a code? ({seconds}s) <Link to={location} className="text-primary text-b-13-14-400">Resend</Link></span>
                             </div>
-                            <button className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
+                            <Link to={"/user/authentication/classic/resetPassword/checkEmail"} className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
                                 Continue
-                            </button>
+                            </Link>
 
                         </form>
                     </>
