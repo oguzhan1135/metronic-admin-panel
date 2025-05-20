@@ -7,20 +7,20 @@ import { IoRocketOutline } from "react-icons/io5"
 import { SlLocationPin } from "react-icons/sl"
 import { TiPrinter } from "react-icons/ti"
 import { Link } from "react-router"
-import Card from "../../../../components/card/card"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Switch from "../../../../components/switch"
-import Badges from "../../../../components/publicProfile/badges"
-import CheckCircle from '../../../../assets/icon/check-circle.svg'
-import Arrow from '../../../../assets/icon/arrow.svg'
-import Verify from '../../../../assets/icon/verify.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import ModernSoftware from '../../../../assets/icon/modernSoftware.svg'
-import Balancing from '../../../../assets/icon/blancingWork.svg'
-import VerifyEmail from '../../../../assets/icon/verify-email.svg'
+import Card from "@components/card/card"
+import Menu from "@components/publicProfile/hovermenu"
+import Switch from "@components/switch"
+import Badges from "@components/publicProfile/badges"
+import CheckCircle from '@assets/check-circle.svg'
+import Arrow from '@assets/arrow.svg'
+import Verify from '@assets/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
+import ModernSoftware from '@assets/modernSoftware.svg'
+import Balancing from '@assets/blancingWork.svg'
+import VerifyEmail from '@assets/verify-email.svg'
 import { useState } from "react"
-import VerifyEmailDark from '../../../../assets/icon/verify-email-dark.svg'
-import ArrowDark from '../../../../assets/icon/arrow-dark.svg'
+import VerifyEmailDark from '@assets/verify-email-dark.svg'
+import ArrowDark from '@assets/arrow-dark.svg'
 
 const Blogger = () => {
     const location = window.location.pathname

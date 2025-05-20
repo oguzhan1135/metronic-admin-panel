@@ -1,5 +1,4 @@
-import { Link } from "react-router"
-import Card from "../../../../../components/card/card"
+import Card from "@components/card/card"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
 

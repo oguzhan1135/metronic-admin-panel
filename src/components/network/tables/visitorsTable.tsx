@@ -2,25 +2,25 @@ import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Jacob from '../../../assets/icon/jonathan-taylor.svg'
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
-import Turkey from '../../../assets/icon/turkey.svg'
-import Ukraine from '../../../assets/icon/ukraine.svg'
-import Uruguay from '../../../assets/icon/uruguay.svg'
-import Japan from '../../../assets/icon/japan.svg'
-import France from '../../../assets/icon/france.svg'
-import Germany from '../../../assets/icon/germany.svg'
-import Spain from '../../../assets/icon/spain.svg'
-import India from '../../../assets/icon/india.svg'
-import Estonia from '../../../assets/icon/estonia.svg'
-import Malaysia from '../../../assets/icon/malaysia.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Jacob from '@assets/jonathan-taylor.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import Turkey from '@assets/turkey.svg'
+import Ukraine from '@assets/ukraine.svg'
+import Uruguay from '@assets/uruguay.svg'
+import Japan from '@assets/japan.svg'
+import France from '@assets/france.svg'
+import Germany from '@assets/germany.svg'
+import Spain from '@assets/spain.svg'
+import India from '@assets/india.svg'
+import Estonia from '@assets/estonia.svg'
+import Malaysia from '@assets/malaysia.svg'
 import { LuSettings2 } from "react-icons/lu";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FiChrome } from "react-icons/fi";
-import Pagination from "../../myAccount/tables/pagination";
+import Pagination from "@components/myAccount/tables/pagination";
 
 interface Member {
     id: number;

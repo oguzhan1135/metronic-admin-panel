@@ -1,7 +1,7 @@
 import { Link } from "react-router"
-import Card from "../../../../../components/card/card"
-import Branded from "../../../../../components/authentication/branded"
-import CheckMailImage from '../../../../../assets/icon/check-mail-image.svg'
+import Card from "@components/card/card"
+import Branded from "@components/authentication/branded"
+import CheckMailImage from '@assets/check-mail-image.svg'
 
 
 const BrandedResetCheckEmail = () => {

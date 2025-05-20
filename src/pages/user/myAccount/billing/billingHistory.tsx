@@ -1,5 +1,5 @@
-import Menu from "../../../../components/myAccount/hoverMenu"
-import BillingHistoryTable from "../../../../components/myAccount/tables/billingHistoryTable"
+import Menu from "@components/myAccount/hoverMenu"
+import BillingHistoryTable from "@components/myAccount/tables/billingHistoryTable"
 
 const BillingHistory = () => {
 

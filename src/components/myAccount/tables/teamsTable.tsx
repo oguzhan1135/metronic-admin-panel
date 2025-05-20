@@ -1,9 +1,9 @@
-import AvatarGroup from "../../../assets/icon/avatar-group.svg"
+import AvatarGroup from "@assets/avatar-group.svg"
 import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Switch from "../../switch";
+import Switch from "@components/switch";
 import { FaEdit, FaRegStar, FaRegTrashAlt, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Pagination from "./pagination";
 

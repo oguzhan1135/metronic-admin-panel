@@ -1,29 +1,30 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
+import Menu from "@components/myAccount/hoverMenu"
 import { BsApple } from "react-icons/bs"
 import { CiBasketball } from "react-icons/ci"
-import { FaCalendarDay, FaCopy, FaEllipsisVertical, FaFacebook, FaLinkedin, FaPlus, FaXTwitter } from "react-icons/fa6"
+import { FaCalendarDay, FaCopy, FaEllipsisVertical, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import { FcGoogle } from "react-icons/fc"
 import { IoIosClose, IoIosLogOut, IoLogoTwitch } from "react-icons/io"
 import { MdOutlineEditNote, MdOutlineMessage } from "react-icons/md"
-import Card from "../../../../components/card/card"
-import Switch from "../../../../components/switch"
+import Card from "@components/card/card"
+import Switch from "@components/switch"
 import { useState } from "react"
-import ExampleUser from '../../../../assets/icon/example-user.svg'
-import Camera from '../../../../assets/icon/camera.svg'
+import ExampleUser from '@assets/example-user.svg'
+import Camera from '@assets/camera.svg'
 import { FaCheckCircle, FaInfo, FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
-import GoogleCalendar from '../../../../assets/icon/google-calendar.svg'
-import Monday from '../../../../assets/icon/monday.svg'
-import Chrome from '../../../../assets/icon/chrome.svg'
-import Spain from '../../../../assets/icon/spain.svg'
-import France from '../../../../assets/icon/france.svg'
-import Premium from '../../../../assets/icon/premium-plan.svg'
+import GoogleCalendar from '@assets/google-calendar.svg'
+import Monday from '@assets/monday.svg'
+import Chrome from '@assets/chrome.svg'
+import Spain from '@assets/spain.svg'
+import France from '@assets/france.svg'
+import Premium from '@assets/premium-plan.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { IoShieldCheckmark } from "react-icons/io5"
+
 const SettingEnterprise = () => {
     const [account, setAccount] = useState(true)
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);

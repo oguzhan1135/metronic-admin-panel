@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import ErrorImage from '../../../assets/icon/error-404.svg'
+import ErrorImage from '@assets/error-404.svg'
 import { IoSearchOutline } from 'react-icons/io5'
 
 const Error404 = () => {

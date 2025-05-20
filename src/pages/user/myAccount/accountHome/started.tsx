@@ -2,8 +2,8 @@
 
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { MdNotificationsActive, MdOutlinePayment, MdOutlineSecurity } from 'react-icons/md'
 import { BiSolidUserDetail } from 'react-icons/bi'
 import { FaChartLine, FaDropbox, FaKey, FaSwatchbook, FaUsers } from 'react-icons/fa'

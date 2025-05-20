@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
-import Sidebar from '../components/sidebar';
-import Header from '../components/navbar';
+import Sidebar from '@components/sidebar';
+import Header from '@components/navbar';
 import { metronicContext } from '../context/layoutContet';
 import { useLocation } from 'react-router-dom';
 import '../globals.css'
+import Search from '@components/navbar/dropdowns/search';
+import Share from '@components/navbar/dropdowns/share';
+import Give from '@components/navbar/dropdowns/give';
+import ReportUser from '@components/navbar/dropdowns/reportUser';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { sidebarIsOpen } = metronicContext();
@@ -42,6 +46,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <main
                 className={`bg-transparent px-10 py-24 bg-white dark:bg-coal-500 transition-all min-h-screen duration-500 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'} transition-all w-full duration-500 ease-in-out z-0`}
               >
+                <Search />
+                <Share />
+                <Give />
+                <ReportUser />
                 {children}
               </main>
             </div>

@@ -1,10 +1,10 @@
 import { useState } from "react"
-import Jira from '../../../assets/icon/jira.svg'
-import Inferno from '../../../assets/icon/inferno.svg'
-import Evernote from '../../../assets/icon/evernote.svg'
-import Gitlab from '../../../assets/icon/gitlab.svg'
-import Webdev from '../../../assets/icon/webdev.svg'
-import Switch from "../../switch"
+import Jira from '@assets/jira.svg'
+import Inferno from '@assets/inferno.svg'
+import Evernote from '@assets/evernote.svg'
+import Gitlab from '@assets/gitlab.svg'
+import Webdev from '@assets/webdev.svg'
+import Switch from "@components/switch"
 const DropdownApps = () => {
     const [apps, setApps] = useState([
         {
@@ -46,7 +46,7 @@ const DropdownApps = () => {
         );
     };
     return (
-        <div className="absolute  top-12 right-20 w-80">
+        <div className="absolute  top-12 right-0 w-80">
             <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-300 border  flex-col">
                 <div className=" px-5 py-3 border-b">
                     <div className="flex flex-row items-center justify-between">
@@ -56,7 +56,7 @@ const DropdownApps = () => {
                 </div>
                 <div className="flex flex-col">
                     {
-                        apps.map((item,key) => (
+                        apps.map((item, key) => (
                             <div key={key} className="border-b border-gray-200 px-5 py-[14px]">
                                 <div className="flex flex-row items-center justify-between ">
                                     <div className="flex flex-row gap-2 items-center">

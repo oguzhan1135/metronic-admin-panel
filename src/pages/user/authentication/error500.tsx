@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
-import ErrorImage from '../../../assets/icon/error-500.svg'
-import ErrorDarkImage from '../../../assets/icon/error-500-dark.svg'
+import ErrorImage from '@assets/error-500.svg'
+import ErrorDarkImage from '@assets/error-500-dark.svg'
 
 const Error500 = () => {
     return (

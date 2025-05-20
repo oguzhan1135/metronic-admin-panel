@@ -2,13 +2,13 @@ import { CiMail } from "react-icons/ci"
 import { FaFacebook, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/card/card"
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Card from "@components/card/card"
 import { Link } from "react-router"
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import AccountDeactiveted from '../../../../assets/icon/account-deactived.svg'
-import AccountDeactivatedDark from '../../../../assets/icon/account-deactivated-dark.svg'
+import Jennifer from '@assets/jennifer.svg'
+import AccountDeactiveted from '@assets/account-deactived.svg'
+import AccountDeactivatedDark from '@assets/account-deactivated-dark.svg'
 const Plain = () => {
 
 

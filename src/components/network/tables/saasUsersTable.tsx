@@ -2,14 +2,14 @@ import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Switch from "../../switch";
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Jacob from '../../../assets/icon/jonathan-taylor.svg'
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
+import Switch from "@components/switch";
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Jacob from '@assets/jonathan-taylor.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { LuSettings2 } from "react-icons/lu";
-import Pagination from "../../myAccount/tables/pagination";
+import Pagination from "@components/myAccount/tables/pagination";
 
 interface Member {
     id: number;

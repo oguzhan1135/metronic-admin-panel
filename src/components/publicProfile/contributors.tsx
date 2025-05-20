@@ -1,7 +1,7 @@
-import Tyler from '../../assets/icon/tyler-hero.svg'
-import Esther from '../../assets/icon/ester-hoeard.svg'
-import Cody from '../../assets/icon/cody-fisher.svg'
-import Arlene from '../../assets/icon/arlene-mccoy.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { Link } from "react-router"
 

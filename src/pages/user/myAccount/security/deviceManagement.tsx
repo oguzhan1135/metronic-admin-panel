@@ -1,6 +1,6 @@
-import Menu from "../../../../components/myAccount/hoverMenu"
-import DeviceTable from "../../../../components/myAccount/tables/deviceTable"
-import Questions from "../../../../components/myAccount/questions"
+import Menu from "@components/myAccount/hoverMenu"
+import DeviceTable from "@components/myAccount/tables/deviceTable"
+import Questions from "@components/myAccount/questions"
 const DeviceManagament = () => {
 
     return (

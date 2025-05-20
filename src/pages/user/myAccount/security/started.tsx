@@ -2,8 +2,8 @@
 
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { MdDevices, MdOutlineSubtitles } from 'react-icons/md'
 import { IoCloudOutline, IoKeyOutline, IoSettingsOutline } from "react-icons/io5"
 import { TiWorldOutline } from "react-icons/ti"

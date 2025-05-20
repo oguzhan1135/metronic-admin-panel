@@ -1,13 +1,13 @@
 
 
-import AvatarGroup from "../../assets/icon/avatar-group.svg"
+import AvatarGroup from "@assets/avatar-group.svg"
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaStarHalfAlt } from "react-icons/fa";
-import Pagination from "../myAccount/tables/pagination";
+import Pagination from "@components/myAccount/tables/pagination";
 
 const Teams = () => {
     const [teamsData, setTeamsData] = useState([

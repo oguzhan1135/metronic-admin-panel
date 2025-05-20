@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { metronicContext } from "../../context/layoutContet";
+import { metronicContext } from "@context/layoutContet";
 import Navigation from "./navigation";
-import Search from '../../assets/icon/magnifier.svg';
-import NotificationImg from '../../assets/icon/notification-status.svg';
-import Messages from '../../assets/icon/messages.svg';
-import Apps from '../../assets/icon/apps.svg';
-import ExampleUser from '../../assets/icon/example-user.svg';
+import SearchImg from '@assets/magnifier.svg';
+import NotificationImg from '@assets/notification-status.svg';
+import Messages from '@assets/messages.svg';
+import Apps from '@assets/apps.svg';
+import ExampleUser from '@assets/example-user.svg';
 import User from './dropdowns/user';
 import DropdownApps from "../navbar/dropdowns/apps";
 import Chats from '../navbar/dropdowns/chat'
 import Notification from "./dropdowns/notification";
+
 export interface Dropdown {
     id: number;
     tag: string;
@@ -18,10 +19,17 @@ export interface Dropdown {
 }
 
 const Navbar = () => {
-    const { sidebarIsOpen, modalOpen } = metronicContext();
+    const { sidebarIsOpen, modalOpen, setSearchModal, searchModal, giveModal, reportModal, shareModal } = metronicContext();
     const [selectedDropdown, setSelectedDropdown] = useState<Dropdown | null>(null);
 
     const [dropdowns, setDropdowns] = useState<Dropdown[]>([
+        {
+            id: 5,
+            tag: "search",
+            status: false,
+            icon: <img src={SearchImg} alt="search" />,
+        }
+        ,
         {
             id: 3,
             tag: "notifications",
@@ -66,6 +74,13 @@ const Navbar = () => {
             return updatedDropdowns;
         });
     };
+    useEffect(() => {
+        if (selectedDropdown?.tag === "search" && selectedDropdown.status) {
+            setSearchModal(true);
+        } else {
+            setSearchModal(false);
+        }
+    }, [selectedDropdown, setSearchModal]);
 
     const closeDropdowns = () => {
         setDropdowns((prevDropdowns) =>
@@ -96,29 +111,30 @@ const Navbar = () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
     }, []);
-    const location = window.location.pathname
-
 
     return (
         <div
             className={`flex w-full h-20 px-10 py-8 fixed ${sidebarIsOpen ? "lg:pl-[110px]" : "lg:pl-[320px]"
-                } transition-all duration-500 ease-in-out ${modalOpen ? " -z-10" : "z-10"}  bg-white dark:bg-coal-500`}
+                } transition-all duration-500 ease-in-out ${modalOpen || searchModal || giveModal || reportModal || shareModal ? " -z-10" : "z-10"}  bg-white dark:bg-coal-500`}
         >
             <div className="flex flex-row justify-between items-center w-full">
-                <Navigation />
-                <div className="flex flex-row gap-5 relative dropdown-container bg-white dark:bg-coal-500">
-                    <img src={Search} alt="search" className="md:flex hidden cursor-pointer" />
+                <div className="absolute sm:static md:flex top-[70px]">
+                    <Navigation />
+                </div>
 
-                    {dropdowns.map((item, index) => (
+
+                <div className="flex flex-row gap-5 relative dropdown-container bg-white dark:bg-coal-500 ml-auto">
+
+                    {dropdowns.map((item) => (
                         <div
                             key={item.id}
                             onClick={() => handleDropdownControl(item.tag)}
-                            className={`flex items-center justify-center ${index !== dropdowns.length - 1 ? "hidden md:flex" : "flex"
-                                } cursor-pointer`}
+                            className={`flex items-center justify-center cursor-pointer`}
                         >
                             {item.icon}
                         </div>
                     ))}
+
 
 
                     <div

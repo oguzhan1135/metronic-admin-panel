@@ -1,9 +1,9 @@
-import Card from "../../../../components/card/card"
-import FAQ from "../../../../components/myAccount/faq"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Questions from "../../../../components/myAccount/questions"
-import Puzzle from '../../../../assets/icon/puzzle.svg'
-import PuzzleDark from '../../../../assets/icon/puzzle-dark.svg'
+import Card from "@components/card/card"
+import FAQ from "@components/myAccount/faq"
+import Menu from "@components/myAccount/hoverMenu"
+import Questions from "@components/myAccount/questions"
+import Puzzle from '@assets/puzzle.svg'
+import PuzzleDark from '@assets/puzzle-dark.svg'
 
 const MemberStarter = () => {
 

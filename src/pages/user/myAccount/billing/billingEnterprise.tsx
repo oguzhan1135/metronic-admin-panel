@@ -1,19 +1,19 @@
 import { Link } from "react-router"
-import Card from "../../../../components/card/card"
-import Menu from "../../../../components/myAccount/hoverMenu"
+import Card from "@components/card/card"
+import Menu from "@components/myAccount/hoverMenu"
 import { MdAddCircleOutline } from "react-icons/md"
-import Visa from '../../../../assets/icon/visa.svg'
+import Visa from '@assets/visa.svg'
 import { FaCheckCircle, FaEdit, FaRegTrashAlt } from "react-icons/fa"
-import Ideal from '../../../../assets/icon/ideal.svg'
-import Paypal from '../../../../assets/icon/paypal.svg'
-import BillingTable from "../../../../components/myAccount/tables/billingTable"
-import PrimaryPoliygon from '../../../../assets/icon/primary-polygon.svg'
-import Kanba from '../../../../assets/icon/kanba.svg'
-import AvatarGroup from '../../../../assets/icon/avatar-group.svg'
+import Ideal from '@assets/ideal.svg'
+import Paypal from '@assets/paypal.svg'
+import BillingTable from "@components/myAccount/tables/billingTable"
+import PrimaryPoliygon from '@assets/primary-polygon.svg'
+import Kanba from '@assets/kanba.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
 import { FaDownload } from "react-icons/fa6"
-import Welcome from '../../../../assets/icon/unlockCreative.svg'
+import Welcome from '@assets/unlockCreative.svg'
 import { CiCalendarDate } from "react-icons/ci"
-import WelcomeDark from '../../../../assets/icon/unlock-creative-dark.svg'
+import WelcomeDark from '@assets/unlock-creative-dark.svg'
 
 const BillingEnterprise = () => {
     return (

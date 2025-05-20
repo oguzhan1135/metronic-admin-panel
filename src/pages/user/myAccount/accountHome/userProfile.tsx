@@ -1,40 +1,40 @@
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from "../../../../components/card/card"
-import ExampleUser from '../../../../assets/icon/example-user.svg'
-import BadgeOne from '../../../../assets/icon/badge-1.svg'
-import BadgeTwo from '../../../../assets/icon/badge-2.svg'
-import BadgeThree from '../../../../assets/icon/badge-3.svg'
-import BadgeFour from '../../../../assets/icon/badge-4.svg'
-import BadgeOneDark from '../../../../assets/icon/badge-1-dark.svg'
-import BadgeTwoDark from '../../../../assets/icon/badge-2-dark.svg'
-import BadgeThreeDark from '../../../../assets/icon/badge-3-dark.svg'
-import BadgeFourDark from '../../../../assets/icon/badge-4-dark.svg'
-import Camera from '../../../../assets/icon/camera.svg'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from "@components/card/card"
+import ExampleUser from '@assets/example-user.svg'
+import BadgeOne from '@assets/badge-1.svg'
+import BadgeTwo from '@assets/badge-2.svg'
+import BadgeThree from '@assets/badge-3.svg'
+import BadgeFour from '@assets/badge-4.svg'
+import BadgeOneDark from '@assets/badge-1-dark.svg'
+import BadgeTwoDark from '@assets/badge-2-dark.svg'
+import BadgeThreeDark from '@assets/badge-3-dark.svg'
+import BadgeFourDark from '@assets/badge-4-dark.svg'
+import Camera from '@assets/camera.svg'
 import { useState } from "react"
 import { IoIosClose, IoLogoTwitch } from "react-icons/io"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { MdInfoOutline, MdOutlineEditNote } from "react-icons/md"
 import { FcGoogle } from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
 import { FaCalendarDay, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import { CiBasketball } from "react-icons/ci"
 import { RiEqualizer2Line } from "react-icons/ri"
-import Individually from '../../../../assets/icon/individually.svg'
-import GoogleCalendar from '../../../../assets/icon/google-calendar.svg'
-import Monday from '../../../../assets/icon/monday.svg'
-import { FaCheckCircle, FaPlus, FaRegTrashAlt } from "react-icons/fa"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import Individually from '@assets/individually.svg'
+import GoogleCalendar from '@assets/google-calendar.svg'
+import Monday from '@assets/monday.svg'
+import { FaCheckCircle, FaRegTrashAlt } from "react-icons/fa"
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import PDF from '../../../../assets/icon/pdf.svg'
-import DOC from '../../../../assets/icon/doc.svg'
-import JS from '../../../../assets/icon/javascript.svg'
-import AI from '../../../../assets/icon/illustrator.svg'
-import CompanyProfileDark from '../../../../assets/icon/company-profile-dark.svg'
+import PDF from '@assets/pdf.svg'
+import DOC from '@assets/doc.svg'
+import JS from '@assets/javascript.svg'
+import AI from '@assets/illustrator.svg'
+import CompanyProfileDark from '@assets/company-profile-dark.svg'
 
 const UserProfile = () => {
 

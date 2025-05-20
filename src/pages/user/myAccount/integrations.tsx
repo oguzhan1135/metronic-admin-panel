@@ -1,23 +1,23 @@
 import { Link } from "react-router"
-import Menu from "../../../components/myAccount/hoverMenu"
-import Card from '../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { useState } from "react";
-import Jira from '../../../assets/icon/jira-work.svg'
-import Inferno from '../../../assets/icon/inferno.svg'
-import Evernote from '../../../assets/icon/evernote.svg'
-import Gitlab from '../../../assets/icon/gitlab.svg'
-import GoogleWeb from '../../../assets/icon/google-webdev.svg'
-import Invision from '../../../assets/icon/invision.svg'
-import Dualingo from '../../../assets/icon/duolingo.svg'
-import GoogleAnalytics from '../../../assets/icon/google-analytics.svg'
+import Jira from '@assets/jira-work.svg'
+import Inferno from '@assets/inferno.svg'
+import Evernote from '@assets/evernote.svg'
+import Gitlab from '@assets/gitlab.svg'
+import GoogleWeb from '@assets/google-webdev.svg'
+import Invision from '@assets/invision.svg'
+import Dualingo from '@assets/duolingo.svg'
+import GoogleAnalytics from '@assets/google-analytics.svg'
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { LuSquareMousePointer } from "react-icons/lu";
-import Switch from "../../../components/switch";
-import MultiTasking from '../../../assets/icon/multitasking.svg'
-import MultiTaskingDark from '../../../assets/icon/multitasking-dark.svg'
-import FAQ from "../../../components/myAccount/faq";
-import Questions from "../../../components/myAccount/questions";
+import Switch from "@components/switch";
+import MultiTasking from '@assets/multitasking.svg'
+import MultiTaskingDark from '@assets/multitasking-dark.svg'
+import FAQ from "@components/myAccount/faq";
+import Questions from "@components/myAccount/questions";
 
 interface Integration {
     id: number;

@@ -2,19 +2,19 @@
 
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { FaChalkboardUser, FaUsers } from "react-icons/fa6"
 import { GiAbstract092 } from "react-icons/gi"
 import { useState } from "react"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { IoLocationOutline, IoSettingsOutline, IoTrashOutline } from "react-icons/io5"
 import { FaRegCheckCircle, FaToggleOn } from "react-icons/fa"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
-import FAQ from "../../../../components/myAccount/faq"
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import FAQ from "@components/myAccount/faq"
 
 const PrivacySetting = () => {
     const location = window.location.pathname

@@ -1,6 +1,6 @@
-import Card from "../../card/card"
+import Card from "@components/card/card"
 import { useEffect, useState } from 'react';
-import Switch from "../../switch";
+import Switch from "@components/switch";
 import { MdOutlineDesktopMac, MdOutlineUnfoldMore } from "react-icons/md";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import { IoIosLaptop, IoIosTabletLandscape } from "react-icons/io";

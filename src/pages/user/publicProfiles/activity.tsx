@@ -1,24 +1,24 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
 import { CiBasketball, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlCalender, SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "@components/publicProfile/hovermenu"
 import { useState } from "react"
-import AvatarGroup from '../../../assets/icon/avatar-group.svg'
-import Jennifer from '../../../assets/icon/jennifer.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
+import Jennifer from '@assets/jennifer.svg'
 import { FaShareAlt } from "react-icons/fa"
 import { FaLaptopCode, FaUsers } from "react-icons/fa6"
 import { FiCoffee } from "react-icons/fi"
 import { IoRocketOutline } from "react-icons/io5"
-import Switch from "../../../components/switch"
-import Digital from '../../../assets/icon/daigital.svg'
-import Multitasking from '../../../assets/icon/multitasking.svg'
-import Raiting from '../../../assets/icon/raiting.svg'
+import Switch from "@components/switch"
+import Digital from '@assets/daigital.svg'
+import Multitasking from '@assets/multitasking.svg'
+import Raiting from '@assets/raiting.svg'
 import { LuLogOut } from "react-icons/lu"
 import { ImHappy } from "react-icons/im"
-import MultitaskingDark from '../../../assets/icon/multitasking-dark.svg'
+import MultitaskingDark from '@assets/multitasking-dark.svg'
 
 const Activity = () => {
     const location = window.location.pathname

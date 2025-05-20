@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import Card from '../../../components/card/card'
+import Card from '@components/card/card'
 import { useState } from "react";
 import { Network } from "inspector/promises";
 import { FaRegUser } from "react-icons/fa6";

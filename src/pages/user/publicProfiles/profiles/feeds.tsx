@@ -2,24 +2,24 @@ import { CiImageOn, CiMail } from "react-icons/ci"
 import { FaFacebook, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/card/card"
+import Tyler from '@assets/tyler-hero.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Card from "@components/card/card"
 import { Link } from "react-router"
-import LeftItem from '../../../../assets/icon/feeds-left-item.svg'
-import RightTopItem from '../../../../assets/icon/feeds-right-top-item.svg'
-import RightBottomItem from '../../../../assets/icon/feeds-right-bottom-item.svg'
-import PostTab from "../../../../components/publicProfile/postTabs"
+import LeftItem from '@assets/feeds-left-item.svg'
+import RightTopItem from '@assets/feeds-right-top-item.svg'
+import RightBottomItem from '@assets/feeds-right-bottom-item.svg'
+import PostTab from "@components/publicProfile/postTabs"
 import { MdTabUnselected } from "react-icons/md"
 import YouTube from "react-youtube";
 import { FaRegCheckCircle, FaUsers } from "react-icons/fa"
-import Ranee from '../../../../assets/icon/rane-bronson.svg'
-import Jonathan from '../../../../assets/icon/jonathan-taylor.svg'
-import Lilia from '../../../../assets/icon/lilia-mattox.svg'
-import Neil from '../../../../assets/icon/neil-ronerts.svg'
+import Ranee from '@assets/rane-bronson.svg'
+import Jonathan from '@assets/jonathan-taylor.svg'
+import Lilia from '@assets/lilia-mattox.svg'
+import Neil from '@assets/neil-ronerts.svg'
 
 
 

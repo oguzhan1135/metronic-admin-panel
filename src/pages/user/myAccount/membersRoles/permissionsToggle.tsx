@@ -1,7 +1,7 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
-import Switch from "../../../../components/switch"
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
+import Switch from "@components/switch"
 import { useState } from "react"
 import { TbCategory } from "react-icons/tb"
 import { LuSquareMousePointer } from "react-icons/lu"
@@ -10,9 +10,9 @@ import { FaRegUserCircle } from "react-icons/fa"
 import { IoKeyOutline, IoShieldCheckmarkOutline } from "react-icons/io5"
 import { BsCreditCard2Back } from "react-icons/bs"
 import { CiExport, CiShop } from "react-icons/ci"
-import PermissionTable from "../../../../components/myAccount/tables/permissionToggleTable"
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
+import PermissionTable from "@components/myAccount/tables/permissionToggleTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
 
 
 const PermissionsToggle = () => {

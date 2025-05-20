@@ -1,28 +1,28 @@
 
 
 import { GiAbstract080 } from 'react-icons/gi';
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Verify from '../../../../assets/icon/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Verify from '@assets/verify.svg'
 import { SlLocationPin } from 'react-icons/sl';
 import { CiMail } from 'react-icons/ci';
-import UnlockCreative from '../../../../assets/icon/unlockCreative.svg'
-import Chart from '../../../../components/charts/earningChart'
-import Jira from '../../../../assets/icon/jira-work.svg'
-import Pesto from '../../../../assets/icon/paccion.svg'
-import Perrier from '../../../../assets/icon/perrier.svg'
-import DonutChart from '../../../../components/charts/donutChart';
-import Contributors from '../../../../components/publicProfile/contributors';
-import PDF from '../../../../assets/icon/pdf.svg'
-import DOC from '../../../../assets/icon/doc.svg'
-import JS from '../../../../assets/icon/javascript.svg'
-import AI from '../../../../assets/icon/illustrator.svg'
-import Card from '../../../../components/card/card';
-import Menu from '../../../../components/publicProfile/hovermenu';
+import UnlockCreative from '@assets/unlockCreative.svg'
+import Chart from '@components/charts/earningChart'
+import Jira from '@assets/jira-work.svg'
+import Pesto from '@assets/paccion.svg'
+import Perrier from '@assets/perrier.svg'
+import DonutChart from '@components/charts/donutChart';
+import Contributors from '@components/publicProfile/contributors';
+import PDF from '@assets/pdf.svg'
+import DOC from '@assets/doc.svg'
+import JS from '@assets/javascript.svg'
+import AI from '@assets/illustrator.svg'
+import Card from '@components/card/card';
+import Menu from '@components/publicProfile/hovermenu';
 import { Link } from 'react-router';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
-import ProjectTable from '../../../../components/publicProfile/projectTable';
-import Badges from '../../../../components/publicProfile/badges';
-import UnlockCreativeDark from '../../../../assets/icon/unlock-creative-dark.svg'
+import ProjectTable from '@components/publicProfile/projectTable';
+import Badges from '@components/publicProfile/badges';
+import UnlockCreativeDark from '@assets/unlock-creative-dark.svg'
 
 
 const Default = () => {

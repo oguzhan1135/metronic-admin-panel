@@ -2,32 +2,32 @@ import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Switch from "../../switch";
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Jacob from '../../../assets/icon/jonathan-taylor.svg'
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
+import Switch from "@components/switch";
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Jacob from '@assets/jonathan-taylor.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuSettings2 } from "react-icons/lu";
-import Slack from '../../../assets/icon/slack.svg'
-import Twitch from '../../../assets/icon/twitch-purple.svg'
-import Invision from '../../../assets/icon/invision.svg'
-import GoogleAnalytic from '../../../assets/icon/google-analytics.svg'
-import GoogleCalendar from '../../../assets/icon/google-calendar.svg'
-import TikTok from '../../../assets/icon/tiktok.svg'
-import Monetha from '../../../assets/icon/monetha.svg'
-import Twitter from '../../../assets/icon/twitter.svg'
-import Instagram from '../../../assets/icon/instagram.svg'
-import Jira from '../../../assets/icon/jira.svg'
-import GoogleDev from '../../../assets/icon/google-webdev.svg'
-import Azure from '../.././../assets/icon/azure.svg'
+import Slack from '@assets/slack.svg'
+import Twitch from '@assets/twitch-purple.svg'
+import Invision from '@assets/invision.svg'
+import GoogleAnalytic from '@assets/google-analytics.svg'
+import GoogleCalendar from '@assets/google-calendar.svg'
+import TikTok from '@assets/tiktok.svg'
+import Monetha from '@assets/monetha.svg'
+import Twitter from '@assets/twitter.svg'
+import Instagram from '@assets/instagram.svg'
+import Jira from '@assets/jira.svg'
+import GoogleDev from '@assets/google-webdev.svg'
+import Azure from '@assets/azure.svg'
 import { FaFacebookSquare } from "react-icons/fa";
-import Youtube from '../../../assets/icon/youtube.svg'
-import SoloLearn from '../../../assets/icon/soloLearn.svg'
-import Linkedin from '../../.././assets/icon/linkedin.svg'
-import Office from '../../../assets/icon/office.svg'
-import Pagination from "../../myAccount/tables/pagination";
+import Youtube from '@assets/youtube.svg'
+import SoloLearn from '@assets/soloLearn.svg'
+import Linkedin from '@assets/linkedin.svg'
+import Office from '@assets/office.svg'
+import Pagination from "@components/myAccount/tables/pagination";
 import React from "react";
 
 interface Member {

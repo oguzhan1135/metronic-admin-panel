@@ -1,6 +1,6 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
-import TeamCrewTable from "../../../../components/network/tables/teamCrewTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
+import TeamCrewTable from "@components/network/tables/teamCrewTable"
 
 const TeamCrew = () => {
 

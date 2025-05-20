@@ -1,7 +1,7 @@
-import Card from "../../../../../components/card/card"
-import Branded from "../../../../../components/authentication/branded"
-import Concord from '../../../../../assets/icon/concord.svg'
-import ConcordDark from '../../../../../assets/icon/concord-dark.svg'
+import Card from "@components/card/card"
+import Branded from "@components/authentication/branded"
+import Concord from '@assets/concord.svg'
+import ConcordDark from '@assets/concord-dark.svg'
 
 
 const BrandedChangedPassword = () => {

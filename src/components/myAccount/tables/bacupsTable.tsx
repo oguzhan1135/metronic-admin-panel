@@ -1,6 +1,6 @@
-import Card from "../../card/card"
+import Card from "@components/card/card"
 import { useEffect, useState } from 'react';
-import Switch from "../../switch";
+import Switch from "@components/switch";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { LuFiles } from "react-icons/lu";
 import { AiOutlinePicture } from "react-icons/ai";

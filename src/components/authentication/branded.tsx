@@ -1,11 +1,11 @@
 import { Link } from "react-router"
-import Card from "../card/card"
-import MetronicIcon from "../../assets/icon/M-logo.svg"
-import ConnectionsCard from '../../assets/icon/connections.svg'
-import GitlabCard from '../../assets/icon/gitlabCard.svg'
-import AppearanceCard from '../../assets/icon/appearanceCard.svg'
-import IntegrationsCard from '../../assets/icon/integrationsCard.svg'
-import BrandingCard from '../../assets/icon/brandingCard.svg'
+import Card from "@components/card/card"
+import MetronicIcon from "@assets/M-logo.svg"
+import ConnectionsCard from '@assets/connections.svg'
+import GitlabCard from '@assets/gitlabCard.svg'
+import AppearanceCard from '@assets/appearanceCard.svg'
+import IntegrationsCard from '@assets/integrationsCard.svg'
+import BrandingCard from '@assets/brandingCard.svg'
 
 const Branded = () => {
     return (

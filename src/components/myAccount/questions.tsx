@@ -1,6 +1,6 @@
-import Card from "../card/card"
-import Welcome from '../../assets/icon/unlockCreative.svg'
-import WelcomeDark from '../../assets/icon/verify-email-dark.svg'
+import Card from "@components/card/card"
+import Welcome from '@assets/unlockCreative.svg'
+import WelcomeDark from '@assets/verify-email-dark.svg'
 
 
 const Questions = () => {

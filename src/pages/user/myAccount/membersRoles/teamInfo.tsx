@@ -2,23 +2,23 @@
 
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { useState } from "react"
-import Switch from "../../../../components/switch"
-import FAQ from "../../../../components/myAccount/faq"
-import Camera from '../../../../assets/icon/camera.svg'
-import ExampleUser from '../../../../assets/icon/example-user.svg'
+import Switch from "@components/switch"
+import FAQ from "@components/myAccount/faq"
+import Camera from '@assets/camera.svg'
+import ExampleUser from '@assets/example-user.svg'
 import { IoIosClose } from "react-icons/io"
 import { MdOutlineEditNote } from "react-icons/md"
-import TeamMembersTable from "../../../../components/myAccount/tables/teamMembersTable"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
+import TeamMembersTable from "@components/myAccount/tables/teamMembersTable"
+import Tyler from '@assets/tyler-hero.svg'
 import { FaRegAddressBook, FaXTwitter } from "react-icons/fa6"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { FcGoogle } from "react-icons/fc"
 import { CgProfile } from "react-icons/cg"
 import { GrTask } from "react-icons/gr"
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 
 const TeamInfo = () => {
     const location = window.location.pathname

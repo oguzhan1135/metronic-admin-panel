@@ -1,9 +1,9 @@
-import Menu from "../../../../components/myAccount/hoverMenu"
+import Menu from "@components/myAccount/hoverMenu"
 import { FaCheck } from "react-icons/fa"
 import { useState } from "react"
-import Switch from "../../../../components/switch"
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
+import Switch from "@components/switch"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
 
 
 const BillingPlan = () => {

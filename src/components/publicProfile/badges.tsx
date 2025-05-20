@@ -1,12 +1,12 @@
-import BadgeOne from '../../assets/icon/badge-1.svg'
-import BadgeTwo from '../../assets/icon/badge-2.svg'
-import BadgeThree from '../../assets/icon/badge-3.svg'
-import BadgeFour from '../../assets/icon/badge-4.svg'
-import BadgeOneDark from '../../assets/icon/badge-1-dark.svg'
-import BadgeTwoDark from '../../assets/icon/badge-2-dark.svg'
-import BadgeThreeDark from '../../assets/icon/badge-3-dark.svg'
-import BadgeFourDark from '../../assets/icon/badge-4-dark.svg'
-import Card from '../card/card'
+import BadgeOne from '@assets/badge-1.svg'
+import BadgeTwo from '@assets/badge-2.svg'
+import BadgeThree from '@assets/badge-3.svg'
+import BadgeFour from '@assets/badge-4.svg'
+import BadgeOneDark from '@assets/badge-1-dark.svg'
+import BadgeTwoDark from '@assets/badge-2-dark.svg'
+import BadgeThreeDark from '@assets/badge-3-dark.svg'
+import BadgeFourDark from '@assets/badge-4-dark.svg'
+import Card from '@components/card/card'
 
 interface BadgesProps {
     title: string;

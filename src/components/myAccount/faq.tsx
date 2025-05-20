@@ -1,5 +1,5 @@
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import Card from "../card/card";
+import Card from "@components/card/card";
 import { useState } from "react";
 
 const FAQ = () => {

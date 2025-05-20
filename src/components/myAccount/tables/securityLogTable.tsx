@@ -1,7 +1,7 @@
-import Card from "../../card/card"
+import Card from "@components/card/card"
 import { useEffect, useState } from 'react';
 import { FaArrowDownUpLock } from "react-icons/fa6";
-import Switch from "../../switch";
+import Switch from "@components/switch";
 import { MdOutlineUnfoldMore, MdWifi } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
 import { IoKey } from "react-icons/io5";

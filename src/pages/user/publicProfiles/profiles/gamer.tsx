@@ -1,47 +1,47 @@
 import { FaFacebook, FaLaptopCode, FaTwitch, FaTwitter, FaUsers, FaYoutube } from "react-icons/fa6"
 import { SlLocationPin, SlTarget } from "react-icons/sl"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/card/card"
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Card from "@components/card/card"
 import { FaShareAlt } from "react-icons/fa"
 import { Link } from "react-router"
 import { TbWorld } from "react-icons/tb"
-import FloydMiles from '../../../../assets/icon/floyed.svg'
-import OnlineGame from '../../../../assets/icon/online-game.svg'
-import GamerCoin from '../../../../assets/icon/gamer-coin.svg'
-import GamerDiamond from '../../../../assets/icon/gamer-diamond.svg'
-import GamerTrophy from '../../../../assets/icon/gamer-trophy.svg'
-import CallofDutty from '../../../../assets/icon/callofduty.svg'
-import Rocketleague from '../../../../assets/icon/rocketLeague.svg'
-import Unrealtournament from '../../../../assets/icon/unrealTounent.svg'
-import Siege from '../../../../assets/icon/siegeof.svg'
-import FireWatch from '../../../../assets/icon/firewatch.svg'
-import Turtles from '../../../../assets/icon/turtles.svg'
-import Ark from '../../../../assets/icon/ark.svg'
-import CuttheRope from '../../../../assets/icon/cuttherope.svg'
-import Badges from "../../../../components/publicProfile/badges"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import CyberStorm from '../../../../assets/icon/cyber-storm.svg'
-import PixelPulse from '../../../../assets/icon/pixel-pulse.svg'
-import Nexus from '../../../../assets/icon/nexsus-rift.svg'
-import CallofDuty from '../../../../assets/icon/call-of-dutty.svg'
-import RocketLeague from '../../../../assets/icon/rocket-league.svg'
-import GTA5 from '../../../../assets/icon/gta-5.svg'
-import GTA5Icon from '../../../../assets/icon/gtra-5-icon.svg'
-import Jira from '../../../../assets/icon/jira-work.svg'
-import Xostme from '../../../../assets/icon/xostme-ltd.svg'
-import Clusterhq from '../../../../assets/icon/clusterhq.svg'
-import AvatarGroup from '../../../../assets/icon/avatar-group.svg'
+import FloydMiles from '@assets/floyed.svg'
+import OnlineGame from '@assets/online-game.svg'
+import GamerCoin from '@assets/gamer-coin.svg'
+import GamerDiamond from '@assets/gamer-diamond.svg'
+import GamerTrophy from '@assets/gamer-trophy.svg'
+import CallofDutty from '@assets/callofduty.svg'
+import Rocketleague from '@assets/rocketLeague.svg'
+import Unrealtournament from '@assets/unrealTounent.svg'
+import Siege from '@assets/siegeof.svg'
+import FireWatch from '@assets/firewatch.svg'
+import Turtles from '@assets/turtles.svg'
+import Ark from '@assets/ark.svg'
+import CuttheRope from '@assets/cuttherope.svg'
+import Badges from "@components/publicProfile/badges"
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import Jennifer from '@assets/jennifer.svg'
+import CyberStorm from '@assets/cyber-storm.svg'
+import PixelPulse from '@assets/pixel-pulse.svg'
+import Nexus from '@assets/nexsus-rift.svg'
+import CallofDuty from '@assets/call-of-dutty.svg'
+import RocketLeague from '@assets/rocket-league.svg'
+import GTA5 from '@assets/gta-5.svg'
+import GTA5Icon from '@assets/gtra-5-icon.svg'
+import Jira from '@assets/jira-work.svg'
+import Xostme from '@assets/xostme-ltd.svg'
+import Clusterhq from '@assets/clusterhq.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
 import { FiCoffee } from "react-icons/fi"
 import { IoRocketOutline } from "react-icons/io5"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { useState } from "react"
-import UnderMaintence from '../../../../assets/icon/under-maintenance.svg'
-import UnderMaintenceDark from '.././../../../assets/icon/under-maintenance-dark.svg'
+import UnderMaintence from '@assets/under-maintenance.svg'
+import UnderMaintenceDark from '@assets/under-maintenance-dark.svg'
 
 
 const Gamer = () => {

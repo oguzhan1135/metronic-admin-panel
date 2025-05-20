@@ -1,5 +1,5 @@
-import Branded from "../../../../../components/authentication/branded"
-import Card from "../../../../../components/card/card"
+import Branded from "@components/authentication/branded"
+import Card from "@components/card/card"
 import { FaArrowRightLong } from "react-icons/fa6"
 
 const BrandedEnterEmail = () => {

@@ -1,6 +1,6 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
-import MarketAuthorsTable from "../../../../components/network/tables/marketAuthorsTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
+import MarketAuthorsTable from "@components/network/tables/marketAuthorsTable"
 const MarketAuthors = () => {
 
     return (

@@ -1,6 +1,6 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
-import SaasUsersTable from "../../../../components/network/tables/saasUsersTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
+import SaasUsersTable from "@components/network/tables/saasUsersTable"
 const SaasUsers = () => {
 
     return (

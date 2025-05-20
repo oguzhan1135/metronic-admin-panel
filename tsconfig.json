@@ -13,13 +13,19 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@assets/*": [
         "src/assets/*"
       ],
       "@components/*": [
         "src/components/*"
+      ],
+      "@context/*": [
+        "src/context/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
       ]
     }
   }

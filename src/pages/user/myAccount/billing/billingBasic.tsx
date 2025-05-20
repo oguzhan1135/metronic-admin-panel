@@ -1,12 +1,12 @@
 import { Link } from "react-router"
-import Card from "../../../../components/card/card"
-import Menu from "../../../../components/myAccount/hoverMenu"
+import Card from "@components/card/card"
+import Menu from "@components/myAccount/hoverMenu"
 import { MdAddCircleOutline } from "react-icons/md"
-import Visa from '../../../../assets/icon/visa.svg'
+import Visa from '@assets/visa.svg'
 import { FaEdit, FaRegCompass, FaRegTrashAlt, FaUsers } from "react-icons/fa"
-import Ideal from '../../../../assets/icon/ideal.svg'
-import Paypal from '../../../../assets/icon/paypal.svg'
-import BillingTable from "../../../../components/myAccount/tables/billingTable"
+import Ideal from '@assets/ideal.svg'
+import Paypal from '@assets/paypal.svg'
+import BillingTable from "@components/myAccount/tables/billingTable"
 import { GoGraph } from "react-icons/go"
 
 const BillingBasic = () => {

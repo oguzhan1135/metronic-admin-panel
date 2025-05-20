@@ -1,21 +1,21 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
 import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "@components/publicProfile/hovermenu"
 import { useState } from "react"
 import React from "react"
-import Jennifer from '../../../assets/icon/jennifer.svg'
-import Twitch from '../../../assets/icon/twitch-purple.svg'
-import Instagram from '../../../assets/icon/instagram.svg'
-import Youtube from '../../../assets/icon/youtube.svg'
-import Amazon from '../../../assets/icon/amazon.svg'
-import Engagament from '../../../assets/icon/mailchimp.svg'
-import Linkedin from '../../../assets/icon/linkedin.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Twitch from '@assets/twitch-purple.svg'
+import Instagram from '@assets/instagram.svg'
+import Youtube from '@assets/youtube.svg'
+import Amazon from '@assets/amazon.svg'
+import Engagament from '@assets/mailchimp.svg'
+import Linkedin from '@assets/linkedin.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import CardMore from "../../../components/more/cardMore"
+import CardMore from "@components/more/cardMore"
 
 type Campaign = {
     id: number;

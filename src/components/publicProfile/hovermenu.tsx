@@ -7,8 +7,9 @@ import { IoChatbubblesOutline, IoShareSocial } from "react-icons/io5"
 import { SlDislike } from "react-icons/sl"
 import { TiMessages } from "react-icons/ti"
 import { Link } from "react-router"
-import Switch from "../switch"
+import Switch from "@components/switch"
 import { HiRectangleGroup } from "react-icons/hi2"
+import { metronicContext } from "@context/layoutContet"
 
 const Menu = () => {
     let location = window.location.pathname
@@ -18,6 +19,21 @@ const Menu = () => {
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);
     const [dotMore, setDotMore] = useState(false)
     const [dotSwitch, setDotSwtitch] = useState(false)
+    const { setGiveModal, setReportModal, setShareModal } = metronicContext();
+    const [selectedModal, setSelectedModal] = useState("")
+
+    useEffect(() => {
+        setSelectedModal("")
+        if (selectedModal === "Share") {
+            setShareModal(true);
+        } else if (selectedModal === "Give") {
+            setGiveModal(true);
+        } else if (selectedModal === "Report") {
+            setReportModal(true);
+        }
+
+    }, [setShareModal, selectedModal]);
+
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             const target = event.target as HTMLElement;
@@ -28,6 +44,7 @@ const Menu = () => {
         document.addEventListener("mousedown", handleClickOutside);
 
     }, [])
+
     const menuRef = useRef<HTMLDivElement | null>(null);
     const subMenuRef = useRef<HTMLDivElement | null>(null);
 
@@ -209,13 +226,15 @@ const Menu = () => {
                 </div>
                 <div className={`absolute shadow-md top-12 left-0 ${dotMore ? '' : 'hidden'} dropdown-container z-50 bg-white dark:bg-coal-300 rounded-lg w-48 `}>
                     <div className="border-b-2 py-2.5 z-50">
-                        <Link onClick={() => setDotMore(false)} to={location} className="px-2 block">
+                        <Link onClick={() => { setDotMore(false); setSelectedModal("Share") }} to={location} className="px-2 block">
                             <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 rounded-md hover: group">
                                 <IoShareSocial className='dropdown-icon  group-hover:text-primary' />
                                 <span className='text-gray-800 text-b-13-14-400 '>Share</span>
                             </div>
                         </Link>
-                        <Link onClick={() => setDotMore(false)} to={location} className="relative px-2 block">
+
+
+                        <Link onClick={() => { setDotMore(false); setSelectedModal("Give") }} to={location} className="relative px-2 block">
                             <div className="flex flex-row items-center px-3 py-3 cursor-pointer hover:bg-gray-100 rounded-md justify-between hover: group">
                                 <div className="flex flex-row items-center gap-2.5 ">
                                     <IoIosRainy className="dropdown-icon group-hover:text-primary" />
@@ -235,7 +254,7 @@ const Menu = () => {
                             </div>
                         </Link>
 
-                        <Link onClick={() => setDotMore(false)} to={location} className="relative px-2 block">
+                        <Link onClick={() => { setDotMore(false); setSelectedModal("Report") }} to={location} className="relative px-2 block">
                             <div className="flex flex-row items-center px-3 py-3 cursor-pointer hover:bg-gray-100 rounded-md justify-between hover: group">
                                 <div className="flex flex-row items-center gap-2.5">
                                     <SlDislike className="dropdown-icon group-hover:text-primary" />
@@ -248,7 +267,7 @@ const Menu = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 

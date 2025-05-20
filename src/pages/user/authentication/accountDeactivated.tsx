@@ -1,13 +1,13 @@
 import { Link } from "react-router"
-import { metronicContext } from '../../../context/layoutContet';
+import { metronicContext } from '@context/layoutContet';
 import { BiSolidUserDetail } from 'react-icons/bi';
 import { FaDropbox, FaUsers, FaKey, FaSwatchbook, FaChartLine } from 'react-icons/fa6';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { LuSquareMousePointer } from 'react-icons/lu';
 import { MdOutlineSecurity, MdOutlinePayment, MdNotificationsActive } from 'react-icons/md';
-import Menu from '../../../components/myAccount/hoverMenu';
-import Card from '../../../components/card/card';
-import AccountDeavtivated from '../../../assets/icon/account-deactivated- modal.svg'
+import Menu from '@components/myAccount/hoverMenu';
+import Card from '@components/card/card';
+import AccountDeavtivated from '@assets/account-deactivated- modal.svg'
 
 interface ModalProps {
     children: React.ReactNode;

@@ -1,9 +1,9 @@
 import { FaCopy } from "react-icons/fa"
-import Card from "../../../../components/card/card"
-import FAQ from "../../../../components/myAccount/faq"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Questions from "../../../../components/myAccount/questions"
-import MemberRole from '../../../../components/myAccount/tables/memberRoleTable'
+import Card from "@components/card/card"
+import FAQ from "@components/myAccount/faq"
+import Menu from "@components/myAccount/hoverMenu"
+import Questions from "@components/myAccount/questions"
+import MemberRole from '@components/myAccount/tables/memberRoleTable'
 import { IoMdAdd } from "react-icons/io"
 import { RiResetLeftFill } from "react-icons/ri"
 

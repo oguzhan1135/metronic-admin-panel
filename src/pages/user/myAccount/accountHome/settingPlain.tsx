@@ -1,12 +1,12 @@
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from "../../../../components/card/card"
+import Menu from "@components/myAccount/hoverMenu"
+import Card from "@components/card/card"
 import { useState } from "react"
 import { IoIosClose } from "react-icons/io"
-import Switch from "../../../../components/switch"
-import Camera from '../../../../assets/icon/camera.svg'
-import ExampleUser from '../../../../assets/icon/example-user.svg'
+import Switch from "@components/switch"
+import Camera from '@assets/camera.svg'
+import ExampleUser from '@assets/example-user.svg'
 
 const SettingPlain = () => {
     const [account, setAccount] = useState(true)

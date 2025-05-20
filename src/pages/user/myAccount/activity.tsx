@@ -1,22 +1,22 @@
-import Card from "../../../components/card/card"
+import Card from "@components/card/card"
 import { CiBasketball } from "react-icons/ci"
 import { SlCalender, } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/myAccount/hoverMenu"
+import Menu from "@components/myAccount/hoverMenu"
 import { useState } from "react"
-import AvatarGroup from '../../../assets/icon/avatar-group.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
 import { FaShareAlt } from "react-icons/fa"
 import { FaLaptopCode, FaUsers } from "react-icons/fa6"
 import { FiCoffee } from "react-icons/fi"
 import { IoRocketOutline } from "react-icons/io5"
-import Switch from "../../../components/switch"
-import Digital from '../../../assets/icon/daigital.svg'
-import Multitasking from '../../../assets/icon/multitasking.svg'
-import MultitaskingDark from '../../../assets/icon/multitasking-dark.svg'
-import Raiting from '../../../assets/icon/raiting.svg'
+import Switch from "@components/switch"
+import Digital from '@assets/daigital.svg'
+import Multitasking from '@assets/multitasking.svg'
+import MultitaskingDark from '@assets/multitasking-dark.svg'
+import Raiting from '@assets/raiting.svg'
 import { LuLogOut } from "react-icons/lu"
 import { ImHappy } from "react-icons/im"
-import Questions from "../../../components/myAccount/questions"
+import Questions from "@components/myAccount/questions"
 
 const Activity = () => {
     const location = window.location.pathname
@@ -111,7 +111,6 @@ const Activity = () => {
                                                     <div className="flex items-center justify-center py-[6px]">
                                                         <span className="text-gray-800 text-h-22-38-500 ">02</span>
                                                     </div>
-
                                                 </div>
                                                 <img src={Digital} alt="" />
                                                 <div className="flex flex-col gap-2.5">

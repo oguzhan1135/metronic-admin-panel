@@ -2,19 +2,19 @@ import { CiLocationOn, CiMail } from "react-icons/ci"
 import { FaChartLine, FaFacebook, FaRocket, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/card/card"
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Card from "@components/card/card"
 import { FaMapMarkedAlt } from "react-icons/fa"
 import { Link } from "react-router"
-import Duolingo from '../../../../assets/icon/duolingo.svg'
+import Duolingo from '@assets/duolingo.svg'
 import { TbBottleFilled, TbWorld } from "react-icons/tb"
-import Map from '../../../../assets/icon/map.svg'
-import DonutChart from "../../../../components/charts/donutChart"
-import Contributors from "../../../../components/publicProfile/contributors"
-import TechHub from '../../../../assets/icon/techHub.svg'
-import LanguageHub from '../../../../assets/icon/languageHub.svg'
-import ProjectTable from "../../../../components/publicProfile/projectTable"
+import Map from '@assets/map.svg'
+import DonutChart from "@components/charts/donutChart"
+import Contributors from "@components/publicProfile/contributors"
+import TechHub from '@assets/techHub.svg'
+import LanguageHub from '@assets/languageHub.svg'
+import ProjectTable from "@components/publicProfile/projectTable"
 
 
 const Company = () => {

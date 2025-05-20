@@ -5,7 +5,7 @@ import { IoShareSocial } from "react-icons/io5"
 import { SlDislike } from "react-icons/sl"
 import { TiMessages } from "react-icons/ti"
 import { Link } from "react-router"
-import Switch from "../switch"
+import Switch from "@components/switch"
 
 const Menu = () => {
     let location = window.location.pathname

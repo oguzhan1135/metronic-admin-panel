@@ -1,20 +1,20 @@
-import MetronicLogo from '@assets/icon/metronic-logo.svg'
-import MetronicDarkLogo from '@assets/icon/metronic-dark-logo.svg'
-import Plus from '@assets/icon/plus.svg'
-import Minus from '@assets/icon/minus.svg'
-import Profile_Circle from '@assets/icon/profile-circle.svg'
-import Setting from '@assets/icon/setting.svg'
-import Edit_User from '@assets/icon/user-edit.svg'
-import Community from '@assets/icon/users.svg'
-import Security_User from '@assets/icon/security-user.svg'
-import Dashboard_Icon from '@assets/icon/dashboard.svg'
-import Like_Tag from '@assets/icon/like-tag.svg'
-import Social from '@assets/icon/social-media.svg'
-import Company from '@assets/icon/company.svg'
-import Files from '@assets/icon/some-files.svg'
-import Handcart from '@assets/icon/handcart.svg'
-import SidebarLeft from '@assets/icon/black-left-line.svg'
-import MLogo from '@assets/icon/M-logo.svg'
+import MetronicLogo from '@assets/metronic-logo.svg'
+import MetronicDarkLogo from '@assets/metronic-dark-logo.svg'
+import Plus from '@assets/plus.svg'
+import Minus from '@assets/minus.svg'
+import Profile_Circle from '@assets/profile-circle.svg'
+import Setting from '@assets/setting.svg'
+import Edit_User from '@assets/user-edit.svg'
+import Community from '@assets/users.svg'
+import Security_User from '@assets/security-user.svg'
+import Dashboard_Icon from '@assets/dashboard.svg'
+import Like_Tag from '@assets/like-tag.svg'
+import Social from '@assets/social-media.svg'
+import Company from '@assets/company.svg'
+import Files from '@assets/some-files.svg'
+import Handcart from '@assets/handcart.svg'
+import SidebarLeft from '@assets/black-left-line.svg'
+import MLogo from '@assets/M-logo.svg'
 import { useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
 import { Link } from 'react-router'
@@ -502,7 +502,7 @@ const Sidebar = () => {
     const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
     const [childSub, setChildSub] = useState<string>("");
     const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([]);
-    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth } = metronicContext();
+    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth, giveModal, reportModal, searchModal, shareModal } = metronicContext();
 
     const toggleMenuItem = (key: string) => {
         setOpenMenuItems((prevState) =>
@@ -566,9 +566,9 @@ const Sidebar = () => {
     }
 
 
-    const { modalOpen} = metronicContext();
+    const { modalOpen } = metronicContext();
     return (
-        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${modalOpen ? "-z-10" : "z-50"}
+        <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${modalOpen || searchModal || giveModal || reportModal || shareModal ? "-z-10" : "z-50"}
 
  `}>
             <div className="px-5 py-[30px] flex relative ">

@@ -1,10 +1,10 @@
 import { Link } from "react-router"
-import Menu from "../../../components/myAccount/hoverMenu"
-import Card from '../../../components/card/card'
-import Service from '../../../assets/icon/service.svg'
-import ServiceDark from '../../../assets/icon/service-dark.svg'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
+import Service from '@assets/service.svg'
+import ServiceDark from '@assets/service-dark.svg'
 import { FaCopy, FaRegAddressBook } from "react-icons/fa6"
-import InviteFriendTable from "../../../components/myAccount/tables/inviteFriendTable"
+import InviteFriendTable from "@components/myAccount/tables/inviteFriendTable"
 import { FaUsers } from "react-icons/fa"
 import { BiMessageAdd } from "react-icons/bi"
 import { IoMdAdd } from "react-icons/io"

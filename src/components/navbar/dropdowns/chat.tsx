@@ -1,15 +1,15 @@
 
 import { IoMdClose, IoMdExit } from "react-icons/io"
-import Gitlab from '../../../assets/icon/gitlab.svg'
+import Gitlab from '@assets/gitlab.svg'
 import { Link } from "react-router"
-import AvatarGroup from '../../../assets/icon/avatar-group.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
 import { FaEllipsisVertical } from "react-icons/fa6"
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { LuCheckCheck } from "react-icons/lu"
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Esther from '../../../assets/icon/ester-hoeard.svg'
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Adam from '../../../assets/icon/tyler-hero.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Adam from '@assets/tyler-hero.svg'
 import { useState } from "react"
 
 interface ChatProps {
@@ -20,7 +20,7 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
     const location = window.location.pathname
     const [decline, setDecline] = useState(true)
     return (
-        <div className="absolute  top-12 right-32 w-[420px]">
+        <div className="absolute  top-12 md:right-0 right-[-40px] w-[420px]">
             <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-200 border  flex-col">
                 <div className=" pl-5 pr-2.5 py-3 border-b border-b-gray-200">
                     <div className="flex flex-row items-center justify-between">

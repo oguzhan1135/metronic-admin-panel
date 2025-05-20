@@ -2,36 +2,36 @@ import { CiMail } from "react-icons/ci"
 import { FaFacebook, FaUsers, FaYoutube } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Inferno from "../../../../assets/icon/inferno.svg"
-import Card from "../../../../components/card/card"
-import Arrow from '../../../../assets/icon/arrow.svg'
-import CheckCircle from '../../../../assets/icon/check-circle.svg'
-import Urban from '../../../../assets/icon/urban-dreams.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Inferno from "@assets/inferno.svg"
+import Card from "@components/card/card"
+import Arrow from '@assets/arrow.svg'
+import CheckCircle from '@assets/check-circle.svg'
+import Urban from '@assets/urban-dreams.svg'
 import { FaComment, FaHeart, FaShareAlt } from "react-icons/fa"
-import Timeless from '../../../../assets/icon/timeless-elegance.svg'
-import Whispered from '../../../../assets/icon/whispared.svg'
-import Golden from '../../../../assets/icon/golden.svg'
-import WildBeautiy from '../../../../assets/icon/wild-beautiy.svg'
-import Mystic from '../../../../assets/icon/mystic-shadows.svg'
-import Digital from '../../../../assets/icon/daigital.svg'
-import Future from '../../../../assets/icon/future.svg'
-import Switch from "../../../../components/switch"
+import Timeless from '@assets/timeless-elegance.svg'
+import Whispered from '@assets/whispared.svg'
+import Golden from '@assets/golden.svg'
+import WildBeautiy from '@assets/wild-beautiy.svg'
+import Mystic from '@assets/mystic-shadows.svg'
+import Digital from '@assets/daigital.svg'
+import Future from '@assets/future.svg'
+import Switch from "@components/switch"
 import { useState } from "react"
 import { Link } from "react-router"
 import { IoRocketOutline } from "react-icons/io5"
-import VerifyEmail from '../../../../assets/icon/verify-email.svg'
+import VerifyEmail from '@assets/verify-email.svg'
 import { TiPrinter } from "react-icons/ti"
 import { FiCoffee } from "react-icons/fi"
-import ArrowDark from '../../../../assets/icon/arrow-dark.svg'
-import VerifyEmailDark from '../../../../assets/icon/verify-email-dark.svg'
-import Badges from "../../../../components/publicProfile/badges"
+import ArrowDark from '@assets/arrow-dark.svg'
+import VerifyEmailDark from '@assets/verify-email-dark.svg'
+import Badges from "@components/publicProfile/badges"
 
 const Creator = () => {
     const [refresh, setRefresh] = useState(true)
@@ -111,7 +111,7 @@ const Creator = () => {
                         title="About"
                         content={
                             <div className="flex flex-col px-[30px] gap-5  py-5">
-                                <p>Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
+                                <p className="text-b-13-14-500 text-gray-800">Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
                                     <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">KeenThemes</Link>

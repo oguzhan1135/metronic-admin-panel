@@ -1,18 +1,18 @@
 import { Link } from "react-router"
-import Menu from "../../../components/myAccount/hoverMenu"
-import Card from '../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { useEffect, useState } from "react"
-import FAQ from "../../../components/myAccount/faq"
-import Service from '../../../assets/icon/service.svg'
-import ServiceDark from '../../../assets/icon/service-dark.svg'
-import Switch from "../../../components/switch"
+import FAQ from "@components/myAccount/faq"
+import Service from '@assets/service.svg'
+import ServiceDark from '@assets/service-dark.svg'
+import Switch from "@components/switch"
 import { MdOutlineLocationOn } from "react-icons/md"
 import { AiOutlineDesktop } from "react-icons/ai"
-import DarkBg from '../../../assets/icon/dark-bg.svg'
-import LightTheme from '../../../assets/icon/light-theme.svg'
-import Systemtheme from '../../../assets/icon/system-theme.svg'
-import Hexlab from '../../../assets/icon/hexlab.svg'
-import HexlabIcon from '../../../assets/icon/hexlabIcon.svg'
+import DarkBg from '@assets/dark-bg.svg'
+import LightTheme from '@assets/light-theme.svg'
+import Systemtheme from '@assets/system-theme.svg'
+import Hexlab from '@assets/hexlab.svg'
+import HexlabIcon from '@assets/hexlabIcon.svg'
 import { RiComputerFill } from "react-icons/ri"
 import { IoExitOutline, IoPlayForwardOutline } from "react-icons/io5"
 import { IoIosColorPalette } from "react-icons/io"

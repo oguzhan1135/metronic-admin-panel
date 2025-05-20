@@ -1,5 +1,5 @@
-import Card from "../../../../../components/card/card"
-import Branded from "../../../../../components/authentication/branded"
+import Card from "@components/card/card"
+import Branded from "@components/authentication/branded"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
 

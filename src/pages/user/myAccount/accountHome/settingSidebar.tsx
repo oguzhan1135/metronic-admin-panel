@@ -1,28 +1,28 @@
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from "../../../../components/card/card"
-import ExampleUser from '../../../../assets/icon/example-user.svg'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from "@components/card/card"
+import ExampleUser from '@assets/example-user.svg'
 import React, { useEffect, useState } from "react"
 import { IoIosClose } from "react-icons/io"
-import Switch from "../../../../components/switch"
-import Camera from '../../../../assets/icon/camera.svg'
+import Switch from "@components/switch"
+import Camera from '@assets/camera.svg'
 import { FcGoogle } from "react-icons/fc"
 import { FaApple, FaCopy, FaFacebook, FaLinkedin, FaTrashCan } from "react-icons/fa6"
-import Microsoft from '../../../../assets/icon/microsoft-icon.svg'
-import Azure from '../../../../assets/icon/azure.svg'
-import OpenID from '../../../../assets/icon/openID.svg'
-import DarkBg from '../../../../assets/icon/dark-bg.svg'
-import LightTheme from '../../../../assets/icon/light-theme.svg'
-import Systemtheme from '../../../../assets/icon/system-theme.svg'
-import Slack from '../../../../assets/icon/slack.svg'
-import Mail from '../../../../assets/icon/mail.svg'
-import UserAccess from '../../../../assets/icon/user-access.svg'
-import GoogleDev from '../../../../assets/icon/google-webdev.svg'
-import Inferno from '../../../../assets/icon/inferno.svg'
-import Equacoin from '../../../../assets/icon/equacoin.svg'
-import Evernote from '../../../../assets/icon/evernote.svg'
-import Jira from '../../../../assets/icon/jira-work.svg'
+import Microsoft from '@assets/microsoft-icon.svg'
+import Azure from '@assets/azure.svg'
+import OpenID from '@assets/openID.svg'
+import DarkBg from '@assets/dark-bg.svg'
+import LightTheme from '@assets/light-theme.svg'
+import Systemtheme from '@assets/system-theme.svg'
+import Slack from '@assets/slack.svg'
+import Mail from '@assets/mail.svg'
+import UserAccess from '@assets/user-access.svg'
+import GoogleDev from '@assets/google-webdev.svg'
+import Inferno from '@assets/inferno.svg'
+import Equacoin from '@assets/equacoin.svg'
+import Evernote from '@assets/evernote.svg'
+import Jira from '@assets/jira-work.svg'
 import { CiSettings } from "react-icons/ci"
 import { MdOutlineMessage } from "react-icons/md"
 import { IoShieldCheckmark } from "react-icons/io5"

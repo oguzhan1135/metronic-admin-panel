@@ -1,12 +1,12 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
-import FAQ from "../../../../components/myAccount/faq"
-import Service from '../../../../assets/icon/service.svg'
-import ServiceDark from '../../../../assets/icon/service-dark.svg'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
+import FAQ from "@components/myAccount/faq"
+import Service from '@assets/service.svg'
+import ServiceDark from '@assets/service-dark.svg'
 import { FaUsers } from "react-icons/fa"
-import PermissionTable from "../../../../components/myAccount/tables/permissionToggleTable"
-import PermissionCheckTable from "../../../../components/myAccount/tables/permissionsCheckTable"
+import PermissionTable from "@components/myAccount/tables/permissionToggleTable"
+import PermissionCheckTable from "@components/myAccount/tables/permissionsCheckTable"
 import { FiToggleRight } from "react-icons/fi"
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
 

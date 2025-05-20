@@ -1,14 +1,14 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
 import { CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
-import AccountDeactiveted from '../../../assets/icon/account-deactived.svg'
-import AccountDeactivatedDark from '../../../assets/icon/account-deactivated-dark.svg'
+import Menu from "@components/publicProfile/hovermenu"
+import AccountDeactiveted from '@assets/account-deactived.svg'
+import AccountDeactivatedDark from '@assets/account-deactivated-dark.svg'
 
-import Jennifer from '../../../assets/icon/jennifer.svg'
+import Jennifer from '@assets/jennifer.svg'
 
 const Empty = () => {
     const location = window.location.pathname

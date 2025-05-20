@@ -1,8 +1,8 @@
 import { Link } from "react-router"
-import Branded from "../../../../components/authentication/branded"
-import Card from "../../../../components/card/card"
+import Branded from "@components/authentication/branded"
+import Card from "@components/card/card"
 import { useRef, useState, useEffect } from "react";
-import Smartphone from '../../../../assets/icon/smartphone.svg'
+import Smartphone from '@assets/smartphone.svg'
 
 
 const BrandedTwoFA = () => {

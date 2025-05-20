@@ -1,8 +1,8 @@
 import { MdUnfoldMore } from "react-icons/md";
 import { useEffect, useState } from "react";
-import Switch from "../../switch";
+import Switch from "@components/switch/index";
 import { FaEdit, FaRegCopy } from "react-icons/fa";
-import Pagination from "./pagination";
+import Pagination from "@components/myAccount/tables/pagination";
 
 interface Integration {
     id: number;

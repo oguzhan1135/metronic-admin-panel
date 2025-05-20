@@ -1,19 +1,19 @@
 
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from "../../../../components/card/card"
+import Menu from "@components/myAccount/hoverMenu"
+import Card from "@components/card/card"
 import { useState } from "react"
 import { IoLogoTwitch } from "react-icons/io"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { MdOutlineEditNote } from "react-icons/md"
 import { FcGoogle } from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
 import { FaCopy, FaFacebook, FaLinkedin, FaRegCompass, FaUsers, FaXTwitter } from "react-icons/fa6"
 import { CiBasketball } from "react-icons/ci"
-import Hexlab from '../../../../assets/icon/hexlab.svg'
-import HexlabIcon from '../../../../assets/icon/hexlabIcon.svg'
+import Hexlab from '@assets/hexlab.svg'
+import HexlabIcon from '@assets/hexlabIcon.svg'
 import { RiComputerFill } from "react-icons/ri"
-import MembersTable from "../../../../components/myAccount/tables/membersTable"
+import MembersTable from "@components/myAccount/tables/membersTable"
 import { FaInfoCircle } from "react-icons/fa"
 import { GoGraph } from "react-icons/go"
 

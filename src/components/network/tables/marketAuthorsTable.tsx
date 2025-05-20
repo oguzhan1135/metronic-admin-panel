@@ -2,26 +2,26 @@ import { MdUnfoldMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Jacob from '../../../assets/icon/jonathan-taylor.svg'
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Jacob from '@assets/jonathan-taylor.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuSettings2 } from "react-icons/lu";
-import Monetha from '../../../assets/icon/monetha.svg'
-import Weave from '../../../assets/icon/weave.svg'
+import Monetha from '@assets/monetha.svg'
+import Weave from '@assets/weave.svg'
 import { FaStar, FaStarHalfAlt, FaRegStar, FaFacebookSquare } from "react-icons/fa";
-import Foursquare from '../../../assets/icon/foursquare.svg'
-import Flood from '../../../assets/icon/flood.svg'
-import Gitlab from '../../../assets/icon/gitlab.svg'
-import BtcChina from '../../../assets/icon/btcchina.svg'
-import Bridgefy from '../../../assets/icon/bridgefy.svg'
-import Voise from '../../../assets/icon/voise.svg'
-import Vision from '../../../assets/icon/xing.svg'
-import TheOcean from '../../../assets/icon/the-ocean.svg'
+import Foursquare from '@assets/foursquare.svg'
+import Flood from '@assets/flood.svg'
+import Gitlab from '@assets/gitlab.svg'
+import BtcChina from '@assets/btcchina.svg'
+import Bridgefy from '@assets/bridgefy.svg'
+import Voise from '@assets/voise.svg'
+import Vision from '@assets/xing.svg'
+import TheOcean from '@assets/the-ocean.svg'
 import { IoBasketballOutline, IoLogoTiktok } from "react-icons/io5";
-import Pagination from "../../myAccount/tables/pagination";
+import Pagination from "@components/myAccount/tables/pagination";
 
 interface Member {
     id: number;

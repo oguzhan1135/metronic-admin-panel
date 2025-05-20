@@ -2,19 +2,19 @@ import { CiMail } from "react-icons/ci"
 import { FaUsers, } from "react-icons/fa6"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Verify from '../../../../assets/icon/verify.svg'
-import Card from "../../../../components/card/card"
+import Menu from "@components/publicProfile/hovermenu"
+import Verify from '@assets/verify.svg'
+import Card from "@components/card/card"
 import { FaLaptopCode, FaShareAlt } from "react-icons/fa"
 import { Link } from "react-router"
-import Contributors from "../../../../components/publicProfile/contributors"
-import Jennifer from '../../../../assets/icon/jennifer.svg'
+import Contributors from "@components/publicProfile/contributors"
+import Jennifer from '@assets/jennifer.svg'
 import { IoCopyOutline, IoKeyOutline, IoReceiptOutline, IoRocketOutline } from "react-icons/io5"
-import DealTable from "../../../../components/publicProfile/dealTable"
+import DealTable from "@components/publicProfile/dealTable"
 import { FiCoffee } from "react-icons/fi"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { useState } from "react"
-import AvatarGroup from "../../../../assets/icon/avatar-group.svg"
+import AvatarGroup from "@assets/avatar-group.svg"
 import { HiOutlineDotsVertical } from "react-icons/hi"
 
 

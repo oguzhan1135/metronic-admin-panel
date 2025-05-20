@@ -1,27 +1,27 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
-import Jennifer from '../../../assets/icon/jennifer.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
 import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "@components/publicProfile/hovermenu"
 import { useState } from "react"
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import CardMore from "../../../components/more/cardMore"
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Tyler from '../../../assets/icon/tyler-hero.svg'
-import Floyd from '../../../assets/icon/floyed.svg'
-import UrbanDreams from '../../../assets/icon/fachrizal-maulana.svg'
+import CardMore from "@components/more/cardMore"
+import Cody from '@assets/cody-fisher.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Floyd from '@assets/floyed.svg'
+import UrbanDreams from '@assets/fachrizal-maulana.svg'
 import { FaCommentAlt, FaHeart } from "react-icons/fa"
-import Whispered from '../../../assets/icon/work-whispered.svg'
-import Golden from '../../../assets/icon/hor.svg'
-import Mystic from '../../../assets/icon/work-mystic.svg'
-import Wild from '../../../assets/icon/work-wild.svg'
-import Beuity from '../../../assets/icon/wild-beautiy.svg'
-import Timeless from '../../../assets/icon/work-timeless.svg'
-import Arlene from '../../../assets/icon/arlene-mccoy.svg'
-import OfferWork from '../../../assets/icon/offer-work.svg'
+import Whispered from '@assets/work-whispered.svg'
+import Golden from '@assets/hor.svg'
+import Mystic from '@assets/work-mystic.svg'
+import Wild from '@assets/work-wild.svg'
+import Beuity from '@assets/wild-beautiy.svg'
+import Timeless from '@assets/work-timeless.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import OfferWork from '@assets/offer-work.svg'
 import React from "react"
 
 interface Work {

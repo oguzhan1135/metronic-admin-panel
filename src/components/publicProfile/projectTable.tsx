@@ -1,11 +1,11 @@
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { Link } from "react-router"
 import Card from "../card/card"
-import UserOne from '../../assets/icon/user-group-1.svg'
-import UserTwo from '../../assets/icon/user-group-2.svg'
-import UserThree from '../../assets/icon/user-group-3.svg'
-import UserFour from '../../assets/icon/user-group-4.svg'
-import UserFive from '../../assets/icon/user-group-5.svg'
+import UserOne from '@assets/user-group-1.svg'
+import UserTwo from '@assets/user-group-2.svg'
+import UserThree from '@assets/user-group-3.svg'
+import UserFour from '@assets/user-group-4.svg'
+import UserFive from '@assets/user-group-5.svg'
 import { useState } from 'react';
 
 interface Project {

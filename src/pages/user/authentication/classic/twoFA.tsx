@@ -1,7 +1,7 @@
 import { Link } from "react-router"
-import Card from "../../../../components/card/card"
+import Card from "@components/card/card"
 import { useEffect, useRef, useState } from "react"
-import Smartphone from '../../../../assets/icon/smartphone.svg'
+import Smartphone from '@assets/smartphone.svg'
 
 const TwoFA = () => {
 

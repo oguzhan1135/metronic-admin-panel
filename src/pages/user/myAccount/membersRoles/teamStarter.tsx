@@ -1,9 +1,9 @@
-import Card from "../../../../components/card/card"
-import FAQ from "../../../../components/myAccount/faq"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Questions from "../../../../components/myAccount/questions"
-import Concord from '../../../../assets/icon/concord.svg'
-import ConcordDark from '../../../../assets/icon/concord-dark.svg'
+import Card from "@components/card/card"
+import FAQ from "@components/myAccount/faq"
+import Menu from "@components/myAccount/hoverMenu"
+import Questions from "@components/myAccount/questions"
+import Concord from '@assets/concord.svg'
+import ConcordDark from '@assets/concord-dark.svg'
 
 const TeamStarter = () => {
 

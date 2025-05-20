@@ -1,6 +1,6 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { FaChartLine, FaRegEye } from 'react-icons/fa'
 import { useState } from "react"
 import { IoSettingsOutline } from "react-icons/io5"

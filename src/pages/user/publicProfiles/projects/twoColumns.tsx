@@ -1,21 +1,21 @@
-import Card from "../../../../components/card/card"
-import Verify from '../../../../assets/icon/verify.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
 import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../../components/publicProfile/hovermenu"
-import Plurk from '../../../../assets/icon/plurk.svg'
-import PlurtkAvatar from '../../../../assets/icon/plurk-avatar-group.svg'
-import Telegram from '../../../../assets/icon/telegram.svg'
-import GoogleAnalytics from '../../../../assets/icon/google-analytics.svg'
-import Figma from '../../../../assets/icon/figma.svg'
-import Btcchina from '../../../../assets/icon/btcchina.svg'
-import Patientory from '../../../../assets/icon/patientory.svg'
+import Menu from "@components/publicProfile/hovermenu"
+import Plurk from '@assets/plurk.svg'
+import PlurtkAvatar from '@assets/plurk-avatar-group.svg'
+import Telegram from '@assets/telegram.svg'
+import GoogleAnalytics from '@assets/google-analytics.svg'
+import Figma from '@assets/figma.svg'
+import Btcchina from '@assets/btcchina.svg'
+import Patientory from '@assets/patientory.svg'
 import { useState } from "react"
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import CardMore from "../../../../components/more/cardMore"
+import CardMore from "@components/more/cardMore"
 import React from "react"
 interface Project {
     id: number;

@@ -1,13 +1,13 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { useState } from "react"
-import FAQ from "../../../../components/myAccount/faq"
-import Service from '../../../../assets/icon/service.svg'
+import FAQ from "@components/myAccount/faq"
+import Service from '@assets/service.svg'
 import { FaUsers } from "react-icons/fa"
 import { IoMdExit } from "react-icons/io"
 import { LuSquareMousePointer } from "react-icons/lu"
-import ServiceDark from '../../../../assets/icon/service-dark.svg'
+import ServiceDark from '@assets/service-dark.svg'
 
 const ImportantMember = () => {
     const location = window.location.pathname

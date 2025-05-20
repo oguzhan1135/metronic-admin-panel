@@ -1,20 +1,20 @@
 import { GiAbstract080 } from 'react-icons/gi';
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Verify from '../../../../assets/icon/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Verify from '@assets/verify.svg'
 import { SlLocationPin } from 'react-icons/sl';
 import { CiMail } from 'react-icons/ci';
-import Card from '../../../../components/card/card';
-import Menu from '../../../../components/publicProfile/hovermenu';
+import Card from '@components/card/card';
+import Menu from '@components/publicProfile/hovermenu';
 import { Link } from 'react-router';
-import XMR from '../../../../assets/icon/xmr.svg'
-import Badges from '../../../../components/publicProfile/badges';
+import XMR from '@assets/xmr.svg'
+import Badges from '@components/publicProfile/badges';
 import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa6';
 import { TbWorld } from 'react-icons/tb';
-import CreatedOne from '../../../../assets/icon/createdOne.svg'
-import CreatedThree from '../../../../assets/icon/createdThree.svg'
-import CreatedFour from '../../../../assets/icon/createdFour.svg'
-import CreatedSix from '../../../../assets/icon/createdSix.svg'
-import CreatedSeven from '../../../../assets/icon/createdSeven.svg'
+import CreatedOne from '@assets/createdOne.svg'
+import CreatedThree from '@assets/createdThree.svg'
+import CreatedFour from '@assets/createdFour.svg'
+import CreatedSix from '@assets/createdSix.svg'
+import CreatedSeven from '@assets/createdSeven.svg'
 
 
 

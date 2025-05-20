@@ -1,6 +1,6 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
-import AppRosterTable from "../../../../components/network/tables/appRosterTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
+import AppRosterTable from "@components/network/tables/appRosterTable"
 
 const AppRoster = () => {
 

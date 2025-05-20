@@ -1,13 +1,13 @@
 import { Link } from "react-router"
 import { useEffect, useState } from "react";
 import React from "react";
-import Card from "../../../../components/card/card";
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Jonathan from '../../../../assets/icon/jonathan-taylor.svg'
-import AvatarGroup from '../../../../assets/icon/avatar-group.svg'
-import Verify from '../../../../assets/icon/verify.svg'
+import Card from "@components/card/card";
+import Cody from '@assets/cody-fisher.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Jonathan from '@assets/jonathan-taylor.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
+import Verify from '@assets/verify.svg'
 import { LuSettings2 } from "react-icons/lu";
 import { CiGrid2H, CiGrid41, CiMail, CiSearch } from "react-icons/ci";
 import { GiAbstract080 } from "react-icons/gi";

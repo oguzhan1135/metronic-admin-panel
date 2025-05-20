@@ -1,6 +1,6 @@
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Questions from "../../../../components/myAccount/questions"
-import SecurityLogTable from "../../../../components/myAccount/tables/securityLogTable"
+import Menu from "@components/myAccount/hoverMenu"
+import Questions from "@components/myAccount/questions"
+import SecurityLogTable from "@components/myAccount/tables/securityLogTable"
 import { Link } from "react-router"
 
 

@@ -1,4 +1,4 @@
-import Card from "../../card/card"
+import Card from "@components/card/card"
 import { useEffect, useState } from 'react';
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import Pagination from "./pagination";

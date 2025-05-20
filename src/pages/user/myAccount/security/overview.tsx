@@ -1,30 +1,30 @@
 import { Link } from "react-router"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Card from '../../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { CiCircleCheck } from "react-icons/ci"
-import PasswordChange from '../../../../assets/icon/password-change.svg'
+import PasswordChange from '@assets/password-change.svg'
 import { FaChalkboardUser, FaFacebook, FaUsers } from "react-icons/fa6"
 import { GiAbstract092 } from "react-icons/gi"
 import { useState } from "react"
-import Switch from "../../../../components/switch"
+import Switch from "@components/switch"
 import { IoLocationOutline, IoShieldCheckmark } from "react-icons/io5"
 import { FaRegCheckCircle } from "react-icons/fa"
 import { BsApple } from "react-icons/bs"
 import { FcAndroidOs, FcGoogle } from "react-icons/fc"
 import { MdOutlineEditNote } from "react-icons/md"
 import { IoIosLogOut } from "react-icons/io"
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Esther from '../../../../assets/icon/ester-hoeard.svg'
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Esther from '@assets/ester-hoeard.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
 import { HiOutlineDotsVertical } from "react-icons/hi"
-import Chrome from '../../../../assets/icon/chrome.svg'
-import Spain from '../../../../assets/icon/spain.svg'
-import France from '../../../../assets/icon/france.svg'
+import Chrome from '@assets/chrome.svg'
+import Spain from '@assets/spain.svg'
+import France from '@assets/france.svg'
 import { GoShieldSlash } from "react-icons/go"
 import { CgPassword } from "react-icons/cg"
 import { TbShieldSearch } from "react-icons/tb"
-import PasswordChangeDark from '../../../../assets/icon/password-change-dark.svg'
+import PasswordChangeDark from '@assets/password-change-dark.svg'
 
 const Overview = () => {
     const location = window.location.pathname

@@ -1,16 +1,16 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
 import { CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "@components/publicProfile/hovermenu"
 import { useState } from "react"
-import AvatarGoup from '../../../assets/icon/avatar-group.svg'
-import Cody from '../../../assets/icon/cody-fisher.svg'
-import Tyler from '../../../assets/icon/tyler-hero.svg'
+import AvatarGoup from '@assets/avatar-group.svg'
+import Cody from '@assets/cody-fisher.svg'
+import Tyler from '@assets/tyler-hero.svg'
 import React from "react"
-import Jennifer from '../../../assets/icon/jennifer.svg'
+import Jennifer from '@assets/jennifer.svg'
 import { FaCheckCircle } from "react-icons/fa"
 import { FaUsers } from "react-icons/fa6"
 

@@ -1,7 +1,7 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Menu from "../../../../components/myAccount/hoverMenu"
-import Questions from "../../../../components/myAccount/questions"
-import TeamsTable from '../../../../components/myAccount/tables/teamsTable'
+import FAQ from "@components/myAccount/faq"
+import Menu from "@components/myAccount/hoverMenu"
+import Questions from "@components/myAccount/questions"
+import TeamsTable from '@components/myAccount/tables/teamsTable'
 
 const Teams = () => {
 

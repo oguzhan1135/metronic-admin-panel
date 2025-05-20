@@ -1,6 +1,6 @@
-import FAQ from "../../../../components/myAccount/faq"
-import Questions from "../../../../components/myAccount/questions"
-import VisitorsTable from "../../../../components/network/tables/visitorsTable"
+import FAQ from "@components/myAccount/faq"
+import Questions from "@components/myAccount/questions"
+import VisitorsTable from "@components/network/tables/visitorsTable"
 const Visitors = () => {
 
     return (

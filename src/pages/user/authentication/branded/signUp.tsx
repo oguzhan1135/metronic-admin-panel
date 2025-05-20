@@ -1,10 +1,10 @@
 import { Link } from "react-router"
-import Card from "../../../../components/card/card"
+import Card from "@components/card/card"
 import { FcGoogle } from "react-icons/fc"
 import { ImAppleinc } from "react-icons/im"
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5"
 import { useState } from "react"
-import Branded from "../../../../components/authentication/branded"
+import Branded from "@components/authentication/branded"
 
 const BrandedSignUp = () => {
 

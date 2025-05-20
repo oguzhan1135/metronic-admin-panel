@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import Menu from "../../../components/myAccount/hoverMenu"
-import Card from '../../../components/card/card'
+import Menu from "@components/myAccount/hoverMenu"
+import Card from '@components/card/card'
 import { useState } from "react"
-import FAQ from "../../../components/myAccount/faq"
-import Service from '../../../assets/icon/service.svg'
-import ServiceDark from '../../../assets/icon/service-dark.svg'
-import Switch from "../../../components/switch"
+import FAQ from "@components/myAccount/faq"
+import Service from '@assets/service.svg'
+import ServiceDark from '@assets/service-dark.svg'
+import Switch from "@components/switch"
 import { MdOutlineSubtitles } from "react-icons/md"
 import { FaRegCopy, FaRegStickyNote, FaRegUserCircle } from "react-icons/fa"
-import ApiIntebrationTable from "../../../components/myAccount/tables/apiIntegrationsTable"
+import ApiIntebrationTable from "@components/myAccount/tables/apiIntegrationsTable"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import { TbWorld } from "react-icons/tb"
 

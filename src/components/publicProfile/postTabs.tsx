@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { MdOutlineMessage, MdSaveAlt } from "react-icons/md";
-import Background from '../../assets/icon/save-background.svg'
+import Background from '@assets/save-background.svg'
 import { CiImageOn } from "react-icons/ci";
-import Tyler from '../../assets/icon/tyler-hero.svg'
-import BackgroundDark from '../../assets/icon/save-background-dark.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import BackgroundDark from '@assets/save-background-dark.svg'
 interface PostTabProps {
     commentContent: React.ReactElement;
     likeContent: React.ReactElement;

@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import CardMore from "../more/cardMore";
+import CardMore from "@components/more/cardMore";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { useEffect, useState } from "react";
 
@@ -48,7 +48,7 @@ const Card: React.FC<CardProps> = ({ dotStatus, buttonStatus, title, content, bu
                                             onClick={() => setMore((prev) => !prev)}
                                             className="p-2 rounded-md cursor-pointer hover:bg-gray-200"
                                         >
-                                            <HiOutlineDotsVertical className="size-[18px] text-gray-800"/>
+                                            <HiOutlineDotsVertical className="size-[18px] text-gray-800" />
                                         </div>
 
                                         {more && <CardMore setMore={setMore} more={more} />}

@@ -1,23 +1,23 @@
 import { Link } from "react-router"
 import { useEffect, useState } from "react";
 import React from "react";
-import Card from "../../../../components/card/card";
-import Cody from '../../../../assets/icon/cody-fisher.svg'
-import Tyler from '../../../../assets/icon/tyler-hero.svg'
-import Jennifer from '../../../../assets/icon/jennifer.svg'
-import Verify from '../../../../assets/icon/verify.svg'
+import Card from "@components/card/card";
+import Cody from '@assets/cody-fisher.svg'
+import Tyler from '@assets/tyler-hero.svg'
+import Jennifer from '@assets/jennifer.svg'
+import Verify from '@assets/verify.svg'
 import { LuSettings2 } from "react-icons/lu";
 import { CiGrid2H, CiGrid41, CiSearch } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
-import GeometricPatern from '../../../../assets/icon/geometric-patterns.svg'
-import ArtisticExpression from '../../../../assets/icon/artistic-expression.svg'
-import Arlene from '../../../../assets/icon/arlene-mccoy.svg'
-import GoogleDeepMind from '../../../../assets/icon/google-deepmind.svg'
-import DynamicWang from '../../../../assets/icon/dynamic-wang.svg'
-import Seo from '../../../../assets/icon/seo.svg'
-import RadeonKutsaiev from '../../../../assets/icon/rodion-kutsaiev.svg'
-import RodionHeart from '../../../../assets/icon/radeon--heart.svg'
-import DynamicRobo from '../../../../assets/icon/dynamic-wang-robo.svg'
+import GeometricPatern from '@assets/geometric-patterns.svg'
+import ArtisticExpression from '@assets/artistic-expression.svg'
+import Arlene from '@assets/arlene-mccoy.svg'
+import GoogleDeepMind from '@assets/google-deepmind.svg'
+import DynamicWang from '@assets/dynamic-wang.svg'
+import Seo from '@assets/seo.svg'
+import RadeonKutsaiev from '@assets/rodion-kutsaiev.svg'
+import RodionHeart from '@assets/radeon--heart.svg'
+import DynamicRobo from '@assets/dynamic-wang-robo.svg'
 
 interface AuthorCard {
     id: number;

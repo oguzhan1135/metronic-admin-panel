@@ -1,21 +1,21 @@
 import { Link } from "react-router";
-import Widget from "../../components/dashboards/widget";
-import Linkedin from '../../assets/icon/linkedin.svg'
-import Youtube from '../../assets/icon/youtube.svg'
-import Instagram from '../../assets/icon/instagram.svg'
-import Tiktok from '../../assets/icon/tiktok.svg'
-import AvatarGroup from "../../assets/icon/avatar-group.svg"
-import WidgetBackground from '../../assets/icon/widget-background.svg'
+import Widget from "@components/dashboards/widget";
+import Linkedin from '@assets/linkedin.svg'
+import Youtube from '@assets/youtube.svg'
+import Instagram from '@assets/instagram.svg'
+import Tiktok from '@assets/tiktok.svg'
+import AvatarGroup from "@assets/avatar-group.svg"
+import WidgetBackground from '@assets/widget-background.svg'
 import { CiLocationOn, CiShop } from "react-icons/ci";
 import { FaArrowUp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaArrowDown, } from "react-icons/fa6";
-import Meeting from '../../assets/icon/meeting.svg';
+import Meeting from '@assets/meeting.svg';
 import { FiUsers } from "react-icons/fi";
-import EarningChart from "../../components/charts/earningChart";
-import Teams from "../../components/dashboards/teams";
-import Switch from "../../components/switch";
+import EarningChart from "@components/charts/earningChart";
+import Teams from "@components/dashboards/teams";
+import Switch from "@components/switch";
 import { useState } from "react";
-import Card from "../../components/card/card";
+import Card from "@components/card/card";
 
 const Dashboard = () => {
     const [earning, setEarning] = useState(false)

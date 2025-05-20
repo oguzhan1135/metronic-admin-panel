@@ -1,21 +1,21 @@
-import ExampleUser from '../../../assets/icon/example-user.svg'
+import ExampleUser from '@assets/example-user.svg'
 import { FaChevronRight } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { IoIosNotifications } from "react-icons/io";
-import Switch from '../../switch';
+import Switch from '@components/switch';
 import { useEffect, useState } from 'react';
 import { FaCheckCircle, FaMoneyBill, FaMoon, FaRegUserCircle, FaRocket } from 'react-icons/fa';
 import { GoCodeReview } from 'react-icons/go';
-import FlagUSA from '../../../assets/icon/united-states.svg'
+import FlagUSA from '@assets/united-states.svg'
 import { BsPersonVcard } from 'react-icons/bs';
 import { IoSettingsSharp } from 'react-icons/io5';
 import { RiShieldUserLine } from 'react-icons/ri';
 import { CgScan } from 'react-icons/cg';
 import { GiAbstract039 } from 'react-icons/gi';
-import FlagFrench from '../../../assets/icon/france.svg'
-import FlagSpanish from '../../../assets/icon/spain.svg'
-import FlagJapan from '../../../assets/icon/japan.svg'
-import FlagGerman from '../../../assets/icon/germany.svg'
+import FlagFrench from '@assets/france.svg'
+import FlagSpanish from '@assets/spain.svg'
+import FlagJapan from '@assets/japan.svg'
+import FlagGerman from '@assets/germany.svg'
 
 const User = () => {
     const [darkMode, setDarkMode] = useState(() => {

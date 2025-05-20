@@ -1,10 +1,10 @@
 
 
 
-import Menu from "../../../../components/myAccount/hoverMenu"
-import FAQ from "../../../../components/myAccount/faq"
-import SessionsTable from "../../../../components/myAccount/tables/sessions"
-import Questions from "../../../../components/myAccount/questions"
+import Menu from "@components/myAccount/hoverMenu"
+import FAQ from "@components/myAccount/faq"
+import SessionsTable from "@components/myAccount/tables/sessions"
+import Questions from "@components/myAccount/questions"
 
 
 const CurrentSessions = () => {

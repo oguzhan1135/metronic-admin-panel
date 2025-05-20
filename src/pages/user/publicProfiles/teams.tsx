@@ -1,15 +1,15 @@
-import Card from "../../../components/card/card"
-import Verify from '../../../assets/icon/verify.svg'
-import Jennifer from '../../../assets/icon/jennifer.svg'
+import Card from "@components/card/card"
+import Verify from '@assets/verify.svg'
+import Jennifer from '@assets/jennifer.svg'
 import { CiBasketball, CiGrid2H, CiGrid41, CiMail } from "react-icons/ci"
 import { GiAbstract030, GiAbstract051, GiAbstract080 } from "react-icons/gi"
 import { SlLocationPin } from "react-icons/sl"
 import { Link } from "react-router"
-import Menu from "../../../components/publicProfile/hovermenu"
+import Menu from "@components/publicProfile/hovermenu"
 import React, { useState } from "react"
 import { FaCheckCircle, FaGhost, } from "react-icons/fa"
-import AvatarGroup from '../../../assets/icon/avatar-group.svg'
-import Raiting from '../../../assets/icon/raiting.svg'
+import AvatarGroup from '@assets/avatar-group.svg'
+import Raiting from '@assets/raiting.svg'
 import { IoIosFlash } from "react-icons/io"
 import { FiShieldOff } from "react-icons/fi"
 import { TbBrandNexo } from "react-icons/tb"
