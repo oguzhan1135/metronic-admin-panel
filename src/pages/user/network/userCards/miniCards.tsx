@@ -195,7 +195,7 @@ const MiniCards = () => {
                 <span className="text-b-15-16-500 text-gray-900">Showing {cards.length} Users</span>
                 <div className="flex flex-row items-center gap-5">
                     <div className="flex flex-row items-center gap-2.5">
-                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none bg-light-active" onChange={(e) => setStatus(e.target.value)}>
+                        <select className="border px-3 py-2 rounded-md text-b-12-12-500 text-gray-900 outline-none bg-light-active border-gray-300" onChange={(e) => setStatus(e.target.value)}>
                             <option value="All">All</option>
                             <option value="Online">Online</option>
                             <option value="Offline">Offline</option>
@@ -205,7 +205,7 @@ const MiniCards = () => {
                             Filters
                         </button>
                     </div>
-                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active">
+                    <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active border-gray-300">
                         <CiSearch className="text-gray-600 cursor-pointer" />
                         <input
                             type="text"

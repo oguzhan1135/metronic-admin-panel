@@ -210,14 +210,7 @@ const TeamMembersTable = () => {
                                     <div className="flex justify-center">
                                         <input
                                             type="checkbox"
-                                            className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                            className={`custom-checkbox`}
                                             checked={selectAll}
                                             onChange={handleSelectAll}
                                         />
@@ -262,14 +255,7 @@ const TeamMembersTable = () => {
                                                 type="checkbox"
                                                 checked={!!checkedItems[team.id]}
                                                 onChange={() => handleCheckboxChange(team.id)}
-                                                className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                                className={`custom-checkbox`}
                                             />
                                         </div>
                                     </td>

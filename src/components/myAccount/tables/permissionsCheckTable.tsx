@@ -132,30 +132,10 @@ const PermissionCheckTable = () => {
                                         permissions.map((permission) => (
                                             <tr key={permission.id} className="border-b">
                                                 <td className="py-[26px] px-[30px] text-b-14-14-500 text-gray-900">{permission.name}</td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.view} onChange={() => handlePermissionChange(permission.id, 'view')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.modify} onChange={() => handlePermissionChange(permission.id, 'modify')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.publish} onChange={() => handlePermissionChange(permission.id, 'publish')} /></td>
-                                                <td className="text-center"><input type="checkbox" className="size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]" checked={permission.configure} onChange={() => handlePermissionChange(permission.id, 'configure')} /></td>
+                                                <td className="text-center"><input type="checkbox" className={`custom-checkbox`} checked={permission.view} onChange={() => handlePermissionChange(permission.id, 'view')} /></td>
+                                                <td className="text-center"><input type="checkbox" className={`custom-checkbox`} checked={permission.modify} onChange={() => handlePermissionChange(permission.id, 'modify')} /></td>
+                                                <td className="text-center"><input type="checkbox" className={`custom-checkbox`} checked={permission.publish} onChange={() => handlePermissionChange(permission.id, 'publish')} /></td>
+                                                <td className="text-center"><input type="checkbox" className={`custom-checkbox`} checked={permission.configure} onChange={() => handlePermissionChange(permission.id, 'configure')} /></td>
                                             </tr>
                                         ))
                                     }

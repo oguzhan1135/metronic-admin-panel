@@ -118,19 +118,19 @@ const ApiKeys = () => {
                                     <p className="text-b-13-20-400 text-gray-800">Set up Webhooks to trigger actions on external services in real-time. Stay informed on updates and changes to ensure seamless integration.</p>
                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Webhook URL</span>
-                                        <div className="bg-light-active rounded-md p-3 border w-full">
+                                        <div className="bg-light-active border-gray-300 rounded-md p-3 border w-full">
                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Enter URL" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Webhook Name</span>
-                                        <div className="bg-light-active rounded-md p-3 border w-full">
+                                        <div className="bg-light-active border-gray-300 rounded-md p-3 border w-full">
                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="CostaRicaHook" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Event Type</span>
-                                        <div className="bg-light-active rounded-md p-3 border w-full">
+                                        <div className="bg-light-active border-gray-300 rounded-md p-3 border w-full">
                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="All Events" />
                                         </div>
                                     </div>

@@ -257,21 +257,21 @@ const CompanyProfile = () => {
                                         <div className="flex flex-col  w-full gap-5 ">
                                             <div className="flex flex-col gap-2.5">
                                                 <div className="flex items-center flex-row gap-[6px]">
-                                                    <input type="checkbox" name="security" id="security" className="size-[18px]" checked={security} onChange={() => setSecurity(!security)} />
+                                                    <input type="checkbox" name="security" id="security" className="custom-checkbox" checked={security} onChange={() => setSecurity(!security)} />
                                                     <span className="text-b-13-14-500 text-gray-800">Security Questionaries</span>
                                                 </div>
                                                 <span className="text-b-12-12-500 text-gray-600">Detailed Risk Assessment & Compliance Verification</span>
                                             </div>
                                             <div className="flex flex-col gap-2.5">
                                                 <div className="flex items-center flex-row gap-[6px]">
-                                                    <input type="checkbox" name="security" id="security" className="size-[18px]" checked={email} onChange={() => setEmail(!email)} />
+                                                    <input type="checkbox" name="security" id="security" className="custom-checkbox" checked={email} onChange={() => setEmail(!email)} />
                                                     <span className="text-b-13-14-500 text-gray-800">Email</span>
                                                 </div>
                                                 <span className="text-b-12-12-500 text-gray-600">Electronic Message Communication</span>
                                             </div>
                                             <div className="flex flex-col gap-2.5">
                                                 <div className="flex items-center flex-row gap-[6px]">
-                                                    <input type="checkbox" name="security" id="security" className="size-[18px]" checked={vendor} onChange={() => setVendor(!vendor)} />
+                                                    <input type="checkbox" name="security" id="security" className="custom-checkbox" checked={vendor} onChange={() => setVendor(!vendor)} />
                                                     <span className="text-b-13-14-500 text-gray-800">Vendor Reports</span>
                                                 </div>
                                                 <span className="text-b-12-12-500 text-gray-600">Supplier Performance & Reliability Evaluationsn</span>

@@ -25,7 +25,7 @@ const BrandedResetPassword = () => {
 
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900 min-w-[290px]">New Password</span>
-                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active">
+                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active border-gray-300">
                                         <input
                                             type={isOpenPassword ? "text" : "password"}
                                             className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"
@@ -46,7 +46,7 @@ const BrandedResetPassword = () => {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-b-13-14-400 text-gray-900">Confirm New Password</span>
-                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active">
+                                    <div className="border py-[13px] px-3 rounded-md flex flex-row items-center gap-2 bg-light-active border-gray-300">
                                         <input
                                             type={isOpenConfirmPassword ? "text" : "password"}
                                             className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent"

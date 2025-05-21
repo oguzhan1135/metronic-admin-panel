@@ -191,7 +191,7 @@ const SettingEnterprise = () => {
                                                 <FaFacebook className="text-[#3C5A9A]" />
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
-                                                <BsApple />
+                                                <BsApple className="dark:text-white"/>
                                             </div>
                                         </div>
                                     </div>
@@ -218,7 +218,7 @@ const SettingEnterprise = () => {
                                                 <IoLogoTwitch className="text-[#65459B]" />
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
-                                                <FaXTwitter />
+                                                <FaXTwitter className="dark:text-white"/>
                                             </div>
                                             <div className="flex items-center justify-center border p-[7px] rounded-full">
                                                 <CiBasketball className="text-[#B2215A] bg-[#E74D89] rounded-full" />
@@ -389,7 +389,7 @@ const SettingEnterprise = () => {
                             <>
                                 <div className="flex flex-col gap-4 p-[30px]">
                                     <span className="text-b-13-20-400 text-gray-800">Define aspirations, outline the path. Set a goal to transform dreams into measurable achievements.</span>
-                                    <button className="flex flex-row gap-1 items-center border p-2.5 rounded-md w-max">
+                                    <button className="flex flex-row gap-1 items-center border p-2.5 rounded-md w-max bg-light">
                                         <FcGoogle className="size-[14px]" />
                                         <span className="text-b-12-12-500 text-gray-700">Continue with Google</span>
                                     </button>
@@ -512,7 +512,7 @@ const SettingEnterprise = () => {
                                                 <span className="text-h-26-26-600 text-gray-900">$0</span>
                                                 <span className="text-b-13-20-400 text-gray-700">Pursuing opportunities, earning zero. Growth beyond monetary measures.</span>
                                             </div>
-                                            <button className="border rounded-md px-3 py-2.5 flex items-center justify-center w-max">
+                                            <button className="border rounded-md px-3 py-2.5 flex items-center justify-center w-max bg-light">
                                                 <span className="text-b-12-12-500 text-gray-700">Add a Goal</span>
                                             </button>
                                         </div>

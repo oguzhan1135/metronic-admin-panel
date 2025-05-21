@@ -302,7 +302,7 @@ const AppRosterTable = () => {
                         <div className="flex flex-row items-center justify-between">
                             <div className="flex flex-row items-center gap-5">
 
-                                <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active">
+                                <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active border-gray-300">
                                     <CiSearch className="text-gray-600 cursor-pointer" />
                                     <input
                                         type="text"
@@ -330,14 +330,7 @@ const AppRosterTable = () => {
                                     <div className="flex justify-center">
                                         <input
                                             type="checkbox"
-                                            className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                           className={`custom-checkbox`}
                                             checked={selectAll}
                                             onChange={handleSelectAll}
                                         />
@@ -394,14 +387,7 @@ const AppRosterTable = () => {
                                                 type="checkbox"
                                                 checked={!!checkedItems[team.id]}
                                                 onChange={() => handleCheckboxChange(team.id)}
-                                                className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                                className={`custom-checkbox`}
                                             />
                                         </div>
                                     </td>

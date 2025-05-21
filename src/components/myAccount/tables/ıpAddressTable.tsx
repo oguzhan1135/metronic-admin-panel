@@ -195,14 +195,7 @@ const IpAddresesTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input
                                                 type="checkbox"
-                                                className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                                className={`custom-checkbox`}
                                                 checked={selectAll}
                                                 onChange={handleSelectAll}
                                             />
@@ -262,14 +255,7 @@ const IpAddresesTable = () => {
                                                         type="checkbox"
                                                         checked={!!checkedItems[item.id]}
                                                         onChange={() => handleCheckboxChange(item.id)}
-                                                        className={`
-                                                                size-[18px] rounded-[4px] border border-gray-500 
-                                                                bg-white dark:bg-black 
-                                                                appearance-none cursor-pointer transition-all 
-                                                                checked:bg-blue-600 dark:checked:bg-blue-600 
-                                                                checked:bg-check-icon
-                                                                bg-no-repeat bg-center bg-[length:12px_12px]
-                                                                    `}
+                                                        className={`custom-checkbox`}
                                                     />
                                                 </td>
 

@@ -244,25 +244,25 @@ const Modal = () => {
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Name</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Jason Tatum" />
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Company</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Phone Number</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Phone number" />
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800">Visibility</span>
-                                                <select defaultValue="Public" className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 rounded-md p-3 border w-full outline-none text-gray-800">
+                                                <select defaultValue="Public" className="bg-light-active  border-gray-300 rounded-md p-3 border w-full outline-none text-gray-800">
                                                     <option value="Public">Public</option>
                                                     <option value="Option-2">Option-2</option>
                                                     <option value="Option-3">Option-3</option>
@@ -299,7 +299,7 @@ const Modal = () => {
                                                 <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Email</span>
                                                     <div className="flex flex-col gap-[30px]">
-                                                        <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                        <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="KeenThemes" />
                                                         </div>
                                                         <div className="flex flex-row items-center gap-5">
@@ -473,7 +473,7 @@ const Modal = () => {
                                                 <div className="flex flex-col md:flex-row py-2.5 md:gap-0 gap-4">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 pt-0 md:pt-[10px] ">Password</span>
                                                     <div className="flex flex-col  w-full">
-                                                        <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                        <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Enter pasword" />
                                                         </div>
                                                         <span className="text-b-13-20-400 text-gray-800">Enter your password to setup Two-Factor authentication</span>
@@ -522,13 +522,13 @@ const Modal = () => {
                                                     <span className="text-gray-900 text-b-15-16-600">2. Configure Google authentication</span>
                                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client ID</span>
-                                                        <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                        <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="02874374-367145773" />
                                                         </div>
                                                     </div>
                                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Client Secret</span>
-                                                        <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                        <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                             <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="23djfn784957f8022we2232307822-cey2442" />
                                                         </div>
                                                     </div>
@@ -542,7 +542,7 @@ const Modal = () => {
                                                     <span className="text-gray-900 text-b-15-16-600">3. Note down custom URL for Google SSO authentication</span>
                                                     <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                         <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Custom Login UTL</span>
-                                                        <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md  border w-full flex flex-row items-center">
+                                                        <div className="bg-light-active border-gray-300  rounded-md  border w-full flex flex-row items-center">
                                                             <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="https://devs.keenthemes.com/rl/AirMikeStudios" />
                                                             <button className="p-4 flex items-center justify-center bg-primary rounded-r-md">
                                                                 <span className=" text-white text-b-13-14-500">Copy</span>
@@ -571,19 +571,19 @@ const Modal = () => {
 
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Current Password</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Your current password" />
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">New Password</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="New Password" />
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                 <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Confirm new password</span>
-                                                <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                     <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Confirm new password" />
                                                 </div>
                                             </div>
@@ -609,7 +609,7 @@ const Modal = () => {
                                             <div className="flex flex-col p-[30px]">
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Language</span>
-                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"American English"} className="bg-light-active  border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="American English">American English</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -617,7 +617,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Time zone</span>
-                                                    <select defaultValue={"American English"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"American English"} className="bg-light-active  border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="American English">American English</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -625,7 +625,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Currency</span>
-                                                    <select defaultValue={"United States Dollar (USD)"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"United States Dollar (USD)"} className="bg-light-active  border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="United States Dollar (USD)">United States Dollar (USD)</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -652,12 +652,12 @@ const Modal = () => {
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Attributes</span>
                                                     <div className="flex flex-col gap-5  w-full">
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                            <input type="checkbox" name="list" id="list" className="custom-checkbox" />
                                                             <span className="text-b-14-14-500 text-gray-800">Show linked list names</span>
                                                         </div>
                                                         <span className="text-b-12-12-400 text-gray-700">See the name next to each icon</span>
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="checkbox" name="list" id="list" className="size-[22px]" />
+                                                            <input type="checkbox" name="list" id="list" className="custom-checkbox" />
                                                             <span className="text-b-14-14-500 text-gray-800">Show linked task names</span>
                                                         </div>
                                                         <span className="text-b-12-12-400 text-gray-700">Show task names next to ids for linked project tasks.</span>
@@ -775,15 +775,15 @@ const Modal = () => {
                                                     <span className="text-b-15-16-500 text-gray-900">Desktop notifications</span>
                                                     <div className="flex flex-col gap-[14px]">
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" />
+                                                            <input type="radio" className="custom-checkbox" />
                                                             <span className="text-b-13-14-500 text-gray-800">All new messages (Recommended)</span>
                                                         </div>
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" />
+                                                            <input type="radio" className="custom-checkbox" />
                                                             <span className="text-b-13-14-500 text-gray-800">Direct @mentions</span>
                                                         </div>
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" defaultChecked />
+                                                            <input type="radio" className="custom-checkbox" defaultChecked />
                                                             <span className="text-b-13-14-500 text-gray-800">Disabled</span>
                                                         </div>
                                                     </div>
@@ -792,15 +792,15 @@ const Modal = () => {
                                                     <span className="text-b-15-16-500 text-gray-900">Email notifications</span>
                                                     <div className="flex flex-col gap-[14px]">
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" />
+                                                            <input type="radio" className="custom-checkbox" />
                                                             <span className="text-b-13-14-500 text-gray-800">All new messages and statuses</span>
                                                         </div>
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" defaultChecked />
+                                                            <input type="radio" className="custom-checkbox" defaultChecked />
                                                             <span className="text-b-13-14-500 text-gray-800">Unread messages and statuses () Recommended</span>
                                                         </div>
                                                         <div className="flex flex-row items-center gap-[6px]">
-                                                            <input type="radio" className="size-[18px]" />
+                                                            <input type="radio" className="custom-checkbox" />
                                                             <span className="text-b-13-14-500 text-gray-800">Disabled</span>
                                                         </div>
                                                     </div>
@@ -808,7 +808,7 @@ const Modal = () => {
                                                 <div className="flex flex-col gap-5">
                                                     <span className="text-b-15-16-500 text-gray-900">Subscriptions</span>
                                                     <div className="flex flex-row items-center gap-[6px]">
-                                                        <input type="checkbox" className="size-[18px]" checked={newMessage} onChange={() => setNewMessage(!newMessage)} />
+                                                        <input type="checkbox" className="custom-checkbox" checked={newMessage} onChange={() => setNewMessage(!newMessage)} />
                                                         <span className="text-b-13-14-500 text-gray-800">All new messages and statuses</span>
                                                     </div>
 
@@ -836,13 +836,13 @@ const Modal = () => {
                                             <div className="flex flex-col gap-[30px] p-[30px]">
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Address</span>
-                                                    <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                    <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                         <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="Avinguda Imaginària, 789" />
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Country</span>
-                                                    <select defaultValue={"Spain"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"Spain"} className="bg-light-active border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="Public">Spain</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -851,13 +851,13 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">State</span>
-                                                    <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                    <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                         <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="State" />
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">City</span>
-                                                    <select defaultValue={"Barcelona"} className="bg-[#FCFCFC] dark:bg-[#1F212A] border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
+                                                    <select defaultValue={"Barcelona"} className="bg-light-active  border-gray-300 text-gray-800 rounded-md p-3 border w-full outline-none ">
                                                         <option value="Public">Barcelona</option>
                                                         <option value="Option-2">Option-2</option>
                                                         <option value="Option-3">Option-3</option>
@@ -866,7 +866,7 @@ const Modal = () => {
                                                 </div>
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">Postcode</span>
-                                                    <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md p-3 border w-full">
+                                                    <div className="bg-light-active border-gray-300  rounded-md p-3 border w-full">
                                                         <input type="text" className="w-full outline-none bg-transparent text-13-14-400 text-gray-800" placeholder="08012" />
                                                     </div>
                                                 </div>
@@ -892,7 +892,7 @@ const Modal = () => {
                                             <div className="flex flex-col p-[30px] gap-[30px]">
                                                 <div className="flex flex-col items-start md:flex-row md:items-center gap-4 md:gap-0 py-2.5">
                                                     <span className="min-w-[220px] text-b-13-14-400 text-gray-800 ">API Key</span>
-                                                    <div className="bg-[#FCFCFC] dark:bg-coal-300 rounded-md  border w-full flex flex-row items-center">
+                                                    <div className="bg-light-active border-gray-300  rounded-md  border w-full flex flex-row items-center">
                                                         <input type="text" className="w-full outline-none bg-transparent p-3 text-13-14-400 text-gray-800" placeholder="abc123xyz456sample789key000" />
                                                         <button className="p-2 hover:bg-gray-200 rounded-md mr-2.5 flex items-center justify-center">
                                                             <FaCopy className="size-4 text-gray-600" />
@@ -1051,7 +1051,7 @@ const Modal = () => {
                                                 <div className="flex flex-col gap-5">
                                                     <p className="text-b-13-20-400 text-gray-800">We regret to see you leave. Confirm account deletion below. Your data will be permanently removed. Thank you for being part of our community. Please check our Setup Guidelines if you still wish continue.</p>
                                                     <div className="flex flex-row items-center gap-[6px]">
-                                                        <input type="checkbox" name="confirm" id="confirm" className="size-[18px]" />
+                                                        <input type="checkbox" name="confirm" id="confirm" className="custom-checkbox" />
                                                         <span className="text-b-13-14-500 text-gray-800">Confirm deleting account</span>
                                                     </div>
                                                 </div>

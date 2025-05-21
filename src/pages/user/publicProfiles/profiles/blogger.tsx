@@ -83,7 +83,7 @@ const Blogger = () => {
                         title="Profile"
                         content={
                             <div className="flex flex-col px-[30px] gap-5  py-5">
-                                <p>Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
+                                <p className="text-b-14-22-400 text-gray-800">Experienced and creative professional with a passion great as for problem-solving and a commitment to excellence.</p>
                                 <div className="flex flex-row items-center gap-2.5">
                                     <GiAbstract080 className='text-gray-600 text-b-14-14-500' />
                                     <Link to={location} className="text-b-14-14-400 text-gray-900 text-animation">KeenThemes</Link>

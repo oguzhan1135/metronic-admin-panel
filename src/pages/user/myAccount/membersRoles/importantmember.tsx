@@ -46,28 +46,28 @@ const ImportantMember = () => {
                                 <div className="flex flex-col gap-[30px] p-[30px]">
                                     <div className="flex flex-col gap-2.5">
                                         <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="create" id="create" checked={createNewUser} onChange={() => setCreateNewUser(!createNewUser)} className="size-[18px]" />
+                                            <input type="checkbox" name="create" id="create" checked={createNewUser} onChange={() => setCreateNewUser(!createNewUser)} className="custom-checkbox" />
                                             <span className="text-b-13-14-500 text-gray-800">Create new users</span>
                                         </div>
                                         <p className="text-b-13-20-400 text-gray-800">Select this option to create new user accounts for individuals whose details are included in the import data but who do not have an existing account in the system.</p>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
                                         <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="create" id="create" checked={updatedExistUser} onChange={() => setUpdatedExistUser(!updatedExistUser)} className="size-[18px]" />
+                                            <input type="checkbox" name="create" id="create" checked={updatedExistUser} onChange={() => setUpdatedExistUser(!updatedExistUser)} className="custom-checkbox" />
                                             <span className="text-b-13-14-500 text-gray-800">Update existing users</span>
                                         </div>
                                         <p className="text-b-13-20-400 text-gray-800">When checked, the system will update the information for users already in the database with any new or altered details provided in the import file.</p>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
                                         <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="create" id="create" checked={sendEmail} onChange={() => setSendEmail(!sendEmail)} className="size-[18px]" />
+                                            <input type="checkbox" name="create" id="create" checked={sendEmail} onChange={() => setSendEmail(!sendEmail)} className="custom-checkbox" />
                                             <span className="text-b-13-14-500 text-gray-800">Send email notification on password change</span>
                                         </div>
                                         <p className="text-b-13-20-400 text-gray-800">This option ensures users are promptly notified via email in the event of a password change, enhancing security and keeping users informed of their account status.</p>
                                     </div>
                                     <div className="flex flex-col gap-2.5">
                                         <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="create" id="create" checked={includeEternalID} onChange={() => setIcludeEternalID(!includeEternalID)} className="size-[18px]" />
+                                            <input type="checkbox" name="create" id="create" checked={includeEternalID} onChange={() => setIcludeEternalID(!includeEternalID)} className="custom-checkbox" />
                                             <span className="text-b-13-14-500 text-gray-800">Include external IDs  in import results</span>
                                         </div>
                                         <p className="text-b-13-20-400 text-gray-800">By including external IDs in the import results, administrators can more easily reconcile and track user records across different systems and databases.</p>
@@ -87,7 +87,7 @@ const ImportantMember = () => {
                                         <span className="text-b-13-14-500 text-gray-900">Custom welcome message</span>
                                         <textarea name="welcome" id="welcome" rows={5} placeholder="Your welcome message here" className="text-b-13-14-400 text-gray-800 border p-3 rounded-md outline-none bg-light"></textarea>
                                         <div className="flex flex-row items-center gap-[6px]">
-                                            <input type="checkbox" name="create" id="create" checked={sendWelcome} onChange={() => setSendWelcome(!sendWelcome)} className="size-[18px]" />
+                                            <input type="checkbox" name="create" id="create" checked={sendWelcome} onChange={() => setSendWelcome(!sendWelcome)} className="custom-checkbox" />
                                             <span className="text-b-13-14-500 text-gray-800">Send welcome email to news users</span>
                                         </div>
                                     </div>

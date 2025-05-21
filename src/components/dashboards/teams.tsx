@@ -160,12 +160,12 @@ const Teams = () => {
                 <div className="flex flex-col overflow-x-auto custom-scroll">
                     <table className=" border-collapse  min-w-[700px]">
                         <thead>
-                            <tr className="bg-gray-100">
-                                <th className=" px-5 py-3 border border-gray-200 dark:bg-coal-500">
+                            <tr className="bg-gray-100 dark:bg-coal-300">
+                                <th className=" px-5 py-3 border border-gray-200 ">
                                     <div className="flex justify-center">
                                         <input
                                             type="checkbox"
-                                            className="size-[16px]"
+                                            className={`custom-checkbox`}
                                             checked={selectAll}
                                             onChange={handleSelectAll}
                                         />
@@ -204,9 +204,9 @@ const Teams = () => {
                                         <div className="flex justify-center">
                                             <input
                                                 type="checkbox"
-                                                className="size-[16px]"
-                                                checked={checkedItems[team.id] || false}
+                                                checked={!!checkedItems[team.id]}
                                                 onChange={() => handleCheckboxChange(team.id)}
+                                                className={`custom-checkbox`}
                                             />
                                         </div>
                                     </td>

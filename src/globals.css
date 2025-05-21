@@ -28,6 +28,9 @@
   .itemDotLine{
     @apply absolute w-[1px] h-full left-[10.5px] z-[-1] bg-gray-200
   }
+  .custom-checkbox{
+    @apply size-[18px] rounded-md border border-gray-600 bg-white dark:bg-coal-500 appearance-none cursor-pointer transition-all checked:bg-blue-600 dark:checked:bg-blue-600 checked:bg-check-icon bg-no-repeat bg-center bg-[length:12px_12px]
+  }
     :root {
   --color-primary: #1B84FF;
   --color-primary-active: #056EE9;

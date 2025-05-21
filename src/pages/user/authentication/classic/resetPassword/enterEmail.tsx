@@ -17,7 +17,7 @@ const CheckMail = () => {
                             </div>
                             <div className="flex flex-col gap-2">
                                 <span className="text-b-13-14-400 text-gray-900 min-w-[290px]">Email</span>
-                                <div className="border py-[13px] px-3 rounded-md bg-light-active">
+                                <div className="border py-[13px] px-3 rounded-md bg-light-active border-gray-300">
                                     <input type="text" className="outline-none border-none w-full text-b-13-14-400 text-gray-800 bg-transparent" placeholder="email@email.com" />
                                 </div>
                             </div>

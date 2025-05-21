@@ -40,13 +40,13 @@ const InviteFriend = () => {
                                     <div className="flex flex-col gap-5  px-[30px]">
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Email</span>
-                                            <div className="flex items-center gap-2 border rounded-md px-3 py-2 w-full bg-light-active">
+                                            <div className="flex items-center gap-2 border rounded-md px-3 py-2 w-full bg-light-active border-gray-300">
                                                 <input type="text" className="outline-none bg-transparent w-full text-b-13-14-400 text-gray-800 " placeholder="https://www.ktstudio.com/RSVP?c=12345XYZt" />
                                             </div>
                                         </div>
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Role</span>
-                                            <select name="role" id="role" defaultValue={"Member"} className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full  bg-light-active">
+                                            <select name="role" id="role" defaultValue={"Member"} className="border px-3 py-2 outline-none rounded-md text-b-13-14-400 text-gray-800 w-full  bg-light-active border-gray-300">
                                                 <option value="Member">Member</option>
                                                 <option value="Editor">Editor</option>
                                                 <option value="Designer">Designer</option>
@@ -82,7 +82,7 @@ const InviteFriend = () => {
                                     <div className="flex flex-col gap-5  px-[30px]">
                                         <div className="flex md:flex-row flex-col md:gap-0 gap-3 items-start  md:items-center">
                                             <span className="text-b-13-14-400 text-gray-800 min-w-[120px]">Link</span>
-                                            <div className="flex flex-row items-center gap-2 border rounded-md px-3 py-2 w-full">
+                                            <div className="flex flex-row items-center gap-2 border rounded-md px-3 py-2 w-full bg-light-active border-gray-300">
                                                 <input type="text" className="outline-none bg-transparent w-full" placeholder="https://www.ktstudio.com/RSVP?c=12345XYZt" />
                                                 <button className="flex items-center justify-center p-2 rounded-md hover:bg-gray-200">
                                                     <FaCopy className="text-gray-500 size-" />
