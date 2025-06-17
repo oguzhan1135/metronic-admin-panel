@@ -92,25 +92,29 @@ const Navbar = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             const target = event.target as HTMLElement;
+            
+            if (searchModal) return;
+    
             if (!target.closest(".dropdown-container")) {
                 closeDropdowns();
             }
         };
-
+    
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 closeDropdowns();
             }
         };
-
+    
         document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener("keydown", handleKeyDown);
-
+    
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
+    }, [searchModal]);
+    
 
     return (
         <div

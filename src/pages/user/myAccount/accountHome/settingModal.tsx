@@ -42,7 +42,7 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
+            className="fixed inset-0 flex items-center justify-center "
             style={{ zIndex: 10000000000000 }}
             onClick={() => setModalOpen(false)}
         >
@@ -87,6 +87,7 @@ const Modal = () => {
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
     const [avaibality, setAvaibality] = useState(true)
     const [newMessage, setNewMessage] = useState(true)
+    const { modalOpen, setModalOpen } = metronicContext()
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
@@ -134,7 +135,7 @@ const Modal = () => {
     ];
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-10 ">
+            <div className={`flex flex-col gap-10 ${modalOpen ? 'blur' : 'blur-none'}`}>
                 <div className="flex py-10 flex-col gap-3 items-center justify-center relative bg-map dark:bg-map-dark bg-cover z-10">
                     <div className="rounded-full border border-success">
                         <img src={Jennifer} alt="" className="size-[100px]" />

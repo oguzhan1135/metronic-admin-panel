@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Sidebar from '@components/sidebar';
+import Sidebar from '@components/Sidebar';
 import Header from '@components/navbar';
 import { metronicContext } from '../context/layoutContet';
 import { useLocation } from 'react-router-dom';
@@ -10,7 +10,7 @@ import Give from '@components/navbar/dropdowns/give';
 import ReportUser from '@components/navbar/dropdowns/reportUser';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { sidebarIsOpen } = metronicContext();
+  const { sidebarIsOpen, modalOpen, searchModal } = metronicContext();
   const location = useLocation();
   const pathname = location.pathname;
   const isErrorPage = pathname === "/user/authentication/error404";
@@ -32,7 +32,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       document.documentElement.classList.remove('dark');
     }
   }, []);
+  useEffect(() => {
+    console.log("searchModal durumu=", searchModal)
 
+  }, [searchModal]);
+  useEffect(() => {
+    console.log("modalopen durumu=", modalOpen)
+
+  }, [modalOpen]);
   return (
     <div className="flex flex-row">
       {
@@ -44,15 +51,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="flex flex-col gap-40 w-full overflow-hidden bg-white dark:bg-coal-500 transition-all duration-500">
               <Header />
               <main
-                className={`bg-transparent px-10 py-24 bg-white dark:bg-coal-500 transition-all min-h-screen duration-500 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'} transition-all w-full duration-500 ease-in-out z-0`}
+                className={`bg-transparent px-10 py-24  ${searchModal ? 'blur-md' : 'blur-none'} bg-white dark:bg-coal-500 transition-all min-h-screen duration-500 ${sidebarIsOpen ? 'lg:pl-[110px]' : 'lg:pl-[324px]'} transition-all w-full duration-500 ease-in-out z-0`}
               >
-                <Search />
-                <Share />
-                <Give />
-                <ReportUser />
                 {children}
               </main>
+         
+              <Share />
+              <Give />
+              <ReportUser />
             </div>
+            {searchModal && <Search />}
           </>
         )
       }
