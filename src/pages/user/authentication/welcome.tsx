@@ -21,8 +21,7 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
-            style={{ zIndex: 10000000000000 }}
+            className="fixed inset-0 flex items-center justify-center "
             onClick={() => setModalOpen(false)}
         >
             <div
@@ -32,7 +31,6 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
                 <button
                     className="absolute top-4 right-4 text-gray-600 z-20"
                     onClick={() => setModalOpen(false)}
-                    style={{ zIndex: 9999 }}  // 
                 >
                     ✖
                 </button>
@@ -44,6 +42,7 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
 
 const WelcomeModal = () => {
     const location = window.location.pathname;
+    const { modalOpen} = metronicContext()
     const accountCards = [
         {
             title: "Personal info",
@@ -103,7 +102,7 @@ const WelcomeModal = () => {
     ];
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-10  ">
+            <div className={`flex flex-col gap-10 ${modalOpen ? 'blur' : 'blur-none'}`}>
                 {/* {Sub  menu} */}
                 <Menu />
                 <div className="flex flex-col gap-[14px]">

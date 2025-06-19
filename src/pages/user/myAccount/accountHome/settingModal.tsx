@@ -87,7 +87,7 @@ const Modal = () => {
     const [selectedImage, setSelectedImage] = useState<string>(ExampleUser);
     const [avaibality, setAvaibality] = useState(true)
     const [newMessage, setNewMessage] = useState(true)
-    const { modalOpen, setModalOpen } = metronicContext()
+    const { modalOpen } = metronicContext()
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
@@ -106,7 +106,7 @@ const Modal = () => {
                     }
                 });
             },
-            { threshold: 0.6 }
+            { threshold: 1 }
         );
 
         sections.forEach((section) => observer.observe(section));
@@ -188,7 +188,14 @@ const Modal = () => {
                                 <a
                                     key={item.id}
                                     href={`#${item.id}`}
-                                    className={`subItem hover:bg-gray-100 ${activeSelection === item.id ? "selectedItem" : ""} pl-5`}
+                                    className={`subItem 
+                                            ${["advanced-settings", "authentication", "external-services"].includes(item.id)
+                                            ? "hover:bg-transparent cursor-default"
+                                            : "hover:bg-gray-100"} 
+                                            ${activeSelection === item.id && !["advanced-settings", "authentication", "external-services"].includes(item.id)
+                                            ? "selectedItem"
+                                            : ""} 
+                                            pl-5`}
                                     onClick={() => setActiveSelection(item.id)}
                                 >
                                     {item.hasDot && (

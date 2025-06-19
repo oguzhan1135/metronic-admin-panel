@@ -26,7 +26,7 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
 
     return (
         <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 "
+            className="fixed inset-0 flex items-center justify-center "
             style={{ zIndex: 10000000000000 }}
             onClick={() => setModalOpen(false)}
         >
@@ -49,10 +49,11 @@ const ModalContent: React.FC<ModalProps> = ({ children }) => {
 
 const Modal = () => {
     const location = window.location.pathname;
+    const { modalOpen } = metronicContext()
 
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-10 ">
+            <div className={`flex flex-col gap-10 ${modalOpen ? 'blur' : 'none'}`}>
                 <div className="flex py-10 flex-col gap-3 items-center justify-center relative bg-map bg-cover  dark:bg-map-dark z-10">
                     <div className="rounded-full border border-success">
                         <img src={Jennifer} alt="" className="size-[100px]" />
