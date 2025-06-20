@@ -18,6 +18,8 @@ interface LayoutProps {
     setReportModal: React.Dispatch<React.SetStateAction<boolean>>
     shareModal: boolean;
     setShareModal: React.Dispatch<React.SetStateAction<boolean>>
+    theme: string;
+    setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 const LayoutContext = createContext<LayoutProps | undefined>(undefined);
 
@@ -39,6 +41,7 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const [giveModal, setGiveModal] = useState(false);
     const [reportModal, setReportModal] = useState(false);
     const [shareModal, setShareModal] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
 
     useEffect(() => {
@@ -49,9 +52,10 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
     }, [location.pathname])
 
+
     return (
         <LayoutContext.Provider value={{
-            sidebarWidth, setSidebarWidth, sidebarIsOpen, setSidebarIsOpen, modalOpen, setModalOpen, settingModalOpen, setSettingModal, searchModal, setSearchModal, giveModal, setGiveModal, reportModal, setReportModal, shareModal, setShareModal
+            sidebarWidth, setSidebarWidth, sidebarIsOpen, setSidebarIsOpen, modalOpen, setModalOpen, settingModalOpen, setSettingModal, searchModal, setSearchModal, giveModal, setGiveModal, reportModal, setReportModal, shareModal, setShareModal, theme, setTheme
         }}>
             {children}
         </LayoutContext.Provider>

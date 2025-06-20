@@ -15,7 +15,7 @@ import Files from '@assets/some-files.svg'
 import Handcart from '@assets/handcart.svg'
 import SidebarLeft from '@assets/black-left-line.svg'
 import MLogo from '@assets/M-logo.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
 import { Link } from 'react-router'
 
@@ -499,10 +499,29 @@ const menuData: MenuItem[] = [
 
 const Sidebar = () => {
     const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
-    const [activeSubItems, setActiveSubItems] = useState<string[]>(["light"]);
+    const [activeSubItems, setActiveSubItems] = useState<string[]>([""]);
     const [childSub, setChildSub] = useState<string>("");
     const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([]);
-    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth, giveModal, reportModal, searchModal, shareModal } = metronicContext();
+    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth, giveModal, reportModal, searchModal, shareModal, theme } = metronicContext();
+
+    useEffect(() => {
+        const pathname = location.pathname;
+        const last = pathname.split("/").filter(Boolean).pop() || ""
+
+        let active = last;
+
+        if (pathname === "/") {
+            if (theme === "light" || theme === "dark") {
+                active = theme;
+            }
+        }
+
+        setActiveSubItems([active]);
+        setChildSub(active);
+        setActiveGrandChildItems([active]);
+
+    }, [location.pathname, theme])
+
 
     const toggleMenuItem = (key: string) => {
         setOpenMenuItems((prevState) =>
@@ -518,14 +537,14 @@ const Sidebar = () => {
         );
     };
     const toggleSubItems = (key: string) => {
-        setActiveSubItems([]);
+        setActiveSubItems([])
         setActiveSubItems((prevState) =>
             prevState.includes(key)
                 ? prevState.filter((item) => item !== key)
                 : [...prevState, key]
         );
         if (key === activeSubItems[0]) {
-            setActiveSubItems([]);
+            setActiveSubItems([])
         }
     };
 
@@ -552,8 +571,6 @@ const Sidebar = () => {
                 setSidebarWidth(70)
             }
         }
-
-
     }
     const hoverDownSidebar = () => {
         if (sidebarIsOpen === false) {
@@ -603,18 +620,35 @@ const Sidebar = () => {
                                     onClick={() => toggleMenuItem(menuItem.key)}
                                     className="flex flex-row justify-between items-center py-3 pb-2 hover: group cursor-pointer"
                                 >
-                                    <div className="flex flex-row gap-2.5 items-center">
-                                        <img src={menuItem.icon} alt="dashboard-icon" />
-                                        {
-                                            sidebarWidth == 280 ?
-                                                <>
-                                                    <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
-                                                        {menuItem.label}
-                                                    </span>
-                                                </> : null
-                                        }
+                                    {
+                                        menuItem.subItems ?
+                                            <>
+                                                <div className="flex flex-row gap-2.5 items-center">
+                                                    <img src={menuItem.icon} alt="dashboard-icon" />
+                                                    {
+                                                        sidebarWidth == 280 ?
+                                                            <>
+                                                                <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
+                                                                    {menuItem.label}
+                                                                </span>
+                                                            </> : null
+                                                    }
 
-                                    </div>
+                                                </div>
+                                            </> :
+                                            <Link to={location} className="flex flex-row gap-2.5 items-center">
+                                                <img src={menuItem.icon} alt="dashboard-icon" />
+                                                {
+                                                    sidebarWidth == 280 ?
+                                                        <>
+                                                            <span className="text-gray-800 text-b-14-22-500 group-hover:text-primary transition-colors">
+                                                                {menuItem.label}
+                                                            </span>
+                                                        </> : null
+                                                }
+
+                                            </Link>
+                                    }
 
                                     {menuItem.subItems && sidebarWidth == 280 ? (
                                         <>

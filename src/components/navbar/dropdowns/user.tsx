@@ -16,8 +16,11 @@ import FlagFrench from '@assets/france.svg'
 import FlagSpanish from '@assets/spain.svg'
 import FlagJapan from '@assets/japan.svg'
 import FlagGerman from '@assets/germany.svg'
+import { metronicContext } from '@context/layoutContet';
 
 const User = () => {
+    const { setTheme } = metronicContext();
+
     const [darkMode, setDarkMode] = useState(() => {
         return localStorage.getItem('theme') === 'dark';
     });
@@ -55,7 +58,7 @@ const User = () => {
     const toggleDarkMode = () => {
         const currentTheme = document.documentElement.classList.contains('dark');
         const newTheme = currentTheme ? 'light' : 'dark';
-
+        setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
 
         if (newTheme === 'dark') {
