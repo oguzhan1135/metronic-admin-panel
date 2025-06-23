@@ -9,7 +9,7 @@ const pathMapping: { [key: string]: string } = {
     default: "Default",
     company: "Company",
     nft: "NFT",
-    blogger: "NFT",
+    blogger: "Blogger",
     crm: "CRM",
     gamer: "Gamer",
     feeds: "Feeds",

@@ -498,7 +498,7 @@ const menuData: MenuItem[] = [
 
 
 const Sidebar = () => {
-    const [openMenuItems, setOpenMenuItems] = useState<string[]>(['dashboards']);
+    const [openMenuItems, setOpenMenuItems] = useState<string[]>(['']);
     const [activeSubItems, setActiveSubItems] = useState<string[]>([""]);
     const [childSub, setChildSub] = useState<string>("");
     const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([]);
@@ -506,8 +506,10 @@ const Sidebar = () => {
 
     useEffect(() => {
         const pathname = location.pathname;
-        const last = pathname.split("/").filter(Boolean).pop() || ""
+        const pathParts = pathname.split("/").filter(Boolean);
 
+        const last = pathParts[pathParts.length - 1] || "";
+        const secondLast = pathParts[pathParts.length - 2] || "";
         let active = last;
 
         if (pathname === "/") {
@@ -516,11 +518,30 @@ const Sidebar = () => {
             }
         }
 
-        setActiveSubItems([active]);
+        setActiveSubItems([secondLast]);
         setChildSub(active);
         setActiveGrandChildItems([active]);
+        setOpenMenuItems((prev) => {
+            const newState = [...prev];
+            if (!newState.includes(secondLast)) {
+                newState.push(secondLast);
+            }
+            return newState;
+        });
+    }, [location.pathname, theme]);
 
-    }, [location.pathname, theme])
+    useEffect(() => {
+        const pathname = location.pathname;
+
+        if (pathname === "/") {
+            setOpenMenuItems(["dashboards"])
+            if (theme === "light") {
+                setActiveSubItems(["light"])
+            } else {
+                setActiveSubItems(["dark"])
+            }
+        }
+    }, []);
 
 
     const toggleMenuItem = (key: string) => {
@@ -529,6 +550,7 @@ const Sidebar = () => {
                 ? prevState.filter((item) => item !== key)
                 : [...prevState, key]
         );
+
     };
 
     const toggleGrandChildItems = (key: string) => {

@@ -3,14 +3,18 @@ import { IoMdClose, IoMdExit } from "react-icons/io"
 import Gitlab from '@assets/gitlab.svg'
 import { Link } from "react-router"
 import AvatarGroup from '@assets/avatar-group.svg'
-import { FaEllipsisVertical } from "react-icons/fa6"
+import { FaAngleRight, FaEllipsisVertical, FaUsers } from "react-icons/fa6"
 import Arlene from '@assets/arlene-mccoy.svg'
 import { LuCheckCheck } from "react-icons/lu"
 import Cody from '@assets/cody-fisher.svg'
 import Esther from '@assets/ester-hoeard.svg'
 import Tyler from '@assets/tyler-hero.svg'
 import Adam from '@assets/tyler-hero.svg'
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { CiMail, CiUser } from "react-icons/ci"
+import { MdOutlineSettingsSuggest } from "react-icons/md"
+import { IoSettingsOutline } from "react-icons/io5"
+import { FaRegCalendarAlt } from "react-icons/fa"
 
 interface ChatProps {
     closeDropdowns: () => void;
@@ -19,6 +23,32 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
 
     const location = window.location.pathname
     const [decline, setDecline] = useState(true)
+    const [more, setMore] = useState(false)
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (!target.closest(".morea-area")) {
+                setMore(false);
+            }
+        };
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setMore(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [more]);
+
     return (
         <div className="absolute  top-12 md:right-0 right-[-40px] w-[420px]">
             <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-200 border  flex-col">
@@ -43,10 +73,57 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
                         </div>
                         <div className="flex flex-row items-center gap-2.5">
                             <img src={AvatarGroup} alt="" className="w-[93px] h-[30px]" />
-                            <div className="p-2 hover:bg-gray-200 flex items-center justify-center rounded-md cursor-pointer duration-200">
+                            <button className="p-[7px] rounded-md hover:bg-light" onClick={() => setMore(!more)}>
                                 <FaEllipsisVertical className={`text-gray-600 `} />
-                            </div>
+                            </button>
+                            {
+                                more &&
+                                <div className="absolute more-area bg-white dark:bg-coal-300 p-1.5 min-w-[150px] top-32 right-7 rounded-md">
+                                    <div className="flex flex-col w-full">
+                                        <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                            <CiUser className="dropdown-icon" />
+                                            <span className="text-gray-800 text-b-13-14-400">Invite Users</span>
+                                        </Link>
 
+                                        <div
+                                            className="relative flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5 justify-between"
+                                            onMouseEnter={() => setIsSubMenuOpen(true)}
+                                            onMouseLeave={() => setIsSubMenuOpen(false)}
+                                        >
+                                            <Link to={location} className="flex flex-row items-center gap-2.5">
+                                                < FaUsers className="dropdown-icon" />
+                                                <span className="text-gray-800 text-b-13-14-400">Team</span>
+                                            </Link>
+                                            <FaAngleRight className="size-[14px] text-gray-600" />
+
+                                            {isSubMenuOpen && (
+                                                <div
+                                                    className="absolute top-0 right-[140px] min-w-[140px] bg-white dark:bg-coal-300 border rounded-md p-1.5 shadow-lg "
+                                                    onMouseEnter={() => setIsSubMenuOpen(true)}
+                                                    onMouseLeave={() => setIsSubMenuOpen(false)}
+                                                >
+                                                    <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                        <CiMail className="dropdown-icon" />
+                                                        <span className="text-gray-800 text-b-13-14-400">Find Members</span>
+                                                    </Link>
+                                                    <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                        <FaRegCalendarAlt className="dropdown-icon" />
+                                                        <span className="text-gray-800 text-b-13-14-400">Meetings</span>
+                                                    </Link>
+                                                    <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                        <MdOutlineSettingsSuggest className="dropdown-icon" />
+                                                        <span className="text-gray-800 text-b-13-14-400">Group Setting</span>
+                                                    </Link>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                            <IoSettingsOutline className="dropdown-icon" />
+                                            <span className="text-gray-800 text-b-13-14-400">Setting</span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
                     <div className="flex flex-col overflow-hidden py-5">
@@ -195,7 +272,7 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 export default Chat

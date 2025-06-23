@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io"
 import { IoClose, IoCloudUploadOutline, IoSettingsOutline } from "react-icons/io5";
 import Tyler from '@assets/tyler-hero.svg'
@@ -10,7 +10,7 @@ import PDF from '@assets/pdf.svg'
 import Figma from '@assets/figma.svg'
 import XLS from '@assets/xls.svg'
 import { Link, useLocation } from "react-router";
-import { FaCheck, FaImage } from "react-icons/fa6";
+import { FaAngleRight, FaCheck, FaImage } from "react-icons/fa6";
 import AvatarGroup from '@assets/twice-avatar-group.svg'
 import AvatarGroupThird from '@assets/avatar-group.svg'
 import DOC from '@assets/doc.svg'
@@ -19,6 +19,9 @@ import DeepMind from '@assets/google-deepmind.svg'
 import Artistic from '@assets/artistic-expression.svg'
 import Jira from '@assets/jira-work.svg'
 import { FaCheckCircle } from "react-icons/fa";
+import { CiViewList, CiMail } from "react-icons/ci";
+import { MdOutlineSms, MdModeEdit, MdDeleteOutline } from "react-icons/md";
+import { TbTableExport } from "react-icons/tb";
 
 interface NotificationProps {
     closeDropdowns: () => void;
@@ -26,7 +29,31 @@ interface NotificationProps {
 const Notification = ({ closeDropdowns }: NotificationProps) => {
 
     const [selectedTab, setSelectedTab] = useState("All")
+    const [more, setMore] = useState(false)
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     let location = useLocation();
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (!target.closest(".morea-area")) {
+                setMore(false);
+            }
+        };
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setMore(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [more]);
     return (
         <div className="absolute  top-12 md:right-0 right-[-40px] w-[420px]">
             <div className="flex bg-white dark:bg-coal-500 rounded-xl border-gray-200 border  flex-col">
@@ -53,9 +80,62 @@ const Notification = ({ closeDropdowns }: NotificationProps) => {
                             <span className={`${selectedTab === "Following" ? "text-b-13-14-500 text-primary" : "text-b-13-14-400 text-gray-800"} group-hover:text-primary text-animation`}>Following</span>
                         </div>
                     </div>
-                    <button className="p-[7px] rounded-md hover:bg-light">
+                    <button className="p-[7px] rounded-md hover:bg-light" onClick={() => setMore(!more)}>
                         <IoSettingsOutline className="text-gray-600 size-[18px]" />
                     </button>
+                    {
+                        more &&
+                        <div className="absolute more-area bg-white dark:bg-coal-300 p-1.5 min-w-[150px] top-14 right-7 rounded-md">
+                            <div className="flex flex-col w-full">
+                                <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                    <CiViewList className="dropdown-icon" />
+                                    <span className="text-gray-800 text-b-13-14-400">View</span>
+                                </Link>
+
+                                <div
+                                    className="relative flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5 justify-between"
+                                    onMouseEnter={() => setIsSubMenuOpen(true)}
+                                    onMouseLeave={() => setIsSubMenuOpen(false)}
+                                >
+                                    <Link to={location} className="flex flex-row items-center gap-2.5">
+                                        < TbTableExport className="dropdown-icon" />
+                                        <span className="text-gray-800 text-b-13-14-400">Export</span>
+                                    </Link>
+                                    <FaAngleRight className="size-[14px] text-gray-600" />
+
+                                    {isSubMenuOpen && (
+                                        <div
+                                            className="absolute top-0 right-[140px] min-w-[120px] bg-white dark:bg-coal-300 border rounded-md p-1.5 shadow-lg "
+                                            onMouseEnter={() => setIsSubMenuOpen(true)}
+                                            onMouseLeave={() => setIsSubMenuOpen(false)}
+                                        >
+                                            <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                <CiMail className="dropdown-icon" />
+                                                <span className="text-gray-800 text-b-13-14-400">Gmail</span>
+                                            </Link>
+                                            <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                <MdOutlineSms className="dropdown-icon" />
+                                                <span className="text-gray-800 text-b-13-14-400">SMS</span>
+                                            </Link>
+                                            <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                                <TbTableExport className="dropdown-icon" />
+                                                <span className="text-gray-800 text-b-13-14-400">Push</span>
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+                                <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                    <MdModeEdit className="dropdown-icon" />
+                                    <span className="text-gray-800 text-b-13-14-400">Edit</span>
+                                </Link>
+                                <Link to={location} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                    <MdDeleteOutline className="dropdown-icon" />
+                                    <span className="text-gray-800 text-b-13-14-400">Delete</span>
+                                </Link>
+
+                            </div>
+                        </div>
+                    }
                 </div>
                 <div className="flex flex-col">
                     <div className="flex flex-col overflow-auto max-h-[500px] custom-scroll">
