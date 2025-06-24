@@ -658,7 +658,7 @@ const Sidebar = () => {
 
                                                 </div>
                                             </> :
-                                            <Link to={location} className="flex flex-row gap-2.5 items-center">
+                                            <Link to={location} className="flex flex-row gap-2.5 items-center group w-full">
                                                 <img src={menuItem.icon} alt="dashboard-icon" />
                                                 {
                                                     sidebarWidth == 280 ?

@@ -10,7 +10,7 @@ import Cody from '@assets/cody-fisher.svg'
 import Esther from '@assets/ester-hoeard.svg'
 import Tyler from '@assets/tyler-hero.svg'
 import Adam from '@assets/tyler-hero.svg'
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { CiMail, CiUser } from "react-icons/ci"
 import { MdOutlineSettingsSuggest } from "react-icons/md"
 import { IoSettingsOutline } from "react-icons/io5"
@@ -48,6 +48,43 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
             document.removeEventListener("keydown", handleKeyDown);
         };
     }, [more]);
+
+
+
+    const [message, setMessage] = useState<React.ReactElement[]>([]);
+    const [sendText, setSendText] = useState("");
+    const bottomRef = useRef<HTMLDivElement>(null);
+
+
+    const SendMessage = (text: string) => {
+        const currentTime = new Date();
+        const timeString = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        const newMessage = (
+            <div className="flex flex-row gap-[15px] pl-5 ml-auto pr-5">
+                <div className="flex flex-col gap-[5px]">
+                    <div className="p-3 bg-primary w-max max-w-[290px] rounded-t-lg rounded-bl-lg">
+                        <p className="text-b-13-20-400 text-white">{text}</p>
+                    </div>
+                    <div className="flex flex-row items-center gap-[7px] ml-auto">
+                        <span className="text-b-11-12-500 text-gray-500">{timeString}</span>
+                        <LuCheckCheck className="text-success" />
+                    </div>
+                </div>
+                <div className="pr-1 mt-auto bg-transparent relative">
+                    <img src={Cody} alt="" />
+                    <span className="size-[5px] absolute bottom-1 right-[6px]  rounded-full bg-success"></span>
+                </div>
+            </div>
+        );
+
+        setMessage(prev => [...prev, newMessage]);
+        setSendText("");
+
+        setTimeout(() => {
+            bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+    };
 
     return (
         <div className="absolute  top-12 md:right-0 right-[-40px] w-[420px]">
@@ -219,7 +256,10 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
                                     <span className="text-b-11-12-500 text-gray-500">17:40</span>
                                 </div>
                             </div>
-
+                            {
+                                message
+                            }
+                            <div ref={bottomRef}></div>
 
                         </div>
                         {
@@ -259,11 +299,21 @@ const Chat = ({ closeDropdowns }: ChatProps) => {
                                         type="text"
                                         className="outline-none text-b-11-12-400 text-gray-600 flex w-full bg-transparent"
                                         placeholder="Write a message"
+                                        value={sendText}
+                                        onChange={(e) => setSendText(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter" && sendText.trim() !== "") {
+                                                SendMessage(sendText);
+                                            }
+                                        }}
                                     />
-                                    <IoMdExit className="text-gray-600 -rotate-90 size-[30px]" />
-                                    <a className="flex items-center justify-center py-2 px-2.5 bg-black cursor-pointer rounded-lg">
+                                    <button>
+                                        <IoMdExit className="text-gray-600 -rotate-90 size-[18px]" />
+
+                                    </button>
+                                    <button onClick={() => SendMessage(sendText)} className="flex items-center justify-center py-2 px-2.5 bg-black cursor-pointer rounded-lg">
                                         <span className="text-b-11-12-500 text-white">Send</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
