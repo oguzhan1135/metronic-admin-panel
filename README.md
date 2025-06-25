@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# 📊 Metronic Demo1 Clone (TailwindCSS + Vite + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a fully responsive, pixel-perfect **Metronic Demo1** clone built entirely with **TailwindCSS**, **Vite**, and **TypeScript**, without using any ready-made UI component libraries.
 
-Currently, two official plugins are available:
+The project strictly follows the reference design structure, focusing on clean code, flexibility, and maintainability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Vite** — Fast front-end tooling
+- **TypeScript** — Strongly-typed JavaScript
+- **Tailwind CSS** — Utility-first CSS framework
+- **Figma** — Design reference source
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🏗️ Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 100% responsive and mobile-friendly
+- Built entirely with TailwindCSS (no UI libraries)
+- Clean, scalable, maintainable code structure
+- Pixel-perfect implementation based on Metronic Demo1
+- Optimized for performance
+
+---
+
+## 📂 Project Structure
+
+```bash
+├── public/            # Static assets
+├── src/
+│   ├── components/    # Reusable UI components
+│   ├── layouts/       # Page layouts
+│   └── pages/         # Application pages
+├── index.html
+├── tailwind.config.ts # Tailwind configuration
+├── vite.config.ts     # Vite configuration
+├── package.json
+└── README.md
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 💻 Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Clone the repository
+```bash
+git clone https://github.com/oguzhan1135/metronic-admin-panel.git
 ```
+
+### Navigate to project directory
+```bash
+cd metronic-admin-panel
+```
+
+### Install dependencies
+```bash
+npm install
+```
+### Start the development server
+```bash
+npm run dev
+```
+After running the project, you can access the application via:
+
+```bash
+http://localhost:5173
+```
+> Note: Port may differ depending on your Vite configuration.
+
+
