@@ -5,6 +5,7 @@ import Evernote from '@assets/evernote.svg'
 import Gitlab from '@assets/gitlab.svg'
 import Webdev from '@assets/webdev.svg'
 import Switch from "@components/switch"
+import { Link } from "react-router-dom"
 const DropdownApps = () => {
     const [apps, setApps] = useState([
         {
@@ -62,7 +63,7 @@ const DropdownApps = () => {
                                     <div className="flex flex-row gap-2 items-center">
                                         {item.icon}
                                         <div className="flex flex-col gap-1.5">
-                                            <span className="text-gray-900 text-b-13-14-500">{item.name}</span>
+                                            <Link to={location} className="text-gray-900 text-b-13-14-500 hover:text-primary text-animation w-max">{item.name}</Link>
                                             <span className="text-gray-700 text-b-11-12-400">{item.description}</span>
                                         </div>
                                     </div>

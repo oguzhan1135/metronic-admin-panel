@@ -17,6 +17,7 @@ import FlagSpanish from '@assets/spain.svg'
 import FlagJapan from '@assets/japan.svg'
 import FlagGerman from '@assets/germany.svg'
 import { metronicContext } from '@context/layoutContet';
+import { Link } from 'react-router-dom';
 
 const User = () => {
     const { setTheme } = metronicContext();
@@ -98,21 +99,22 @@ const User = () => {
                     </div>
                 </div>
 
-                <div className="border-b-2 pb-2 ">
-                    <div className="px-2 pt-2">
-                        <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 rounded-md hover: group">
-                            <BsPersonVcard className='dropdown-icon  group-hover:text-primary' />
-
-                            <span className='text-gray-800 text-b-13-14-400 '>Public Profile</span>
-                        </div>
+                <div className="border-b-2">
+                    <div className="px-2 pt-2 flex">
+                        <Link to={'/user/publicProfiles/profiles/default'} className='w-full'>
+                            <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 rounded-md hover: group">
+                                <BsPersonVcard className='dropdown-icon  group-hover:text-primary' />
+                                <span className='text-gray-800 text-b-13-14-400 '>Public Profile</span>
+                            </div>
+                        </Link>
                     </div>
-
-                    <div className="px-2">
-                        <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 hover: group rounded-md">
-                            <FaRegUserCircle className='dropdown-icon group-hover:text-primary' />
-
-                            <span className='text-gray-800 text-b-13-14-400'>My Profile</span>
-                        </div>
+                    <div className="px-2 flex ">
+                        <Link to={'/user/myAccount/accountHome/userProfile'} className='w-full'>
+                            <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 hover: group rounded-md">
+                                <FaRegUserCircle className='dropdown-icon group-hover:text-primary' />
+                                <span className='text-gray-800 text-b-13-14-400'>My Profile</span>
+                            </div>
+                        </Link>
                     </div>
 
                     <div
@@ -132,35 +134,35 @@ const User = () => {
                             <div className="absolute w-56 flex right-[254px] -top-14 rounded-xl bg-white dark:bg-coal-300 border">
                                 <div className="flex flex-col w-full">
                                     <div className="flex flex-col p-3 border-b w-full">
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        <Link to={'/user/myAccount/accountHome/getStarted'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <FaRocket className="dropdown-icon" />
                                             <span className="text-gray-800 text-b-13-14-400">Get Started</span>
-                                        </div>
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        </Link>
+                                        <Link to={'/user/myAccount/accountHome/userProfile'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <FaRegUserCircle className="dropdown-icon" />
                                             <span className="text-gray-800 text-b-13-14-400">My Profile</span>
-                                        </div>
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        </Link>
+                                        <Link to={'/user/myAccount/accountHome/userProfile'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <FaMoneyBill className="dropdown-icon" />
                                             <span className="text-gray-800 text-b-13-14-400">Billing</span>
-                                        </div>
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        </Link>
+                                        <Link to={'/user/myAccount/security/overview'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <RiShieldUserLine className="dropdown-icon size-8" />
                                             <span className="text-gray-800 text-b-13-14-400">Security</span>
-                                        </div>
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        </Link>
+                                        <Link to={'/user/myAccount/members/teams'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <CgScan className="dropdown-icon" />
                                             <span className="text-gray-800 text-b-13-14-400">Members & Roles</span>
-                                        </div>
-                                        <div className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
+                                        </Link>
+                                        <Link to={'/user/myAccount/integrations'} className="flex flex-row items-center px-2 py-2 hover:bg-gray-100 rounded-md gap-2.5">
                                             <GiAbstract039 className="dropdown-icon" />
                                             <span className="text-gray-800 text-b-13-14-400">Integrations</span>
-                                        </div>
+                                        </Link>
                                     </div>
                                     <div className="flex flex-row justify-between items-center px-5 py-4 hover:bg-gray-100 rounded-md">
                                         <div className="flex flex-row items-center gap-2.5">
                                             <IoIosNotifications className="dropdown-icon" />
-                                            <span className="text-gray-800 text-b-13-14-400">Notifications</span>
+                                            <Link to={'/user/myAccount/security/overview'} className="text-gray-800 text-b-13-14-400 w-max">Notifications</Link>
                                         </div>
                                         <Switch
                                             status={notification}
@@ -174,10 +176,10 @@ const User = () => {
                     </div>
 
                     <div className="px-2">
-                        <div className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 hover: group rounded-md ">
+                        <Link to={location} className="flex flex-row items-center px-3 py-3 gap-2.5 cursor-pointer hover:bg-gray-100 hover: group rounded-md ">
                             <GoCodeReview className='dropdown-icon group-hover:text-primary' />
                             <span className='text-gray-800 text-b-13-14-400'>Devs Forum</span>
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="px-2 relative" onMouseEnter={() => setLanguageSubMenu(true)}
@@ -238,13 +240,11 @@ const User = () => {
 
                 </div>
 
-                <div className=" p-5">
-                    <div className="flex border rounded-md border-gray-300 h-8 items-center justify-center cursor-pointer hover:bg-primary text-animation hover: group">
+                <button className=" p-5">
+                    <Link to={'/user/authentication/classic/signIn'} className="flex border rounded-md border-gray-300 h-8 items-center justify-center cursor-pointer hover:bg-primary text-animation hover: group">
                         <span className='text-gray-700 text-b-12-12-500 group-hover:text-white text-animation'>Login out</span>
-                    </div>
-
-                </div>
-
+                    </Link>
+                </button>
             </div>
 
         </div>
