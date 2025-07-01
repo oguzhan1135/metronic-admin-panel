@@ -287,14 +287,20 @@ const IpAddresesTable = () => {
                                                     <span className='text-b-14-14-400 text-gray-800'>{item.method}</span>
                                                 </td>
                                                 <td className='px-[30px] py-[21px] text-right border border-gray-200'>
-                                                    <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <FaEdit className="text-gray-600 size-[18px]" />
+                                                    <div className=" flex items-center justify-center">
+                                                        <a href={"#"} className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200 ">
+                                                            <FaEdit className="text-gray-600 size-[18px]" />
+                                                        </a>
                                                     </div>
+
                                                 </td>
                                                 <td className='px-[30px] py-[21px] text-right border border-gray-200'>
-                                                    <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <FaRegTrashAlt className="text-gray-600 size-[18px]" />
+                                                    <div className=" flex items-center justify-center">
+                                                        <a href="#" className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                            <FaRegTrashAlt className="text-gray-600 size-[18px]" />
+                                                        </a>
                                                     </div>
+
                                                 </td>
                                             </tr>
                                         ))

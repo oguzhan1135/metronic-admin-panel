@@ -98,9 +98,9 @@ const Integrations = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Integrations</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Enhance Workflows with Advanced Integrations.</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Add New Integration
-                </button>
+                </a>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
@@ -115,19 +115,19 @@ const Integrations = () => {
                                         <div className="flex flex-col gap-5">
                                             <div className="flex flex-row items-center justify-between  pt-[30px] px-[30px]">
                                                 {integration.icon}
-                                                <button className="p-[7px] hover:bg-gray-200 text-animation rounded-md">
+                                                <a href="#" className="p-[7px] hover:bg-gray-200 text-animation rounded-md">
                                                     <FaExternalLinkAlt className="size-[18px] text-gray-600" />
-                                                </button>
+                                                </a>
                                             </div>
                                             <div className="flex flex-col gap-2.5 pb-2.5  px-[30px]">
                                                 <Link to={location} className="text-b-16-16-500 text-gray-900 hover:text-primary text-animation w-max">{integration.integrationName}</Link>
                                                 <p className="text-b-13-20-400 text-gray-700">{integration.description}</p>
                                             </div>
                                             <div className="px-[30px] py-[14px] flex flex-row items-center justify-between border-t">
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                     <LuSquareMousePointer className="text-gray-500 size-[14px]" />
                                                     Connect
-                                                </button>
+                                                </a>
                                                 <Switch
                                                     status={integration.status}
                                                     size="medium"
@@ -171,9 +171,9 @@ const Integrations = () => {
                                     User-Friendly Solutions Tailored for Efficient and Innovative Project Management.
                                 </p>
                             </div>
-                            <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                            <a href="#" className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                 Start Now
-                            </button>
+                            </a>
                         </div>
                     </>
                 }

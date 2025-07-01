@@ -48,25 +48,25 @@ const Menu = () => {
                         >
 
 
-                            <Link to={"/user/myAccount/accountHome/getStarted"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/get-started"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Get Started
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/userProfile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/user-profile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 User Profile
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/companyProfile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/company-profile"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Company Profile
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/settingSidebar"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/setting-sidebar"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - With Sidebar
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/settingEnterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/setting-enterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Enterprise
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/settingPlain"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/setting-plain"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Plain
                             </Link>
-                            <Link to={"/user/myAccount/accountHome/settingModal"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/accountHome/setting-modal"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Setting - Modal
                             </Link>
                         </div>
@@ -85,16 +85,16 @@ const Menu = () => {
                             onMouseEnter={() => setBillingOpen(true)}
                             onMouseLeave={() => setBillingOpen(false)}
                         >
-                            <Link to={"/user/myAccount/billing/billingBasic"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billing-basic"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Biiling - Basic
                             </Link>
-                            <Link to={"/user/myAccount/billing/billingEnterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billing-enterprise"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Billing - Enterprise
                             </Link>
-                            <Link to={"/user/myAccount/billing/billingPlans"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billing-plans"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Plans
                             </Link>
-                            <Link to={"/user/myAccount/billing/billingHistory"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/billing/billing-history"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Billing History
                             </Link>
                         </div>
@@ -113,25 +113,25 @@ const Menu = () => {
                             onMouseEnter={() => setSecurityOpen(true)}
                             onMouseLeave={() => setSecurityOpen(false)}
                         >
-                            <Link to={"/user/myAccount/security/getStarted"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/get-started"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Get Started
                             </Link>
                             <Link to={"/user/myAccount/security/overview"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Security Overview
                             </Link>
-                            <Link to={"/user/myAccount/security/allowedIpAddresses"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/allowed-ip-addresses"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Allowed IP Addresses
                             </Link>
-                            <Link to={"/user/myAccount/security/privacySetting"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/privacy-setting"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Privacy Setting
                             </Link>
-                            <Link to={"/user/myAccount/security/deviceManagament"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/device-managament"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Devive Management
                             </Link>
-                            <Link to={"/user/myAccount/security/backupRecovery"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/backup-recovery"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Baackup & Recovery
                             </Link>
-                            <Link to={"/user/myAccount/security/currentSessions"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/security/current-sessions"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Current Sessions
                             </Link>
                             <Link to={"/user/myAccount/security/log"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
@@ -155,31 +155,31 @@ const Menu = () => {
                         >
 
 
-                            <Link to={"/user/myAccount/members/teamStarter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/team-starter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Team Starter
                             </Link>
                             <Link to={"/user/myAccount/members/teams"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Teams
                             </Link>
-                            <Link to={"/user/myAccount/members/teamInfo"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/team-info"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Team Info
                             </Link>
-                            <Link to={"/user/myAccount/members/memberStarter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/member-starter"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Members Starter
                             </Link>
-                            <Link to={"/user/myAccount/members/teamMembers"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/team-members"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Team Members
                             </Link>
-                            <Link to={"/user/myAccount/members/importantMember"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/import-member"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Import Members
                             </Link>
                             <Link to={"/user/myAccount/members/roles"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Roles
                             </Link>
-                            <Link to={"/user/myAccount/members/permissionsToggle"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/permissions-toggle"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Permissions - Toggler
                             </Link>
-                            <Link to={"/user/myAccount/members/permissionsCheck"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/members/permissions-check"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Permissions - Check
                             </Link>
                         </div>
@@ -188,7 +188,7 @@ const Menu = () => {
                         <Link to={"/user/myAccount/integrations"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/integrations") ? "text-primary" : "text-gray-700"} `}>Integrations</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/apiKeys") ? "border-b-primary" : "border-none"} cursor-pointer`}>
-                        <Link to={"/user/myAccount/apiKeys"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</Link>
+                        <Link to={"/user/myAccount/api-keys"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/apiKeys") ? "text-primary" : "text-gray-700"} `}>API Keys</Link>
                     </div>
                     <div className={`flex flex-row items-center gap-1 py-5 px-2.5 border-b-2 ${location.startsWith("/user/myAccount/notifications") ? "border-b-primary" : "border-none"} cursor-pointer`}>
                         <Link to={"/user/myAccount/notifications"} className={`text-b-14-14-500 ${location.startsWith("/user/myAccount/notifications") ? "text-primary" : "text-gray-700"} `}>Notificaions</Link>
@@ -213,7 +213,7 @@ const Menu = () => {
                                 Appearance
                             </Link>
 
-                            <Link to={"/user/myAccount/inviteFriend"} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/myAccount/invite-friend"} className="px-5 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 Invite a Friend
                             </Link>
                             <Link to={"/user/myAccount/activity"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">

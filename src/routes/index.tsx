@@ -110,74 +110,74 @@ const Router = () => {
                 <Route path='/user/publicProfiles/activity' element={<Activity />}></Route>
                 <Route path='/user/publicProfiles/campaigns' element={<Campaigns />}></Route>
                 <Route path='/user/publicProfiles/empty' element={<Empty />}></Route>
-                <Route path='/user/publicProfiles/projects/threeColumns' element={<ThreeColumns />}></Route>
-                <Route path='/user/publicProfiles/projects/twoColumns' element={<TwoColumns />}></Route>
-                <Route path='/user/myAccount/accountHome/getStarted' element={<GetStarted />}></Route>
-                <Route path='/user/myAccount/accountHome/userProfile' element={<UserProfile />}></Route>
-                <Route path='/user/myAccount/accountHome/companyProfile' element={<CompanyProfile />}></Route>
-                <Route path='/user/myAccount/accountHome/settingSidebar' element={<SettingSidebar />}></Route>
-                <Route path='/user/myAccount/accountHome/settingEnterprise' element={<SettingEnterprise />}></Route>
-                <Route path='/user/myAccount/accountHome/settingPlain' element={<SettingPlain />}></Route>
-                <Route path='/user/myAccount/accountHome/settingModal' element={<SettingModal />}></Route>
-                <Route path='/user/myAccount/billing/billingBasic' element={<BillingBasic />}></Route>
-                <Route path='/user/myAccount/billing/billingEnterprise' element={<BillingEnterprise />}></Route>
-                <Route path='/user/myAccount/billing/billingPlans' element={<BillingPlan />}></Route>
-                <Route path='/user/myAccount/billing/billingHistory' element={<BillingHistory />}></Route>
-                <Route path='/user/myAccount/security/getStarted' element={<GetStartedSecurity />}></Route>
+                <Route path='/user/publicProfiles/projects/column-3' element={<ThreeColumns />}></Route>
+                <Route path='/user/publicProfiles/projects/column-2' element={<TwoColumns />}></Route>
+                <Route path='/user/myAccount/accountHome/get-started' element={<GetStarted />}></Route>
+                <Route path='/user/myAccount/accountHome/user-profile' element={<UserProfile />}></Route>
+                <Route path='/user/myAccount/accountHome/company-profile' element={<CompanyProfile />}></Route>
+                <Route path='/user/myAccount/accountHome/setting-sidebar' element={<SettingSidebar />}></Route>
+                <Route path='/user/myAccount/accountHome/setting-enterprise' element={<SettingEnterprise />}></Route>
+                <Route path='/user/myAccount/accountHome/setting-plain' element={<SettingPlain />}></Route>
+                <Route path='/user/myAccount/accountHome/setting-modal' element={<SettingModal />}></Route>
+                <Route path='/user/myAccount/billing/billing-basic' element={<BillingBasic />}></Route>
+                <Route path='/user/myAccount/billing/billing-enterprise' element={<BillingEnterprise />}></Route>
+                <Route path='/user/myAccount/billing/billing-plans' element={<BillingPlan />}></Route>
+                <Route path='/user/myAccount/billing/billing-history' element={<BillingHistory />}></Route>
+                <Route path='/user/myAccount/security/get-started' element={<GetStartedSecurity />}></Route>
                 <Route path='/user/myAccount/security/overview' element={<Overview />}></Route>
-                <Route path='/user/myAccount/security/allowedIpAddresses' element={<AllowIpAddresses />}></Route>
-                <Route path='/user/myAccount/security/privacySetting' element={<PrivacySetting />}></Route>
-                <Route path='/user/myAccount/security/deviceManagament' element={<DeviceManagament />}></Route>
-                <Route path='/user/myAccount/security/backupRecovery' element={<BackupRecovery />}></Route>
-                <Route path='/user/myAccount/security/currentSessions' element={<CurrentSessions />}></Route>
+                <Route path='/user/myAccount/security/allowed-ip-addresses' element={<AllowIpAddresses />}></Route>
+                <Route path='/user/myAccount/security/privacy-setting' element={<PrivacySetting />}></Route>
+                <Route path='/user/myAccount/security/device-managament' element={<DeviceManagament />}></Route>
+                <Route path='/user/myAccount/security/backup-recovery' element={<BackupRecovery />}></Route>
+                <Route path='/user/myAccount/security/current-sessions' element={<CurrentSessions />}></Route>
                 <Route path='/user/myAccount/security/log' element={<SecurityLog />}></Route>
-                <Route path='/user/myAccount/members/teamStarter' element={<TeamStarter />}></Route>
+                <Route path='/user/myAccount/members/team-starter' element={<TeamStarter />}></Route>
                 <Route path='/user/myAccount/members/teams' element={<TeamsMembers />}></Route>
-                <Route path='/user/myAccount/members/teamInfo' element={<TeamInfo />}></Route>
-                <Route path='/user/myAccount/members/memberStarter' element={<MemberStarter />}></Route>
-                <Route path='/user/myAccount/members/teamMembers' element={<TeamMembers />}></Route>
-                <Route path='/user/myAccount/members/importantMember' element={<ImportantMember />}></Route>
+                <Route path='/user/myAccount/members/team-info' element={<TeamInfo />}></Route>
+                <Route path='/user/myAccount/members/member-starter' element={<MemberStarter />}></Route>
+                <Route path='/user/myAccount/members/team-members' element={<TeamMembers />}></Route>
+                <Route path='/user/myAccount/members/import-member' element={<ImportantMember />}></Route>
                 <Route path='/user/myAccount/members/roles' element={<Roles />}></Route>
-                <Route path='/user/myAccount/members/permissionsToggle' element={<PermissionsToggle />}></Route>
-                <Route path='/user/myAccount/members/permissionsCheck' element={<PermissionsCheck />}></Route>
+                <Route path='/user/myAccount/members/permissions-toggle' element={<PermissionsToggle />}></Route>
+                <Route path='/user/myAccount/members/permissions-check' element={<PermissionsCheck />}></Route>
                 <Route path='/user/myAccount/integrations' element={<Integrations />}></Route>
                 <Route path='/user/myAccount/notifications' element={<Notifications />}></Route>
-                <Route path='/user/myAccount/apiKeys' element={<ApiKeys />}></Route>
+                <Route path='/user/myAccount/api-keys' element={<ApiKeys />}></Route>
                 <Route path='/user/myAccount/appearance' element={<Appearance />}></Route>
-                <Route path='/user/myAccount/inviteFriend' element={<InviteFriend />}></Route>
+                <Route path='/user/myAccount/invite-friend' element={<InviteFriend />}></Route>
                 <Route path='/user/myAccount/activity' element={<MyAccountActivity />}></Route>
                 <Route path='/user/network/started' element={<NetworkStarted />}></Route>
-                <Route path='/user/network/userCard/miniCards' element={<MiniCards />}></Route>
-                <Route path='/user/network/userCard/teamCrew' element={<TeamCrew />}></Route>
+                <Route path='/user/network/userCard/mini-cards' element={<MiniCards />}></Route>
+                <Route path='/user/network/userCard/team-crew' element={<TeamCrew />}></Route>
                 <Route path='/user/network/userCard/author' element={<Author />}></Route>
                 <Route path='/user/network/userCard/social' element={<Social />}></Route>
                 <Route path='/user/network/userCard/nft' element={<NFTNetwork />}></Route>
-                <Route path='/user/network/userTable/teamCrew' element={<TeamCrewUserBase />}></Route>
-                <Route path='/user/network/userTable/appRoster' element={<AppRoster />}></Route>
-                <Route path='/user/network/userTable/marketAuthors' element={<MarketAuthors />}></Route>
-                <Route path='/user/network/userTable/saasUsers' element={<SaasUsers />}></Route>
-                <Route path='/user/network/userTable/storeClients' element={<StoreClients />}></Route>
+                <Route path='/user/network/userTable/team-crew' element={<TeamCrewUserBase />}></Route>
+                <Route path='/user/network/userTable/app-roster' element={<AppRoster />}></Route>
+                <Route path='/user/network/userTable/market-authors' element={<MarketAuthors />}></Route>
+                <Route path='/user/network/userTable/saas-users' element={<SaasUsers />}></Route>
+                <Route path='/user/network/userTable/store-clients' element={<StoreClients />}></Route>
                 <Route path='/user/network/userTable/visitors' element={<Visitors />}></Route>
-                <Route path='/user/authentication/classic/signIn' element={<SignIn />}></Route>
-                <Route path='/user/authentication/classic/signUp' element={<SignUp />}></Route>
-                <Route path='/user/authentication/classic/twoFA' element={<TwoFA />}></Route>
-                <Route path='/user/authentication/classic/checkMail' element={<CheckMail />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/enterEmail' element={<EnterEmail />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/checkEmail' element={<CheckEmail />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/passwordChange' element={<ResetPassword />}></Route>
-                <Route path='/user/authentication/classic/resetPassword/passwordChanged' element={<PasswordChanged />}></Route>
-                <Route path='/user/authentication/branded/signIn' element={<BrandedSignIn />}></Route>
-                <Route path='/user/authentication/branded/signUp' element={<BrandedSignUp />}></Route>
-                <Route path='/user/authentication/branded/twoFA' element={<BrandedTwoFA />}></Route>
-                <Route path='/user/authentication/branded/checkEmail' element={<BrandedCheckEmail />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/enterEmail' element={<BrandedEnterEmail />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/checkEmail' element={<BrandedResetCheckEmail />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/passwordChange' element={<BrandedResetPassword />}></Route>
-                <Route path='/user/authentication/branded/resetPassword/passwordChanged' element={<BrandedChangedPassword />}></Route>
-                <Route path='/user/authentication/error404' element={<Error404 />}></Route>
-                <Route path='/user/authentication/error500' element={<Error500 />}></Route>
-                <Route path='/user/authentication/welcomeMessage' element={<WelcomeModal />}></Route>
-                <Route path='/user/authentication/accountDeactivatedModal' element={<AccountDeactivatedModal />}></Route>
+                <Route path='/user/authentication/classic/sign-in' element={<SignIn />}></Route>
+                <Route path='/user/authentication/classic/sign-up' element={<SignUp />}></Route>
+                <Route path='/user/authentication/classic/2-fA' element={<TwoFA />}></Route>
+                <Route path='/user/authentication/classic/check-mail' element={<CheckMail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/enter-email' element={<EnterEmail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/check-email' element={<CheckEmail />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/password-change' element={<ResetPassword />}></Route>
+                <Route path='/user/authentication/classic/resetPassword/password-changed' element={<PasswordChanged />}></Route>
+                <Route path='/user/authentication/branded/sign-in' element={<BrandedSignIn />}></Route>
+                <Route path='/user/authentication/branded/sign-up' element={<BrandedSignUp />}></Route>
+                <Route path='/user/authentication/branded/2-FA' element={<BrandedTwoFA />}></Route>
+                <Route path='/user/authentication/branded/check-email' element={<BrandedCheckEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/enter-email' element={<BrandedEnterEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/check-email' element={<BrandedResetCheckEmail />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/password-change' element={<BrandedResetPassword />}></Route>
+                <Route path='/user/authentication/branded/resetPassword/password-changed' element={<BrandedChangedPassword />}></Route>
+                <Route path='/user/authentication/error-404' element={<Error404 />}></Route>
+                <Route path='/user/authentication/error-500' element={<Error500 />}></Route>
+                <Route path='/user/authentication/welcome-message' element={<WelcomeModal />}></Route>
+                <Route path='/user/authentication/account-deactivated' element={<AccountDeactivatedModal />}></Route>
 
             </Routes>
         </>

@@ -19,12 +19,12 @@ const TeamMembers = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Import Members
-                    </button>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                    </a>
+                    <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                         Add Member
-                    </button>
+                    </a>
                 </div>
             </div>
             {/* Member role table */}
@@ -60,15 +60,15 @@ const TeamMembers = () => {
                                                 <option value="Admin">Admin</option>
                                             </select>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <IoMdAdd className="text-gray-500 size-[14px]" />
                                             Add more
-                                        </button>
+                                        </a>
                                     </div>
                                     <div className="flex items-center justify-center py-[14px] border-t">
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
                                             Invite People
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -93,16 +93,16 @@ const TeamMembers = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <RiResetLeftFill className="text-gray-500 size-[14px]" />
                                             Reset Link
-                                        </button>
+                                        </a>
                                         <p className="text-b-13-20-400 text-gray-800">Click below to RSVP for our exclusive event. Limited spaces available, so don't miss out. Reserve your spot now with this special invitation link!</p>
                                     </div>
                                     <div className="flex items-center justify-center py-[14px] border-t">
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
                                             Invite People
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

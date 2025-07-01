@@ -32,9 +32,9 @@ const Activity = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Invite a Friend</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
-                </button>
+                </a>
             </div>
             <div className="flex flex-col gap-[30px] ">
 
@@ -295,10 +295,10 @@ const Activity = () => {
                                                         <span className="text-b-11-12-400 text-gray-600">MEMBERS</span>
                                                         <img src={AvatarGroup} className="w-[93px] h-[30px]" />
                                                     </div>
-                                                    <button className={`flex items-center justify-center flex-row p-2.5 rounded-md gap-1 mt-[14px] bg-primary w-max  text-white`}>
+                                                    <a href="#" className={`flex items-center justify-center flex-row p-2.5 rounded-md gap-1 mt-[14px] bg-primary w-max  text-white`}>
                                                         <FaUsers className="size-[14px]" />
                                                         <span className="text-b-12-12-500">Join</span>
-                                                    </button>
+                                                    </a>
                                                 </div>
 
 

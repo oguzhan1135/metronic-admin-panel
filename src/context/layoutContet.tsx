@@ -25,9 +25,9 @@ const LayoutContext = createContext<LayoutProps | undefined>(undefined);
 
 const modalPages = [
     "/user/publicProfiles/profiles/modal",
-    "/user/myAccount/accountHome/settingModal",
-    "/user/authentication/welcomeMessage",
-    "/user/authentication/accountDeactivatedModal",
+    "/user/myAccount/accountHome/setting-modal",
+    "/user/authentication/welcome-message",
+    "/user/authentication/account-deactivated",
 ]
 export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 

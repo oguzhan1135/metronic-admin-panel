@@ -17,12 +17,12 @@ const MemberStarter = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
+                    <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer">
                         Invite with Link
-                    </button>
-                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                    </a>
+                    <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                         Invite People
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -38,9 +38,9 @@ const MemberStarter = () => {
                             <div className="flex flex-col gap-[30px] items-center justify-center">
                                 <p className="text-b-14-22-400 text-gray-800 text-center max-w-[600px]">A streamlined process to welcome and integrate new members into the team,
                                     ensuring a smooth and efficient start.</p>
-                                <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
+                                <a href="#" className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
                                     Add New Member
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </>

@@ -217,7 +217,7 @@ const DeviceTable = () => {
                                         <th className="px-[21px] py-[11px] text-center border border-gray-200">
                                             <input
                                                 type="checkbox"
-                                               className={`custom-checkbox`}
+                                                className={`custom-checkbox`}
                                                 checked={selectAll}
                                                 onChange={handleSelectAll}
                                             />
@@ -277,7 +277,7 @@ const DeviceTable = () => {
                                                         type="checkbox"
                                                         checked={!!checkedItems[item.id]}
                                                         onChange={() => handleCheckboxChange(item.id)}
-                                                       className={`custom-checkbox`}
+                                                        className={`custom-checkbox`}
                                                     />
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
@@ -312,14 +312,20 @@ const DeviceTable = () => {
 
 
                                                 <td className='px-[30px] py-[21px] text-right border border-gray-200'>
-                                                    <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <FaEdit className="text-gray-600 size-[18px]" />
+                                                    <div className=" flex items-center justify-center">
+                                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                            <FaEdit className="text-gray-600 size-[18px]" />
+                                                        </div>
                                                     </div>
+
                                                 </td>
                                                 <td className='px-[30px] py-[21px] text-right border border-gray-200'>
-                                                    <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                                        <FaRegTrashAlt className="text-gray-600 size-[18px]" />
+                                                    <div className=" flex items-center justify-center">
+                                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                            <FaRegTrashAlt className="text-gray-600 size-[18px]" />
+                                                        </div>
                                                     </div>
+
                                                 </td>
                                             </tr>
                                         ))

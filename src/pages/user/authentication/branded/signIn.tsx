@@ -23,14 +23,14 @@ const BrandedSignIn = () => {
                             </div>
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-row items-center gap-2.5">
-                                    <button className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
+                                    <a href="#" className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
                                         <FcGoogle className="size-[14px]" />
                                         <span className="text-b-12-12-500 text-gray-700">Use Google</span>
-                                    </button>
-                                    <button className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
+                                    </a>
+                                    <a href="#" className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
                                         <ImAppleinc className="size-[14px] dark:text-white" />
                                         <span className="text-b-12-12-500 text-gray-700">Use Apple</span>
-                                    </button>
+                                    </a>
                                 </div>
                                 <div className="flex flex-row items-center gap-2">
                                     <span className="w-full bg-gray-200 h-[1px]"></span>
@@ -72,7 +72,7 @@ const BrandedSignIn = () => {
                                     <input type="checkbox" name="remember" id="remember" className="custom-checkbox" />
                                     <span className="text-b-13-14-500 text-gray-800">Remember me</span>
                                 </div>
-                                <button className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
+                                <button type="submit" className="bg-primary flex items-center justify-center w-full text-white text-b-13-14-500 rounded-md py-[13px]">
                                     Sign In
                                 </button>
                             </div>

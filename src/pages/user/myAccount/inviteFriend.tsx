@@ -22,9 +22,9 @@ const InviteFriend = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Invite a Friend</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -53,15 +53,15 @@ const InviteFriend = () => {
                                                 <option value="Admin">Admin</option>
                                             </select>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer w-max md:ml-[120px] border-gray-300">
                                             <IoMdAdd className="text-gray-500 size-[14px]" />
                                             Add more
-                                        </button>
+                                        </a>
                                     </div>
                                     <div className="flex items-center justify-center py-[14px] border-t">
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
                                             Invite People
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

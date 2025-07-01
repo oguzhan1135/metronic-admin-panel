@@ -61,9 +61,9 @@ const Appearance = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Appearances</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -114,9 +114,9 @@ const Appearance = () => {
                                         </div>
                                     </div>
                                     <div className="flex ml-auto ">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                        <a href="#" className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
                                             Save Changes
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -193,9 +193,9 @@ const Appearance = () => {
                                         </div>
                                     </div>
                                     <div className="flex ml-auto py-[30px]">
-                                        <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
+                                        <a href="#" className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 w-max text-white gap-1">
                                             Save Changes
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

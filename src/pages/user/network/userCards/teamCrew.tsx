@@ -150,12 +150,12 @@ const TeamCrew = () => {
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         Upload CSV
-                    </button>
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
+                    </a>
+                    <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border">
                         Add User
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -168,10 +168,10 @@ const TeamCrew = () => {
                             <option value="Online">Online</option>
                             <option value="Offline">Offline</option>
                         </select>
-                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary-light text-b-12-12-500 text-primary border border-primary border-opacity-20 gap-[6px]">
+                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary-light text-b-12-12-500 text-primary border border-primary border-opacity-20 gap-[6px]">
                             <LuSettings2 className="size-[14px] text-primary" />
                             Filters
-                        </button>
+                        </a>
                     </div>
                     <div className="p-2.5 border rounded-md flex flex-row items-center gap-1 bg-light-active border-gray-300">
                         <CiSearch className="text-gray-600 cursor-pointer" />
@@ -260,14 +260,14 @@ const TeamCrew = () => {
                                             <div className={`flex items-center justify-center ${selectedCardView == "list" ? '' : ' border-t w-full py-[14px]'}`}>
                                                 {
                                                     card.connected ?
-                                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                                             <IoIosCheckmarkCircleOutline className="size-[14px] text-gray-500" />
                                                             Connected
-                                                        </button> :
-                                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                                        </a> :
+                                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                                             <IoIosAddCircleOutline className="text-white size-[14px]" />
                                                             Connect
-                                                        </button>
+                                                        </a>
                                                 }
 
                                             </div>

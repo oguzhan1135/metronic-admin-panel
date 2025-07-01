@@ -236,14 +236,20 @@ const TeamsTable = () => {
                                         <img src={AvatarGroup} className="w-24 h-8" alt="" />
                                     </td>
                                     <td className='px-4 py-2 text-right border border-gray-200'>
-                                        <div className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                            <FaEdit className="text-gray-600 size-[18px]" />
+                                        <div className="flex items-center justify-center">
+                                            <a href="#" className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <FaEdit className="text-gray-600 size-[18px]" />
+                                            </a>
                                         </div>
+
                                     </td>
                                     <td className='px-4 py-2 text-right border border-gray-200'>
-                                        <button className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
-                                            <FaRegTrashAlt className="text-gray-600 size-[18px]" />
-                                        </button>
+                                        <div className="flex items-center justify-center">
+                                            <a href="#" className="p-2 rounded-md cursor-pointer w-max hover:bg-gray-200">
+                                                <FaRegTrashAlt className="text-gray-600 size-[18px]" />
+                                            </a>
+                                        </div>
+
                                     </td>
                                 </tr>
                             ))}

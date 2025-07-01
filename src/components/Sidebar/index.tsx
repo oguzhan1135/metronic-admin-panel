@@ -4,29 +4,23 @@ import Plus from '@assets/plus.svg'
 import Minus from '@assets/minus.svg'
 import Profile_Circle from '@assets/profile-circle.svg'
 import Setting from '@assets/setting.svg'
-import Edit_User from '@assets/user-edit.svg'
 import Community from '@assets/users.svg'
 import Security_User from '@assets/security-user.svg'
 import Dashboard_Icon from '@assets/dashboard.svg'
-import Like_Tag from '@assets/like-tag.svg'
-import Social from '@assets/social-media.svg'
-import Company from '@assets/company.svg'
-import Files from '@assets/some-files.svg'
-import Handcart from '@assets/handcart.svg'
 import SidebarLeft from '@assets/black-left-line.svg'
 import MLogo from '@assets/M-logo.svg'
 import { useEffect, useState } from 'react'
 import { metronicContext } from '../../context/layoutContet'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 
 
 interface MenuItem {
     category: string
-    key: string;
-    label: string;
-    subItems?: MenuItem[];
-    icon?: string;
-    path?: string;
+    key: string
+    label: string
+    subItems?: MenuItem[]
+    icon?: string
+    path?: string
 }
 const menuData: MenuItem[] = [
     {
@@ -93,10 +87,10 @@ const menuData: MenuItem[] = [
                 label: "Projects",
                 subItems: [
                     {
-                        category: "user", key: "column-3", label: "3 Columns", path: "/user/publicProfiles/projects/threeColumns"
+                        category: "user", key: "column-3", label: "3 Columns", path: "/user/publicProfiles/projects/column-3"
                     },
                     {
-                        category: "user", key: "column-2", label: "2 Columns", path: "/user/publicProfiles/projects/twoColumns"
+                        category: "user", key: "column-2", label: "2 Columns", path: "/user/publicProfiles/projects/column-2"
                     }
                 ]
             },
@@ -150,25 +144,25 @@ const menuData: MenuItem[] = [
                 label: "Account Home",
                 subItems: [
                     {
-                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/accountHome/getStarted"
+                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/accountHome/get-started"
                     },
                     {
-                        category: "user", key: "user-profile", label: "User Profile", path: "/user/myAccount/accountHome/userProfile"
+                        category: "user", key: "user-profile", label: "User Profile", path: "/user/myAccount/accountHome/user-profile"
                     },
                     {
-                        category: "user", key: "company-profile", label: "Company Profile", path: "/user/myAccount/accountHome/companyProfile"
+                        category: "user", key: "company-profile", label: "Company Profile", path: "/user/myAccount/accountHome/company-profile"
                     },
                     {
-                        category: "user", key: "setting-with-sidebar", label: "Setting - With Sidebar", path: "/user/myAccount/accountHome/settingSidebar"
+                        category: "user", key: "setting-sidebar", label: "Setting - With Sidebar", path: "/user/myAccount/accountHome/setting-sidebar"
                     },
                     {
-                        category: "user", key: "setting-enterprise", label: "Setting - Enterprise", path: "/user/myAccount/accountHome/settingEnterprise"
+                        category: "user", key: "setting-enterprise", label: "Setting - Enterprise", path: "/user/myAccount/accountHome/setting-enterprise"
                     },
                     {
-                        category: "user", key: "setting-plain", label: "Setting - Plain", path: "/user/myAccount/accountHome/settingPlain"
+                        category: "user", key: "setting-plain", label: "Setting - Plain", path: "/user/myAccount/accountHome/setting-plain"
                     },
                     {
-                        category: "user", key: "setting-with-modal", label: "Setting - Modal", path: "/user/myAccount/accountHome/settingModal"
+                        category: "user", key: "setting-modal", label: "Setting - Modal", path: "/user/myAccount/accountHome/setting-modal"
                     }
                 ]
             },
@@ -178,16 +172,16 @@ const menuData: MenuItem[] = [
                 label: "Billing",
                 subItems: [
                     {
-                        category: "user", key: "billing-basic", label: "Billing - Basic", path: "/user/myAccount/billing/billingBasic"
+                        category: "user", key: "billing-basic", label: "Billing - Basic", path: "/user/myAccount/billing/billing-basic"
                     },
                     {
-                        category: "user", key: "billing-enterprise", label: "Billing - Enterprise", path: "/user/myAccount/billing/billingEnterprise"
+                        category: "user", key: "billing-enterprise", label: "Billing - Enterprise", path: "/user/myAccount/billing/billing-enterprise"
                     },
                     {
-                        category: "user", key: "plans", label: "Plans", path: "/user/myAccount/billing/billingPlans"
+                        category: "user", key: "billing-plans", label: "Plans", path: "/user/myAccount/billing/billing-plans"
                     },
                     {
-                        category: "user", key: "billing-history", label: "Billing History", path: "/user/myAccount/billing/billingHistory"
+                        category: "user", key: "billing-history", label: "Billing History", path: "/user/myAccount/billing/billing-history"
                     }
                 ]
             },
@@ -197,28 +191,28 @@ const menuData: MenuItem[] = [
                 label: "Security",
                 subItems: [
                     {
-                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/security/getStarted"
+                        category: "user", key: "get-started", label: "Get Started", path: "/user/myAccount/security/get-started"
                     },
                     {
-                        category: "user", key: "security-overview", label: "Security Overview", path: "/user/myAccount/security/overview"
+                        category: "user", key: "overview", label: "Security Overview", path: "/user/myAccount/security/overview"
                     },
                     {
-                        category: "user", key: "allowed-ip-addresses", label: "Allowed IP Addresses", path: "/user/myAccount/security/allowedIpAddresses"
+                        category: "user", key: "allowed-ip-addresses", label: "Allowed IP Addresses", path: "/user/myAccount/security/allowed-ip-addresses"
                     },
                     {
-                        category: "user", key: "privacy-setting", label: "Privacy Setting", path: "/user/myAccount/security/privacySetting"
+                        category: "user", key: "privacy-setting", label: "Privacy Setting", path: "/user/myAccount/security/privacy-setting"
                     },
                     {
-                        category: "user", key: "device-management", label: "Device Management", path: "/user/myAccount/security/deviceManagament"
+                        category: "user", key: "device-management", label: "Device Management", path: "/user/myAccount/security/device-managament"
                     },
                     {
-                        category: "user", key: "backup-recovery", label: "Backup & Recovery", path: "/user/myAccount/security/backupRecovery"
+                        category: "user", key: "backup-recovery", label: "Backup & Recovery", path: "/user/myAccount/security/backup-recovery"
                     },
                     {
-                        category: "user", key: "current-sessions", label: "Current Sessions", path: "/user/myAccount/security/currentSessions"
+                        category: "user", key: "current-sessions", label: "Current Sessions", path: "/user/myAccount/security/current-sessions"
                     },
                     {
-                        category: "user", key: "security-log", label: "Security Log", path: "/user/myAccount/security/log"
+                        category: "user", key: "log", label: "Security Log", path: "/user/myAccount/security/log"
                     }
                 ]
             },
@@ -228,31 +222,31 @@ const menuData: MenuItem[] = [
                 label: "Members & Roles",
                 subItems: [
                     {
-                        category: "user", key: "teams-starter", label: "Teams Starter", path: "/user/myAccount/members/teamStarter"
+                        category: "user", key: "teams-starter", label: "Teams Starter", path: "/user/myAccount/members/team-starter"
                     },
                     {
                         category: "user", key: "teams", label: "Teams", path: "/user/myAccount/members/teams"
                     },
                     {
-                        category: "user", key: "team-info", label: "Team Info", path: "/user/myAccount/members/teamInfo"
+                        category: "user", key: "team-info", label: "Team Info", path: "/user/myAccount/members/team-info"
                     },
                     {
-                        category: "user", key: "members-starter", label: "Members Starter", path: "/user/myAccount/members/memberStarter"
+                        category: "user", key: "member-starter", label: "Members Starter", path: "/user/myAccount/members/member-starter"
                     },
                     {
-                        category: "user", key: "team-members", label: "Team Members", path: "/user/myAccount/members/teamMembers"
+                        category: "user", key: "team-members", label: "Team Members", path: "/user/myAccount/members/team-members"
                     },
                     {
-                        category: "user", key: "import-members", label: "Import Members", path: "/user/myAccount/members/importantMember"
+                        category: "user", key: "import-members", label: "Import Members", path: "/user/myAccount/members/import-member"
                     },
                     {
                         category: "user", key: "roles", label: "Roles", path: "/user/myAccount/members/roles"
                     },
                     {
-                        category: "user", key: "permissions-toggler", label: "Permissions - Toggler", path: "/user/myAccount/members/permissionsToggle"
+                        category: "user", key: "permissions-toggle", label: "Permissions - Toggler", path: "/user/myAccount/members/permissions-toggle"
                     },
                     {
-                        category: "user", key: "permissions-check", label: "Permissions - Check", path: "/user/myAccount/members/permissionsCheck"
+                        category: "user", key: "permissions-check", label: "Permissions - Check", path: "/user/myAccount/members/permissions-check"
                     },
                 ]
             },
@@ -273,7 +267,7 @@ const menuData: MenuItem[] = [
                 category: "user",
                 key: "api-keys",
                 label: "API Keys",
-                path: "/user/myAccount/apiKeys"
+                path: "/user/myAccount/api-keys"
             },
             {
                 category: "user",
@@ -283,9 +277,9 @@ const menuData: MenuItem[] = [
             },
             {
                 category: "user",
-                key: "invite-a-friend",
+                key: "invite-friend",
                 label: "Invite a Friend",
-                path: "/user/myAccount/inviteFriend"
+                path: "/user/myAccount/invite-friend"
 
             },
             {
@@ -304,7 +298,7 @@ const menuData: MenuItem[] = [
         label: "Network",
         subItems: [
             {
-                category: "user", key: "get-started", label: "Get Started", path: "/user/network/started"
+                category: "user", key: "started", label: "Get Started", path: "/user/network/started"
             },
             {
                 category: "user",
@@ -312,10 +306,10 @@ const menuData: MenuItem[] = [
                 label: "User Card",
                 subItems: [
                     {
-                        category: "user", key: "mini-cards", label: "Mini Cards", path: "/user/network/userCard/miniCards"
+                        category: "user", key: "mini-cards", label: "Mini Cards", path: "/user/network/userCard/mini-cards"
                     },
                     {
-                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userCard/teamCrew"
+                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userCard/team-crew"
                     },
                     {
                         category: "user", key: "author", label: "Author", path: "/user/network/userCard/author"
@@ -335,19 +329,19 @@ const menuData: MenuItem[] = [
                 label: "User Table",
                 subItems: [
                     {
-                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userTable/teamCrew"
+                        category: "user", key: "team-crew", label: "Team Crew", path: "/user/network/userTable/team-crew"
                     },
                     {
-                        category: "user", key: "app-roster", label: "App Roster", path: "/user/network/userTable/appRoster"
+                        category: "user", key: "app-roster", label: "App Roster", path: "/user/network/userTable/app-roster"
                     },
                     {
-                        category: "user", key: "market-authors", label: "Market Authors", path: "/user/network/userTable/marketAuthors"
+                        category: "user", key: "market-authors", label: "Market Authors", path: "/user/network/userTable/market-authors"
                     },
                     {
-                        category: "user", key: "saas-user", label: "Saas Users", path: "/user/network/userTable/saasUsers"
+                        category: "user", key: "saas-user", label: "Saas Users", path: "/user/network/userTable/saas-users"
                     },
                     {
-                        category: "user", key: "store-clients", label: "Store Clients", path: "/user/network/userTable/storeClients"
+                        category: "user", key: "store-clients", label: "Store Clients", path: "/user/network/userTable/store-clients"
                     },
                     {
                         category: "user", key: "visitors", label: "Visitors", path: "/user/network/userTable/visitors"
@@ -368,16 +362,16 @@ const menuData: MenuItem[] = [
                 label: "Classic",
                 subItems: [
                     {
-                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/classic/signIn"
+                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/classic/sign-in"
                     },
                     {
-                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/classic/signUp"
+                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/classic/sign-up"
                     },
                     {
-                        category: "user", key: "2fa", label: "2FA", path: "/user/authentication/classic/twoFA"
+                        category: "user", key: "2-FA", label: "2FA", path: "/user/authentication/classic/2-FA"
                     },
                     {
-                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/checkMail"
+                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/check-mail"
                     },
                     {
                         category: "user",
@@ -385,16 +379,16 @@ const menuData: MenuItem[] = [
                         label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/classic/resetPassword/enterEmail"
+                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/classic/resetPassword/enter-email"
                             },
                             {
-                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/resetPassword/checkEmail"
+                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/classic/resetPassword/check-email"
                             },
                             {
-                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/classic/resetPassword/passwordChange"
+                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/classic/resetPassword/change-password"
                             },
                             {
-                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/classic/resetPassword/passwordChanged"
+                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/classic/resetPassword/password-changed"
                             }
                         ]
                     },
@@ -406,16 +400,16 @@ const menuData: MenuItem[] = [
                 label: "Branded",
                 subItems: [
                     {
-                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/branded/signIn"
+                        category: "user", key: "sign-in", label: "Sign In", path: "/user/authentication/branded/sign-in"
                     },
                     {
-                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/branded/signUp"
+                        category: "user", key: "sign-up", label: "Sign Up", path: "/user/authentication/branded/sign-up"
                     },
                     {
-                        category: "user", key: "2fa", label: "2FA", path: "/user/authentication/branded/twoFA"
+                        category: "user", key: "2-FA", label: "2FA", path: "/user/authentication/branded/2-FA"
                     },
                     {
-                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/checkEmail"
+                        category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/check-email"
                     },
                     {
                         category: "user",
@@ -423,189 +417,177 @@ const menuData: MenuItem[] = [
                         label: "Reset Password",
                         subItems: [
                             {
-                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/branded/resetPassword/enterEmail"
+                                category: "user", key: "enter-email", label: "Enter Email", path: "/user/authentication/branded/resetPassword/enter-email"
                             },
                             {
-                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/resetPassword/checkEmail"
+                                category: "user", key: "check-email", label: "Check Email", path: "/user/authentication/branded/resetPassword/check-email"
                             },
                             {
-                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/branded/resetPassword/changePassword"
+                                category: "user", key: "change-password", label: "Change Password", path: "/user/authentication/branded/resetPassword/change-password"
                             },
                             {
-                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/branded/resetPassword/changedPassword"
+                                category: "user", key: "password-changed", label: "Password Changed", path: "/user/authentication/branded/resetPassword/password-changed"
                             }
                         ]
                     },
                 ]
             },
             {
-                category: "user", key: "welcome-message", label: "Welcome Message", path: "/user/authentication/welcomeMessage"
+                category: "user", key: "welcome-message", label: "Welcome Message", path: "/user/authentication/welcome-message"
             },
             {
-                category: "user", key: "account-deactivated", label: "Account", path: "/user/authentication/accountDeactivatedModal"
+                category: "user", key: "account-deactivated", label: "Account", path: "/user/authentication/account-deactivated"
             },
             {
-                category: "user", key: "error-404", label: "Error 404", path: "/user/authentication/error404"
+                category: "user", key: "error-404", label: "Error 404", path: "/user/authentication/error-404"
             },
             {
-                category: "user", key: "error-500", label: "Error 500", path: "/user/authentication/error500"
+                category: "user", key: "error-500", label: "Error 500", path: "/user/authentication/error-500"
             }
 
         ],
         icon: Security_User
     },
-    {
-        category: "pages",
-        key: "marketplace",
-        label: "Marketplace",
-        icon: Like_Tag
-    },
-    {
-        category: "",
-        key: "social",
-        label: "Social",
-        icon: Social,
-    },
-    {
-        category: "pages",
-        key: "company",
-        label: "Company",
-        icon: Company
-    },
-    {
-        category: "pages",
-        key: "blog",
-        label: "Blog",
-        icon: Files
-    },
-    {
-        category: "apps",
-        key: "projects",
-        label: "Projects",
-        icon: Edit_User
-
-    },
-    {
-        category: "apps",
-        key: "ecommerce",
-        label: "eCommerce",
-        icon: Handcart
-    },
-
-
-
 ]
 
 
 const Sidebar = () => {
-    const [openMenuItems, setOpenMenuItems] = useState<string[]>(['']);
-    const [activeSubItems, setActiveSubItems] = useState<string[]>([""]);
-    const [childSub, setChildSub] = useState<string>("");
-    const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([]);
-    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth, giveModal, reportModal, searchModal, shareModal, theme } = metronicContext();
 
-    useEffect(() => {
-        const pathname = location.pathname;
-        const pathParts = pathname.split("/").filter(Boolean);
+    const { sidebarIsOpen, setSidebarIsOpen, setSidebarWidth, sidebarWidth, giveModal, reportModal, searchModal, shareModal, theme, modalOpen } = metronicContext()
+    const [openMenuItems, setOpenMenuItems] = useState<string[]>([])
+    const [activeSubItems, setActiveSubItems] = useState<string[]>([])
+    const [childSub, setChildSub] = useState<string>("")
+    const [activeGrandChildItems, setActiveGrandChildItems] = useState<string[]>([])
 
-        const last = pathParts[pathParts.length - 1] || "";
-        const secondLast = pathParts[pathParts.length - 2] || "";
-        let active = last;
+const location = useLocation()
+useEffect(() => {
+    const pathname = location.pathname
+    const pathParts = pathname.split("/").filter(Boolean)
 
-        if (pathname === "/") {
-            if (theme === "light" || theme === "dark") {
-                active = theme;
-            }
-        }
+    const newOpenMenuItems: string[] = []
+    const newActiveSubItems: string[] = []
+    let newChildSub = ""
+    const newGrandChildItems: string[] = []
+    let deepestItem = ""
 
-        setActiveSubItems([secondLast]);
-        setChildSub(active);
-        setActiveGrandChildItems([active]);
-        setOpenMenuItems((prev) => {
-            const newState = [...prev];
-            if (!newState.includes(secondLast)) {
-                newState.push(secondLast);
-            }
-            return newState;
-        });
-    }, [location.pathname, theme]);
+    const fullPath = "/" + pathParts.join("/")
 
-    useEffect(() => {
-        const pathname = location.pathname;
+    if (pathname === "/") {
+        newOpenMenuItems.push("dashboards")
 
-        if (pathname === "/") {
-            setOpenMenuItems(["dashboards"])
-            if (theme === "light") {
-                setActiveSubItems(["light"])
-            } else {
-                setActiveSubItems(["dark"])
-            }
-        }
-    }, []);
-
-
-    const toggleMenuItem = (key: string) => {
-        setOpenMenuItems((prevState) =>
-            prevState.includes(key)
-                ? prevState.filter((item) => item !== key)
-                : [...prevState, key]
-        );
-
-    };
-
-    const toggleGrandChildItems = (key: string) => {
-        setActiveGrandChildItems(prev =>
-            prev.includes(key) ? prev.filter(item => item !== key) : [...prev, key]
-        );
-    };
-    const toggleSubItems = (key: string) => {
-        setActiveSubItems([])
-        setActiveSubItems((prevState) =>
-            prevState.includes(key)
-                ? prevState.filter((item) => item !== key)
-                : [...prevState, key]
-        );
-        if (key === activeSubItems[0]) {
-            setActiveSubItems([])
-        }
-    };
-
-    const childSubItemTrigger = (item: string) => {
-        setChildSub(item)
-    }
-
-    const handleSideBar = () => {
-        if (sidebarWidth === 280) {
-            setSidebarWidth(70)
-        }
-        else if (sidebarWidth === 280) {
-            setSidebarWidth(280)
-        }
-    }
-    const hoverSidebar = () => {
-        if (sidebarIsOpen === true) {
-            if (sidebarWidth === 70) {
-                setSidebarWidth(280)
-                setSidebarIsOpen(!sidebarIsOpen)
-
-            }
-            else {
-                setSidebarWidth(70)
-            }
-        }
-    }
-    const hoverDownSidebar = () => {
-        if (sidebarIsOpen === false) {
-            setSidebarWidth(280)
-
+        if (theme === "light") {
+            newActiveSubItems.push("light")
+            deepestItem = "light"
         } else {
-            setSidebarWidth(70)
-
+            newActiveSubItems.push("dark")
+            deepestItem = "dark"
         }
+
+        setOpenMenuItems([...new Set(newOpenMenuItems)])
+        setActiveSubItems([...new Set(newActiveSubItems)])
+        setChildSub("")
+        setActiveGrandChildItems([])
+
+        return
     }
 
+    menuData.forEach((menuItem) => {
+        if (menuItem.path === fullPath || fullPath.startsWith(`/${menuItem.key}`)) {
+            newOpenMenuItems.push(menuItem.key)
+            deepestItem = menuItem.key
+        }
 
-    const { modalOpen } = metronicContext();
+        if (menuItem.subItems) {
+            menuItem.subItems.forEach((subItem) => {
+                if (subItem.path === fullPath) {
+                    newOpenMenuItems.push(menuItem.key)
+                    newActiveSubItems.push(subItem.key)
+                    deepestItem = subItem.key
+                }
+
+                if (subItem.subItems) {
+                    subItem.subItems.forEach((childItem) => {
+                        if (childItem.path === fullPath) {
+                            newOpenMenuItems.push(menuItem.key)
+                            newActiveSubItems.push(subItem.key)
+                            newChildSub = childItem.key
+                            deepestItem = childItem.key
+                        }
+
+                        if (childItem.subItems) {
+                            childItem.subItems.forEach((grandChild) => {
+                                if (grandChild.path === fullPath) {
+                                    newOpenMenuItems.push(menuItem.key)
+                                    newActiveSubItems.push(subItem.key)
+                                    newChildSub = childItem.key
+                                    newGrandChildItems.push(grandChild.key)
+                                    deepestItem = grandChild.key
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    })
+
+    setOpenMenuItems([...new Set(newOpenMenuItems)])
+    setActiveSubItems([...new Set(newActiveSubItems)])
+    setChildSub(newChildSub)
+    setActiveGrandChildItems([...new Set(newGrandChildItems)])
+
+    if (deepestItem) {
+        setActiveGrandChildItems((prev) =>
+            prev.includes(deepestItem) ? prev : [...prev, deepestItem]
+        )
+    }
+
+}, [location.pathname, menuData, theme])
+
+
+const toggleMenuItem = (key: string) => {
+    setOpenMenuItems((prev) =>
+        prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key]
+    )
+}
+
+const toggleSubItems = (key: string) => {
+    setActiveSubItems((prev) =>
+        prev.includes(key) ? prev.filter((item) => item !== key) : [key]
+    )
+}
+
+const childSubItemTrigger = (item: string) => {
+    setChildSub(item)
+}
+
+const toggleGrandChildItems = (key: string) => {
+    setActiveGrandChildItems((prev) =>
+        prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key]
+    )
+}
+
+const handleSideBar = () => {
+    setSidebarWidth((prev) => (prev === 280 ? 70 : 280))
+}
+
+const hoverSidebar = () => {
+    if (sidebarIsOpen && sidebarWidth === 70) {
+        setSidebarWidth(280)
+        setSidebarIsOpen(false)
+    } else if (sidebarIsOpen && sidebarWidth === 280) {
+        setSidebarWidth(70)
+    }
+}
+
+const hoverDownSidebar = () => {
+    if (!sidebarIsOpen) {
+        setSidebarWidth(280)
+    } else {
+        setSidebarWidth(70)
+    }
+}
+
     return (
         <div onMouseEnter={hoverSidebar} onMouseLeave={hoverDownSidebar} style={{ width: `${sidebarWidth}px` }} className={` flex-col transition-all w-full duration-500 ease-in-out max-h-screen fixed dark:bg-coal-600  border-r-grey-500 dark:border-gray-100 border-r-2 hidden h-screen lg:flex ${modalOpen || searchModal || giveModal || reportModal || shareModal ? "-z-10" : "z-50"}
 
@@ -624,8 +606,8 @@ const Sidebar = () => {
                         <>
                             {
                                 localStorage.getItem("theme") === "dark" ?
-                                    <img src={MetronicDarkLogo} alt="Metronic-Logo" className='' /> :
-                                    <img src={MetronicLogo} alt="Metronic-Logo" className='' />
+                                    <Link to={'/'}><img src={MetronicDarkLogo} alt="Metronic-Logo" className='' /></Link> :
+                                    <Link to={'/'}><img src={MetronicLogo} alt="Metronic-Logo" className='' /></Link>
                             }
 
                         </> :
@@ -850,16 +832,7 @@ const Sidebar = () => {
                                         }
 
                                     </>
-                                ) : menuItem.category === "user" &&
-                                    menuData.findIndex((item) => item.category === "user") === index - 3 ? (
-                                    <>
-                                        {
-                                            sidebarWidth === 280 ?
-                                                <span className="text-gray-500 text-b-13-20-500">PAGES</span> :
-                                                <span className='text-gray-500 text-b-13-20-500  text-center'>---</span>
-                                        }
-
-                                    </>) : menuItem.category === "pages" &&
+                                )  : menuItem.category === "pages" &&
                                         menuData.findIndex((item) => item.category === "pages") === index - 3 ? (
                                     <>
                                         {
@@ -876,8 +849,8 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 
-export default Sidebar;
+export default Sidebar

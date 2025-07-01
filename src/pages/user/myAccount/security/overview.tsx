@@ -45,9 +45,9 @@ const Overview = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Security Overview</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization </span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -216,9 +216,9 @@ const Overview = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Enable users to create and display a profile publicly.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                             Setup
-                                        </button>
+                                        </a>
                                     </div>
                                     <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border-b">
                                         <div className="flex flex-row items-center gap-[14px]">
@@ -300,12 +300,12 @@ const Overview = () => {
                                             </div>
                                         </div>
                                         <div className="flex flex-row items-center gap-2.5">
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
+                                            <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
                                                 Disable all
-                                            </button>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                            </a>
+                                            <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                 Enable all
-                                            </button>
+                                            </a>
                                         </div>
 
                                     </div>
@@ -425,9 +425,9 @@ const Overview = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Instantly sign out all users from all devices.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-white dark:bg-coal-300 text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                             Logout everyone
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -589,9 +589,9 @@ const Overview = () => {
                                             <span className="text-b-13-14-400 text-gray-700">MacOS 12.19.6</span>
                                             <span className="text-b-13-14-400 text-gray-700">Active: Today at 9:03 AM</span>
                                         </div>
-                                        <button className="p-[7px] hover:bg-gray-100 rounded-md">
+                                        <a href="#" className="p-[7px] hover:bg-gray-100 rounded-md">
                                             <IoIosLogOut className="size-[18px] text-gray-600" />
-                                        </button>
+                                        </a>
                                     </div>
                                     <div className="flex flex-row justify-between items-center px-[30px] py-5 ">
                                         <div className="flex flex-row items-center gap-2.5">
@@ -609,9 +609,9 @@ const Overview = () => {
                                             <span className="text-b-13-14-400 text-gray-700">Android 14.35</span>
                                             <span className="text-b-13-14-400 text-gray-700">Active: Mar 18 at 9:03 AM</span>
                                         </div>
-                                        <button className="p-[7px] hover:bg-gray-100 rounded-md">
+                                        <a href="#" className="p-[7px] hover:bg-gray-100 rounded-md">
                                             <IoIosLogOut className="size-[18px] text-gray-600" />
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

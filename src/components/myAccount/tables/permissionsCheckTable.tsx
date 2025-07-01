@@ -105,9 +105,9 @@ const PermissionCheckTable = () => {
             title={<span className="text-b-16-16-600 text-gray-900">Role Permissions for <Link to={location} className="text-primary text-b-16-16-600">Project Manager</Link> </span>}
             dotContent={
                 <>
-                    <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                    <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                         New Permission
-                    </button>
+                    </a>
                 </>
             }
             dotStatus={false}
@@ -144,12 +144,12 @@ const PermissionCheckTable = () => {
 
                         </div>
                         <div className="p-[30px] flex flex-row items-center justify-end gap-2.5">
-                            <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                            <a href="#" className="px-4 py-[13px] flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                 Restore Defaults
-                            </button>
-                            <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                            </a>
+                            <a href="#" className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                 Save Changes
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </>

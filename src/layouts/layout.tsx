@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Sidebar from '@components/Sidebar';
+import Sidebar from '@components/sidebar';
 import Header from '@components/navbar';
 import { metronicContext } from '../context/layoutContet';
 import { useLocation } from 'react-router-dom';
@@ -10,12 +10,12 @@ import Give from '@components/navbar/dropdowns/give';
 import ReportUser from '@components/navbar/dropdowns/reportUser';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { sidebarIsOpen, modalOpen, searchModal } = metronicContext();
+  const { sidebarIsOpen, searchModal } = metronicContext();
   const location = useLocation();
   const pathname = location.pathname;
-  const isErrorPage = pathname === "/user/authentication/error404";
-  const isWelcomeMessagePage = pathname === "/user/authentication/welcomeMessage";
-  const isAccountDeactivatedModalPage = pathname === "/user/authentication/accountDeactivatedModal";
+  const isErrorPage = pathname === "/user/authentication/error-404";
+  const isWelcomeMessagePage = pathname === "/user/authentication/welcome-message";
+  const isAccountDeactivatedModalPage = pathname === "/user/authentication/account-deactivated";
   const isAuthPage = pathname.startsWith("/user/authentication") && !isErrorPage && !isWelcomeMessagePage && !isAccountDeactivatedModalPage;
 
   const theme = localStorage.getItem('theme');
@@ -32,14 +32,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       document.documentElement.classList.remove('dark');
     }
   }, []);
-  useEffect(() => {
-    console.log("searchModal durumu=", searchModal)
 
-  }, [searchModal]);
-  useEffect(() => {
-    console.log("modalopen durumu=", modalOpen)
-
-  }, [modalOpen]);
   return (
     <div className="flex flex-row">
       {

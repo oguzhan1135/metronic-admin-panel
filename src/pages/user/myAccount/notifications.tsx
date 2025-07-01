@@ -38,9 +38,9 @@ const Notifications = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Notifications</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -144,9 +144,9 @@ const Notifications = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Receive instant alerts for messages and updates directly in Slack.</span>
                                             </div>
                                         </div>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             Connect Slack
-                                        </button>
+                                        </a>
 
                                     </div>
                                     <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
@@ -272,9 +272,9 @@ const Notifications = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Alert for new and unpaid invoices.</span>
                                             </div>
                                         </div>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             View Invoices
-                                        </button>
+                                        </a>
 
                                     </div>
                                     <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
@@ -347,9 +347,9 @@ const Notifications = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Reminder of scheduled meetings for the day.</span>
                                             </div>
                                         </div>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             Show Meetings
-                                        </button>
+                                        </a>
 
                                     </div>
                                     <div className="flex md:flex-row flex-col items-center justify-between gap-2 px-[30px] py-4 border">
@@ -422,10 +422,10 @@ const Notifications = () => {
                                         <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
                                     </div>
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             <IoIosNotificationsOutline className="size-[14px] text-gray-500" />
                                             Pause Notification
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

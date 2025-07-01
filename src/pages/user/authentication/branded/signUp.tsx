@@ -24,14 +24,14 @@ const BrandedSignUp = () => {
                             </div>
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-row items-center gap-2.5">
-                                    <button className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
+                                    <a href="#" className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
                                         <FcGoogle className="size-[14px]" />
                                         <span className="text-b-12-12-500 text-gray-700">Use Google</span>
-                                    </button>
-                                    <button className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
-                                        <ImAppleinc className="size-[14px]" />
+                                    </a>
+                                    <a href="#" className="flex flex-row items-center gap-[6px] border py-2.5 min-w-[140px] justify-center rounded-md">
+                                        <ImAppleinc className="size-[14px] dark:text-white" />
                                         <span className="text-b-12-12-500 text-gray-700">Use Apple</span>
-                                    </button>
+                                    </a>
                                 </div>
                                 <div className="flex flex-row items-center gap-2">
                                     <span className="w-full bg-gray-200 h-[1px]"></span>

@@ -161,9 +161,9 @@ const PrivacySetting = () => {
                                                 <span className="text-b-13-14-400 text-gray-700">Enable users to create and display a profile publicly.</span>
                                             </div>
                                         </div>
-                                        <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                             Setup
-                                        </button>
+                                        </a>
                                     </div>
                                     <div className="flex flex-row items-center justify-between gap-2 px-[30px] py-4 border-b">
                                         <div className="flex flex-row items-center gap-[14px]">
@@ -245,12 +245,12 @@ const PrivacySetting = () => {
                                             </div>
                                         </div>
                                         <div className="flex flex-row items-center gap-2.5">
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
+                                            <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-danger-light text-b-12-12-500 text-danger border border-danger border-opacity-20 gap-1 cursor-pointer">
                                                 Disable all
-                                            </button>
-                                            <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                            </a>
+                                            <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                 Enable all
-                                            </button>
+                                            </a>
                                         </div>
 
                                     </div>
@@ -310,18 +310,18 @@ const PrivacySetting = () => {
                                                     <span className="text-gray-900 text-b-14-14-500">Download your data</span>
                                                     <span className="text-b-13-14-400 text-gray-700">Add an extra layer of security.</span>
                                                 </div>
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                     Start
-                                                </button>
+                                                </a>
                                             </div>
                                             <div className="px-[30px] py-5 border-b flex flex-row items-center justify-between">
                                                 <div className="flex flex-col gap-2">
                                                     <span className="text-gray-900 text-b-14-14-500">Delete all of your data</span>
                                                     <span className="text-b-13-14-400 text-gray-700">Instantly sign out all services.</span>
                                                 </div>
-                                                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
+                                                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-gray-300">
                                                     Delete
-                                                </button>
+                                                </a>
                                             </div>
                                             <div className="px-[30px] py-5 border-b flex flex-row items-center justify-between">
                                                 <div className="flex flex-col gap-2">
@@ -368,9 +368,9 @@ const PrivacySetting = () => {
                                                     <span className="text-b-12-12-400 text-gray-700">6 commits</span>
                                                 </div>
                                             </div>
-                                            <button className="p-2 hover:bg-gray-200 rounded-md">
+                                            <a href="#" className="p-2 hover:bg-gray-200 rounded-md">
                                                 <IoTrashOutline className="size-4 text-gray-600" />
-                                            </button>
+                                            </a>
                                         </div>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-2.5">
@@ -380,9 +380,9 @@ const PrivacySetting = () => {
                                                     <span className="text-b-12-12-400 text-gray-700">29 commits</span>
                                                 </div>
                                             </div>
-                                            <button className="p-2 hover:bg-gray-200 rounded-md">
+                                            <a href="#" className="p-2 hover:bg-gray-200 rounded-md">
                                                 <IoTrashOutline className="size-4 text-gray-600" />
-                                            </button>
+                                            </a>
                                         </div>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-2.5">
@@ -392,9 +392,9 @@ const PrivacySetting = () => {
                                                     <span className="text-b-12-12-400 text-gray-700">34 commits</span>
                                                 </div>
                                             </div>
-                                            <button className="p-2 hover:bg-gray-200 rounded-md">
+                                            <a href="#" className="p-2 hover:bg-gray-200 rounded-md">
                                                 <IoTrashOutline className="size-4 text-gray-600" />
-                                            </button>
+                                            </a>
                                         </div>
                                         <div className="flex flex-row items-center justify-between">
                                             <div className="flex flex-row items-center gap-2.5">
@@ -404,9 +404,9 @@ const PrivacySetting = () => {
                                                     <span className="text-b-12-12-400 text-gray-700">1 commits</span>
                                                 </div>
                                             </div>
-                                            <button className="p-2 hover:bg-gray-200 rounded-md">
+                                            <a href="#" className="p-2 hover:bg-gray-200 rounded-md">
                                                 <IoTrashOutline className="size-4 text-gray-600" />
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

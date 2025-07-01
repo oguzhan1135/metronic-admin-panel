@@ -27,9 +27,9 @@ const ApiKeys = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>API Settings</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Privacy Settings
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -89,12 +89,12 @@ const ApiKeys = () => {
                                             </div>
                                         </div>
                                         <div className="flex flex-row items-center flex-wrap gap-2.5">
-                                            <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-black dark:bg-light text-b-12-12-500 text-white">
+                                            <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-black dark:bg-light text-b-12-12-500 text-white">
                                                 Renew Plan
-                                            </button>
-                                            <button className="px-3 py-2.5 flex items-center text-b-12-12-500 text-gray-800">
+                                            </a>
+                                            <a href="#" className="px-3 py-2.5 flex items-center text-b-12-12-500 text-gray-800">
                                                 Docs
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <p className="text-b-13-20-400 text-gray-800">Unlock the full potential of your application with our API, a secure gateway facilitating seamless integration, empowering developers to create innovative and dynamic experiences effortlessly. </p>
@@ -141,9 +141,9 @@ const ApiKeys = () => {
                                             <Switch setSwitch={() => setCustomHeader(!customHeader)} size="medium" status={customHeader} />
                                         </div>
                                     </div>
-                                    <button className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 text-white border mt-2.5 w-max ml-auto">
+                                    <a href="#" className="px-4 py-[13px] flex items-center rounded-md bg-primary text-b-12-12-500 text-white border mt-2.5 w-max ml-auto">
                                         Save Changes
-                                    </button>
+                                    </a>
 
                                 </div>
                             </>
@@ -190,10 +190,10 @@ const ApiKeys = () => {
                                         <Link to={location} className="text-primary border-b border-dotted border-b-primary w-max text-b-12-12-500">Learn more</Link>
                                     </div>
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                                             <FaRegStickyNote className="size-[14px] text-gray-500" />
                                             Client Docs
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

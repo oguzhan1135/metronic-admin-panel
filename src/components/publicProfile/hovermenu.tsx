@@ -151,10 +151,10 @@ const Menu = () => {
                             onMouseLeave={() => setProjectOpen(false)}
                         >
 
-                            <Link to={"/user/publicProfiles/projects/threeColumns"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/projects/column-3"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 3 Columns
                             </Link>
-                            <Link to={"/user/publicProfiles/projects/twoColumns"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
+                            <Link to={"/user/publicProfiles/projects/column-2"} className="px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md block text-b-13-14-500 text-gray-800">
                                 2 Columns
                             </Link>
                         </div>

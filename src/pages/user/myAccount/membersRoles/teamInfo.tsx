@@ -40,9 +40,9 @@ const TeamInfo = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Team Info</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Efficient team organization with real-time updates</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Roles
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -183,9 +183,9 @@ const TeamInfo = () => {
                                     </div>
 
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
                                             Add Seats
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -233,9 +233,9 @@ const TeamInfo = () => {
                                     </div>
 
                                     <div className="border-t py-[14px] flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-[#1F212A] border-gray-300">
                                             Connect Profile
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

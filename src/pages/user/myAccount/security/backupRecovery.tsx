@@ -25,9 +25,9 @@ const BackupRecovery = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Backup Recovery</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Central Hub for Personal Customization</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Order History
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -74,9 +74,9 @@ const BackupRecovery = () => {
                                             <span className="text-b-14-14-500 text-gray-900">Manual Backup</span>
                                             <span className="text-b-13-14-400 text-gray-700">Backup When Needed</span>
                                         </div>
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-gray-300 ">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-white text-b-12-12-500 text-gray-700 border gap-1 cursor-pointer dark:bg-gray-300 ">
                                             Start
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </>

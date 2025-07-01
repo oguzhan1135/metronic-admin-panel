@@ -187,7 +187,7 @@ const BackupTable = () => {
                                                         type="checkbox"
                                                         checked={!!checkedItems[item.id]}
                                                         onChange={() => handleCheckboxChange(item.id)}
-                                                       className={`custom-checkbox`}
+                                                        className={`custom-checkbox`}
                                                     />
 
                                                 </td>
@@ -217,9 +217,12 @@ const BackupTable = () => {
                                                     <span className='text-b-12-12-500 text-gray-700'>Preview</span>
                                                 </td>
                                                 <td className='px-5 py-[15px]  text-left border border-gray-200'>
-                                                    <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md  text-b-12-12-500 text-gray-700 border border-gray-200 gap-1 cursor-pointer dark:bg-gray-300">
-                                                        Restore
-                                                    </button>
+                                                    <div className=" flex items-center justify-center">
+                                                        <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md  text-b-12-12-500 text-gray-700 border border-gray-200 gap-1 cursor-pointer dark:bg-gray-300">
+                                                            Restore
+                                                        </a>
+                                                    </div>
+
                                                 </td>
 
                                             </tr>

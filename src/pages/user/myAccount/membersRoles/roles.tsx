@@ -116,9 +116,9 @@ const Roles = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Roles</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     New Role
-                </button>
+                </a>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] z-1">
@@ -164,7 +164,7 @@ const Roles = () => {
                     ))
                 }
 
-                <button className="flex border-[3px] border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10 rounded-xl border-opacity-20">
+                <a href="#" className="flex border-[3px] border-dotted border-orange-500 bg-mask justify-center items-center flex-col gap-5 h-full p-10 rounded-xl border-opacity-20">
                     <div className="flex flex-col gap-2.5 items-center">
                         <div className="relative size-[60px] shrink-0">
                             <svg className="w-full h-full stroke-warning-clarity opacity-80 dark:opacity-20 fill-[#FFF5EF] " fill="none" height="48" viewBox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
@@ -184,7 +184,7 @@ const Roles = () => {
                         <span className="text-h-22-22-600 text-gray-900">Add New Role</span>
                         <span className="text-b-14-14-400 text-gray-700">Ignite Professional Adventures</span>
                     </div>
-                </button>
+                </a>
 
             </div>
         </div >

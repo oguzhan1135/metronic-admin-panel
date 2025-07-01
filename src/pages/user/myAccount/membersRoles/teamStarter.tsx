@@ -16,9 +16,9 @@ const TeamStarter = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Teams(0)</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Efficient team organization with real-time updates</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Plans
-                </button>
+                </a>
             </div>
 
             <Card
@@ -33,9 +33,9 @@ const TeamStarter = () => {
                             <div className="flex flex-col gap-[30px] items-center justify-center">
                                 <p className="text-b-14-22-400 text-gray-800 text-center max-w-[600px]">Enhance team formation and management with easy-to-use tools for communication,
                                     task organization, and progress tracking, all in one place.</p>
-                                <button className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
+                                <a href="#" className="px-4 py-[13px] flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer w-max">
                                     Create New Team
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </>

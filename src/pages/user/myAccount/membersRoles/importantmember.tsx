@@ -28,9 +28,9 @@ const ImportantMember = () => {
                     <h1 className='text-gray-900 text-h-24-24-600'>Import Members</h1>
                     <span className='text-b-14-14-500 text-gray-700'>Overview of all team members and roles.</span>
                 </div>
-                <button className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
+                <a href="#" className="px-2.5 py-2.5 flex flex-row items-center rounded-md bg-light text-b-12-12-500 text-gray-800 border gap-1 cursor-pointer">
                     Go to Teams
-                </button>
+                </a>
             </div>
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-[30px]">
                 <div className="lg:col-span-3 col-span-5 flex flex-col gap-[30px]">
@@ -74,12 +74,12 @@ const ImportantMember = () => {
                                     </div>
                                     <div className="flex flex-col gap-2.5">
                                         <div className="flex flex-row items-center gap-2.5">
-                                            <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                            <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                                 Select CSV File
-                                            </button>
-                                            <button className="px-3 py-2.5 flex flex-row items-center text-b-12-12-500 text-gray-800 gap-1 cursor-pointer rounded-md">
+                                            </a>
+                                            <a href="#" className="px-3 py-2.5 flex flex-row items-center text-b-12-12-500 text-gray-800 gap-1 cursor-pointer rounded-md">
                                                 Choose File
-                                            </button>
+                                            </a>
                                         </div>
                                         <p className="text-b-13-20-400 text-gray-800">Use the 'Choose file' button to locate and upload the CSV file that contains the user data.</p>
                                     </div>
@@ -93,9 +93,9 @@ const ImportantMember = () => {
                                     </div>
                                     <p className="text-b-13-20-400 text-gray-800"><span className="text-danger">WARNING:</span> An email will be sent to all users created unless the welcome message is disabled in settings. Ensure the correct communication preferences are set.</p>
                                     <div className="flex items-center justify-center">
-                                        <button className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
+                                        <a href="#" className="px-3 py-2.5 flex flex-row items-center rounded-md bg-primary text-b-12-12-500 text-white border gap-1 cursor-pointer">
                                             Import Member
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
